@@ -1,0 +1,82 @@
+---
+interface Props {
+  transparent?: boolean;
+}
+const { transparent = true } = Astro.props;
+
+const links = [
+  { href: "/", label: "ACCUEIL" },
+  { href: "/a-propos", label: "À PROPOS" },
+  { href: "/services", label: "SERVICES" },
+  { href: "/portfolio", label: "PORTFOLIO" },
+  { href: "/boutique", label: "BOUTIQUE" },
+  { href: "/contact", label: "CONTACT" },
+];
+---
+
+<header
+  class:list={[
+    "fixed top-0 inset-x-0 z-50 transition-colors duration-300",
+    transparent ? "bg-transparent text-white" : "bg-white text-[var(--color-ink)] border-b border-black/5",
+  ]}
+  data-site-header
+>
+  <div class="mx-auto max-w-[1500px] px-8 lg:px-14 h-20 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-3 group" aria-label="Aritia Design — Accueil">
+      <span class="font-display text-2xl tracking-[0.04em] leading-none italic font-light">
+        <span class="text-[1.6em] mr-1 align-middle font-normal not-italic">A<span class="-ml-3">D</span></span>
+      </span>
+      <span class="font-display text-[1.15rem] tracking-[0.32em] leading-none uppercase">
+        Aritia&nbsp;Design
+      </span>
+    </a>
+
+    <nav aria-label="Principal" class="hidden md:block">
+      <ul class="flex items-center gap-9 text-[0.72rem] tracking-[0.22em] uppercase">
+        {links.map((l) => (
+          <li>
+            <a
+              href={l.href}
+              class="hover:opacity-70 transition-opacity duration-200"
+            >
+              {l.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <button
+      type="button"
+      class="md:hidden p-2 -mr-2"
+      aria-label="Ouvrir le menu"
+      data-mobile-toggle
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M3 6h18M3 12h18M3 18h18" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+<script>
+  // Make the header switch from transparent to solid once the user scrolls past the hero.
+  const header = document.querySelector<HTMLElement>("[data-site-header]");
+  if (header) {
+    const startsTransparent = header.classList.contains("bg-transparent");
+    if (startsTransparent) {
+      const onScroll = () => {
+        const scrolled = window.scrollY > 60;
+        header.classList.toggle("bg-transparent", !scrolled);
+        header.classList.toggle("text-white", !scrolled);
+        header.classList.toggle("bg-white", scrolled);
+        header.classList.toggle("text-[var(--color-ink)]", scrolled);
+        header.classList.toggle("border-b", scrolled);
+        header.classList.toggle("border-black/5", scrolled);
+        header.classList.toggle("shadow-sm", scrolled);
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    }
+  }
+</script>

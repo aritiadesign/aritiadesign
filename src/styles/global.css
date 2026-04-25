@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+/* Local font files — see public/fonts/. Playfair + Raleway as variable fonts, Haute Couture as a single OTF. */
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/fonts/PlayfairDisplay.ttf") format("truetype-variations");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/fonts/PlayfairDisplay-Italic.ttf") format("truetype-variations");
+  font-weight: 400 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/Raleway.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/Raleway-Italic.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Haute Couture";
+  src: url("/fonts/HauteCouture.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Raleway", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Haute Couture", "Parisienne", cursive;
+  --font-italic: "Playfair Display", Georgia, serif;
+
+  --color-ink: #1c1c1c;
+  --color-ink-soft: #2a2a2a;
+  --color-paper: #ffffff;
+  --color-cream: #f7f5f1;
+  --color-burgundy: #5a0e1a;
+  --color-burgundy-dark: #470a14;
+  --color-muted: #6b6b6b;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-paper);
+}
+
+.font-display { font-family: var(--font-display); }
+.font-script  { font-family: var(--font-script); }
+.font-italic-serif { font-family: var(--font-italic); font-style: italic; }
+
+/* Tracking utility used in nav/buttons/labels (Wix-like wide tracking) */
+.tracking-wider-2 { letter-spacing: 0.18em; }
+.tracking-widest-2 { letter-spacing: 0.28em; }
+
+/* Infinite horizontal marquee for the home gallery strip.
+   We render the items twice and translate by -50% so the loop is seamless. */
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-x 60s linear infinite;
+  will-change: transform;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}

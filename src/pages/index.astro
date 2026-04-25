@@ -1,0 +1,320 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// Variable widths matching the Wix gallery: alternate wide landscape with narrow portrait crops
+const galleryImages = [
+  { src: "/images/gallery/02.jpg", alt: "Réception — tables blanches", w: 720 },
+  { src: "/images/gallery/04.jpg", alt: "Couple, golden hour",         w: 360 },
+  { src: "/images/gallery/01.jpg", alt: "Salon avec lustre",            w: 360 },
+  { src: "/images/gallery/08.jpg", alt: "Salle à manger lustres",       w: 720 },
+  { src: "/images/gallery/03.jpg", alt: "Mariée, escalier",             w: 600 },
+  { src: "/images/gallery/06.jpg", alt: "Bouquet rouge",                w: 360 },
+  { src: "/images/gallery/05.jpg", alt: "Manoir + fontaine",            w: 720 },
+  { src: "/images/gallery/07.jpg", alt: "Invitée chapeau blanc",        w: 360 },
+  { src: "/images/gallery/09.jpg", alt: "Couple golden hour",           w: 600 },
+  { src: "/images/gallery/10.jpg", alt: "Voiture jaune",                w: 720 },
+];
+---
+
+<Layout title="ACCUEIL | Aritia Design" transparentHeader={true}>
+  {/* ───────────────────────── 1. HERO ───────────────────────── */}
+  <section class="relative h-screen min-h-[640px] w-full overflow-hidden text-white">
+    <video
+      class="absolute inset-0 w-full h-full object-cover"
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="/images/hero-poster.jpg"
+    >
+      <source src="/videos/hero.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-black/25"></div>
+
+    <div class="relative h-full flex flex-col items-center justify-center text-center px-6">
+      <h1 class="font-display font-light leading-[1.15] text-white text-[2rem] sm:text-[2.6rem] md:text-[3.4rem] tracking-[0.02em]">
+        DIRECTRICE ARTISTIQUE<br />
+        DESIGNER FLORAL
+        <span class="inline-block mx-3 align-middle text-white/80">✦</span>
+        SCÉNOGRAPHE<br />
+        CRÉATRICE <span class="font-italic-serif italic font-light">de</span> PAPETERIE
+      </h1>
+      <p class="mt-12 text-[0.72rem] sm:text-[0.78rem] tracking-[0.32em] uppercase text-white/85">
+        Créatrice d'univers pour mariages &amp;<br class="sm:hidden" />
+        évènements d'exception
+      </p>
+
+      <a
+        href="#intro"
+        aria-label="Découvrir"
+        class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/80 hover:text-white animate-pulse"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M12 5v14M5 12l7 7 7-7" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  {/* ───────────────────────── 2. INTRO ───────────────────────── */}
+  <section id="intro" class="bg-white py-28 md:py-36 px-6">
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="font-display font-light text-[2rem] sm:text-[2.4rem] md:text-[2.8rem] leading-tight tracking-wide">
+        CRÉATRICE D'UNIVERS ÉVÈNEMENTIELS<br />HAUT DE GAMME
+      </h2>
+      <p class="mt-10 text-[0.78rem] sm:text-[0.82rem] tracking-[0.18em] uppercase leading-[2.1] text-[var(--color-ink-soft)]">
+        Aritia Design vous accompagne dans la conception<br />
+        de mariages et événements sur-mesure, raffiné et authentique<br />
+        à Toulouse, en Haute Garonne et ses environs.
+      </p>
+    </div>
+  </section>
+
+  {/* ───────────────────────── 3. PORTFOLIO MARQUEE ───────────────────────── */}
+  <section class="bg-[#1a1a1a] text-white pt-10 md:pt-14 pb-10 md:pb-14 overflow-hidden relative">
+    {/* big PORTFOLIO heading — sits on top of the strip with deliberate overlap */}
+    <h2
+      class="font-display font-normal text-white leading-none tracking-[0.01em]
+             text-[3.5rem] sm:text-[5rem] md:text-[7rem] lg:text-[8.5rem]
+             px-8 lg:px-14 relative z-20 select-none mb-[-2.5rem] md:mb-[-4rem]"
+    >
+      PORTFOLIO
+    </h2>
+
+    <div class="marquee relative">
+      {/* soft edge fade so images dissolve in/out */}
+      <div class="pointer-events-none absolute inset-y-0 left-0 w-24 md:w-40 bg-gradient-to-r from-[#1a1a1a] to-transparent z-10"></div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 w-24 md:w-40 bg-gradient-to-l from-[#1a1a1a] to-transparent z-10"></div>
+
+      <div class="marquee-track gap-4 md:gap-6 items-center">
+        {/* duplicated for seamless loop */}
+        {[...galleryImages, ...galleryImages].map((img, i) => (
+          <a
+            href="/portfolio"
+            class="shrink-0 block h-[320px] md:h-[440px] lg:h-[500px] overflow-hidden bg-neutral-800 group"
+            style={`width: ${img.w}px; max-width: ${img.w}px;`}
+            aria-label={img.alt}
+            tabindex={i < galleryImages.length ? 0 : -1}
+            aria-hidden={i >= galleryImages.length ? "true" : undefined}
+          >
+            <img
+              src={img.src}
+              alt={img.alt}
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </a>
+        ))}
+      </div>
+    </div>
+
+    {/* VOIR GALLERY — bottom-right */}
+    <a
+      href="/portfolio"
+      class="mx-auto max-w-[1500px] px-8 lg:px-14 mt-8 md:mt-10 flex items-center justify-end gap-3 text-[0.72rem] tracking-[0.32em] uppercase hover:opacity-70 transition"
+    >
+      <span class="text-white/80">✦</span>
+      <span>Voir Gallery</span>
+      <span aria-hidden="true" class="ml-1">⟶</span>
+    </a>
+  </section>
+
+  {/* ───────────────────────── 4. MÉTHODE DE TRAVAIL ───────────────────────── */}
+  <section class="bg-white py-28 md:py-36 px-6">
+    <div class="mx-auto max-w-[1200px] grid md:grid-cols-2 gap-14 md:gap-20 items-center">
+      <div class="relative">
+        <div class="aspect-[4/5] bg-cream overflow-hidden">
+          <img
+            src="/images/methode.jpg"
+            alt="Voiture orange ornée de fleurs blanches"
+            class="w-full h-full object-cover"
+            onerror="this.style.background='linear-gradient(135deg,#e8d8c0,#c69d6a)';this.removeAttribute('src');"
+          />
+        </div>
+        <p class="font-script text-[2.2rem] md:text-[2.8rem] leading-[1.1] text-[var(--color-ink)]/80 absolute -bottom-16 right-0 max-w-[18rem] text-right rotate-[-3deg]">
+          Transformez chaque<br />occasion en<br />moment d'exception
+        </p>
+      </div>
+
+      <div class="md:pl-6">
+        <h2 class="font-display font-light text-[2.4rem] md:text-[3rem] leading-[1.1]">
+          MÉTHODE<br />
+          <span class="font-italic-serif italic">de</span> TRAVAIL
+        </h2>
+        <p class="mt-8 text-[0.92rem] leading-[1.9] text-[var(--color-ink-soft)] max-w-md">
+          De la première inspiration au jour J, je vous accompagne avec
+          sensibilité et exigence dans la création d'un univers qui vous
+          ressemble&nbsp;– une approche sur-mesure, pensée pour faire
+          naître l'harmonie, la beauté et l'émotion.
+        </p>
+        <a
+          href="/processus"
+          class="inline-block mt-10 px-10 py-4 border border-[var(--color-ink)] text-[0.72rem] tracking-[0.32em] uppercase hover:bg-[var(--color-ink)] hover:text-white transition"
+        >
+          Découvrir
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* ───────────────────────── 5. MARIAGE / OCCASION SPÉCIALE ───────────────────────── */}
+  <section class="bg-[#1a1a1a] text-white py-28 md:py-36 px-6">
+    <div class="mx-auto max-w-[1200px] grid md:grid-cols-2 gap-14 md:gap-20 items-center">
+      <div class="md:order-1 order-2">
+        <h2 class="font-display font-light text-[2.4rem] md:text-[3rem] leading-[1.1]">
+          MARIAGE<br />
+          <span class="font-italic-serif italic">Occasion Spéciale</span>
+        </h2>
+        <p class="mt-8 text-[0.92rem] leading-[1.9] text-white/80 max-w-md">
+          À travers une approche transversale mêlant design floral,
+          scénographie immersive, papeterie personnalisée et identité
+          visuelle, je conçois à vos côtés un univers esthétique global,
+          où chaque choix incarne avec exigence l'essence de votre
+          histoire&nbsp;– une alchimie subtile entre vos envies et ma
+          vision du beau.
+        </p>
+        <a
+          href="/services"
+          class="inline-block mt-10 px-10 py-4 border border-white text-[0.72rem] tracking-[0.32em] uppercase hover:bg-white hover:text-[var(--color-ink)] transition"
+        >
+          Explorer
+        </a>
+      </div>
+
+      <div class="md:order-2 order-1 aspect-[4/3] overflow-hidden">
+        <img
+          src="/images/mariage.jpg"
+          alt="Salle de réception de mariage avec tables dressées"
+          class="w-full h-full object-cover"
+          onerror="this.style.background='linear-gradient(135deg,#3a3530,#1a1a1a)';this.removeAttribute('src');"
+        />
+      </div>
+    </div>
+  </section>
+
+  {/* ───────────────────────── 6. MOSAÏQUE PHOTOS ───────────────────────── */}
+  <section class="bg-white py-28 md:py-36 px-6">
+    <div class="mx-auto max-w-[1100px] relative h-[540px] md:h-[640px]">
+      <div class="absolute left-[6%] top-[18%] w-[26%] aspect-[3/4] overflow-hidden shadow-sm">
+        <img
+          src="/images/collage-1.jpg"
+          alt="Salon classique avec lustre"
+          class="w-full h-full object-cover"
+          onerror="this.style.background='linear-gradient(135deg,#d8c9b3,#a8896a)';this.removeAttribute('src');"
+        />
+      </div>
+      <div class="absolute left-[28%] top-0 w-[32%] aspect-[3/4] overflow-hidden shadow-sm">
+        <img
+          src="/images/collage-2.jpg"
+          alt="Invitée au chapeau blanc"
+          class="w-full h-full object-cover"
+          onerror="this.style.background='linear-gradient(135deg,#1f2a3a,#0e1828)';this.removeAttribute('src');"
+        />
+      </div>
+      <div class="absolute right-[8%] top-[26%] w-[28%] aspect-[4/3] overflow-hidden shadow-sm">
+        <img
+          src="/images/collage-3.jpg"
+          alt="Domaine de réception avec fontaine"
+          class="w-full h-full object-cover"
+          onerror="this.style.background='linear-gradient(135deg,#6a8d59,#3a5a40)';this.removeAttribute('src');"
+        />
+      </div>
+    </div>
+  </section>
+
+  {/* ───────────────────────── 7. TÉMOIGNAGE ───────────────────────── */}
+  <section class="bg-white pb-28 md:pb-36 px-6">
+    <div class="mx-auto max-w-[1100px] grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+      <div class="aspect-[3/4] overflow-hidden">
+        <img
+          src="/images/testimonial.jpg"
+          alt="Mariée vue d'en haut dans l'escalier"
+          class="w-full h-full object-cover"
+          onerror="this.style.background='linear-gradient(135deg,#cfc1ad,#7a6a5a)';this.removeAttribute('src');"
+        />
+      </div>
+      <figure class="md:pl-8 relative">
+        <span class="font-italic-serif italic text-[5rem] leading-none text-black/15 absolute -left-2 -top-6 select-none">“</span>
+        <blockquote class="font-italic-serif italic text-[1.6rem] md:text-[1.9rem] leading-[1.4] text-[var(--color-ink)]">
+          Merci encore pour ce mariage qui était tout simplement magique&nbsp;!
+          Tu as fait un travail remarquable en moins de 6 mois&nbsp;!
+          Je recommande à 100&nbsp;%&nbsp;!
+        </blockquote>
+        <figcaption class="mt-8 text-[0.72rem] tracking-[0.32em] uppercase text-[var(--color-muted)]">
+          — Mélodie &amp; Thibault
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  {/* ───────────────────────── 8. À PROPOS (fond marbre noir) ───────────────────────── */}
+  <section class="relative text-white overflow-hidden">
+    {/* black marble background */}
+    <div
+      class="absolute inset-0 bg-[#0e0e0e]"
+      style="background-image: url('/images/marble.jpg'); background-size: cover; background-position: center;"
+    ></div>
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <div class="relative mx-auto max-w-[1300px] px-6 lg:px-14 py-28 md:py-36 grid md:grid-cols-2 gap-14 md:gap-20 items-center">
+      {/* photo + script overlay */}
+      <div class="relative">
+        <div class="aspect-[5/4] overflow-hidden bg-neutral-800 shadow-xl">
+          <img
+            src="/images/aritia-portrait.jpg"
+            alt="Aritia, fondatrice d'Aritia Design"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <p class="font-script absolute -bottom-12 md:-bottom-16 left-6 md:left-12 text-[2.4rem] md:text-[3.2rem] leading-[1] text-white/95 select-none rotate-[-4deg]">
+          Allier le beau<br />
+          <span class="ml-10 md:ml-16">à l'essentiel</span>
+        </p>
+      </div>
+
+      {/* texte à droite */}
+      <div class="md:pl-4 mt-16 md:mt-0">
+        <h2 class="font-display font-light text-[2.6rem] md:text-[3.4rem] leading-none tracking-wide">
+          À&nbsp;PROPOS
+        </h2>
+
+        <div class="mt-10 space-y-6 text-[0.95rem] leading-[1.85] text-white/85 max-w-md">
+          <p>
+            Implantée en Haute-Garonne, Aritia Design accompagne une
+            clientèle en quête d'expériences uniques, où l'esthétique
+            et l'émotion occupent une place centrale.
+          </p>
+          <p>
+            Formée au design et passionnée par l'art de sublimer
+            l'instant, je développe un savoir-faire complet alliant
+            minutie, création et mise en scène.
+          </p>
+        </div>
+
+        <a
+          href="/a-propos"
+          class="inline-flex items-center gap-3 mt-12 text-[0.72rem] tracking-[0.32em] uppercase hover:opacity-70 transition"
+        >
+          <span class="text-white/80">✦</span>
+          <span>En savoir plus</span>
+          <span aria-hidden="true">⟶</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* ───────────────────────── 9. CTA "ENSEMBLE…" ───────────────────────── */}
+  <section class="bg-white py-24 md:py-32 px-6 text-center">
+    <h2 class="font-display font-light text-[2rem] sm:text-[2.4rem] md:text-[2.8rem] leading-[1.2]">
+      ENSEMBLE,<br />
+      CRÉONS UNE ATMOSPHÈRE<br />
+      QUI VOUS RESSEMBLE
+    </h2>
+    <a
+      href="/contact"
+      class="inline-block mt-12 px-12 py-4 bg-[var(--color-burgundy)] text-white text-[0.72rem] tracking-[0.32em] uppercase hover:bg-[var(--color-burgundy-dark)] transition"
+    >
+      Laissez un message
+    </a>
+  </section>
+</Layout>
