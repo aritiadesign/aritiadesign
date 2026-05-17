@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
 
 const strip = [
   { src: "/images/portfolio-strip-1.jpg", alt: "Salle à manger éclairée" },
@@ -27,23 +28,12 @@ const projects = [
 ---
 
 <Layout title="PORTFOLIO | Aritia Design" transparentHeader={true}>
-  {/* ───────────────────────── 1. HERO ───────────────────────── */}
-  <section class="relative h-screen min-h-[640px] w-full overflow-hidden text-white">
-    <img
-      src="/images/portfolio-hero.jpg"
-      alt="Domaine de réception avec fontaine"
-      class="absolute inset-0 w-full h-full object-cover"
-    />
-    <div class="absolute inset-0 bg-black/35"></div>
-
-    <div class="relative h-full flex flex-col items-center justify-center text-center px-6">
-      <h1 class="font-script text-white text-[80px] md:text-[150px] leading-none">Portfolio</h1>
-      <p class="mt-8 md:mt-10 text-[15px] tracking-[2.25px] uppercase text-white/85 max-w-2xl">
-        Des univers sur-mesure, raffiné<br />
-        &amp; porteurs d'émotions
-      </p>
-    </div>
-  </section>
+  <PageHero
+    image="/images/portfolio-hero.jpg"
+    imageAlt="Domaine de réception avec fontaine"
+    title="Portfolio"
+    subtitleHtml="Des univers sur-mesure, raffiné<br />&amp; porteurs d'émotions"
+  />
 
   {/* ───────────────────────── 2. ✦ TEMPS FORTS ✦ ───────────────────────── */}
   <section class="bg-white py-14 md:py-20 text-center">

@@ -1,25 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
 ---
 
 <Layout title="CONTACT | Aritia Design" transparentHeader={true}>
-  {/* ───────────────────────── 1. HERO ───────────────────────── */}
-  <section class="relative h-screen min-h-[560px] w-full overflow-hidden text-white">
-    <img
-      src="/images/contact-hero.jpg"
-      alt="Plafond aux poutres"
-      class="absolute inset-0 w-full h-full object-cover"
-    />
-    <div class="absolute inset-0 bg-black/40"></div>
-
-    <div class="relative h-full flex flex-col items-center justify-center text-center px-6">
-      <h1 class="font-script text-white text-[80px] md:text-[150px] leading-none">Contact</h1>
-      <p class="mt-8 md:mt-10 text-[15px] tracking-[2.25px] uppercase text-white/85 max-w-2xl">
-        Vous rêver d'un mariage ou d'un événement<br />
-        qui vous ressemble&nbsp;?
-      </p>
-    </div>
-  </section>
+  <PageHero
+    image="/images/contact-hero.jpg"
+    imageAlt="Plafond aux poutres"
+    title="Contact"
+    subtitleHtml="Vous rêver d'un mariage ou d'un événement<br />qui vous ressemble&nbsp;?"
+  />
 
   {/* ───────────────────────── 2. FORM ───────────────────────── */}
   <section class="bg-white px-6 py-20 md:py-28">

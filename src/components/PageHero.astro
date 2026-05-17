@@ -1,0 +1,71 @@
+---
+interface Props {
+  /** Background image URL */
+  image: string;
+  /** Alt text for the background */
+  imageAlt?: string;
+  /** Script-font main title */
+  title: string;
+  /** Optional uppercase subtitle */
+  subtitle?: string;
+  /** Pass through raw HTML for the subtitle (e.g. with <br />) */
+  subtitleHtml?: string;
+  /** Override the script title font-size on desktop. */
+  titleSizeMd?: string;
+  /** Override the script title font-size on mobile. */
+  titleSizeMobile?: string;
+}
+
+const {
+  image,
+  imageAlt = "",
+  title,
+  subtitle,
+  subtitleHtml,
+  titleSizeMd = "124px",
+  titleSizeMobile = "80px",
+} = Astro.props;
+---
+
+<section
+  class="page-hero-section relative h-screen min-h-[560px] w-full overflow-hidden text-white"
+  style={`background-image: url('${image}');`}
+  aria-label={imageAlt}
+>
+  <div class="absolute inset-0 bg-black/40"></div>
+
+  <div class="page-hero-content relative h-full flex flex-col items-center justify-end text-center px-6">
+    <h1
+      class="font-script text-white leading-none inline-block"
+      style={`font-size: clamp(${titleSizeMobile}, 10vw, ${titleSizeMd}); transform: rotate(-9deg);`}
+    >
+      {title}
+    </h1>
+
+    <span class="page-hero-rule" aria-hidden="true"></span>
+
+    {(subtitleHtml || subtitle) && (
+      <p class="mt-8 md:mt-10 text-[15px] tracking-[2.25px] uppercase text-white/85 max-w-2xl">
+        {subtitleHtml ? <Fragment set:html={subtitleHtml} /> : subtitle}
+      </p>
+    )}
+  </div>
+</section>
+
+<style>
+  .page-hero-section {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .page-hero-content {
+    padding-bottom: 8rem;
+  }
+  .page-hero-rule {
+    display: block;
+    width: 35px;
+    height: 1px;
+    background-color: #fff;
+    margin-top: 4rem;
+  }
+</style>

@@ -1,26 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
 ---
 
 <Layout title="À PROPOS | Aritia Design" transparentHeader={true}>
-  {/* ───────────────────────── 1. HERO ───────────────────────── */}
-  <section class="relative h-screen min-h-[640px] w-full overflow-hidden text-white">
-    <img
-      src="/images/about-hero.jpg"
-      alt="Intérieur d'un lieu d'exception"
-      class="absolute inset-0 w-full h-full object-cover"
-      onerror="this.style.background='linear-gradient(135deg,#2a2520,#1a1612)';this.removeAttribute('src');"
-    />
-    <div class="absolute inset-0 bg-black/40"></div>
-
-    <div class="relative h-full flex flex-col items-center justify-end text-center px-6 pb-[5%]">
-      <h1 class="font-script text-white text-[64px] md:text-[110px] leading-none">À Propos</h1>
-      <p class="mt-10 md:mt-12 text-[15px] tracking-[2.25px] uppercase text-white/85">
-        Atmosphères raffinées, où design graphique,<br />
-        scénographie &amp; art floral se rencontrent
-      </p>
-    </div>
-  </section>
+  <PageHero
+    image="/images/about-hero.jpg"
+    imageAlt="Intérieur d'un lieu d'exception"
+    title="À Propos"
+    subtitleHtml="Atmosphères raffinées, où design graphique,<br />scénographie &amp; art floral se rencontrent"
+  />
 
   {/* ───────────────────────── 2. FONDATRICE / DESIGNER + INTRO ───────────────────────── */}
   <section class="bg-white px-6 py-20 md:py-28">

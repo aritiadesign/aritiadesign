@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
 
 const services = [
   {
@@ -139,27 +140,12 @@ const faqs = [
 ---
 
 <Layout title="SERVICES | Aritia Design" transparentHeader={true}>
-  {/* ───────────────────────── 1. HERO ───────────────────────── */}
-  <section class="relative h-screen min-h-[640px] w-full overflow-hidden text-white">
-    <img
-      src="/images/services-hero-fallback.jpg"
-      alt="Direction artistique"
-      class="absolute inset-0 w-full h-full object-cover"
-    />
-    <div class="absolute inset-0 bg-black/40"></div>
-
-    <div class="relative h-full flex flex-col items-center justify-end text-center px-6 pb-[5%]">
-      <h1 class="font-script text-white text-[72px] md:text-[130px] leading-[1] -tracking-[0.01em]">
-        Services
-        <span class="font-italic-serif italic font-light not-italic md:not-italic text-[0.6em] mx-2 align-middle">&amp;</span>
-        Packages
-      </h1>
-      <p class="mt-8 md:mt-10 text-[15px] tracking-[2.25px] uppercase text-white/85 max-w-2xl">
-        De l'inspiration à la réalisation, chaque étape est pensée<br />
-        pour refléter votre univers
-      </p>
-    </div>
-  </section>
+  <PageHero
+    image="/images/services-hero-fallback.jpg"
+    imageAlt="Direction artistique"
+    title="Services & Packages"
+    subtitleHtml="De l'inspiration à la réalisation, chaque étape est pensée<br />pour refléter votre univers"
+  />
 
   {/* ───────────────────────── 2. UNE DIRECTION ARTISTIQUE ───────────────────────── */}
   <section class="bg-white px-6 py-24 md:py-32 text-center">
