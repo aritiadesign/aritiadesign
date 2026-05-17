@@ -66,6 +66,10 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html, body {
+  overflow-x: clip;
+}
+
 body {
   font-family: var(--font-sans);
   color: var(--color-ink);

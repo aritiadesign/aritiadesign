@@ -66,8 +66,8 @@ const galleryImages = [
     {/* big PORTFOLIO heading — top-left over the strip */}
     <h2
       class="font-display font-normal text-white leading-none tracking-[0.01em]
-             text-[82px]
-             absolute top-[25px] left-[150px] z-20 select-none pointer-events-none"
+             text-[42px] md:text-[82px]
+             absolute top-[25px] left-6 md:left-[150px] z-20 select-none pointer-events-none"
     >
       PORTFOLIO
     </h2>
@@ -120,9 +120,9 @@ const galleryImages = [
   </section>
 
   {/* ───────────────────────── 4. MÉTHODE DE TRAVAIL ───────────────────────── */}
-  <section class="bg-white px-6 py-16 md:pt-[140px] md:pb-[260px]">
+  <section class="bg-white px-6 pt-16 pb-[200px] md:pt-[140px] md:pb-[260px]">
     <div class="mx-auto max-w-[1200px] grid md:grid-cols-2 gap-14 md:gap-20 items-center w-full">
-      <div class="relative">
+      <div class="relative order-2 md:order-1">
         <div class="h-[400px] md:h-[480px] bg-cream overflow-hidden">
           <img
             src="/images/methode.jpg"
@@ -131,13 +131,13 @@ const galleryImages = [
             onerror="this.style.background='linear-gradient(135deg,#e8d8c0,#c69d6a)';this.removeAttribute('src');"
           />
         </div>
-        <p class="font-script text-[50px] leading-[1.1] text-[var(--color-ink)]/80 absolute -right-32 -bottom-[135px] whitespace-nowrap text-center rotate-[-8deg]">
+        <p class="font-script text-[32px] md:text-[50px] leading-[1.1] text-[var(--color-ink)]/80 absolute right-2 md:-right-32 -bottom-[80px] md:-bottom-[135px] whitespace-nowrap text-center rotate-[-8deg]">
           Transformez chaque<br />occasion en<br />moment d'exception
         </p>
       </div>
 
-      <div class="md:pl-6 text-center flex flex-col items-center">
-        <h2 class="font-display font-light text-[60px] leading-[1.1]">
+      <div class="md:pl-6 text-center flex flex-col items-center order-1 md:order-2">
+        <h2 class="font-display font-light text-[44px] md:text-[60px] leading-[1.1]">
           MÉTHODE<br />
           <span class="font-italic-serif italic">de</span> TRAVAIL
         </h2>
@@ -161,7 +161,7 @@ const galleryImages = [
   <section class="bg-[#1a1a1a] text-white py-28 md:py-36 px-6">
     <div class="mx-auto max-w-[1200px] grid md:grid-cols-2 gap-14 md:gap-20 items-center">
       <div class="md:order-1 order-2 text-center flex flex-col items-center">
-        <h2 class="font-display font-light text-[60px] leading-[1.1]">
+        <h2 class="font-display font-light text-[44px] md:text-[60px] leading-[1.1]">
           MARIAGE<br />
           <span class="font-italic-serif italic">Occasion Spéciale</span>
         </h2>
@@ -192,8 +192,8 @@ const galleryImages = [
     </div>
   </section>
 
-  {/* ───────────────────────── 6. MOSAÏQUE PHOTOS ───────────────────────── */}
-  <section class="bg-white py-28 md:py-36 px-6">
+  {/* ───────────────────────── 6. MOSAÏQUE PHOTOS (desktop only) ───────────────────────── */}
+  <section class="hidden md:block bg-white py-28 md:py-36 px-6">
     <div class="mx-auto max-w-[1100px] relative h-[540px] md:h-[640px]">
       <div class="absolute left-[6%] top-[18%] w-[26%] aspect-[3/4] overflow-hidden shadow-sm">
         <img
@@ -274,7 +274,7 @@ const galleryImages = [
 
       {/* texte à droite */}
       <div class="md:pl-4 mt-16 md:mt-0">
-        <h2 class="font-display font-light text-[60px] leading-none tracking-wide">
+        <h2 class="font-display font-light text-[44px] md:text-[60px] leading-none tracking-wide">
           À&nbsp;PROPOS
         </h2>
 
