@@ -1,0 +1,123 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const strip = [
+  { src: "/images/portfolio-strip-1.jpg", alt: "Salle à manger éclairée" },
+  { src: "/images/portfolio-strip-2.jpg", alt: "Domaine de réception" },
+  { src: "/images/portfolio-strip-3.jpg", alt: "Mariée et voiture vintage" },
+  { src: "/images/portfolio-strip-4.jpg", alt: "Salle blanche" },
+];
+
+const projects = [
+  {
+    href: "/portfolio/mt",
+    img: "/images/portfolio-mt.jpg",
+    alt: "Salle voûtée en bois pour M+T",
+    title: "M+T, MARIAGE ÉLÉGANT",
+    italic: "à la Française",
+  },
+  {
+    href: "/portfolio/ef",
+    img: "/images/portfolio-ef.jpg",
+    alt: "Cérémonie outdoor pampas pour E+F",
+    title: "E+F, MARIAGE MINIMALISTE",
+    italic: "aux teintes de Madagascar",
+  },
+];
+---
+
+<Layout title="PORTFOLIO | Aritia Design" transparentHeader={true}>
+  {/* ───────────────────────── 1. HERO ───────────────────────── */}
+  <section class="relative h-screen min-h-[640px] w-full overflow-hidden text-white">
+    <img
+      src="/images/portfolio-hero.jpg"
+      alt="Domaine de réception avec fontaine"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-black/35"></div>
+
+    <div class="relative h-full flex flex-col items-center justify-center text-center px-6">
+      <h1 class="font-script text-white text-[80px] md:text-[150px] leading-none">Portfolio</h1>
+      <p class="mt-8 md:mt-10 text-[15px] tracking-[2.25px] uppercase text-white/85 max-w-2xl">
+        Des univers sur-mesure, raffiné<br />
+        &amp; porteurs d'émotions
+      </p>
+    </div>
+  </section>
+
+  {/* ───────────────────────── 2. ✦ TEMPS FORTS ✦ ───────────────────────── */}
+  <section class="bg-white py-14 md:py-20 text-center">
+    <div class="inline-block px-8 py-3 bg-[#1a1a1a] text-white text-[11px] tracking-[0.32em] uppercase">
+      ✦ Temps forts ✦
+    </div>
+  </section>
+
+  {/* ───────────────────────── 3. STRIP DE 4 PHOTOS ───────────────────────── */}
+  <section class="bg-white px-4 md:px-6 pb-16">
+    <div class="mx-auto max-w-[1400px] grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+      {strip.map((img) => (
+        <div class="aspect-[3/4] overflow-hidden">
+          <img
+            src={img.src}
+            alt={img.alt}
+            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+          />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* ───────────────────────── 4. SAVOIR-FAIRE + PROJETS ───────────────────────── */}
+  <section class="bg-white px-6 py-20 md:py-28">
+    <div class="mx-auto max-w-[1300px] grid md:grid-cols-2 gap-10 md:gap-20 items-center">
+      {/* left: text block centered */}
+      <div class="text-center">
+        <h2 class="font-display text-[36px] md:text-[44px] leading-[1.4] tracking-wide text-[var(--color-ink)]">
+          SAVOIR-FAIRE<br />
+          <span class="font-italic-serif italic font-light">Élégance</span><br />
+          HARMONIE<br />
+          <span class="font-italic-serif italic font-light">Atmosphère</span><br />
+          SUR-MESURE
+        </h2>
+        <p class="mt-10 text-[14px] leading-[1.9] text-[var(--color-ink-soft)] max-w-md mx-auto">
+          Découvrez une sélection de mariages et d'événements
+          soigneusement mis en lumière. Cliquez sur chaque titre pour
+          explorer la galerie complète.
+        </p>
+      </div>
+
+      {/* right: 2 stacked project cards */}
+      <div class="space-y-10">
+        {projects.map((p) => (
+          <a href={p.href} class="block group">
+            <div class="aspect-[4/3] overflow-hidden bg-neutral-200">
+              <img
+                src={p.img}
+                alt={p.alt}
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+            <div class="mt-5 text-center">
+              <p class="text-[12px] tracking-[0.32em] uppercase text-[var(--color-ink)]">{p.title}</p>
+              <p class="mt-1 font-italic-serif italic text-[18px] text-[var(--color-ink-soft)]">{p.italic}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ───────────────────────── 5. CTA DARK ───────────────────────── */}
+  <section class="bg-[#1a1a1a] text-white px-6 py-24 md:py-32 text-center">
+    <h2 class="font-display text-[36px] md:text-[52px] leading-[1.2]">
+      NON, <span class="font-italic-serif italic font-light">VOS RÊVES</span><br />
+      NE SONT PAS TROP GRAND
+    </h2>
+    <a
+      href="/contact"
+      class="inline-block mt-12 px-12 py-4 border border-white text-[0.72rem] tracking-[0.32em] uppercase hover:bg-white hover:text-[var(--color-ink)] transition"
+    >
+      Créer mon univers
+    </a>
+  </section>
+</Layout>

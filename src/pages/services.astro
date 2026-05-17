@@ -1,0 +1,355 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const services = [
+  {
+    kicker: "Direction artistique",
+    title: "DESIGN",
+    titleItalic: "Global",
+    body: `Ici, votre célébration est pensé comme une œuvre complète : De l'identité visuelle à la scénographie, de l'art floral à la papeterie fine, chaque détail est orchestré pour créer un univers cohérent et d'une rare élégance.\n\nEn tant que directrice de création, je garantis l'harmonie absolue entre le décor, les fleurs et l'identité graphique. Cette approche globale vous offre une expérience fluide et une sérénité totale, pour un événement d'exception, rigoureusement à votre image.`,
+    image: "/images/services-design-global.jpg",
+    alt: "Salle de réception aux baies vitrées",
+  },
+  {
+    kicker: "Mise en ambience",
+    title: "DECOR",
+    titleItalic: "Scénographie",
+    body: `Avec cette prestation, nous créons l'univers visuel complet de votre mariage, du moodboard initial à la mise en scène finale. Elle comprend la définition du concept esthétique, la mise en ambiance des espaces et la coordination des prestataires (mobilier, éclairage, accessoires…) pour un rendu tangible, élégant et cohérent.\n\nVous bénéficiez ainsi d'une direction artistique concrète sur le lieu, d'une harmonie visuelle parfaite et d'une prise en charge complète, garantissant un mariage raffiné et maîtrisé jusque dans les moindres détails.`,
+    image: "/images/services-decor.jpg",
+    alt: "Salle voûtée bois avec dressage",
+  },
+  {
+    kicker: "Conception floral",
+    title: "FLORAL",
+    titleItalic: "Design",
+    body: `Nous concevons des compositions florales sur-mesure pour sublimer chaque instant de vos mariages et événements, des pièces délicates aux installations sculpturales d'envergure.\n\nPensée en parfaite harmonie avec votre identité visuelle, chaque création apporte élégance et authenticité pour placer le végétal au cœur de l'expérience émotionnelle de votre réception.\n\nC'est une signature raffinée, jouant sur l'équilibre des couleurs et des textures, pour offrir à votre réception une dimension visuelle inoubliable.`,
+    image: "/images/services-floral.jpg",
+    alt: "Cérémonie outdoor pampas",
+  },
+  {
+    kicker: "Design graphique",
+    title: "PAPETERIE",
+    titleItalic: "",
+    body: `Avec la prestation Papeterie, nous créons l'identité graphique complète de votre mariage, du logo ou monogramme personnalisé aux faire-part, menus, programmes, marque-places, plans de table et signalétique. À partir d'un moodboard et d'une direction artistique définie avec vous, nous déclinons un univers visuel cohérent sur l'ensemble de vos supports, pour une papeterie sur-mesure, raffinée et parfaitement harmonisée avec l'esthétique et l'ambiance de votre mariage.`,
+    image: "/images/services-papeterie.jpg",
+    alt: "Bouquet et menu de mariage",
+  },
+];
+
+const packs = [
+  {
+    title: "L'EXCEPTION",
+    italic: "Design Intégral",
+    label: "PACK SIGNATURE | SUR DEVIS",
+    bullets: [
+      "Création de votre univers et identité graphique",
+      "Confection et agencement de votre décor",
+      "Conceptions florales signature",
+      "Mise en place et accompagnement complet",
+    ],
+    desc: "De la signature esthétique à la création de vos décors, fleurs et papeterie, chaque détail est pensé avec élégance pour donner vie à un événement d'exception. Un accompagnement complet, incluant le choix de votre vaisselle, pour une célébration harmonieuse, parfaitement coordonnée et vécue avec une sérénité totale.",
+    image: "/images/services-design-global.jpg",
+    accent: "burgundy",
+  },
+  {
+    title: "Décor & Identité Visuelle",
+    italic: "",
+    label: "DÉCOR & SCÉNOGRAPHIE + PAPETERIE | SUR DEVIS",
+    bullets: [
+      "Définition de votre style et harmonie colorée",
+      "Aménagement et mise en scène des espaces clés",
+      "Graphisme et supports personnalisés",
+      "Coordination & installation",
+    ],
+    desc: "De la définition de votre ambiance à la conception de votre papeterie, je dessine un univers cohérent qui sublime vos moments forts. Chaque élément graphique et décoratif est imaginé pour refléter votre histoire, tout en assurant une mise en scène technique soignée pour un résultat visuel fort et élégant.",
+    image: "/images/services-pack-decor.jpg",
+    accent: "ink",
+  },
+  {
+    title: "Décor & Mise en Ambiance",
+    italic: "",
+    label: "DÉCOR & SCÉNOGRAPHIE | SUR DEVIS",
+    bullets: [
+      "Étude de style et carnet d'inspiration",
+      "Agencement et sélection du mobilier",
+      "Recherche de prestataires spécialisés",
+      "Gestion de l'installation et du démontage",
+    ],
+    desc: "Une approche dédiée à l'esthétique de vos espaces pour créer un fil conducteur mémorable. À travers une sélection rigoureuse de mobilier et de matières, je conçois l'atmosphère de votre événement et vous guide vers les meilleurs artisans pour transformer votre vision en une réalité harmonieuse et maîtrisée.",
+    image: "/images/services-decor.jpg",
+    accent: "ink",
+  },
+  {
+    title: "L'ART FLORAL",
+    italic: "Design Végétal",
+    label: "CONCEPTION FLORAL | SUR DEVIS",
+    bullets: [
+      "Étude de votre univers floral personnalisé",
+      "Création de vos bouquets et accessoires",
+      "Réalisation de décors monumentaux",
+      "Installation et mise en fleurs le jour J",
+    ],
+    desc: "Une célébration de la nature à travers des compositions florales sculpturales et poétiques. Des bouquets délicats aux installations suspendues, je sélectionne des fleurs d'exception pour habiller vos lieux de réception. Une mise en scène organique et haut de gamme qui insuffle vie et émotion à votre décor.",
+    image: "/images/services-floral.jpg",
+    accent: "ink",
+  },
+  {
+    title: "PAPETERIE FINE",
+    italic: "Identité Visuelle",
+    label: "PAPETERIE | SUR DEVIS",
+    bullets: [
+      "Conception de votre logo et monogramme",
+      "Design de vos faire-part et annonces",
+      "Création des supports de table et signalétique",
+      "Conseil en matériaux et finitions d'art",
+    ],
+    desc: "Une identité graphique sur-mesure pour offrir à vos invités une immersion tactile dès les premiers instants. Du design de vos invitations aux détails de votre table, chaque support est travaillé avec des papiers fins et des finitions artisanales, créant une signature visuelle élégante, cohérente et inoubliable.",
+    image: "/images/services-papeterie.jpg",
+    accent: "ink",
+  },
+];
+
+const faqs = [
+  {
+    n: "01.",
+    q: "COMMENT SE DÉROULE L'ACCOMPAGNEMENT DU DÉBUT À LA FIN DE NOTRE MARIAGE OU ÉVÈNEMENT ?",
+    a: "Chaque projet commence par une rencontre afin de découvrir votre histoire, vos envies et l'univers que vous souhaitez donner à votre mariage. Je conçois ensuite une direction artistique complète : moodboards, palettes de couleurs, choix des matières, scénographie et identité graphique. À chaque étape, vous êtes guidés avec des propositions visuelles et concrètes. Le jour J, tout est pensé en amont pour que la mise en scène se déploie harmonieusement, vous permettant de profiter pleinement de chaque instant.",
+  },
+  {
+    n: "02.",
+    q: "QUELLE EST LA DIFFÉRENCE ENTRE VOS PRESTATIONS ET CELLES D'UN WEDDING PLANNER ?",
+    a: "Mon rôle se concentre sur la création artistique et esthétique de votre mariage : univers visuel, ambiance, scénographie, créations florales et papeterie. J'imagine et façonne une identité cohérente qui se décline dans chaque détail. Le wedding planner, quant à lui, coordonne l'organisation logistique (planning, budget, gestion des prestataires). Ces deux métiers sont complémentaires : l'un assure la fluidité organisationnelle, l'autre sublime l'expérience visuelle et sensorielle.",
+  },
+  {
+    n: "03.",
+    q: "QUELS SONT VOS TARIFS ET COMMENT FONCTIONNENT VOS PACKAGES ET FORMULES ?",
+    a: "Chaque mariage est unique et mes prestations sont conçues sur-mesure. J'ai toutefois créé des packages pour offrir un cadre clair : wedding design complet — MOMENT D'EXCEPTION, décor & scénographie + papeterie — ÉCLAT RAFFINÉ, ou création florale — SIGNATURE FLORAL et une formule à la carte. Selon vos besoins, elles peuvent être modifiées ou enrichies d'options (papeterie, signalétique, projets sur-mesure). Les tarifs dépendent de l'ampleur du projet et sont présentés en toute transparence après un premier échange, afin d'adapter ma proposition à votre vision et à votre budget.",
+  },
+  {
+    n: "04.",
+    q: "TRAVAILLEZ-VOUS UNIQUEMENT EN HAUTE-GARONNE OU VOUS DÉPLACEZ-VOUS AILLEURS ?",
+    a: "Basée en Haute-Garonne, je travaille principalement autour de Toulouse et ses environs, mais je peux me déplacer dans d'autres régions, voire à l'étranger, selon les projets.",
+  },
+  {
+    n: "05.",
+    q: "À PARTIR DE QUAND FAUT-IL VOUS CONTACTER POUR PRÉPARER UN MARIAGE ?",
+    a: "Idéalement, entre 8 et 12 mois avant la date du mariage afin d'avoir le temps de définir le concept, de sélectionner les prestataires et d'organiser chaque détail. Néanmoins, selon mes disponibilités, je peux m'adapter à des délais plus courts.",
+  },
+];
+---
+
+<Layout title="SERVICES | Aritia Design" transparentHeader={true}>
+  {/* ───────────────────────── 1. HERO ───────────────────────── */}
+  <section class="relative h-screen min-h-[640px] w-full overflow-hidden text-white">
+    <img
+      src="/images/services-hero-fallback.jpg"
+      alt="Direction artistique"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <div class="relative h-full flex flex-col items-center justify-end text-center px-6 pb-[5%]">
+      <h1 class="font-script text-white text-[72px] md:text-[130px] leading-[1] -tracking-[0.01em]">
+        Services
+        <span class="font-italic-serif italic font-light not-italic md:not-italic text-[0.6em] mx-2 align-middle">&amp;</span>
+        Packages
+      </h1>
+      <p class="mt-8 md:mt-10 text-[15px] tracking-[2.25px] uppercase text-white/85 max-w-2xl">
+        De l'inspiration à la réalisation, chaque étape est pensée<br />
+        pour refléter votre univers
+      </p>
+    </div>
+  </section>
+
+  {/* ───────────────────────── 2. UNE DIRECTION ARTISTIQUE ───────────────────────── */}
+  <section class="bg-white px-6 py-24 md:py-32 text-center">
+    <h2 class="font-display font-normal text-[28px] md:text-[36px] tracking-[0.06em] leading-[1.4] text-[var(--color-ink)]">
+      UNE DIRECTION ARTISTIQUE<br />
+      POUR DONNER VIE À VOS ÉMOTIONS
+    </h2>
+  </section>
+
+  {/* ───────────────────────── 3. NOTRE APPROCHE (intro) ───────────────────────── */}
+  <section class="bg-white px-6 pb-20 md:pb-28">
+    <div class="mx-auto max-w-[1100px] grid md:grid-cols-2 gap-12 items-start">
+      <div>
+        <h3 class="font-display text-[44px] md:text-[60px] leading-none tracking-wide">
+          NOTRE<br />
+          <span class="font-italic-serif italic">Approche</span>
+        </h3>
+      </div>
+      <div class="max-w-md text-[16px] leading-[1.9] text-[var(--color-ink-soft)]">
+        <p>
+          Sublimer l'instant par le détail. De la papeterie sur mesure
+          à la scénographie florale, je conçois votre événement comme
+          une œuvre globale. Chez Aritia Design, nous transcendons la
+          simple décoration pour créer des atmosphères immersives et
+          raffinées, où l'esthétique rencontre l'émotion pour marquer
+          durablement les esprits.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* ───────────────────────── 4. IMAGE BREAK + KEYWORDS ───────────────────────── */}
+  <section class="relative">
+    <div class="aspect-[16/7] md:aspect-[16/5] overflow-hidden">
+      <img src="/images/services-intro.jpg" alt="Détails de table" class="w-full h-full object-cover" />
+    </div>
+  </section>
+
+  {/* ───────────────────────── 5. KEYWORDS MARQUEE ───────────────────────── */}
+  <section class="bg-[#1a1a1a] text-white overflow-hidden py-7">
+    <div class="marquee">
+      <div class="marquee-track gap-12 text-[20px] md:text-[28px] tracking-[0.18em] uppercase font-display font-light">
+        {Array(6).fill(0).flatMap(() => [
+          <span class="inline-flex items-center gap-12 shrink-0">
+            <span>✦ DESIGN GLOBAL</span>
+            <span>✦ DÉCOR &amp; SCÉNOGRAPHIE</span>
+            <span>✦ PAPETERIE</span>
+            <span>✦ FLORAL DESIGN</span>
+          </span>
+        ])}
+      </div>
+    </div>
+  </section>
+
+  {/* ───────────────────────── 6. NOTRE APPROCHE (detail) ───────────────────────── */}
+  <section class="bg-white px-6 py-24 md:py-32">
+    <div class="mx-auto max-w-[900px] text-center">
+      <h3 class="font-display text-[36px] md:text-[48px] leading-none tracking-wide">
+        NOTRE <span class="font-italic-serif italic">approche</span>
+      </h3>
+      <p class="mt-10 text-[16px] leading-[1.9] text-[var(--color-ink-soft)] max-w-xl mx-auto">
+        Aritia Design crée pour vous un univers raffiné et harmonieux à
+        travers la scénographie, la décoration, la conception florale
+        et la papeterie sur-mesure. Chaque détail est pensé pour offrir
+        une expérience esthétique et émotionnelle inoubliable.
+      </p>
+    </div>
+  </section>
+
+  {/* ───────────────────────── 7. SERVICE CARDS ───────────────────────── */}
+  <section class="bg-white px-6 pb-24 md:pb-32 space-y-10 md:space-y-16">
+    {services.map((s, i) => {
+      const imageLeft = i % 2 === 0;
+      return (
+        <div class="mx-auto max-w-[1300px] grid md:grid-cols-[1.1fr_1fr] gap-0 items-stretch">
+          <div class:list={["aspect-[4/3] overflow-hidden", imageLeft ? "md:order-1 order-1" : "md:order-2 order-1"]}>
+            <img src={s.image} alt={s.alt} class="w-full h-full object-cover" />
+          </div>
+          <div
+            class:list={[
+              "bg-[#1a1a1a] text-white p-10 md:p-14 flex flex-col justify-center",
+              imageLeft ? "md:order-2 order-2" : "md:order-1 order-2",
+            ]}
+          >
+            <p class="text-[12px] tracking-[0.32em] uppercase text-white/65 font-italic-serif italic">{s.kicker}</p>
+            <h3 class="mt-3 font-display text-[32px] md:text-[44px] leading-[1.05] tracking-wide">
+              {s.title}
+              {s.titleItalic && <><br /><span class="font-italic-serif italic">{s.titleItalic}</span></>}
+            </h3>
+            <p class="mt-6 text-[14px] leading-[1.9] text-white/85 whitespace-pre-line max-w-md">{s.body}</p>
+            <a
+              href="/contact"
+              class="inline-flex items-center gap-3 mt-8 text-[13px] tracking-[0.32em] uppercase hover:opacity-70 transition self-start"
+            >
+              <span class="text-white/70">✦</span>
+              <span>Prendre rendez-vous</span>
+            </a>
+          </div>
+        </div>
+      );
+    })}
+  </section>
+
+  {/* ───────────────────────── 8. PACKS & FORMULES ───────────────────────── */}
+  <section class="bg-white px-6 pb-16 text-center">
+    <p class="text-[12px] tracking-[0.32em] uppercase text-[var(--color-muted)]">✦ PACKS &amp; FORMULES ✦</p>
+    <h2 class="mt-8 font-display font-light text-[36px] md:text-[56px] leading-[1.2] text-[var(--color-ink)]">
+      L'<span class="font-italic-serif italic">ÉLÉGANCE</span>
+      <span class="font-italic-serif italic"> sur-mesure</span><br />
+      <span class="font-italic-serif italic">à votre</span> IMAGE
+    </h2>
+    <p class="mt-8 text-[14px] leading-[1.9] text-[var(--color-ink-soft)] max-w-xl mx-auto">
+      Chaque projet est unique, c'est pourquoi mes prestations
+      s'articulent autour de packages sur-mesure et de formules
+      personnalisables.
+    </p>
+  </section>
+
+  {/* ───────────────────────── 9. PACK CARDS ───────────────────────── */}
+  <section class="bg-white px-6 pb-24 md:pb-32 space-y-8">
+    {packs.map((p) => (
+      <div class="mx-auto max-w-[1300px] grid md:grid-cols-[1.1fr_1fr] gap-0 items-stretch">
+        <div class="aspect-[4/3] md:aspect-auto overflow-hidden">
+          <img src={p.image} alt={p.title} class="w-full h-full object-cover" />
+        </div>
+        <div
+          class:list={[
+            "p-10 md:p-14 flex flex-col justify-center",
+            p.accent === "burgundy" ? "bg-[var(--color-burgundy)] text-white" : "bg-[#1a1a1a] text-white",
+          ]}
+        >
+          <h3 class="font-display text-[28px] md:text-[40px] leading-[1.1] tracking-wide">
+            {p.title}
+            {p.italic && <><br /><span class="font-italic-serif italic font-light">{p.italic}</span></>}
+          </h3>
+          <p class="mt-5 text-[11px] tracking-[0.32em] uppercase text-white/65">{p.label}</p>
+          <p class="mt-6 text-[12px] tracking-[0.28em] uppercase text-white/85 font-italic-serif italic">Compris dans l'expérience</p>
+          <ul class="mt-3 space-y-1 text-[14px] text-white/85 list-disc pl-5">
+            {p.bullets.map((b) => <li>{b}</li>)}
+          </ul>
+          <p class="mt-6 text-[13px] leading-[1.8] text-white/80 max-w-md">{p.desc}</p>
+        </div>
+      </div>
+    ))}
+  </section>
+
+  {/* ───────────────────────── 10. UN MOMENT D'EXCEPTION ───────────────────────── */}
+  <section class="bg-white px-6 py-20 md:py-28 text-center">
+    <h2 class="font-display text-[36px] md:text-[52px] leading-[1.2]">
+      UN MOMENT D'EXCEPTION&nbsp;!<br />
+      <span class="font-italic-serif italic text-[0.7em]">décor, mise en ambiance, papeterie, floral</span>
+    </h2>
+  </section>
+
+  {/* ───────────────────────── 11. S'INSPIRER CTA ───────────────────────── */}
+  <section class="bg-[#1a1a1a] text-white px-6 py-24 md:py-32 text-center">
+    <p class="text-[12px] tracking-[0.32em] uppercase text-white/70">✦ S'INSPIRER</p>
+    <h2 class="mt-8 font-display text-[36px] md:text-[52px] leading-[1.2]">
+      VOTRE UNIVERS, VOTRE HISTOIRE,<br />
+      <span class="font-italic-serif italic">une création unique</span>
+    </h2>
+    <p class="mt-8 text-[18px] tracking-[0.2em] uppercase">
+      Ensemble, donnons lui vie
+    </p>
+    <a
+      href="/contact"
+      class="inline-block mt-12 px-12 py-4 bg-[var(--color-burgundy)] text-white text-[0.72rem] tracking-[0.32em] uppercase hover:bg-[var(--color-burgundy-dark)] transition"
+    >
+      Me contacter
+    </a>
+  </section>
+
+  {/* ───────────────────────── 12. FAQ ───────────────────────── */}
+  <section class="bg-white px-6 py-24 md:py-32">
+    <h2 class="text-center font-display text-[28px] md:text-[36px] tracking-[0.28em] uppercase text-[var(--color-ink)] mb-16">
+      Questions Fréquentes
+    </h2>
+    <div class="mx-auto max-w-[900px] divide-y divide-black/10">
+      {faqs.map((f) => (
+        <details class="group py-6">
+          <summary class="cursor-pointer list-none flex items-start gap-6">
+            <span class="font-display text-[20px] md:text-[26px] text-[var(--color-ink-soft)] shrink-0">{f.n}</span>
+            <span class="flex-1 text-[12px] md:text-[14px] tracking-[0.22em] uppercase leading-[1.6] text-[var(--color-ink)]">
+              {f.q}
+            </span>
+            <span class="shrink-0 mt-1 transition-transform group-open:rotate-45 text-[24px] text-[var(--color-ink-soft)] leading-none">+</span>
+          </summary>
+          <p class="mt-4 pl-[3.5rem] text-[14px] leading-[1.9] text-[var(--color-ink-soft)]">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+</Layout>
