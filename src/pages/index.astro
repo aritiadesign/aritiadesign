@@ -120,10 +120,10 @@ const galleryImages = [
   </section>
 
   {/* ───────────────────────── 4. MÉTHODE DE TRAVAIL ───────────────────────── */}
-  <section class="bg-white py-28 md:py-36 px-6">
-    <div class="mx-auto max-w-[1200px] grid md:grid-cols-2 gap-14 md:gap-20 items-center">
+  <section class="bg-white px-6 py-16 md:pt-[140px] md:pb-[260px]">
+    <div class="mx-auto max-w-[1200px] grid md:grid-cols-2 gap-14 md:gap-20 items-center w-full">
       <div class="relative">
-        <div class="aspect-[4/5] bg-cream overflow-hidden">
+        <div class="h-[400px] md:h-[480px] bg-cream overflow-hidden">
           <img
             src="/images/methode.jpg"
             alt="Voiture orange ornée de fleurs blanches"
@@ -131,17 +131,17 @@ const galleryImages = [
             onerror="this.style.background='linear-gradient(135deg,#e8d8c0,#c69d6a)';this.removeAttribute('src');"
           />
         </div>
-        <p class="font-script text-[2.2rem] md:text-[2.8rem] leading-[1.1] text-[var(--color-ink)]/80 absolute -bottom-16 right-0 max-w-[18rem] text-right rotate-[-3deg]">
+        <p class="font-script text-[50px] leading-[1.1] text-[var(--color-ink)]/80 absolute -right-32 -bottom-[135px] whitespace-nowrap text-center rotate-[-8deg]">
           Transformez chaque<br />occasion en<br />moment d'exception
         </p>
       </div>
 
-      <div class="md:pl-6">
-        <h2 class="font-display font-light text-[2.4rem] md:text-[3rem] leading-[1.1]">
+      <div class="md:pl-6 text-center flex flex-col items-center">
+        <h2 class="font-display font-light text-[60px] leading-[1.1]">
           MÉTHODE<br />
           <span class="font-italic-serif italic">de</span> TRAVAIL
         </h2>
-        <p class="mt-8 text-[0.92rem] leading-[1.9] text-[var(--color-ink-soft)] max-w-md">
+        <p class="mt-8 text-[16px] leading-[1.9] text-[var(--color-ink-soft)] max-w-md">
           De la première inspiration au jour J, je vous accompagne avec
           sensibilité et exigence dans la création d'un univers qui vous
           ressemble&nbsp;– une approche sur-mesure, pensée pour faire
@@ -160,12 +160,12 @@ const galleryImages = [
   {/* ───────────────────────── 5. MARIAGE / OCCASION SPÉCIALE ───────────────────────── */}
   <section class="bg-[#1a1a1a] text-white py-28 md:py-36 px-6">
     <div class="mx-auto max-w-[1200px] grid md:grid-cols-2 gap-14 md:gap-20 items-center">
-      <div class="md:order-1 order-2">
-        <h2 class="font-display font-light text-[2.4rem] md:text-[3rem] leading-[1.1]">
+      <div class="md:order-1 order-2 text-center flex flex-col items-center">
+        <h2 class="font-display font-light text-[60px] leading-[1.1]">
           MARIAGE<br />
           <span class="font-italic-serif italic">Occasion Spéciale</span>
         </h2>
-        <p class="mt-8 text-[0.92rem] leading-[1.9] text-white/80 max-w-md">
+        <p class="mt-8 text-[16px] leading-[1.9] text-white/80 max-w-md">
           À travers une approche transversale mêlant design floral,
           scénographie immersive, papeterie personnalisée et identité
           visuelle, je conçois à vos côtés un univers esthétique global,
@@ -274,11 +274,11 @@ const galleryImages = [
 
       {/* texte à droite */}
       <div class="md:pl-4 mt-16 md:mt-0">
-        <h2 class="font-display font-light text-[2.6rem] md:text-[3.4rem] leading-none tracking-wide">
+        <h2 class="font-display font-light text-[60px] leading-none tracking-wide">
           À&nbsp;PROPOS
         </h2>
 
-        <div class="mt-10 space-y-6 text-[0.95rem] leading-[1.85] text-white/85 max-w-md">
+        <div class="mt-10 space-y-6 text-[16px] leading-[1.85] text-white/85 max-w-md">
           <p>
             Implantée en Haute-Garonne, Aritia Design accompagne une
             clientèle en quête d'expériences uniques, où l'esthétique
@@ -293,11 +293,18 @@ const galleryImages = [
 
         <a
           href="/a-propos"
-          class="inline-flex items-center gap-3 mt-12 text-[0.72rem] tracking-[0.32em] uppercase hover:opacity-70 transition"
+          class="inline-flex items-center gap-3 mt-12 text-[18px] leading-none tracking-[0.2em] uppercase hover:opacity-70 transition"
         >
-          <span class="text-white/80">✦</span>
-          <span>En savoir plus</span>
-          <span aria-hidden="true">⟶</span>
+          <span class="text-white/80 inline-flex items-center leading-none">✦</span>
+          <span class="leading-none">En savoir plus</span>
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 200 200"
+            fill="currentColor"
+            class="ml-1 h-[37px] w-[37px] shrink-0 -rotate-90"
+          >
+            <path d="m144.401 135.073-.094-3.243c-.484.013-12.002.403-23.648 6.459a47.344 47.344 0 0 0-8.023 5.242c-3.719 3.024-9.343.355-9.343-4.393V20h-6.592v119.089c0 4.748-5.626 7.417-9.344 4.392a46.94 46.94 0 0 0-8.029-5.242c-11.649-6.04-23.17-6.397-23.654-6.408l-.174 6.486c.106.003 10.653.362 20.952 5.765 13.434 7.05 20.246 19.135 20.245 35.919h6.595c-.001-16.732 6.812-28.801 20.25-35.872 10.301-5.42 20.852-5.809 20.957-5.812l-.098-3.244z"/>
+          </svg>
         </a>
       </div>
     </div>
