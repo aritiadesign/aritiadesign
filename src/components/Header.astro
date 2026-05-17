@@ -14,6 +14,10 @@ const links = [
   { href: "/boutique", label: "BOUTIQUE" },
   { href: "/contact", label: "CONTACT" },
 ];
+
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === "/" ? currentPath === "/" : currentPath.startsWith(href);
 ---
 
 <header
@@ -23,20 +27,22 @@ const links = [
   ]}
   data-site-header
 >
-  <div class="mx-auto max-w-[1500px] px-8 lg:px-14 h-20 flex items-center justify-between">
+  <div class="mx-auto max-w-[1500px] px-6 lg:px-14 h-20 flex items-center justify-between">
     <a href="/" class="flex items-center group" aria-label="Aritia Design — Accueil">
-      <Logo class="h-12 w-auto" />
+      <Logo class="h-9 md:h-10 w-auto" />
     </a>
 
     <nav aria-label="Principal" class="hidden md:block">
-      <ul class="flex items-center gap-9 text-[0.72rem] tracking-[0.22em] uppercase">
+      <ul class="flex items-center gap-8 lg:gap-10 text-[0.72rem] tracking-[0.28em] uppercase font-normal">
         {links.map((l) => (
           <li>
             <a
               href={l.href}
-              class="hover:opacity-70 transition-opacity duration-200"
+              class="relative py-1 block nav-link"
+              data-active={isActive(l.href)}
             >
               {l.label}
+              <span class="understrike" aria-hidden="true"></span>
             </a>
           </li>
         ))}
@@ -47,17 +53,53 @@ const links = [
       type="button"
       class="md:hidden p-2 -mr-2"
       aria-label="Ouvrir le menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
       data-mobile-toggle
     >
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M3 6h18M3 12h18M3 18h18" />
+      <svg class="burger" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+        <path d="M3 7h18M3 12h18M3 17h18" />
       </svg>
     </button>
   </div>
 </header>
 
+{/* Mobile drawer — full-screen overlay */}
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-[60] bg-[#1a1a1a] text-white translate-x-full transition-transform duration-300 ease-out md:hidden"
+  data-mobile-menu
+  aria-hidden="true"
+>
+  <div class="flex items-center justify-between h-20 px-6">
+    <span class="font-display tracking-[0.28em] text-[0.85rem] uppercase">Menu</span>
+    <button
+      type="button"
+      class="p-2 -mr-2"
+      aria-label="Fermer le menu"
+      data-mobile-close
+    >
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+        <path d="M6 6l12 12M18 6L6 18" />
+      </svg>
+    </button>
+  </div>
+
+  <nav aria-label="Mobile" class="flex flex-col items-center justify-center min-h-[calc(100vh-5rem)] gap-8 pb-20">
+    {links.map((l) => (
+      <a
+        href={l.href}
+        class="font-display text-[1.7rem] tracking-[0.06em] uppercase hover:opacity-70 transition"
+        data-active={isActive(l.href)}
+      >
+        {l.label}
+      </a>
+    ))}
+  </nav>
+</div>
+
 <script>
-  // Make the header switch from transparent to solid once the user scrolls past the hero.
+  // Transparent → solid header on scroll (only when the page opted into transparentHeader)
   const header = document.querySelector<HTMLElement>("[data-site-header]");
   if (header) {
     const startsTransparent = header.classList.contains("bg-transparent");
@@ -76,4 +118,52 @@ const links = [
       onScroll();
     }
   }
+
+  // Mobile drawer open/close
+  const toggle = document.querySelector<HTMLButtonElement>("[data-mobile-toggle]");
+  const closeBtn = document.querySelector<HTMLButtonElement>("[data-mobile-close]");
+  const menu = document.querySelector<HTMLElement>("[data-mobile-menu]");
+
+  const setOpen = (open: boolean) => {
+    if (!menu || !toggle) return;
+    menu.classList.toggle("translate-x-full", !open);
+    menu.setAttribute("aria-hidden", String(!open));
+    toggle.setAttribute("aria-expanded", String(open));
+    document.documentElement.style.overflow = open ? "hidden" : "";
+  };
+
+  toggle?.addEventListener("click", () => setOpen(true));
+  closeBtn?.addEventListener("click", () => setOpen(false));
+
+  // Close drawer on Escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setOpen(false);
+  });
+
+  // Close drawer when a nav link is clicked (so internal navigation feels snappy)
+  menu?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
 </script>
+
+<style>
+  .nav-link {
+    display: inline-block;
+  }
+
+  .understrike {
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 1px;
+    width: 100%;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  .nav-link[data-active="true"] .understrike,
+  .nav-link:hover .understrike {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+</style>
