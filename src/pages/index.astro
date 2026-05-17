@@ -62,17 +62,17 @@ const galleryImages = [
   </section>
 
   {/* ───────────────────────── 3. PORTFOLIO MARQUEE ───────────────────────── */}
-  <section class="bg-[#1a1a1a] text-white pt-10 md:pt-14 pb-10 md:pb-14 overflow-hidden relative">
-    {/* big PORTFOLIO heading — sits on top of the strip with deliberate overlap */}
+  <section class="bg-[#1a1a1a] text-white overflow-hidden relative pt-[60px] pb-[60px] md:pt-[86px] md:pb-[86px]">
+    {/* big PORTFOLIO heading — top-left over the strip */}
     <h2
       class="font-display font-normal text-white leading-none tracking-[0.01em]
-             text-[3.5rem] sm:text-[5rem] md:text-[7rem] lg:text-[8.5rem]
-             px-8 lg:px-14 relative z-20 select-none mb-[-2.5rem] md:mb-[-4rem]"
+             text-[82px]
+             absolute top-[25px] left-[150px] z-20 select-none pointer-events-none"
     >
       PORTFOLIO
     </h2>
 
-    <div class="marquee relative">
+    <div class="marquee relative w-full">
       {/* soft edge fade so images dissolve in/out */}
       <div class="pointer-events-none absolute inset-y-0 left-0 w-24 md:w-40 bg-gradient-to-r from-[#1a1a1a] to-transparent z-10"></div>
       <div class="pointer-events-none absolute inset-y-0 right-0 w-24 md:w-40 bg-gradient-to-l from-[#1a1a1a] to-transparent z-10"></div>
@@ -99,15 +99,24 @@ const galleryImages = [
       </div>
     </div>
 
-    {/* VOIR GALLERY — bottom-right */}
-    <a
-      href="/portfolio"
-      class="mx-auto max-w-[1500px] px-8 lg:px-14 mt-8 md:mt-10 flex items-center justify-end gap-3 text-[0.72rem] tracking-[0.32em] uppercase hover:opacity-70 transition"
-    >
-      <span class="text-white/80">✦</span>
-      <span>Voir Gallery</span>
-      <span aria-hidden="true" class="ml-1">⟶</span>
-    </a>
+    {/* VOIR GALLERY — vertically centered in the bottom 76px gap */}
+    <div class="absolute left-0 right-0 bottom-0 h-[60px] md:h-[86px] flex items-center justify-end px-8 lg:px-14">
+      <a
+        href="/portfolio"
+        class="flex items-center gap-3 text-[18px] leading-none tracking-[0.2em] uppercase hover:opacity-70 transition"
+      >
+        <span class="text-white/80 inline-flex items-center leading-none">✦</span>
+        <span class="leading-none">Voir Gallery</span>
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 200 200"
+          fill="currentColor"
+          class="ml-1 h-[37px] w-[37px] shrink-0 -rotate-90"
+        >
+          <path d="m144.401 135.073-.094-3.243c-.484.013-12.002.403-23.648 6.459a47.344 47.344 0 0 0-8.023 5.242c-3.719 3.024-9.343.355-9.343-4.393V20h-6.592v119.089c0 4.748-5.626 7.417-9.344 4.392a46.94 46.94 0 0 0-8.029-5.242c-11.649-6.04-23.17-6.397-23.654-6.408l-.174 6.486c.106.003 10.653.362 20.952 5.765 13.434 7.05 20.246 19.135 20.245 35.919h6.595c-.001-16.732 6.812-28.801 20.25-35.872 10.301-5.42 20.852-5.809 20.957-5.812l-.098-3.244z"/>
+        </svg>
+      </a>
+    </div>
   </section>
 
   {/* ───────────────────────── 4. MÉTHODE DE TRAVAIL ───────────────────────── */}
