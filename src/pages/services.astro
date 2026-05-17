@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import PageHero from "../components/PageHero.astro";
 import SparkLink from "../components/SparkLink.astro";
 import MediaCard from "../components/MediaCard.astro";
+import PackCard from "../components/PackCard.astro";
 
 const services = [
   {
@@ -55,7 +56,7 @@ const packs = [
       "Mise en place et accompagnement complet",
     ],
     desc: "De la signature esthétique à la création de vos décors, fleurs et papeterie, chaque détail est pensé avec élégance pour donner vie à un événement d'exception. Un accompagnement complet, incluant le choix de votre vaisselle, pour une célébration harmonieuse, parfaitement coordonnée et vécue avec une sérénité totale.",
-    image: "/images/services-design-global.jpg",
+    image: "/images/services-pack-exception.jpg",
     accent: "burgundy",
   },
   {
@@ -83,7 +84,7 @@ const packs = [
       "Gestion de l'installation et du démontage",
     ],
     desc: "Une approche dédiée à l'esthétique de vos espaces pour créer un fil conducteur mémorable. À travers une sélection rigoureuse de mobilier et de matières, je conçois l'atmosphère de votre événement et vous guide vers les meilleurs artisans pour transformer votre vision en une réalité harmonieuse et maîtrisée.",
-    image: "/images/services-decor.jpg",
+    image: "/images/services-pack-mise.jpg",
     accent: "ink",
   },
   {
@@ -97,7 +98,7 @@ const packs = [
       "Installation et mise en fleurs le jour J",
     ],
     desc: "Une célébration de la nature à travers des compositions florales sculpturales et poétiques. Des bouquets délicats aux installations suspendues, je sélectionne des fleurs d'exception pour habiller vos lieux de réception. Une mise en scène organique et haut de gamme qui insuffle vie et émotion à votre décor.",
-    image: "/images/services-floral.jpg",
+    image: "/images/services-pack-floral.png",
     accent: "ink",
   },
   {
@@ -183,46 +184,9 @@ const faqs = [
     </div>
   </section>
 
-  {/* ───────────────────────── 4. IMAGE BREAK + KEYWORDS ───────────────────────── */}
-  <section class="relative">
-    <div class="aspect-[16/7] md:aspect-[16/5] overflow-hidden">
-      <img src="/images/services-intro.jpg" alt="Détails de table" class="w-full h-full object-cover" />
-    </div>
-  </section>
-
-  {/* ───────────────────────── 5. KEYWORDS MARQUEE ───────────────────────── */}
-  <section class="bg-[#1a1a1a] text-white overflow-hidden py-7">
-    <div class="marquee">
-      <div class="marquee-track gap-12 text-[20px] md:text-[28px] tracking-[0.18em] uppercase font-normal">
-        {Array(6).fill(0).flatMap(() => [
-          <span class="inline-flex items-center gap-12 shrink-0">
-            {services.map((s) => (
-              <span>✦ {s.title}{s.titleItalic ? ` ${s.titleItalic.toUpperCase()}` : ""}</span>
-            ))}
-          </span>
-        ])}
-      </div>
-    </div>
-  </section>
-
-  {/* ───────────────────────── 6. NOTRE APPROCHE (detail) ───────────────────────── */}
-  <section class="bg-white px-6 py-24 md:py-32">
-    <div class="mx-auto max-w-[900px] text-center">
-      <h3 class="font-display text-[36px] md:text-[48px] leading-none tracking-wide">
-        NOTRE <span class="font-italic-serif italic">approche</span>
-      </h3>
-      <p class="mt-10 text-[16px] leading-[1.9] text-[var(--color-ink-soft)] max-w-xl mx-auto">
-        Aritia Design crée pour vous un univers raffiné et harmonieux à
-        travers la scénographie, la décoration, la conception florale
-        et la papeterie sur-mesure. Chaque détail est pensé pour offrir
-        une expérience esthétique et émotionnelle inoubliable.
-      </p>
-    </div>
-  </section>
-
   {/* ───────────────────────── 7. SERVICES TABS ───────────────────────── */}
-  <section class="bg-white pt-10 md:pt-16">
-    <div class="mx-auto max-w-[1300px] px-6">
+  <section class="bg-white pt-10 md:pt-16 pb-32 md:pb-48">
+    <div class="mx-auto w-[80%] max-w-[1300px] px-6">
       {/* Tab bar — folder-style tabs, width fits content */}
       <div role="tablist" class="flex flex-wrap gap-2 services-tabs">
         {services.map((s, i) => (
@@ -304,7 +268,23 @@ const faqs = [
       background-color: #2b2b2b;
       color: #fff;
     }
+    .services-parallax {
+      height: 460px;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    @media (max-width: 767px) {
+      .services-parallax { height: 280px; background-attachment: scroll; }
+    }
   </style>
+
+  {/* ───────────────────────── 7b. PARALLAX IMAGE BREAK ───────────────────────── */}
+  <section
+    class="services-parallax"
+    aria-label="Détails de table"
+    style="background-image: url('/images/services-intro.jpg');"
+  ></section>
 
   {/* ───────────────────────── 8. PACKS & FORMULES (header) ───────────────────────── */}
   <section class="bg-white px-6 pt-24 md:pt-32 pb-12 md:pb-16 text-center">
@@ -325,32 +305,19 @@ const faqs = [
   </section>
 
   {/* ───────────────────────── 9. PACK CARDS ───────────────────────── */}
-  <section class="bg-white px-6 pb-24 md:pb-32 space-y-10 md:space-y-14">
-    {packs.map((p) => (
-      <div class="mx-auto max-w-[1300px]">
-        <MediaCard
+  <section class="bg-white px-6 pb-24 md:pb-32 space-y-20 md:space-y-28">
+    {packs.map((p, i) => (
+      <div class:list={["mx-auto w-[80%] max-w-[1300px]", i === 1 ? "!mt-40 md:!mt-56" : ""]}>
+        <PackCard
           image={p.image}
-          imageAlt={p.title}
+          title={p.title}
+          italic={p.italic}
+          label={p.label}
+          bullets={p.bullets}
+          desc={p.desc}
           accent={p.accent === "burgundy" ? "burgundy" : "dark"}
           watermark={p.accent === "burgundy" ? "/images/services-pack-bg.png" : undefined}
-        >
-          <h3 class="font-display font-normal text-[28px] md:text-[36px] leading-[1.1] tracking-wide">
-            {p.title}
-          </h3>
-          {p.italic && (
-            <p class="mt-2 font-italic-serif italic font-light text-[24px] md:text-[32px] leading-tight">
-              {p.italic}
-            </p>
-          )}
-          <p class="mt-6 text-[10px] tracking-[0.32em] uppercase text-white/70">{p.label}</p>
-          <p class="mt-8 text-[10px] tracking-[0.32em] uppercase text-white/65">Compris dans l'expérience</p>
-          <ul class="mt-3 space-y-1.5 text-[13px] leading-[1.6] text-white/90">
-            {p.bullets.map((b) => (
-              <li class="flex gap-3"><span aria-hidden="true">•</span><span>{b}</span></li>
-            ))}
-          </ul>
-          <p class="mt-7 text-[13px] leading-[1.8] text-white/85 max-w-md">{p.desc}</p>
-        </MediaCard>
+        />
       </div>
     ))}
   </section>

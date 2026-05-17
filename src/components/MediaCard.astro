@@ -7,11 +7,13 @@ interface Props {
   accent?: "dark" | "burgundy";
   /** Watermark image overlaid behind text (used on burgundy pack) */
   watermark?: string;
+  /** Layout variant. "floating" = image has margin (tabs), "flush" = image edge-to-edge (packs) */
+  variant?: "floating" | "flush";
   /** Aspect ratio on mobile (defaults to 4/3) */
   mobileAspect?: string;
-  /** Fixed image width on md+ in px (e.g. 518) */
+  /** Fixed image width on md+ in px (floating only) */
   imageWidth?: number;
-  /** Fixed image height on md+ in px (e.g. 565) */
+  /** Fixed image height on md+ in px (floating only) */
   imageHeight?: number;
 }
 
@@ -20,25 +22,33 @@ const {
   imageAlt = "",
   accent = "dark",
   watermark,
+  variant = "floating",
   mobileAspect = "4/3",
   imageWidth = 518,
   imageHeight = 565,
 } = Astro.props;
 
-const bgClass = accent === "burgundy" ? "bg-[#621a25]" : "bg-[#2b2b2b]";
+const bgClass = accent === "burgundy" ? "bg-[#640613]" : "bg-[#2b2b2b]";
+const isFlush = variant === "flush";
 ---
 
-<article class:list={["media-card text-white rounded-tr-lg rounded-b-lg overflow-hidden", bgClass]}>
+<article class:list={["media-card text-white overflow-hidden", bgClass, isFlush ? "" : "rounded-tr-lg rounded-b-lg"]}>
   <style>
     @media (min-width: 768px) {
-      .media-card .media-card-img {
+      .media-card .media-card-img-floating {
         width: var(--mw);
         height: var(--mh);
         max-width: 100%;
       }
     }
   </style>
-  <div class="grid md:grid-cols-2 gap-10 md:gap-14 p-8 md:p-14 items-stretch relative md:min-h-[680px]">
+
+  <div
+    class:list={[
+      "grid md:grid-cols-2 items-stretch relative md:min-h-[680px]",
+      isFlush ? "" : "gap-10 md:gap-14 p-8 md:p-14",
+    ]}
+  >
     {watermark && (
       <img
         src={watermark}
@@ -47,16 +57,33 @@ const bgClass = accent === "burgundy" ? "bg-[#621a25]" : "bg-[#2b2b2b]";
         class="pointer-events-none absolute inset-0 w-full h-full object-cover opacity-25"
       />
     )}
-    <div
-      class:list={["media-card-img relative md:justify-self-center", `aspect-[${mobileAspect}]`, "md:aspect-auto"]}
-      style={`--mw:${imageWidth}px;--mh:${imageHeight}px;`}
-    >
-      <div class="absolute inset-0 overflow-hidden">
+    <slot name="card-bg" />
+
+    {/* image */}
+    {isFlush ? (
+      <div class={`relative aspect-[${mobileAspect}] md:aspect-auto overflow-hidden`}>
         <img src={image} alt={imageAlt} class="absolute inset-0 w-full h-full object-cover" />
+        <slot name="image-overlay" />
       </div>
-      <slot name="image-overlay" />
-    </div>
-    <div class="relative flex flex-col">
+    ) : (
+      <div
+        class:list={["media-card-img-floating relative md:justify-self-center", `aspect-[${mobileAspect}]`, "md:aspect-auto"]}
+        style={`--mw:${imageWidth}px;--mh:${imageHeight}px;`}
+      >
+        <div class="absolute inset-0 overflow-hidden">
+          <img src={image} alt={imageAlt} class="absolute inset-0 w-full h-full object-cover" />
+        </div>
+        <slot name="image-overlay" />
+      </div>
+    )}
+
+    {/* text */}
+    <div
+      class:list={[
+        "relative flex flex-col",
+        isFlush ? "p-8 md:p-14 justify-center" : "",
+      ]}
+    >
       <slot />
     </div>
   </div>
