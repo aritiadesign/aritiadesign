@@ -1,0 +1,63 @@
+---
+interface Props {
+  /** Image src */
+  image: string;
+  imageAlt?: string;
+  /** Container accent. "dark" = #2b2b2b, "burgundy" = #621a25 */
+  accent?: "dark" | "burgundy";
+  /** Watermark image overlaid behind text (used on burgundy pack) */
+  watermark?: string;
+  /** Aspect ratio on mobile (defaults to 4/3) */
+  mobileAspect?: string;
+  /** Fixed image width on md+ in px (e.g. 518) */
+  imageWidth?: number;
+  /** Fixed image height on md+ in px (e.g. 565) */
+  imageHeight?: number;
+}
+
+const {
+  image,
+  imageAlt = "",
+  accent = "dark",
+  watermark,
+  mobileAspect = "4/3",
+  imageWidth = 518,
+  imageHeight = 565,
+} = Astro.props;
+
+const bgClass = accent === "burgundy" ? "bg-[#621a25]" : "bg-[#2b2b2b]";
+---
+
+<article class:list={["media-card text-white rounded-tr-lg rounded-b-lg overflow-hidden", bgClass]}>
+  <style>
+    @media (min-width: 768px) {
+      .media-card .media-card-img {
+        width: var(--mw);
+        height: var(--mh);
+        max-width: 100%;
+      }
+    }
+  </style>
+  <div class="grid md:grid-cols-2 gap-10 md:gap-14 p-8 md:p-14 items-stretch relative md:min-h-[680px]">
+    {watermark && (
+      <img
+        src={watermark}
+        alt=""
+        aria-hidden="true"
+        class="pointer-events-none absolute inset-0 w-full h-full object-cover opacity-25"
+      />
+    )}
+    <div
+      class:list={["media-card-img relative md:justify-self-center", `aspect-[${mobileAspect}]`, "md:aspect-auto"]}
+      style={`--mw:${imageWidth}px;--mh:${imageHeight}px;`}
+    >
+      <div class="absolute inset-0 overflow-hidden">
+        <img src={image} alt={imageAlt} class="absolute inset-0 w-full h-full object-cover" />
+      </div>
+      <slot name="image-overlay" />
+    </div>
+    <div class="relative flex flex-col">
+      <slot />
+    </div>
+  </div>
+</article>

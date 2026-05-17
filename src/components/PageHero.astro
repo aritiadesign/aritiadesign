@@ -5,7 +5,9 @@ interface Props {
   /** Alt text for the background */
   imageAlt?: string;
   /** Script-font main title */
-  title: string;
+  title?: string;
+  /** Raw HTML title (allows <br /> for multiline) */
+  titleHtml?: string;
   /** Optional uppercase subtitle */
   subtitle?: string;
   /** Pass through raw HTML for the subtitle (e.g. with <br />) */
@@ -20,6 +22,7 @@ const {
   image,
   imageAlt = "",
   title,
+  titleHtml,
   subtitle,
   subtitleHtml,
   titleSizeMd = "124px",
@@ -39,7 +42,7 @@ const {
       class="font-script text-white leading-none inline-block"
       style={`font-size: clamp(${titleSizeMobile}, 10vw, ${titleSizeMd}); transform: rotate(-9deg);`}
     >
-      {title}
+      {titleHtml ? <Fragment set:html={titleHtml} /> : title}
     </h1>
 
     <span class="page-hero-rule" aria-hidden="true"></span>

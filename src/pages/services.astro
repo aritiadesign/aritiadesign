@@ -1,18 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageHero from "../components/PageHero.astro";
+import SparkLink from "../components/SparkLink.astro";
+import MediaCard from "../components/MediaCard.astro";
 
 const services = [
   {
     kicker: "Direction artistique",
+    scriptHtml: "Direction<br />artistique",
     title: "DESIGN",
     titleItalic: "Global",
-    body: `Ici, votre célébration est pensé comme une œuvre complète : De l'identité visuelle à la scénographie, de l'art floral à la papeterie fine, chaque détail est orchestré pour créer un univers cohérent et d'une rare élégance.\n\nEn tant que directrice de création, je garantis l'harmonie absolue entre le décor, les fleurs et l'identité graphique. Cette approche globale vous offre une expérience fluide et une sérénité totale, pour un événement d'exception, rigoureusement à votre image.`,
+    body: `Ici, votre célébration est pensé comme une œuvre complète : De l'identité visuelle à la scénographie, de l'art floral à la papeterie fine, chaque détail est orchestré pour créer un univers cohérent et d'une rare élégance.\n\nEn tant que directrice de création, je garantis l'harmonie absolue entre le décor, les fleurs et l'identité graphique.\n\nCette approche globale vous offre une expérience fluide et une sérénité totale, pour un événement d'exception, rigoureusement à votre image.`,
     image: "/images/services-design-global.jpg",
     alt: "Salle de réception aux baies vitrées",
   },
   {
     kicker: "Mise en ambience",
+    scriptHtml: "Mise en<br />ambience",
     title: "DECOR",
     titleItalic: "Scénographie",
     body: `Avec cette prestation, nous créons l'univers visuel complet de votre mariage, du moodboard initial à la mise en scène finale. Elle comprend la définition du concept esthétique, la mise en ambiance des espaces et la coordination des prestataires (mobilier, éclairage, accessoires…) pour un rendu tangible, élégant et cohérent.\n\nVous bénéficiez ainsi d'une direction artistique concrète sur le lieu, d'une harmonie visuelle parfaite et d'une prise en charge complète, garantissant un mariage raffiné et maîtrisé jusque dans les moindres détails.`,
@@ -21,6 +25,7 @@ const services = [
   },
   {
     kicker: "Conception floral",
+    scriptHtml: "Conception<br />floral",
     title: "FLORAL",
     titleItalic: "Design",
     body: `Nous concevons des compositions florales sur-mesure pour sublimer chaque instant de vos mariages et événements, des pièces délicates aux installations sculpturales d'envergure.\n\nPensée en parfaite harmonie avec votre identité visuelle, chaque création apporte élégance et authenticité pour placer le végétal au cœur de l'expérience émotionnelle de votre réception.\n\nC'est une signature raffinée, jouant sur l'équilibre des couleurs et des textures, pour offrir à votre réception une dimension visuelle inoubliable.`,
@@ -29,10 +34,11 @@ const services = [
   },
   {
     kicker: "Design graphique",
+    scriptHtml: "Design<br />graphique",
     title: "PAPETERIE",
     titleItalic: "",
     body: `Avec la prestation Papeterie, nous créons l'identité graphique complète de votre mariage, du logo ou monogramme personnalisé aux faire-part, menus, programmes, marque-places, plans de table et signalétique. À partir d'un moodboard et d'une direction artistique définie avec vous, nous déclinons un univers visuel cohérent sur l'ensemble de vos supports, pour une papeterie sur-mesure, raffinée et parfaitement harmonisée avec l'esthétique et l'ambiance de votre mariage.`,
-    image: "/images/services-papeterie.jpg",
+    image: "/images/services-papeterie.png",
     alt: "Bouquet et menu de mariage",
   },
 ];
@@ -141,9 +147,9 @@ const faqs = [
 
 <Layout title="SERVICES | Aritia Design" transparentHeader={true}>
   <PageHero
-    image="/images/services-hero-fallback.jpg"
+    image="/images/footer-4.jpg"
     imageAlt="Direction artistique"
-    title="Services & Packages"
+    titleHtml="Services<br />&amp; Packages"
     subtitleHtml="De l'inspiration à la réalisation, chaque étape est pensée<br />pour refléter votre univers"
   />
 
@@ -187,13 +193,12 @@ const faqs = [
   {/* ───────────────────────── 5. KEYWORDS MARQUEE ───────────────────────── */}
   <section class="bg-[#1a1a1a] text-white overflow-hidden py-7">
     <div class="marquee">
-      <div class="marquee-track gap-12 text-[20px] md:text-[28px] tracking-[0.18em] uppercase font-display font-light">
+      <div class="marquee-track gap-12 text-[20px] md:text-[28px] tracking-[0.18em] uppercase font-normal">
         {Array(6).fill(0).flatMap(() => [
           <span class="inline-flex items-center gap-12 shrink-0">
-            <span>✦ DESIGN GLOBAL</span>
-            <span>✦ DÉCOR &amp; SCÉNOGRAPHIE</span>
-            <span>✦ PAPETERIE</span>
-            <span>✦ FLORAL DESIGN</span>
+            {services.map((s) => (
+              <span>✦ {s.title}{s.titleItalic ? ` ${s.titleItalic.toUpperCase()}` : ""}</span>
+            ))}
           </span>
         ])}
       </div>
@@ -215,49 +220,104 @@ const faqs = [
     </div>
   </section>
 
-  {/* ───────────────────────── 7. SERVICE CARDS ───────────────────────── */}
-  <section class="bg-white px-6 pb-24 md:pb-32 space-y-10 md:space-y-16">
-    {services.map((s, i) => {
-      const imageLeft = i % 2 === 0;
-      return (
-        <div class="mx-auto max-w-[1300px] grid md:grid-cols-[1.1fr_1fr] gap-0 items-stretch">
-          <div class:list={["aspect-[4/3] overflow-hidden", imageLeft ? "md:order-1 order-1" : "md:order-2 order-1"]}>
-            <img src={s.image} alt={s.alt} class="w-full h-full object-cover" />
-          </div>
-          <div
-            class:list={[
-              "bg-[#1a1a1a] text-white p-10 md:p-14 flex flex-col justify-center",
-              imageLeft ? "md:order-2 order-2" : "md:order-1 order-2",
-            ]}
+  {/* ───────────────────────── 7. SERVICES TABS ───────────────────────── */}
+  <section class="bg-white pt-10 md:pt-16">
+    <div class="mx-auto max-w-[1300px] px-6">
+      {/* Tab bar — folder-style tabs, width fits content */}
+      <div role="tablist" class="flex flex-wrap gap-2 services-tabs">
+        {services.map((s, i) => (
+          <button
+            type="button"
+            role="tab"
+            class="services-tab"
+            data-tab={i}
+            aria-selected={i === 0 ? "true" : "false"}
           >
-            <p class="text-[12px] tracking-[0.32em] uppercase text-white/65 font-italic-serif italic">{s.kicker}</p>
-            <h3 class="mt-3 font-display text-[32px] md:text-[44px] leading-[1.05] tracking-wide">
+            ✦ {s.title}{s.titleItalic ? ` ${s.titleItalic.toUpperCase()}` : ""} ✦
+          </button>
+        ))}
+      </div>
+
+      {/* Tab panels — MediaCard with image + text inside */}
+      {services.map((s, i) => (
+        <div role="tabpanel" class="services-panel" data-panel={i} hidden={i !== 0}>
+          <MediaCard image={s.image} imageAlt={s.alt}>
+            <span
+              slot="image-overlay"
+              class="absolute top-[-20px] right-[-40px] md:top-[-30px] md:right-[-50px] font-script text-white text-[40px] md:text-[54px] leading-[0.95] rotate-[-8deg] origin-right pointer-events-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] text-right"
+              set:html={s.scriptHtml}
+            ></span>
+            <h3 class="font-display text-[36px] md:text-[48px] leading-[1] tracking-wide">
               {s.title}
-              {s.titleItalic && <><br /><span class="font-italic-serif italic">{s.titleItalic}</span></>}
+              {s.titleItalic && <> <span class="font-italic-serif italic font-light">{s.titleItalic}</span></>}
             </h3>
-            <p class="mt-6 text-[14px] leading-[1.9] text-white/85 whitespace-pre-line max-w-md">{s.body}</p>
-            <a
-              href="/contact"
-              class="inline-flex items-center gap-3 mt-8 text-[13px] tracking-[0.32em] uppercase hover:opacity-70 transition self-start"
-            >
-              <span class="text-white/70">✦</span>
-              <span>Prendre rendez-vous</span>
-            </a>
-          </div>
+            <div class="mt-7 text-[16px] leading-[1.9] text-white max-w-md space-y-4">
+              {s.body.split("\n\n").map((para) => <p>{para}</p>)}
+            </div>
+            <SparkLink href="/contact" label="Prendre rendez-vous" class="mt-auto pt-10 self-start" />
+          </MediaCard>
         </div>
-      );
-    })}
+      ))}
+    </div>
   </section>
 
-  {/* ───────────────────────── 8. PACKS & FORMULES ───────────────────────── */}
-  <section class="bg-white px-6 pb-16 text-center">
-    <p class="text-[12px] tracking-[0.32em] uppercase text-[var(--color-muted)]">✦ PACKS &amp; FORMULES ✦</p>
-    <h2 class="mt-8 font-display font-light text-[36px] md:text-[56px] leading-[1.2] text-[var(--color-ink)]">
-      L'<span class="font-italic-serif italic">ÉLÉGANCE</span>
-      <span class="font-italic-serif italic"> sur-mesure</span><br />
-      <span class="font-italic-serif italic">à votre</span> IMAGE
+  <script>
+    document.querySelectorAll<HTMLElement>(".services-tabs").forEach((bar) => {
+      const tabs = bar.querySelectorAll<HTMLButtonElement>(".services-tab");
+      const panels = bar.parentElement!.querySelectorAll<HTMLElement>(".services-panel");
+      tabs.forEach((tab) =>
+        tab.addEventListener("click", () => {
+          const idx = tab.dataset.tab;
+          tabs.forEach((t) => t.setAttribute("aria-selected", t === tab ? "true" : "false"));
+          panels.forEach((p) => { p.hidden = p.dataset.panel !== idx; });
+        })
+      );
+    });
+  </script>
+
+  <style>
+    .services-tabs {
+      position: relative;
+    }
+    .services-tab {
+      background-color: rgba(43, 42, 45, 0.1);
+      color: #2b2a2d;
+      padding: 14px 18px;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s;
+    }
+    @media (min-width: 768px) {
+      .services-tab {
+        font-size: 15px;
+        padding: 16px 20px;
+      }
+    }
+    .services-tab:hover {
+      background-color: rgba(43, 42, 45, 0.2);
+    }
+    .services-tab[aria-selected="true"] {
+      background-color: #2b2b2b;
+      color: #fff;
+    }
+  </style>
+
+  {/* ───────────────────────── 8. PACKS & FORMULES (header) ───────────────────────── */}
+  <section class="bg-white px-6 pt-24 md:pt-32 pb-12 md:pb-16 text-center">
+    <div class="inline-block px-8 py-3 bg-[#1a1a1a] text-white text-[11px] tracking-[0.32em] uppercase">
+      ✦ Packs &amp; Formules ✦
+    </div>
+    <h2 class="mt-12 font-display font-normal text-[40px] md:text-[64px] leading-[1.1] text-[var(--color-ink)]">
+      L'<span>ÉLÉGANCE</span>
+      <span class="font-italic-serif italic font-light">sur-mesure</span><br />
+      <span class="font-italic-serif italic font-light">à votre</span>
+      <span>IMAGE</span>
     </h2>
-    <p class="mt-8 text-[14px] leading-[1.9] text-[var(--color-ink-soft)] max-w-xl mx-auto">
+    <p class="mt-10 text-[14px] leading-[1.9] text-[var(--color-ink-soft)] max-w-xl mx-auto">
       Chaque projet est unique, c'est pourquoi mes prestations
       s'articulent autour de packages sur-mesure et de formules
       personnalisables.
@@ -265,29 +325,32 @@ const faqs = [
   </section>
 
   {/* ───────────────────────── 9. PACK CARDS ───────────────────────── */}
-  <section class="bg-white px-6 pb-24 md:pb-32 space-y-8">
+  <section class="bg-white px-6 pb-24 md:pb-32 space-y-10 md:space-y-14">
     {packs.map((p) => (
-      <div class="mx-auto max-w-[1300px] grid md:grid-cols-[1.1fr_1fr] gap-0 items-stretch">
-        <div class="aspect-[4/3] md:aspect-auto overflow-hidden">
-          <img src={p.image} alt={p.title} class="w-full h-full object-cover" />
-        </div>
-        <div
-          class:list={[
-            "p-10 md:p-14 flex flex-col justify-center",
-            p.accent === "burgundy" ? "bg-[var(--color-burgundy)] text-white" : "bg-[#1a1a1a] text-white",
-          ]}
+      <div class="mx-auto max-w-[1300px]">
+        <MediaCard
+          image={p.image}
+          imageAlt={p.title}
+          accent={p.accent === "burgundy" ? "burgundy" : "dark"}
+          watermark={p.accent === "burgundy" ? "/images/services-pack-bg.png" : undefined}
         >
-          <h3 class="font-display text-[28px] md:text-[40px] leading-[1.1] tracking-wide">
+          <h3 class="font-display font-normal text-[28px] md:text-[36px] leading-[1.1] tracking-wide">
             {p.title}
-            {p.italic && <><br /><span class="font-italic-serif italic font-light">{p.italic}</span></>}
           </h3>
-          <p class="mt-5 text-[11px] tracking-[0.32em] uppercase text-white/65">{p.label}</p>
-          <p class="mt-6 text-[12px] tracking-[0.28em] uppercase text-white/85 font-italic-serif italic">Compris dans l'expérience</p>
-          <ul class="mt-3 space-y-1 text-[14px] text-white/85 list-disc pl-5">
-            {p.bullets.map((b) => <li>{b}</li>)}
+          {p.italic && (
+            <p class="mt-2 font-italic-serif italic font-light text-[24px] md:text-[32px] leading-tight">
+              {p.italic}
+            </p>
+          )}
+          <p class="mt-6 text-[10px] tracking-[0.32em] uppercase text-white/70">{p.label}</p>
+          <p class="mt-8 text-[10px] tracking-[0.32em] uppercase text-white/65">Compris dans l'expérience</p>
+          <ul class="mt-3 space-y-1.5 text-[13px] leading-[1.6] text-white/90">
+            {p.bullets.map((b) => (
+              <li class="flex gap-3"><span aria-hidden="true">•</span><span>{b}</span></li>
+            ))}
           </ul>
-          <p class="mt-6 text-[13px] leading-[1.8] text-white/80 max-w-md">{p.desc}</p>
-        </div>
+          <p class="mt-7 text-[13px] leading-[1.8] text-white/85 max-w-md">{p.desc}</p>
+        </MediaCard>
       </div>
     ))}
   </section>
