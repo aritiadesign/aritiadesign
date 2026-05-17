@@ -1,0 +1,137 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="À PROPOS | Aritia Design" transparentHeader={true}>
+  {/* ───────────────────────── 1. HERO ───────────────────────── */}
+  <section class="relative h-screen min-h-[640px] w-full overflow-hidden text-white">
+    <img
+      src="/images/about-hero.jpg"
+      alt="Intérieur d'un lieu d'exception"
+      class="absolute inset-0 w-full h-full object-cover"
+      onerror="this.style.background='linear-gradient(135deg,#2a2520,#1a1612)';this.removeAttribute('src');"
+    />
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <div class="relative h-full flex flex-col items-center justify-end text-center px-6 pb-[5%]">
+      <h1 class="font-script text-white text-[64px] md:text-[110px] leading-none">À Propos</h1>
+      <p class="mt-10 md:mt-12 text-[15px] tracking-[2.25px] uppercase text-white/85">
+        Atmosphères raffinées, où design graphique,<br />
+        scénographie &amp; art floral se rencontrent
+      </p>
+    </div>
+  </section>
+
+  {/* ───────────────────────── 2. FONDATRICE / DESIGNER + INTRO ───────────────────────── */}
+  <section class="bg-white px-6 py-20 md:py-28">
+    <div class="mx-auto max-w-[1200px] grid md:grid-cols-2 gap-14 md:gap-20 items-start">
+      {/* left: heading + portrait */}
+      <div class="text-center md:text-left">
+        <h2 class="font-display font-normal text-[44px] md:text-[60px] leading-[1] tracking-wide">
+          FONDATRICE<br />DESIGNER
+        </h2>
+        <div class="mt-12 md:mt-16 max-w-md mx-auto md:mx-0">
+          <img
+            src="/images/aritia-portrait-bw.jpg"
+            alt="Aritia, fondatrice"
+            class="w-full h-auto object-cover grayscale"
+            onerror="this.style.background='linear-gradient(135deg,#bfb6a8,#5a5247)';this.removeAttribute('src');"
+          />
+        </div>
+      </div>
+
+      {/* right: body copy */}
+      <div class="md:pt-4">
+        <p class="text-[13px] tracking-[0.28em] uppercase leading-[2.1] text-[var(--color-ink-soft)] text-center md:text-left">
+          Une designer passionnée par les volumes,<br />
+          la matière et l'amour des autres
+        </p>
+
+        <div class="mt-10 space-y-6 text-[16px] leading-[1.9] text-[var(--color-ink-soft)] max-w-md mx-auto md:mx-0">
+          <p>
+            Depuis toujours, je suis fascinée par l'harmonie des formes,
+            des matières et des couleurs. Très jeune, j'imaginais déjà
+            des univers pour sublimer les moments précieux de mes
+            proches — anniversaires, baby showers, mariages.
+          </p>
+          <p>
+            Mon parcours en design produit m'a donné une approche
+            exigeante et sensible de la conception&nbsp;: chaque détail
+            compte, des textures aux volumes, de la lumière aux
+            couleurs.
+          </p>
+          <p>
+            Peu à peu, ce qui était une passion intime est devenu une
+            vocation&nbsp;: mettre ma créativité et mon sens esthétique
+            au service des autres, pour leur offrir des instants
+            uniques et transformer chaque occasion en un moment
+            d'exception.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ───────────────────────── 3. AMBITION (marbre noir + photo) ───────────────────────── */}
+  <section class="relative text-white overflow-hidden">
+    <div
+      class="absolute inset-0 bg-[#0e0e0e]"
+      style="background-image: url('/images/about-marble.jpg'); background-size: cover; background-position: center;"
+    ></div>
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <div class="relative mx-auto max-w-[1300px] px-6 lg:px-14 py-20 md:py-28 grid md:grid-cols-2 gap-14 md:gap-20 items-center">
+      <div class="text-center md:text-left flex flex-col items-center md:items-start">
+        <h2 class="font-display font-light text-[36px] md:text-[52px] leading-[1.15] tracking-wide">
+          MON AMBITION EST DE<br />
+          CONCRÉTISER VOTRE<br />
+          VISION
+        </h2>
+        <p class="mt-6 text-[12px] tracking-[0.28em] uppercase text-white/85">
+          Avec soin, intention et passion
+        </p>
+        <a
+          href="/contact"
+          class="inline-block mt-10 px-10 py-4 border border-white text-[0.72rem] tracking-[0.32em] uppercase hover:bg-white hover:text-[var(--color-ink)] transition"
+        >
+          Commencer l'aventure
+        </a>
+      </div>
+
+      <div class="aspect-[4/3] overflow-hidden">
+        <img
+          src="/images/about-dining.jpg"
+          alt="Salle de réception aux chandeliers"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  {/* ───────────────────────── 4. 3 MOTS-CLÉS + 2 PHOTOS ───────────────────────── */}
+  <section class="bg-white px-6 py-20 md:py-28">
+    <div class="mx-auto max-w-[1200px] grid md:grid-cols-2 gap-14 md:gap-20 items-center">
+      <div class="aspect-[3/4] overflow-hidden">
+        <img
+          src="/images/about-bouquet.jpg"
+          alt="Composition florale rouge"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <div class="relative aspect-[4/5] overflow-hidden">
+        <img
+          src="/images/about-couple.jpg"
+          alt="Couple devant voiture vintage"
+          class="w-full h-full object-cover"
+        />
+        {/* keywords overlay, bottom-center */}
+        <div class="absolute inset-x-0 bottom-6 text-center text-white drop-shadow font-display leading-tight">
+          <p class="text-[28px] md:text-[38px] tracking-wide">CRÉATIF</p>
+          <p class="font-italic-serif italic text-[34px] md:text-[44px] -mt-1">Raffiné</p>
+          <p class="text-[28px] md:text-[38px] tracking-wide">MODERNE</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
