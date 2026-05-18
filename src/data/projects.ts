@@ -99,11 +99,14 @@ export const projects: Project[] = [
       { label: "Décor / Objet exclusif", value: "Arche, Estrade, Suspension à frange & Vases" },
     ],
     hero: "/images/projects/ef/b88c2457.jpg",
+    parallax: "/images/projects/ef/parallax.jpg",
     gallery: efImages,
     sections: [
-      { label: "Préparations", images: efImages.slice(3, 14) },
-      { label: "Cérémonie", images: efImages.slice(14, 25), bg: "dark" },
-      { label: "Cocktail & Réception", images: efImages.slice(25) },
+      // skip index 3 (492d6662) — used for parallax above
+      { label: "Préparations", images: efImages.slice(4, 9) },
+      { label: "Cérémonie", images: efImages.slice(9, 23), bg: "dark" },
+      // skip last 4 — used as footer photos
+      { label: "Cocktail & Réception", images: efImages.slice(23, -4) },
     ],
   },
 ];
