@@ -97,17 +97,32 @@ const projects = [
     </div>
   </section>
 
-  {/* ───────────────────────── 5. CTA DARK ───────────────────────── */}
-  <section class="bg-[#1a1a1a] text-white px-6 py-24 md:py-32 text-center">
-    <h2 class="font-display text-[36px] md:text-[52px] leading-[1.2]">
-      NON, <span class="font-italic-serif italic font-light">VOS RÊVES</span><br />
-      NE SONT PAS TROP GRAND
-    </h2>
-    <a
-      href="/contact"
-      class="inline-block mt-12 px-12 py-4 border border-white text-[0.72rem] tracking-[0.32em] uppercase hover:bg-white hover:text-[var(--color-ink)] transition"
+  {/* ───────────────────────── 5. CTA DARK (background = fireworks video) ───────────────────────── */}
+  <section class="relative overflow-hidden text-white px-6 py-24 md:py-32 text-center">
+    <video
+      class="absolute inset-0 w-full h-full object-cover"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      aria-hidden="true"
     >
-      Créer mon univers
-    </a>
+      <source src="/videos/feux-artifices.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-black/55"></div>
+
+    <div class="relative">
+      <h2 class="font-display text-[36px] md:text-[52px] leading-[1.2]">
+        NON, <span class="font-italic-serif italic font-light">VOS RÊVES</span><br />
+        NE SONT PAS TROP GRAND
+      </h2>
+      <a
+        href="/contact"
+        class="inline-block mt-12 px-12 py-4 border border-white text-[0.72rem] tracking-[0.32em] uppercase hover:bg-white hover:text-[var(--color-ink)] transition"
+      >
+        Créer mon univers
+      </a>
+    </div>
   </section>
 </Layout>
