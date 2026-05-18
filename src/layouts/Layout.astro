@@ -38,5 +38,27 @@ const {
       <slot />
     </main>
     <Footer />
+
+    <script>
+      // iOS Safari autoplay fix — set muted explicitly via JS and retry on first user gesture.
+      const startVideos = () => {
+        document.querySelectorAll<HTMLVideoElement>("video[autoplay]").forEach((v) => {
+          v.muted = true;
+          v.setAttribute("muted", "");
+          v.setAttribute("playsinline", "");
+          v.setAttribute("webkit-playsinline", "");
+          const p = v.play();
+          if (p && typeof p.catch === "function") p.catch(() => {});
+        });
+      };
+      startVideos();
+      const retry = () => {
+        startVideos();
+        window.removeEventListener("touchstart", retry);
+        window.removeEventListener("click", retry);
+      };
+      window.addEventListener("touchstart", retry, { passive: true, once: true });
+      window.addEventListener("click", retry, { once: true });
+    </script>
   </body>
 </html>
