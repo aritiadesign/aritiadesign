@@ -227,10 +227,6 @@ const faqs = [
             >
               <div class="relative aspect-[4/3] overflow-hidden">
                 <img src={s.image} alt={s.alt} class="absolute inset-0 w-full h-full object-cover" />
-                <span
-                  class="absolute top-3 right-4 font-script text-white text-[36px] leading-[0.95] rotate-[-8deg] origin-right pointer-events-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] text-right"
-                  set:html={s.scriptHtml}
-                ></span>
               </div>
               <div class="p-8 flex flex-col flex-1">
                 <h3 class="font-display text-[34px] leading-[1.1] tracking-wide min-h-[80px]">
@@ -272,11 +268,6 @@ const faqs = [
       {services.map((s, i) => (
         <div role="tabpanel" class="services-panel hidden md:block" data-panel={i} hidden={i !== 0}>
           <MediaCard image={s.image} imageAlt={s.alt}>
-            <span
-              slot="image-overlay"
-              class="absolute top-[-30px] right-[-50px] font-script text-white text-[54px] leading-[0.95] rotate-[-8deg] origin-right pointer-events-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] text-right"
-              set:html={s.scriptHtml}
-            ></span>
             <h3 class="font-display text-[48px] leading-[1] tracking-wide">
               {s.title}
               {s.titleItalic && <> <span class="font-italic-serif italic font-light">{s.titleItalic}</span></>}
