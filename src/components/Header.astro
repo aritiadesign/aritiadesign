@@ -6,14 +6,7 @@ interface Props {
 }
 const { transparent = true } = Astro.props;
 
-const links = [
-  { href: "/", label: "ACCUEIL" },
-  { href: "/a-propos", label: "À PROPOS" },
-  { href: "/services", label: "SERVICES" },
-  { href: "/portfolio", label: "PORTFOLIO" },
-  { href: "/boutique", label: "BOUTIQUE" },
-  { href: "/contact", label: "CONTACT" },
-];
+import { navLinks as links } from "../data/nav";
 
 const currentPath = Astro.url.pathname;
 const isActive = (href: string) =>
