@@ -1,0 +1,167 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { projects, type Project } from "../../data/projects";
+
+export function getStaticPaths() {
+  return projects.map((p) => ({ params: { slug: p.slug }, props: { project: p } }));
+}
+
+interface Props { project: Project }
+const { project: p } = Astro.props;
+---
+
+<Layout title={`${p.title} ${p.titleItalic} | Aritia Design`} transparentHeader={false}>
+  {/* ───────────────────────── 1. HERO — 3-PHOTO ROW ───────────────────────── */}
+  <section class="bg-white px-6 md:px-14 pt-32 md:pt-40 pb-12">
+    <div class="mx-auto max-w-[1200px] grid grid-cols-3 gap-3 md:gap-6">
+      {p.gallery.slice(0, 3).map((src, i) => (
+        <div class="aspect-[3/4] overflow-hidden">
+          <img
+            src={src}
+            alt={`${p.title} — preview ${i + 1}`}
+            class="w-full h-full object-cover"
+          />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* ───────────────────────── 2. TITLE + INTRO + CREDITS (centered) ───────────────────────── */}
+  <section class="bg-white px-6 py-16 md:py-24 text-center">
+    <div class="mx-auto max-w-[820px]">
+      <h1 class="font-display font-normal text-[36px] md:text-[56px] leading-[1.1]">
+        {p.title}<br />
+        <span class="font-italic-serif italic font-light">{p.titleItalic}</span>
+      </h1>
+      <p class="mt-6 text-[11px] tracking-[0.32em] uppercase text-[var(--color-muted)]">
+        {p.subtitle}
+      </p>
+
+      <p class="mt-12 text-[16px] leading-[1.9] text-[var(--color-ink-soft)] text-center">
+        {p.intro}
+      </p>
+
+      <dl class="mt-12 space-y-1 text-[16px] leading-[1.7] text-[var(--color-ink-soft)] text-center">
+        {p.credits.map((c) => (
+          <div>
+            <dt class="inline font-medium">{c.label}&nbsp;:</dt>{" "}
+            <dd class="inline">{c.value}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  {/* ───────────────────────── 2b. PARALLAX BREAK (optional) ───────────────────────── */}
+  {p.parallax && (
+    <section
+      class="project-parallax"
+      aria-label={`${p.title} — vue d'ensemble`}
+      style={`background-image: url('${p.parallax}');`}
+    ></section>
+  )}
+
+  <style>
+    .project-parallax {
+      height: 380px;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    @media (max-width: 767px) {
+      .project-parallax { height: 220px; background-attachment: scroll; }
+    }
+  </style>
+
+  {/* ───────────────────────── 3. SECTIONS (chapters + photo grids) ───────────────────────── */}
+  {p.sections?.map((s) => {
+    const isDark = s.bg === "dark";
+    return (
+      <section class:list={[isDark ? "bg-[#1a1a1a] text-white" : "bg-white text-[var(--color-ink-soft)]"]}>
+        <div class="px-6 pt-20 md:pt-28 pb-10 md:pb-14 text-center">
+          <div class:list={[
+            "inline-block text-[11px] tracking-[0.32em] uppercase",
+            isDark ? "text-white py-3" : "bg-[#1a1a1a] text-white px-8 py-3",
+          ]}>
+            ✦ {s.label} ✦
+          </div>
+        </div>
+        {s.text && (
+          <div class="px-6 pb-12 md:pb-16 text-center">
+            <p class:list={[
+              "mx-auto max-w-[720px] italic",
+              isDark ? "text-white/85" : "text-[var(--color-ink-soft)]",
+            ]}>
+              {s.text}
+            </p>
+          </div>
+        )}
+        <div class="px-6 md:px-14 pb-20 md:pb-28">
+          <div class="mx-auto max-w-[1100px] grid grid-cols-2 gap-6 md:gap-10 items-start">
+            <div class="flex flex-col gap-6 md:gap-10">
+              {s.images.filter((_, i) => i % 2 === 0).map((src, i) => (
+                <a
+                  href={src}
+                  target="_blank"
+                  rel="noopener"
+                  class="block overflow-hidden bg-neutral-200 group"
+                >
+                  <img
+                    src={src}
+                    alt={`${p.title} — ${s.label} #${i * 2 + 1}`}
+                    loading="lazy"
+                    class="block w-full h-auto transition-transform duration-700 group-hover:scale-105"
+                  />
+                </a>
+              ))}
+            </div>
+            <div class="flex flex-col gap-6 md:gap-10">
+              {s.images.filter((_, i) => i % 2 === 1).map((src, i) => (
+                <a
+                  href={src}
+                  target="_blank"
+                  rel="noopener"
+                  class="block overflow-hidden bg-neutral-200 group"
+                >
+                  <img
+                    src={src}
+                    alt={`${p.title} — ${s.label} #${i * 2 + 2}`}
+                    loading="lazy"
+                    class="block w-full h-auto transition-transform duration-700 group-hover:scale-105"
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  })}
+
+  {/* ───────────────────────── 3b. OUTRO VIDEO (optional) ───────────────────────── */}
+  {p.outroVideo && (
+    <section class="bg-white px-6 md:px-14 pb-20 md:pb-28">
+      <div class="mx-auto max-w-[1200px] aspect-video overflow-hidden bg-black">
+        <video
+          src={p.outroVideo}
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          class="w-full h-full object-cover"
+        ></video>
+      </div>
+    </section>
+  )}
+
+  {/* ───────────────────────── 4. BACK CTA ───────────────────────── */}
+  <section class="bg-white px-6 py-16 text-center">
+    <a
+      href="/portfolio"
+      class="inline-block px-10 py-4 border border-[var(--color-ink)] text-[12px] tracking-[0.32em] uppercase hover:bg-[var(--color-ink)] hover:text-white transition"
+    >
+      ← Tous les projets
+    </a>
+  </section>
+</Layout>

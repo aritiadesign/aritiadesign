@@ -76,6 +76,12 @@ body {
   background: var(--color-paper);
 }
 
+/* Global body-text default — any <p> uses 16px unless overridden. */
+p {
+  font-size: 16px;
+  line-height: 1.9;
+}
+
 .font-display { font-family: var(--font-display); }
 .font-script  { font-family: var(--font-script); }
 .font-italic-serif { font-family: var(--font-italic); font-style: italic; }
