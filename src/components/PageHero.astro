@@ -61,6 +61,13 @@ const {
     background-position: center;
     background-attachment: fixed;
   }
+  /* iOS Safari mishandles background-attachment: fixed (zooms image to the full scrollable area).
+     Force scroll on mobile so the image fits the viewport like everywhere else. */
+  @media (max-width: 767px) {
+    .page-hero-section {
+      background-attachment: scroll;
+    }
+  }
   .page-hero-content {
     padding-bottom: 8rem;
   }
