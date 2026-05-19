@@ -192,7 +192,8 @@ const faqs = [
   <section class="bg-white pt-10 md:pt-16 pb-32 md:pb-48">
     <div class="mx-auto md:w-[80%] max-w-[1300px]">
       {/* Tab bar — desktop only */}
-      <div role="tablist" class="services-tabs hidden md:flex md:flex-wrap gap-2">
+      <div class="services-tabs-wrap relative hidden md:block">
+      <div role="tablist" class="services-tabs flex flex-nowrap overflow-x-auto gap-2 snap-x snap-proximity pr-12">
         <style is:global>
           .services-tabs::-webkit-scrollbar { display: none; }
           .services-tabs { scrollbar-width: none; }
@@ -208,6 +209,19 @@ const faqs = [
             ✦ {s.title}{s.titleItalic ? ` ${s.titleItalic.toUpperCase()}` : ""} ✦
           </button>
         ))}
+      </div>
+        {/* left-edge fade + chevron — visible once user has scrolled past the start */}
+        <div class="services-scroll-hint-left pointer-events-none absolute top-0 left-0 h-full w-16 flex items-center justify-start pl-1 bg-gradient-to-r from-white via-white/85 to-transparent">
+          <svg class="w-5 h-5 text-[#2b2b2b]/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </div>
+        {/* right-edge fade + bouncing chevron — hidden once scrolled to the end */}
+        <div class="services-scroll-hint pointer-events-none absolute top-0 right-0 h-full w-16 flex items-center justify-end pr-1 bg-gradient-to-l from-white via-white/85 to-transparent">
+          <svg class="w-5 h-5 text-[#2b2b2b]/70 animate-scroll-nudge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </div>
       </div>
 
       {/* Mobile carousel: all 4 cards in a horizontal scroll-snap strip — active card centered */}
@@ -316,11 +330,48 @@ const faqs = [
       window.addEventListener("resize", update);
       update();
     }
+
+    // Desktop tabs: hide the scroll-hint chevron once user has scrolled to the end
+    // (or when there's no overflow at all).
+    document.querySelectorAll<HTMLElement>(".services-tabs-wrap").forEach((wrap) => {
+      const bar = wrap.querySelector<HTMLElement>(".services-tabs");
+      if (!bar) return;
+      const updateHint = () => {
+        const overflow = bar.scrollWidth - bar.clientWidth;
+        const atStart = bar.scrollLeft <= 2;
+        const atEnd = overflow <= 1 || bar.scrollLeft >= overflow - 2;
+        wrap.dataset.start = atStart ? "true" : "false";
+        wrap.dataset.end = atEnd ? "true" : "false";
+      };
+      bar.addEventListener("scroll", updateHint, { passive: true });
+      window.addEventListener("resize", updateHint);
+      updateHint();
+    });
   </script>
 
   <style>
     .services-tabs {
       position: relative;
+    }
+    @keyframes scroll-nudge {
+      0%, 100% { transform: translateX(0); opacity: 0.7; }
+      50% { transform: translateX(4px); opacity: 1; }
+    }
+    .animate-scroll-nudge {
+      animation: scroll-nudge 1.4s ease-in-out infinite;
+    }
+    .services-scroll-hint,
+    .services-scroll-hint-left {
+      transition: opacity 0.25s ease;
+    }
+    .services-scroll-hint-left {
+      opacity: 0;
+    }
+    .services-tabs-wrap[data-start="false"] .services-scroll-hint-left {
+      opacity: 1;
+    }
+    .services-tabs-wrap[data-end="true"] .services-scroll-hint {
+      opacity: 0;
     }
     .services-tab {
       background-color: rgba(43, 42, 45, 0.1);
