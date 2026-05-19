@@ -12,8 +12,8 @@ const { project: p } = Astro.props;
 
 <Layout title={`${p.title} ${p.titleItalic} | Aritia Design`} transparentHeader={false}>
   {/* ───────────────────────── 1. HERO — 3-PHOTO ROW ───────────────────────── */}
-  <section class="bg-white px-6 md:px-14 pt-32 md:pt-40 pb-12">
-    <div class="mx-auto max-w-[1240px] grid grid-cols-[1fr_1.25fr_1fr] gap-6 md:gap-12 items-center">
+  <section class="bg-white px-2 md:px-14 pt-32 md:pt-40 pb-12">
+    <div class="mx-auto max-w-[1240px] grid grid-cols-[1fr_1.25fr_1fr] gap-2 md:gap-12 items-center">
       {p.gallery.slice(0, 3).map((src, i) => (
         <div class="aspect-[3/4] overflow-hidden">
           <img
@@ -96,9 +96,9 @@ const { project: p } = Astro.props;
             </p>
           </div>
         )}
-        <div class="px-6 md:px-14 pb-20 md:pb-28">
-          <div class="mx-auto max-w-[1100px] grid grid-cols-2 gap-6 md:gap-10 items-start">
-            <div class="flex flex-col gap-6 md:gap-10">
+        <div class="px-2 md:px-14 pb-20 md:pb-28">
+          <div class="mx-auto max-w-[1100px] grid grid-cols-2 gap-2 md:gap-10 items-start">
+            <div class="flex flex-col gap-2 md:gap-10">
               {s.images.filter((_, i) => i % 2 === 0).map((src, i) => (
                 <a
                   href={src}
@@ -115,7 +115,7 @@ const { project: p } = Astro.props;
                 </a>
               ))}
             </div>
-            <div class="flex flex-col gap-6 md:gap-10">
+            <div class="flex flex-col gap-2 md:gap-10">
               {s.images.filter((_, i) => i % 2 === 1).map((src, i) => (
                 <a
                   href={src}
