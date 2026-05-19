@@ -6,6 +6,8 @@ import Footer from "../components/Footer.astro";
 interface Props {
   title?: string;
   description?: string;
+  /** Comma-separated keywords. Empty by default — Google ignores `keywords` anyway, but Bing still reads it. */
+  keywords?: string;
   /** When true, the header sits over the hero with white text. */
   transparentHeader?: boolean;
   /** When false, render the footer in light theme (white bg). */
@@ -13,11 +15,46 @@ interface Props {
 }
 
 const {
-  title = "ACCUEIL | Aritia Design",
-  description = "Créatrice d'univers évènementiels haut de gamme à Toulouse — design floral, scénographie et papeterie pour mariages et événements d'exception.",
+  title = "Aritia Design — Wedding Designer & Scénographe à Toulouse",
+  description = "Aritia Design conçoit des mariages raffinés et événements haut de gamme à Toulouse, en Haute-Garonne et alentours. Direction artistique, design floral, scénographie et papeterie sur-mesure.",
+  keywords = "mariage Toulouse, wedding designer Toulouse, mariage haut de gamme, mariage raffiné, scénographie mariage, décoration mariage Haute-Garonne, design floral mariage, papeterie mariage sur-mesure, wedding planner Toulouse, événement luxe Toulouse",
   transparentHeader = true,
   darkFooter = true,
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString();
+const ogImageURL = new URL("/og-image.jpg", Astro.site ?? Astro.url).toString();
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Aritia Design",
+  "image": ogImageURL,
+  "url": Astro.site?.toString() ?? "https://aritiadesign.com",
+  "description": "Wedding designer et scénographe d'événements haut de gamme à Toulouse — direction artistique, design floral, scénographie et papeterie sur-mesure pour mariages d'exception.",
+  "areaServed": [
+    { "@type": "City", "name": "Toulouse" },
+    { "@type": "AdministrativeArea", "name": "Haute-Garonne" },
+    { "@type": "AdministrativeArea", "name": "Occitanie" }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Toulouse",
+    "addressRegion": "Haute-Garonne",
+    "addressCountry": "FR"
+  },
+  "sameAs": [
+    "https://www.instagram.com/aritia_design/"
+  ],
+  "knowsAbout": [
+    "Wedding design",
+    "Scénographie événementielle",
+    "Design floral",
+    "Papeterie de mariage",
+    "Direction artistique"
+  ],
+  "priceRange": "€€€"
+};
 ---
 
 <!doctype html>
@@ -26,22 +63,35 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    <meta name="author" content="Aritia Design" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href={canonicalURL} />
+
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content={new URL("/og-image.jpg", Astro.site ?? Astro.url).toString()} />
+    <meta property="og:site_name" content="Aritia Design" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImageURL} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Aritia Design — wedding designer Toulouse" />
     <meta property="og:locale" content="fr_FR" />
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={new URL("/og-image.jpg", Astro.site ?? Astro.url).toString()} />
+    <meta name="twitter:image" content={ogImageURL} />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon.svg" />
     <link rel="preload" href="/fonts/PlayfairDisplay.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/fonts/Raleway.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/fonts/HauteCouture.otf" as="font" type="font/otf" crossorigin />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
     <title>{title}</title>
   </head>
   <body class="bg-white text-[var(--color-ink)] antialiased">

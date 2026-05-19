@@ -10,7 +10,11 @@ interface Props { project: Project }
 const { project: p } = Astro.props;
 ---
 
-<Layout title={`${p.title} ${p.titleItalic} | Aritia Design`} transparentHeader={false}>
+<Layout
+  title={`${p.title} ${p.titleItalic} — ${p.subtitle} | Aritia Design`}
+  description={`${p.title} ${p.titleItalic} — projet de mariage haut de gamme conçu par Aritia Design à ${p.subtitle}. ${p.intro.slice(0, 140)}…`}
+  transparentHeader={false}
+>
   {/* ───────────────────────── 1. HERO — 3-PHOTO ROW ───────────────────────── */}
   <section class="bg-white px-2 md:px-14 pt-32 md:pt-40 pb-12">
     <div class="mx-auto max-w-[1240px] grid grid-cols-[1fr_1.25fr_1fr] gap-2 md:gap-12 items-center">
