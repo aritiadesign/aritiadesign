@@ -8,12 +8,15 @@ interface Props {
   description?: string;
   /** When true, the header sits over the hero with white text. */
   transparentHeader?: boolean;
+  /** When false, render the footer in light theme (white bg). */
+  darkFooter?: boolean;
 }
 
 const {
   title = "ACCUEIL | Aritia Design",
   description = "Créatrice d'univers évènementiels haut de gamme à Toulouse — design floral, scénographie et papeterie pour mariages et événements d'exception.",
   transparentHeader = true,
+  darkFooter = true,
 } = Astro.props;
 ---
 
@@ -37,7 +40,7 @@ const {
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer dark={darkFooter} />
 
     <script>
       // iOS Safari autoplay fix — set muted explicitly via JS and retry on first user gesture.

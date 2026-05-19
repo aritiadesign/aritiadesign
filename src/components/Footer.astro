@@ -1,15 +1,28 @@
 ---
 import { navLinks as links } from "../data/nav";
 
-const galleryStrip = [
+interface Props {
+  /** When false, render footer in light theme (white bg, dark text). */
+  dark?: boolean;
+}
+const { dark = true } = Astro.props;
+
+const galleryStripDark = [
   { src: "/images/footer-1.jpg", alt: "Salle de réception décorée" },
   { src: "/images/footer-2.jpg", alt: "Composition florale rouge" },
   { src: "/images/footer-3.jpg", alt: "Couple de mariés" },
   { src: "/images/footer-4.jpg", alt: "Domaine de réception" },
 ];
+const galleryStripLight = [
+  { src: "/images/footer-light-1.jpg", alt: "Décor de table d'honneur" },
+  { src: "/images/footer-light-2.jpg", alt: "Composition florale détail" },
+  { src: "/images/footer-light-3.jpg", alt: "Domaine et voiture vintage" },
+  { src: "/images/footer-light-4.jpg", alt: "Salle de réception" },
+];
+const galleryStrip = dark ? galleryStripDark : galleryStripLight;
 ---
 
-<footer class="bg-[#1a1a1a] text-white">
+<footer class:list={[dark ? "bg-[#1a1a1a] text-white" : "bg-white text-[var(--color-ink)]"]} data-footer-theme={dark ? "dark" : "light"}>
   <div class="mx-auto max-w-[1500px] px-4 sm:px-8 lg:px-14 pt-28 md:pt-32 pb-10">
     <div class="mx-auto max-w-[1240px] grid grid-cols-2 md:grid-cols-[repeat(4,292px)] justify-center gap-4 md:gap-6">
       {galleryStrip.map((img) => (
@@ -143,3 +156,19 @@ const galleryStrip = [
     </div>
   </div>
 </footer>
+
+<style is:global>
+  /* Light footer theme — re-skin without rewriting every Tailwind class */
+  [data-footer-theme="light"] { color: var(--color-ink); }
+  [data-footer-theme="light"] .bg-neutral-800 { background-color: #efefef; }
+  [data-footer-theme="light"] [class*="text-white/85"],
+  [data-footer-theme="light"] [class*="text-white/70"],
+  [data-footer-theme="light"] [class*="text-white/50"] { color: var(--color-ink-soft); }
+  [data-footer-theme="light"] .text-white,
+  [data-footer-theme="light"] :hover.text-white,
+  [data-footer-theme="light"] *:hover > .text-white { color: var(--color-ink); }
+  [data-footer-theme="light"] [class*="border-white/10"],
+  [data-footer-theme="light"] [class*="border-white/40"] { border-color: rgba(28,28,28,0.15); }
+  [data-footer-theme="light"] [class*="hover:bg-white/10"]:hover { background-color: rgba(0,0,0,0.05); }
+  [data-footer-theme="light"] [class*="decoration-white/60"] { text-decoration-color: rgba(28,28,28,0.4); }
+</style>
