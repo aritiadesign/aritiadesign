@@ -76,10 +76,14 @@ body {
   background: var(--color-paper);
 }
 
-/* Global body-text default — any <p> uses 16px unless overridden. */
-p {
-  font-size: 16px;
-  line-height: 1.9;
+/* Global body-text default — any <p> uses 16px unless overridden.
+   Wrapped in @layer base so Tailwind utilities (in @layer utilities)
+   can override on a per-element basis. */
+@layer base {
+  p {
+    font-size: 16px;
+    line-height: 1.9;
+  }
 }
 
 .font-display { font-family: var(--font-display); }
