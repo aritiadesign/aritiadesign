@@ -455,18 +455,37 @@ const faqs = [
     ))}
   </section>
 
-  {/* ───────────────────────── 10. UN MOMENT D'EXCEPTION ───────────────────────── */}
+  {/* ───────────────────────── 10. UN MOMENT D'EXCEPTION (intro video) ───────────────────────── */}
   <section class="bg-white px-6 py-20 md:py-28 text-center">
     <h2 class="font-display text-[36px] md:text-[52px] leading-[1.2]">
       UN MOMENT D'EXCEPTION&nbsp;!<br />
       <span class="font-italic-serif italic text-[0.7em]">décor, mise en ambiance, papeterie, floral</span>
     </h2>
+
+    <div class="mt-12 md:mt-16 mx-auto max-w-[1100px]">
+      <video
+        class="block w-full aspect-video bg-black"
+        src="/videos/clip-intro.mp4"
+        controls
+        playsinline
+        preload="metadata"
+        poster="/images/hero-poster.jpg"
+      ></video>
+    </div>
+
+    {/* Desktop-only S'INSPIRER CTA */}
+    <a
+      href="/portfolio"
+      class="hidden md:inline-flex items-center gap-3 mt-10 text-[12px] tracking-[0.32em] uppercase text-[var(--color-ink)] hover:text-[var(--color-burgundy)] transition"
+    >
+      <span>✦ S'inspirer</span>
+      <span aria-hidden="true" class="inline-block">→</span>
+    </a>
   </section>
 
-  {/* ───────────────────────── 11. S'INSPIRER CTA ───────────────────────── */}
+  {/* ───────────────────────── 11. VOTRE UNIVERS CTA ───────────────────────── */}
   <section class="bg-[#1a1a1a] text-white px-6 py-24 md:py-32 text-center">
-    <p class="text-[12px] tracking-[0.32em] uppercase text-white/70">✦ S'INSPIRER</p>
-    <h2 class="mt-8 font-display text-[36px] md:text-[52px] leading-[1.2]">
+    <h2 class="font-display text-[36px] md:text-[52px] leading-[1.2]">
       VOTRE UNIVERS, VOTRE HISTOIRE,<br />
       <span class="font-italic-serif italic">une création unique</span>
     </h2>
