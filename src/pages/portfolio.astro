@@ -2,18 +2,32 @@
 import Layout from "../layouts/Layout.astro";
 import PageHero from "../components/PageHero.astro";
 
+// 17 "Temps forts" highlight photos, ordered by their appearance in Wix
 const strip = [
-  { src: "/images/portfolio-strip-1.jpg", alt: "Salle à manger éclairée" },
-  { src: "/images/portfolio-strip-2.jpg", alt: "Domaine de réception" },
-  { src: "/images/portfolio-strip-3.jpg", alt: "Mariée et voiture vintage" },
-  { src: "/images/portfolio-strip-4.jpg", alt: "Salle blanche" },
+  { src: "/images/portfolio-strip/01_3e933860.jpg", alt: "Salle de réception décorée" },
+  { src: "/images/portfolio-strip/02_74179fa8.jpg", alt: "Domaine et voiture vintage" },
+  { src: "/images/portfolio-strip/03_e633e2c6.jpg", alt: "Détail floral" },
+  { src: "/images/portfolio-strip/04_6297cc8a.png", alt: "Composition graphique" },
+  { src: "/images/portfolio-strip/05_41e5ab48.jpg", alt: "Mise en place" },
+  { src: "/images/portfolio-strip/06_95d16cce.jpg", alt: "Cérémonie en extérieur" },
+  { src: "/images/portfolio-strip/07_dce575f9.jpg", alt: "Détail scénographique" },
+  { src: "/images/portfolio-strip/08_abe01ccb.jpg", alt: "Table dressée" },
+  { src: "/images/portfolio-strip/09_06a401f7.jpg", alt: "Atmosphère lumineuse" },
+  { src: "/images/portfolio-strip/10_990a1165.jpg", alt: "Décor floral" },
+  { src: "/images/portfolio-strip/11_a37af623.jpg", alt: "Mariés portrait" },
+  { src: "/images/portfolio-strip/12_4f08de47.jpg", alt: "Papeterie sur-mesure" },
+  { src: "/images/portfolio-strip/13_f97907ca.jpg", alt: "Espace cocktail" },
+  { src: "/images/portfolio-strip/14_b88c2457.jpg", alt: "Ambiance romantique" },
+  { src: "/images/portfolio-strip/15_9392a4cb.jpg", alt: "Détail bouquet" },
+  { src: "/images/portfolio-strip/16_d03e2066.jpg", alt: "Couple et décor" },
+  { src: "/images/portfolio-strip/17_f9bdf9b5.jpg", alt: "Scénographie d'ensemble" },
 ];
 
 const projects = [
   {
     href: "/portfolio/mt",
     img: "/images/portfolio-mt.jpg",
-    alt: "Salle voûtée en bois pour M+T",
+    alt: "Aperçu du mariage M+T au Château de Perron",
     title: "M+T, MARIAGE ÉLÉGANT",
     italic: "à la Française",
   },
@@ -42,18 +56,24 @@ const projects = [
     </div>
   </section>
 
-  {/* ───────────────────────── 3. STRIP DE 4 PHOTOS ───────────────────────── */}
-  <section class="bg-white px-4 md:px-6 pb-16">
-    <div class="mx-auto max-w-[1400px] grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-      {strip.map((img) => (
-        <div class="aspect-[3/4] overflow-hidden">
-          <img
-            src={img.src}
-            alt={img.alt}
-            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-          />
-        </div>
-      ))}
+  {/* ───────────────────────── 3. STRIP — horizontal infinite marquee ───────────────────────── */}
+  <section class="bg-white pb-16 overflow-hidden">
+    <div class="marquee relative w-full">
+      <div class="marquee-track gap-3 md:gap-4 items-center" style="animation-duration: 30s;">
+        {[...strip, ...strip].map((img, i) => (
+          <div
+            class="shrink-0 aspect-[3/4] h-[280px] md:h-[420px] lg:h-[500px] overflow-hidden bg-neutral-100"
+            aria-hidden={i >= strip.length ? "true" : undefined}
+          >
+            <img
+              src={img.src}
+              alt={img.alt}
+              loading="lazy"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
