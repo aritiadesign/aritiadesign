@@ -99,19 +99,21 @@ import PageHero from "../components/PageHero.astro";
 
   {/* ───────────────────────── 4. 3 MOTS-CLÉS + 2 PHOTOS ───────────────────────── */}
   <section class="bg-white py-20 md:py-28 overflow-hidden">
-    <div class="flex flex-col items-center gap-12 md:flex-row md:items-start md:gap-[256px] md:pr-6 lg:pr-14">
-      {/* Left photo (bouquet) — 370x426 desktop, flush against screen-left on desktop, dropped 40px to align with the right block */}
-      <div class="shrink-0 overflow-hidden w-[280px] h-[323px] md:w-[370px] md:h-[426px] md:mt-40">
-        <img
-          src="/images/about-bouquet.jpg"
-          alt="Composition florale rouge"
-          class="w-full h-full object-cover"
-        />
+    <div class="grid grid-cols-2 items-start gap-0">
+      {/* Left photo (bouquet) — same fluid width as the right one, flush against screen-left, dropped 160px on desktop */}
+      <div class="w-[60%] justify-self-start md:mt-40">
+        <div class="aspect-[3/4] overflow-hidden">
+          <img
+            src="/images/about-bouquet.jpg"
+            alt="Composition florale rouge"
+            class="w-full h-full object-cover"
+          />
+        </div>
       </div>
 
-      {/* Right block: couple photo 310x417 + keywords overlapping the bottom */}
-      <div class="relative shrink-0 w-[240px] md:w-[310px]">
-        <div class="overflow-hidden h-[323px] md:h-[417px]">
+      {/* Right block: couple photo + keywords — flush against the column's left edge so the gap before and after it (vs the left photo and viewport right edge) is equal */}
+      <div class="relative w-[60%] justify-self-start">
+        <div class="aspect-[4/5] overflow-hidden">
           <img
             src="/images/about-couple.jpg"
             alt="Couple devant voiture vintage"
@@ -119,10 +121,10 @@ import PageHero from "../components/PageHero.astro";
           />
         </div>
         {/* CRÉATIF overlaps the photo's bottom; Raffiné / MODERNE sit below on white */}
-        <div class="relative z-10 text-center font-display leading-[1.05] text-[60px] md:text-[120px] text-[var(--color-ink)] mt-[-1em] whitespace-nowrap">
-          <p>CRÉATIF</p>
-          <p class="font-italic-serif italic">Raffiné</p>
-          <p>MODERNE</p>
+        <div class="relative z-10 text-center font-display leading-[1.05] text-[40px] md:text-[72px] text-[var(--color-ink)] mt-[-0.5em] whitespace-nowrap">
+          <span class="block">CRÉATIF</span>
+          <span class="block font-italic-serif italic">Raffiné</span>
+          <span class="block">MODERNE</span>
         </div>
       </div>
     </div>
