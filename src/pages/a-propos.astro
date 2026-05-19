@@ -14,16 +14,16 @@ import PageHero from "../components/PageHero.astro";
   {/* ───────────────────────── 2. FONDATRICE / DESIGNER + INTRO ───────────────────────── */}
   <section class="bg-white px-6 py-20 md:py-28">
     <div class="mx-auto max-w-[1200px] grid md:grid-cols-2 gap-14 md:gap-20 items-start">
-      {/* left: heading + portrait */}
-      <div class="text-center md:text-left">
-        <h2 class="font-display font-normal text-[44px] md:text-[60px] leading-[1] tracking-wide">
+      {/* left: title overlapping portrait — title centered on photo width */}
+      <div class="mx-auto md:mx-0 w-full max-w-[360px] md:max-w-[440px] text-center">
+        <h2 class="font-display font-normal text-[44px] md:text-[64px] leading-[0.95] tracking-wide relative z-10 mb-[-0.32em]">
           FONDATRICE<br />DESIGNER
         </h2>
-        <div class="mt-12 md:mt-16 max-w-md mx-auto md:mx-0">
+        <div class="aspect-[3/4] overflow-hidden">
           <img
             src="/images/aritia-portrait-bw.jpg"
             alt="Aritia, fondatrice"
-            class="w-full h-auto object-cover grayscale"
+            class="w-full h-full object-cover grayscale"
             onerror="this.style.background='linear-gradient(135deg,#bfb6a8,#5a5247)';this.removeAttribute('src');"
           />
         </div>
