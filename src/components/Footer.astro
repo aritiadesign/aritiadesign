@@ -121,7 +121,7 @@ const galleryStrip = dark ? galleryStripDark : galleryStripLight;
       </div>
     </div>
 
-    <nav aria-label="Pied de page" class="mt-14 mx-auto max-w-[1240px]">
+    <nav aria-label="Pied de page" class="mt-1 md:mt-10 mx-auto max-w-[1240px]">
       <ul class="flex flex-wrap justify-center gap-x-9 gap-y-3 text-[0.7rem] tracking-[0.28em] uppercase text-white/85">
         {links.map((l, i) => (
           <li>
@@ -140,9 +140,9 @@ const galleryStrip = dark ? galleryStripDark : galleryStripLight;
     </nav>
   </div>
 
-  <div class="border-t border-white/10">
-    <div class="mx-auto max-w-[1500px] px-4 sm:px-8 lg:px-14 py-5 flex flex-col md:flex-row items-center justify-between gap-2 text-[0.65rem] tracking-[0.18em] uppercase text-white/50">
-      <span>Images &amp; vidéos crédits : RNT Motion, Stephen Meslin</span>
+  <div class="border-t border-white/10 mt-8 md:mt-0">
+    <div class="mx-auto max-w-[1500px] px-4 sm:px-8 lg:px-14 py-6 md:py-5 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-2 text-center text-[0.62rem] sm:text-[0.65rem] tracking-[0.12em] md:tracking-[0.18em] uppercase text-white/50 leading-relaxed">
+      <span class="max-w-[18rem] md:max-w-none">Images &amp; vidéos crédits&nbsp;: RNT Motion, Stephen Meslin</span>
       <button
         type="button"
         onclick="window.scrollTo({top:0,behavior:'smooth'})"
