@@ -99,9 +99,9 @@ import PageHero from "../components/PageHero.astro";
 
   {/* ───────────────────────── 4. 3 MOTS-CLÉS + 2 PHOTOS ───────────────────────── */}
   <section class="bg-white py-20 md:py-28 overflow-hidden">
-    <div class="grid grid-cols-2 items-start gap-0">
-      {/* Left photo (bouquet) — same fluid width as the right one, flush against screen-left, dropped 160px on desktop */}
-      <div class="w-[60%] justify-self-start md:mt-40">
+    <div class="flex flex-col items-center gap-16 md:grid md:grid-cols-2 md:items-start md:gap-0">
+      {/* Left photo (bouquet) — same fluid width as the right one, flush against screen-left (desktop), dropped 160px on desktop */}
+      <div class="w-[80%] md:w-[60%] md:justify-self-start md:mt-40">
         <div class="aspect-[3/4] overflow-hidden">
           <img
             src="/images/about-bouquet.jpg"
@@ -111,8 +111,8 @@ import PageHero from "../components/PageHero.astro";
         </div>
       </div>
 
-      {/* Right block: couple photo + keywords — flush against the column's left edge so the gap before and after it (vs the left photo and viewport right edge) is equal */}
-      <div class="relative w-[60%] justify-self-start">
+      {/* Right block: couple photo + keywords — flush against the column's left edge (desktop) so the gap before and after it is equal */}
+      <div class="relative w-[80%] md:w-[60%] md:justify-self-start">
         <div class="aspect-[4/5] overflow-hidden">
           <img
             src="/images/about-couple.jpg"
