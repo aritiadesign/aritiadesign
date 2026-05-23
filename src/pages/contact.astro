@@ -1,6 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageHero from "../components/PageHero.astro";
+
+// Web3Forms access key — get yours at https://web3forms.com (free, unlimited)
+const WEB3FORMS_KEY = "8de1adb6-676c-48db-8d77-490f7ee76c05";
+
+// Show a thank-you state when ?sent=1 is in the URL (Web3Forms redirects here after submission)
+const sent = Astro.url.searchParams.get("sent") === "1";
 ---
 
 <Layout
@@ -58,12 +64,24 @@ import PageHero from "../components/PageHero.astro";
           création d'un univers qui vous ressemble.
         </p>
 
+        {sent && (
+          <div class="mt-10 p-6 bg-[#f7f5f1] border border-[var(--color-ink)]/10 text-[14px] leading-[1.9] text-[var(--color-ink-soft)]">
+            <p class="font-display text-[20px] text-[var(--color-ink)] mb-2">Merci&nbsp;!</p>
+            <p>Votre demande a bien été envoyée. Je reviens vers vous sous 48&nbsp;h ouvrées.</p>
+          </div>
+        )}
+
         <form
-          action="mailto:contact@aritiadesign.com"
-          method="post"
-          enctype="text/plain"
+          action="https://api.web3forms.com/submit"
+          method="POST"
           class="mt-10 space-y-7"
         >
+          <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+          <input type="hidden" name="subject" value="Nouveau message — Aritia Design" />
+          <input type="hidden" name="from_name" value="Site Aritia Design" />
+          <input type="hidden" name="redirect" value={new URL("/contact?sent=1", Astro.site ?? Astro.url).toString()} />
+          {/* Honeypot — bots fill this, real users don't */}
+          <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
           <div class="border-b border-black/15 pb-1">
             <label class="sr-only" for="f-name">Nom &amp; Prénom</label>
             <input
