@@ -303,7 +303,7 @@ const faqs = [
   <script>
     document.querySelectorAll<HTMLElement>(".services-tabs").forEach((bar) => {
       const tabs = bar.querySelectorAll<HTMLButtonElement>(".services-tab");
-      const panels = bar.parentElement!.querySelectorAll<HTMLElement>(".services-panel");
+      const panels = bar.closest("section")!.querySelectorAll<HTMLElement>(".services-panel");
       tabs.forEach((tab) =>
         tab.addEventListener("click", () => {
           const idx = tab.dataset.tab;
