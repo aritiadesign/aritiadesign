@@ -26,7 +26,7 @@ const {
   subtitle,
   subtitleHtml,
   titleSizeMd = "124px",
-  titleSizeMobile = "80px",
+  titleSizeMobile = "56px",
 } = Astro.props;
 ---
 
@@ -48,7 +48,7 @@ const {
     <span class="page-hero-rule" aria-hidden="true"></span>
 
     {(subtitleHtml || subtitle) && (
-      <p class="mt-8 md:mt-10 text-[15px] tracking-[2.25px] uppercase text-white/85 max-w-2xl">
+      <p class="mt-6 md:mt-10 text-[12px] sm:text-[13px] md:text-[15px] tracking-[1.6px] sm:tracking-[2px] md:tracking-[2.25px] uppercase text-white/85 max-w-2xl">
         {subtitleHtml ? <Fragment set:html={subtitleHtml} /> : subtitle}
       </p>
     )}
@@ -76,6 +76,17 @@ const {
     width: 35px;
     height: 1px;
     background-color: #fff;
-    margin-top: 4rem;
+    margin-top: 2.5rem;
+  }
+  @media (min-width: 768px) {
+    .page-hero-rule { margin-top: 4rem; }
+  }
+  /* On mobile, drop the hard-coded line breaks in the subtitle so the text
+     reflows naturally and never exceeds 3 lines on narrow viewports.
+     Exception: <br class="show-mobile"> stays visible on mobile (used to
+     force a specific break point that we also want on desktop). */
+  @media (max-width: 767px) {
+    .page-hero-content p :global(br) { display: none; }
+    .page-hero-content p :global(br.show-mobile) { display: inline; }
   }
 </style>

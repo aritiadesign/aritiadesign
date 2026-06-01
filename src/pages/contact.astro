@@ -18,7 +18,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
     image="/images/contact-hero.jpg"
     imageAlt="Plafond aux poutres"
     title="Contact"
-    subtitleHtml="Vous rêver d'un mariage ou d'un événement<br />qui vous ressemble&nbsp;?"
+    subtitleHtml="Vous rêver d'un mariage ou d'un événement&nbsp;<br />qui vous ressemble&nbsp;?"
   />
 
   {/* ───────────────────────── 2. FORM ───────────────────────── */}
@@ -192,7 +192,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
             ></textarea>
           </div>
 
-          <div class="pt-4 text-right">
+          <div class="pt-4 text-center md:text-right">
             <button
               type="submit"
               class="font-script text-[44px] md:text-[56px] text-[var(--color-ink)] hover:opacity-70 transition leading-none"
