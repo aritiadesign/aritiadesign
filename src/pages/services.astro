@@ -66,7 +66,7 @@ const packs = [
   {
     title: "Décor & Identité Visuelle",
     italic: "",
-    label: "DÉCOR & SCÉNOGRAPHIE + PAPETERIE | SUR DEVIS",
+    label: "DÉCOR & SCÉNOGRAPHIE + PAPETERIE<br />| SUR DEVIS",
     bullets: [
       "Définition de votre style et harmonie colorée",
       "Aménagement et mise en scène des espaces clés",
@@ -248,7 +248,9 @@ const faqs = [
               </div>
               <div class="p-8 flex flex-col flex-1">
                 <h3 class="font-display text-[34px] leading-[1.1] tracking-wide min-h-[80px]">
-                  {s.title}
+                  {s.title.split("&").map((part, i, arr) => (
+                    <>{part}{i < arr.length - 1 && <span class="amp">&amp;</span>}</>
+                  ))}
                   {s.titleItalic && <> <span class="font-italic-serif italic font-light">{s.titleItalic}</span></>}
                 </h3>
                 <p class="mt-6 text-[15px] leading-[1.7] text-white min-h-[280px]">{pack.desc}</p>
@@ -287,7 +289,9 @@ const faqs = [
         <div role="tabpanel" class="services-panel hidden md:block" data-panel={i} hidden={i !== 0}>
           <MediaCard image={s.image} imageAlt={s.alt}>
             <h3 class="font-display text-[48px] leading-[1] tracking-wide">
-              {s.title}
+              {s.title.split("&").map((part, i, arr) => (
+                <>{part}{i < arr.length - 1 && <span class="amp">&amp;</span>}</>
+              ))}
               {s.titleItalic && <> <span class="font-italic-serif italic font-light">{s.titleItalic}</span></>}
             </h3>
             <div class="mt-7 text-[16px] leading-[1.9] text-white max-w-md space-y-4">

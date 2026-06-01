@@ -51,15 +51,24 @@ const {
       </g>
     </svg>
   )}
-  <h3 class="font-display font-normal text-[28px] md:text-[36px] leading-[1.1] tracking-wide">
-    {title}
+  <h3
+    class:list={[
+      "font-display font-normal leading-[1.1] tracking-wide whitespace-nowrap",
+      title.includes("&")
+        ? "text-[22px] md:text-[28px]"
+        : "text-[28px] md:text-[36px]",
+    ]}
+  >
+    {title.split("&").map((part, i, arr) => (
+      <>{part}{i < arr.length - 1 && <span class="amp">&amp;</span>}</>
+    ))}
   </h3>
   {italic && (
     <p class="mt-2 font-italic-serif italic font-light text-[24px] md:text-[32px] leading-tight">
       {italic}
     </p>
   )}
-  <p class="mt-6 text-[14px] tracking-[0.28em] uppercase text-white">{label}</p>
+  <p class="mt-6 text-[14px] tracking-[0.28em] uppercase text-white" set:html={label}></p>
   <p class="mt-8 text-[14px] tracking-[0.28em] uppercase text-white">
     Compris dans l'expérience
   </p>
