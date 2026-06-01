@@ -320,6 +320,16 @@ const steps = [
   </section>
 </Layout>
 
+<style is:global>
+  @media (max-width: 767px) {
+    /* Match the ampersand height to the rest of the processus step title on mobile */
+    h3 .amp {
+      font-size: 1em;
+      vertical-align: baseline;
+    }
+  }
+</style>
+
 <script>
   // Flipbook navigation — crossfade between pages, keyboard + click support.
   document.querySelectorAll<HTMLElement>("[data-flipbook]").forEach((root) => {
