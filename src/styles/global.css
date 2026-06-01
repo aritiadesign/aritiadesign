@@ -157,22 +157,6 @@ img {
 }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 
-/* Scroll-triggered fade-in for the step images on the Processus page. */
-@keyframes step-entrance {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-.step-float {
-  opacity: 0;
-  will-change: opacity;
-}
-.step-float.is-visible {
-  animation: step-entrance 2s ease-in-out forwards;
-}
-@media (prefers-reduced-motion: reduce) {
-  .step-float { opacity: 1; }
-  .step-float.is-visible { animation: none; }
-}
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none; }
 }
