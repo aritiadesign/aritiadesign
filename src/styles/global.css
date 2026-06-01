@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Gilda+Display&display=swap");
 
 /* Local font files — see public/fonts/. Playfair + Raleway as variable fonts, Haute Couture as a single OTF. */
 @font-face {
@@ -40,6 +39,20 @@
 @font-face {
   font-family: "Brandon Grotesque";
   src: url("/fonts/BrandonGrotesque-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/fonts/CormorantGaramond-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilda Display";
+  src: url("/fonts/GildaDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
