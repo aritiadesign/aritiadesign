@@ -24,6 +24,23 @@ const portfolioImages = [
   { src: "/images/portfolio-strip/16_d03e2066.jpg", alt: "Salle longue, suspensions",          w: 460 },
   { src: "/images/portfolio-strip/17_f9bdf9b5.jpg", alt: "Couvert — menu & merci",             w: 360 },
 ];
+
+// Témoignages clients — la flèche du carrousel cycle à travers cette liste.
+// Pour ajouter un avis, copier-coller un objet { quote, author }.
+const testimonials = [
+  {
+    quote: "Merci encore pour ce mariage qui était tout simplement magique&nbsp;! Tu as fait un travail remarquable en moins de 6 mois&nbsp;! Je recommande à 100&nbsp;%&nbsp;!",
+    author: "Mélodie & Thibault",
+  },
+  {
+    quote: "Aritia a su capter notre univers avec une finesse rare. Chaque détail, des compositions florales à la papeterie, racontait notre histoire.",
+    author: "Camille & Antoine",
+  },
+  {
+    quote: "Un accompagnement précieux, exigeant et profondément humain. Notre journée a dépassé toutes nos attentes.",
+    author: "Léa & Maxime",
+  },
+];
 ---
 
 <Layout
@@ -80,26 +97,28 @@ const portfolioImages = [
   {/* ───────────────────────── 3. PORTFOLIO STRIP (marquee) ───────────────── */}
   <section class="bg-[#1a1a1a] text-white relative overflow-hidden pt-[110px] pb-[110px]">
     {/* solid side bands of the portfolio section — overlay on top of the marquee */}
-    <div class="pointer-events-none absolute inset-y-0 left-0 w-[110px] bg-[#1a1a1a] z-20"></div>
-    <div class="pointer-events-none absolute inset-y-0 right-0 w-[110px] bg-[#1a1a1a] z-20"></div>
+    <div class="pointer-events-none absolute inset-y-0 left-0 w-6 md:w-[110px] bg-[#1a1a1a] z-20"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 w-6 md:w-[110px] bg-[#1a1a1a] z-20"></div>
 
     {/* big PORTFOLIO heading — anchored at top, just inside the left dark band */}
     <h2
       class="font-display font-normal text-white leading-none tracking-[0.01em]
-             text-[44px] md:text-[88px]
-             absolute z-30 top-[35px] md:top-[49px] left-[170px]
+             text-[48px] sm:text-[60px] md:text-[88px]
+             absolute z-30
+             top-[78px] sm:top-[70px] md:top-[49px]
+             left-1/2 -translate-x-1/2 md:left-[170px] md:translate-x-0
              select-none pointer-events-none"
     >
       PORTFOLIO
     </h2>
 
     <div class="marquee relative w-full">
-      <div class="marquee-track gap-[16px] md:gap-[20px] items-center">
+      <div class="marquee-track gap-[10px] md:gap-[20px] items-center">
         {[...portfolioImages, ...portfolioImages].map((img, i) => (
           <a
             href="/portfolio"
-            class="shrink-0 block h-[320px] md:h-[480px] overflow-hidden bg-neutral-800 group"
-            style={`width: ${img.w}px;`}
+            class="shrink-0 block h-[260px] md:h-[480px] w-[calc(var(--w)*0.4)] md:w-[var(--w)] overflow-hidden bg-neutral-800 group"
+            style={`--w: ${img.w}px;`}
             aria-label={img.alt}
             tabindex={i < portfolioImages.length ? 0 : -1}
             aria-hidden={i >= portfolioImages.length ? "true" : undefined}
@@ -116,7 +135,7 @@ const portfolioImages = [
     </div>
 
     {/* VOIR GALLERY — bottom band, right edge aligned with the gallery's right edge */}
-    <div class="absolute z-30 left-0 right-0 bottom-0 h-[110px] px-[110px] flex items-center justify-end">
+    <div class="absolute z-30 left-0 right-0 bottom-0 h-[80px] md:h-[110px] px-6 md:px-[110px] flex items-center justify-end">
       <SparkLink href="/portfolio" label="Voir Gallery" />
     </div>
   </section>
@@ -133,7 +152,7 @@ const portfolioImages = [
             onerror="this.style.background='linear-gradient(135deg,#e8d8c0,#c69d6a)';this.removeAttribute('src');"
           />
         </div>
-        <p class="font-script text-[32px] md:text-[50px] leading-[1.1] text-[var(--color-ink)]/80 absolute right-2 md:-right-32 -bottom-[80px] md:-bottom-[135px] whitespace-nowrap text-center rotate-[-8deg]">
+        <p class="font-script text-[32px] md:text-[50px] leading-[1.1] text-[var(--color-ink)] absolute right-2 md:-right-32 -bottom-[90px] md:-bottom-[135px] whitespace-nowrap text-center rotate-[-8deg]">
           Transformez chaque<br />occasion en<br />moment d'exception
         </p>
       </div>
@@ -196,26 +215,29 @@ const portfolioImages = [
 
   {/* ───────────────────────── 6. MOSAÏQUE PHOTOS (desktop only) ───────────────────────── */}
   <section class="hidden md:block bg-white py-28 md:py-36 px-6">
-    <div class="mx-auto max-w-[1100px] relative h-[540px] md:h-[640px]">
-      <div class="absolute left-[6%] top-[18%] w-[26%] aspect-[3/4] overflow-hidden shadow-sm">
+    <div class="mx-auto max-w-[1100px] relative h-[600px] md:h-[720px]">
+      {/* Gauche — petit format, positionné pour recouvrir le visage de l'homme dans la photo centrale */}
+      <div class="absolute left-[5.5%] top-[4%] w-[28%] aspect-square overflow-hidden shadow-sm z-10">
         <img
-          src="/images/collage-1.jpg"
+          src="/images/collage-salon.jpg"
           alt="Salon classique avec lustre"
           class="w-full h-full object-cover"
           onerror="this.style.background='linear-gradient(135deg,#d8c9b3,#a8896a)';this.removeAttribute('src');"
         />
       </div>
-      <div class="absolute left-[28%] top-0 w-[32%] aspect-[3/4] overflow-hidden shadow-sm">
+      {/* Centre — grande photo dominante (portrait) */}
+      <div class="absolute left-[26%] top-0 w-[40%] aspect-[3/4] overflow-hidden shadow-sm z-0">
         <img
-          src="/images/collage-2.jpg"
+          src="/images/collage-personne.jpg"
           alt="Invitée au chapeau blanc"
           class="w-full h-full object-cover"
           onerror="this.style.background='linear-gradient(135deg,#1f2a3a,#0e1828)';this.removeAttribute('src');"
         />
       </div>
-      <div class="absolute right-[8%] top-[26%] w-[28%] aspect-[4/3] overflow-hidden shadow-sm">
+      {/* Droite — format paysage, juste sous l'épaule de la femme, décalé à droite pour laisser voir le bouquet */}
+      <div class="absolute right-[1%] top-[47%] w-[38%] aspect-[4/3] overflow-hidden shadow-sm z-10">
         <img
-          src="/images/collage-3.jpg"
+          src="/images/collage-lieu.jpg"
           alt="Domaine de réception avec fontaine"
           class="w-full h-full object-cover"
           onerror="this.style.background='linear-gradient(135deg,#6a8d59,#3a5a40)';this.removeAttribute('src');"
@@ -235,16 +257,44 @@ const portfolioImages = [
           onerror="this.style.background='linear-gradient(135deg,#cfc1ad,#7a6a5a)';this.removeAttribute('src');"
         />
       </div>
-      <figure class="md:pl-8 relative">
-        <span class="font-italic-serif italic text-[5rem] leading-none text-black/15 absolute -left-2 -top-6 select-none">“</span>
-        <blockquote class="font-italic-serif italic text-[1.6rem] md:text-[1.9rem] leading-[1.4] text-[var(--color-ink)]">
-          Merci encore pour ce mariage qui était tout simplement magique&nbsp;!
-          Tu as fait un travail remarquable en moins de 6 mois&nbsp;!
-          Je recommande à 100&nbsp;%&nbsp;!
-        </blockquote>
-        <figcaption class="mt-8 text-[0.72rem] tracking-[0.32em] uppercase text-[var(--color-muted)]">
-          — Mélodie &amp; Thibault
-        </figcaption>
+      <figure class="md:pl-8 relative" data-testimonial-carousel>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 300.57 256.05"
+          fill="currentColor"
+          aria-hidden="true"
+          class="w-[35px] h-auto text-black/15 absolute left-[8px] top-[-4px] select-none pointer-events-none"
+        >
+          <path d="M79.7,0c3.15-.08,6.88,3.46,5.48,6.73-19.01,19.82-33.89,42.68-41.53,69.31-6.22,21.7-9.88,56.31-.73,77.33.47,1.08,3.51,7.14,4.33,7.14,6.46-9.29,16.51-12.98,27.47-13.96,40.92-3.67,64.7,26.02,58.02,65.5-5.34,31.55-34.91,45.27-64.54,43.85C-4.46,252.43-8.43,155.59,7.93,103.23,18.54,69.26,42.49,36.38,66.97,10.98c2.48-2.58,7.12-7.85,9.74-9.73.83-.6,1.96-1.23,2.99-1.26Z" />
+          <path d="M213.29,160.52c.33.28.7.03,1.03-.32,1.52-1.59,2.42-3.66,4.45-5.43,9.83-8.59,29.21-9.67,41.56-7.6,53.27,8.95,55.54,95.33-4.51,107.06-49.93,9.75-79.52-20.91-86.9-67.59-10.86-68.65,15.37-123.22,61.08-171.92,3.29-3.51,10.2-11.21,13.72-13.74,3.78-2.72,8.95.94,8.31,5.28-16.54,17.67-30.51,37.15-38.75,60.14-8.46,23.58-14.07,64.24-3.57,87.47.39.86,3.29,6.4,3.59,6.65Z" />
+        </svg>
+
+        <div class="relative min-h-[260px] md:min-h-[220px]">
+          {testimonials.map((t, i) => (
+            <div
+              class="testimonial-slide absolute inset-0 transition-opacity duration-500 ease-in-out"
+              data-index={i}
+              style={i === 0 ? "opacity:1;" : "opacity:0;pointer-events:none;"}
+            >
+              <blockquote class="font-italic-serif italic text-[1.6rem] md:text-[1.9rem] leading-[1.4] text-[var(--color-ink)]" set:html={t.quote} />
+              <div class="mt-8 flex items-center gap-5">
+                <figcaption class="text-[0.72rem] tracking-[0.32em] uppercase text-[var(--color-muted)]">
+                  — {t.author}
+                </figcaption>
+                <button
+                  type="button"
+                  data-testimonial-next
+                  aria-label="Témoignage suivant"
+                  class="flex items-center justify-center text-black/15 hover:text-[var(--color-burgundy)] transition-colors"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 442 793" fill="currentColor" class="h-5 w-auto rotate-90">
+                    <path d="M442,240c-48.43-2.43-97.83-17.78-138.52-43.98-16.1-10.37-31.48-28.88-52.4-16.44-5,2.97-13.08,13.31-13.08,18.92v594.5h-34c-.27-.73,1-1.2,1-1.5V204.5c0-11.84-9.42-24.9-20.96-28.04-18.54-5.05-31.93,10.88-46.13,19.96C97.23,222.43,48.38,237.78,0,240v-32.5c.63-.99,1.38-1.29,2.5-1.5,4.69-.86,12.31-.38,17.86-1.14,50.4-6.91,110.18-33.41,142.61-73.39C193.06,94.4,203.87,47.09,205,0h31.5c3.05,5.87,1.01,14.58,1.51,21.49,7.59,105.17,82.63,169.13,183.62,183.38,5.44.77,13.07.26,17.87,1.13,1.12.2,1.87.51,2.5,1.5v32.5Z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
       </figure>
     </div>
   </section>
@@ -313,3 +363,25 @@ const portfolioImages = [
     </a>
   </section>
 </Layout>
+
+<script>
+  const carousel = document.querySelector<HTMLElement>("[data-testimonial-carousel]");
+  if (carousel) {
+    const slides = Array.from(carousel.querySelectorAll<HTMLElement>(".testimonial-slide"));
+    const nextBtns = carousel.querySelectorAll<HTMLButtonElement>("[data-testimonial-next]");
+    let current = 0;
+    const show = (i: number) => {
+      slides.forEach((s, idx) => {
+        const active = idx === i;
+        s.style.opacity = active ? "1" : "0";
+        s.style.pointerEvents = active ? "auto" : "none";
+      });
+    };
+    nextBtns.forEach((btn) =>
+      btn.addEventListener("click", () => {
+        current = (current + 1) % slides.length;
+        show(current);
+      })
+    );
+  }
+</script>
