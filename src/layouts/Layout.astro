@@ -121,6 +121,16 @@ const jsonLd = {
       };
       window.addEventListener("touchstart", retry, { passive: true, once: true });
       window.addEventListener("click", retry, { once: true });
+
+      // Image protection — block right-click "Save image as" and drag-to-save on images.
+      const isImg = (t: EventTarget | null) =>
+        t instanceof HTMLElement && t.tagName === "IMG";
+      document.addEventListener("contextmenu", (e) => {
+        if (isImg(e.target)) e.preventDefault();
+      });
+      document.addEventListener("dragstart", (e) => {
+        if (isImg(e.target)) e.preventDefault();
+      });
     </script>
   </body>
 </html>

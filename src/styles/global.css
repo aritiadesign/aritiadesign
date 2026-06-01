@@ -125,6 +125,15 @@ body {
 .tracking-wider-2 { letter-spacing: 0.18em; }
 .tracking-widest-2 { letter-spacing: 0.28em; }
 
+/* Image protection — block drag, iOS long-press callout, and text-selection on all <img>.
+   Pairs with the global contextmenu/dragstart handlers in Layout.astro. */
+img {
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
 /* Infinite horizontal marquee for the home gallery strip.
    We render the items twice and translate by -50% so the loop is seamless. */
 @keyframes marquee-x {
