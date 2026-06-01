@@ -26,26 +26,26 @@ const portfolioImages = [
 ];
 
 // Témoignages clients — la flèche du carrousel cycle à travers cette liste.
-// Pour ajouter un avis, copier-coller un objet { quote, author }.
+// Chaque avis a sa propre photo affichée à gauche.
 const testimonials = [
   {
     quote: "Merci encore pour ce mariage qui était tout simplement magique&nbsp;! Tu as fait un travail remarquable en moins de 6 mois&nbsp;! Je recommande à 100&nbsp;%&nbsp;!",
     author: "Mélodie & Thibault",
+    image: "/images/testimonial.jpg",
+    imageAlt: "Mariée vue d'en haut dans l'escalier",
   },
   {
-    quote: "Aritia a su capter notre univers avec une finesse rare. Chaque détail, des compositions florales à la papeterie, racontait notre histoire.",
-    author: "Camille & Antoine",
-  },
-  {
-    quote: "Un accompagnement précieux, exigeant et profondément humain. Notre journée a dépassé toutes nos attentes.",
-    author: "Léa & Maxime",
+    quote: "Merci beaucoup pour l'organisation de notre mariage&nbsp;! Ton souci du détail, ton dévouement ont rendu notre journée parfaite voir plus que parfaite. Nous te sommes reconnaissants pour les magnifiques souvenirs que tu as contribuée à créer et te souhaitons beaucoup de succès dans l'organisation de tes prochains évènements.<br /><br />Nous recommandons Aritia sans aucune hésitation.",
+    author: "ELITAH & FYDERANA",
+    image: "/images/testimonial-2.jpg",
+    imageAlt: "Mariée avec bouquet",
   },
 ];
 ---
 
 <Layout
   title="Aritia Design — Wedding Designer & créatrice de mariages d'exception à Toulouse"
-  description="Wedding designer à Toulouse. Aritia conçoit des mariages raffinés et événements haut de gamme — direction artistique, design floral, scénographie immersive et papeterie sur-mesure, en Haute-Garonne et alentours."
+  description="Wedding designer à Toulouse. Aritia conçoit des mariages raffinés et évènements haut de gamme — direction artistique, design floral, scénographie immersive et papeterie sur-mesure, en Haute-Garonne et alentours."
   transparentHeader={true}
 >
   {/* ───────────────────────── 1. HERO ───────────────────────── */}
@@ -247,38 +247,46 @@ const testimonials = [
   </section>
 
   {/* ───────────────────────── 7. TÉMOIGNAGE ───────────────────────── */}
-  <section class="bg-white pb-28 md:pb-36 px-6">
+  <section class="bg-white pt-16 md:pt-0 pb-[50px] md:pb-20 px-6">
     <div class="mx-auto max-w-[1100px] grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-      <div class="aspect-[3/4] overflow-hidden">
-        <img
-          src="/images/testimonial.jpg"
-          alt="Mariée vue d'en haut dans l'escalier"
-          class="w-full h-full object-cover"
-          onerror="this.style.background='linear-gradient(135deg,#cfc1ad,#7a6a5a)';this.removeAttribute('src');"
-        />
+      <div class="aspect-[3/4] overflow-hidden relative" data-testimonial-images>
+        {testimonials.map((t, i) => (
+          <img
+            src={t.image}
+            alt={t.imageAlt}
+            class="testimonial-image absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+            data-index={i}
+            style={i === 0 ? "opacity:1;" : "opacity:0;"}
+            onerror="this.style.background='linear-gradient(135deg,#cfc1ad,#7a6a5a)';this.removeAttribute('src');"
+          />
+        ))}
       </div>
       <figure class="md:pl-8 relative" data-testimonial-carousel>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 300.57 256.05"
-          fill="currentColor"
-          aria-hidden="true"
-          class="w-[35px] h-auto text-black/15 absolute left-[8px] top-[-4px] select-none pointer-events-none"
-        >
-          <path d="M79.7,0c3.15-.08,6.88,3.46,5.48,6.73-19.01,19.82-33.89,42.68-41.53,69.31-6.22,21.7-9.88,56.31-.73,77.33.47,1.08,3.51,7.14,4.33,7.14,6.46-9.29,16.51-12.98,27.47-13.96,40.92-3.67,64.7,26.02,58.02,65.5-5.34,31.55-34.91,45.27-64.54,43.85C-4.46,252.43-8.43,155.59,7.93,103.23,18.54,69.26,42.49,36.38,66.97,10.98c2.48-2.58,7.12-7.85,9.74-9.73.83-.6,1.96-1.23,2.99-1.26Z" />
-          <path d="M213.29,160.52c.33.28.7.03,1.03-.32,1.52-1.59,2.42-3.66,4.45-5.43,9.83-8.59,29.21-9.67,41.56-7.6,53.27,8.95,55.54,95.33-4.51,107.06-49.93,9.75-79.52-20.91-86.9-67.59-10.86-68.65,15.37-123.22,61.08-171.92,3.29-3.51,10.2-11.21,13.72-13.74,3.78-2.72,8.95.94,8.31,5.28-16.54,17.67-30.51,37.15-38.75,60.14-8.46,23.58-14.07,64.24-3.57,87.47.39.86,3.29,6.4,3.59,6.65Z" />
-        </svg>
-
-        <div class="relative min-h-[260px] md:min-h-[220px]">
+        <div class="relative">
           {testimonials.map((t, i) => (
             <div
-              class="testimonial-slide absolute inset-0 transition-opacity duration-500 ease-in-out"
+              class:list={[
+                "testimonial-slide transition-opacity duration-500 ease-in-out flex flex-col justify-start md:justify-center",
+                i !== 0 ? "absolute inset-x-0 top-0" : "",
+              ]}
               data-index={i}
               style={i === 0 ? "opacity:1;" : "opacity:0;pointer-events:none;"}
             >
-              <blockquote class="font-italic-serif italic text-[1.6rem] md:text-[1.9rem] leading-[1.4] text-[var(--color-ink)]" set:html={t.quote} />
-              <div class="mt-8 flex items-center gap-5">
-                <figcaption class="text-[0.72rem] tracking-[0.32em] uppercase text-[var(--color-muted)]">
+              <div class="relative">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 300.57 256.05"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  class="w-[26px] md:w-[35px] h-auto text-black/15 absolute left-[-11px] md:left-[-15px] top-[-2px] md:top-[-4px] select-none pointer-events-none"
+                >
+                  <path d="M79.7,0c3.15-.08,6.88,3.46,5.48,6.73-19.01,19.82-33.89,42.68-41.53,69.31-6.22,21.7-9.88,56.31-.73,77.33.47,1.08,3.51,7.14,4.33,7.14,6.46-9.29,16.51-12.98,27.47-13.96,40.92-3.67,64.7,26.02,58.02,65.5-5.34,31.55-34.91,45.27-64.54,43.85C-4.46,252.43-8.43,155.59,7.93,103.23,18.54,69.26,42.49,36.38,66.97,10.98c2.48-2.58,7.12-7.85,9.74-9.73.83-.6,1.96-1.23,2.99-1.26Z" />
+                  <path d="M213.29,160.52c.33.28.7.03,1.03-.32,1.52-1.59,2.42-3.66,4.45-5.43,9.83-8.59,29.21-9.67,41.56-7.6,53.27,8.95,55.54,95.33-4.51,107.06-49.93,9.75-79.52-20.91-86.9-67.59-10.86-68.65,15.37-123.22,61.08-171.92,3.29-3.51,10.2-11.21,13.72-13.74,3.78-2.72,8.95.94,8.31,5.28-16.54,17.67-30.51,37.15-38.75,60.14-8.46,23.58-14.07,64.24-3.57,87.47.39.86,3.29,6.4,3.59,6.65Z" />
+                </svg>
+                <blockquote class="font-italic-serif italic text-[1.2rem] md:text-[1.9rem] leading-[1.45] md:leading-[1.4] text-[var(--color-ink)] relative" set:html={t.quote} />
+              </div>
+              <div class="mt-6 md:mt-8 flex items-center gap-4 md:gap-5">
+                <figcaption class="text-[0.62rem] md:text-[0.72rem] tracking-[0.26em] md:tracking-[0.32em] uppercase text-[var(--color-muted)]">
                   — {t.author}
                 </figcaption>
                 <button
@@ -287,7 +295,7 @@ const testimonials = [
                   aria-label="Témoignage suivant"
                   class="flex items-center justify-center text-black/15 hover:text-[var(--color-burgundy)] transition-colors"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 442 793" fill="currentColor" class="h-5 w-auto rotate-90">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 442 793" fill="currentColor" class="h-4 md:h-5 w-auto rotate-90">
                     <path d="M442,240c-48.43-2.43-97.83-17.78-138.52-43.98-16.1-10.37-31.48-28.88-52.4-16.44-5,2.97-13.08,13.31-13.08,18.92v594.5h-34c-.27-.73,1-1.2,1-1.5V204.5c0-11.84-9.42-24.9-20.96-28.04-18.54-5.05-31.93,10.88-46.13,19.96C97.23,222.43,48.38,237.78,0,240v-32.5c.63-.99,1.38-1.29,2.5-1.5,4.69-.86,12.31-.38,17.86-1.14,50.4-6.91,110.18-33.41,142.61-73.39C193.06,94.4,203.87,47.09,205,0h31.5c3.05,5.87,1.01,14.58,1.51,21.49,7.59,105.17,82.63,169.13,183.62,183.38,5.44.77,13.07.26,17.87,1.13,1.12.2,1.87.51,2.5,1.5v32.5Z" />
                   </svg>
                 </button>
@@ -308,7 +316,7 @@ const testimonials = [
     ></div>
     <div class="absolute inset-0 bg-black/40"></div>
 
-    <div class="relative mx-auto max-w-[1300px] px-6 lg:px-14 py-28 md:py-36 grid md:grid-cols-2 gap-14 md:gap-20 items-center">
+    <div class="relative mx-auto max-w-[1300px] px-6 lg:px-14 pt-16 md:pt-24 pb-28 md:pb-36 grid md:grid-cols-2 gap-14 md:gap-20 items-center">
       {/* photo + script overlay */}
       <div class="relative">
         <div class="aspect-[5/4] overflow-hidden bg-neutral-800 shadow-xl">
@@ -343,7 +351,12 @@ const testimonials = [
           </p>
         </div>
 
-        <SparkLink href="/a-propos" label="En savoir plus" class="mt-12" />
+        <SparkLink
+          href="/a-propos"
+          label="En savoir plus"
+          arrowClass="h-[22px] w-[22px] md:h-[37px] md:w-[37px]"
+          class="mt-10 md:mt-12 !text-[0.8rem] md:!text-[18px] !tracking-[0.16em] md:!tracking-[0.2em] !gap-2 md:!gap-3"
+        />
       </div>
     </div>
   </section>
@@ -366,8 +379,12 @@ const testimonials = [
 
 <script>
   const carousel = document.querySelector<HTMLElement>("[data-testimonial-carousel]");
+  const imageStack = document.querySelector<HTMLElement>("[data-testimonial-images]");
   if (carousel) {
     const slides = Array.from(carousel.querySelectorAll<HTMLElement>(".testimonial-slide"));
+    const images = imageStack
+      ? Array.from(imageStack.querySelectorAll<HTMLImageElement>(".testimonial-image"))
+      : [];
     const nextBtns = carousel.querySelectorAll<HTMLButtonElement>("[data-testimonial-next]");
     let current = 0;
     const show = (i: number) => {
@@ -375,6 +392,16 @@ const testimonials = [
         const active = idx === i;
         s.style.opacity = active ? "1" : "0";
         s.style.pointerEvents = active ? "auto" : "none";
+        // Active slide stays in flow so the container auto-sizes to it;
+        // the others are absolute-positioned overlays.
+        if (active) {
+          s.classList.remove("absolute", "inset-x-0", "top-0");
+        } else {
+          s.classList.add("absolute", "inset-x-0", "top-0");
+        }
+      });
+      images.forEach((img, idx) => {
+        img.style.opacity = idx === i ? "1" : "0";
       });
     };
     nextBtns.forEach((btn) =>

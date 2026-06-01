@@ -11,21 +11,22 @@ const sent = Astro.url.searchParams.get("sent") === "1";
 
 <Layout
   title="Contact — Aritia Design | Wedding Designer Toulouse"
-  description="Contactez Aritia pour concevoir votre mariage ou événement sur-mesure à Toulouse, en Haute-Garonne. Réservez un premier échange pour partager votre vision."
+  description="Contactez Aritia pour concevoir votre mariage ou évènement sur-mesure à Toulouse, en Haute-Garonne. Réservez un premier échange pour partager votre vision."
   transparentHeader={true}
 >
   <PageHero
     image="/images/contact-hero.jpg"
+    imageMobile="/images/contact-hero-mobile.jpg"
     imageAlt="Plafond aux poutres"
     title="Contact"
-    subtitleHtml="Vous rêver d'un mariage ou d'un événement&nbsp;<br />qui vous ressemble&nbsp;?"
+    subtitleHtml="Vous rêver d'un mariage ou d'un évènement&nbsp;<br />qui vous ressemble&nbsp;?"
   />
 
   {/* ───────────────────────── 2. FORM ───────────────────────── */}
   <section class="bg-white px-6 py-20 md:py-28">
     <div class="mx-auto max-w-[1200px] grid md:grid-cols-2 gap-12 md:gap-16">
-      {/* left: image + NOTES */}
-      <div class="space-y-8">
+      {/* left: image + NOTES — pushed below the form on mobile, Notes before image on mobile */}
+      <div class="flex flex-col-reverse md:flex-col gap-8 order-2 md:order-1">
         <div class="aspect-[4/5] overflow-hidden">
           <img
             src="/images/contact-flower.jpg"
@@ -52,8 +53,8 @@ const sent = Astro.url.searchParams.get("sent") === "1";
         </div>
       </div>
 
-      {/* right: form */}
-      <div>
+      {/* right: form — first on mobile so Envoyer appears before the photo */}
+      <div class="order-1 md:order-2">
         <h2 class="font-display text-[44px] md:text-[60px] leading-[1] tracking-wide text-[var(--color-ink)]">
           FAISONS<br />CONNAISSANCE
         </h2>
@@ -163,6 +164,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
             >
               <option value="" disabled selected>TYPE D'ÉVÈNEMENT *</option>
               <option>Mariage</option>
+              <option>Évènement saisonnier</option>
               <option>Anniversaire</option>
               <option>Baby Shower</option>
               <option>Évènement Corporate</option>

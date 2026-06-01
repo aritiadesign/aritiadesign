@@ -2,6 +2,8 @@
 interface Props {
   /** Background image URL */
   image: string;
+  /** Optional mobile (< 768px) override for the background image */
+  imageMobile?: string;
   /** Alt text for the background */
   imageAlt?: string;
   /** Script-font main title */
@@ -20,6 +22,7 @@ interface Props {
 
 const {
   image,
+  imageMobile,
   imageAlt = "",
   title,
   titleHtml,
@@ -32,7 +35,7 @@ const {
 
 <section
   class="page-hero-section relative h-screen min-h-[560px] w-full overflow-hidden text-white"
-  style={`background-image: url('${image}');`}
+  style={`--hero-bg: url('${image}'); --hero-bg-mobile: url('${imageMobile ?? image}');`}
   aria-label={imageAlt}
 >
   <div class="absolute inset-0 bg-black/40"></div>
@@ -57,14 +60,17 @@ const {
 
 <style>
   .page-hero-section {
+    background-image: var(--hero-bg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
   }
   /* iOS Safari mishandles background-attachment: fixed (zooms image to the full scrollable area).
-     Force scroll on mobile so the image fits the viewport like everywhere else. */
+     Force scroll on mobile so the image fits the viewport like everywhere else.
+     We also swap to the mobile-specific image if one was provided. */
   @media (max-width: 767px) {
     .page-hero-section {
+      background-image: var(--hero-bg-mobile);
       background-attachment: scroll;
     }
   }
