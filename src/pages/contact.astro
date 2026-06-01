@@ -55,10 +55,10 @@ const sent = Astro.url.searchParams.get("sent") === "1";
 
       {/* right: form — first on mobile so Envoyer appears before the photo */}
       <div class="order-1 md:order-2">
-        <h2 class="font-display text-[44px] md:text-[60px] leading-[1] tracking-wide text-[var(--color-ink)]">
+        <h2 class="font-display text-[34px] md:text-[60px] leading-[1.05] md:leading-[1] tracking-wide text-[var(--color-ink)]">
           FAISONS<br />CONNAISSANCE
         </h2>
-        <p class="mt-8 text-[14px] leading-[1.9] text-[var(--color-ink-soft)] max-w-md">
+        <p class="mt-6 md:mt-8 text-[13px] md:text-[14px] leading-[1.85] md:leading-[1.9] text-[var(--color-ink-soft)] max-w-md">
           Votre histoire mérite une attention toute particulière, un
           regard sensible, et une mise en scène à la hauteur de vos
           émotions. Je serais honorée de vous accompagner dans la
@@ -91,7 +91,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               name="Nom & Prénom"
               required
               placeholder="NOM & PRÉNOM *"
-              class="w-full bg-transparent text-[14px] tracking-[0.02em] placeholder:text-[12px] placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3"
+              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3"
             />
           </div>
           <div class="border-b border-black/15 pb-1">
@@ -102,7 +102,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               name="Email"
               required
               placeholder="E-MAIL *"
-              class="w-full bg-transparent text-[14px] tracking-[0.02em] placeholder:text-[12px] placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3"
+              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3"
             />
           </div>
           <div class="border-b border-black/15 pb-1">
@@ -112,7 +112,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               type="tel"
               name="Téléphone"
               placeholder="🇫🇷 TÉLÉPHONE"
-              class="w-full bg-transparent text-[14px] tracking-[0.02em] placeholder:text-[12px] placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3"
+              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3"
             />
           </div>
           <div class="border-b border-black/15 pb-1">
@@ -123,7 +123,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               name="Date"
               required
               placeholder="DATE DE L'ÉVÈNEMENT *"
-              class="w-full bg-transparent text-[14px] tracking-[0.02em] text-[var(--color-muted)] focus:outline-none py-3"
+              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] text-[var(--color-muted)] focus:outline-none py-3"
             />
           </div>
           <div class="border-b border-black/15 pb-1">
@@ -134,7 +134,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               name="Lieu"
               required
               placeholder="LIEU DE L'ÉVÈNEMENT *"
-              class="w-full bg-transparent text-[14px] tracking-[0.02em] placeholder:text-[12px] placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3"
+              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3"
             />
           </div>
           <div class="border-b border-black/15 pb-1">
@@ -143,7 +143,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               id="f-prestation"
               name="Prestation"
               required
-              class="w-full bg-transparent text-[14px] tracking-[0.02em] text-[var(--color-muted)] focus:outline-none py-3 appearance-none"
+              class="w-full bg-transparent text-[11px] md:text-[12px] tracking-[0.2em] md:tracking-[0.22em] uppercase text-[var(--color-muted)] focus:outline-none py-3 appearance-none"
             >
               <option value="" disabled selected>PRESTATION SOUHAITÉE *</option>
               <option>L'Exception — Design Intégral</option>
@@ -160,7 +160,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               id="f-type"
               name="Type"
               required
-              class="w-full bg-transparent text-[14px] tracking-[0.02em] text-[var(--color-muted)] focus:outline-none py-3 appearance-none"
+              class="w-full bg-transparent text-[11px] md:text-[12px] tracking-[0.2em] md:tracking-[0.22em] uppercase text-[var(--color-muted)] focus:outline-none py-3 appearance-none"
             >
               <option value="" disabled selected>TYPE D'ÉVÈNEMENT *</option>
               <option>Mariage</option>
@@ -179,7 +179,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               name="Budget"
               required
               placeholder="BUDGET ENVISAGÉ POUR VOTRE PROJET *"
-              class="w-full bg-transparent text-[14px] tracking-[0.02em] placeholder:text-[12px] placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3"
+              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3"
             />
           </div>
           <div class="border-b border-black/15 pb-1">
