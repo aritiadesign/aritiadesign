@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Gilda+Display&display=swap");
 
 /* Local font files — see public/fonts/. Playfair + Raleway as variable fonts, Haute Couture as a single OTF. */
 @font-face {
@@ -89,6 +90,8 @@ body {
 .font-display { font-family: var(--font-display); }
 .font-script  { font-family: var(--font-script); }
 .font-italic-serif { font-family: var(--font-italic); font-style: italic; }
+.font-cormorant { font-family: "Cormorant Garamond", Georgia, serif; }
+.font-gilda { font-family: "Gilda Display", Georgia, serif; }
 
 /* Tracking utility used in nav/buttons/labels (Wix-like wide tracking) */
 .tracking-wider-2 { letter-spacing: 0.18em; }
