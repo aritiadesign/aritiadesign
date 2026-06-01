@@ -57,31 +57,18 @@ const steps = [
 ---
 
 <Layout title="PROCESSUS | Aritia Design" transparentHeader={false}>
-  {/* ───────────────────────── 1. HERO QUOTE + CENTERED PHOTO ───────────────────────── */}
+  {/* ───────────────────────── 1. HERO QUOTE ───────────────────────── */}
   <section class="bg-white pt-36 md:pt-44 pb-24 md:pb-32 px-6">
     <div class="mx-auto max-w-[1100px] text-center">
-      <span class="block text-[0.7rem] tracking-[0.45em] uppercase text-[var(--color-muted)] mb-10">
+      <span class="block text-[0.7rem] tracking-[0.45em] uppercase text-[var(--color-muted)] mb-12">
         <span class="text-[var(--color-burgundy)]">✦</span>&nbsp;&nbsp;Processus créatif&nbsp;&nbsp;<span class="text-[var(--color-burgundy)]">✦</span>
       </span>
 
-      <div class="relative inline-block">
-        <div class="aspect-[3/4] w-[260px] sm:w-[320px] md:w-[380px] overflow-hidden mx-auto">
-          <img
-            src="/images/strip-center.png"
-            alt="Photo centrale"
-            class="w-full h-full object-cover"
-            onerror="this.style.background='linear-gradient(135deg,#1f2a3a,#0e1828)';this.removeAttribute('src');"
-          />
-        </div>
-
-        {/* Quote — only "La création" overlaps the bottom-right of the photo,
-            the rest extends out to the right. */}
-        <h1 class="font-script font-normal text-[1.8rem] sm:text-[2.2rem] md:text-[2.6rem] lg:text-[2.9rem] leading-[1.2] text-[var(--color-ink)] inline-block -rotate-[10deg] absolute left-[58%] bottom-6 md:bottom-10 whitespace-nowrap text-left pointer-events-none">
-          «&nbsp;La création,<br />
-          c'est l'équilibre entre<br />
-          maîtrise et lâcher-prise.&nbsp;»
-        </h1>
-      </div>
+      <h1 class="font-script font-normal text-[2.6rem] sm:text-[3.2rem] md:text-[4rem] lg:text-[4.6rem] leading-[1.4] text-[var(--color-ink)] inline-block">
+        «&nbsp;La création,<br />
+        c'est l'équilibre entre<br />
+        maîtrise et lâcher-prise.&nbsp;»
+      </h1>
     </div>
   </section>
 
