@@ -134,6 +134,15 @@ img {
   -webkit-touch-callout: none;
 }
 
+/* Mobile: tighten line-height on Raleway (default sans) body paragraphs.
+   We skip the uppercase tracked labels (they need the extra breathing room)
+   and any paragraph using one of the display/script/italic font families. */
+@media (max-width: 767px) {
+  p:not([class*="uppercase"]):not([class*="font-italic-serif"]):not([class*="font-display"]):not([class*="font-script"]):not([class*="font-cormorant"]):not([class*="font-gilda"]) {
+    line-height: 1.65;
+  }
+}
+
 /* Infinite horizontal marquee for the home gallery strip.
    We render the items twice and translate by -50% so the loop is seamless. */
 @keyframes marquee-x {

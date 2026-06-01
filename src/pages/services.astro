@@ -481,14 +481,10 @@ const faqs = [
       ></video>
     </div>
 
-    {/* Desktop-only S'INSPIRER CTA */}
-    <a
-      href="/portfolio"
-      class="hidden md:inline-flex items-center gap-3 mt-10 text-[12px] tracking-[0.32em] uppercase text-[var(--color-ink)] hover:text-[var(--color-burgundy)] transition"
-    >
-      <span>✦ S'inspirer</span>
-      <span aria-hidden="true" class="inline-block">→</span>
-    </a>
+    {/* Desktop-only S'INSPIRER CTA — right-aligned to the video's right edge */}
+    <div class="hidden md:flex justify-end mt-10 mx-auto max-w-[1100px]">
+      <SparkLink href="/portfolio" label="S'inspirer" />
+    </div>
   </section>
 
   {/* ───────────────────────── 11. VOTRE UNIVERS CTA ───────────────────────── */}
