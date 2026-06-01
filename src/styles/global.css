@@ -75,6 +75,9 @@ body {
   font-family: var(--font-sans);
   color: var(--color-ink);
   background: var(--color-paper);
+  /* Default tracking on Raleway body text — Tailwind tracking-* and the
+     font overrides below take precedence on non-Raleway elements. */
+  letter-spacing: 0.02em;
 }
 
 /* Global body-text default — any <p> uses 16px unless overridden.
@@ -87,11 +90,36 @@ body {
   }
 }
 
+/* Non-Raleway fonts: reset the body's 0.02em default so they keep their
+   own intended letter-spacing (or whatever Tailwind tracking-* utility
+   the element specifies). */
+.font-script,
+.font-italic-serif,
+.font-cormorant,
+.font-gilda { letter-spacing: normal; }
+
+/* Playfair Display — regular weight gets 0.05em letter-spacing site-wide.
+   Light weight (font-light) keeps normal spacing. */
+.font-display { letter-spacing: 0.05em; }
+.font-display.font-light { letter-spacing: normal; }
+
 .font-display { font-family: var(--font-display); }
 .font-script  { font-family: var(--font-script); }
 .font-italic-serif { font-family: var(--font-italic); font-style: italic; }
 .font-cormorant { font-family: "Cormorant Garamond", Georgia, serif; }
 .font-gilda { font-family: "Gilda Display", Georgia, serif; }
+
+/* Ampersand in Playfair Display titles — rendered in Cormorant Garamond italic,
+   scaled so its visible cap-height matches the Playfair uppercase cap-height. */
+.amp {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 1.25em;
+  line-height: 0;
+  letter-spacing: normal;
+  vertical-align: -0.04em;
+  margin: 0 0.05em;
+}
 
 /* Tracking utility used in nav/buttons/labels (Wix-like wide tracking) */
 .tracking-wider-2 { letter-spacing: 0.18em; }
@@ -106,7 +134,7 @@ body {
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee-x 60s linear infinite;
+  animation: marquee-x 80s linear infinite;
   will-change: transform;
 }
 .marquee:hover .marquee-track { animation-play-state: paused; }

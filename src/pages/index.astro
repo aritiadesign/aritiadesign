@@ -2,18 +2,27 @@
 import Layout from "../layouts/Layout.astro";
 import SparkLink from "../components/SparkLink.astro";
 
-// Variable widths matching the Wix gallery: alternate wide landscape with narrow portrait crops
-const galleryImages = [
-  { src: "/images/gallery/02.jpg", alt: "Réception — tables blanches", w: 720 },
-  { src: "/images/gallery/04.jpg", alt: "Couple, golden hour",         w: 360 },
-  { src: "/images/gallery/01.jpg", alt: "Salon avec lustre",            w: 360 },
-  { src: "/images/gallery/08.jpg", alt: "Salle à manger lustres",       w: 720 },
-  { src: "/images/gallery/03.jpg", alt: "Mariée, escalier",             w: 600 },
-  { src: "/images/gallery/06.jpg", alt: "Bouquet rouge",                w: 360 },
-  { src: "/images/gallery/05.jpg", alt: "Manoir + fontaine",            w: 720 },
-  { src: "/images/gallery/07.jpg", alt: "Invitée chapeau blanc",        w: 360 },
-  { src: "/images/gallery/09.jpg", alt: "Couple golden hour",           w: 600 },
-  { src: "/images/gallery/10.jpg", alt: "Voiture jaune",                w: 720 },
+// Portfolio strip — exact image order and per-image widths matching the
+// Wix carousel. All source files are 1200×1600; widths below set the
+// displayed container width (object-fit: cover crops each one).
+const portfolioImages = [
+  { src: "/images/portfolio-strip/01_3e933860.jpg", alt: "Salle de réception, lustres",        w: 620 },
+  { src: "/images/portfolio-strip/02_74179fa8.jpg", alt: "Château + fontaine",                 w: 380 },
+  { src: "/images/portfolio-strip/03_e633e2c6.jpg", alt: "Couple, costume sombre",             w: 380 },
+  { src: "/images/portfolio-strip/04_6297cc8a.png", alt: "Centre de table fleuri",             w: 340 },
+  { src: "/images/portfolio-strip/05_41e5ab48.jpg", alt: "Voiture jaune, bouquet",             w: 360 },
+  { src: "/images/portfolio-strip/06_95d16cce.jpg", alt: "Entrée — lustre & marié",            w: 320 },
+  { src: "/images/portfolio-strip/07_dce575f9.jpg", alt: "Table dressée, roses blanches",      w: 400 },
+  { src: "/images/portfolio-strip/08_abe01ccb.jpg", alt: "Composition florale, église",        w: 320 },
+  { src: "/images/portfolio-strip/09_06a401f7.jpg", alt: "Invitée, chapeau blanc",             w: 360 },
+  { src: "/images/portfolio-strip/10_990a1165.jpg", alt: "Église, allée centrale",             w: 560 },
+  { src: "/images/portfolio-strip/11_a37af623.jpg", alt: "Cérémonie laïque extérieure",        w: 620 },
+  { src: "/images/portfolio-strip/12_4f08de47.jpg", alt: "Alliances, mains",                   w: 380 },
+  { src: "/images/portfolio-strip/13_f97907ca.jpg", alt: "Mariée + bouquet",                   w: 320 },
+  { src: "/images/portfolio-strip/14_b88c2457.jpg", alt: "Composition pampa, socle",           w: 320 },
+  { src: "/images/portfolio-strip/15_9392a4cb.jpg", alt: "Réception, charpente bois",          w: 580 },
+  { src: "/images/portfolio-strip/16_d03e2066.jpg", alt: "Salle longue, suspensions",          w: 460 },
+  { src: "/images/portfolio-strip/17_f9bdf9b5.jpg", alt: "Couvert — menu & merci",             w: 360 },
 ];
 ---
 
@@ -68,32 +77,32 @@ const galleryImages = [
     </div>
   </section>
 
-  {/* ───────────────────────── 3. PORTFOLIO MARQUEE ───────────────────────── */}
-  <section class="bg-[#1a1a1a] text-white overflow-hidden relative pt-[60px] pb-[60px] md:pt-[86px] md:pb-[86px]">
-    {/* big PORTFOLIO heading — top-left over the strip */}
+  {/* ───────────────────────── 3. PORTFOLIO STRIP (marquee) ───────────────── */}
+  <section class="bg-[#1a1a1a] text-white relative overflow-hidden pt-[110px] pb-[110px]">
+    {/* solid side bands of the portfolio section — overlay on top of the marquee */}
+    <div class="pointer-events-none absolute inset-y-0 left-0 w-[110px] bg-[#1a1a1a] z-20"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 w-[110px] bg-[#1a1a1a] z-20"></div>
+
+    {/* big PORTFOLIO heading — anchored at top, just inside the left dark band */}
     <h2
       class="font-display font-normal text-white leading-none tracking-[0.01em]
-             text-[42px] md:text-[82px]
-             absolute top-[25px] left-6 md:left-[150px] z-20 select-none pointer-events-none"
+             text-[44px] md:text-[88px]
+             absolute z-30 top-[35px] md:top-[49px] left-[170px]
+             select-none pointer-events-none"
     >
       PORTFOLIO
     </h2>
 
     <div class="marquee relative w-full">
-      {/* soft edge fade so images dissolve in/out */}
-      <div class="pointer-events-none absolute inset-y-0 left-0 w-24 md:w-40 bg-gradient-to-r from-[#1a1a1a] to-transparent z-10"></div>
-      <div class="pointer-events-none absolute inset-y-0 right-0 w-24 md:w-40 bg-gradient-to-l from-[#1a1a1a] to-transparent z-10"></div>
-
-      <div class="marquee-track gap-4 md:gap-6 items-center">
-        {/* duplicated for seamless loop */}
-        {[...galleryImages, ...galleryImages].map((img, i) => (
+      <div class="marquee-track gap-[16px] md:gap-[20px] items-center">
+        {[...portfolioImages, ...portfolioImages].map((img, i) => (
           <a
             href="/portfolio"
-            class="shrink-0 block h-[320px] md:h-[440px] lg:h-[500px] overflow-hidden bg-neutral-800 group"
-            style={`width: ${img.w}px; max-width: ${img.w}px;`}
+            class="shrink-0 block h-[320px] md:h-[480px] overflow-hidden bg-neutral-800 group"
+            style={`width: ${img.w}px;`}
             aria-label={img.alt}
-            tabindex={i < galleryImages.length ? 0 : -1}
-            aria-hidden={i >= galleryImages.length ? "true" : undefined}
+            tabindex={i < portfolioImages.length ? 0 : -1}
+            aria-hidden={i >= portfolioImages.length ? "true" : undefined}
           >
             <img
               src={img.src}
@@ -106,8 +115,8 @@ const galleryImages = [
       </div>
     </div>
 
-    {/* VOIR GALLERY — vertically centered in the bottom 76px gap */}
-    <div class="absolute left-0 right-0 bottom-0 h-[60px] md:h-[86px] flex items-center justify-end px-8 lg:px-14">
+    {/* VOIR GALLERY — centered in the bottom dark band so top/bottom gaps match */}
+    <div class="absolute z-30 left-0 right-0 bottom-0 h-[110px] px-6 md:px-14 flex items-center justify-end">
       <SparkLink href="/portfolio" label="Voir Gallery" />
     </div>
   </section>
