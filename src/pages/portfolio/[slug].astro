@@ -67,7 +67,7 @@ const { project: p } = Astro.props;
 
   <style>
     .project-parallax {
-      height: 380px;
+      height: 400px;
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -104,36 +104,26 @@ const { project: p } = Astro.props;
           <div class="mx-auto max-w-[1100px] grid grid-cols-2 gap-2 md:gap-10 items-start">
             <div class="flex flex-col gap-2 md:gap-10">
               {s.images.filter((_, i) => i % 2 === 0).map((src, i) => (
-                <a
-                  href={src}
-                  target="_blank"
-                  rel="noopener"
-                  class="block overflow-hidden bg-neutral-200 group"
-                >
+                <div class="block overflow-hidden bg-neutral-200">
                   <img
                     src={src}
                     alt={`${p.title} — ${s.label} #${i * 2 + 1}`}
                     loading="lazy"
-                    class="block w-full h-auto transition-transform duration-700 group-hover:scale-105"
+                    class="block w-full h-auto"
                   />
-                </a>
+                </div>
               ))}
             </div>
             <div class="flex flex-col gap-2 md:gap-10">
               {s.images.filter((_, i) => i % 2 === 1).map((src, i) => (
-                <a
-                  href={src}
-                  target="_blank"
-                  rel="noopener"
-                  class="block overflow-hidden bg-neutral-200 group"
-                >
+                <div class="block overflow-hidden bg-neutral-200">
                   <img
                     src={src}
                     alt={`${p.title} — ${s.label} #${i * 2 + 2}`}
                     loading="lazy"
-                    class="block w-full h-auto transition-transform duration-700 group-hover:scale-105"
+                    class="block w-full h-auto"
                   />
-                </a>
+                </div>
               ))}
             </div>
           </div>

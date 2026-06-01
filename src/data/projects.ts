@@ -103,7 +103,11 @@ export const projects: Project[] = [
     gallery: efImages,
     sections: [
       // skip index 3 (492d6662) — used for parallax above
-      { label: "Préparations", images: efImages.slice(4, 9) },
+      { label: "Préparations", images: [
+        efImages[4], efImages[5],
+        efImages[6], efImages[8],
+        efImages[7],
+      ] },
       { label: "Cérémonie", images: efImages.slice(9, 23), bg: "dark" },
       // skip last 4 — used as footer photos
       { label: "Cocktail & Réception", images: efImages.slice(23, -4) },
