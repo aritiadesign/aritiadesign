@@ -102,6 +102,7 @@ const jsonLd = {
     <link rel="preload" href="/fonts/HauteCouture.otf" as="font" type="font/otf" crossorigin />
     <link rel="preload" href="/fonts/CormorantGaramond-Italic.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/fonts/GildaDisplay-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/BrandonGrotesque-Medium.otf" as="font" type="font/otf" crossorigin />
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
@@ -147,8 +148,7 @@ const jsonLd = {
             });
           });
           document.querySelectorAll("[data-lang-toggle]").forEach((btn) => {
-            const label = btn.querySelector(".lang-label") || btn;
-            label.textContent = lang === "fr" ? "EN" : "FR";
+            btn.setAttribute("aria-checked", lang === "en" ? "true" : "false");
             btn.setAttribute("aria-label", lang === "fr" ? "Switch to English" : "Passer en français");
           });
           try { localStorage.setItem("lang", lang); } catch (e) {}

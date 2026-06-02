@@ -1,5 +1,6 @@
 ---
 import Logo from "./Logo.astro";
+import LangToggle from "./LangToggle.astro";
 
 interface Props {
   transparent?: boolean;
@@ -39,41 +40,25 @@ const isActive = (href: string) =>
             </a>
           </li>
         ))}
-        <li>
-          <button
-            type="button"
-            data-lang-toggle
-            aria-label="Switch to English"
-            class="lang-toggle relative inline-block leading-none nav-link cursor-pointer"
-          >
-            <span class="lang-label">EN</span>
-            <span class="understrike" aria-hidden="true"></span>
-          </button>
+        <li class="flex items-center pl-6 border-l border-current/50">
+          <LangToggle size="md" />
         </li>
       </ul>
     </nav>
 
-    <div class="md:hidden flex items-center gap-3">
-      <button
-        type="button"
-        data-lang-toggle
-        aria-label="Switch to English"
-        class="lang-toggle text-[11px] leading-none tracking-[0.2em] uppercase font-normal px-2 py-1 cursor-pointer"
-      ><span class="lang-label">EN</span></button>
-      <button
-        type="button"
-        class="p-2 -mr-2"
-        aria-label="Ouvrir le menu"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-        data-mobile-toggle
-        data-i18n-attr="aria-label:header.mobile.open"
-      >
+    <button
+      type="button"
+      class="md:hidden p-2 -mr-2"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      data-mobile-toggle
+      data-i18n-attr="aria-label:header.mobile.open"
+    >
       <svg class="burger" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
         <path d="M3 7h18M3 12h18M3 17h18" />
       </svg>
     </button>
-    </div>
   </div>
 </header>
 
@@ -85,7 +70,7 @@ const isActive = (href: string) =>
   aria-hidden="true"
 >
   <div class="flex items-center justify-between h-24 px-6">
-    <span class="font-display tracking-[0.28em] text-[0.85rem] uppercase" data-i18n="header.mobile.menu">Menu</span>
+    <span class="font-display font-normal text-[1.6rem] uppercase" data-i18n="header.mobile.menu">Menu</span>
     <button
       type="button"
       class="p-2 -mr-2"
@@ -110,6 +95,7 @@ const isActive = (href: string) =>
         {l.label}
       </a>
     ))}
+    <LangToggle size="lg" variant="flag" class="mt-4" />
   </nav>
 </div>
 

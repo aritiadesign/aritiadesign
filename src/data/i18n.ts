@@ -40,13 +40,13 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "home.hero.subtitle": {
     fr: "Créatrice d'univers pour mariages &amp;<br />évènements d'exception",
-    en: "Crafting worlds for weddings &amp;<br />exceptional events"
+    en: "Universe Designer for Bespoke<br />Weddings &amp; Celebrations"
   },
 
   // ─────────────────────────── Home — Intro ───────────────────────────
   "home.intro.h2": {
     fr: "CRÉATRICE D'UNIVERS ÉVÈNEMENTIELS<br />HAUT DE GAMME",
-    en: "CREATOR OF HIGH-END<br />EVENT WORLDS"
+    en: "CURATOR OF HIGH-END<br />CELEBRATIONS"
   },
   "home.intro.p": {
     fr: "Aritia Design vous accompagne dans la conception de mariages<br class=\"hidden md:inline\" /> et évènements sur-mesure, raffinés et authentiques.<br class=\"hidden md:inline\" /> À Toulouse, comme partout en France.",
@@ -60,11 +60,11 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   // ─────────────────────────── Home — Méthode ───────────────────────────
   "home.method.script": {
     fr: "Transformez chaque<br />occasion en<br />moment d'exception",
-    en: "Turn every<br />occasion into<br />an exceptional moment"
+    en: "Turn every<br class=\"md:hidden\" /> occasion<br class=\"hidden md:inline\" /> into an<br class=\"md:hidden\" /> exceptional moment"
   },
   "home.method.h2": {
     fr: "MÉTHODE<br /><span class=\"font-italic-serif italic\">de</span> TRAVAIL",
-    en: "OUR<br /><span class=\"font-italic-serif italic\">working</span> METHOD"
+    en: "<span class=\"font-italic-serif italic\">The</span> CREATIVE<br />PROCESS"
   },
   "home.method.p": {
     fr: "De la première inspiration au jour J, je vous accompagne avec sensibilité et exigence dans la création d'un univers qui vous ressemble&nbsp;– une approche sur-mesure, pensée pour faire naître l'harmonie, la beauté et l'émotion.",
@@ -178,8 +178,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "OUR<br /><span class=\"font-italic-serif italic\">Approach</span>"
   },
   "services.approach.p": {
-    fr: "Sublimer l'instant par le détail. De la papeterie sur mesure à la scénographie florale, je conçois votre évènement comme une œuvre globale. Chez Aritia Design, nous transcendons la simple décoration pour créer des atmosphères immersives et raffinées, où l'esthétique rencontre l'émotion pour marquer durablement les esprits.",
-    en: "Elevating the moment through detail. From bespoke stationery to floral set design, I shape your event as one complete work. At Aritia Design, we move beyond mere decoration to create immersive, refined atmospheres, where aesthetics meet emotion to leave a lasting impression."
+    fr: "Aritia Design pense l'évènement comme une pièce de design unique. Identité graphique, art de la table, design floral et scénographie d'espace s'orchestrent pour donner vie à une émotion. Une direction artistique globale dédiée à celles et ceux qui attendent une signature visuelle affirmée.",
+    en: "Aritia Design approaches every event as a unique piece of design. Graphic identity, tablescaping, floral design and spatial scenography work in concert to bring an emotion to life. A holistic art direction for those who expect an unmistakable visual signature."
   },
 
   // Service tab labels (rendered with ✦ around them in the template)

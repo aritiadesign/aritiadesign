@@ -1,0 +1,149 @@
+---
+interface Props {
+  size?: "sm" | "md" | "lg";
+  variant?: "spark" | "flag";
+  class?: string;
+}
+const { size = "md", variant = "spark", class: extra = "" } = Astro.props;
+
+const dims = {
+  sm: { text: 11, vpad: 3, hpad: 9,  gap: 5 },
+  md: { text: 12, vpad: 4, hpad: 10, gap: 6 },
+  lg: { text: 16, vpad: 6, hpad: 16, gap: 10 },
+}[size];
+---
+
+<button
+  type="button"
+  role="switch"
+  aria-checked="false"
+  aria-label="Switch to English"
+  data-lang-toggle
+  class:list={["lang-flag-btn", variant === "flag" ? "lang-segmented" : "", extra]}
+  style={`--lang-text:${dims.text}px; --lang-vpad:${dims.vpad}px; --lang-hpad:${dims.hpad}px; --lang-gap:${dims.gap}px;`}
+>
+  {variant === "flag" ? (
+    <>
+      <span class="lang-indicator" aria-hidden="true"></span>
+      <span class="lang-seg lang-seg-en">EN</span>
+      <span class="lang-seg lang-seg-fr">FR</span>
+    </>
+  ) : (
+    <>
+      <span class="lang-globe" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9.5" />
+          <line x1="2.5" x2="21.5" y1="12" y2="12" />
+          <path d="M12 2.5a14.5 14.5 0 0 1 4 9.5 14.5 14.5 0 0 1-4 9.5 14.5 14.5 0 0 1-4-9.5 14.5 14.5 0 0 1 4-9.5z" />
+        </svg>
+      </span>
+      <span class="lang-text-stack">
+        <span class="lang-text lang-text-en">ENG</span>
+        <span class="lang-text lang-text-fr">FR</span>
+      </span>
+    </>
+  )}
+</button>
+
+<style>
+  .lang-flag-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--lang-gap, 6px);
+    padding: 0;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    color: inherit;
+    line-height: 0;
+    vertical-align: middle;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  .lang-flag-btn:hover { opacity: 0.92; }
+  .lang-flag-btn:active { transform: scale(0.97); }
+
+  /* Globe icon (header / spark variant) */
+  .lang-globe {
+    display: inline-flex;
+    align-items: center;
+    color: currentColor;
+  }
+  .lang-globe svg {
+    width: 1em;
+    height: 1em;
+    display: block;
+  }
+
+  /* Segmented pill (flag variant) — thin white outline, transparent fill */
+  .lang-segmented {
+    position: relative;
+    display: inline-flex;
+    align-items: stretch;
+    gap: 0;
+    background: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 9999px;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .lang-indicator {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    background: #ffffff;
+    border-radius: 9999px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+    pointer-events: none;
+  }
+  /* Default (aria-checked=false / FR active) → indicator on the FR (right) side */
+  .lang-segmented[aria-checked="false"] .lang-indicator {
+    transform: translateX(100%);
+  }
+  /* EN active → indicator on the EN (left) side */
+  .lang-segmented[aria-checked="true"] .lang-indicator {
+    transform: translateX(0);
+  }
+
+  .lang-seg {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: calc(var(--lang-text) * 2);
+    padding: var(--lang-vpad) var(--lang-hpad);
+    font-family: var(--font-brandon), "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: var(--lang-text, 16px);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1;
+    color: #ffffff;
+    transition: color 0.3s ease;
+  }
+  /* Inverted color on the side covered by the white indicator */
+  .lang-segmented[aria-checked="false"] .lang-seg-fr { color: var(--color-ink, #1c1c1c); }
+  .lang-segmented[aria-checked="true"] .lang-seg-en { color: var(--color-ink, #1c1c1c); }
+
+  /* Stacked text labels for the spark variant */
+  .lang-text-stack {
+    display: grid;
+    grid-template-areas: "stack";
+    align-items: center;
+  }
+  .lang-text {
+    grid-area: stack;
+    /* font-family, font-weight, font-size, letter-spacing, text-transform inherit
+       from the parent nav so the toggle matches the rest of the menu bar */
+    line-height: 1;
+    transition: opacity 0.25s ease;
+  }
+  .lang-text-en { opacity: 1; }
+  .lang-text-fr { opacity: 0; }
+  .lang-flag-btn[aria-checked="true"] .lang-text-en { opacity: 0; }
+  .lang-flag-btn[aria-checked="true"] .lang-text-fr { opacity: 1; }
+</style>
