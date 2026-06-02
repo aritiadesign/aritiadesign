@@ -186,7 +186,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "services.tab.0": { fr: "✦ DIRECTION ARTISTIQUE ✦", en: "✦ ART DIRECTION ✦" },
   "services.tab.1": { fr: "✦ DECOR SCÉNOGRAPHIE ✦",          en: "✦ DECOR SET DESIGN ✦" },
   "services.tab.2": { fr: "✦ FLORAL DESIGN ✦",                en: "✦ FLORAL DESIGN ✦" },
-  "services.tab.3": { fr: "✦ PAPETERIE ✦",                    en: "✦ STATIONERY ✦" },
+  "services.tab.3": { fr: "✦ IDENTITÉ GRAPHIQUE ✦",           en: "✦ GRAPHIC IDENTITY ✦" },
 
   // Service detail panels
   "services.0.title":  { fr: 'DIRECTION <span class="font-italic-serif italic font-light">Artistique</span>', en: 'ART <span class="font-italic-serif italic font-light">Direction</span>' },
@@ -205,7 +205,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     fr: "<p>Du détail intime aux installations d'ampleur, nous concevons chaque pièce végétale en résonance avec votre univers visuel. Sélection rigoureuse des variétés, maîtrise des textures, des palettes et des volumes : les fleurs s'inscrivent comme une composante essentielle de la scénographie, loin du simple accessoire.</p>",
     en: "<p>From intimate details to large-scale installations, we design each botanical piece in resonance with your visual world. A rigorous selection of varieties and a mastery of textures, palettes and volumes: flowers become an essential element of the scenography, far from a mere accessory.</p>"
   },
-  "services.3.title": { fr: 'PAPETERIE', en: 'STATIONERY' },
+  "services.3.title": { fr: 'IDENTITÉ <span class="font-italic-serif italic font-light">Graphique</span>', en: 'GRAPHIC <span class="font-italic-serif italic font-light">Identity</span>' },
   "services.3.body": {
     fr: "<p>L'identité graphique est le premier point de contact de votre événement. Du monogramme à la signalétique du jour J, nous dessinons un univers visuel unique : choix des typographies, illustrations exclusives, textures des papiers et finitions artisanales. Chaque pièce est pensée comme un objet d'art imprimé, pour prolonger l'esthétique de votre célébration.</p>",
     en: "<p>Graphic identity is the first point of contact with your event. From monogram to day-of signage, we design a singular visual world: chosen typography, exclusive illustrations, paper textures and artisan finishes. Every piece is conceived as a printed art object, extending the aesthetic of your celebration.</p>"
@@ -229,10 +229,10 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   // Pack 0 (L'EXCEPTION)
   "services.pack.0.title":  { fr: "L'EXCEPTION", en: "THE EXCEPTION" },
   "services.pack.0.italic": { fr: "Design Intégral", en: "Full Design" },
-  "services.pack.0.label":  { fr: "PACK SIGNATURE | SUR DEVIS", en: "SIGNATURE PACKAGE | ON REQUEST" },
+  "services.pack.0.label":  { fr: "COLLECTION SIGNATURE | SUR DEVIS", en: "SIGNATURE COLLECTION | ON REQUEST" },
   "services.pack.0.desc": {
-    fr: "De la signature esthétique à la création de vos décors, fleurs et papeterie, chaque détail est pensé avec élégance pour donner vie à un évènement d'exception. Un accompagnement complet, incluant le choix de votre vaisselle, pour une célébration harmonieuse, parfaitement coordonnée et vécue avec une sérénité totale.",
-    en: "From your aesthetic signature to the creation of your decor, flowers and stationery, every detail is designed with elegance to bring an exceptional event to life. A complete service, including your tableware selection, for a harmonious celebration, perfectly coordinated and experienced in total serenity."
+    fr: "L'expérience la plus aboutie : vous nous confiez l'univers entier de votre célébration. Votre rôle se limite à l'approbation des concepts ; nous maîtrisons toute la chaîne de création pour vous livrer, le jour J, un décor unique et impeccable. L'assurance d'une exécution fidèle à l'intention.",
+    en: "Our most accomplished experience: you entrust us with the entire world of your celebration. Your role is limited to approving the concepts; we master the full creative chain to deliver, on the day, a singular, impeccable decor. The assurance of execution faithful to the intention."
   },
   "services.pack.0.b0": { fr: "Création de votre univers et identité graphique", en: "Creation of your world and graphic identity" },
   "services.pack.0.b1": { fr: "Confection et agencement de votre décor", en: "Making and arrangement of your decor" },
@@ -242,10 +242,10 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   // Pack 1 (Décor & Identité Visuelle)
   "services.pack.1.title":  { fr: "Décor & Identité Visuelle", en: "Decor & Visual Identity" },
   "services.pack.1.italic": { fr: "", en: "" },
-  "services.pack.1.label":  { fr: "DÉCOR & SCÉNOGRAPHIE + PAPETERIE<br />| SUR DEVIS", en: "DECOR & SET DESIGN + STATIONERY<br />| ON REQUEST" },
+  "services.pack.1.label":  { fr: "SCÉNOGRAPHIE & IDENTITÉ GRAPHIQUE<br />| SUR DEVIS", en: "SET DESIGN & GRAPHIC IDENTITY<br />| ON REQUEST" },
   "services.pack.1.desc": {
-    fr: "De la définition de votre ambiance à la conception de votre papeterie, je dessine un univers cohérent qui sublime vos moments forts. Chaque élément graphique et décoratif est imaginé pour refléter votre histoire, tout en assurant une mise en scène technique soignée pour un résultat visuel fort et élégant.",
-    en: "From defining your atmosphere to designing your stationery, I draw a coherent world that elevates your key moments. Every graphic and decorative element is conceived to reflect your story, while ensuring polished technical staging for a powerful, elegant visual result."
+    fr: "Décor et identité graphique pensés comme un ensemble : la même charte visuelle traverse l'espace et le papier, du faire‑part à la mise en scène finale. Une cohérence totale entre ce que vos invités voient, touchent et lisent le jour J. Hors production florale et structures sur‑mesure, nous orchestrons tout votre univers visuel.",
+    en: "Decor and graphic identity conceived as one whole: the same visual charter runs through the space and the paper, from save-the-date to the final staging. Full coherence between what your guests see, touch and read on the day. Excluding floral production and bespoke structures, we orchestrate your entire visual world."
   },
   "services.pack.1.b0": { fr: "Définition de votre style et harmonie colorée", en: "Definition of your style and colour palette" },
   "services.pack.1.b1": { fr: "Aménagement et mise en scène des espaces clés", en: "Layout and staging of key spaces" },
@@ -257,8 +257,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "services.pack.2.italic": { fr: "", en: "" },
   "services.pack.2.label":  { fr: "DÉCOR & SCÉNOGRAPHIE | SUR DEVIS", en: "DECOR & SET DESIGN | ON REQUEST" },
   "services.pack.2.desc": {
-    fr: "Une approche dédiée à l'esthétique de vos espaces pour créer un fil conducteur mémorable. À travers une sélection rigoureuse de mobilier et de matières, je conçois l'atmosphère de votre évènement et vous guide vers les meilleurs artisans pour transformer votre vision en une réalité harmonieuse et maîtrisée.",
-    en: "An approach dedicated to the aesthetics of your spaces, creating a memorable thread throughout. Through a rigorous selection of furniture and materials, I shape the atmosphere of your event and guide you to the finest artisans to turn your vision into a harmonious, mastered reality."
+    fr: "L'art de l'espace : nous concevons l'atmosphère, sélectionnons le mobilier comme les matières, et coordonnons les artisans pour assurer une installation millimétrée. L'alternative idéale pour maîtriser votre décor, hors identité graphique et design floral.",
+    en: "The art of space: we design the atmosphere, select furniture as well as materials, and coordinate the artisans for an installation tuned to the millimetre. The ideal alternative for taking charge of your decor, excluding graphic identity and floral design."
   },
   "services.pack.2.b0": { fr: "Étude de style et carnet d'inspiration", en: "Style study and inspiration board" },
   "services.pack.2.b1": { fr: "Agencement et sélection du mobilier", en: "Layout and furniture selection" },
@@ -267,11 +267,11 @@ export const i18n: Record<string, { fr: string; en: string }> = {
 
   // Pack 3 (L'ART FLORAL)
   "services.pack.3.title":  { fr: "L'ART FLORAL", en: "FLORAL ART" },
-  "services.pack.3.italic": { fr: "Design Végétal", en: "Botanical Design" },
-  "services.pack.3.label":  { fr: "CONCEPTION FLORAL | SUR DEVIS", en: "FLORAL DESIGN | ON REQUEST" },
+  "services.pack.3.italic": { fr: "", en: "" },
+  "services.pack.3.label":  { fr: "DESIGN FLORAL | SUR DEVIS", en: "FLORAL DESIGN | ON REQUEST" },
   "services.pack.3.desc": {
-    fr: "Une célébration de la nature à travers des compositions florales sculpturales et poétiques. Des bouquets délicats aux installations suspendues, je sélectionne des fleurs d'exception pour habiller vos lieux de réception. Une mise en scène organique et haut de gamme qui insuffle vie et émotion à votre décor.",
-    en: "A celebration of nature through sculptural, poetic floral compositions. From delicate bouquets to suspended installations, I select exceptional flowers to dress your reception venues. An organic, high-end staging that breathes life and emotion into your decor."
+    fr: "Bouquets, compositions, structures suspendues ou monumentales : nous prenons en charge toute la création florale de votre événement, de l'étude à la mise en place le jour J. Hors scénographie d'espace et identité graphique, le végétal est notre unique focus.",
+    en: "Bouquets, compositions, suspended or monumental structures: we take charge of all the floral creation for your event, from the study to the installation on the day. Excluding spatial scenography and graphic identity, the botanical is our sole focus."
   },
   "services.pack.3.b0": { fr: "Étude de votre univers floral personnalisé", en: "Study of your personalised floral world" },
   "services.pack.3.b1": { fr: "Création de vos bouquets et accessoires", en: "Creation of your bouquets and accessories" },
@@ -279,12 +279,12 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "services.pack.3.b3": { fr: "Installation et mise en fleurs le jour J", en: "On-the-day installation and floral set-up" },
 
   // Pack 4 (PAPETERIE FINE)
-  "services.pack.4.title":  { fr: "PAPETERIE FINE", en: "FINE STATIONERY" },
-  "services.pack.4.italic": { fr: "Identité Visuelle", en: "Visual Identity" },
-  "services.pack.4.label":  { fr: "PAPETERIE | SUR DEVIS", en: "STATIONERY | ON REQUEST" },
+  "services.pack.4.title":  { fr: "IDENTITÉ GRAPHIQUE", en: "GRAPHIC IDENTITY" },
+  "services.pack.4.italic": { fr: "", en: "" },
+  "services.pack.4.label":  { fr: "PAPETERIE FINE | SUR DEVIS", en: "FINE STATIONERY | ON REQUEST" },
   "services.pack.4.desc": {
-    fr: "Une identité graphique sur-mesure pour offrir à vos invités une immersion tactile dès les premiers instants. Du design de vos invitations aux détails de votre table, chaque support est travaillé avec des papiers fins et des finitions artisanales, créant une signature visuelle élégante, cohérente et inoubliable.",
-    en: "A bespoke graphic identity offering your guests a tactile immersion from the very first moment. From your invitation design to your table details, every piece is crafted with fine papers and artisanal finishes, creating an elegant, coherent and unforgettable visual signature."
+    fr: "Logo, monogramme, invitations, pièces de table, signalétique et papeterie d'art : nous prenons en charge toute l'identité graphique de votre événement, depuis la conception jusqu'à la livraison finale. Hors scénographie d'espace et design floral, le papier est notre unique focus.",
+    en: "Logo, monogram, invitations, table pieces, signage and fine stationery: we take charge of the full graphic identity of your event, from conception to final delivery. Excluding spatial scenography and floral design, paper is our sole focus."
   },
   "services.pack.4.b0": { fr: "Conception de votre logo et monogramme", en: "Design of your logo and monogram" },
   "services.pack.4.b1": { fr: "Design de vos faire-part et annonces", en: "Design of your invitations and announcements" },
