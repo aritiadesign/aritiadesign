@@ -77,6 +77,14 @@ const {
   .page-hero-content {
     padding-bottom: 8rem;
   }
+  /* On mobile, center the title + subtitle vertically rather than pinning them
+     to the bottom of the hero. */
+  @media (max-width: 767px) {
+    .page-hero-content {
+      justify-content: center;
+      padding-bottom: 0;
+    }
+  }
   .page-hero-rule {
     display: block;
     width: 35px;
