@@ -253,7 +253,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "services.pack.1.b3": { fr: "Coordination & installation", en: "Coordination & installation" },
 
   // Pack 2 (Décor & Mise en Ambiance)
-  "services.pack.2.title":  { fr: "Décor & Mise en Ambiance", en: "Decor & Atmosphere" },
+  "services.pack.2.title":  { fr: "DÉCOR & MISE EN AMBIANCE", en: "DECOR & ATMOSPHERE" },
   "services.pack.2.italic": { fr: "", en: "" },
   "services.pack.2.label":  { fr: "DÉCOR & SCÉNOGRAPHIE | SUR DEVIS", en: "DECOR & SET DESIGN | ON REQUEST" },
   "services.pack.2.desc": {
