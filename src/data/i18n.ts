@@ -240,8 +240,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "services.pack.0.b3": { fr: "Mise en place et accompagnement complet", en: "Installation and full support" },
 
   // Pack 1 (Décor & Identité Visuelle)
-  "services.pack.1.title":  { fr: "DÉCOR & IDENTITÉ", en: "DECOR & VISUAL" },
-  "services.pack.1.italic": { fr: "Visuelle", en: "Identity" },
+  "services.pack.1.title":  { fr: "DÉCOR & IDENTITÉ VISUELLE", en: "DECOR & VISUAL IDENTITY" },
+  "services.pack.1.italic": { fr: "", en: "" },
   "services.pack.1.label":  { fr: "SCÉNOGRAPHIE & IDENTITÉ GRAPHIQUE<br />| SUR DEVIS", en: "SET DESIGN & GRAPHIC IDENTITY<br />| ON REQUEST" },
   "services.pack.1.desc": {
     fr: "Décor et identité graphique pensés comme un ensemble : la même charte visuelle traverse l'espace et le papier, du faire‑part à la mise en scène finale. Une cohérence totale entre ce que vos invités voient, touchent et lisent le jour J. Hors production florale et structures sur‑mesure, nous orchestrons tout votre univers visuel.",
