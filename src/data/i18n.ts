@@ -486,8 +486,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
 
   // ─────────────────────────── Mentions légales ───────────────────────────
   "legal.h1": {
-    fr: "Mentions <span class=\"font-italic-serif italic font-light\">légales</span>",
-    en: "Legal <span class=\"font-italic-serif italic font-light\">notice</span>"
+    fr: "MENTIONS <span class=\"font-italic-serif italic font-light\">légales</span>",
+    en: "LEGAL <span class=\"font-italic-serif italic font-light\">notice</span>"
   },
   "legal.updated": { fr: "Dernière mise à jour&nbsp;: mai 2026", en: "Last updated: May 2026" },
   "legal.editor.h2": { fr: "Éditeur du site", en: "Site editor" },
