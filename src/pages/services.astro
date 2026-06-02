@@ -12,7 +12,7 @@ const services = [
     title: "DIRECTION",
     titleItalic: "Artistique",
     packIndex: 0,
-    body: `En direction artistique globale, nous signons votre univers de manière absolue : identité graphique, art de la table, design floral, structures sur‑mesure et mise en scène. Une seule vision sur l'ensemble pour que chaque détail réponde à la même intention — aucun intermédiaire, aucune rupture de ton, simplement l'expression exacte de votre esthétique.`,
+    body: `En direction artistique globale, nous signons votre univers de manière absolue : identité graphique, art de la table, design floral, structures sur‑mesure et mise en scène. Une seule vision sur l'ensemble pour que chaque détail réponde à la même intention — aucun intermédiaire, aucune rupture de ton, simplement l'expression exacte de votre esthétique. Découvrez cette approche à travers notre collection signature : <a href="#pack-0" class="underline underline-offset-4 decoration-from-font hover:opacity-70 transition">L'EXCEPTION</a>.`,
     image: "/images/services-design-global.jpg",
     alt: "Salle de réception aux baies vitrées",
   },
@@ -450,7 +450,7 @@ const faqs = [
   {/* ───────────────────────── 9. PACK CARDS — hidden on mobile ───────────────────────── */}
   <section class="hidden md:block bg-white px-6 pb-24 md:pb-32 space-y-20 md:space-y-28">
     {packs.map((p, i) => (
-      <div class:list={["mx-auto w-[80%] max-w-[1300px]", i === 1 ? "!mt-40 md:!mt-56" : ""]}>
+      <div id={`pack-${i}`} class:list={["mx-auto w-[80%] max-w-[1300px] scroll-mt-32", i === 1 ? "!mt-40 md:!mt-56" : ""]}>
         <PackCard
           image={p.image}
           title={p.title}
