@@ -198,3 +198,10 @@ html[data-lang="en"] [data-i18n="home.method.script"] {
     transform: none;
   }
 }
+
+/* Processus step titles — bump the ampersand on mobile so it stays optically balanced with the small caps text */
+@media (max-width: 767px) {
+  .processus-step-title .amp {
+    font-size: 1.3em;
+  }
+}
