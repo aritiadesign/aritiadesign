@@ -357,7 +357,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "process.intro.h2": {
     fr: "UN ACCOMPAGNEMENT<br /><span>EN 6 ÉTAPES</span>",
-    en: "A JOURNEY<br /><span>IN 6 STEPS</span>"
+    en: "A JOURNEY <span>IN 6 STEPS</span>"
   },
   "process.intro.p": {
     fr: "De la première rencontre au jour J,<br />vivez la création de votre univers<br />en toute sérénité.",
@@ -442,7 +442,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "Please fill in this form with care. I'll get back to you within 48 working hours to schedule a first appointment, by phone, video or in person."
   },
   "contact.notes.p2": { fr: "Vous pouvez aussi m'écrire directement à l'adresse suivante&nbsp;:", en: "You can also write to me directly at:" },
-  "contact.h2": { fr: "FAISONS<br />CONNAISSANCE", en: "LET'S<br />MEET" },
+  "contact.h2": { fr: "FAISONS<br />CONNAISSANCE", en: "LET'S MEET" },
   "contact.p": {
     fr: "Votre histoire mérite une attention toute particulière, un regard sensible, et une mise en scène à la hauteur de vos émotions. Je serais honorée de vous accompagner dans la création d'un univers qui vous ressemble.",
     en: "Your story deserves particular attention, a sensitive eye and staging worthy of your emotions. I would be honoured to guide you in creating a world that reflects you."
