@@ -38,7 +38,7 @@ const isFlush = variant === "flush";
 
 <article class:list={["media-card text-white overflow-hidden", bgClass, isFlush ? "" : "rounded-tr-lg rounded-b-lg"]} style={bgStyle}>
   <style>
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       .media-card .media-card-img-floating {
         width: var(--mw);
         height: var(--mh);
@@ -49,8 +49,8 @@ const isFlush = variant === "flush";
 
   <div
     class:list={[
-      "grid md:grid-cols-2 items-stretch relative md:min-h-[680px]",
-      isFlush ? "" : "gap-10 md:gap-14 p-8 md:p-14",
+      "grid lg:grid-cols-2 items-stretch relative lg:min-h-[680px]",
+      isFlush ? "" : "gap-10 lg:gap-14 p-8 lg:p-14",
     ]}
   >
     {watermark && (
@@ -65,13 +65,13 @@ const isFlush = variant === "flush";
 
     {/* image */}
     {isFlush ? (
-      <div class={`relative aspect-[${mobileAspect}] md:aspect-auto overflow-hidden`}>
+      <div class={`relative aspect-[${mobileAspect}] lg:aspect-auto overflow-hidden`}>
         <img src={image} alt={imageAlt} class="absolute inset-0 w-full h-full object-cover" />
         <slot name="image-overlay" />
       </div>
     ) : (
       <div
-        class:list={["media-card-img-floating relative md:justify-self-center", `aspect-[${mobileAspect}]`, "md:aspect-auto"]}
+        class:list={["media-card-img-floating relative lg:justify-self-center", `aspect-[${mobileAspect}]`, "lg:aspect-auto"]}
         style={`--mw:${imageWidth}px;--mh:${imageHeight}px;`}
       >
         <div class="absolute inset-0 overflow-hidden">
@@ -85,7 +85,7 @@ const isFlush = variant === "flush";
     <div
       class:list={[
         "relative flex flex-col",
-        isFlush ? "p-8 md:p-14 justify-center" : "",
+        isFlush ? "p-8 lg:p-14 justify-center" : "",
       ]}
     >
       <slot />

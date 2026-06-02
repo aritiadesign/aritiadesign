@@ -175,14 +175,14 @@ const faqs = [
 
   {/* ───────────────────────── 3. NOTRE APPROCHE (intro) ───────────────────────── */}
   <section class="bg-white px-6 pb-20 md:pb-28">
-    <div class="mx-auto max-w-[1100px] grid md:grid-cols-2 gap-12 items-start text-center md:text-left">
+    <div class="mx-auto max-w-[1100px] grid lg:grid-cols-2 gap-8 lg:gap-12 items-start text-center lg:text-left">
       <div>
         <h3 class="font-display text-[44px] md:text-[48px] lg:text-[60px] leading-none tracking-wide" data-i18n="services.approach.h3">
           NOTRE<br />
           <span class="font-italic-serif italic">Approche</span>
         </h3>
       </div>
-      <div class="max-w-md mx-auto md:mx-0 text-left text-pretty text-[14px] md:text-[16px] leading-[1.75] md:leading-[1.9] text-[var(--color-ink-soft)]">
+      <div class="max-w-md mx-auto lg:mx-0 text-left text-pretty text-[14px] md:text-[16px] leading-[1.75] md:leading-[1.9] text-[var(--color-ink-soft)]">
         <p data-i18n="services.approach.p">
           Aritia Design pense l'évènement comme une pièce de design
           unique. Identité graphique, art de la table, design floral
@@ -449,9 +449,9 @@ const faqs = [
   </section>
 
   {/* ───────────────────────── 9. PACK CARDS — hidden on mobile ───────────────────────── */}
-  <section class="hidden md:block bg-white px-6 pb-24 md:pb-32 space-y-20 md:space-y-28">
+  <section class="hidden md:block bg-white px-6 pb-24 md:pb-32 space-y-16 md:space-y-20 lg:space-y-28">
     {packs.map((p, i) => (
-      <div id={`pack-${i}`} class:list={["mx-auto w-[80%] max-w-[1300px] scroll-mt-32", i === 1 ? "!mt-40 md:!mt-56" : ""]}>
+      <div id={`pack-${i}`} class:list={["mx-auto w-[90%] md:w-[85%] lg:w-[80%] max-w-[1300px] scroll-mt-32", i === 1 ? "!mt-24 md:!mt-32 lg:!mt-56" : ""]}>
         <PackCard
           image={p.image}
           title={p.title}
