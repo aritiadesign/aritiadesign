@@ -23,10 +23,10 @@ const isActive = (href: string) =>
 >
   <div class="mx-auto max-w-[1500px] px-4 sm:px-6 lg:px-14 pt-[25px] pb-4 flex items-center justify-between">
     <a href="/" class="flex items-center group" aria-label="Aritia Design — Accueil" data-i18n-attr="aria-label:header.logo.aria">
-      <Logo class="w-[200px] sm:w-[240px] md:w-[415px] h-auto" />
+      <Logo class="w-[200px] sm:w-[240px] md:w-[280px] xl:w-[415px] h-auto" />
     </a>
 
-    <nav aria-label="Principal" class="hidden md:block">
+    <nav aria-label="Principal" class="hidden xl:block">
       <ul class="flex items-center gap-6 text-[12px] leading-[1.7] tracking-[0.2em] uppercase font-normal">
         {links.map((l) => (
           <li>
@@ -48,7 +48,7 @@ const isActive = (href: string) =>
 
     <button
       type="button"
-      class="md:hidden p-2 -mr-2"
+      class="xl:hidden p-2 -mr-2"
       aria-label="Ouvrir le menu"
       aria-expanded="false"
       aria-controls="mobile-menu"
@@ -65,7 +65,7 @@ const isActive = (href: string) =>
 {/* Mobile drawer — full-screen overlay */}
 <div
   id="mobile-menu"
-  class="fixed inset-0 z-[60] bg-[#1a1a1a] text-white translate-x-full transition-transform duration-300 ease-out md:hidden"
+  class="fixed inset-0 z-[60] bg-[#1a1a1a] text-white translate-x-full transition-transform duration-300 ease-out xl:hidden"
   data-mobile-menu
   aria-hidden="true"
 >
