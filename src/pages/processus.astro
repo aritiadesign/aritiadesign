@@ -9,6 +9,7 @@ const steps = [
     body: "Tout commence par un échange. J'apprends à vous connaître, à comprendre votre histoire, vos envies, vos inspirations. Nous définissons ensemble les contours de votre univers, les priorités, les émotions à transmettre. À l'issue de cet échange, un devis personnalisé vous est remis pour validation.",
     image: "/images/panneau-bienvenue.png",
     alt: "Panneau de bienvenue",
+    gridGap: "gap-14",
   },
   {
     n: "02",
@@ -19,6 +20,9 @@ const steps = [
       "/images/contract/page-01.jpg",
     ],
     alt: "Contrat & Mandat — Aritia Design",
+    gridGap: "max-md:gap-2 gap-0",
+    textOffset: "max-md:-mt-6",
+    marginTop: "max-md:mt-16 mt-28 md:mt-40",
   },
   {
     n: "03",
@@ -26,6 +30,8 @@ const steps = [
     body: "Création d'un moodboard et d'une ligne esthétique : ambiance, matières, couleurs, fleurs, typographies, style graphique… Un fil rouge visuel et émotionnel se dessine.",
     image: "/images/step-03-moodboard.jpg",
     alt: "Moodboard — direction artistique",
+    gridGap: "gap-14",
+    marginTop: "max-md:mt-20 mt-28 md:mt-40",
   },
   {
     n: "04",
@@ -35,6 +41,7 @@ const steps = [
       `/images/flipbook/${String(i + 1).padStart(2, "0")}.jpg`
     ),
     alt: "Présentation — Carnet d'atmosphère",
+    gridGap: "max-md:gap-20 md:gap-14",
   },
   {
     n: "05",
@@ -46,6 +53,9 @@ const steps = [
     ],
     alt: "Tableaux d'orchestration",
     landscape: true,
+    gridGap: "gap-0",
+    textOffset: "max-md:-mt-10",
+    marginTop: "max-md:mt-8 mt-28 md:mt-40",
   },
   {
     n: "06",
@@ -53,6 +63,8 @@ const steps = [
     body: "Le jour J, l'univers prend vie. Je mets en place chaque élément du décor, compose les fleurs in situ, ajuste les volumes et sublime les espaces pour offrir une expérience à la hauteur de votre histoire. Un décor vivant, élégant, fluide — à votre image.",
     image: "/images/tonga-soa.png",
     alt: "Bannière Tonga Soa",
+    gridGap: "gap-14",
+    marginTop: "max-md:mt-32 mt-28 md:mt-40",
   },
 ];
 ---
@@ -91,14 +103,16 @@ const steps = [
 
   {/* ───────────────────────── 4. SIX STEPS ───────────────────────── */}
   <section class="bg-white pb-24 md:pb-36 px-6">
-    <div class="mx-auto max-w-[1200px] space-y-28 md:space-y-40">
+    <div class="mx-auto max-w-[1200px]">
       {steps.map((step, i) => {
         const reversed = i % 2 === 1;
+        const defaultMt = i === 0 ? "" : "mt-28 md:mt-40";
+        const mt = i === 0 ? "" : (step.marginTop ?? defaultMt);
         return (
-          <div class="relative">
+          <div class:list={["relative", mt]}>
             <div class:list={[
               "grid md:grid-cols-2 md:gap-20 items-center",
-              step.stack ? "gap-0" : "gap-14",
+              step.gridGap ?? "gap-14",
             ]}>
               {/* Image — static or flipbook */}
               {step.flipbook ? (
@@ -228,7 +242,7 @@ const steps = [
               {/* Text */}
               <div class:list={[
                 reversed ? "md:order-1 md:pr-8" : "md:order-2 md:pl-8",
-                step.stack ? "max-md:-mt-10" : "",
+                step.textOffset ?? "",
               ]}>
                 <h3 class="font-display font-light text-[1.1rem] sm:text-[1.25rem] md:text-[1.35rem] leading-[1.2] text-[var(--color-ink)] whitespace-nowrap flex items-baseline gap-x-1.5 sm:gap-x-2 tracking-[0.02em] sm:tracking-[0.05em]">
                   <span class="font-gilda tracking-normal">{step.n}</span>

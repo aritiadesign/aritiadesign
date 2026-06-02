@@ -35,10 +35,11 @@ const testimonials = [
     imageAlt: "Mariée vue d'en haut dans l'escalier",
   },
   {
-    quote: "Merci beaucoup pour l'organisation de notre mariage&nbsp;! Ton souci du détail, ton dévouement ont rendu notre journée parfaite voir plus que parfaite. Nous te sommes reconnaissants pour les magnifiques souvenirs que tu as contribuée à créer et te souhaitons beaucoup de succès dans l'organisation de tes prochains évènements.<br /><br />Nous recommandons Aritia sans aucune hésitation.",
+    quote: "Merci beaucoup pour l'organisation de notre mariage&nbsp;! Ton souci du détail, ton dévouement ont rendu notre journée parfaite voir plus que parfaite. Nous te sommes reconnaissants pour les magnifiques souvenirs que tu as contribuée à créer et te souhaitons beaucoup de succès dans l'organisation de tes prochains évènements.<br /><br /><em class=\"font-italic-serif italic text-[1.2rem] md:text-[1.9rem] leading-[1.45] md:leading-[1.4]\">Nous recommandons Aritia sans aucune hésitation.</em>",
     author: "ELITAH & FYDERANA",
     image: "/images/testimonial-2.jpg",
     imageAlt: "Mariée avec bouquet",
+    long: true,
   },
 ];
 ---
@@ -288,7 +289,15 @@ const testimonials = [
                   <path d="M79.7,0c3.15-.08,6.88,3.46,5.48,6.73-19.01,19.82-33.89,42.68-41.53,69.31-6.22,21.7-9.88,56.31-.73,77.33.47,1.08,3.51,7.14,4.33,7.14,6.46-9.29,16.51-12.98,27.47-13.96,40.92-3.67,64.7,26.02,58.02,65.5-5.34,31.55-34.91,45.27-64.54,43.85C-4.46,252.43-8.43,155.59,7.93,103.23,18.54,69.26,42.49,36.38,66.97,10.98c2.48-2.58,7.12-7.85,9.74-9.73.83-.6,1.96-1.23,2.99-1.26Z" />
                   <path d="M213.29,160.52c.33.28.7.03,1.03-.32,1.52-1.59,2.42-3.66,4.45-5.43,9.83-8.59,29.21-9.67,41.56-7.6,53.27,8.95,55.54,95.33-4.51,107.06-49.93,9.75-79.52-20.91-86.9-67.59-10.86-68.65,15.37-123.22,61.08-171.92,3.29-3.51,10.2-11.21,13.72-13.74,3.78-2.72,8.95.94,8.31,5.28-16.54,17.67-30.51,37.15-38.75,60.14-8.46,23.58-14.07,64.24-3.57,87.47.39.86,3.29,6.4,3.59,6.65Z" />
                 </svg>
-                <blockquote class="font-italic-serif italic text-[1.2rem] md:text-[1.9rem] leading-[1.45] md:leading-[1.4] text-[var(--color-ink)] relative" set:html={t.quote} />
+                <blockquote
+                  class:list={[
+                    "text-[var(--color-ink)] relative",
+                    t.long
+                      ? "font-display text-[1rem] md:text-[1.45rem] leading-[1.6] md:leading-[1.5]"
+                      : "font-italic-serif italic text-[1.2rem] md:text-[1.9rem] leading-[1.45] md:leading-[1.4]",
+                  ]}
+                  set:html={t.quote}
+                />
               </div>
               <div class="mt-6 md:mt-8 flex items-center gap-4 md:gap-5">
                 <figcaption class="text-[0.62rem] md:text-[0.72rem] tracking-[0.26em] md:tracking-[0.32em] uppercase text-[var(--color-muted)]">
