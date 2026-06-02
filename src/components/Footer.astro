@@ -24,7 +24,7 @@ const galleryStrip = dark ? galleryStripDark : galleryStripLight;
 
 <footer class:list={[dark ? "bg-[#1a1a1a] text-white" : "bg-white text-[var(--color-ink)]"]} data-footer-theme={dark ? "dark" : "light"}>
   <div class="mx-auto max-w-[1500px] px-4 sm:px-8 lg:px-14 pt-28 md:pt-32 pb-0">
-    <div class="mx-auto max-w-[1240px] grid grid-cols-2 md:grid-cols-[repeat(4,292px)] justify-center gap-4 md:gap-6">
+    <div class="mx-auto max-w-[1240px] grid grid-cols-2 lg:grid-cols-4 justify-center gap-4 md:gap-6">
       {galleryStrip.map((img) => (
         <a href="/portfolio" class="block aspect-square overflow-hidden bg-neutral-800 group">
           <img
@@ -37,10 +37,10 @@ const galleryStrip = dark ? galleryStripDark : galleryStripLight;
       ))}
     </div>
 
-    <div class="mt-16 mx-auto max-w-[1240px] grid md:grid-cols-[auto_1fr_auto] items-center gap-10">
+    <div class="mt-16 mx-auto max-w-[1240px] grid lg:grid-cols-[auto_1fr_auto] items-center gap-10">
       <a
         href="/"
-        class="relative inline-flex items-center justify-self-center md:justify-self-start select-none text-white"
+        class="relative inline-flex items-center justify-self-center lg:justify-self-start select-none text-white"
         aria-label="Aritia Design — Accueil"
         data-i18n-attr="aria-label:header.logo.aria"
       >
@@ -103,8 +103,8 @@ const galleryStrip = dark ? galleryStripDark : galleryStripLight;
         basée à Toulouse, disponible partout en France
       </p>
 
-      <div class="flex flex-col items-center md:items-end">
-        <div class="text-center md:w-[292px]">
+      <div class="flex flex-col items-center lg:items-end">
+        <div class="text-center lg:w-[292px]">
         <span class="block text-[0.7rem] tracking-[0.32em] uppercase" data-i18n="footer.follow">Suivez-nous</span>
         <a
           href="https://www.instagram.com/aritia_design/"
@@ -123,7 +123,7 @@ const galleryStrip = dark ? galleryStripDark : galleryStripLight;
       </div>
     </div>
 
-    <nav aria-label="Pied de page" class="mt-8 md:mt-10 md:col-span-3 flex justify-center">
+    <nav aria-label="Pied de page" class="mt-8 md:mt-10 lg:col-span-3 flex justify-center">
       <ul class="flex flex-wrap md:flex-nowrap items-center justify-center gap-x-5 gap-y-3 md:gap-x-9 text-[0.65rem] sm:text-[0.7rem] tracking-[0.2em] md:tracking-[0.28em] uppercase text-white/85 md:whitespace-nowrap">
         {links.map((l, i) => (
           <li>
