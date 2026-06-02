@@ -552,8 +552,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
 
   // ─────────────────────────── Politique de confidentialité ───────────────────────────
   "privacy.h1": {
-    fr: "Politique de <span class=\"font-italic-serif italic font-light\">confidentialité</span>",
-    en: "Privacy <span class=\"font-italic-serif italic font-light\">policy</span>"
+    fr: "POLITIQUE<br /><span class=\"font-italic-serif italic font-light\">de Confidentialité</span>",
+    en: "PRIVACY<br /><span class=\"font-italic-serif italic font-light\">Policy</span>"
   },
   "privacy.updated": { fr: "Dernière mise à jour&nbsp;: mai 2026", en: "Last updated: May 2026" },
   "privacy.intro": {
