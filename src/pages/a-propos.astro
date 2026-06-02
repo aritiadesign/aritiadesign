@@ -17,13 +17,13 @@ import PageHero from "../components/PageHero.astro";
 
   {/* ───────────────────────── 2. FONDATRICE / DESIGNER + INTRO ───────────────────────── */}
   <section class="bg-white px-6 py-20 md:py-28">
-    <div class="mx-auto max-w-[1200px] grid md:grid-cols-2 gap-14 md:gap-20 items-start">
-      {/* left: title overlapping portrait — title centered on photo width */}
-      <div class="mx-auto md:mx-0 w-full max-w-[360px] md:max-w-[440px] text-center">
+    <div class="mx-auto max-w-[1200px] grid md:grid-cols-2 gap-14 md:gap-20 md:items-stretch items-start">
+      {/* left: title overlapping portrait — title centered on photo width, photo stretches to match text height on desktop */}
+      <div class="mx-auto md:mx-0 w-full max-w-[360px] md:max-w-[440px] text-center md:flex md:flex-col">
         <h2 class="font-display font-normal text-[44px] md:text-[64px] leading-[0.95] tracking-wide relative z-10 mb-[-0.32em]">
           FONDATRICE<br />DESIGNER
         </h2>
-        <div class="aspect-[3/4] overflow-hidden">
+        <div class="aspect-[3/4] md:aspect-auto md:flex-1 md:min-h-0 overflow-hidden">
           <img
             src="/images/aritia-portrait-bw.jpg"
             alt="Aritia, fondatrice"
@@ -40,25 +40,41 @@ import PageHero from "../components/PageHero.astro";
           la matière et l'amour des autres
         </p>
 
-        <div class="mt-10 space-y-6 text-[16px] leading-[1.9] text-[var(--color-ink-soft)] max-w-md mx-auto md:mx-0">
+        <div class="mt-10 space-y-6 text-[16px] leading-[1.9] text-[var(--color-ink-soft)] max-w-[560px] mx-auto md:mx-0">
           <p>
-            Depuis toujours, je suis fascinée par l'harmonie des formes,
-            des matières et des couleurs. Très jeune, j'imaginais déjà
-            des univers pour sublimer les moments précieux de mes
-            proches — anniversaires, baby showers, mariages.
+            Depuis l'enfance, l'harmonie des formes, des textures et
+            des couleurs me fascine. Adolescente déjà, j'imaginais des
+            univers pour les célébrations de mes proches — chaque
+            évènement avait, pour moi, son atmosphère et ses émotions
+            propres.
           </p>
           <p>
-            Mon parcours en design produit m'a donné une approche
-            exigeante et sensible de la conception&nbsp;: chaque détail
-            compte, des textures aux volumes, de la lumière aux
-            couleurs.
+            Sur le terrain dès mes 16 ans, j'ai façonné une dizaine de
+            mariages en explorant toutes les facettes de
+            l'évènementiel&nbsp;: design floral, structures, décor,
+            papeterie et direction artistique. Chaque projet a été un
+            espace d'apprentissage et un défi pour me dépasser.
           </p>
           <p>
-            Peu à peu, ce qui était une passion intime est devenu une
-            vocation&nbsp;: mettre ma créativité et mon sens esthétique
-            au service des autres, pour leur offrir des instants
-            uniques et transformer chaque occasion en un moment
-            d'exception.
+            Mon parcours en design produit est venu structurer cette
+            pratique en m'apportant une approche exigeante et
+            sensible&nbsp;: l'œil pour les textures, la maîtrise des
+            volumes, la juste gestion de la lumière et des couleurs,
+            un sens aigu du détail, ainsi que le savoir-faire
+            technique nécessaire à la conception d'objets et de
+            structures sur-mesure.
+          </p>
+          <p>
+            Ma démarche repose sur l'alliance entre sensibilité et
+            rigueur, avec la volonté profonde de transmettre une
+            émotion à travers chaque projet et d'offrir aux autres ces
+            moments suspendus qu'on n'oublie pas.
+          </p>
+          <p>
+            C'est de cette ambition qu'est née Aritia
+            Design&nbsp;: une agence pensée pour celles et ceux qui
+            attendent d'un évènement plus qu'une simple décoration.
+            Une vision, une intention, une signature.
           </p>
         </div>
       </div>
