@@ -489,7 +489,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     fr: "MENTIONS <span class=\"font-italic-serif italic font-light\">légales</span>",
     en: "LEGAL <span class=\"font-italic-serif italic font-light\">notice</span>"
   },
-  "legal.updated": { fr: "Dernière mise à jour&nbsp;• mai 2026", en: "Last updated • May 2026" },
+  "legal.updated": { fr: "Dernière mise à jour&nbsp;✦ mai 2026", en: "Last updated ✦ May 2026" },
   "legal.editor.h2": { fr: "Éditeur du site", en: "Site editor" },
   "legal.editor.p":  {
     fr: 'Le présent site internet <a href="https://aritiadesign.com" class="underline underline-offset-4 hover:opacity-70">aritiadesign.com</a> est édité par&nbsp;:',
@@ -555,7 +555,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     fr: "POLITIQUE<br /><span class=\"font-italic-serif italic font-light\">de Confidentialité</span>",
     en: "PRIVACY<br /><span class=\"font-italic-serif italic font-light\">Policy</span>"
   },
-  "privacy.updated": { fr: "Dernière mise à jour&nbsp;• mai 2026", en: "Last updated • May 2026" },
+  "privacy.updated": { fr: "Dernière mise à jour&nbsp;✦ mai 2026", en: "Last updated ✦ May 2026" },
   "privacy.intro": {
     fr: "Aritia Design accorde une importance particulière à la protection de vos données personnelles. La présente politique décrit la manière dont vos informations sont collectées, utilisées et protégées lorsque vous naviguez sur <a href=\"https://aritiadesign.com\" class=\"underline underline-offset-4 hover:opacity-70\">aritiadesign.com</a> ou interagissez avec ses services, conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi française «&nbsp;Informatique et Libertés&nbsp;».",
     en: "Aritia Design pays particular attention to the protection of your personal data. This policy describes how your information is collected, used and protected when you browse <a href=\"https://aritiadesign.com\" class=\"underline underline-offset-4 hover:opacity-70\">aritiadesign.com</a> or interact with its services, in accordance with the General Data Protection Regulation (GDPR) and the French \"Informatique et Libertés\" law."
