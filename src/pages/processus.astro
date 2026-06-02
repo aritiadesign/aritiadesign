@@ -246,7 +246,7 @@ const steps = [
                 reversed ? "md:order-1 md:pr-8" : "md:order-2 md:pl-8",
                 step.textOffset ?? "",
               ]}>
-                <h3 class="processus-step-title font-display font-light text-[1.1rem] sm:text-[1.25rem] md:text-[1.35rem] leading-[1.2] text-[var(--color-ink)] whitespace-nowrap flex items-baseline gap-x-1.5 sm:gap-x-2 tracking-[0.02em] sm:tracking-[0.05em]">
+                <h3 class="processus-step-title font-display font-light text-[1rem] sm:text-[1.2rem] md:text-[1.35rem] leading-[1.25] text-[var(--color-ink)] md:whitespace-nowrap flex flex-wrap items-baseline gap-x-1.5 sm:gap-x-2 tracking-[0.02em] sm:tracking-[0.05em]">
                   <span class="font-gilda tracking-normal">{step.n}</span>
                   <span class="font-gilda tracking-normal" aria-hidden="true">/</span>
                   <span data-i18n={`process.step.${i + 1}.title`}>

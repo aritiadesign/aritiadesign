@@ -125,8 +125,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   // ─────────────────────────── À propos page ───────────────────────────
   "about.hero.title": { fr: "À Propos", en: "About" },
   "about.hero.subtitle": {
-    fr: "Atmosphères raffinées, où design graphique,<br />scénographie &amp; art floral se&nbsp;rencontrent",
-    en: "Refined atmospheres, where graphic design,<br />set design &amp; floral art meet"
+    fr: "Atmosphères raffinées, où design graphique, <br />scénographie &amp; art floral se&nbsp;rencontrent",
+    en: "Refined atmospheres, where graphic design, <br />set design &amp; floral art meet"
   },
   "about.founder.h2": { fr: "FONDATRICE<br />DESIGNER", en: "FOUNDER<br />DESIGNER" },
   "about.founder.kicker": {
@@ -166,8 +166,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   // ─────────────────────────── Services page ───────────────────────────
   "services.hero.title": { fr: "Services<br />&amp; Packages", en: "Services<br />&amp; Packages" },
   "services.hero.subtitle": {
-    fr: "De l'inspiration à la réalisation, chaque étape est pensée&nbsp;<br />pour refléter votre&nbsp;univers",
-    en: "From inspiration to realisation, every step is designed&nbsp;<br />to reflect your&nbsp;world"
+    fr: "De l'inspiration à la réalisation, chaque étape est pensée <br />pour refléter votre&nbsp;univers",
+    en: "From inspiration to realisation, every step is designed <br />to reflect your&nbsp;world"
   },
   "services.intro.h2": {
     fr: "UNE DIRECTION ARTISTIQUE<br />POUR DONNER VIE À VOS ÉMOTIONS",
@@ -433,8 +433,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   // ─────────────────────────── Contact page ───────────────────────────
   "contact.hero.title": { fr: "Contact", en: "Contact" },
   "contact.hero.subtitle": {
-    fr: "Vous rêver d'un mariage ou d'un évènement&nbsp;<br />qui vous ressemble&nbsp;?",
-    en: "Dreaming of a wedding or event&nbsp;<br />that truly reflects you?"
+    fr: "Vous rêver d'un mariage ou d'un évènement <br />qui vous ressemble&nbsp;?",
+    en: "Dreaming of a wedding or event <br />that truly reflects you?"
   },
   "contact.notes.label": { fr: "Notes", en: "Notes" },
   "contact.notes.p1": {
