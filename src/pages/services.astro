@@ -9,10 +9,10 @@ const services = [
   {
     kicker: "Direction artistique",
     scriptHtml: "Direction<br />artistique",
-    title: "L'EXCEPTION",
-    titleItalic: "Design Intégral",
+    title: "DIRECTION",
+    titleItalic: "Artistique",
     packIndex: 0,
-    body: `Ici, votre célébration est pensé comme une œuvre complète : De l'identité visuelle à la scénographie, de l'art floral à la papeterie fine, chaque détail est orchestré pour créer un univers cohérent et d'une rare élégance.\n\nEn tant que directrice de création, je garantis l'harmonie absolue entre le décor, les fleurs et l'identité graphique.\n\nCette approche globale vous offre une expérience fluide et une sérénité totale, pour un évènement d'exception, rigoureusement à votre image.`,
+    body: `En direction artistique globale, nous signons votre univers de manière absolue : identité graphique, art de la table, design floral, structures sur‑mesure et mise en scène. Une seule vision sur l'ensemble pour que chaque détail réponde à la même intention — aucun intermédiaire, aucune rupture de ton, simplement l'expression exacte de votre esthétique.`,
     image: "/images/services-design-global.jpg",
     alt: "Salle de réception aux baies vitrées",
   },
@@ -22,7 +22,7 @@ const services = [
     title: "DECOR",
     titleItalic: "Scénographie",
     packIndex: 2,
-    body: `Avec cette prestation, nous créons l'univers visuel complet de votre mariage, du moodboard initial à la mise en scène finale. Elle comprend la définition du concept esthétique, la mise en ambiance des espaces et la coordination des prestataires (mobilier, éclairage, accessoires…) pour un rendu tangible, élégant et cohérent.\n\nVous bénéficiez ainsi d'une direction artistique concrète sur le lieu, d'une harmonie visuelle parfaite et d'une prise en charge complète, garantissant un mariage raffiné et maîtrisé jusque dans les moindres détails.`,
+    body: `La maîtrise globale de votre décor. Nous concevons et coordonnons l'ensemble des éléments visuels de votre événement : mobilier, éclairage, matières et accessoires. Notre rôle est de garantir l'harmonie absolue de l'espace, où chaque détail visible répond à la même intention, afin que la scénographie finale soit la traduction exacte du projet initial.`,
     image: "/images/services-decor.jpg",
     alt: "Salle voûtée bois avec dressage",
   },
@@ -32,7 +32,7 @@ const services = [
     title: "FLORAL",
     titleItalic: "Design",
     packIndex: 3,
-    body: `Nous concevons des compositions florales sur-mesure pour sublimer chaque instant de vos mariages et évènements, des pièces délicates aux installations sculpturales d'envergure.\n\nPensée en parfaite harmonie avec votre identité visuelle, chaque création apporte élégance et authenticité pour placer le végétal au cœur de l'expérience émotionnelle de votre réception.\n\nC'est une signature raffinée, jouant sur l'équilibre des couleurs et des textures, pour offrir à votre réception une dimension visuelle inoubliable.`,
+    body: `Du détail intime aux installations d'ampleur, nous concevons chaque pièce végétale en résonance avec votre univers visuel. Sélection rigoureuse des variétés, maîtrise des textures, des palettes et des volumes : les fleurs s'inscrivent comme une composante essentielle de la scénographie, loin du simple accessoire.`,
     image: "/images/services-papeterie.png",
     alt: "Cérémonie outdoor pampas",
   },
@@ -42,7 +42,7 @@ const services = [
     title: "PAPETERIE",
     titleItalic: "",
     packIndex: 4,
-    body: `Avec la prestation Papeterie, nous créons l'identité graphique complète de votre mariage, du logo ou monogramme personnalisé aux faire-part, menus, programmes, marque-places, plans de table et signalétique. À partir d'un moodboard et d'une direction artistique définie avec vous, nous déclinons un univers visuel cohérent sur l'ensemble de vos supports, pour une papeterie sur-mesure, raffinée et parfaitement harmonisée avec l'esthétique et l'ambiance de votre mariage.`,
+    body: `L'identité graphique est le premier point de contact de votre événement. Du monogramme à la signalétique du jour J, nous dessinons un univers visuel unique : choix des typographies, illustrations exclusives, textures des papiers et finitions artisanales. Chaque pièce est pensée comme un objet d'art imprimé, pour prolonger l'esthétique de votre célébration.`,
     image: "/images/services-floral.jpg",
     alt: "Bouquet et menu de mariage",
   },
@@ -298,7 +298,7 @@ const faqs = [
               ))}
               {s.titleItalic && <> <span class="font-italic-serif italic font-light">{s.titleItalic}</span></>}
             </h3>
-            <div class="mt-7 text-[16px] leading-[1.9] text-white max-w-md space-y-4" data-i18n={`services.${i}.body`} set:html={s.body.split("\n\n").map((p) => `<p>${p}</p>`).join("")} />
+            <div class="mt-20 text-[16px] leading-[1.9] text-white max-w-md space-y-4" data-i18n={`services.${i}.body`} set:html={s.body.split("\n\n").map((p) => `<p>${p}</p>`).join("")} />
             <SparkLink href="/contact" label="Prendre rendez-vous" i18nKey="services.cta.tab" class="mt-auto pt-10 self-start" />
           </MediaCard>
         </div>
