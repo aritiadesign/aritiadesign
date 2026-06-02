@@ -12,7 +12,9 @@ import PageHero from "../components/PageHero.astro";
     image="/images/about-hero.jpg"
     imageAlt="Intérieur d'un lieu d'exception"
     title="À Propos"
+    titleKey="about.hero.title"
     subtitleHtml="Atmosphères raffinées, où design graphique,<br />scénographie &amp; art floral se&nbsp;rencontrent"
+    subtitleKey="about.hero.subtitle"
   />
 
   {/* ───────────────────────── 2. FONDATRICE / DESIGNER + INTRO ───────────────────────── */}
@@ -20,7 +22,7 @@ import PageHero from "../components/PageHero.astro";
     <div class="mx-auto max-w-[1200px] grid md:grid-cols-2 gap-14 md:gap-20 md:items-stretch items-start">
       {/* left: title overlapping portrait — title centered on photo width, photo stretches to match text height on desktop */}
       <div class="mx-auto md:mx-0 w-full max-w-[360px] md:max-w-[440px] text-center md:flex md:flex-col">
-        <h2 class="font-display font-normal text-[44px] md:text-[64px] leading-[0.95] tracking-wide relative z-10 mb-[-0.32em]">
+        <h2 class="font-display font-normal text-[44px] md:text-[64px] leading-[0.95] tracking-wide relative z-10 mb-[-0.32em]" data-i18n="about.founder.h2">
           FONDATRICE<br />DESIGNER
         </h2>
         <div class="aspect-[3/4] md:aspect-auto md:flex-1 md:min-h-0 overflow-hidden">
@@ -35,27 +37,27 @@ import PageHero from "../components/PageHero.astro";
 
       {/* right: body copy */}
       <div class="md:pt-4">
-        <p class="text-[0.72rem] sm:text-[13px] tracking-[0.2em] sm:tracking-[0.28em] uppercase leading-[1.9] sm:leading-[2.1] text-[var(--color-ink-soft)] text-center md:text-left">
+        <p class="text-[0.72rem] sm:text-[13px] tracking-[0.2em] sm:tracking-[0.28em] uppercase leading-[1.9] sm:leading-[2.1] text-[var(--color-ink-soft)] text-center md:text-left" data-i18n="about.founder.kicker">
           Une designer passionnée par les volumes,<br class="hidden sm:inline" />
           la matière et l'amour des autres
         </p>
 
         <div class="mt-10 space-y-6 text-[16px] leading-[1.9] text-[var(--color-ink-soft)] max-w-[560px] mx-auto md:mx-0">
-          <p>
+          <p data-i18n="about.founder.p1">
             Depuis l'enfance, l'harmonie des formes, des textures et
             des couleurs me fascine. Adolescente déjà, j'imaginais des
             univers pour les célébrations de mes proches — chaque
             évènement avait, pour moi, son atmosphère et ses émotions
             propres.
           </p>
-          <p>
+          <p data-i18n="about.founder.p2">
             Sur le terrain dès mes 16 ans, j'ai contribué à la conception d'une dizaine de
             mariages en explorant toutes les facettes de
             l'évènementiel&nbsp;: design floral, structures, décor,
             papeterie et direction artistique. Chaque projet a été un
             espace d'apprentissage et un défi pour me dépasser.
           </p>
-          <p>
+          <p data-i18n="about.founder.p3">
             Mon parcours en design produit est venu structurer cette
             pratique en m'apportant une approche exigeante et
             sensible&nbsp;: l'œil pour les textures, la maîtrise des
@@ -64,13 +66,13 @@ import PageHero from "../components/PageHero.astro";
             technique nécessaire à la conception d'objets et de
             structures sur-mesure.
           </p>
-          <p>
+          <p data-i18n="about.founder.p4">
             Ma démarche repose sur l'alliance entre sensibilité et
             rigueur, avec la volonté profonde de transmettre une
             émotion à travers chaque projet et d'offrir aux autres ces
             moments suspendus, gravés dans les mémoires.
           </p>
-          <p>
+          <p data-i18n="about.founder.p5">
             C'est de cette ambition qu'est née Aritia
             Design&nbsp;: une agence pensée pour celles et ceux qui
             attendent d'un évènement plus qu'une simple décoration.
@@ -91,17 +93,18 @@ import PageHero from "../components/PageHero.astro";
 
     <div class="relative mx-auto max-w-[1300px] px-6 lg:px-14 py-20 md:py-28 grid md:grid-cols-2 gap-14 md:gap-20 items-center">
       <div class="text-center md:text-left flex flex-col items-center md:items-start">
-        <h2 class="font-display font-light text-[28px] md:text-[40px] leading-[1.15] tracking-wide whitespace-nowrap">
+        <h2 class="font-display font-light text-[28px] md:text-[40px] leading-[1.15] tracking-wide whitespace-nowrap" data-i18n="about.ambition.h2">
           MON AMBITION EST DE<br />
           CONCRÉTISER VOTRE<br />
           VISION
         </h2>
-        <p class="mt-6 text-[12px] tracking-[0.28em] uppercase text-white/85">
+        <p class="mt-6 text-[12px] tracking-[0.28em] uppercase text-white/85" data-i18n="about.ambition.sub">
           Avec soin, intention et passion
         </p>
         <a
           href="/contact"
           class="inline-block mt-10 px-10 py-4 border border-white text-[0.72rem] tracking-[0.32em] uppercase hover:bg-white hover:text-[var(--color-ink)] transition"
+          data-i18n="about.ambition.cta"
         >
           Commencer l'aventure
         </a>
@@ -142,9 +145,9 @@ import PageHero from "../components/PageHero.astro";
         </div>
         {/* CRÉATIF overlaps the photo's bottom; Raffiné / MODERNE sit below on white */}
         <div class="relative z-10 text-center font-display leading-[1.05] text-[40px] md:text-[72px] text-[var(--color-ink)] mt-[-0.5em] whitespace-nowrap">
-          <span class="block">CRÉATIF</span>
-          <span class="block font-italic-serif italic">Raffiné</span>
-          <span class="block">MODERNE</span>
+          <span class="block" data-i18n="about.keywords.creative">CRÉATIF</span>
+          <span class="block font-italic-serif italic" data-i18n="about.keywords.refined">Raffiné</span>
+          <span class="block" data-i18n="about.keywords.modern">MODERNE</span>
         </div>
       </div>
     </div>

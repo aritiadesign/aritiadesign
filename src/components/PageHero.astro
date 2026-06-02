@@ -18,6 +18,10 @@ interface Props {
   titleSizeMd?: string;
   /** Override the script title font-size on mobile. */
   titleSizeMobile?: string;
+  /** i18n dictionary key for the title (innerHTML swap on language change) */
+  titleKey?: string;
+  /** i18n dictionary key for the subtitle */
+  subtitleKey?: string;
 }
 
 const {
@@ -30,6 +34,8 @@ const {
   subtitleHtml,
   titleSizeMd = "124px",
   titleSizeMobile = "56px",
+  titleKey,
+  subtitleKey,
 } = Astro.props;
 ---
 
@@ -44,6 +50,7 @@ const {
     <h1
       class="font-script text-white leading-none inline-block"
       style={`font-size: clamp(${titleSizeMobile}, 10vw, ${titleSizeMd}); transform: rotate(-9deg);`}
+      data-i18n={titleKey}
     >
       {titleHtml ? <Fragment set:html={titleHtml} /> : title}
     </h1>
@@ -51,7 +58,7 @@ const {
     <span class="page-hero-rule" aria-hidden="true"></span>
 
     {(subtitleHtml || subtitle) && (
-      <p class="mt-14 md:mt-10 text-[12px] sm:text-[13px] md:text-[15px] tracking-[1.6px] sm:tracking-[2px] md:tracking-[2.25px] uppercase text-white/85 max-w-2xl">
+      <p class="mt-14 md:mt-10 text-[12px] sm:text-[13px] md:text-[15px] tracking-[1.6px] sm:tracking-[2px] md:tracking-[2.25px] uppercase text-white/85 max-w-2xl" data-i18n={subtitleKey}>
         {subtitleHtml ? <Fragment set:html={subtitleHtml} /> : subtitle}
       </p>
     )}

@@ -75,11 +75,11 @@ const steps = [
     <div class="mx-auto max-w-[1100px] text-center">
       <span class="flex w-fit mx-auto items-center gap-2 md:gap-4 mb-0 md:mb-24 px-3 md:px-5 py-2 md:py-3 bg-[#1a1a1a] text-white text-[0.58rem] md:text-[0.75rem] tracking-[0.22em] md:tracking-[0.32em] uppercase">
         <span aria-hidden="true">✦</span>
-        <span>Processus créatif</span>
+        <span data-i18n="process.kicker">Processus créatif</span>
         <span aria-hidden="true">✦</span>
       </span>
 
-      <h1 class="hidden md:inline-block font-script font-normal text-[1.4rem] sm:text-[1.9rem] md:text-[2.8rem] lg:text-[3.2rem] leading-[1.4] text-[var(--color-ink)]">
+      <h1 class="hidden md:inline-block font-script font-normal text-[1.4rem] sm:text-[1.9rem] md:text-[2.8rem] lg:text-[3.2rem] leading-[1.4] text-[var(--color-ink)]" data-i18n="process.hero.quote">
         «&nbsp;La création, c'est l'équilibre entre<br />
         maîtrise et lâcher-prise.&nbsp;»
       </h1>
@@ -89,11 +89,11 @@ const steps = [
   {/* ───────────────────────── 3. INTRO TEXT ───────────────────────── */}
   <section class="bg-white pt-6 md:pt-10 pb-16 md:pb-20 px-6">
     <div class="mx-auto max-w-3xl text-center">
-      <h2 class="font-display font-light text-[1.25rem] sm:text-[2rem] md:text-[2.7rem] leading-[1.2]">
+      <h2 class="font-display font-light text-[1.25rem] sm:text-[2rem] md:text-[2.7rem] leading-[1.2]" data-i18n="process.intro.h2">
         UN ACCOMPAGNEMENT<br />
         <span>EN 6 ÉTAPES</span>
       </h2>
-      <p class="mt-6 md:mt-10 text-[0.62rem] sm:text-[0.78rem] tracking-[0.18em] sm:tracking-[0.22em] uppercase leading-[1.95] text-[var(--color-ink-soft)]">
+      <p class="mt-6 md:mt-10 text-[0.62rem] sm:text-[0.78rem] tracking-[0.18em] sm:tracking-[0.22em] uppercase leading-[1.95] text-[var(--color-ink-soft)]" data-i18n="process.intro.p">
         De la première rencontre au jour J,<br />
         vivez la création de votre univers<br />
         en toute sérénité.
@@ -143,6 +143,7 @@ const steps = [
                     data-prev
                     class="absolute inset-y-0 left-0 w-1/2 z-[4] cursor-w-resize flex items-center justify-start pl-3 md:pl-6"
                     aria-label="Page précédente"
+                    data-i18n-attr="aria-label:process.flipbook.prev"
                   >
                     <span class="inline-flex items-center justify-center w-9 h-9 md:w-11 md:h-11 rounded-full bg-white/85 backdrop-blur-sm text-[var(--color-ink)] shadow hover:bg-white transition">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 6l-6 6 6 6"/></svg>
@@ -153,6 +154,7 @@ const steps = [
                     data-next
                     class="absolute inset-y-0 right-0 w-1/2 z-[4] cursor-e-resize flex items-center justify-end pr-3 md:pr-6"
                     aria-label="Page suivante"
+                    data-i18n-attr="aria-label:process.flipbook.next"
                   >
                     <span class="inline-flex items-center justify-center w-9 h-9 md:w-11 md:h-11 rounded-full bg-white/85 backdrop-blur-sm text-[var(--color-ink)] shadow hover:bg-white transition">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l6 6-6 6"/></svg>
@@ -247,7 +249,7 @@ const steps = [
                 <h3 class="font-display font-light text-[1.1rem] sm:text-[1.25rem] md:text-[1.35rem] leading-[1.2] text-[var(--color-ink)] whitespace-nowrap flex items-baseline gap-x-1.5 sm:gap-x-2 tracking-[0.02em] sm:tracking-[0.05em]">
                   <span class="font-gilda tracking-normal">{step.n}</span>
                   <span class="font-gilda tracking-normal" aria-hidden="true">/</span>
-                  <span>
+                  <span data-i18n={`process.step.${i + 1}.title`}>
                     {step.title.split("&").map((part, idx, arr) => (
                       <>
                         {part}
@@ -274,7 +276,7 @@ const steps = [
                   {/* third sparkle */}
                   <path d="M82 2.5 Q82.3 4.7 84.5 5 Q82.3 5.3 82 7.5 Q81.7 5.3 79.5 5 Q81.7 4.7 82 2.5 Z" stroke="none" />
                 </svg>
-                <p class="mt-6 text-[0.95rem] leading-[1.95] text-[var(--color-ink-soft)] max-w-md">
+                <p class="mt-6 text-[0.95rem] leading-[1.95] text-[var(--color-ink-soft)] max-w-md" data-i18n={`process.step.${i + 1}.body`}>
                   {step.body}
                 </p>
               </div>
@@ -312,7 +314,7 @@ const steps = [
         {/* Right: italic manifesto + CTA */}
         <div class="col-span-12 md:col-span-8 md:pl-6 mt-8 md:mt-0">
           <div class="w-fit max-w-full">
-            <p class="font-italic-serif italic text-[1.4rem] sm:text-[1.7rem] md:text-[40px] leading-[1.4] md:leading-[1.3] text-white text-pretty">
+            <p class="font-italic-serif italic text-[1.4rem] sm:text-[1.7rem] md:text-[40px] leading-[1.4] md:leading-[1.3] text-white text-pretty" data-i18n="process.closing">
               Mon processus créatif allie écoute,<br class="hidden md:inline" />
               intuition et exigence esthétique, pour<br class="hidden md:inline" />
               concevoir une expérience sur mesure et<br class="hidden md:inline" />
@@ -323,6 +325,7 @@ const steps = [
               <SparkLink
                 href="/contact"
                 label="Contactez-moi"
+                i18nKey="process.closing.cta"
                 arrowClass="h-[22px] w-[22px] md:h-[37px] md:w-[37px]"
                 class="text-white !text-[0.8rem] md:!text-[18px] !tracking-[0.16em] md:!tracking-[0.2em] !gap-2 md:!gap-3"
               />

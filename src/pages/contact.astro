@@ -19,7 +19,9 @@ const sent = Astro.url.searchParams.get("sent") === "1";
     imageMobile="/images/contact-hero-mobile.jpg"
     imageAlt="Plafond aux poutres"
     title="Contact"
+    titleKey="contact.hero.title"
     subtitleHtml="Vous rêver d'un mariage ou d'un évènement&nbsp;<br />qui vous ressemble&nbsp;?"
+    subtitleKey="contact.hero.subtitle"
   />
 
   {/* ───────────────────────── 2. FORM ───────────────────────── */}
@@ -35,16 +37,16 @@ const sent = Astro.url.searchParams.get("sent") === "1";
           />
         </div>
         <div class="bg-[#1a1a1a] text-white p-8 md:p-10">
-          <p class="font-display tracking-[0.28em] uppercase text-[20px] md:text-[22px] text-white/65">Notes</p>
-          <p class="mt-5 text-[14px] leading-[1.9] text-white/85">
+          <p class="font-display tracking-[0.28em] uppercase text-[20px] md:text-[22px] text-white/65" data-i18n="contact.notes.label">Notes</p>
+          <p class="mt-5 text-[14px] leading-[1.9] text-white/85" data-i18n="contact.notes.p1">
             Merci de remplir ce formulaire avec soin. Je reviendrai
             vers vous dans les 48 heures ouvrées afin de planifier un
             premier rendez-vous téléphonique, en visio ou en
             présentiel.
           </p>
           <p class="mt-5 text-[14px] leading-[1.9] text-white/85">
-            Vous pouvez aussi m'écrire directement à l'adresse
-            suivante&nbsp;:
+            <span data-i18n="contact.notes.p2">Vous pouvez aussi m'écrire directement à l'adresse
+            suivante&nbsp;:</span>
             <a
               href="mailto:contact@aritiadesign.com"
               class="block mt-2 underline underline-offset-4 hover:opacity-70 transition"
@@ -55,10 +57,10 @@ const sent = Astro.url.searchParams.get("sent") === "1";
 
       {/* right: form — first on mobile so Envoyer appears before the photo */}
       <div class="order-1 md:order-2">
-        <h2 class="font-display text-[34px] md:text-[60px] leading-[1.05] md:leading-[1] tracking-wide text-[var(--color-ink)]">
+        <h2 class="font-display text-[34px] md:text-[60px] leading-[1.05] md:leading-[1] tracking-wide text-[var(--color-ink)]" data-i18n="contact.h2">
           FAISONS<br />CONNAISSANCE
         </h2>
-        <p class="mt-6 md:mt-8 text-[13px] md:text-[14px] leading-[1.85] md:leading-[1.9] text-[var(--color-ink-soft)] max-w-md">
+        <p class="mt-6 md:mt-8 text-[13px] md:text-[14px] leading-[1.85] md:leading-[1.9] text-[var(--color-ink-soft)] max-w-md" data-i18n="contact.p">
           Votre histoire mérite une attention toute particulière, un
           regard sensible, et une mise en scène à la hauteur de vos
           émotions. Je serais honorée de vous accompagner dans la
@@ -67,8 +69,8 @@ const sent = Astro.url.searchParams.get("sent") === "1";
 
         {sent && (
           <div class="mt-10 p-6 bg-[#f7f5f1] border border-[var(--color-ink)]/10 text-[14px] leading-[1.9] text-[var(--color-ink-soft)]">
-            <p class="font-display text-[20px] text-[var(--color-ink)] mb-2">Merci&nbsp;!</p>
-            <p>Votre demande a bien été envoyée. Je reviens vers vous sous 48&nbsp;h ouvrées.</p>
+            <p class="font-display text-[20px] text-[var(--color-ink)] mb-2" data-i18n="contact.thanks.h">Merci&nbsp;!</p>
+            <p data-i18n="contact.thanks.p">Votre demande a bien été envoyée. Je reviens vers vous sous 48&nbsp;h ouvrées.</p>
           </div>
         )}
 
@@ -84,112 +86,119 @@ const sent = Astro.url.searchParams.get("sent") === "1";
           {/* Honeypot — bots fill this, real users don't */}
           <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
           <div class="border-b border-black/15 pb-1">
-            <label class="sr-only" for="f-name">Nom &amp; Prénom</label>
+            <label class="sr-only" for="f-name" data-i18n="contact.label.name">Nom &amp; Prénom</label>
             <input
               id="f-name"
               type="text"
               name="Nom & Prénom"
               required
               placeholder="NOM & PRÉNOM *"
+              data-i18n-attr="placeholder:contact.ph.name"
               class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3"
             />
           </div>
           <div class="border-b border-black/15 pb-1">
-            <label class="sr-only" for="f-email">Email</label>
+            <label class="sr-only" for="f-email" data-i18n="contact.label.email">Email</label>
             <input
               id="f-email"
               type="email"
               name="Email"
               required
               placeholder="E-MAIL *"
+              data-i18n-attr="placeholder:contact.ph.email"
               class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3"
             />
           </div>
           <div class="border-b border-black/15 pb-1">
-            <label class="sr-only" for="f-phone">Téléphone</label>
+            <label class="sr-only" for="f-phone" data-i18n="contact.label.phone">Téléphone</label>
             <input
               id="f-phone"
               type="tel"
               name="Téléphone"
               placeholder="🇫🇷 TÉLÉPHONE"
+              data-i18n-attr="placeholder:contact.ph.phone"
               class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3"
             />
           </div>
           <div class="border-b border-black/15 pb-1">
-            <label class="sr-only" for="f-date">Date</label>
+            <label class="sr-only" for="f-date" data-i18n="contact.label.date">Date</label>
             <input
               id="f-date"
               type="date"
               name="Date"
               required
               placeholder="DATE DE L'ÉVÈNEMENT *"
+              data-i18n-attr="placeholder:contact.ph.date"
               class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] text-[var(--color-muted)] focus:outline-none py-3"
             />
           </div>
           <div class="border-b border-black/15 pb-1">
-            <label class="sr-only" for="f-location">Lieu</label>
+            <label class="sr-only" for="f-location" data-i18n="contact.label.location">Lieu</label>
             <input
               id="f-location"
               type="text"
               name="Lieu"
               required
               placeholder="LIEU DE L'ÉVÈNEMENT *"
+              data-i18n-attr="placeholder:contact.ph.loc"
               class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3"
             />
           </div>
           <div class="border-b border-black/15 pb-1">
-            <label class="sr-only" for="f-prestation">Prestation</label>
+            <label class="sr-only" for="f-prestation" data-i18n="contact.label.service">Prestation</label>
             <select
               id="f-prestation"
               name="Prestation"
               required
               class="w-full bg-transparent text-[11px] md:text-[12px] tracking-[0.2em] md:tracking-[0.22em] uppercase text-[var(--color-muted)] focus:outline-none py-3 appearance-none"
             >
-              <option value="" disabled selected>PRESTATION SOUHAITÉE *</option>
-              <option>L'Exception — Design Intégral</option>
-              <option>Décor &amp; Identité Visuelle</option>
-              <option>Décor &amp; Mise en Ambiance</option>
-              <option>L'Art Floral</option>
-              <option>Papeterie Fine</option>
-              <option>Sur-mesure</option>
+              <option value="" disabled selected data-i18n="contact.opt.service.placeholder">PRESTATION SOUHAITÉE *</option>
+              <option data-i18n="contact.opt.service.0">L'Exception — Design Intégral</option>
+              <option data-i18n="contact.opt.service.1">Décor &amp; Identité Visuelle</option>
+              <option data-i18n="contact.opt.service.2">Décor &amp; Mise en Ambiance</option>
+              <option data-i18n="contact.opt.service.3">L'Art Floral</option>
+              <option data-i18n="contact.opt.service.4">Papeterie Fine</option>
+              <option data-i18n="contact.opt.service.5">Sur-mesure</option>
             </select>
           </div>
           <div class="border-b border-black/15 pb-1">
-            <label class="sr-only" for="f-type">Type d'évènement</label>
+            <label class="sr-only" for="f-type" data-i18n="contact.label.type">Type d'évènement</label>
             <select
               id="f-type"
               name="Type"
               required
               class="w-full bg-transparent text-[11px] md:text-[12px] tracking-[0.2em] md:tracking-[0.22em] uppercase text-[var(--color-muted)] focus:outline-none py-3 appearance-none"
             >
-              <option value="" disabled selected>TYPE D'ÉVÈNEMENT *</option>
-              <option>Mariage</option>
-              <option>Évènement saisonnier</option>
-              <option>Anniversaire</option>
-              <option>Baby Shower</option>
-              <option>Évènement Corporate</option>
-              <option>Autre</option>
+              <option value="" disabled selected data-i18n="contact.opt.type.placeholder">TYPE D'ÉVÈNEMENT *</option>
+              <option data-i18n="contact.opt.type.0">Mariage</option>
+              <option data-i18n="contact.opt.type.1">Évènement saisonnier</option>
+              <option data-i18n="contact.opt.type.2">Anniversaire</option>
+              <option data-i18n="contact.opt.type.3">Baby Shower</option>
+              <option data-i18n="contact.opt.type.4">Évènement Corporate</option>
+              <option data-i18n="contact.opt.type.5">Autre</option>
             </select>
           </div>
           <div class="border-b border-black/15 pb-1">
-            <label class="sr-only" for="f-budget">Budget</label>
+            <label class="sr-only" for="f-budget" data-i18n="contact.label.budget">Budget</label>
             <input
               id="f-budget"
               type="text"
               name="Budget"
               required
               placeholder="BUDGET ENVISAGÉ POUR VOTRE PROJET *"
+              data-i18n-attr="placeholder:contact.ph.budget"
               class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3"
             />
           </div>
           <div class="border-b border-black/15 pb-1">
-            <label class="sr-only" for="f-desc">Description</label>
+            <label class="sr-only" for="f-desc" data-i18n="contact.label.desc">Description</label>
             <textarea
               id="f-desc"
               name="Description"
               required
               rows="4"
               placeholder="DESCRIPTION *"
+              data-i18n-attr="placeholder:contact.ph.desc"
               class="w-full bg-transparent text-[14px] tracking-[0.02em] placeholder:text-[12px] placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3 resize-none"
             ></textarea>
           </div>
@@ -198,6 +207,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
             <button
               type="submit"
               class="font-script text-[34px] md:text-[42px] text-[var(--color-ink)] hover:opacity-70 transition leading-none"
+              data-i18n="contact.submit"
             >
               Envoyer
             </button>

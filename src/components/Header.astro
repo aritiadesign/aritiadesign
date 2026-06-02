@@ -21,7 +21,7 @@ const isActive = (href: string) =>
   data-site-header
 >
   <div class="mx-auto max-w-[1500px] px-6 lg:px-14 pt-[25px] pb-4 flex items-center justify-between">
-    <a href="/" class="flex items-center group" aria-label="Aritia Design — Accueil">
+    <a href="/" class="flex items-center group" aria-label="Aritia Design — Accueil" data-i18n-attr="aria-label:header.logo.aria">
       <Logo class="w-[260px] md:w-[415px] h-auto" />
     </a>
 
@@ -34,26 +34,46 @@ const isActive = (href: string) =>
               class="relative inline-block leading-none nav-link"
               data-active={isActive(l.href)}
             >
-              {l.label}
+              <span data-i18n={l.key}>{l.label}</span>
               <span class="understrike" aria-hidden="true"></span>
             </a>
           </li>
         ))}
+        <li>
+          <button
+            type="button"
+            data-lang-toggle
+            aria-label="Switch to English"
+            class="lang-toggle relative inline-block leading-none nav-link cursor-pointer"
+          >
+            <span class="lang-label">EN</span>
+            <span class="understrike" aria-hidden="true"></span>
+          </button>
+        </li>
       </ul>
     </nav>
 
-    <button
-      type="button"
-      class="md:hidden p-2 -mr-2"
-      aria-label="Ouvrir le menu"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-      data-mobile-toggle
-    >
+    <div class="md:hidden flex items-center gap-3">
+      <button
+        type="button"
+        data-lang-toggle
+        aria-label="Switch to English"
+        class="lang-toggle text-[11px] leading-none tracking-[0.2em] uppercase font-normal px-2 py-1 cursor-pointer"
+      ><span class="lang-label">EN</span></button>
+      <button
+        type="button"
+        class="p-2 -mr-2"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        data-mobile-toggle
+        data-i18n-attr="aria-label:header.mobile.open"
+      >
       <svg class="burger" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
         <path d="M3 7h18M3 12h18M3 17h18" />
       </svg>
     </button>
+    </div>
   </div>
 </header>
 
@@ -65,12 +85,13 @@ const isActive = (href: string) =>
   aria-hidden="true"
 >
   <div class="flex items-center justify-between h-24 px-6">
-    <span class="font-display tracking-[0.28em] text-[0.85rem] uppercase">Menu</span>
+    <span class="font-display tracking-[0.28em] text-[0.85rem] uppercase" data-i18n="header.mobile.menu">Menu</span>
     <button
       type="button"
       class="p-2 -mr-2"
       aria-label="Fermer le menu"
       data-mobile-close
+      data-i18n-attr="aria-label:header.mobile.close"
     >
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
         <path d="M6 6l12 12M18 6L6 18" />
@@ -84,6 +105,7 @@ const isActive = (href: string) =>
         href={l.href}
         class="font-[var(--font-brandon)] text-[14px] leading-[1.7] tracking-[0.2em] uppercase font-normal hover:opacity-70 transition"
         data-active={isActive(l.href)}
+        data-i18n={l.key}
       >
         {l.label}
       </a>

@@ -159,12 +159,14 @@ const faqs = [
     image="/images/services-hero.jpg"
     imageAlt="Direction artistique"
     titleHtml="Services<br />&amp; Packages"
+    titleKey="services.hero.title"
     subtitleHtml="De l'inspiration à la réalisation, chaque étape est pensée&nbsp;<br />pour refléter votre&nbsp;univers"
+    subtitleKey="services.hero.subtitle"
   />
 
   {/* ───────────────────────── 2. UNE DIRECTION ARTISTIQUE ───────────────────────── */}
   <section class="bg-white px-6 py-24 md:py-32 text-center">
-    <h2 class="font-display font-normal text-[28px] md:text-[36px] tracking-[0.06em] leading-[1.4] text-[var(--color-ink)]">
+    <h2 class="font-display font-normal text-[28px] md:text-[36px] tracking-[0.06em] leading-[1.4] text-[var(--color-ink)]" data-i18n="services.intro.h2">
       UNE DIRECTION ARTISTIQUE<br />
       POUR DONNER VIE À VOS ÉMOTIONS
     </h2>
@@ -174,13 +176,13 @@ const faqs = [
   <section class="bg-white px-6 pb-20 md:pb-28">
     <div class="mx-auto max-w-[1100px] grid md:grid-cols-2 gap-12 items-start text-center md:text-left">
       <div>
-        <h3 class="font-display text-[44px] md:text-[60px] leading-none tracking-wide">
+        <h3 class="font-display text-[44px] md:text-[60px] leading-none tracking-wide" data-i18n="services.approach.h3">
           NOTRE<br />
           <span class="font-italic-serif italic">Approche</span>
         </h3>
       </div>
       <div class="max-w-md mx-auto md:mx-0 text-left text-pretty text-[14px] md:text-[16px] leading-[1.75] md:leading-[1.9] text-[var(--color-ink-soft)]">
-        <p>
+        <p data-i18n="services.approach.p">
           Sublimer l'instant par le détail. De la papeterie sur mesure
           à la scénographie florale, je conçois votre évènement comme
           une œuvre globale. Chez Aritia Design, nous transcendons la
@@ -208,6 +210,7 @@ const faqs = [
             role="tab"
             class="services-tab"
             data-tab={i}
+            data-i18n={`services.tab.${i}`}
             aria-selected={i === 0 ? "true" : "false"}
           >
             ✦ {s.title}{s.titleItalic ? ` ${s.titleItalic.toUpperCase()}` : ""} ✦
@@ -247,23 +250,23 @@ const faqs = [
                 <img src={s.image} alt={s.alt} class="absolute inset-0 w-full h-full object-cover" />
               </div>
               <div class="p-8 flex flex-col flex-1">
-                <h3 class="font-display text-[34px] leading-[1.1] tracking-wide min-h-[80px]">
+                <h3 class="font-display text-[34px] leading-[1.1] tracking-wide min-h-[80px]" data-i18n={`services.${i}.title`}>
                   {s.title.split("&").map((part, i, arr) => (
                     <>{part}{i < arr.length - 1 && <span class="amp">&amp;</span>}</>
                   ))}
                   {s.titleItalic && <> <span class="font-italic-serif italic font-light">{s.titleItalic}</span></>}
                 </h3>
-                <p class="mt-6 text-[15px] leading-[1.7] text-white min-h-[280px]">{pack.desc}</p>
+                <p class="mt-6 text-[15px] leading-[1.7] text-white min-h-[280px]" data-i18n={`services.pack.${s.packIndex}.desc`}>{pack.desc}</p>
                 <details class="group mt-6 border-t border-white/15 pt-4">
                   <summary class="cursor-pointer list-none flex items-center justify-between gap-3 text-[12px] tracking-[0.28em] uppercase text-white/90">
-                    <span>✦ Compris dans l'expérience</span>
+                    <span data-i18n="services.included">✦ Compris dans l'expérience</span>
                     <span class="text-[18px] leading-none transition-transform group-open:rotate-45">+</span>
                   </summary>
                   <ul class="mt-4 space-y-2.5 text-[15px] leading-[1.5] text-white">
-                    {pack.bullets.map((b) => (
+                    {pack.bullets.map((b, idx) => (
                       <li class="flex gap-3 items-start">
                         <span aria-hidden="true" class="inline-block w-[6px] h-[6px] rounded-full bg-current mt-[9px] shrink-0"></span>
-                        <span>{b}</span>
+                        <span data-i18n={`services.pack.${s.packIndex}.b${idx}`}>{b}</span>
                       </li>
                     ))}
                   </ul>
@@ -279,6 +282,7 @@ const faqs = [
         <a
           href="/contact"
           class="inline-block px-10 py-4 border border-[var(--color-ink)] text-[12px] tracking-[0.32em] uppercase hover:bg-[var(--color-ink)] hover:text-white transition"
+          data-i18n="services.cta.mobile"
         >
           Prendre rendez-vous
         </a>
@@ -288,16 +292,14 @@ const faqs = [
       {services.map((s, i) => (
         <div role="tabpanel" class="services-panel hidden md:block" data-panel={i} hidden={i !== 0}>
           <MediaCard image={s.image} imageAlt={s.alt}>
-            <h3 class="font-display text-[48px] leading-[1] tracking-wide">
+            <h3 class="font-display text-[48px] leading-[1] tracking-wide" data-i18n={`services.${i}.title`}>
               {s.title.split("&").map((part, i, arr) => (
                 <>{part}{i < arr.length - 1 && <span class="amp">&amp;</span>}</>
               ))}
               {s.titleItalic && <> <span class="font-italic-serif italic font-light">{s.titleItalic}</span></>}
             </h3>
-            <div class="mt-7 text-[16px] leading-[1.9] text-white max-w-md space-y-4">
-              {s.body.split("\n\n").map((para) => <p>{para}</p>)}
-            </div>
-            <SparkLink href="/contact" label="Prendre rendez-vous" class="mt-auto pt-10 self-start" />
+            <div class="mt-7 text-[16px] leading-[1.9] text-white max-w-md space-y-4" data-i18n={`services.${i}.body`} set:html={s.body.split("\n\n").map((p) => `<p>${p}</p>`).join("")} />
+            <SparkLink href="/contact" label="Prendre rendez-vous" i18nKey="services.cta.tab" class="mt-auto pt-10 self-start" />
           </MediaCard>
         </div>
       ))}
@@ -429,16 +431,16 @@ const faqs = [
 
   {/* ───────────────────────── 8. PACKS & FORMULES (header) — hidden on mobile ───────────────────────── */}
   <section class="hidden md:block bg-white px-6 pt-24 md:pt-32 pb-12 md:pb-16 text-center">
-    <div class="inline-block px-8 py-3 bg-[#1a1a1a] text-white text-[11px] tracking-[0.32em] uppercase">
+    <div class="inline-block px-8 py-3 bg-[#1a1a1a] text-white text-[11px] tracking-[0.32em] uppercase" data-i18n="services.packs.header">
       ✦ Packs &amp; Formules ✦
     </div>
-    <h2 class="mt-12 font-display font-normal text-[40px] md:text-[64px] leading-[1.1] text-[var(--color-ink)]">
+    <h2 class="mt-12 font-display font-normal text-[40px] md:text-[64px] leading-[1.1] text-[var(--color-ink)]" data-i18n="services.packs.h2">
       L'<span>ÉLÉGANCE</span>
       <span class="font-italic-serif italic font-light">sur-mesure</span><br />
       <span class="font-italic-serif italic font-light">à votre</span>
       <span>IMAGE</span>
     </h2>
-    <p class="mt-10 text-[16px] leading-[1.9] text-[var(--color-ink-soft)] max-w-xl mx-auto">
+    <p class="mt-10 text-[16px] leading-[1.9] text-[var(--color-ink-soft)] max-w-xl mx-auto" data-i18n="services.packs.intro">
       Chaque projet est unique, c'est pourquoi mes prestations
       s'articulent autour de packages sur-mesure et de formules
       personnalisables.
@@ -458,6 +460,7 @@ const faqs = [
           desc={p.desc}
           accent={p.accent === "burgundy" ? "burgundy" : "dark"}
           watermark={p.accent === "burgundy" ? "/images/services-pack-bg.png" : undefined}
+          i18nPrefix={`services.pack.${i}`}
         />
       </div>
     ))}
@@ -465,7 +468,7 @@ const faqs = [
 
   {/* ───────────────────────── 10. UN MOMENT D'EXCEPTION (intro video) ───────────────────────── */}
   <section class="bg-white px-6 py-20 md:py-28 text-center">
-    <h2 class="font-display text-[36px] md:text-[52px] leading-[1.2]">
+    <h2 class="font-display text-[36px] md:text-[52px] leading-[1.2]" data-i18n="services.moment.h2">
       UN MOMENT D'EXCEPTION&nbsp;!<br />
       <span class="font-italic-serif italic text-[0.7em]">décor, mise en ambiance, papeterie, floral</span>
     </h2>
@@ -483,22 +486,23 @@ const faqs = [
 
     {/* Desktop-only S'INSPIRER CTA — right-aligned to the video's right edge */}
     <div class="hidden md:flex justify-end mt-10 mx-auto max-w-[1100px]">
-      <SparkLink href="/portfolio" label="S'inspirer" />
+      <SparkLink href="/portfolio" label="S'inspirer" i18nKey="services.moment.cta" />
     </div>
   </section>
 
   {/* ───────────────────────── 11. VOTRE UNIVERS CTA ───────────────────────── */}
   <section class="bg-[#1a1a1a] text-white px-6 py-24 md:py-32 text-center">
-    <h2 class="font-display text-[36px] md:text-[52px] leading-[1.2]">
+    <h2 class="font-display text-[36px] md:text-[52px] leading-[1.2]" data-i18n="services.final.h2">
       VOTRE UNIVERS, VOTRE HISTOIRE,<br />
       <span class="font-italic-serif italic">une création unique</span>
     </h2>
-    <p class="mt-6 md:mt-8 text-[13px] md:text-[16px] tracking-[0.22em] md:tracking-[0.28em] uppercase text-white/85">
+    <p class="mt-6 md:mt-8 text-[13px] md:text-[16px] tracking-[0.22em] md:tracking-[0.28em] uppercase text-white/85" data-i18n="services.final.sub">
       Ensemble, donnons-lui vie
     </p>
     <a
       href="/contact"
       class="inline-block mt-12 px-12 py-4 bg-[var(--color-burgundy)] text-white text-[0.72rem] tracking-[0.32em] uppercase hover:bg-[var(--color-burgundy-dark)] transition"
+      data-i18n="services.final.cta"
     >
       Me contacter
     </a>
@@ -506,20 +510,20 @@ const faqs = [
 
   {/* ───────────────────────── 12. FAQ ───────────────────────── */}
   <section class="bg-white px-6 py-24 md:py-32">
-    <h2 class="text-center font-display text-[28px] md:text-[36px] tracking-[0.28em] uppercase text-[var(--color-ink)] mb-16">
+    <h2 class="text-center font-display text-[28px] md:text-[36px] tracking-[0.28em] uppercase text-[var(--color-ink)] mb-16" data-i18n="services.faq.h2">
       Questions Fréquentes
     </h2>
     <div class="mx-auto max-w-[900px] divide-y divide-black/10">
-      {faqs.map((f) => (
+      {faqs.map((f, i) => (
         <details class="group py-6">
           <summary class="cursor-pointer list-none flex items-start gap-6">
             <span class="font-display text-[20px] md:text-[26px] text-[var(--color-ink-soft)] shrink-0">{f.n}</span>
-            <span class="flex-1 text-[12px] md:text-[14px] tracking-[0.22em] uppercase leading-[1.6] text-[var(--color-ink)]">
+            <span class="flex-1 text-[12px] md:text-[14px] tracking-[0.22em] uppercase leading-[1.6] text-[var(--color-ink)]" data-i18n={`services.faq.${i}.q`}>
               {f.q}
             </span>
             <span class="shrink-0 mt-1 transition-transform group-open:rotate-45 text-[24px] text-[var(--color-ink-soft)] leading-none">+</span>
           </summary>
-          <p class="mt-4 pl-[3.5rem] text-[14px] leading-[1.9] text-[var(--color-ink-soft)]" set:html={f.a} />
+          <p class="mt-4 pl-[3.5rem] text-[14px] leading-[1.9] text-[var(--color-ink-soft)]" data-i18n={`services.faq.${i}.a`} set:html={f.a} />
         </details>
       ))}
     </div>

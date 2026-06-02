@@ -6,6 +6,8 @@ interface Props {
   arrowClass?: string;
   /** Extra classes for the wrapping <a> */
   class?: string;
+  /** i18n dictionary key for the label */
+  i18nKey?: string;
 }
 
 const {
@@ -13,6 +15,7 @@ const {
   label,
   arrowClass = "h-[37px] w-[37px]",
   class: extraClass = "",
+  i18nKey,
 } = Astro.props;
 ---
 
@@ -24,7 +27,7 @@ const {
   ]}
 >
   <span class="text-current/80 inline-flex items-center leading-none">✦</span>
-  <span class="leading-none">{label}</span>
+  <span class="leading-none" data-i18n={i18nKey}>{label}</span>
   <svg
     aria-hidden="true"
     viewBox="0 0 200 200"

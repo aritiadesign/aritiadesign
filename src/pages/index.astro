@@ -33,6 +33,7 @@ const testimonials = [
     author: "Mélodie & Thibault",
     image: "/images/testimonial.jpg",
     imageAlt: "Mariée vue d'en haut dans l'escalier",
+    keyPrefix: "home.testimonial.1",
   },
   {
     quote: "Merci beaucoup pour l'organisation de notre mariage&nbsp;! Ton souci du détail, ton dévouement ont rendu notre journée parfaite voir plus que parfaite. Nous te sommes reconnaissants pour les magnifiques souvenirs que tu as contribuée à créer et te souhaitons beaucoup de succès dans l'organisation de tes prochains évènements.<br /><br /><em class=\"font-italic-serif italic text-[1.2rem] md:text-[1.9rem] leading-[1.45] md:leading-[1.4]\">Nous recommandons Aritia sans aucune hésitation.</em>",
@@ -40,6 +41,7 @@ const testimonials = [
     image: "/images/testimonial-2.jpg",
     imageAlt: "Mariée avec bouquet",
     long: true,
+    keyPrefix: "home.testimonial.2",
   },
 ];
 ---
@@ -66,14 +68,14 @@ const testimonials = [
     <div class="absolute inset-0 bg-black/25"></div>
 
     <div class="relative h-full flex flex-col items-center justify-center md:justify-end text-center px-6 md:pb-[5%]">
-      <h1 class="font-display font-normal text-white text-[26px] sm:text-[32px] md:text-[40px] leading-[1.35] md:leading-[52px] tracking-[0.05em]">
+      <h1 class="font-display font-normal text-white text-[26px] sm:text-[32px] md:text-[40px] leading-[1.35] md:leading-[52px] tracking-[0.05em]" data-i18n="home.hero.title">
         DIRECTRICE ARTISTIQUE<br />
         DESIGNER FLORAL
         <span class="hidden md:inline-block mx-2 md:mx-3 align-middle text-white text-[14px] sm:text-[16px] md:text-[20px] relative top-[-3px] sm:top-[-4px] md:top-[-5px]">✦</span>
         SCÉNOGRAPHE<br />
         CRÉATRICE <span class="font-italic-serif italic font-normal">de</span> PAPETERIE
       </h1>
-      <p class="mt-14 md:mt-16 text-[12px] sm:text-[13px] md:text-[15px] tracking-[1.6px] sm:tracking-[2px] md:tracking-[2.25px] uppercase text-white/85">
+      <p class="mt-14 md:mt-16 text-[12px] sm:text-[13px] md:text-[15px] tracking-[1.6px] sm:tracking-[2px] md:tracking-[2.25px] uppercase text-white/85" data-i18n="home.hero.subtitle">
         Créatrice d'univers pour mariages &amp;<br />
         évènements d'exception
       </p>
@@ -84,10 +86,10 @@ const testimonials = [
   {/* ───────────────────────── 2. INTRO ───────────────────────── */}
   <section id="intro" class="bg-white py-14 md:py-28 px-6">
     <div class="mx-auto text-center max-w-[1100px]">
-      <h2 class="font-display font-normal text-[1.55rem] sm:text-[2.4rem] md:text-[2.8rem] leading-tight tracking-wide">
+      <h2 class="font-display font-normal text-[1.55rem] sm:text-[2.4rem] md:text-[2.8rem] leading-tight tracking-wide" data-i18n="home.intro.h2">
         CRÉATRICE D'UNIVERS ÉVÈNEMENTIELS<br />HAUT DE GAMME
       </h2>
-      <p class="mt-7 md:mt-14 text-[0.7rem] sm:text-[0.82rem] tracking-[0.14em] sm:tracking-[0.18em] uppercase leading-[2] text-[var(--color-ink-soft)]">
+      <p class="mt-7 md:mt-14 text-[0.7rem] sm:text-[0.82rem] tracking-[0.14em] sm:tracking-[0.18em] uppercase leading-[2] text-[var(--color-ink-soft)]" data-i18n="home.intro.p">
         Aritia Design vous accompagne dans la conception de mariages<br class="hidden md:inline" />
         et évènements sur-mesure, raffinés et authentiques.<br class="hidden md:inline" />
         À Toulouse, comme partout en France.
@@ -109,6 +111,7 @@ const testimonials = [
              top-[41px] sm:top-[70px] md:top-[49px]
              left-1/2 -translate-x-1/2 md:left-[170px] md:translate-x-0
              select-none pointer-events-none"
+      data-i18n="home.portfolio.label"
     >
       PORTFOLIO
     </h2>
@@ -140,6 +143,7 @@ const testimonials = [
       <SparkLink
         href="/portfolio"
         label="Voir Gallery"
+        i18nKey="home.portfolio.cta"
         arrowClass="h-[22px] w-[22px] md:h-[37px] md:w-[37px]"
         class="!text-[12px] md:!text-[18px] !tracking-[0.18em] md:!tracking-[0.2em] !gap-2 md:!gap-3"
       />
@@ -158,17 +162,17 @@ const testimonials = [
             onerror="this.style.background='linear-gradient(135deg,#e8d8c0,#c69d6a)';this.removeAttribute('src');"
           />
         </div>
-        <p class="font-script text-[32px] md:text-[50px] leading-[1.1] text-[var(--color-ink)] absolute right-2 md:-right-32 -bottom-[90px] md:-bottom-[135px] whitespace-nowrap text-center rotate-[-8deg]">
+        <p class="font-script text-[32px] md:text-[50px] leading-[1.1] text-[var(--color-ink)] absolute right-2 md:-right-32 -bottom-[90px] md:-bottom-[135px] whitespace-nowrap text-center rotate-[-8deg]" data-i18n="home.method.script">
           Transformez chaque<br />occasion en<br />moment d'exception
         </p>
       </div>
 
       <div class="md:pl-6 text-center flex flex-col items-center order-1 md:order-2">
-        <h2 class="font-display font-light text-[44px] md:text-[60px] leading-[1.1]">
+        <h2 class="font-display font-light text-[44px] md:text-[60px] leading-[1.1]" data-i18n="home.method.h2">
           MÉTHODE<br />
           <span class="font-italic-serif italic">de</span> TRAVAIL
         </h2>
-        <p class="mt-8 text-[16px] leading-[1.9] text-[var(--color-ink-soft)] max-w-md">
+        <p class="mt-8 text-[16px] leading-[1.9] text-[var(--color-ink-soft)] max-w-md" data-i18n="home.method.p">
           De la première inspiration au jour J, je vous accompagne avec
           sensibilité et exigence dans la création d'un univers qui vous
           ressemble&nbsp;– une approche sur-mesure, pensée pour faire
@@ -177,6 +181,7 @@ const testimonials = [
         <a
           href="/processus"
           class="inline-block mt-10 px-10 py-4 border border-[var(--color-ink)] text-[0.72rem] tracking-[0.32em] uppercase hover:bg-[var(--color-ink)] hover:text-white transition"
+          data-i18n="home.method.cta"
         >
           Découvrir
         </a>
@@ -188,11 +193,11 @@ const testimonials = [
   <section class="bg-[#1a1a1a] text-white py-28 md:py-36 px-6">
     <div class="mx-auto max-w-[1200px] grid md:grid-cols-2 gap-14 md:gap-20 items-center">
       <div class="md:order-1 order-2 text-center flex flex-col items-center">
-        <h2 class="font-display font-light text-[44px] md:text-[60px] leading-[1.1]">
+        <h2 class="font-display font-light text-[44px] md:text-[60px] leading-[1.1]" data-i18n="home.mariage.h2">
           MARIAGE<br />
           <span class="font-italic-serif italic">Occasion Spéciale</span>
         </h2>
-        <p class="mt-8 text-[16px] leading-[1.9] text-white/80 max-w-md">
+        <p class="mt-8 text-[16px] leading-[1.9] text-white/80 max-w-md" data-i18n="home.mariage.p">
           À travers une approche transversale mêlant design floral,
           scénographie immersive, papeterie personnalisée et identité
           visuelle, je conçois à vos côtés un univers esthétique global,
@@ -203,6 +208,7 @@ const testimonials = [
         <a
           href="/services"
           class="inline-block mt-10 px-10 py-4 border border-white text-[0.72rem] tracking-[0.32em] uppercase hover:bg-white hover:text-[var(--color-ink)] transition"
+          data-i18n="home.mariage.cta"
         >
           Explorer
         </a>
@@ -260,6 +266,7 @@ const testimonials = [
           <img
             src={t.image}
             alt={t.imageAlt}
+            data-i18n-attr={`alt:${t.keyPrefix}.imgalt`}
             class="testimonial-image absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out"
             data-index={i}
             style={i === 0 ? "opacity:1;" : "opacity:0;"}
@@ -296,17 +303,19 @@ const testimonials = [
                       ? "font-display text-[1rem] md:text-[1.45rem] leading-[1.6] md:leading-[1.5]"
                       : "font-italic-serif italic text-[1.2rem] md:text-[1.9rem] leading-[1.45] md:leading-[1.4]",
                   ]}
+                  data-i18n={`${t.keyPrefix}.quote`}
                   set:html={t.quote}
                 />
               </div>
               <div class="mt-6 md:mt-8 flex items-center gap-4 md:gap-5">
                 <figcaption class="text-[0.62rem] md:text-[0.72rem] tracking-[0.26em] md:tracking-[0.32em] uppercase text-[var(--color-muted)]">
-                  — {t.author}
+                  — <span data-i18n={`${t.keyPrefix}.author`}>{t.author}</span>
                 </figcaption>
                 <button
                   type="button"
                   data-testimonial-next
                   aria-label="Témoignage suivant"
+                  data-i18n-attr="aria-label:home.testimonial.next"
                   class="flex items-center justify-center text-black/15 hover:text-[var(--color-burgundy)] transition-colors"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 442 793" fill="currentColor" class="h-4 md:h-5 w-auto rotate-90">
@@ -337,10 +346,11 @@ const testimonials = [
           <img
             src="/images/aritia-portrait.jpg"
             alt="Aritia, fondatrice d'Aritia Design"
+            data-i18n-attr="alt:home.aritia.portrait.alt"
             class="w-full h-full object-cover"
           />
         </div>
-        <p class="font-script absolute -bottom-12 md:-bottom-16 left-6 md:left-12 text-[2.4rem] md:text-[3.2rem] leading-[1] text-white/95 select-none rotate-[-4deg]">
+        <p class="font-script absolute -bottom-12 md:-bottom-16 left-6 md:left-12 text-[2.4rem] md:text-[3.2rem] leading-[1] text-white/95 select-none rotate-[-4deg]" data-i18n="home.about.script">
           Allier le beau<br />
           <span class="ml-10 md:ml-16">à l'essentiel</span>
         </p>
@@ -348,17 +358,17 @@ const testimonials = [
 
       {/* texte à droite */}
       <div class="md:pl-4 mt-16 md:mt-0">
-        <h2 class="font-display font-light text-[44px] md:text-[60px] leading-none tracking-wide">
+        <h2 class="font-display font-light text-[44px] md:text-[60px] leading-none tracking-wide" data-i18n="home.about.h2">
           À&nbsp;PROPOS
         </h2>
 
         <div class="mt-10 space-y-6 text-[16px] leading-[1.85] text-white/85 max-w-md">
-          <p>
+          <p data-i18n="home.about.p1">
             Implantée en Haute-Garonne, Aritia Design accompagne une
             clientèle en quête d'expériences uniques, où l'esthétique
             et l'émotion occupent une place centrale.
           </p>
-          <p>
+          <p data-i18n="home.about.p2">
             Formée au design et passionnée par l'art de sublimer
             l'instant, je développe un savoir-faire complet alliant
             minutie, création et mise en scène.
@@ -368,6 +378,7 @@ const testimonials = [
         <SparkLink
           href="/a-propos"
           label="En savoir plus"
+          i18nKey="home.about.cta"
           arrowClass="h-[22px] w-[22px] md:h-[37px] md:w-[37px]"
           class="mt-10 md:mt-12 !text-[0.8rem] md:!text-[18px] !tracking-[0.16em] md:!tracking-[0.2em] !gap-2 md:!gap-3"
         />
@@ -377,7 +388,7 @@ const testimonials = [
 
   {/* ───────────────────────── 9. CTA "ENSEMBLE…" ───────────────────────── */}
   <section class="bg-white py-24 md:py-32 px-6 text-center">
-    <h2 class="font-display font-light text-[2rem] sm:text-[2.4rem] md:text-[2.8rem] leading-[1.2]">
+    <h2 class="font-display font-light text-[2rem] sm:text-[2.4rem] md:text-[2.8rem] leading-[1.2]" data-i18n="home.cta.h2">
       ENSEMBLE, CRÉONS<br />
       UNE ATMOSPHÈRE<br />
       QUI VOUS RESSEMBLE
@@ -385,6 +396,7 @@ const testimonials = [
     <a
       href="/contact"
       class="inline-block mt-12 px-12 py-4 bg-[var(--color-burgundy)] text-white text-[0.72rem] tracking-[0.32em] uppercase hover:bg-[var(--color-burgundy-dark)] transition"
+      data-i18n="home.cta.btn"
     >
       Laissez un message
     </a>

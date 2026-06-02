@@ -31,6 +31,7 @@ const projects = [
     title: "M+T, MARIAGE ÉLÉGANT",
     italic: "à la Française",
     editorial: false,
+    keyPrefix: "portfolio.project.mt",
   },
   {
     href: "/portfolio/hj",
@@ -40,6 +41,7 @@ const projects = [
     italic: "avec un accent culturel",
     editorial: true,
     disabled: true,
+    keyPrefix: "portfolio.project.hj",
   },
 ];
 
@@ -50,6 +52,7 @@ const leftProject = {
   title: "E+F, MARIAGE MINIMALISTE",
   italic: "aux teintes de Madagascar",
   editorial: false,
+  keyPrefix: "portfolio.project.ef",
 };
 ---
 
@@ -63,12 +66,14 @@ const leftProject = {
     image="/images/portfolio-hero.jpg"
     imageAlt="Domaine de réception avec fontaine"
     title="Portfolio"
+    titleKey="portfolio.hero.title"
     subtitleHtml="Des univers sur-mesure, raffiné<br class='show-mobile' />&amp; porteurs d'émotions"
+    subtitleKey="portfolio.hero.subtitle"
   />
 
   {/* ───────────────────────── 2. ✦ TEMPS FORTS ✦ ───────────────────────── */}
   <section class="bg-white py-14 md:py-20 text-center">
-    <div class="inline-block px-8 py-3 bg-[#1a1a1a] text-white text-[11px] tracking-[0.32em] uppercase">
+    <div class="inline-block px-8 py-3 bg-[#1a1a1a] text-white text-[11px] tracking-[0.32em] uppercase" data-i18n="portfolio.label">
       ✦ Temps forts ✦
     </div>
   </section>
@@ -99,14 +104,14 @@ const leftProject = {
     <div class="mx-auto max-w-[1300px] grid md:grid-cols-2 gap-10 md:gap-20 items-start">
       {/* left: text block centered */}
       <div class="text-center">
-        <h2 class="font-display text-[38px] md:text-[60px] leading-[1.3] md:leading-[1.4] tracking-wide text-[var(--color-ink)]">
+        <h2 class="font-display text-[38px] md:text-[60px] leading-[1.3] md:leading-[1.4] tracking-wide text-[var(--color-ink)]" data-i18n="portfolio.savoir.h2">
           SAVOIR-FAIRE<br />
           <span class="font-italic-serif italic font-light">Élégance</span><br />
           HARMONIE<br />
           <span class="font-italic-serif italic font-light">Atmosphère</span><br />
           SUR-MESURE
         </h2>
-        <p class="mt-6 md:mt-10 text-[14px] md:text-[16px] leading-[1.85] md:leading-[1.9] text-[var(--color-ink-soft)] max-w-md mx-auto">
+        <p class="mt-6 md:mt-10 text-[14px] md:text-[16px] leading-[1.85] md:leading-[1.9] text-[var(--color-ink-soft)] max-w-md mx-auto" data-i18n="portfolio.savoir.p">
           Découvrez une sélection de mariages et d'évènements
           soigneusement mis en lumière. Cliquez sur chaque titre pour
           explorer la galerie complète.
@@ -121,8 +126,8 @@ const leftProject = {
             />
           </div>
           <div class="mt-5 text-center">
-            <p class="text-[12px] tracking-[0.32em] uppercase text-[var(--color-ink)]">{leftProject.title}</p>
-            <p class="mt-1 font-italic-serif italic text-[18px] text-[var(--color-ink-soft)]">{leftProject.italic}</p>
+            <p class="text-[12px] tracking-[0.32em] uppercase text-[var(--color-ink)]" data-i18n={`${leftProject.keyPrefix}.title`}>{leftProject.title}</p>
+            <p class="mt-1 font-italic-serif italic text-[18px] text-[var(--color-ink-soft)]" data-i18n={`${leftProject.keyPrefix}.italic`}>{leftProject.italic}</p>
           </div>
         </a>
       </div>
@@ -140,8 +145,8 @@ const leftProject = {
                 />
               </div>
               <div class="mt-5 text-center">
-                <p class="text-[12px] tracking-[0.32em] uppercase text-[var(--color-ink)]">{p.title}</p>
-                <p class="mt-1 font-italic-serif italic text-[18px] text-[var(--color-ink-soft)]">{p.italic}</p>
+                <p class="text-[12px] tracking-[0.32em] uppercase text-[var(--color-ink)]" data-i18n={`${p.keyPrefix}.title`}>{p.title}</p>
+                <p class="mt-1 font-italic-serif italic text-[18px] text-[var(--color-ink-soft)]" data-i18n={`${p.keyPrefix}.italic`}>{p.italic}</p>
               </div>
             </div>
           ) : (
@@ -154,8 +159,8 @@ const leftProject = {
                 />
               </div>
               <div class="mt-5 text-center">
-                <p class="text-[12px] tracking-[0.32em] uppercase text-[var(--color-ink)]">{p.title}</p>
-                <p class="mt-1 font-italic-serif italic text-[18px] text-[var(--color-ink-soft)]">{p.italic}</p>
+                <p class="text-[12px] tracking-[0.32em] uppercase text-[var(--color-ink)]" data-i18n={`${p.keyPrefix}.title`}>{p.title}</p>
+                <p class="mt-1 font-italic-serif italic text-[18px] text-[var(--color-ink-soft)]" data-i18n={`${p.keyPrefix}.italic`}>{p.italic}</p>
               </div>
             </a>
           )
@@ -180,13 +185,14 @@ const leftProject = {
     <div class="absolute inset-0 bg-black/55"></div>
 
     <div class="relative">
-      <h2 class="font-display text-[36px] md:text-[52px] leading-[1.2]">
+      <h2 class="font-display text-[36px] md:text-[52px] leading-[1.2]" data-i18n="portfolio.cta.h2">
         NON, <span class="font-italic-serif italic font-light">VOS RÊVES</span><br />
         NE SONT PAS TROP GRAND
       </h2>
       <a
         href="/contact"
         class="inline-block mt-12 px-12 py-4 border border-white text-[0.72rem] tracking-[0.32em] uppercase hover:bg-white hover:text-[var(--color-ink)] transition"
+        data-i18n="portfolio.cta.btn"
       >
         Créer mon univers
       </a>

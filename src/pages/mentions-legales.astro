@@ -8,10 +8,10 @@ import Layout from "../layouts/Layout.astro";
   transparentHeader={false}
 >
   <section class="bg-white px-6 pt-32 md:pt-40 pb-12 text-center">
-    <h1 class="font-display font-normal text-[40px] md:text-[56px] leading-[1.1]">
+    <h1 class="font-display font-normal text-[40px] md:text-[56px] leading-[1.1]" data-i18n="legal.h1">
       Mentions <span class="font-italic-serif italic font-light">légales</span>
     </h1>
-    <p class="mt-4 text-[11px] tracking-[0.32em] uppercase text-[var(--color-muted)]">
+    <p class="mt-4 text-[11px] tracking-[0.32em] uppercase text-[var(--color-muted)]" data-i18n="legal.updated">
       Dernière mise à jour&nbsp;: mai 2026
     </p>
   </section>
@@ -20,84 +20,84 @@ import Layout from "../layouts/Layout.astro";
     <div class="mx-auto max-w-[820px] space-y-12 text-[16px] leading-[1.9] text-[var(--color-ink-soft)]">
 
       <div>
-        <h2 class="font-display text-[24px] md:text-[28px] tracking-wide text-[var(--color-ink)] mb-4">
+        <h2 class="font-display text-[24px] md:text-[28px] tracking-wide text-[var(--color-ink)] mb-4" data-i18n="legal.editor.h2">
           Éditeur du site
         </h2>
-        <p>
+        <p data-i18n="legal.editor.p">
           Le présent site internet <a href="https://aritiadesign.com" class="underline underline-offset-4 hover:opacity-70">aritiadesign.com</a> est édité par&nbsp;:
         </p>
         <ul class="mt-4 space-y-1">
-          <li><strong>Aritia Design</strong> — Entrepreneur Individuel</li>
-          <li>Siège social&nbsp;: 4 bis Chemin de Monpapou, 31650 LAUZERVILLE, France</li>
-          <li>SIRET&nbsp;: 101 824 696 00013</li>
-          <li>TVA non applicable, article 293 B du CGI (franchise en base)</li>
-          <li>Directrice de la publication&nbsp;: Aritia Razafindrabe</li>
-          <li>Téléphone&nbsp;: <a href="tel:+33698364379" class="underline underline-offset-4 hover:opacity-70">+33&nbsp;6&nbsp;98&nbsp;36&nbsp;43&nbsp;79</a></li>
-          <li>Email&nbsp;: <a href="mailto:contact@aritiadesign.com" class="underline underline-offset-4 hover:opacity-70">contact@aritiadesign.com</a></li>
+          <li data-i18n="legal.editor.li1"><strong>Aritia Design</strong> — Entrepreneur Individuel</li>
+          <li data-i18n="legal.editor.li2">Siège social&nbsp;: 4 bis Chemin de Monpapou, 31650 LAUZERVILLE, France</li>
+          <li data-i18n="legal.editor.li3">SIRET&nbsp;: 101 824 696 00013</li>
+          <li data-i18n="legal.editor.li4">TVA non applicable, article 293 B du CGI (franchise en base)</li>
+          <li data-i18n="legal.editor.li5">Directrice de la publication&nbsp;: Aritia Razafindrabe</li>
+          <li data-i18n="legal.editor.li6">Téléphone&nbsp;: <a href="tel:+33698364379" class="underline underline-offset-4 hover:opacity-70">+33&nbsp;6&nbsp;98&nbsp;36&nbsp;43&nbsp;79</a></li>
+          <li data-i18n="legal.editor.li7">Email&nbsp;: <a href="mailto:contact@aritiadesign.com" class="underline underline-offset-4 hover:opacity-70">contact@aritiadesign.com</a></li>
         </ul>
       </div>
 
       <div>
-        <h2 class="font-display text-[24px] md:text-[28px] tracking-wide text-[var(--color-ink)] mb-4">
+        <h2 class="font-display text-[24px] md:text-[28px] tracking-wide text-[var(--color-ink)] mb-4" data-i18n="legal.host.h2">
           Hébergeur
         </h2>
-        <p>
+        <p data-i18n="legal.host.p">
           Le site est hébergé par&nbsp;:
         </p>
         <ul class="mt-4 space-y-1">
-          <li><strong>Vercel Inc.</strong></li>
-          <li>440 N Barranca Ave #4133, Covina, CA 91723, États-Unis</li>
-          <li>Site web&nbsp;: <a href="https://vercel.com" target="_blank" rel="noopener" class="underline underline-offset-4 hover:opacity-70">vercel.com</a></li>
+          <li data-i18n="legal.host.li1"><strong>Vercel Inc.</strong></li>
+          <li data-i18n="legal.host.li2">440 N Barranca Ave #4133, Covina, CA 91723, États-Unis</li>
+          <li data-i18n="legal.host.li3">Site web&nbsp;: <a href="https://vercel.com" target="_blank" rel="noopener" class="underline underline-offset-4 hover:opacity-70">vercel.com</a></li>
         </ul>
       </div>
 
       <div>
-        <h2 class="font-display text-[24px] md:text-[28px] tracking-wide text-[var(--color-ink)] mb-4">
+        <h2 class="font-display text-[24px] md:text-[28px] tracking-wide text-[var(--color-ink)] mb-4" data-i18n="legal.ip.h2">
           Propriété intellectuelle
         </h2>
-        <p>
+        <p data-i18n="legal.ip.p1">
           L'ensemble des contenus présents sur ce site — incluant la structure globale, les textes, les graphismes, les logos, les designs de papeterie, les croquis, les concepts décoratifs et les photographies — est protégé par les droits de propriété intellectuelle. Ils sont la propriété exclusive d'Aritia Design ou de ses partenaires, notamment les photographes expressément crédités.
         </p>
-        <p class="mt-4">
+        <p class="mt-4" data-i18n="legal.ip.p2">
           Toute représentation, reproduction, modification, adaptation ou exploitation totale ou partielle de la structure de ce site, de sa charte graphique ou de son contenu est strictement interdite sans un accord écrit et préalable de la directrice de la publication. Toute utilisation non autorisée constitue une contrefaçon passible de sanctions pénales en vertu des articles L.&nbsp;335-2 et suivants du Code de la propriété intellectuelle.
         </p>
-        <p class="mt-4">
+        <p class="mt-4" data-i18n="legal.ip.p3">
           Les marques d'Aritia Design et de ses partenaires, ainsi que les logos présents sur le site, sont juridiquement protégés.
         </p>
       </div>
 
       <div>
-        <h2 class="font-display text-[24px] md:text-[28px] tracking-wide text-[var(--color-ink)] mb-4">
+        <h2 class="font-display text-[24px] md:text-[28px] tracking-wide text-[var(--color-ink)] mb-4" data-i18n="legal.data.h2">
           Données personnelles
         </h2>
-        <p>
+        <p data-i18n="legal.data.p">
           Les informations collectées via le formulaire de contact font l'objet d'un traitement informatique destiné exclusivement à Aritia Design, dans le cadre du suivi des demandes et de la relation client. Pour plus de détails, consultez notre <a href="/politique-confidentialite" class="underline underline-offset-4 hover:opacity-70">politique de confidentialité</a>.
         </p>
       </div>
 
       <div>
-        <h2 class="font-display text-[24px] md:text-[28px] tracking-wide text-[var(--color-ink)] mb-4">
+        <h2 class="font-display text-[24px] md:text-[28px] tracking-wide text-[var(--color-ink)] mb-4" data-i18n="legal.links.h2">
           Liens externes
         </h2>
-        <p>
+        <p data-i18n="legal.links.p">
           L'éditeur ne peut être tenu responsable de l'accès de l'utilisateur aux ressources externes accessibles via les liens hypertextes présents sur le site.
         </p>
       </div>
 
       <div>
-        <h2 class="font-display text-[24px] md:text-[28px] tracking-wide text-[var(--color-ink)] mb-4">
+        <h2 class="font-display text-[24px] md:text-[28px] tracking-wide text-[var(--color-ink)] mb-4" data-i18n="legal.resp.h2">
           Responsabilité
         </h2>
-        <p>
+        <p data-i18n="legal.resp.p">
           Aritia Design ne peut être tenu responsable des erreurs présentes sur le site, des problèmes techniques imprévus, de la mauvaise interprétation des informations publiées ou des conséquences d'un préjudice direct ou indirect lié à son utilisation. L'utilisateur reconnaît avoir pris connaissance de ces conditions et accepte de s'y conformer.
         </p>
       </div>
 
       <div>
-        <h2 class="font-display text-[24px] md:text-[28px] tracking-wide text-[var(--color-ink)] mb-4">
+        <h2 class="font-display text-[24px] md:text-[28px] tracking-wide text-[var(--color-ink)] mb-4" data-i18n="legal.law.h2">
           Droit applicable et juridiction
         </h2>
-        <p>
+        <p data-i18n="legal.law.p">
           Le présent site et ses conditions d'utilisation sont régis par le droit français. Tout litige relatif à l'utilisation du site relève de la compétence exclusive des tribunaux de Toulouse.
         </p>
       </div>
