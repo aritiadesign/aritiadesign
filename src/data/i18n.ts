@@ -184,29 +184,35 @@ export const i18n: Record<string, { fr: string; en: string }> = {
 
   // Service tab labels (rendered with ✦ around them in the template)
   "services.tab.0": { fr: "✦ DIRECTION ARTISTIQUE ✦", en: "✦ ART DIRECTION ✦" },
-  "services.tab.1": { fr: "✦ DECOR SCÉNOGRAPHIE ✦",          en: "✦ DECOR SET DESIGN ✦" },
-  "services.tab.2": { fr: "✦ FLORAL DESIGN ✦",                en: "✦ FLORAL DESIGN ✦" },
-  "services.tab.3": { fr: "✦ IDENTITÉ GRAPHIQUE ✦",           en: "✦ GRAPHIC IDENTITY ✦" },
+  "services.tab.1": { fr: "✦ DÉCOR &amp; IDENTITÉ VISUELLE ✦", en: "✦ DECOR &amp; VISUAL IDENTITY ✦" },
+  "services.tab.2": { fr: "✦ DECOR SCÉNOGRAPHIE ✦",          en: "✦ DECOR SET DESIGN ✦" },
+  "services.tab.3": { fr: "✦ FLORAL DESIGN ✦",                en: "✦ FLORAL DESIGN ✦" },
+  "services.tab.4": { fr: "✦ IDENTITÉ GRAPHIQUE ✦",           en: "✦ GRAPHIC IDENTITY ✦" },
 
   // Service detail panels
-  "services.0.title":  { fr: 'DIRECTION <span class="font-italic-serif italic font-light">Artistique</span>', en: 'ART <span class="font-italic-serif italic font-light">Direction</span>' },
-  "services.0.title.mobile":  { fr: 'DIRECTION <span class="font-italic-serif italic font-light">Artistique</span>', en: 'ART <span class="font-italic-serif italic font-light">Direction</span>' },
+  "services.0.title":  { fr: 'L\'EXCEPTION <span class="font-italic-serif italic font-light">Design Intégral</span>', en: 'THE EXCEPTION <span class="font-italic-serif italic font-light">Full Design</span>' },
+  "services.0.title.mobile":  { fr: 'L\'EXCEPTION <span class="font-italic-serif italic font-light">Design Intégral</span>', en: 'THE EXCEPTION <span class="font-italic-serif italic font-light">Full Design</span>' },
   "services.0.body": {
     fr: "<p>En direction artistique globale, nous signons votre univers de manière absolue : identité graphique, art de la table, design floral, structures sur‑mesure et mise en scène. Une seule vision sur l'ensemble pour que chaque détail réponde à la même intention, sans aucun intermédiaire. Ce contrôle absolu de la chaîne de création supprime toute rupture de ton et livre l'expression exacte de votre projet. Découvrez cette approche à travers notre collection signature : <a href=\"#pack-0\" class=\"underline underline-offset-4 decoration-from-font hover:opacity-70 transition\">L'EXCEPTION</a>.</p>",
     en: "<p>In holistic art direction, we sign your world absolutely: graphic identity, tablescaping, floral design, bespoke structures and spatial scenography. A single vision over the whole, so every detail answers the same intention, with no intermediary. This absolute control over the creative chain removes any break in tone and delivers the exact expression of your project. Discover this approach through our signature collection: <a href=\"#pack-0\" class=\"underline underline-offset-4 decoration-from-font hover:opacity-70 transition\">L'EXCEPTION</a>.</p>"
   },
-  "services.1.title": { fr: 'DECOR <span class="font-italic-serif italic font-light">Scénographie</span>', en: 'DECOR <span class="font-italic-serif italic font-light">Set Design</span>' },
+  "services.1.title": { fr: 'DÉCOR <span class="amp">&amp;</span> <span class="font-italic-serif italic font-light">Identité Graphique</span>', en: 'DECOR <span class="amp">&amp;</span> <span class="font-italic-serif italic font-light">Graphic Identity</span>' },
   "services.1.body": {
+    fr: "<p>Décor et identité graphique pensés comme un ensemble : la même charte visuelle traverse l'espace et le papier, du faire-part à la mise en scène finale. Une cohérence totale entre ce que vos invités voient, touchent et lisent le jour J. Hors production florale et structures sur-mesure, nous orchestrons tout votre univers visuel.</p>",
+    en: "<p>Decor and graphic identity designed as one ensemble: the same visual charter runs through space and paper, from the invitation to the final staging. Total coherence between what your guests see, touch and read on the day. Outside floral production and bespoke structures, we orchestrate your full visual world.</p>"
+  },
+  "services.2.title": { fr: 'DÉCOR <span class="amp">&amp;</span> <span class="font-italic-serif italic font-light">Mise en Ambiance</span>', en: 'DECOR <span class="amp">&amp;</span> <span class="font-italic-serif italic font-light">Atmosphere</span>' },
+  "services.2.body": {
     fr: "<p>La maîtrise globale de votre décor. Nous concevons et coordonnons l'ensemble des éléments visuels de votre événement : mobilier, éclairage, matières et accessoires. Notre rôle est de garantir l'harmonie absolue de l'espace, où chaque détail visible répond à la même intention, afin que la scénographie finale soit la traduction exacte du projet initial.</p>",
     en: "<p>Full mastery of your decor. We design and coordinate every visual element of your event: furniture, lighting, materials and accessories. Our role is to guarantee absolute harmony of the space, where every visible detail answers the same intention, so the final scenography is the exact translation of the initial project.</p>"
   },
-  "services.2.title": { fr: 'FLORAL <span class="font-italic-serif italic font-light">Design</span>', en: 'FLORAL <span class="font-italic-serif italic font-light">Design</span>' },
-  "services.2.body": {
+  "services.3.title": { fr: 'L\'ART <span class="font-italic-serif italic font-light">Floral</span>', en: 'FLORAL <span class="font-italic-serif italic font-light">Art</span>' },
+  "services.3.body": {
     fr: "<p>Du détail intime aux installations d'ampleur, nous concevons chaque pièce végétale en résonance avec votre univers visuel. Sélection rigoureuse des variétés, maîtrise des textures, des palettes et des volumes : les fleurs s'inscrivent comme une composante essentielle de la scénographie, loin du simple accessoire.</p>",
     en: "<p>From intimate details to large-scale installations, we design each botanical piece in resonance with your visual world. A rigorous selection of varieties and a mastery of textures, palettes and volumes: flowers become an essential element of the scenography, far from a mere accessory.</p>"
   },
-  "services.3.title": { fr: 'IDENTITÉ <span class="font-italic-serif italic font-light">Graphique</span>', en: 'GRAPHIC <span class="font-italic-serif italic font-light">Identity</span>' },
-  "services.3.body": {
+  "services.4.title": { fr: 'IDENTITÉ <span class="font-italic-serif italic font-light">Graphique</span>', en: 'GRAPHIC <span class="font-italic-serif italic font-light">Identity</span>' },
+  "services.4.body": {
     fr: "<p>L'identité graphique est le premier point de contact de votre événement. Du monogramme à la signalétique du jour J, nous dessinons un univers visuel unique : choix des typographies, illustrations exclusives, textures des papiers et finitions artisanales. Chaque pièce est pensée comme un objet d'art imprimé, pour prolonger l'esthétique de votre célébration.</p>",
     en: "<p>Graphic identity is the first point of contact with your event. From monogram to day-of signage, we design a singular visual world: chosen typography, exclusive illustrations, paper textures and artisan finishes. Every piece is conceived as a printed art object, extending the aesthetic of your celebration.</p>"
   },
@@ -214,6 +220,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "services.cta.mobile": { fr: "Prendre rendez-vous", en: "Book a consultation" },
   "services.included": { fr: "✦ Compris dans l'expérience", en: "✦ Included in the experience" },
   "services.packCard.included": { fr: "Compris dans l'expérience", en: "Included in the experience" },
+  "services.devisOnly": { fr: "— SUR DEVIS UNIQUEMENT", en: "— ON REQUEST ONLY" },
 
   // Pack cards
   "services.packs.header": { fr: "✦ Packs &amp; Formules ✦", en: "✦ Packages &amp; Offerings ✦" },
@@ -283,7 +290,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "services.pack.4.italic": { fr: "", en: "" },
   "services.pack.4.label":  { fr: "PAPETERIE FINE | SUR DEVIS", en: "FINE STATIONERY | ON REQUEST" },
   "services.pack.4.desc": {
-    fr: "Logo, monogramme, invitations, pièces de table, signalétique et papeterie d'art : nous prenons en charge toute l'identité graphique de votre événement, depuis la conception jusqu'à la livraison finale. Hors scénographie d'espace et design floral, le papier est notre unique focus.",
+    fr: "Logos, Invitations, pièces de table, signalétique et papeterie d’art : nous prenons en charge toute l’identité graphique de votre événement, de l’étude à la livraison finale. Hors scénographie d’espace et design floral, notre intervention se consacre exclusivement au support visuel.",
     en: "Logo, monogram, invitations, table pieces, signage and fine stationery: we take charge of the full graphic identity of your event, from conception to final delivery. Excluding spatial scenography and floral design, paper is our sole focus."
   },
   "services.pack.4.b0": { fr: "Conception de votre logo et monogramme", en: "Design of your logo and monogram" },

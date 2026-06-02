@@ -9,18 +9,28 @@ const services = [
   {
     kicker: "Direction artistique",
     scriptHtml: "Direction<br />artistique",
-    title: "DIRECTION",
-    titleItalic: "Artistique",
+    title: "L'EXCEPTION",
+    titleItalic: "Design Intégral",
     packIndex: 0,
     body: `En direction artistique globale, nous signons votre univers de manière absolue : identité graphique, art de la table, design floral, structures sur‑mesure et mise en scène. Une seule vision sur l'ensemble pour que chaque détail réponde à la même intention, sans aucun intermédiaire. Ce contrôle absolu de la chaîne de création supprime toute rupture de ton et livre l'expression exacte de votre projet. Découvrez cette approche à travers notre collection signature : <a href="#pack-0" class="underline underline-offset-4 decoration-from-font hover:opacity-70 transition">L'EXCEPTION</a>.`,
     image: "/images/services-design-global.jpg",
     alt: "Salle de réception aux baies vitrées",
   },
   {
+    kicker: "Décor & identité",
+    scriptHtml: "Décor &<br />identité",
+    title: "DÉCOR &",
+    titleItalic: "Identité Graphique",
+    packIndex: 1,
+    body: `Décor et identité graphique pensés comme un ensemble : la même charte visuelle traverse l'espace et le papier, du faire-part à la mise en scène finale. Une cohérence totale entre ce que vos invités voient, touchent et lisent le jour J. Hors production florale et structures sur-mesure, nous orchestrons tout votre univers visuel.`,
+    image: "/images/services-pack-decor.jpg",
+    alt: "Décor & identité visuelle",
+  },
+  {
     kicker: "Mise en ambience",
     scriptHtml: "Mise en<br />ambience",
-    title: "DECOR",
-    titleItalic: "Scénographie",
+    title: "DÉCOR &",
+    titleItalic: "Mise en Ambiance",
     packIndex: 2,
     body: `La maîtrise globale de votre décor. Nous concevons et coordonnons l'ensemble des éléments visuels de votre événement : mobilier, éclairage, matières et accessoires. Notre rôle est de garantir l'harmonie absolue de l'espace, où chaque détail visible répond à la même intention, afin que la scénographie finale soit la traduction exacte du projet initial.`,
     image: "/images/services-decor.jpg",
@@ -29,8 +39,8 @@ const services = [
   {
     kicker: "Conception floral",
     scriptHtml: "Conception<br />floral",
-    title: "FLORAL",
-    titleItalic: "Design",
+    title: "L'ART",
+    titleItalic: "Floral",
     packIndex: 3,
     body: `Du détail intime aux installations d'ampleur, nous concevons chaque pièce végétale en résonance avec votre univers visuel. Sélection rigoureuse des variétés, maîtrise des textures, des palettes et des volumes : les fleurs s'inscrivent comme une composante essentielle de la scénographie, loin du simple accessoire.`,
     image: "/images/services-papeterie.png",
@@ -103,7 +113,7 @@ const packs = [
       "Installation et mise en fleurs le jour J",
     ],
     desc: "Bouquets, compositions, structures suspendues ou monumentales : nous prenons en charge toute la création florale de votre événement, de l'étude à la mise en place le jour J. Hors scénographie d'espace et identité graphique, le végétal est notre unique focus.",
-    image: "/images/services-pack-floral.png",
+    image: "/images/services-pack-floral.jpg",
     accent: "ink",
   },
   {
@@ -116,7 +126,7 @@ const packs = [
       "Création des supports de table et signalétique",
       "Conseil en matériaux et finitions d'art",
     ],
-    desc: "Logo, monogramme, invitations, pièces de table, signalétique et papeterie d'art : nous prenons en charge toute l'identité graphique de votre événement, depuis la conception jusqu'à la livraison finale. Hors scénographie d'espace et design floral, le papier est notre unique focus.",
+    desc: "Logos, Invitations, pièces de table, signalétique et papeterie d’art : nous prenons en charge toute l’identité graphique de votre événement, de l’étude à la livraison finale. Hors scénographie d’espace et design floral, notre intervention se consacre exclusivement au support visuel.",
     image: "/images/services-papeterie.jpg",
     accent: "ink",
   },
@@ -175,7 +185,7 @@ const faqs = [
 
   {/* ───────────────────────── 3. NOTRE APPROCHE (intro) ───────────────────────── */}
   <section class="bg-white px-6 pb-20 md:pb-28">
-    <div class="mx-auto max-w-[1100px] grid lg:grid-cols-2 gap-0 lg:gap-12 items-start text-center lg:text-left">
+    <div class="mx-auto max-w-[1100px] grid lg:grid-cols-2 gap-8 lg:gap-12 items-start text-center lg:text-left">
       <div>
         <h3 class="font-display text-[44px] md:text-[48px] lg:text-[60px] leading-none tracking-wide" data-i18n="services.approach.h3">
           NOTRE<br />
@@ -242,13 +252,15 @@ const faqs = [
         </style>
         {services.map((s, i) => {
           const pack = packs[s.packIndex];
+          const cardBg = pack.bgColor ?? (pack.accent === "burgundy" ? "#640613" : "#1A1A1A");
           return (
             <article
-              class="services-card snap-center shrink-0 w-[80vw] bg-[#2b2b2b] text-white overflow-hidden flex flex-col"
+              class="services-card snap-center shrink-0 w-[80vw] text-white overflow-hidden flex flex-col"
+              style={`background-color: ${cardBg};`}
               data-active={i === 0 ? "true" : "false"}
             >
               <div class="relative aspect-[4/3] overflow-hidden">
-                <img src={s.image} alt={s.alt} class="absolute inset-0 w-full h-full object-cover" />
+                <img src={pack.image} alt={pack.title} class="absolute inset-0 w-full h-full object-cover" />
               </div>
               <div class="p-8 flex flex-col flex-1">
                 <h3 class="font-display text-[34px] leading-[1.1] tracking-wide min-h-[80px]" data-i18n={`services.${i}.title`}>
@@ -259,8 +271,8 @@ const faqs = [
                 </h3>
                 <p class="mt-6 text-[15px] leading-[1.7] text-white min-h-[280px]" data-i18n={`services.pack.${s.packIndex}.desc`}>{pack.desc}</p>
                 <details class="group mt-6 border-t border-white/15 pt-4">
-                  <summary class="cursor-pointer list-none flex items-center justify-between gap-3 text-[12px] tracking-[0.28em] uppercase text-white/90">
-                    <span data-i18n="services.included">✦ Compris dans l'expérience</span>
+                  <summary class="cursor-pointer list-none flex items-center justify-between gap-3 text-[12px] tracking-[0.2em] uppercase text-white/90">
+                    <span class="whitespace-nowrap" data-i18n="services.included">✦ Compris dans l'expérience</span>
                     <span class="text-[18px] leading-none transition-transform group-open:rotate-45">+</span>
                   </summary>
                   <ul class="mt-4 space-y-2.5 text-[15px] leading-[1.5] text-white">
@@ -271,6 +283,7 @@ const faqs = [
                       </li>
                     ))}
                   </ul>
+                  <p class="mt-8 text-[12px] tracking-[0.2em] uppercase text-white/90 whitespace-nowrap" data-i18n="services.devisOnly">— SUR DEVIS UNIQUEMENT</p>
                 </details>
               </div>
             </article>
@@ -451,7 +464,7 @@ const faqs = [
   {/* ───────────────────────── 9. PACK CARDS — hidden on mobile ───────────────────────── */}
   <section class="hidden md:block bg-white px-6 pb-24 md:pb-32 space-y-16 md:space-y-20 lg:space-y-28">
     {packs.map((p, i) => (
-      <div id={`pack-${i}`} class:list={["mx-auto w-[90%] md:w-[85%] lg:w-[80%] max-w-[1300px] scroll-mt-32", i === 1 ? "!mt-24 md:!mt-32 lg:!mt-56" : ""]}>
+      <div id={`pack-${i}`} class:list={["mx-auto w-[90%] md:w-[85%] lg:w-[80%] max-w-[1300px] scroll-mt-32", (i === 1 || i === 2) ? "!mt-24 md:!mt-32 lg:!mt-56" : ""]}>
         <PackCard
           image={p.image}
           title={p.title}
