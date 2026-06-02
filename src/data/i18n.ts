@@ -22,7 +22,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "header.logo.aria":    { fr: "Aritia Design — Accueil", en: "Aritia Design — Home" },
 
   // ─────────────────────────── Footer ───────────────────────────
-  "footer.tagline":   { fr: "Créatrice d'univers évènementiels haut de gamme, sur-mesure<br />basée à Toulouse, disponible partout en France",
+  "footer.tagline":   { fr: "Créatrice d'univers évènementiels<br class=\"hidden md:inline lg:hidden\" /> haut de gamme, sur-mesure<br />basée à Toulouse, disponible partout en France",
                         en: "Bespoke, high-end event designer.<br />Based in Toulouse, available throughout France." },
   "footer.follow":    { fr: "Suivez-nous", en: "Follow us" },
   "footer.credits":   { fr: "Images &amp; vidéos crédits&nbsp;: RNT Motion, Stephen Meslin",
