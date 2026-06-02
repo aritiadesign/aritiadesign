@@ -23,7 +23,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
 
   // ─────────────────────────── Footer ───────────────────────────
   "footer.tagline":   { fr: "Créatrice d'univers évènementiels haut de gamme, sur-mesure<br />basée à Toulouse, disponible partout en France",
-                        en: "Creator of bespoke, high-end event worlds<br />based in Toulouse, available throughout France" },
+                        en: "Bespoke, high-end event designer.<br />Based in Toulouse, available throughout France." },
   "footer.follow":    { fr: "Suivez-nous", en: "Follow us" },
   "footer.credits":   { fr: "Images &amp; vidéos crédits&nbsp;: RNT Motion, Stephen Meslin",
                         en: "Images &amp; video credits: RNT Motion, Stephen Meslin" },
@@ -192,8 +192,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "services.0.title":  { fr: 'DIRECTION <span class="font-italic-serif italic font-light">Artistique</span>', en: 'ART <span class="font-italic-serif italic font-light">Direction</span>' },
   "services.0.title.mobile":  { fr: 'DIRECTION <span class="font-italic-serif italic font-light">Artistique</span>', en: 'ART <span class="font-italic-serif italic font-light">Direction</span>' },
   "services.0.body": {
-    fr: "<p>En direction artistique globale, nous signons votre univers de manière absolue : identité graphique, art de la table, design floral, structures sur‑mesure et mise en scène. Une seule vision sur l'ensemble pour que chaque détail réponde à la même intention — aucun intermédiaire, aucune rupture de ton, simplement l'expression exacte de votre esthétique. Découvrez cette approche à travers notre collection signature : <a href=\"#pack-0\" class=\"underline underline-offset-4 decoration-from-font hover:opacity-70 transition\">L'EXCEPTION</a>.</p>",
-    en: "<p>In holistic art direction, we sign your world absolutely: graphic identity, tablescaping, floral design, bespoke structures and spatial scenography. A single vision over the whole, so every detail answers the same intention — no intermediary, no break in tone, simply the exact expression of your aesthetic. Discover this approach through our signature collection: <a href=\"#pack-0\" class=\"underline underline-offset-4 decoration-from-font hover:opacity-70 transition\">L'EXCEPTION</a>.</p>"
+    fr: "<p>En direction artistique globale, nous signons votre univers de manière absolue : identité graphique, art de la table, design floral, structures sur‑mesure et mise en scène. Une seule vision sur l'ensemble pour que chaque détail réponde à la même intention, sans aucun intermédiaire. Ce contrôle absolu de la chaîne de création supprime toute rupture de ton et livre l'expression exacte de votre projet. Découvrez cette approche à travers notre collection signature : <a href=\"#pack-0\" class=\"underline underline-offset-4 decoration-from-font hover:opacity-70 transition\">L'EXCEPTION</a>.</p>",
+    en: "<p>In holistic art direction, we sign your world absolutely: graphic identity, tablescaping, floral design, bespoke structures and spatial scenography. A single vision over the whole, so every detail answers the same intention, with no intermediary. This absolute control over the creative chain removes any break in tone and delivers the exact expression of your project. Discover this approach through our signature collection: <a href=\"#pack-0\" class=\"underline underline-offset-4 decoration-from-font hover:opacity-70 transition\">L'EXCEPTION</a>.</p>"
   },
   "services.1.title": { fr: 'DECOR <span class="font-italic-serif italic font-light">Scénographie</span>', en: 'DECOR <span class="font-italic-serif italic font-light">Set Design</span>' },
   "services.1.body": {
