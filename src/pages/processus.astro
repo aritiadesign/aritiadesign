@@ -111,7 +111,7 @@ const steps = [
         return (
           <div class:list={["relative", mt]}>
             <div class:list={[
-              "grid md:grid-cols-2 md:gap-20 items-center",
+              "grid lg:grid-cols-2 lg:gap-20 items-center",
               step.gridGap ?? "gap-14",
             ]}>
               {/* Image — static or flipbook */}
@@ -119,7 +119,7 @@ const steps = [
                 <div
                   class:list={[
                     "flipbook relative aspect-[3/2] w-full overflow-hidden bg-[var(--color-cream)] shadow-[0_24px_60px_-24px_rgba(0,0,0,0.25)] select-none group",
-                    reversed ? "md:order-2" : "md:order-1",
+                    reversed ? "lg:order-2" : "lg:order-1",
                   ]}
                   data-flipbook
                   tabindex="0"
@@ -166,7 +166,7 @@ const steps = [
                 <div
                   class:list={[
                     "aspect-[4/5] flex items-center justify-center bg-white px-6 md:px-10 py-0 md:py-14",
-                    reversed ? "md:order-2" : "md:order-1",
+                    reversed ? "lg:order-2" : "lg:order-1",
                   ]}
                 >
                   <div class:list={[
@@ -213,7 +213,7 @@ const steps = [
                 <div
                   class:list={[
                     "aspect-[4/5] flex items-center justify-center bg-white px-6 md:px-10 py-8 md:py-10",
-                    reversed ? "md:order-2" : "md:order-1",
+                    reversed ? "lg:order-2" : "lg:order-1",
                   ]}
                 >
                   <img
@@ -228,7 +228,7 @@ const steps = [
                 <div
                   class:list={[
                     "aspect-[4/5] overflow-hidden bg-[var(--color-cream)]",
-                    reversed ? "md:order-2" : "md:order-1",
+                    reversed ? "lg:order-2" : "lg:order-1",
                   ]}
                 >
                   <img
@@ -243,10 +243,10 @@ const steps = [
 
               {/* Text */}
               <div class:list={[
-                reversed ? "md:order-1 md:pr-8" : "md:order-2 md:pl-8",
+                reversed ? "lg:order-1 lg:pr-8" : "lg:order-2 lg:pl-8",
                 step.textOffset ?? "",
               ]}>
-                <h3 class="processus-step-title font-display font-light text-[1rem] sm:text-[1.2rem] md:text-[1.35rem] leading-[1.25] text-[var(--color-ink)] lg:whitespace-nowrap flex flex-wrap items-baseline gap-x-1.5 sm:gap-x-2 !tracking-[0.1em]">
+                <h3 class="processus-step-title font-display font-light text-[clamp(0.95rem,2.6vw,1.35rem)] leading-[1.25] text-[var(--color-ink)] text-balance flex flex-wrap items-baseline gap-x-1.5 sm:gap-x-2 !tracking-[0.1em]">
                   <span class="font-gilda tracking-normal">{step.n}</span>
                   <span class="font-gilda tracking-normal" aria-hidden="true">/</span>
                   <span data-i18n={`process.step.${i + 1}.title`}>
