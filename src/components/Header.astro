@@ -65,26 +65,26 @@ const isActive = (href: string) =>
 {/* Mobile drawer — full-screen overlay */}
 <div
   id="mobile-menu"
-  class="fixed inset-0 z-[60] bg-[#1a1a1a] text-white translate-x-full transition-transform duration-300 ease-out xl:hidden"
+  class="fixed inset-0 z-[60] bg-[#1a1a1a] text-white translate-x-full transition-transform duration-300 ease-out xl:hidden flex flex-col"
   data-mobile-menu
   aria-hidden="true"
 >
-  <div class="relative flex items-center justify-center h-24 px-6">
-    <span class="font-display font-normal text-[2.2rem] uppercase !tracking-[1.5em]" data-i18n="header.mobile.menu">Menu</span>
-    <button
-      type="button"
-      class="absolute right-4 p-2"
-      aria-label="Fermer le menu"
-      data-mobile-close
-      data-i18n-attr="aria-label:header.mobile.close"
-    >
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
-        <path d="M6 6l12 12M18 6L6 18" />
-      </svg>
-    </button>
-  </div>
+  <button
+    type="button"
+    class="absolute top-8 right-4 p-2 z-10"
+    aria-label="Fermer le menu"
+    data-mobile-close
+    data-i18n-attr="aria-label:header.mobile.close"
+  >
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18" />
+    </svg>
+  </button>
 
-  <nav aria-label="Mobile" class="flex flex-col items-center mt-4 gap-10 pb-20">
+  <div class="flex-1 flex flex-col items-center justify-center px-6">
+    <span class="font-display font-normal text-[2.2rem] uppercase !tracking-[1.5em]" data-i18n="header.mobile.menu">Menu</span>
+
+  <nav aria-label="Mobile" class="flex flex-col items-center mt-4 gap-10">
     {links.map((l) => (
       <a
         href={l.href}
@@ -97,6 +97,7 @@ const isActive = (href: string) =>
     ))}
     <LangToggle size="lg" variant="flag" class="mt-4" />
   </nav>
+  </div>
 </div>
 
 <script>
