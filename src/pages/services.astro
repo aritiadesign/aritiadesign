@@ -76,6 +76,7 @@ const packs = [
     desc: "Décor et identité graphique pensés comme un ensemble : la même charte visuelle traverse l'espace et le papier, du faire‑part à la mise en scène finale. Une cohérence totale entre ce que vos invités voient, touchent et lisent le jour J. Hors production florale et structures sur‑mesure, nous orchestrons tout votre univers visuel.",
     image: "/images/services-pack-decor.jpg",
     accent: "ink",
+    bgColor: "#2b2a2d",
   },
   {
     title: "Décor & Mise en Ambiance",
@@ -459,6 +460,7 @@ const faqs = [
           bullets={p.bullets}
           desc={p.desc}
           accent={p.accent === "burgundy" ? "burgundy" : "dark"}
+          bgColor={p.bgColor}
           watermark={p.accent === "burgundy" ? "/images/services-pack-bg.png" : undefined}
           i18nPrefix={`services.pack.${i}`}
         />

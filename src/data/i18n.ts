@@ -369,12 +369,12 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     fr: "Tout commence par un échange. J'apprends à vous connaître, à comprendre votre histoire, vos envies, vos inspirations. Nous définissons ensemble les contours de votre univers, les priorités, les émotions à transmettre. À l'issue de cet échange, un devis personnalisé vous est remis pour validation.",
     en: "It all begins with a conversation. I get to know you, your story, your wishes, your inspirations. Together we define the contours of your world, the priorities, the emotions to convey. At the end of this exchange, a personalised quote is sent for your approval."
   },
-  "process.step.2.title": { fr: "SIGNATURE DU DEVIS & CONTRAT", en: "QUOTE & CONTRACT SIGNING" },
+  "process.step.2.title": { fr: "SIGNATURE DU DEVIS <span class=\"amp\">&amp;</span> CONTRAT", en: "QUOTE <span class=\"amp\">&amp;</span> CONTRACT SIGNING" },
   "process.step.2.body": {
     fr: "La collaboration débute officiellement avec la signature du contrat, qui formalise les engagements mutuels et le cadre de notre travail.",
     en: "Our collaboration officially begins with the signing of the contract, which formalises mutual commitments and the framework of our work together."
   },
-  "process.step.3.title": { fr: "INTENTIONS & DIRECTION ARTISTIQUE", en: "INTENTIONS & CREATIVE DIRECTION" },
+  "process.step.3.title": { fr: "INTENTIONS <span class=\"amp\">&amp;</span> DIRECTION ARTISTIQUE", en: "INTENTIONS <span class=\"amp\">&amp;</span> CREATIVE DIRECTION" },
   "process.step.3.body": {
     fr: "Création d'un moodboard et d'une ligne esthétique : ambiance, matières, couleurs, fleurs, typographies, style graphique… Un fil rouge visuel et émotionnel se dessine.",
     en: "Creation of a moodboard and an aesthetic line: atmosphere, materials, colours, flowers, typography, graphic style… A visual and emotional thread takes shape."
@@ -384,12 +384,12 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     fr: "Je traduis cette vision en un projet complet, harmonisant les éléments visuels et scénographiques : compositions florales, papeterie, signalétique, agencement des espaces. Chaque élément trouve sa place avec justesse et cohérence.",
     en: "I translate this vision into a complete project, harmonising visual and scenographic elements: floral compositions, stationery, signage, spatial layout. Every element finds its place with precision and coherence."
   },
-  "process.step.5.title": { fr: "ORCHESTRATION & FINALISATION", en: "ORCHESTRATION & FINALISATION" },
+  "process.step.5.title": { fr: "ORCHESTRATION <span class=\"amp\">&amp;</span> FINALISATION", en: "ORCHESTRATION <span class=\"amp\">&amp;</span> FINALISATION" },
   "process.step.5.body": {
     fr: "Je pilote la réalisation de chaque élément : sourcing, production, ajustements, échanges avec vous ou votre wedding planner. Vous êtes accompagnés en toute sérénité.",
     en: "I lead the production of every element: sourcing, production, adjustments, exchanges with you or your wedding planner. You are supported with complete serenity."
   },
-  "process.step.6.title": { fr: "INSTALLATION & MISE EN SCÈNE", en: "INSTALLATION & STAGING" },
+  "process.step.6.title": { fr: "INSTALLATION <span class=\"amp\">&amp;</span> MISE EN SCÈNE", en: "INSTALLATION <span class=\"amp\">&amp;</span> STAGING" },
   "process.step.6.body": {
     fr: "Le jour J, l'univers prend vie. Je mets en place chaque élément du décor, compose les fleurs in situ, ajuste les volumes et sublime les espaces pour offrir une expérience à la hauteur de votre histoire. Un décor vivant, élégant, fluide — à votre image.",
     en: "On the day itself, the world comes alive. I install every decor element, compose the flowers on site, adjust the volumes and elevate the spaces to deliver an experience worthy of your story. A decor that is alive, elegant, seamless — in your image."
