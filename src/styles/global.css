@@ -85,6 +85,34 @@
   font-style: italic;
   font-display: swap;
 }
+@font-face {
+  font-family: "Crimson Pro";
+  src: url("/fonts/CrimsonPro-Italic.woff") format("woff");
+  font-weight: 400 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Serif Display";
+  src: url("/fonts/DMSerifDisplay-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cardo";
+  src: url("/fonts/Cardo-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Libre Baskerville";
+  src: url("/fonts/LibreBaskerville-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
 
 @theme {
   --font-display: "Playfair Display", Georgia, serif;
@@ -140,7 +168,11 @@ body {
 .font-gilda,
 .font-eb-garamond,
 .font-lora,
-.font-spectral { letter-spacing: normal; }
+.font-spectral,
+.font-crimson,
+.font-dm-serif,
+.font-cardo,
+.font-baskerville { letter-spacing: normal; }
 
 /* Playfair Display — regular weight gets 0.05em letter-spacing site-wide.
    Light weight (font-light) keeps normal spacing. */
@@ -155,6 +187,10 @@ body {
 .font-eb-garamond { font-family: "EB Garamond", Georgia, serif; font-style: italic; }
 .font-lora { font-family: "Lora", Georgia, serif; font-style: italic; }
 .font-spectral { font-family: "Spectral", Georgia, serif; font-style: italic; }
+.font-crimson { font-family: "Crimson Pro", Georgia, serif; font-style: italic; }
+.font-dm-serif { font-family: "DM Serif Display", Georgia, serif; font-style: italic; }
+.font-cardo { font-family: "Cardo", Georgia, serif; font-style: italic; }
+.font-baskerville { font-family: "Libre Baskerville", Georgia, serif; font-style: italic; }
 
 /* Ampersand in Playfair Display titles — rendered in Cormorant Garamond italic,
    scaled so its visible cap-height matches the Playfair uppercase cap-height. */
