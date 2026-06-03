@@ -136,6 +136,15 @@ const jsonLd = {
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VWMI5YY7SS"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VWMI5YY7SS');
+    </script>
+
     <title>{title}</title>
   </head>
   <body class="bg-white text-[var(--color-ink)] antialiased">
