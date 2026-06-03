@@ -79,8 +79,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "WEDDINGS<br /><span class=\"font-italic-serif italic\">Special Occasions</span>"
   },
   "home.mariage.p": {
-    fr: "À travers une approche transversale mêlant design floral, scénographie immersive, papeterie personnalisée et identité visuelle, je conçois à vos côtés un univers esthétique global, où chaque choix incarne avec exigence l'essence de votre histoire&nbsp;– une alchimie subtile entre vos envies et ma vision du beau.",
-    en: "Through a cross-disciplinary approach blending floral design, immersive set design, bespoke stationery and visual identity, I craft an overarching aesthetic world by your side, where every choice rigorously embodies the essence of your story — a subtle alchemy between your wishes and my vision of beauty."
+    fr: "À travers une approche transversale mêlant design floral, scénographie immersive, papeterie personnalisée et identité visuelle, je conçois à vos côtés un univers esthétique global, où chaque choix incarne avec exigence l'essence de votre histoire.",
+    en: "Through a cross-disciplinary approach blending floral design, immersive set design, bespoke stationery and visual identity, I craft an overarching aesthetic world by your side, where every choice rigorously embodies the essence of your story."
   },
   "home.mariage.cta": { fr: "Explorer", en: "Explore" },
 
