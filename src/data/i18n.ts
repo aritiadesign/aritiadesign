@@ -101,8 +101,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
 
   // ─────────────────────────── Home — À propos teaser ───────────────────────────
   "home.about.script": {
-    fr: "Le beau<br /><span class=\"ml-10 md:ml-16\">au service de l'essentiel</span>",
-    en: "Beauty<br /><span class=\"ml-10 md:ml-16\">in service of what matters</span>"
+    fr: "Le beau au service<br /><span class=\"ml-10 md:ml-16\">de l'essentiel</span>",
+    en: "Beauty in service<br /><span class=\"ml-10 md:ml-16\">of what matters</span>"
   },
   "home.about.h2": { fr: "À&nbsp;PROPOS", en: "ABOUT" },
   "home.about.p1": {
