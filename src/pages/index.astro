@@ -155,6 +155,11 @@ const testimonials = [
         marquee.addEventListener("touchend",   () => scheduleResume(2000), { passive: true });
         marquee.addEventListener("touchcancel", () => scheduleResume(2000), { passive: true });
         marquee.addEventListener("scroll", () => { pause(); scheduleResume(2000); }, { passive: true });
+        // Mouse leaves the gallery → resume immediately (don't wait for the post-scroll timer)
+        marquee.addEventListener("mouseleave", () => {
+          clearTimeout(resumeTimer);
+          marquee.classList.remove("is-interacting");
+        });
 
         // Click an image → scroll the marquee so that image is centered (pauses animation)
         marquee.querySelectorAll("a").forEach((a) => {
