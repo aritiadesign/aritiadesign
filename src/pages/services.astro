@@ -252,7 +252,7 @@ const faqs = [
                 <img src={pack.image} alt={pack.title} class="absolute inset-0 w-full h-full object-cover" />
               </div>
               <div class="p-8 flex flex-col flex-1">
-                <h3 class="font-display text-[34px] leading-[1.1] tracking-wide min-h-[80px]">
+                <h3 class:list={["font-display leading-[1.1] tracking-wide min-h-[80px]", (i === 1 || i === 2) ? "text-[26px] leading-[1.15]" : "text-[34px]"]}>
                   <span data-i18n={`services.pack.${i}.title`}>
                     {pack.title.split("&").map((part, idx, arr) => (
                       <>{part}{idx < arr.length - 1 && <span class="amp">&amp;</span>}</>
