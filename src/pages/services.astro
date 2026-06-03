@@ -224,7 +224,7 @@ const faqs = [
             data-i18n={`services.tab.${i}`}
             aria-selected={i === 0 ? "true" : "false"}
           >
-            {["L'EXCEPTION", "IDENTITÉ VISUELLE", "MISE EN AMBIANCE", "L'ART FLORAL", "PAPETERIE FINE"][i]}
+            ✦ {s.title}{s.titleItalic ? ` ${s.titleItalic.toUpperCase()}` : ""} ✦
           </button>
         ))}
       </div>
@@ -421,10 +421,11 @@ const faqs = [
     @media (min-width: 1024px) {
       .services-tab {
         flex: 1 1 0;
+        min-width: 0;
         text-align: center;
-        font-size: 12px;
-        padding: 14px 6px;
-        letter-spacing: 0.08em;
+        font-size: 10px;
+        padding: 14px 4px;
+        letter-spacing: 0.04em;
         scroll-snap-align: none;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -432,6 +433,20 @@ const faqs = [
       .services-scroll-hint,
       .services-scroll-hint-left {
         display: none !important;
+      }
+    }
+    @media (min-width: 1280px) {
+      .services-tab {
+        font-size: 11px;
+        padding: 16px 6px;
+        letter-spacing: 0.06em;
+      }
+    }
+    @media (min-width: 1440px) {
+      .services-tab {
+        font-size: 12px;
+        padding: 16px 8px;
+        letter-spacing: 0.08em;
       }
     }
     .services-tab:hover {
