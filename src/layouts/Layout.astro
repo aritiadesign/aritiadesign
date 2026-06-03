@@ -16,27 +16,47 @@ interface Props {
 }
 
 const {
-  title = "Aritia Design — Wedding Designer & Scénographe à Toulouse",
-  description = "Aritia Design conçoit des mariages raffinés et évènements haut de gamme à Toulouse, en Haute-Garonne et alentours. Direction artistique, design floral, scénographie et papeterie sur-mesure.",
-  keywords = "mariage Toulouse, wedding designer Toulouse, mariage haut de gamme, mariage raffiné, scénographie mariage, décoration mariage Haute-Garonne, design floral mariage, papeterie mariage sur-mesure, wedding planner Toulouse, évènement luxe Toulouse",
+  title = "Aritia Design — Wedding & Event Designer | France",
+  description = "Basée à Toulouse, l'agence Aritia Design conçoit vos mariages et évènements d'exception partout en France. Direction artistique, scénographie immersive, design floral et papeterie sur-mesure.",
+  keywords = "Aritia Design, Aritia, agence Aritia, wedding designer France, wedding designer Toulouse, event designer France, mariage haut de gamme, mariage de luxe, mariage d'exception, scénographie mariage, décoration mariage France, design floral mariage, papeterie mariage sur-mesure, wedding planner Toulouse, agence évènementielle luxe, créatrice de mariages, direction artistique mariage, mariage Occitanie, mariage Sud de la France",
   transparentHeader = true,
   darkFooter = true,
 } = Astro.props;
 
+const siteOrigin = Astro.site?.toString() ?? "https://aritiadesign.com";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString();
 const ogImageURL = new URL("/og-image.jpg", Astro.site ?? Astro.url).toString();
+const logoURL = new URL("/favicon.svg", Astro.site ?? Astro.url).toString();
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": `${siteOrigin}#organization`,
   "name": "Aritia Design",
+  "alternateName": ["Aritia", "Agence Aritia", "Aritia Wedding Design", "Aritia Wedding & Event Design"],
+  "slogan": "Wedding & Event Designer",
+  "disambiguatingDescription": "Aritia Design est une agence française de wedding & event design basée à Toulouse. À ne pas confondre avec la marque de prêt-à-porter canadienne Aritzia.",
   "image": ogImageURL,
-  "url": Astro.site?.toString() ?? "https://aritiadesign.com",
-  "description": "Wedding designer et scénographe d'évènements haut de gamme à Toulouse — direction artistique, design floral, scénographie et papeterie sur-mesure pour mariages d'exception.",
+  "logo": logoURL,
+  "url": siteOrigin,
+  "description": "Aritia Design — agence française de wedding & event design basée à Toulouse, intervenant partout en France pour concevoir mariages et évènements haut de gamme : direction artistique, scénographie, design floral et papeterie sur-mesure.",
+  "founder": {
+    "@type": "Person",
+    "name": "Aritia"
+  },
+  "serviceType": [
+    "Wedding design",
+    "Event design",
+    "Direction artistique évènementielle",
+    "Scénographie de mariage",
+    "Design floral",
+    "Papeterie de mariage sur-mesure"
+  ],
   "areaServed": [
-    { "@type": "City", "name": "Toulouse" },
+    { "@type": "Country", "name": "France" },
+    { "@type": "AdministrativeArea", "name": "Occitanie" },
     { "@type": "AdministrativeArea", "name": "Haute-Garonne" },
-    { "@type": "AdministrativeArea", "name": "Occitanie" }
+    { "@type": "City", "name": "Toulouse" }
   ],
   "address": {
     "@type": "PostalAddress",
@@ -49,10 +69,13 @@ const jsonLd = {
   ],
   "knowsAbout": [
     "Wedding design",
+    "Event design",
     "Scénographie évènementielle",
     "Design floral",
     "Papeterie de mariage",
-    "Direction artistique"
+    "Direction artistique",
+    "Mariage haut de gamme",
+    "Évènement de luxe"
   ],
   "priceRange": "€€€"
 };
@@ -87,8 +110,15 @@ const jsonLd = {
     <meta property="og:image" content={ogImageURL} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Aritia Design — wedding designer Toulouse" />
+    <meta property="og:image:alt" content="Aritia Design — agence française de wedding & event design" />
     <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <meta name="application-name" content="Aritia Design" />
+    <meta name="apple-mobile-web-app-title" content="Aritia Design" />
+
+    <link rel="alternate" hreflang="fr-FR" href={canonicalURL} />
+    <link rel="alternate" hreflang="x-default" href={canonicalURL} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
