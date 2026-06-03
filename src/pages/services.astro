@@ -232,7 +232,7 @@ const faqs = [
         </div>
       </div>
 
-      {/* Mobile carousel: all 4 cards in a horizontal scroll-snap strip — active card centered */}
+      {/* Mobile carousel: bound to the packs (boîtes), independent from desktop tabs */}
       <div class="md:hidden services-carousel flex overflow-x-auto snap-x snap-mandatory gap-4 px-[10vw] pb-2">
         <style is:global>
           .services-carousel::-webkit-scrollbar { display: none; }
@@ -240,8 +240,7 @@ const faqs = [
           .services-card { transition: opacity 0.35s ease, transform 0.35s ease; opacity: 0.55; transform: scale(0.94); transform-origin: center; }
           .services-card[data-active="true"] { opacity: 1; transform: scale(1); }
         </style>
-        {services.map((s, i) => {
-          const pack = packs[s.packIndex];
+        {packs.map((pack, i) => {
           const cardBg = pack.bgColor ?? (pack.accent === "burgundy" ? "#640613" : "#1A1A1A");
           return (
             <article
@@ -253,13 +252,15 @@ const faqs = [
                 <img src={pack.image} alt={pack.title} class="absolute inset-0 w-full h-full object-cover" />
               </div>
               <div class="p-8 flex flex-col flex-1">
-                <h3 class="font-display text-[34px] leading-[1.1] tracking-wide min-h-[80px]" data-i18n={`services.${i}.title`}>
-                  {s.title.split("&").map((part, i, arr) => (
-                    <>{part}{i < arr.length - 1 && <span class="amp">&amp;</span>}</>
-                  ))}
-                  {s.titleItalic && <> <span class="font-italic-serif italic font-light">{s.titleItalic}</span></>}
+                <h3 class="font-display text-[34px] leading-[1.1] tracking-wide min-h-[80px]">
+                  <span data-i18n={`services.pack.${i}.title`}>
+                    {pack.title.split("&").map((part, idx, arr) => (
+                      <>{part}{idx < arr.length - 1 && <span class="amp">&amp;</span>}</>
+                    ))}
+                  </span>
+                  {pack.italic && <> <span class="font-italic-serif italic font-light" data-i18n={`services.pack.${i}.italic`}>{pack.italic}</span></>}
                 </h3>
-                <p class="mt-6 text-[15px] leading-[1.7] text-white min-h-[280px]" data-i18n={`services.pack.${s.packIndex}.desc`}>{pack.desc}</p>
+                <p class="mt-6 text-[15px] leading-[1.7] text-white min-h-[280px]" data-i18n={`services.pack.${i}.desc`}>{pack.desc}</p>
                 <details class="group mt-6 border-t border-white/15 pt-4">
                   <summary class="cursor-pointer list-none flex items-center justify-between gap-3 text-[12px] tracking-[0.2em] uppercase text-white/90">
                     <span class="whitespace-nowrap" data-i18n="services.included">✦ Compris dans l'expérience</span>
@@ -269,7 +270,7 @@ const faqs = [
                     {pack.bullets.map((b, idx) => (
                       <li class="flex gap-3 items-start">
                         <span aria-hidden="true" class="inline-block w-[6px] h-[6px] rounded-full bg-current mt-[9px] shrink-0"></span>
-                        <span data-i18n={`services.pack.${s.packIndex}.b${idx}`}>{b}</span>
+                        <span data-i18n={`services.pack.${i}.b${idx}`}>{b}</span>
                       </li>
                     ))}
                   </ul>
