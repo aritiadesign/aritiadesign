@@ -177,7 +177,21 @@ img {
   animation: marquee-x 80s linear infinite;
   will-change: transform;
 }
-.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  touch-action: pan-x;
+  cursor: grab;
+}
+.marquee::-webkit-scrollbar { display: none; }
+.marquee:active { cursor: grabbing; }
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track,
+.marquee.is-interacting .marquee-track {
+  animation-play-state: paused;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none; }

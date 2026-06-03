@@ -116,7 +116,7 @@ const testimonials = [
       PORTFOLIO
     </h2>
 
-    <div class="marquee relative w-full">
+    <div class="marquee relative w-full" data-marquee>
       <div class="marquee-track gap-[10px] md:gap-[20px] items-center">
         {[...portfolioImages, ...portfolioImages].map((img, i) => (
           <a
@@ -137,6 +137,26 @@ const testimonials = [
         ))}
       </div>
     </div>
+
+    <script is:inline>
+      (function () {
+        const marquee = document.querySelector("[data-marquee]");
+        if (!marquee) return;
+        let resumeTimer;
+        const pause = () => {
+          clearTimeout(resumeTimer);
+          marquee.classList.add("is-interacting");
+        };
+        const scheduleResume = (delay) => {
+          clearTimeout(resumeTimer);
+          resumeTimer = setTimeout(() => marquee.classList.remove("is-interacting"), delay);
+        };
+        marquee.addEventListener("touchstart", pause, { passive: true });
+        marquee.addEventListener("touchend",   () => scheduleResume(1500), { passive: true });
+        marquee.addEventListener("touchcancel", () => scheduleResume(1500), { passive: true });
+        marquee.addEventListener("scroll", () => { pause(); scheduleResume(1500); }, { passive: true });
+      })();
+    </script>
 
     {/* VOIR GALLERY — bottom band, right edge aligned with the gallery's right edge */}
     <div class="absolute z-30 left-0 right-0 bottom-0 h-[60px] md:h-[110px] px-6 md:px-[110px] flex items-center justify-end">
