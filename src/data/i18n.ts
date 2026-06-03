@@ -32,6 +32,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "footer.toTop":     { fr: "Retour en haut", en: "Back to top" },
   "footer.copyright": { fr: "© Aritia Design 2026", en: "© Aritia Design 2026" },
   "footer.instagram.aria": { fr: "Instagram Aritia Design", en: "Aritia Design Instagram" },
+  "footer.pinterest.aria": { fr: "Pinterest Aritia Design",  en: "Aritia Design Pinterest" },
 
   // ─────────────────────────── Home — Hero ───────────────────────────
   "home.hero.title": {
