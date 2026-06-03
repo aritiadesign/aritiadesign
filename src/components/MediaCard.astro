@@ -36,7 +36,7 @@ const bgStyle = bgColor ? `background-color: ${bgColor};` : "";
 const isFlush = variant === "flush";
 ---
 
-<article class:list={["media-card text-white overflow-hidden", bgClass, isFlush ? "" : "rounded-tr-lg rounded-b-lg"]} style={bgStyle}>
+<article class:list={["media-card text-white overflow-hidden", bgClass, isFlush ? "" : "rounded-b-lg"]} style={bgStyle}>
   <style>
     @media (min-width: 1024px) {
       .media-card .media-card-img-floating {
