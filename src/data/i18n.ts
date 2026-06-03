@@ -36,7 +36,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   // ─────────────────────────── Home — Hero ───────────────────────────
   "home.hero.title": {
     fr: 'DIRECTRICE ARTISTIQUE<br>DESIGNER FLORAL <span class="hidden md:inline-block mx-2 md:mx-3 align-middle text-white text-[14px] sm:text-[16px] md:text-[20px] relative top-[-3px] sm:top-[-4px] md:top-[-5px]">✦</span> SCÉNOGRAPHE<br>CRÉATRICE <span class="font-italic-serif italic font-normal">de</span> PAPETERIE',
-    en: 'CREATIVE DIRECTION<br>FLORAL ART <span class="hidden md:inline-block mx-2 md:mx-3 align-middle text-white text-[14px] sm:text-[16px] md:text-[20px] relative top-[-3px] sm:top-[-4px] md:top-[-5px]">✦</span> SCENOGRAPHY<br><span class="font-italic-serif italic font-normal">fine</span> STATIONERY'
+    en: 'CREATIVE DIRECTION<br>FLORAL ART <span class="inline-block mx-2 md:mx-3 align-middle text-white text-[14px] sm:text-[16px] md:text-[20px] relative top-[-3px] sm:top-[-4px] md:top-[-5px]">✦</span> SCENOGRAPHY<br><span class="font-italic-serif italic font-normal">fine</span> STATIONERY'
   },
   "home.hero.subtitle": {
     fr: "Créatrice d'univers pour mariages &amp;<br />évènements d'exception",
