@@ -135,12 +135,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "A designer passionate about volume,<br class=\"hidden sm:inline\" /> material and the love we share"
   },
   "about.founder.p1": {
-    fr: "Depuis l'enfance, l'harmonie des formes, des textures et des couleurs me fascine. Adolescente déjà, j'imaginais des univers pour les célébrations de mes proches — chaque évènement avait, pour moi, son atmosphère et ses émotions propres.",
-    en: "Ever since childhood, the harmony of shapes, textures and colours has fascinated me. Even as a teenager, I was imagining worlds for the celebrations of those close to me — each event had, in my eyes, its own atmosphere and its own emotions."
-  },
-  "about.founder.p2": {
-    fr: "Sur le terrain dès mes 16 ans, j'ai contribué à la conception d'une dizaine de mariages en explorant toutes les facettes de l'évènementiel&nbsp;: design floral, structures, décor, papeterie et direction artistique. Chaque projet a été un espace d'apprentissage et un défi pour me dépasser.",
-    en: "On the ground from the age of 16, I contributed to the design of around a dozen weddings, exploring every facet of the field: floral design, structures, decor, stationery and creative direction. Every project has been a space for learning and a challenge to surpass myself."
+    fr: "Depuis l'enfance, l'harmonie des formes, des textures et des couleurs me fascine. C'est dès l'adolescence que j'ai fait mes premiers pas sur le terrain, en contribuant à la conception d'une dizaine de mariages. J'y ai exploré toutes les facettes de l'évènementiel&nbsp;: design floral, structures, décors, papeterie et direction artistique. Chaque projet a été un espace d'apprentissage et un défi pour me dépasser.",
+    en: "Ever since childhood, the harmony of shapes, textures and colours has fascinated me. It was in my teenage years that I took my first steps on the ground, contributing to the design of around a dozen weddings. I explored every facet of the field: floral design, structures, decor, stationery and creative direction. Every project has been a space for learning and a challenge to surpass myself."
   },
   "about.founder.p3": {
     fr: "Mon parcours en design produit est venu structurer cette pratique en m'apportant une approche exigeante et sensible&nbsp;: l'œil pour les textures, la maîtrise des volumes, la juste gestion de la lumière et des couleurs, un sens aigu du détail, ainsi que le savoir-faire technique nécessaire à la conception d'objets et de structures sur-mesure.",
