@@ -174,8 +174,7 @@ img {
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee-x 80s linear infinite;
-  will-change: transform;
+  will-change: scroll-position;
 }
 .marquee {
   overflow-x: auto;
@@ -187,15 +186,6 @@ img {
 }
 .marquee::-webkit-scrollbar { display: none; }
 .marquee:active { cursor: grabbing; }
-.marquee:hover .marquee-track,
-.marquee:focus-within .marquee-track,
-.marquee.is-interacting .marquee-track {
-  animation-play-state: paused;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track { animation: none; }
-}
 
 /* English-only positioning tweaks (shorter copy → adjust overlap) */
 html[data-lang="en"] [data-i18n="home.method.script"] {

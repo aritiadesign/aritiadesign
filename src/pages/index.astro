@@ -142,28 +142,63 @@ const testimonials = [
       (function () {
         const marquee = document.querySelector("[data-marquee]");
         if (!marquee) return;
+        const track = marquee.querySelector(".marquee-track");
+        if (!track) return;
+
+        const SPEED = 1; // px per frame (~60 px/s at 60fps)
+        let paused = false;
         let resumeTimer;
+
+        // Auto-advance scroll. Loop seamlessly: items are duplicated, so wrapping
+        // back at half the track width is invisible to the eye.
+        function tick() {
+          if (!paused) {
+            const half = track.scrollWidth / 2;
+            if (half > 0) {
+              marquee.scrollLeft += SPEED;
+              if (marquee.scrollLeft >= half) marquee.scrollLeft -= half;
+            }
+          }
+          requestAnimationFrame(tick);
+        }
+        if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          requestAnimationFrame(tick);
+        }
+
+        const pause = () => { paused = true; clearTimeout(resumeTimer); };
         const scheduleResume = (delay) => {
           clearTimeout(resumeTimer);
-          resumeTimer = setTimeout(() => marquee.classList.remove("is-interacting"), delay);
+          resumeTimer = setTimeout(() => { paused = false; }, delay);
         };
-        // Touch only — desktop uses CSS :hover for pause, no JS needed.
-        marquee.addEventListener("touchstart", () => {
-          clearTimeout(resumeTimer);
-          marquee.classList.add("is-interacting");
-        }, { passive: true });
-        marquee.addEventListener("touchend",   () => scheduleResume(2000), { passive: true });
-        marquee.addEventListener("touchcancel", () => scheduleResume(2000), { passive: true });
 
-        // Click an image → smooth-scroll the marquee to center it.
-        // No JS pause: :hover already pauses on desktop while the click happens.
+        // Desktop: pause on cursor enter, resume immediately on cursor leave.
+        marquee.addEventListener("mouseenter", pause);
+        marquee.addEventListener("mouseleave", () => {
+          clearTimeout(resumeTimer);
+          paused = false;
+        });
+
+        // Mouse wheel / trackpad horizontal scroll → pause briefly while user drives.
+        marquee.addEventListener("wheel", () => {
+          pause();
+          scheduleResume(1500);
+        }, { passive: true });
+
+        // Touch: pause while finger is down, resume 2s after release.
+        marquee.addEventListener("touchstart",  pause,                       { passive: true });
+        marquee.addEventListener("touchend",    () => scheduleResume(2000),  { passive: true });
+        marquee.addEventListener("touchcancel", () => scheduleResume(2000),  { passive: true });
+
+        // Click an image → smooth-scroll to centre it.
         marquee.querySelectorAll("a").forEach((a) => {
           a.addEventListener("click", (e) => {
             e.preventDefault();
+            pause();
             const rect = a.getBoundingClientRect();
             const mqRect = marquee.getBoundingClientRect();
             const target = marquee.scrollLeft + (rect.left - mqRect.left) - (mqRect.width - rect.width) / 2;
             marquee.scrollTo({ left: target, behavior: "smooth" });
+            scheduleResume(2500);
           });
         });
       })();
