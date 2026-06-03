@@ -64,6 +64,13 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "EB Garamond";
+  src: url("/fonts/EBGaramond-Italic.woff") format("woff");
+  font-weight: 400 600;
+  font-style: italic;
+  font-display: swap;
+}
 
 @theme {
   --font-display: "Playfair Display", Georgia, serif;
@@ -116,7 +123,8 @@ body {
 .font-script,
 .font-italic-serif,
 .font-cormorant,
-.font-gilda { letter-spacing: normal; }
+.font-gilda,
+.font-eb-garamond { letter-spacing: normal; }
 
 /* Playfair Display — regular weight gets 0.05em letter-spacing site-wide.
    Light weight (font-light) keeps normal spacing. */
@@ -128,6 +136,7 @@ body {
 .font-italic-serif { font-family: var(--font-italic); font-style: italic; }
 .font-cormorant { font-family: "Cormorant Garamond", Georgia, serif; }
 .font-gilda { font-family: "Gilda Display", Georgia, serif; }
+.font-eb-garamond { font-family: "EB Garamond", Georgia, serif; font-style: italic; }
 
 /* Ampersand in Playfair Display titles — rendered in Cormorant Garamond italic,
    scaled so its visible cap-height matches the Playfair uppercase cap-height. */
