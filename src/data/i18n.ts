@@ -39,7 +39,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: 'CREATIVE DIRECTION<br>FLORAL ART <span class="inline-block mx-2 md:mx-3 align-middle text-white text-[14px] sm:text-[16px] md:text-[20px] relative top-[-3px] sm:top-[-4px] md:top-[-5px]">✦</span> SCENOGRAPHY<br><span class="font-italic-serif italic font-normal">fine</span> STATIONERY'
   },
   "home.hero.subtitle": {
-    fr: "Créatrice d'univers pour mariages &amp;<br />évènements d'exception",
+    fr: "Créatrice d'univers pour mariages<br />&amp; évènements d'exception",
     en: "Universe Designer for Bespoke<br />Weddings &amp; Celebrations"
   },
 
