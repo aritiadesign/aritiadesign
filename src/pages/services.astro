@@ -210,7 +210,7 @@ const faqs = [
     <div class="mx-auto md:w-[80%] max-w-[1300px]">
       {/* Tab bar — desktop only */}
       <div class="services-tabs-wrap relative hidden md:block">
-      <div role="tablist" class="services-tabs flex flex-nowrap overflow-x-auto gap-2 snap-x snap-proximity pr-12">
+      <div role="tablist" class="services-tabs flex flex-nowrap overflow-x-auto lg:overflow-visible gap-2 lg:gap-1 snap-x snap-proximity lg:snap-none pr-12 lg:pr-0">
         <style is:global>
           .services-tabs::-webkit-scrollbar { display: none; }
           .services-tabs { scrollbar-width: none; }
@@ -224,7 +224,7 @@ const faqs = [
             data-i18n={`services.tab.${i}`}
             aria-selected={i === 0 ? "true" : "false"}
           >
-            ✦ {s.title}{s.titleItalic ? ` ${s.titleItalic.toUpperCase()}` : ""} ✦
+            {["L'EXCEPTION", "IDENTITÉ VISUELLE", "MISE EN AMBIANCE", "L'ART FLORAL", "PAPETERIE FINE"][i]}
           </button>
         ))}
       </div>
@@ -418,11 +418,27 @@ const faqs = [
         padding: 16px 20px;
       }
     }
+    @media (min-width: 1024px) {
+      .services-tab {
+        flex: 1 1 0;
+        text-align: center;
+        font-size: 12px;
+        padding: 14px 6px;
+        letter-spacing: 0.08em;
+        scroll-snap-align: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .services-scroll-hint,
+      .services-scroll-hint-left {
+        display: none !important;
+      }
+    }
     .services-tab:hover {
       background-color: rgba(43, 42, 45, 0.2);
     }
     .services-tab[aria-selected="true"] {
-      background-color: #2b2b2b;
+      background-color: #1A1A1A;
       color: #fff;
     }
     .services-parallax {

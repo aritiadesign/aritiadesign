@@ -183,11 +183,11 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
 
   // Service tab labels (rendered with ✦ around them in the template)
-  "services.tab.0": { fr: "✦ DIRECTION ARTISTIQUE ✦", en: "✦ ART DIRECTION ✦" },
-  "services.tab.1": { fr: "✦ DÉCOR &amp; IDENTITÉ VISUELLE ✦", en: "✦ DECOR &amp; VISUAL IDENTITY ✦" },
-  "services.tab.2": { fr: "✦ DECOR SCÉNOGRAPHIE ✦",          en: "✦ DECOR SET DESIGN ✦" },
-  "services.tab.3": { fr: "✦ FLORAL DESIGN ✦",                en: "✦ FLORAL DESIGN ✦" },
-  "services.tab.4": { fr: "✦ IDENTITÉ GRAPHIQUE ✦",           en: "✦ GRAPHIC IDENTITY ✦" },
+  "services.tab.0": { fr: "L'EXCEPTION",       en: "THE EXCEPTION" },
+  "services.tab.1": { fr: "IDENTITÉ VISUELLE", en: "VISUAL IDENTITY" },
+  "services.tab.2": { fr: "MISE EN AMBIANCE",  en: "ATMOSPHERE" },
+  "services.tab.3": { fr: "L'ART FLORAL",      en: "FLORAL ART" },
+  "services.tab.4": { fr: "PAPETERIE FINE",    en: "FINE STATIONERY" },
 
   // Service detail panels
   "services.0.title":  { fr: 'L\'EXCEPTION <span class="font-italic-serif italic font-light">Design Intégral</span>', en: 'THE EXCEPTION <span class="font-italic-serif italic font-light">Full Design</span>' },
