@@ -36,7 +36,7 @@ const testimonials = [
     keyPrefix: "home.testimonial.1",
   },
   {
-    quote: "Merci beaucoup pour l'organisation de notre mariage&nbsp;! Ton souci du détail, ton dévouement ont rendu notre journée parfaite voir plus que parfaite. Nous te sommes reconnaissants pour les magnifiques souvenirs que tu as contribuée à créer et te souhaitons beaucoup de succès dans l'organisation de tes prochains évènements.<br /><br /><em class=\"font-italic-serif italic text-[1.2rem] md:text-[1.9rem] leading-[1.45] md:leading-[1.4]\">Nous recommandons Aritia sans aucune hésitation.</em>",
+    quote: "Merci beaucoup pour l'organisation de notre mariage&nbsp;! Ton souci du détail, ton dévouement ont rendu notre journée parfaite voir plus que parfaite. Nous te sommes reconnaissants pour les magnifiques souvenirs que tu as contribuée à créer et te souhaitons beaucoup de succès dans l'organisation de tes prochains évènements.<br /><br />Nous recommandons Aritia sans aucune hésitation.",
     author: "ELITAH & FYDERANA",
     image: "/images/testimonial-2.jpg",
     imageAlt: "Mariée avec bouquet",
@@ -363,9 +363,10 @@ const testimonials = [
                 <blockquote
                   class:list={[
                     "text-[var(--color-ink)] relative",
+                    "font-georgia italic",
                     t.long
-                      ? "font-display text-[1rem] md:text-[1.45rem] leading-[1.6] md:leading-[1.5]"
-                      : "font-baskerville text-[1.2rem] md:text-[1.9rem] leading-[1.45] md:leading-[1.4]",
+                      ? "text-[0.95rem] md:text-[1.35rem] leading-[1.85] md:leading-[1.75] tracking-[0.01em]"
+                      : "text-[1.2rem] md:text-[1.9rem] leading-[1.45] md:leading-[1.4]",
                   ]}
                   data-i18n={`${t.keyPrefix}.quote`}
                   set:html={t.quote}

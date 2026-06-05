@@ -92,8 +92,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "home.testimonial.1.author": { fr: "Mélodie & Thibault", en: "Mélodie & Thibault" },
   "home.testimonial.2.quote": {
-    fr: "Merci beaucoup pour l'organisation de notre mariage&nbsp;! Ton souci du détail, ton dévouement ont rendu notre journée parfaite voir plus que parfaite. Nous te sommes reconnaissants pour les magnifiques souvenirs que tu as contribuée à créer et te souhaitons beaucoup de succès dans l'organisation de tes prochains évènements.<br /><br /><em class=\"font-italic-serif italic text-[1.2rem] md:text-[1.9rem] leading-[1.45] md:leading-[1.4]\">Nous recommandons Aritia sans aucune hésitation.</em>",
-    en: "Thank you so much for organising our wedding! Your eye for detail and your dedication made our day perfect, even more than perfect. We are grateful for the beautiful memories you helped create and wish you every success with the events ahead.<br /><br /><em class=\"font-italic-serif italic text-[1.2rem] md:text-[1.9rem] leading-[1.45] md:leading-[1.4]\">We recommend Aritia without hesitation.</em>"
+    fr: "Merci beaucoup pour l'organisation de notre mariage&nbsp;! Ton souci du détail, ton dévouement ont rendu notre journée parfaite voir plus que parfaite. Nous te sommes reconnaissants pour les magnifiques souvenirs que tu as contribuée à créer et te souhaitons beaucoup de succès dans l'organisation de tes prochains évènements.<br /><br />Nous recommandons Aritia sans aucune hésitation.",
+    en: "Thank you so much for organising our wedding! Your eye for detail and your dedication made our day perfect, even more than perfect. We are grateful for the beautiful memories you helped create and wish you every success with the events ahead.<br /><br />We recommend Aritia without hesitation."
   },
   "home.testimonial.2.author": { fr: "ELITAH & FYDERANA", en: "ELITAH & FYDERANA" },
   "home.testimonial.1.imgalt": { fr: "Mariée vue d'en haut dans l'escalier", en: "Bride seen from above on the staircase" },
@@ -175,8 +175,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "OUR<br /><span class=\"font-italic-serif italic\">Approach</span>"
   },
   "services.approach.p": {
-    fr: "Aritia Design pense l'évènement comme une pièce de design unique. Identité graphique, art de la table, design floral et scénographie d'espace s'orchestrent pour donner vie à une émotion. Une direction artistique globale dédiée à celles et ceux qui attendent une signature visuelle affirmée.",
-    en: "Aritia Design approaches every event as a unique piece of design. Graphic identity, tablescaping, floral design and spatial scenography work in concert to bring an emotion to life. A holistic art direction for those who expect an unmistakable visual signature."
+    fr: "Aritia Design pense l'évènement comme une pièce de design unique. Identité graphique, art de la table, design floral et scénographie d'espace s'orchestrent pour donner vie à une émotion.",
+    en: "Aritia Design approaches every event as a unique piece of design. Graphic identity, tablescaping, floral design and spatial scenography work in concert to bring an emotion to life."
   },
 
   // Service tab labels (rendered with ✦ around them in the template)
