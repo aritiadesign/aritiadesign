@@ -133,11 +133,15 @@ const leftProject = {
           resumeTimer = setTimeout(() => { paused = false; }, delay);
         };
 
-        marquee.addEventListener("mouseenter", pause);
-        marquee.addEventListener("mouseleave", () => {
-          clearTimeout(resumeTimer);
-          paused = false;
-        });
+        // Hover pause/resume — only on devices with a real cursor (avoids iOS
+        // synthetic mouseenter trapping auto-scroll in paused state).
+        if (matchMedia("(hover: hover)").matches) {
+          marquee.addEventListener("mouseenter", pause);
+          marquee.addEventListener("mouseleave", () => {
+            clearTimeout(resumeTimer);
+            paused = false;
+          });
+        }
 
         marquee.addEventListener("wheel", () => {
           pause();
