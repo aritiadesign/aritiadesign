@@ -250,7 +250,9 @@ img {
   width: max-content;
   will-change: scroll-position;
 }
-.marquee {
+
+/* JS-driven marquees (home page) — scrollable, draggable */
+.marquee[data-marquee] {
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
@@ -258,8 +260,24 @@ img {
   touch-action: pan-x;
   cursor: grab;
 }
-.marquee::-webkit-scrollbar { display: none; }
-.marquee:active { cursor: grabbing; }
+.marquee[data-marquee]::-webkit-scrollbar { display: none; }
+.marquee[data-marquee]:active { cursor: grabbing; }
+
+/* CSS-driven marquees (portfolio etc.) — auto-scroll via keyframes, pause on hover */
+.marquee:not([data-marquee]) {
+  overflow: hidden;
+}
+.marquee:not([data-marquee]) .marquee-track {
+  animation: marquee-x 30s linear infinite;
+}
+.marquee:not([data-marquee]):hover .marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee:not([data-marquee]) .marquee-track {
+    animation: none;
+  }
+}
 
 /* English-only positioning tweaks (shorter copy → adjust overlap) */
 html[data-lang="en"] [data-i18n="home.method.script"] {
