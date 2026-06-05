@@ -80,8 +80,8 @@ const leftProject = {
 
   {/* ───────────────────────── 3. STRIP — horizontal infinite marquee ───────────────────────── */}
   <section class="bg-white pb-16 overflow-hidden">
-    <div class="marquee relative w-full">
-      <div class="marquee-track gap-3 md:gap-4 items-center" style="animation-duration: 30s;">
+    <div class="marquee relative w-full" data-marquee>
+      <div class="marquee-track gap-3 md:gap-4 items-center">
         {[...strip, ...strip].map((img, i) => (
           <div
             class="shrink-0 aspect-[3/4] h-[280px] md:h-[420px] lg:h-[500px] overflow-hidden bg-neutral-100"
@@ -91,12 +91,92 @@ const leftProject = {
               src={img.src}
               alt={img.alt}
               loading="lazy"
-              class="w-full h-full object-cover"
+              draggable="false"
+              class="w-full h-full object-cover pointer-events-none select-none"
             />
           </div>
         ))}
       </div>
     </div>
+
+    <script is:inline>
+      (function () {
+        const marquee = document.querySelector("section .marquee[data-marquee]");
+        if (!marquee) return;
+        const track = marquee.querySelector(".marquee-track");
+        if (!track) return;
+
+        const SPEED = 0.8;
+        let paused = false;
+        let resumeTimer;
+
+        function tick() {
+          if (!paused) {
+            const half = track.scrollWidth / 2;
+            if (half > 0) {
+              marquee.scrollLeft += SPEED;
+              if (marquee.scrollLeft >= half) marquee.scrollLeft -= half;
+            }
+          }
+          requestAnimationFrame(tick);
+        }
+        if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          requestAnimationFrame(tick);
+        }
+
+        const pause = () => { paused = true; clearTimeout(resumeTimer); };
+        const scheduleResume = (delay) => {
+          clearTimeout(resumeTimer);
+          resumeTimer = setTimeout(() => { paused = false; }, delay);
+        };
+
+        marquee.addEventListener("mouseenter", pause);
+        marquee.addEventListener("mouseleave", () => {
+          if (isDragging) return;
+          clearTimeout(resumeTimer);
+          paused = false;
+        });
+
+        marquee.addEventListener("wheel", () => {
+          pause();
+          scheduleResume(1500);
+        }, { passive: true });
+
+        marquee.addEventListener("touchstart",  pause,                       { passive: true });
+        marquee.addEventListener("touchend",    () => scheduleResume(2000),  { passive: true });
+        marquee.addEventListener("touchcancel", () => scheduleResume(2000),  { passive: true });
+
+        // Pointer-drag (desktop click & drag)
+        let isDragging = false;
+        let startX = 0;
+        let startScroll = 0;
+
+        marquee.addEventListener("pointerdown", (e) => {
+          if (e.pointerType !== "mouse") return;
+          isDragging = true;
+          startX = e.clientX;
+          startScroll = marquee.scrollLeft;
+          marquee.setPointerCapture(e.pointerId);
+          marquee.style.cursor = "grabbing";
+          pause();
+        });
+        marquee.addEventListener("pointermove", (e) => {
+          if (!isDragging) return;
+          const dx = e.clientX - startX;
+          marquee.scrollLeft = startScroll - dx;
+        });
+        const endDrag = (e) => {
+          if (!isDragging) return;
+          isDragging = false;
+          marquee.style.cursor = "";
+          try { marquee.releasePointerCapture(e.pointerId); } catch {}
+          scheduleResume(1500);
+        };
+        marquee.addEventListener("pointerup", endDrag);
+        marquee.addEventListener("pointercancel", endDrag);
+        marquee.addEventListener("pointerleave", endDrag);
+      })();
+    </script>
   </section>
 
   {/* ───────────────────────── 4. SAVOIR-FAIRE + PROJETS ───────────────────────── */}
