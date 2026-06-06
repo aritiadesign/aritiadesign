@@ -22,7 +22,7 @@ const steps = [
     alt: "Contrat & Mandat — Aritia Design",
     gridGap: "max-md:gap-2 gap-0",
     textOffset: "max-md:-mt-6",
-    marginTop: "max-md:mt-16 mt-28 md:mt-40",
+    marginTop: "max-md:mt-0 mt-28 md:mt-40",
   },
   {
     n: "03",
@@ -31,7 +31,7 @@ const steps = [
     image: "/images/step-03-moodboard.jpg",
     alt: "Moodboard — direction artistique",
     gridGap: "gap-14",
-    marginTop: "max-md:mt-20 mt-28 md:mt-40",
+    marginTop: "max-md:mt-0 mt-28 md:mt-40",
   },
   {
     n: "04",
@@ -55,7 +55,7 @@ const steps = [
     landscape: true,
     gridGap: "gap-0",
     textOffset: "max-md:-mt-10",
-    marginTop: "max-md:mt-8 mt-28 md:mt-40",
+    marginTop: "max-md:mt-0 mt-28 md:mt-40",
   },
   {
     n: "06",
@@ -64,7 +64,7 @@ const steps = [
     image: "/images/tonga-soa.png",
     alt: "Bannière Tonga Soa",
     gridGap: "gap-14",
-    marginTop: "max-md:mt-32 mt-28 md:mt-40",
+    marginTop: "max-md:mt-0 mt-28 md:mt-40",
   },
 ];
 ---
@@ -106,7 +106,7 @@ const steps = [
     <div class="mx-auto max-w-[1200px]">
       {steps.map((step, i) => {
         const reversed = i % 2 === 1;
-        const defaultMt = i === 0 ? "" : "mt-28 md:mt-40";
+        const defaultMt = i === 0 ? "" : "max-md:mt-0 mt-28 md:mt-40";
         const mt = i === 0 ? "" : (step.marginTop ?? defaultMt);
         return (
           <div class:list={["relative", mt]}>
@@ -289,7 +289,7 @@ const steps = [
 
             {/* Mobile/tablet only: 3-sparkle divider between this step's image and the next step */}
             {i < steps.length - 1 && (
-              <div class="lg:hidden mt-16 flex justify-center" aria-hidden="true">
+              <div class="lg:hidden my-20 flex justify-center" aria-hidden="true">
                 <svg
                   class="text-[var(--color-ink)]"
                   width="140"
