@@ -186,22 +186,21 @@ const leftProject = {
         </p>
 
         <a href={leftProject.href} class="block group mt-12">
-          <div class="relative aspect-[4/3] overflow-hidden bg-neutral-200">
+          <div class="aspect-[4/3] overflow-hidden bg-neutral-200">
             <img
               src={leftProject.img}
               alt={leftProject.alt}
               class={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${leftProject.editorial ? "grayscale contrast-125 brightness-95" : ""}`}
             />
-            <div class="hidden md:flex absolute inset-0 bg-black/45 opacity-0 group-hover:opacity-100 transition-opacity duration-500 items-center justify-center pointer-events-none">
-              <div class="text-white text-center">
-                <p class="font-italic-serif italic text-[40px] lg:text-[52px] leading-none" data-i18n="portfolio.overlay.voir">Voir</p>
-                <p class="mt-3 text-[11px] tracking-[0.32em] uppercase" data-i18n="portfolio.overlay.gallery">la galerie</p>
-              </div>
-            </div>
           </div>
           <div class="mt-5 text-center">
             <p class="text-[12px] tracking-[0.32em] uppercase text-[var(--color-ink)]" data-i18n={`${leftProject.keyPrefix}.title`}>{leftProject.title}</p>
             <p class="mt-1 font-italic-serif italic text-[18px] text-[var(--color-ink-soft)]" data-i18n={`${leftProject.keyPrefix}.italic`}>{leftProject.italic}</p>
+            <div class="mt-4 inline-flex items-center gap-2 text-[11px] tracking-[0.28em] uppercase text-[var(--color-ink)]/70 group-hover:text-[var(--color-ink)] transition">
+              <span class="opacity-80">✦</span>
+              <span data-i18n="portfolio.overlay.cta">Voir la galerie</span>
+              <span class="text-[14px] -translate-y-[1px] group-hover:translate-x-1 transition-transform">→</span>
+            </div>
           </div>
         </a>
       </div>
@@ -225,22 +224,21 @@ const leftProject = {
             </div>
           ) : (
             <a href={p.href} class="block group">
-              <div class="relative aspect-[4/3] overflow-hidden bg-neutral-200">
+              <div class="aspect-[4/3] overflow-hidden bg-neutral-200">
                 <img
                   src={p.img}
                   alt={p.alt}
                   class={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${p.editorial ? "grayscale contrast-125 brightness-95" : ""}`}
                 />
-                <div class="hidden md:flex absolute inset-0 bg-black/45 opacity-0 group-hover:opacity-100 transition-opacity duration-500 items-center justify-center pointer-events-none">
-                  <div class="text-white text-center">
-                    <p class="font-italic-serif italic text-[40px] lg:text-[52px] leading-none" data-i18n="portfolio.overlay.voir">Voir</p>
-                    <p class="mt-3 text-[11px] tracking-[0.32em] uppercase" data-i18n="portfolio.overlay.gallery">la galerie</p>
-                  </div>
-                </div>
               </div>
               <div class="mt-5 text-center">
                 <p class="text-[12px] tracking-[0.32em] uppercase text-[var(--color-ink)]" data-i18n={`${p.keyPrefix}.title`}>{p.title}</p>
                 <p class="mt-1 font-italic-serif italic text-[18px] text-[var(--color-ink-soft)]" data-i18n={`${p.keyPrefix}.italic`}>{p.italic}</p>
+                <div class="mt-4 inline-flex items-center gap-2 text-[11px] tracking-[0.28em] uppercase text-[var(--color-ink)]/70 group-hover:text-[var(--color-ink)] transition">
+                  <span class="opacity-80">✦</span>
+                  <span data-i18n="portfolio.overlay.cta">Voir la galerie</span>
+                  <span class="text-[14px] -translate-y-[1px] group-hover:translate-x-1 transition-transform">→</span>
+                </div>
               </div>
             </a>
           )
