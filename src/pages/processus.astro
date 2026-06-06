@@ -264,7 +264,7 @@ const steps = [
                   </span>
                 </h3>
                 <svg
-                  class="mt-8 block text-[var(--color-ink)]"
+                  class="mt-8 hidden lg:block text-[var(--color-ink)]"
                   width="105"
                   height="12"
                   viewBox="0 0 90 10"
@@ -281,11 +281,32 @@ const steps = [
                   {/* third sparkle */}
                   <path d="M82 2.5 Q82.3 4.7 84.5 5 Q82.3 5.3 82 7.5 Q81.7 5.3 79.5 5 Q81.7 4.7 82 2.5 Z" stroke="none" />
                 </svg>
-                <p class="mt-6 text-[0.95rem] leading-[1.95] text-[var(--color-ink-soft)] max-w-md" data-i18n={`process.step.${i + 1}.body`}>
+                <p class="mt-6 lg:mt-6 text-[0.95rem] leading-[1.95] text-[var(--color-ink-soft)] max-w-md" data-i18n={`process.step.${i + 1}.body`}>
                   {step.body}
                 </p>
               </div>
             </div>
+
+            {/* Mobile/tablet only: 3-sparkle divider between this step's image and the next step */}
+            {i < steps.length - 1 && (
+              <div class="lg:hidden mt-16 flex justify-center" aria-hidden="true">
+                <svg
+                  class="text-[var(--color-ink)]"
+                  width="140"
+                  height="14"
+                  viewBox="0 0 140 10"
+                  fill="currentColor"
+                  stroke="currentColor"
+                >
+                  {/* centered horizontal line */}
+                  <line x1="20" y1="5" x2="120" y2="5" stroke-width="0.35" />
+                  {/* three 4-point sparkles evenly spaced through the line */}
+                  <path d="M48 2 Q48.4 4.6 51 5 Q48.4 5.4 48 8 Q47.6 5.4 45 5 Q47.6 4.6 48 2 Z" stroke="none" />
+                  <path d="M70 2 Q70.4 4.6 73 5 Q70.4 5.4 70 8 Q69.6 5.4 67 5 Q69.6 4.6 70 2 Z" stroke="none" />
+                  <path d="M92 2 Q92.4 4.6 95 5 Q92.4 5.4 92 8 Q91.6 5.4 89 5 Q91.6 4.6 92 2 Z" stroke="none" />
+                </svg>
+              </div>
+            )}
           </div>
         );
       })}
