@@ -186,21 +186,28 @@ const leftProject = {
         </p>
 
         <a href={leftProject.href} class="block group mt-12">
-          <div class="aspect-[4/3] overflow-hidden bg-neutral-200">
+          <div class="relative aspect-[4/3] overflow-hidden bg-neutral-200">
             <img
               src={leftProject.img}
               alt={leftProject.alt}
               class={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${leftProject.editorial ? "grayscale contrast-125 brightness-95" : ""}`}
             />
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors duration-500 pointer-events-none"></div>
+            <span class="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <svg
+                viewBox="0 0 40 40"
+                class="w-10 h-10 md:w-12 md:h-12 text-white opacity-80 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110"
+                style="filter: drop-shadow(0 1px 4px rgba(0,0,0,0.45));"
+                aria-hidden="true"
+              >
+                <line x1="20" y1="6" x2="20" y2="34" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                <line x1="6" y1="20" x2="34" y2="20" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+              </svg>
+            </span>
           </div>
           <div class="mt-5 text-center">
             <p class="text-[12px] tracking-[0.32em] uppercase text-[var(--color-ink)]" data-i18n={`${leftProject.keyPrefix}.title`}>{leftProject.title}</p>
             <p class="mt-1 font-italic-serif italic text-[18px] text-[var(--color-ink-soft)]" data-i18n={`${leftProject.keyPrefix}.italic`}>{leftProject.italic}</p>
-            <div class="mt-4 inline-flex items-center gap-2 text-[11px] tracking-[0.28em] uppercase text-[var(--color-ink)]/70 group-hover:text-[var(--color-ink)] transition">
-              <span class="opacity-80">✦</span>
-              <span data-i18n="portfolio.overlay.cta">Voir la galerie</span>
-              <span class="text-[14px] -translate-y-[1px] group-hover:translate-x-1 transition-transform">→</span>
-            </div>
           </div>
         </a>
       </div>
@@ -224,21 +231,28 @@ const leftProject = {
             </div>
           ) : (
             <a href={p.href} class="block group">
-              <div class="aspect-[4/3] overflow-hidden bg-neutral-200">
+              <div class="relative aspect-[4/3] overflow-hidden bg-neutral-200">
                 <img
                   src={p.img}
                   alt={p.alt}
                   class={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${p.editorial ? "grayscale contrast-125 brightness-95" : ""}`}
                 />
+                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors duration-500 pointer-events-none"></div>
+                <span class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <svg
+                    viewBox="0 0 40 40"
+                    class="w-10 h-10 md:w-12 md:h-12 text-white opacity-80 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110"
+                    style="filter: drop-shadow(0 1px 4px rgba(0,0,0,0.45));"
+                    aria-hidden="true"
+                  >
+                    <line x1="20" y1="6" x2="20" y2="34" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                    <line x1="6" y1="20" x2="34" y2="20" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                  </svg>
+                </span>
               </div>
               <div class="mt-5 text-center">
                 <p class="text-[12px] tracking-[0.32em] uppercase text-[var(--color-ink)]" data-i18n={`${p.keyPrefix}.title`}>{p.title}</p>
                 <p class="mt-1 font-italic-serif italic text-[18px] text-[var(--color-ink-soft)]" data-i18n={`${p.keyPrefix}.italic`}>{p.italic}</p>
-                <div class="mt-4 inline-flex items-center gap-2 text-[11px] tracking-[0.28em] uppercase text-[var(--color-ink)]/70 group-hover:text-[var(--color-ink)] transition">
-                  <span class="opacity-80">✦</span>
-                  <span data-i18n="portfolio.overlay.cta">Voir la galerie</span>
-                  <span class="text-[14px] -translate-y-[1px] group-hover:translate-x-1 transition-transform">→</span>
-                </div>
               </div>
             </a>
           )

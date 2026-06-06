@@ -422,7 +422,6 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "portfolio.project.mt.italic": { fr: "à la Française", en: "in the French style" },
   "portfolio.project.hj.title": { fr: "H+J, ROMANTISME MODERNE", en: "H+J, MODERN ROMANTICISM" },
   "portfolio.project.hj.italic": { fr: "avec un accent culturel", en: "with a cultural accent" },
-  "portfolio.overlay.cta": { fr: "Voir la galerie", en: "View the gallery" },
   "portfolio.cta.h2": {
     fr: "NON, <span class=\"font-italic-serif italic font-light\">VOS RÊVES</span><br />NE SONT PAS TROP GRAND",
     en: "NO, <span class=\"font-italic-serif italic font-light\">YOUR DREAMS</span><br />ARE NOT TOO BIG"
