@@ -213,14 +213,14 @@ const leftProject = {
       <div class="space-y-10 self-end">
         {projects.map((p) => (
           p.disabled ? (
-            <div class="block cursor-default" aria-disabled="true">
+            <div class="block cursor-default group" aria-disabled="true">
               <div class="relative aspect-[4/3] overflow-hidden bg-neutral-200">
                 <img
                   src={p.img}
                   alt={p.alt}
                   class={`w-full h-full object-cover ${p.editorial ? "grayscale contrast-125 brightness-95" : ""}`}
                 />
-                <div class="absolute inset-0 bg-black/55 flex items-center justify-center pointer-events-none">
+                <div class="absolute inset-0 bg-black/55 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center pointer-events-none">
                   <span class="font-italic-serif italic font-light text-white text-[32px] md:text-[40px] lg:text-[48px] leading-none" data-i18n="portfolio.project.soon">à venir</span>
                 </div>
               </div>
