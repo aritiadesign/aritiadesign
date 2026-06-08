@@ -150,7 +150,7 @@ const modalites = [
               <p class="mt-8 text-[15px] md:text-[16px] leading-[1.85] text-white/90 max-w-md" data-i18n={`investment.tier.${i}.desc`}>{tier.desc}</p>
               <p class="mt-10 text-[14px] md:text-[15px] tracking-[0.22em] uppercase lining-nums tabular-nums text-white/95" data-i18n={`investment.tier.${i}.price`}>{tier.price}</p>
               {tier.scope && (
-                <p class="mt-3 text-[14px] md:text-[16px] leading-[1.55] font-baskerville tracking-[1px] text-white/75" data-i18n={`investment.tier.${i}.scope`} set:html={tier.scope}></p>
+                <p class="mt-3 text-[14px] md:text-[16px] leading-[1.55] font-baskerville tracking-[0.8px] text-white/75" data-i18n={`investment.tier.${i}.scope`} set:html={tier.scope}></p>
               )}
 
               <details class="group mt-10 border-t border-white/15 pt-4">
@@ -196,10 +196,10 @@ const modalites = [
           <div class="py-6 text-left">
             <div class="flex items-baseline justify-between gap-6">
               <span class="font-display text-[18px] md:text-[22px] text-[var(--color-ink)]" data-i18n={`investment.alacarte.${i}.title`}>{item.title}</span>
-              <span class="font-baskerville tracking-[1px] text-[18px] md:text-[24px] text-[var(--color-ink-soft)] whitespace-nowrap" data-i18n={`investment.alacarte.${i}.price`}>{item.price}</span>
+              <span class="font-baskerville tracking-[0.8px] text-[18px] md:text-[24px] text-[var(--color-ink-soft)] whitespace-nowrap" data-i18n={`investment.alacarte.${i}.price`}>{item.price}</span>
             </div>
             {item.scope && (
-              <p class="mt-2 text-[14px] md:text-[16px] leading-[1.55] font-baskerville tracking-[1px] text-[var(--color-muted)]" data-i18n={`investment.alacarte.${i}.scope`}>{item.scope}</p>
+              <p class="mt-2 text-[14px] md:text-[16px] leading-[1.55] font-baskerville tracking-[0.8px] text-[var(--color-muted)]" data-i18n={`investment.alacarte.${i}.scope`}>{item.scope}</p>
             )}
           </div>
         ))}
