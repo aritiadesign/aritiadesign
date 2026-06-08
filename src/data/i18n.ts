@@ -69,7 +69,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "home.method.p": {
     fr: "De la première inspiration au jour J, je vous accompagne avec sensibilité et exigence dans la création d'un univers qui vous ressemble&nbsp;– une approche sur-mesure, pensée pour faire naître la beauté et l'émotion.",
-    en: "From the first spark of inspiration to the day itself, I guide you with sensibility and rigour in creating a world that reflects you — a bespoke approach, designed to give rise to beauty and emotion."
+    en: "From the first spark of inspiration to the day itself, I guide you with sensibility and rigour in creating a world that reflects you. My approach is bespoke, designed to give rise to beauty and emotion."
   },
   "home.method.cta": { fr: "Découvrir", en: "Discover" },
 
@@ -389,8 +389,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "process.step.6.title": { fr: "INSTALLATION <span class=\"amp\">&amp;</span> MISE EN SCÈNE", en: "INSTALLATION <span class=\"amp\">&amp;</span> STAGING" },
   "process.step.6.body": {
-    fr: "Le jour J, l'univers prend vie. Je mets en place chaque élément du décor, compose les fleurs in situ, ajuste les volumes et sublime les espaces pour offrir une expérience à la hauteur de votre histoire. Un décor vivant, élégant, fluide — à votre image.",
-    en: "On the day itself, the world comes alive. I install every decor element, compose the flowers on site, adjust the volumes and elevate the spaces to deliver an experience worthy of your story. A decor that is alive, elegant, seamless — in your image."
+    fr: "Le jour J, l'univers prend vie. Je mets en place chaque élément du décor, compose les fleurs in situ, ajuste les volumes et sublime les espaces pour offrir une expérience à la hauteur de votre histoire. Un décor vivant, élégant et fluide, à votre image.",
+    en: "On the day itself, the world comes alive. I install every decor element, compose the flowers on site, adjust the volumes and elevate the spaces to deliver an experience worthy of your story. A decor that is alive, elegant and seamless, in your image."
   },
   "process.flipbook.prev": { fr: "Page précédente", en: "Previous page" },
   "process.flipbook.next": { fr: "Page suivante", en: "Next page" },
