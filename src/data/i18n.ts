@@ -69,7 +69,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "home.method.p": {
     fr: "De la première inspiration au jour J, je vous accompagne avec sensibilité et exigence dans la création d'un univers qui vous ressemble&nbsp;– une approche sur-mesure, pensée pour faire naître la beauté et l'émotion.",
-    en: "From the first spark of inspiration to the day itself, I guide you with sensibility and rigour in creating a world that reflects you. My approach is bespoke, designed to give rise to beauty and emotion."
+    en: "From the first spark of inspiration to the day itself, I guide you with sensibility and rigour in creating a world that reflects you&nbsp;– a bespoke approach, designed to give rise to beauty and emotion."
   },
   "home.method.cta": { fr: "Découvrir", en: "Discover" },
 
