@@ -6,5 +6,9 @@ export default defineConfig({
   site: 'https://aritiadesign.com',
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      host: true,
+      allowedHosts: ['localhost', '127.0.0.1', '192.168.1.80', '.local', '.lan', '.loca.lt', '.trycloudflare.com'],
+    },
   },
 });
