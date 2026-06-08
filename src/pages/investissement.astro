@@ -158,10 +158,10 @@ const modalites = [
                   <span data-i18n="investment.included.summary">✦ Compris dans l'expérience</span>
                   <span class="text-[18px] leading-none transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <ul class="mt-5 space-y-2.5 text-[14px] md:text-[15px] leading-[1.6] text-white/95">
+                <ul class="mt-5 space-y-2 text-[11px] md:text-[12px] leading-[1.6] text-white/85">
                   {tier.bullets.map((b, idx) => (
-                    <li class="flex gap-3 items-start">
-                      <span aria-hidden="true" class="inline-block w-[6px] h-[6px] rounded-full bg-current mt-[8px] shrink-0"></span>
+                    <li class="flex gap-2.5 items-start">
+                      <span aria-hidden="true" class="inline-block w-[3px] h-[3px] rounded-full bg-current mt-[7px] shrink-0"></span>
                       <span data-i18n={`investment.tier.${i}.b${idx}`}>{b}</span>
                     </li>
                   ))}
