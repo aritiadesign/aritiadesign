@@ -166,7 +166,7 @@ const modalites = [
             style={`background-color: ${cardBg};`}
           >
             {/* Image */}
-            <div class="aspect-[4/3] lg:aspect-auto bg-[#0e0e0e] order-1 lg:order-2 overflow-hidden">
+            <div class="aspect-[4/3] lg:aspect-auto bg-[#0e0e0e] order-1 lg:order-1 overflow-hidden">
               <img
                 src={tier.image}
                 alt={tier.title}
@@ -177,7 +177,7 @@ const modalites = [
             </div>
 
             {/* Texte */}
-            <div class="p-10 md:p-14 lg:p-16 text-white flex flex-col justify-center order-2 lg:order-1">
+            <div class="p-10 md:p-14 lg:p-16 text-white flex flex-col justify-center order-2 lg:order-2">
               <h3 class="font-display leading-[1.1] tracking-wide text-[32px] md:text-[40px] lg:text-[48px]">
                 <span data-i18n={`investment.tier.${i}.title`}>{tier.title}</span>
                 {tier.italic && <> <span class="font-italic-serif italic font-light" data-i18n={`investment.tier.${i}.italic`}>{tier.italic.split("&").map((part, idx, arr) => (<>{part}{idx < arr.length - 1 && <span class="amp">&amp;</span>}</>))}</span></>}
