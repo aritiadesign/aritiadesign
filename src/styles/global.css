@@ -216,13 +216,13 @@ body {
 .font-pt-serif { font-family: "PT Serif", Georgia, serif; font-style: italic; }
 .font-georgia { font-family: Georgia, "Times New Roman", serif; }
 
-/* Ampersand in Playfair Display titles — rendered in Cormorant Garamond italic,
-   scaled so its visible cap-height matches the Playfair uppercase cap-height. */
+/* Ampersand in Playfair Display titles — rendered in Cormorant Garamond italic
+   at 1em (same size as surrounding text) for a discreet, integrated feel. */
 .amp {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-style: italic;
-  font-size: 1.25em;
-  line-height: 0;
+  font-size: 1em;
+  line-height: inherit;
   letter-spacing: normal;
   vertical-align: baseline;
   margin: 0 0.05em;
