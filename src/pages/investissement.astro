@@ -58,9 +58,44 @@ const tiers = [
 ];
 
 const aLaCarte = [
-  { title: "Papeterie fine", price: "à partir de 800 €", scope: "≤50 invités, faire-part et menus" },
-  { title: "Design floral artistique", price: "à partir de 2 700 €", scope: "≤50 invités, fleurs de saison, un espace" },
-  { title: "Décor & scénographie", price: "à partir de 3 200 €", scope: "≤50 invités, un espace principal" },
+  {
+    title: "Papeterie fine",
+    price: "à partir de 800 €",
+    scope: "≤50 invités, faire-part et menus",
+    bullets: [
+      "Concept graphique et palette typographique",
+      "2 maquettes et bon à tirer (BAT) final",
+      "Faire-part recto-verso",
+      "Menus de table individuels",
+      "Plan de table imprimé",
+      "Impression, façonnage et livraison",
+    ],
+  },
+  {
+    title: "Design floral artistique",
+    price: "à partir de 2 700 €",
+    scope: "≤50 invités, fleurs de saison, un espace",
+    bullets: [
+      "Moodboard floral et palette de variétés",
+      "Sourcing fleurs (grossiste et producteur local quand possible)",
+      "Bouquet de la mariée",
+      "5 centres de table simples",
+      "Arche cérémonie minimaliste",
+      "Composition en atelier et installation jour J",
+    ],
+  },
+  {
+    title: "Décor & scénographie",
+    price: "à partir de 3 200 €",
+    scope: "≤50 invités, un espace principal",
+    bullets: [
+      "Concept décoratif et plan de scénographie",
+      "Sélection et location du mobilier",
+      "Vaisselle, verrerie et objets décoratifs sourcés",
+      "Mise en scène le jour J",
+      "Démontage et reprise J+1",
+    ],
+  },
 ];
 
 const included = [
@@ -193,15 +228,26 @@ const modalites = [
 
       <div class="mt-16 max-w-2xl mx-auto divide-y divide-[var(--color-ink)]/15">
         {aLaCarte.map((item, i) => (
-          <div class="py-6 text-left">
-            <div class="flex items-baseline justify-between gap-6">
-              <span class="font-display text-[18px] md:text-[22px] text-[var(--color-ink)]" data-i18n={`investment.alacarte.${i}.title`}>{item.title}</span>
+          <details class="group py-6 text-left">
+            <summary class="cursor-pointer list-none flex items-baseline justify-between gap-6">
+              <div class="flex items-baseline gap-3 md:gap-4">
+                <span aria-hidden="true" class="text-[20px] md:text-[26px] leading-none font-light text-[var(--color-ink)] transition-transform duration-300 group-open:rotate-45 shrink-0">+</span>
+                <span class="font-display text-[18px] md:text-[22px] text-[var(--color-ink)]" data-i18n={`investment.alacarte.${i}.title`}>{item.title}</span>
+              </div>
               <span class="font-baskerville tracking-[0.5px] text-[18px] md:text-[24px] text-[var(--color-ink-soft)] whitespace-nowrap" data-i18n={`investment.alacarte.${i}.price`}>{item.price}</span>
-            </div>
+            </summary>
             {item.scope && (
-              <p class="mt-2 text-[14px] md:text-[16px] leading-[1.55] font-baskerville tracking-[0.5px] text-[var(--color-muted)]" data-i18n={`investment.alacarte.${i}.scope`}>{item.scope}</p>
+              <p class="mt-2 ml-9 md:ml-11 text-[14px] md:text-[16px] leading-[1.55] font-baskerville tracking-[0.5px] text-[var(--color-muted)]" data-i18n={`investment.alacarte.${i}.scope`}>{item.scope}</p>
             )}
-          </div>
+            <ul class="mt-5 ml-9 md:ml-11 space-y-2 text-[13px] md:text-[14px] leading-[1.6] text-[var(--color-ink-soft)]">
+              {item.bullets.map((b, idx) => (
+                <li class="flex gap-2.5 items-start">
+                  <span aria-hidden="true" class="inline-block w-[3px] h-[3px] rounded-full bg-current mt-[9px] shrink-0"></span>
+                  <span data-i18n={`investment.alacarte.${i}.b${idx}`}>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </details>
         ))}
       </div>
     </div>
