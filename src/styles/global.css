@@ -178,21 +178,23 @@ body {
 }
 
 /* Non-Raleway fonts: reset the body's 0.02em default so they keep their
-   own intended letter-spacing (or whatever Tailwind tracking-* utility
-   the element specifies). */
-.font-script,
-.font-italic-serif,
-.font-cormorant,
-.font-gilda,
-.font-eb-garamond,
-.font-lora,
-.font-spectral,
-.font-crimson,
-.font-dm-serif,
-.font-cardo,
-.font-baskerville,
-.font-pt-serif,
-.font-georgia { letter-spacing: normal; }
+   own intended letter-spacing. Wrapped in @layer base so Tailwind tracking-*
+   utilities (in @layer utilities) still override per-element when needed. */
+@layer base {
+  .font-script,
+  .font-italic-serif,
+  .font-cormorant,
+  .font-gilda,
+  .font-eb-garamond,
+  .font-lora,
+  .font-spectral,
+  .font-crimson,
+  .font-dm-serif,
+  .font-cardo,
+  .font-baskerville,
+  .font-pt-serif,
+  .font-georgia { letter-spacing: normal; }
+}
 
 /* Playfair Display — regular weight gets 0.05em letter-spacing site-wide.
    Light weight (font-light) keeps normal spacing. */
