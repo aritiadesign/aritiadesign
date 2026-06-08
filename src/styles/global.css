@@ -161,6 +161,10 @@ body {
   /* Default tracking on Raleway body text — Tailwind tracking-* and the
      font overrides below take precedence on non-Raleway elements. */
   letter-spacing: 0.02em;
+  /* Force lining + tabular figures site-wide so all digits sit on the
+     baseline at the same height and width (avoids Raleway's oldstyle
+     descenders on 3/5/7/9 which make "5 800" look staggered). */
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
 /* Global body-text default — any <p> uses 16px unless overridden.
