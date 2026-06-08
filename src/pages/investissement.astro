@@ -150,16 +150,7 @@ const modalites = [
               <p class="mt-8 text-[15px] md:text-[16px] leading-[1.85] text-white/90 max-w-md" data-i18n={`investment.tier.${i}.desc`}>{tier.desc}</p>
               <p class="mt-10 text-[14px] md:text-[15px] tracking-[0.22em] uppercase lining-nums tabular-nums text-white/95" data-i18n={`investment.tier.${i}.price`}>{tier.price}</p>
               {tier.scope && (
-                <p
-                  class:list={[
-                    "mt-3 leading-[1.55] font-baskerville text-white/75",
-                    i === 2
-                      ? "text-[12px] md:text-[13px] tracking-[15px]"
-                      : "text-[16px] md:text-[18px] tracking-[5px]",
-                  ]}
-                  data-i18n={`investment.tier.${i}.scope`}
-                  set:html={tier.scope}
-                ></p>
+                <p class="mt-3 text-[16px] md:text-[18px] leading-[1.55] font-baskerville tracking-[5px] text-white/75" data-i18n={`investment.tier.${i}.scope`} set:html={tier.scope}></p>
               )}
 
               <details class="group mt-10 border-t border-white/15 pt-4">
