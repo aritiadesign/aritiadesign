@@ -148,7 +148,7 @@ const modalites = [
                 {tier.italic && <> <span class="font-italic-serif italic font-light" data-i18n={`investment.tier.${i}.italic`}>{tier.italic}</span></>}
               </h3>
               <p class="mt-8 text-[15px] md:text-[16px] leading-[1.85] text-white/90 max-w-md" data-i18n={`investment.tier.${i}.desc`}>{tier.desc}</p>
-              <p class="mt-10 text-[14px] md:text-[15px] tracking-[0.22em] uppercase text-white/95" data-i18n={`investment.tier.${i}.price`}>{tier.price}</p>
+              <p class="mt-10 font-brandon text-[14px] md:text-[15px] tracking-[0.22em] uppercase text-white/95" data-i18n={`investment.tier.${i}.price`}>{tier.price}</p>
               {tier.scope && (
                 <p class="mt-3 text-[16px] md:text-[18px] leading-[1.55] font-baskerville tracking-[5px] text-white/75" data-i18n={`investment.tier.${i}.scope`} set:html={tier.scope}></p>
               )}
@@ -238,7 +238,7 @@ const modalites = [
         {modalites.map((m, i) => (
           <div class="flex flex-col items-center">
             <span class="font-display text-[64px] md:text-[80px] leading-none text-white" data-i18n={`investment.modalites.${i}.step`}>{m.step}</span>
-            <span class="mt-4 text-[12px] tracking-[0.32em] uppercase text-white/95" data-i18n={`investment.modalites.${i}.label`}>{m.label}</span>
+            <span class="mt-4 font-brandon text-[12px] tracking-[0.32em] uppercase text-white/95" data-i18n={`investment.modalites.${i}.label`}>{m.label}</span>
             <p class="mt-4 text-[14px] leading-[1.7] text-white/75 max-w-[260px]" data-i18n={`investment.modalites.${i}.desc`}>{m.desc}</p>
           </div>
         ))}
