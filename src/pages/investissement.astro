@@ -171,9 +171,9 @@ const modalites = [
           >
             {/* Image — static or flipbook */}
             {tier.flipbook ? (
-              <div class="order-1 lg:order-1 lg:pt-8 lg:pb-8 lg:pl-8">
+              <div class="order-1 lg:order-1">
               <div
-                class="flipbook aspect-[1587/1300] relative bg-[#1A1A1A] p-4 md:p-6 w-full overflow-hidden select-none group"
+                class="flipbook aspect-[1587/1300] relative bg-[#1A1A1A] w-full overflow-hidden select-none group"
                 data-flipbook
                 tabindex="0"
                 aria-label={`Flipbook ${tier.title} — utilisez les flèches gauche / droite pour naviguer`}
@@ -184,7 +184,7 @@ const modalites = [
                     alt={`${tier.title} — page ${idx + 1}`}
                     loading={idx < 2 ? "eager" : "lazy"}
                     data-page={idx}
-                    class="absolute inset-4 md:inset-6 object-contain transition-opacity duration-500 ease-out"
+                    class="absolute inset-0 object-contain transition-opacity duration-500 ease-out"
                     style={`opacity: ${idx === 0 ? 1 : 0}; z-index: ${idx === 0 ? 2 : 1}; pointer-events: ${idx === 0 ? "auto" : "none"};`}
                   />
                 ))}
