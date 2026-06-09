@@ -117,6 +117,13 @@
   font-display: swap;
 }
 @font-face {
+  font-family: "Noto Serif Display";
+  src: url("/fonts/NotoSerifDisplay-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
   font-family: "PT Serif";
   src: url("/fonts/PTSerif-Italic.woff2") format("woff2");
   font-weight: 400;
