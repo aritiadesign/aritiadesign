@@ -187,12 +187,12 @@ const faqs = [
 
   {/* ───────────────────────── 4. TIERS — CARTES PACKS ───────────────────────── */}
   <section class="bg-white px-6 pb-24 md:pb-36">
-    <div class="mx-auto max-w-[1300px] space-y-16 md:space-y-20 lg:space-y-28">
+    <div class="mx-auto max-w-[1300px] flex md:block overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none gap-5 md:gap-0 md:space-y-20 lg:space-y-28 -mx-6 px-6 md:mx-0 md:px-0 pb-6 md:pb-0 items-stretch [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
       {tiers.map((tier, i) => {
         const cardBg = tier.accent === "burgundy" ? "#640613" : "#1A1A1A";
         return (
           <article
-            class="grid lg:grid-cols-2 gap-0 overflow-hidden"
+            class="shrink-0 w-[88%] md:w-auto snap-center grid lg:grid-cols-2 gap-0 overflow-hidden"
             style={`background-color: ${cardBg};`}
           >
             {/* Image — static or flipbook */}
