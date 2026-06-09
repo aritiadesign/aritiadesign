@@ -459,32 +459,61 @@ const faqs = [
   </section>
 
   {/* ───────────────────────── 6. CHAQUE COLLABORATION COMPREND ───────────────────────── */}
-  <section class="bg-white px-6 py-24 md:py-32 overflow-x-hidden">
-    <div class="mx-auto max-w-[1200px] grid md:grid-cols-2 gap-14 md:gap-0 items-center w-full">
-      <div class="relative order-2 md:order-1 z-0">
-        <div class="h-[400px] md:h-[620px] lg:h-[720px] bg-cream overflow-hidden">
-          <img
-            src="/images/about-dining.jpg"
-            alt="Table dressée raffinée"
-            class="w-full h-full object-cover"
-            onerror="this.style.background='linear-gradient(135deg,#e8d8c0,#c69d6a)';this.removeAttribute('src');"
-          />
-        </div>
+  <section class="bg-white pt-12 pb-24 md:px-6 md:py-32 overflow-x-hidden">
+    {/* Mobile: full-width image + white text box overlapping at bottom */}
+    <div class="md:hidden">
+      <div class="h-[380px] overflow-hidden bg-cream">
+        <img
+          src="/images/about-dining.jpg"
+          alt="Table dressée raffinée"
+          class="w-full h-full object-cover"
+          onerror="this.style.background='linear-gradient(135deg,#e8d8c0,#c69d6a)';this.removeAttribute('src');"
+        />
       </div>
-
-      <div class="order-1 md:order-2 flex flex-col justify-center md:self-center md:bg-[#1A1A1A] md:p-12 lg:p-16 md:-ml-12 lg:-ml-16 md:relative md:z-10">
-        <h2 class="text-center md:text-left font-display text-[40px] md:text-[44px] lg:text-[52px] leading-[1.1] tracking-wide text-[var(--color-ink)] md:text-white mb-10" data-i18n="investment.included.h2">
+      <div class="bg-white relative z-10 -mt-24 mx-5 px-6 pt-8 pb-9 text-center">
+        <h2 class="font-display text-[28px] leading-[1.15] tracking-wide text-[var(--color-ink)] mb-6" data-i18n="investment.included.h2">
           CHAQUE COLLABORATION<br />
           <span class="font-italic-serif italic font-light">comprend</span>
         </h2>
-        <ul class="space-y-4 text-[15px] md:text-[16px] leading-[1.8] text-[var(--color-ink-soft)] md:text-white/85 max-w-md mx-auto md:mx-0">
+        <ul class="space-y-3 text-[14px] leading-[1.7] text-[var(--color-ink-soft)] text-left max-w-[280px] mx-auto">
           {included.map((item, i) => (
-            <li class="flex gap-4 items-start">
-              <span aria-hidden="true" class="text-[var(--color-ink)] md:text-white mt-1">✦</span>
+            <li class="flex gap-3 items-start">
+              <span aria-hidden="true" class="text-[var(--color-ink)] mt-1 leading-none">✦</span>
               <span data-i18n={`investment.included.item.${i}`}>{item}</span>
             </li>
           ))}
         </ul>
+      </div>
+    </div>
+
+    {/* Desktop: side-by-side image + dark overlap box */}
+    <div class="hidden md:block">
+      <div class="mx-auto max-w-[1200px] grid md:grid-cols-2 gap-0 items-center w-full">
+        <div class="relative md:order-1 z-0">
+          <div class="md:h-[620px] lg:h-[720px] bg-cream overflow-hidden">
+            <img
+              src="/images/about-dining.jpg"
+              alt="Table dressée raffinée"
+              class="w-full h-full object-cover"
+              onerror="this.style.background='linear-gradient(135deg,#e8d8c0,#c69d6a)';this.removeAttribute('src');"
+            />
+          </div>
+        </div>
+
+        <div class="md:order-2 flex flex-col justify-center md:self-center md:bg-[#1A1A1A] md:p-12 lg:p-16 md:-ml-12 lg:-ml-16 md:relative md:z-10">
+          <h2 class="text-left font-display text-[44px] lg:text-[52px] leading-[1.1] tracking-wide text-white mb-10">
+            CHAQUE COLLABORATION<br />
+            <span class="font-italic-serif italic font-light">comprend</span>
+          </h2>
+          <ul class="space-y-4 text-[16px] leading-[1.8] text-white/85 max-w-md">
+            {included.map((item, i) => (
+              <li class="flex gap-4 items-start">
+                <span aria-hidden="true" class="text-white mt-1">✦</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   </section>
