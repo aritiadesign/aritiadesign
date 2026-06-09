@@ -162,11 +162,6 @@ const modalites = [
   {/* ───────────────────────── 4. TIERS — CARTES PACKS ───────────────────────── */}
   <section class="bg-white px-6 pb-24 md:pb-36">
     <div class="mx-auto max-w-[1300px] space-y-16 md:space-y-20 lg:space-y-28">
-      <div class="text-center">
-        <div class="inline-block px-8 py-3 bg-[#1a1a1a] text-white text-[11px] tracking-[0.32em] uppercase" data-i18n="investment.tiers.label">
-          ✦ Pack <span class="amp">&amp;</span> formule ✦
-        </div>
-      </div>
       {tiers.map((tier, i) => {
         const cardBg = tier.accent === "burgundy" ? "#640613" : "#1A1A1A";
         return (
