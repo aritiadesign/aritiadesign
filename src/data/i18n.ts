@@ -110,8 +110,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "Based in Haute-Garonne, Aritia Design works with clients in search of unique experiences, where aesthetics and emotion take centre stage."
   },
   "home.about.p2": {
-    fr: "Forte d'une formation en design et d'une passion pour l'art de sublimer l'instant, l'agence développe un savoir-faire complet alliant minutie, création et mise en scène.",
-    en: "Strong in our design training and our passion for the art of elevating the moment, the agency cultivates a complete craft uniting precision, creation and staging."
+    fr: "Formée au design et passionnée par l'art de sublimer l'instant, je développe un savoir-faire complet alliant minutie, création et mise en scène.",
+    en: "Trained in design and passionate about the art of elevating the moment, I cultivate a complete craft uniting precision, creation and staging."
   },
   "home.about.cta": { fr: "En savoir plus", en: "Learn more" },
   "home.aritia.portrait.alt": { fr: "Aritia, fondatrice d'Aritia Design", en: "Aritia, founder of Aritia Design" },
