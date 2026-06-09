@@ -171,9 +171,9 @@ const modalites = [
           >
             {/* Image — static or flipbook */}
             {tier.flipbook ? (
-              <div class="order-1 lg:order-1 lg:self-start lg:py-8 lg:pl-8">
+              <div class="order-1 lg:order-1 lg:h-full lg:flex lg:flex-col lg:py-8 lg:pl-8">
               <div
-                class="flipbook aspect-[1587/1300] relative bg-[#1A1A1A] p-4 md:p-6 w-full overflow-hidden select-none group"
+                class="flipbook aspect-[1587/1300] relative bg-[#1A1A1A] p-4 md:p-6 w-full lg:my-auto overflow-hidden select-none group"
                 data-flipbook
                 tabindex="0"
                 aria-label={`Flipbook ${tier.title} — utilisez les flèches gauche / droite pour naviguer`}
