@@ -56,6 +56,9 @@ const tiers = [
     flipbook: Array.from({ length: 23 }, (_, i) =>
       `/images/flipbook-investissement/${String(i + 1).padStart(2, "0")}.jpg`
     ),
+    // Per-page watermark opacity (index 0 = cover, already branded → hide).
+    // Tweak any index to override the 0.06 default for that page.
+    watermarkOpacities: { 0: 0 } as Record<number, number>,
     accent: "ink",
   },
 ];
@@ -201,24 +204,32 @@ const faqs = [
                 tabindex="0"
                 aria-label={`Flipbook ${tier.title} — utilisez les flèches gauche / droite pour naviguer`}
               >
-                {tier.flipbook.map((src, idx) => (
-                  <img
-                    src={src}
-                    alt={`${tier.title} — page ${idx + 1}`}
-                    loading={idx < 2 ? "eager" : "lazy"}
-                    data-page={idx}
-                    class="absolute inset-0 object-contain transition-opacity duration-500 ease-out"
-                    style={`opacity: ${idx === 0 ? 1 : 0}; z-index: ${idx === 0 ? 2 : 1}; pointer-events: ${idx === 0 ? "auto" : "none"};`}
-                  />
-                ))}
-                {/* Watermark overlay — Aritia Design logo, centered, large for real anti-crop protection */}
-                <img
-                  src="/images/watermark-ad.svg"
-                  alt=""
-                  aria-hidden="true"
-                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3 max-w-[420px] opacity-[0.06] pointer-events-none z-[3] select-none"
-                  style="filter: invert(1);"
-                />
+                {tier.flipbook.map((src, idx) => {
+                  const watermarkOpacity = tier.watermarkOpacities?.[idx] ?? 0.06;
+                  return (
+                    <div
+                      data-page={idx}
+                      class="absolute inset-0 transition-opacity duration-500 ease-out"
+                      style={`opacity: ${idx === 0 ? 1 : 0}; z-index: ${idx === 0 ? 2 : 1}; pointer-events: ${idx === 0 ? "auto" : "none"};`}
+                    >
+                      <img
+                        src={src}
+                        alt={`${tier.title} — page ${idx + 1}`}
+                        loading={idx < 2 ? "eager" : "lazy"}
+                        class="absolute inset-0 w-full h-full object-contain"
+                      />
+                      {watermarkOpacity > 0 && (
+                        <img
+                          src="/images/watermark-ad.svg"
+                          alt=""
+                          aria-hidden="true"
+                          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3 max-w-[420px] pointer-events-none select-none"
+                          style={`opacity: ${watermarkOpacity}; filter: invert(1);`}
+                        />
+                      )}
+                    </div>
+                  );
+                })}
                 <button
                   type="button"
                   data-prev
@@ -482,7 +493,7 @@ const faqs = [
 <script>
   // Flipbook navigation — crossfade between pages, keyboard + click support.
   document.querySelectorAll<HTMLElement>("[data-flipbook]").forEach((root) => {
-    const pages = Array.from(root.querySelectorAll<HTMLImageElement>("[data-page]"));
+    const pages = Array.from(root.querySelectorAll<HTMLElement>("[data-page]"));
     const prevBtn = root.querySelector<HTMLButtonElement>("[data-prev]");
     const nextBtn = root.querySelector<HTMLButtonElement>("[data-next]");
     let current = 0;
