@@ -171,8 +171,9 @@ const modalites = [
           >
             {/* Image — static or flipbook */}
             {tier.flipbook ? (
+              <div class="order-1 lg:order-1 flex items-center justify-center lg:p-8">
               <div
-                class="flipbook aspect-[1414/1000] relative bg-[#1A1A1A] p-4 md:p-6 order-1 lg:order-1 overflow-hidden select-none group lg:self-center lg:my-6 lg:ml-6"
+                class="flipbook aspect-[1414/1000] relative bg-[#1A1A1A] p-4 md:p-6 w-full overflow-hidden select-none group"
                 data-flipbook
                 tabindex="0"
                 aria-label={`Flipbook ${tier.title} — utilisez les flèches gauche / droite pour naviguer`}
@@ -207,6 +208,7 @@ const modalites = [
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l6 6-6 6"/></svg>
                   </span>
                 </button>
+              </div>
               </div>
             ) : (
               <div class="aspect-[4/3] lg:aspect-auto relative bg-[#0e0e0e] order-1 lg:order-1 overflow-hidden">
