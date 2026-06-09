@@ -274,28 +274,28 @@ const faqs = [
             )}
 
             {/* Texte */}
-            <div class="p-10 md:p-14 lg:p-16 text-white flex flex-col justify-center order-2 lg:order-2">
-              <h3 class="font-display leading-[1.1] tracking-wide text-[32px] md:text-[40px] lg:text-[48px]">
+            <div class="p-7 md:p-14 lg:p-16 text-white flex flex-col justify-center order-2 lg:order-2">
+              <h3 class="font-display leading-[1.1] tracking-wide text-[26px] md:text-[40px] lg:text-[48px]">
                 <span data-i18n={`investment.tier.${i}.title`}>{tier.title}</span>
                 {tier.italic && <> <span class="font-italic-serif italic font-light" data-i18n={`investment.tier.${i}.italic`}>{tier.italic.split("&").map((part, idx, arr) => (<>{part}{idx < arr.length - 1 && <span class="amp">&amp;</span>}</>))}</span></>}
               </h3>
-              <p class="mt-8 text-[15px] md:text-[16px] leading-[1.85] text-white/90 max-w-md" data-i18n={`investment.tier.${i}.desc`}>{tier.desc}</p>
-              <p class="mt-10 text-[14px] md:text-[15px] tracking-[0.22em] uppercase lining-nums tabular-nums text-white/95" data-i18n={`investment.tier.${i}.price`}>{tier.price}</p>
+              <p class="mt-6 md:mt-8 text-[14px] md:text-[16px] leading-[1.8] text-white/90 max-w-md" data-i18n={`investment.tier.${i}.desc`}>{tier.desc}</p>
+              <p class="mt-7 md:mt-10 text-[12px] md:text-[15px] tracking-[0.22em] uppercase lining-nums tabular-nums text-white/95" data-i18n={`investment.tier.${i}.price`}>{tier.price}</p>
               {tier.scope && (
                 <p
-                  class="mt-3 text-[14px] md:text-[16px] leading-[1.55] italic tracking-[0.5px] text-white/75"
+                  class="mt-3 text-[13px] md:text-[16px] leading-[1.55] italic tracking-[0.5px] text-white/75"
                   style="font-variant-numeric: lining-nums tabular-nums; font-feature-settings: 'lnum' 1, 'tnum' 1;"
                   data-i18n={`investment.tier.${i}.scope`}
                   set:html={tier.scope}
                 ></p>
               )}
 
-              <details class="group mt-10 border-t border-white/15 pt-4">
-                <summary class="cursor-pointer list-none flex items-center justify-between gap-3 text-[14px] md:text-[15px] tracking-[0.22em] uppercase text-white/90">
+              <details class="group mt-7 md:mt-10 border-t border-white/15 pt-4">
+                <summary class="cursor-pointer list-none flex items-center justify-between gap-3 text-[12px] md:text-[15px] tracking-[0.22em] uppercase text-white/90">
                   <span data-i18n="investment.included.summary">✦ Compris dans l'expérience</span>
                   <span class="text-[18px] leading-none transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <ul class="mt-5 space-y-2 text-[15px] md:text-[16px] leading-[1.7] text-white/85">
+                <ul class="mt-5 space-y-2 text-[14px] md:text-[16px] leading-[1.65] text-white/85">
                   {tier.bullets.map((b, idx) => (
                     <li class="flex gap-2.5 items-start">
                       <span aria-hidden="true" class="inline-block w-[3px] h-[3px] rounded-full bg-current mt-[9px] shrink-0"></span>
