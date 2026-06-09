@@ -68,8 +68,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "<span class=\"font-italic-serif italic\">The</span> CREATIVE<br />PROCESS"
   },
   "home.method.p": {
-    fr: "De la première inspiration au jour J, je vous accompagne avec sensibilité et exigence dans la création d'un univers qui vous ressemble&nbsp;– une approche sur-mesure, pensée pour faire naître la beauté et l'émotion.",
-    en: "From the first spark of inspiration to the day itself, I guide you with sensibility and rigour in creating a world that reflects you&nbsp;– a bespoke approach, designed to give rise to beauty and emotion."
+    fr: "De la première inspiration au jour J, nous vous accompagnons avec sensibilité et exigence dans la création d'un univers qui vous ressemble&nbsp;– une approche sur-mesure, pensée pour faire naître la beauté et l'émotion.",
+    en: "From the first spark of inspiration to the day itself, we guide you with sensibility and rigour in creating a world that reflects you&nbsp;– a bespoke approach, designed to give rise to beauty and emotion."
   },
   "home.method.cta": { fr: "Découvrir", en: "Discover" },
 
@@ -79,8 +79,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "WEDDINGS<br /><span class=\"font-italic-serif italic\">Special Occasions</span>"
   },
   "home.mariage.p": {
-    fr: "À travers une approche transversale mêlant design floral, scénographie immersive, papeterie personnalisée et identité visuelle, je conçois à vos côtés un univers esthétique global, où chaque choix incarne avec exigence l'essence de votre histoire.",
-    en: "Through a cross-disciplinary approach blending floral design, immersive set design, bespoke stationery and visual identity, I craft an overarching aesthetic world by your side, where every choice rigorously embodies the essence of your story."
+    fr: "À travers une approche transversale mêlant design floral, scénographie immersive, papeterie personnalisée et identité visuelle, nous concevons à vos côtés un univers esthétique global, où chaque choix incarne avec exigence l'essence de votre histoire.",
+    en: "Through a cross-disciplinary approach blending floral design, immersive set design, bespoke stationery and visual identity, we craft an overarching aesthetic world by your side, where every choice rigorously embodies the essence of your story."
   },
   "home.mariage.cta": { fr: "Explorer", en: "Explore" },
 
@@ -110,8 +110,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "Based in Haute-Garonne, Aritia Design works with clients in search of unique experiences, where aesthetics and emotion take centre stage."
   },
   "home.about.p2": {
-    fr: "Formée au design et passionnée par l'art de sublimer l'instant, je développe un savoir-faire complet alliant minutie, création et mise en scène.",
-    en: "Trained in design and passionate about the art of elevating the moment, I cultivate a complete craft uniting precision, creation and staging."
+    fr: "Forte d'une formation en design et d'une passion pour l'art de sublimer l'instant, l'agence développe un savoir-faire complet alliant minutie, création et mise en scène.",
+    en: "Strong in our design training and our passion for the art of elevating the moment, the agency cultivates a complete craft uniting precision, creation and staging."
   },
   "home.about.cta": { fr: "En savoir plus", en: "Learn more" },
   "home.aritia.portrait.alt": { fr: "Aritia, fondatrice d'Aritia Design", en: "Aritia, founder of Aritia Design" },
@@ -220,8 +220,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "<span>ELEGANCE</span> <span class=\"font-italic-serif italic font-light\">tailored</span><br /><span class=\"font-italic-serif italic font-light\">in your</span> <span>IMAGE</span>"
   },
   "services.packs.intro": {
-    fr: "Chaque projet est unique, c'est pourquoi mes prestations s'articulent autour de packages sur-mesure et de formules personnalisables.",
-    en: "Every project is unique, which is why my offerings are built around bespoke packages and customisable formats."
+    fr: "Chaque projet est unique, c'est pourquoi nos prestations s'articulent autour de packages sur-mesure et de formules personnalisables.",
+    en: "Every project is unique, which is why our offerings are built around bespoke packages and customisable formats."
   },
 
   // Pack 0 (L'EXCEPTION)
@@ -327,23 +327,23 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "WHAT ARE YOUR RATES AND HOW DO YOUR PACKAGES AND OFFERINGS WORK?"
   },
   "services.faq.2.a": {
-    fr: "Chaque évènement fait l'objet d'une étude personnalisée. Pour offrir un cadre clair à votre projet, j'ai structuré mes interventions autour de deux niveaux de conception globale et de deux formules spécialisées&nbsp;:<br /><br />— Design intégral — L'Exception&nbsp;: La prise en charge absolue de votre évènement, de la direction artistique à la création de structures et décors sur-mesure, incluant fleurs et papeterie fine. Cet accompagnement intègre le stylisme des tables pour garantir une esthétique cohérente et une exécution maîtrisée.<br /><br />— Décor &amp; Identité visuelle&nbsp;: La création de l'ambiance esthétique générale et l'harmonisation visuelle de vos espaces.<br /><br />— L'Art floral&nbsp;: La conception artistique et la réalisation de vos décors et structures florales.<br /><br />— Papeterie fine&nbsp;: La création graphique et l'impression de votre papeterie et signalétique sur-mesure.<br /><br />Ces bases sont entièrement modulables et peuvent être enrichies d'options selon vos besoins. Les tarifs dépendent exclusivement de l'ampleur technique et logistique de votre projet. Un devis transparent et détaillé vous est présenté après notre premier échange, sur la base de votre cahier des charges.",
-    en: "Every event is the subject of a personalised study. To give your project a clear framework, I've structured my work around two levels of overall design and two specialised offerings:<br /><br />— Full Design — The Exception: complete handling of your event, from creative direction to the design of bespoke structures and decor, including flowers and fine stationery. This service includes table styling to ensure a coherent aesthetic and a mastered execution.<br /><br />— Decor &amp; Visual Identity: the creation of the overall aesthetic atmosphere and the visual harmonisation of your spaces.<br /><br />— Floral Art: the artistic conception and execution of your floral decor and structures.<br /><br />— Fine Stationery: the graphic design and printing of your bespoke stationery and signage.<br /><br />These foundations are fully modular and can be enriched with options to suit your needs. Rates depend solely on the technical and logistical scale of your project. A transparent, detailed quote is provided after our first conversation, based on your brief."
+    fr: "Chaque évènement fait l'objet d'une étude personnalisée. Pour offrir un cadre clair à votre projet, nous avons structuré nos interventions autour de deux niveaux de conception globale et de deux formules spécialisées&nbsp;:<br /><br />— Design intégral — L'Exception&nbsp;: La prise en charge absolue de votre évènement, de la direction artistique à la création de structures et décors sur-mesure, incluant fleurs et papeterie fine. Cet accompagnement intègre le stylisme des tables pour garantir une esthétique cohérente et une exécution maîtrisée.<br /><br />— Décor &amp; Identité visuelle&nbsp;: La création de l'ambiance esthétique générale et l'harmonisation visuelle de vos espaces.<br /><br />— L'Art floral&nbsp;: La conception artistique et la réalisation de vos décors et structures florales.<br /><br />— Papeterie fine&nbsp;: La création graphique et l'impression de votre papeterie et signalétique sur-mesure.<br /><br />Ces bases sont entièrement modulables et peuvent être enrichies d'options selon vos besoins. Les tarifs dépendent exclusivement de l'ampleur technique et logistique de votre projet. Un devis transparent et détaillé vous est présenté après notre premier échange, sur la base de votre cahier des charges.",
+    en: "Every event is the subject of a personalised study. To give your project a clear framework, we have structured our work around two levels of overall design and two specialised offerings:<br /><br />— Full Design — The Exception: complete handling of your event, from creative direction to the design of bespoke structures and decor, including flowers and fine stationery. This service includes table styling to ensure a coherent aesthetic and a mastered execution.<br /><br />— Decor &amp; Visual Identity: the creation of the overall aesthetic atmosphere and the visual harmonisation of your spaces.<br /><br />— Floral Art: the artistic conception and execution of your floral decor and structures.<br /><br />— Fine Stationery: the graphic design and printing of your bespoke stationery and signage.<br /><br />These foundations are fully modular and can be enriched with options to suit your needs. Rates depend solely on the technical and logistical scale of your project. A transparent, detailed quote is provided after our first conversation, based on your brief."
   },
   "services.faq.3.q": {
     fr: "TRAVAILLEZ-VOUS UNIQUEMENT EN HAUTE-GARONNE OU VOUS DÉPLACEZ-VOUS AILLEURS ?",
     en: "DO YOU ONLY WORK IN HAUTE-GARONNE OR DO YOU TRAVEL ELSEWHERE?"
   },
   "services.faq.3.a": {
-    fr: "Basée en Haute-Garonne, je travaille principalement autour de Toulouse et ses environs, mais je peux me déplacer dans d'autres régions, voire à l'étranger, selon les projets.",
-    en: "Based in Haute-Garonne, I work mainly around Toulouse and the surrounding area, but I can travel to other regions, or even abroad, depending on the project."
+    fr: "Basée en Haute-Garonne, notre agence intervient principalement autour de Toulouse et ses environs. Nous pouvons également nous déplacer dans d'autres régions, voire à l'étranger, selon les projets.",
+    en: "Based in Haute-Garonne, our agency works mainly around Toulouse and the surrounding area. We can also travel to other regions, or even abroad, depending on the project."
   },
   "services.faq.4.q": {
     fr: "À PARTIR DE QUAND FAUT-IL VOUS CONTACTER POUR PRÉPARER UN MARIAGE ?",
     en: "HOW FAR IN ADVANCE SHOULD I CONTACT YOU TO PREPARE A WEDDING?"
   },
   "services.faq.4.a": {
-    fr: "Idéalement, entre 8 et 12 mois avant la date du mariage afin d'avoir le temps de définir le concept, de sélectionner les prestataires et d'organiser chaque détail. Néanmoins, selon mes disponibilités, je peux m'adapter à des délais plus courts.",
+    fr: "Idéalement, entre 8 et 12 mois avant la date du mariage afin d'avoir le temps de définir le concept, de sélectionner les prestataires et d'organiser chaque détail. Néanmoins, selon nos disponibilités, nous pouvons nous adapter à des délais plus courts.",
     en: "Ideally, between 8 and 12 months before the wedding date, so there is time to define the concept, select suppliers and organise every detail. That said, depending on my availability, I can adapt to shorter timelines."
   },
 
@@ -364,8 +364,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
 
   "process.step.1.title": { fr: "PREMIER ÉCHANGE", en: "FIRST CONVERSATION" },
   "process.step.1.body": {
-    fr: "Tout commence par un échange. J'apprends à vous connaître, à comprendre votre histoire, vos envies, vos inspirations. Nous définissons ensemble les contours de votre univers, les priorités, les émotions à transmettre. À l'issue de cet échange, un devis personnalisé vous est remis pour validation.",
-    en: "It all begins with a conversation. I get to know you, your story, your wishes, your inspirations. Together we define the contours of your world, the priorities, the emotions to convey. At the end of this exchange, a personalised quote is sent for your approval."
+    fr: "Tout commence par un échange. Nous apprenons à vous connaître, à comprendre votre histoire, vos envies, vos inspirations. Nous définissons ensemble les contours de votre univers, les priorités, les émotions à transmettre. À l'issue de cet échange, un devis personnalisé vous est remis pour validation.",
+    en: "It all begins with a conversation. We get to know you, your story, your wishes, your inspirations. Together we define the contours of your world, the priorities, the emotions to convey. At the end of this exchange, a personalised quote is sent for your approval."
   },
   "process.step.2.title": { fr: "SIGNATURE DU DEVIS <span class=\"amp\">&amp;</span> CONTRAT", en: "QUOTE <span class=\"amp\">&amp;</span> CONTRACT SIGNING" },
   "process.step.2.body": {
@@ -379,18 +379,18 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "process.step.4.title": { fr: "CONCEPTION", en: "DESIGN" },
   "process.step.4.body": {
-    fr: "Je traduis cette vision en un projet complet, harmonisant les éléments visuels et scénographiques : compositions florales, papeterie, signalétique, agencement des espaces. Chaque élément trouve sa place avec justesse et cohérence.",
-    en: "I translate this vision into a complete project, harmonising visual and scenographic elements: floral compositions, stationery, signage, spatial layout. Every element finds its place with precision and coherence."
+    fr: "Nous traduisons cette vision en un projet complet, harmonisant les éléments visuels et scénographiques : compositions florales, papeterie, signalétique, agencement des espaces. Chaque élément trouve sa place avec justesse et cohérence.",
+    en: "We translate this vision into a complete project, harmonising visual and scenographic elements: floral compositions, stationery, signage, spatial layout. Every element finds its place with precision and coherence."
   },
   "process.step.5.title": { fr: "ORCHESTRATION <span class=\"amp\">&amp;</span> FINALISATION", en: "ORCHESTRATION <span class=\"amp\">&amp;</span> FINALISATION" },
   "process.step.5.body": {
-    fr: "Je pilote la réalisation de chaque élément : sourcing, production, ajustements, échanges avec vous ou votre wedding planner. Vous êtes accompagnés en toute sérénité.",
-    en: "I lead the production of every element: sourcing, production, adjustments, exchanges with you or your wedding planner. You are supported with complete serenity."
+    fr: "Nous pilotons la réalisation de chaque élément : sourcing, production, ajustements, échanges avec vous ou votre wedding planner. Vous êtes accompagnés en toute sérénité.",
+    en: "We lead the production of every element: sourcing, production, adjustments, exchanges with you or your wedding planner. You are supported with complete serenity."
   },
   "process.step.6.title": { fr: "INSTALLATION <span class=\"amp\">&amp;</span> MISE EN SCÈNE", en: "INSTALLATION <span class=\"amp\">&amp;</span> STAGING" },
   "process.step.6.body": {
-    fr: "Le jour J, l'univers prend vie. Je mets en place chaque élément du décor, compose les fleurs in situ, ajuste les volumes et sublime les espaces pour offrir une expérience à la hauteur de votre histoire. Un décor vivant, élégant et fluide, à votre image.",
-    en: "On the day itself, the world comes alive. I install every decor element, compose the flowers on site, adjust the volumes and elevate the spaces to deliver an experience worthy of your story. A decor that is alive, elegant and seamless, in your image."
+    fr: "Le jour J, l'univers prend vie. Nous mettons en place chaque élément du décor, composons les fleurs in situ, ajustons les volumes et sublimons les espaces pour offrir une expérience à la hauteur de votre histoire. Un décor vivant, élégant et fluide, à votre image.",
+    en: "On the day itself, the world comes alive. We install every decor element, compose the flowers on site, adjust the volumes and elevate the spaces to deliver an experience worthy of your story. A decor that is alive, elegant and seamless, in your image."
   },
   "process.flipbook.prev": { fr: "Page précédente", en: "Previous page" },
   "process.flipbook.next": { fr: "Page suivante", en: "Next page" },
@@ -399,7 +399,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     fr: "Mon processus créatif allie écoute,<br class=\"hidden md:inline\" /> intuition et exigence esthétique, pour<br class=\"hidden md:inline\" /> concevoir une expérience sur mesure et<br class=\"hidden md:inline\" /> propre à votre histoire.",
     en: "My creative process combines listening,<br class=\"hidden md:inline\" /> intuition and aesthetic rigour, to<br class=\"hidden md:inline\" /> design a bespoke experience<br class=\"hidden md:inline\" /> true to your story."
   },
-  "process.closing.cta": { fr: "Contactez-moi", en: "Contact me" },
+  "process.closing.cta": { fr: "Contactez-nous", en: "Contact us" },
 
   // ─────────────────────────── Portfolio page ───────────────────────────
   "portfolio.hero.title": { fr: "Portfolio", en: "Portfolio" },
@@ -440,7 +440,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     fr: "Merci de remplir ce formulaire avec soin. Je reviendrai vers vous dans les 48 heures ouvrées afin de planifier un premier rendez-vous téléphonique, en visio ou en présentiel.",
     en: "Please fill in this form with care. I'll get back to you within 48 working hours to schedule a first appointment, by phone, video or in person."
   },
-  "contact.notes.p2": { fr: "Vous pouvez aussi m'écrire directement à l'adresse suivante&nbsp;:", en: "You can also write to me directly at:" },
+  "contact.notes.p2": { fr: "Vous pouvez aussi nous écrire directement à l'adresse suivante&nbsp;:", en: "You can also write to us directly at:" },
   "contact.h2": { fr: "FAISONS<br />CONNAISSANCE", en: "LET'S MEET" },
   "contact.p": {
     fr: "Votre histoire mérite une attention toute particulière, un regard sensible, et une mise en scène à la hauteur de vos émotions. Je serais honorée de vous accompagner dans la création d'un univers qui vous ressemble.",
