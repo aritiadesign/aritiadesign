@@ -53,6 +53,9 @@ const tiers = [
     ],
     desc: "Vous repartez avec notre vision et l'orchestrez avec vos propres prestataires. Une option idéale pour celles et ceux qui souhaitent une signature artistique forte sans formule complète.",
     image: "/images/flipbook/01.jpg",
+    flipbook: Array.from({ length: 24 }, (_, i) =>
+      `/images/flipbook/${String(i + 1).padStart(2, "0")}.jpg`
+    ),
     accent: "ink",
   },
 ];
@@ -166,16 +169,56 @@ const modalites = [
             class="grid lg:grid-cols-2 gap-0 overflow-hidden"
             style={`background-color: ${cardBg};`}
           >
-            {/* Image */}
-            <div class="aspect-[4/3] lg:aspect-auto relative bg-[#0e0e0e] order-1 lg:order-1 overflow-hidden">
-              <img
-                src={tier.image}
-                alt={tier.title}
-                class="absolute inset-0 w-full h-full object-cover"
-                loading="lazy"
-                onerror="this.style.background='linear-gradient(135deg,#2a2a2a,#1a1a1a)';this.removeAttribute('src');"
-              />
-            </div>
+            {/* Image — static or flipbook */}
+            {tier.flipbook ? (
+              <div
+                class="flipbook aspect-[4/3] lg:aspect-auto relative bg-[#0e0e0e] order-1 lg:order-1 overflow-hidden select-none group"
+                data-flipbook
+                tabindex="0"
+                aria-label={`Flipbook ${tier.title} — utilisez les flèches gauche / droite pour naviguer`}
+              >
+                {tier.flipbook.map((src, idx) => (
+                  <img
+                    src={src}
+                    alt={`${tier.title} — page ${idx + 1}`}
+                    loading={idx < 2 ? "eager" : "lazy"}
+                    data-page={idx}
+                    class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-out"
+                    style={`opacity: ${idx === 0 ? 1 : 0}; z-index: ${idx === 0 ? 2 : 1}; pointer-events: ${idx === 0 ? "auto" : "none"};`}
+                  />
+                ))}
+                <button
+                  type="button"
+                  data-prev
+                  class="absolute inset-y-0 left-0 w-1/2 z-[4] cursor-w-resize flex items-center justify-start pl-3 md:pl-6"
+                  aria-label="Page précédente"
+                >
+                  <span class="inline-flex items-center justify-center w-9 h-9 md:w-11 md:h-11 rounded-full bg-white/85 backdrop-blur-sm text-[var(--color-ink)] shadow hover:bg-white transition">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 6l-6 6 6 6"/></svg>
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  data-next
+                  class="absolute inset-y-0 right-0 w-1/2 z-[4] cursor-e-resize flex items-center justify-end pr-3 md:pr-6"
+                  aria-label="Page suivante"
+                >
+                  <span class="inline-flex items-center justify-center w-9 h-9 md:w-11 md:h-11 rounded-full bg-white/85 backdrop-blur-sm text-[var(--color-ink)] shadow hover:bg-white transition">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l6 6-6 6"/></svg>
+                  </span>
+                </button>
+              </div>
+            ) : (
+              <div class="aspect-[4/3] lg:aspect-auto relative bg-[#0e0e0e] order-1 lg:order-1 overflow-hidden">
+                <img
+                  src={tier.image}
+                  alt={tier.title}
+                  class="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                  onerror="this.style.background='linear-gradient(135deg,#2a2a2a,#1a1a1a)';this.removeAttribute('src');"
+                />
+              </div>
+            )}
 
             {/* Texte */}
             <div class="p-10 md:p-14 lg:p-16 text-white flex flex-col justify-center order-2 lg:order-2">
@@ -320,3 +363,33 @@ const modalites = [
     </a>
   </section>
 </Layout>
+
+<script>
+  // Flipbook navigation — crossfade between pages, keyboard + click support.
+  document.querySelectorAll<HTMLElement>("[data-flipbook]").forEach((root) => {
+    const pages = Array.from(root.querySelectorAll<HTMLImageElement>("[data-page]"));
+    const prevBtn = root.querySelector<HTMLButtonElement>("[data-prev]");
+    const nextBtn = root.querySelector<HTMLButtonElement>("[data-next]");
+    let current = 0;
+
+    function show(i: number) {
+      const n = pages.length;
+      const next = ((i % n) + n) % n;
+      pages.forEach((p, idx) => {
+        const active = idx === next;
+        p.style.opacity = active ? "1" : "0";
+        p.style.zIndex = active ? "2" : "1";
+        p.style.pointerEvents = active ? "auto" : "none";
+      });
+      current = next;
+    }
+
+    prevBtn?.addEventListener("click", () => show(current - 1));
+    nextBtn?.addEventListener("click", () => show(current + 1));
+
+    root.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") { e.preventDefault(); show(current - 1); }
+      if (e.key === "ArrowRight") { e.preventDefault(); show(current + 1); }
+    });
+  });
+</script>
