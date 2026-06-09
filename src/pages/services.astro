@@ -68,6 +68,7 @@ const aLaCarte = [
     title: "Papeterie fine",
     price: "à partir de 800 €",
     scope: "≤50 invités, faire-part et menus",
+    image: "/images/services-papeterie.jpg",
     bullets: [
       "Concept graphique et palette typographique",
       "2 maquettes et bon à tirer (BAT) final",
@@ -81,6 +82,7 @@ const aLaCarte = [
     title: "Conception florale",
     price: "à partir de 2 700 €",
     scope: "≤50 invités, fleurs de saison, un espace",
+    image: "/images/services-floral.jpg",
     bullets: [
       "Moodboard floral et palette de variétés",
       "Sourcing fleurs (grossiste / producteur local)",
@@ -94,6 +96,7 @@ const aLaCarte = [
     title: "Décor & scénographie",
     price: "à partir de 3 200 €",
     scope: "≤50 invités, un espace principal",
+    image: "/images/services-decor.jpg",
     bullets: [
       "Concept décoratif et plan de scénographie",
       "Sélection et location du mobilier",
@@ -195,6 +198,8 @@ const faqs = [
         .tier-card[data-active="true"] { opacity: 1; transform: scale(1); }
         .tier-scope br { display: none; }
       }
+      .alacarte-tab { transition: color 0.2s ease, border-color 0.2s ease; }
+      .alacarte-tab[data-active="true"] { color: var(--color-ink); border-bottom-color: var(--color-ink); }
     </style>
     <div class="tiers-carousel mx-auto max-w-[1300px] flex md:block items-start overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none gap-4 md:gap-0 md:space-y-20 lg:space-y-28 px-[10vw] md:px-0 pb-2 md:pb-0">
       {tiers.map((tier, i) => {
@@ -345,7 +350,55 @@ const faqs = [
         artistique et son exécution complète.
       </p>
 
-      <div class="mt-16 max-w-2xl mx-auto divide-y divide-[var(--color-ink)]/15">
+      {/* Mobile: tabs (Papeterie / Floral / Décor) — md+ uses the accordion below */}
+      <div class="md:hidden mt-10 max-w-md mx-auto text-left">
+        <div role="tablist" class="alacarte-tabs flex border-b border-[var(--color-ink)]/15">
+          {aLaCarte.map((item, i) => {
+            const shortLabel = item.title.split(/[\s&]/)[0];
+            return (
+              <button
+                type="button"
+                role="tab"
+                class="alacarte-tab flex-1 py-3 text-[11px] tracking-[0.18em] uppercase text-[var(--color-ink-soft)] border-b-2 border-transparent transition"
+                data-tab={i}
+                data-active={i === 0 ? "true" : "false"}
+              >
+                {shortLabel}
+              </button>
+            );
+          })}
+        </div>
+        <div class="mt-7">
+          {aLaCarte.map((item, i) => (
+            <div class="alacarte-panel" data-panel={i} style={`display: ${i === 0 ? "block" : "none"};`}>
+              <div class="flex items-baseline justify-between gap-4">
+                <h3 class="font-display text-[20px] text-[var(--color-ink)]">{item.title.split("&").map((part, idx, arr) => (<>{part}{idx < arr.length - 1 && <span class="amp">&amp;</span>}</>))}</h3>
+                <span class="text-[16px] text-[var(--color-ink-soft)] whitespace-nowrap shrink-0" style="font-family: 'Noto Serif', Georgia, serif; font-style: italic;">{item.price}</span>
+              </div>
+              {item.scope && (
+                <p class="mt-2 text-[12px] leading-[1.55] font-baskerville tracking-[0.3px] text-[var(--color-muted)]">{item.scope}</p>
+              )}
+              <ul class="mt-5 space-y-2 text-[13px] leading-[1.65] text-[var(--color-ink-soft)]">
+                {item.bullets.map((b, idx) => (
+                  <li class="flex gap-2.5 items-start">
+                    <span aria-hidden="true" class="inline-block w-[3px] h-[3px] rounded-full bg-current mt-[9px] shrink-0"></span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="/contact"
+                class="block w-fit mx-auto mt-7 px-8 py-2.5 border border-[var(--color-ink)] text-[10px] tracking-[0.22em] uppercase text-[var(--color-ink)] transition whitespace-nowrap"
+              >
+                Réserver
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop: accordion */}
+      <div class="hidden md:block mt-16 max-w-2xl mx-auto divide-y divide-[var(--color-ink)]/15">
         {aLaCarte.map((item, i) => (
           <details class="group py-6 text-left">
             <summary class="cursor-pointer list-none flex items-baseline justify-between gap-6">
@@ -526,6 +579,19 @@ const faqs = [
     root.addEventListener("keydown", (e) => {
       if (e.key === "ArrowLeft") { e.preventDefault(); show(current - 1); }
       if (e.key === "ArrowRight") { e.preventDefault(); show(current + 1); }
+    });
+  });
+
+  // À la carte mobile tabs: switch active tab + panel on click.
+  document.querySelectorAll<HTMLElement>(".alacarte-tabs").forEach((tabs) => {
+    const tabButtons = Array.from(tabs.querySelectorAll<HTMLButtonElement>(".alacarte-tab"));
+    const panels = Array.from(tabs.parentElement?.querySelectorAll<HTMLElement>(".alacarte-panel") ?? []);
+    tabButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const idx = btn.dataset.tab;
+        tabButtons.forEach((b) => b.setAttribute("data-active", b.dataset.tab === idx ? "true" : "false"));
+        panels.forEach((p) => { p.style.display = p.dataset.panel === idx ? "block" : "none"; });
+      });
     });
   });
 
