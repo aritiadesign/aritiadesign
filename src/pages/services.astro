@@ -470,15 +470,15 @@ const faqs = [
           onerror="this.style.background='linear-gradient(135deg,#e8d8c0,#c69d6a)';this.removeAttribute('src');"
         />
       </div>
-      <div class="bg-white relative z-10 -mt-24 mx-5 px-6 pt-8 pb-9 text-center">
-        <h2 class="font-display text-[28px] leading-[1.15] tracking-wide text-[var(--color-ink)] mb-6" data-i18n="investment.included.h2">
+      <div class="bg-[#1A1A1A] relative z-10 -mt-24 mx-5 px-6 pt-8 pb-9 text-center">
+        <h2 class="font-display text-[28px] leading-[1.15] tracking-wide text-white mb-6" data-i18n="investment.included.h2">
           CHAQUE COLLABORATION<br />
           <span class="font-italic-serif italic font-light">comprend</span>
         </h2>
-        <ul class="space-y-3 text-[14px] leading-[1.7] text-[var(--color-ink-soft)] text-left max-w-[280px] mx-auto">
+        <ul class="space-y-3 text-[14px] leading-[1.7] text-white/85 text-left max-w-[280px] mx-auto">
           {included.map((item, i) => (
             <li class="flex gap-3 items-start">
-              <span aria-hidden="true" class="text-[var(--color-ink)] mt-1 leading-none">✦</span>
+              <span aria-hidden="true" class="text-white mt-1 leading-none">✦</span>
               <span data-i18n={`investment.included.item.${i}`}>{item}</span>
             </li>
           ))}
