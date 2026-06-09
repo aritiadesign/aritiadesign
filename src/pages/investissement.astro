@@ -167,11 +167,11 @@ const modalites = [
             style={`background-color: ${cardBg};`}
           >
             {/* Image */}
-            <div class="aspect-[4/3] bg-[#0e0e0e] order-1 lg:order-1 overflow-hidden">
+            <div class="aspect-[4/3] lg:aspect-auto relative bg-[#0e0e0e] order-1 lg:order-1 overflow-hidden">
               <img
                 src={tier.image}
                 alt={tier.title}
-                class="w-full h-full object-cover"
+                class="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
                 onerror="this.style.background='linear-gradient(135deg,#2a2a2a,#1a1a1a)';this.removeAttribute('src');"
               />
