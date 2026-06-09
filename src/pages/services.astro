@@ -382,9 +382,10 @@ const faqs = [
                     <span>{b}</span>
                   </li>
                 ))}
-                <li class="flex gap-2.5 items-start pt-2">
-                  <span aria-hidden="true" class="text-[14px] leading-none text-[var(--color-ink)] mt-[1px] shrink-0">✦</span>
-                  <span class="text-[15px] italic" style="font-family: 'Noto Serif', Georgia, serif;">{item.price}</span>
+                <li class="flex justify-center items-center gap-3 pt-3 text-[12px] tracking-[0.22em] uppercase font-medium lining-nums tabular-nums text-[var(--color-ink)]">
+                  <span aria-hidden="true">—</span>
+                  <span>{item.price}</span>
+                  <span aria-hidden="true">—</span>
                 </li>
               </ul>
               <a
