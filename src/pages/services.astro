@@ -211,6 +211,14 @@ const faqs = [
                     style={`opacity: ${idx === 0 ? 1 : 0}; z-index: ${idx === 0 ? 2 : 1}; pointer-events: ${idx === 0 ? "auto" : "none"};`}
                   />
                 ))}
+                {/* Watermark overlay — Aritia Design logo, centered, semi-transparent */}
+                <img
+                  src="/images/watermark-ad.svg"
+                  alt=""
+                  aria-hidden="true"
+                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/5 max-w-[200px] opacity-[0.12] pointer-events-none z-[3] select-none"
+                  style="filter: invert(1);"
+                />
                 <button
                   type="button"
                   data-prev
