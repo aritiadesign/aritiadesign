@@ -354,7 +354,7 @@ const faqs = [
       <div class="md:hidden mt-10 max-w-md mx-auto text-left">
         <div role="tablist" class="alacarte-tabs flex border-b border-[var(--color-ink)]/15">
           {aLaCarte.map((item, i) => {
-            const shortLabel = item.title.split(/[\s&]/)[0];
+            const tabLabels = ["Papeterie", "Fleurs", "Décor"];
             return (
               <button
                 type="button"
@@ -363,7 +363,7 @@ const faqs = [
                 data-tab={i}
                 data-active={i === 0 ? "true" : "false"}
               >
-                {shortLabel}
+                {tabLabels[i]}
               </button>
             );
           })}
