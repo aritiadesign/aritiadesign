@@ -8,7 +8,7 @@ const tiers = [
     title: "L'EXCEPTION",
     italic: "design intégral",
     price: "À partir de 6 000 €",
-    scope: "≤50 invités, un espace principal, fleurs de saison, décor sourcé.<br />DA globale incluse (valeur 1 500 €).",
+    scope: "≤50 invités,<span class=\"hidden md:inline\"> un espace principal,</span> fleurs de saison, décor sourcé.<br />DA globale incluse (valeur 1 500 €).",
     bullets: [
       "Moodboard complet, palette de couleurs et charte typographique",
       "Papeterie essentielle : faire-part, menus et plan de table",
@@ -41,7 +41,7 @@ const tiers = [
     title: "DIRECTION ARTISTIQUE",
     italic: "seule",
     price: "À partir de 1 500 €",
-    scope: "Déductible à 100 % en cas de signature d'un pack sous 60 jours",
+    scope: "<span class=\"hidden md:inline\">Déductible à 100 % en cas de signature d'un pack sous 60 jours</span><span class=\"md:hidden\">Déductible à 100 % si signature sous 60 jours</span>",
     bullets: [
       "Moodboard complet de votre univers de mariage",
       "Palette de couleurs, choix des matières et textures",
@@ -193,7 +193,6 @@ const faqs = [
       @media (max-width: 767px) {
         .tier-card { transition: opacity 0.35s ease, transform 0.35s ease; opacity: 0.55; transform: scale(0.94); transform-origin: center; }
         .tier-card[data-active="true"] { opacity: 1; transform: scale(1); }
-        .tier-scope br { display: none; }
       }
     </style>
     <div class="tiers-carousel mx-auto max-w-[1300px] flex md:block overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none gap-4 md:gap-0 md:space-y-20 lg:space-y-28 px-[10vw] md:px-0 pb-2 md:pb-0">
