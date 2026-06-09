@@ -371,14 +371,11 @@ const faqs = [
         <div class="mt-7">
           {aLaCarte.map((item, i) => (
             <div class="alacarte-panel" data-panel={i} style={`display: ${i === 0 ? "block" : "none"};`}>
-              <div class="flex items-baseline justify-between gap-4">
-                <h3 class="font-display text-[20px] text-[var(--color-ink)]">{item.title.split("&").map((part, idx, arr) => (<>{part}{idx < arr.length - 1 && <span class="amp">&amp;</span>}</>))}</h3>
-                <span class="text-[16px] text-[var(--color-ink-soft)] whitespace-nowrap shrink-0" style="font-family: 'Noto Serif', Georgia, serif; font-style: italic;">{item.price}</span>
-              </div>
+              <h3 class="text-center font-display text-[22px] text-[var(--color-ink)]">{item.title.split("&").map((part, idx, arr) => (<>{part}{idx < arr.length - 1 && <span class="amp">&amp;</span>}</>))}</h3>
               {item.scope && (
-                <p class="mt-2 text-[12px] leading-[1.55] font-baskerville tracking-[0.3px] text-[var(--color-muted)]">{item.scope}</p>
+                <p class="mt-2 text-center text-[12px] leading-[1.55] font-baskerville tracking-[0.3px] text-[var(--color-muted)]">{item.scope}</p>
               )}
-              <ul class="mt-5 space-y-2 text-[13px] leading-[1.65] text-[var(--color-ink-soft)]">
+              <ul class="mt-6 space-y-2 text-[13px] leading-[1.65] text-[var(--color-ink-soft)]">
                 {item.bullets.map((b, idx) => (
                   <li class="flex gap-2.5 items-start">
                     <span aria-hidden="true" class="inline-block w-[3px] h-[3px] rounded-full bg-current mt-[9px] shrink-0"></span>
@@ -386,9 +383,10 @@ const faqs = [
                   </li>
                 ))}
               </ul>
+              <p class="mt-7 text-center text-[18px] text-[var(--color-ink-soft)]" style="font-family: 'Noto Serif', Georgia, serif; font-style: italic;">{item.price}</p>
               <a
                 href="/contact"
-                class="block w-fit mx-auto mt-7 px-8 py-2.5 border border-[var(--color-ink)] text-[10px] tracking-[0.22em] uppercase text-[var(--color-ink)] transition whitespace-nowrap"
+                class="block w-fit mx-auto mt-4 px-8 py-2.5 border border-[var(--color-ink)] text-[10px] tracking-[0.22em] uppercase text-[var(--color-ink)] transition whitespace-nowrap"
               >
                 Réserver
               </a>
