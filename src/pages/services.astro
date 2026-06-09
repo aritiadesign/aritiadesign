@@ -17,7 +17,7 @@ const tiers = [
       "3 réunions de travail et 1 visite du lieu de réception",
       "Présence le jour J (10 heures) avec installation et démontage J+1",
     ],
-    desc: "L'expérience la plus aboutie : Aritia Design, votre interlocuteur unique pour orchestrer l'intégralité de votre célébration. De la première inspiration à la dernière fleur posée, nous prenons en charge chaque dimension esthétique de votre journée. Vous validez les concepts, nous réalisons le reste. — Structures et décor sur-mesure proposés en option selon vos envies.",
+    desc: "L'expérience la plus aboutie : Aritia Design, votre interlocuteur unique pour orchestrer l'intégralité de votre célébration. <span class=\"hidden md:inline\">De la première inspiration à la dernière fleur posée, nous prenons en charge chaque dimension esthétique de votre journée. </span>Vous validez les concepts, nous réalisons le reste. — Structures et décor sur-mesure proposés en option selon vos envies.",
     image: "/images/services-design-global.jpg",
     accent: "burgundy",
   },
@@ -279,7 +279,7 @@ const faqs = [
                 <span data-i18n={`investment.tier.${i}.title`}>{tier.title}</span>
                 {tier.italic && <> <span class="font-italic-serif italic font-light" data-i18n={`investment.tier.${i}.italic`}>{tier.italic.split("&").map((part, idx, arr) => (<>{part}{idx < arr.length - 1 && <span class="amp">&amp;</span>}</>))}</span></>}
               </h3>
-              <p class="mt-6 md:mt-8 text-[14px] md:text-[16px] leading-[1.8] text-white/90 max-w-md" data-i18n={`investment.tier.${i}.desc`}>{tier.desc}</p>
+              <p class="mt-6 md:mt-8 text-[14px] md:text-[16px] leading-[1.8] text-white/90 max-w-md" data-i18n={`investment.tier.${i}.desc`} set:html={tier.desc} />
               <p class="mt-7 md:mt-10 text-[12px] md:text-[15px] tracking-[0.22em] uppercase lining-nums tabular-nums text-white/95" data-i18n={`investment.tier.${i}.price`}>{tier.price}</p>
               {tier.scope && (
                 <p
