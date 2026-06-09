@@ -329,14 +329,23 @@ const faqs = [
             {item.scope && (
               <p class="mt-2 ml-9 md:ml-11 text-[14px] md:text-[16px] leading-[1.55] font-baskerville tracking-[0.5px] text-[var(--color-muted)]" data-i18n={`investment.alacarte.${i}.scope`}>{item.scope}</p>
             )}
-            <ul class="mt-5 ml-9 md:ml-11 space-y-2 text-[13px] md:text-[14px] leading-[1.6] text-[var(--color-ink-soft)]">
-              {item.bullets.map((b, idx) => (
-                <li class="flex gap-2.5 items-start">
-                  <span aria-hidden="true" class="inline-block w-[3px] h-[3px] rounded-full bg-current mt-[9px] shrink-0"></span>
-                  <span data-i18n={`investment.alacarte.${i}.b${idx}`}>{b}</span>
-                </li>
-              ))}
-            </ul>
+            <div class="mt-5 ml-9 md:ml-11 flex flex-col md:flex-row md:items-center md:gap-10">
+              <ul class="space-y-2 text-[13px] md:text-[14px] leading-[1.6] text-[var(--color-ink-soft)] flex-1">
+                {item.bullets.map((b, idx) => (
+                  <li class="flex gap-2.5 items-start">
+                    <span aria-hidden="true" class="inline-block w-[3px] h-[3px] rounded-full bg-current mt-[9px] shrink-0"></span>
+                    <span data-i18n={`investment.alacarte.${i}.b${idx}`}>{b}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="/contact"
+                class="mt-6 md:mt-0 self-start md:self-center inline-block px-8 py-3 border border-[var(--color-ink)] text-[10px] md:text-[11px] tracking-[0.32em] uppercase text-[var(--color-ink)] hover:bg-[var(--color-ink)] hover:text-white transition whitespace-nowrap"
+                data-i18n={`investment.alacarte.${i}.cta`}
+              >
+                Demander un devis
+              </a>
+            </div>
           </details>
         ))}
       </div>
