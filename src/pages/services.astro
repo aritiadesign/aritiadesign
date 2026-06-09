@@ -114,6 +114,29 @@ const modalites = [
   { step: "40 %", label: "À J–90", desc: "Lancement de la production et des commandes" },
   { step: "30 %", label: "À J–15", desc: "Solde avant l'installation finale" },
 ];
+
+const faqs = [
+  {
+    n: "01.",
+    q: "ÊTES-VOUS PRÉSENTS LE JOUR J ?",
+    a: "Oui, pour toutes nos formules avec exécution (l'Exception et Pack Atmosphère). Nous sommes présents de l'installation au démontage J+1 : nous orchestrons l'arrivée des prestataires, supervisons la mise en place et veillons à ce que chaque détail reflète fidèlement la direction artistique imaginée ensemble. Vous vivez votre célébration sereinement, sans avoir à gérer la logistique. Pour la Direction Artistique seule, vous repartez avec notre vision et l'orchestrez avec vos propres prestataires.",
+  },
+  {
+    n: "02.",
+    q: "QUELLE EST LA DIFFÉRENCE ENTRE VOS PRESTATIONS ET CELLES D'UN WEDDING PLANNER ?",
+    a: "Notre rôle couvre la création artistique de votre mariage (univers visuel, scénographie, design floral, papeterie) et la coordination des prestataires qui exécutent cette vision (mobilier, éclairage, vaisselle, location décor...), tandis que le wedding planner orchestre l'organisation globale (planning, budget, traiteur, photographe, musique, lieu...). Les deux métiers sont complémentaires : l'un assure la fluidité organisationnelle, l'autre sublime l'expérience visuelle.",
+  },
+  {
+    n: "03.",
+    q: "OÙ OPÉREZ-VOUS ?",
+    a: "Notre agence est basée à Toulouse et intervient principalement en Haute-Garonne. Au-delà, nous nous déplaçons dans toute la France et à l'étranger selon les projets, avec des frais de déplacement intégrés au devis pour une totale transparence.",
+  },
+  {
+    n: "04.",
+    q: "QUEL EST LE BON MOMENT POUR VOUS CONTACTER ?",
+    a: "Les délais idéaux varient selon la formule choisie et l'ampleur du projet :<br /><br />— Pack L'Exception : 10 à 12 mois en amont (univers complet, sourcing des prestataires, coordination de la production).<br /><br />— Pack Atmosphère : 6 à 8 mois sont généralement suffisants.<br /><br />— Direction Artistique seule : à partir de 4 mois.<br /><br />Pour les évènements d'envergure (scénographie complexe, grande capacité), nous recommandons d'anticiper davantage. Nous restons toutefois flexibles sur des délais plus courts selon nos disponibilités du moment.",
+  },
+];
 ---
 
 <Layout
@@ -351,7 +374,28 @@ const modalites = [
     </div>
   </section>
 
-  {/* ───────────────────────── 8. CTA ───────────────────────── */}
+  {/* ───────────────────────── 8. FAQ ───────────────────────── */}
+  <section class="bg-white px-6 py-24 md:py-32">
+    <h2 class="text-center font-display text-[28px] md:text-[36px] tracking-[0.28em] uppercase text-[var(--color-ink)] mb-16" data-i18n="services.faq.h2">
+      Questions Fréquentes
+    </h2>
+    <div class="mx-auto max-w-[900px] divide-y divide-black/10">
+      {faqs.map((f, i) => (
+        <details class="group py-6">
+          <summary class="cursor-pointer list-none flex items-start gap-6">
+            <span class="font-display text-[20px] md:text-[26px] text-[var(--color-ink-soft)] shrink-0">{f.n}</span>
+            <span class="flex-1 text-[12px] md:text-[14px] tracking-[0.22em] uppercase leading-[1.6] text-[var(--color-ink)]" data-i18n={`services.faq.${i}.q`}>
+              {f.q}
+            </span>
+            <span class="shrink-0 mt-1 transition-transform group-open:rotate-45 text-[24px] text-[var(--color-ink-soft)] leading-none">+</span>
+          </summary>
+          <p class="mt-4 pl-[3.5rem] text-[14px] leading-[1.9] text-[var(--color-ink-soft)]" data-i18n={`services.faq.${i}.a`} set:html={f.a} />
+        </details>
+      ))}
+    </div>
+  </section>
+
+  {/* ───────────────────────── 9. CTA ───────────────────────── */}
   <section class="bg-white px-6 py-24 md:py-32 text-center">
     <h2 class="font-display text-[36px] md:text-[44px] lg:text-[52px] leading-[1.2] text-[var(--color-ink)]" data-i18n="investment.cta.h2">
       Construisons ensemble<br />
