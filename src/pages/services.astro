@@ -452,15 +452,15 @@ const faqs = [
         </div>
       </div>
 
-      <div class="order-1 md:order-2 flex flex-col justify-center">
-        <h2 class="text-center md:text-left font-display text-[40px] md:text-[48px] lg:text-[56px] leading-[1.1] tracking-wide text-[var(--color-ink)] mb-10" data-i18n="investment.included.h2">
+      <div class="order-1 md:order-2 flex flex-col justify-center md:self-center md:bg-[#1A1A1A] md:p-10 lg:p-14 md:-ml-10 lg:-ml-14 md:relative md:z-10">
+        <h2 class="text-center md:text-left font-display text-[40px] md:text-[44px] lg:text-[52px] leading-[1.1] tracking-wide text-[var(--color-ink)] md:text-white mb-10" data-i18n="investment.included.h2">
           CHAQUE COLLABORATION<br />
           <span class="font-italic-serif italic font-light">comprend</span>
         </h2>
-        <ul class="space-y-4 text-[15px] md:text-[16px] leading-[1.8] text-[var(--color-ink-soft)] max-w-md mx-auto md:mx-0">
+        <ul class="space-y-4 text-[15px] md:text-[16px] leading-[1.8] text-[var(--color-ink-soft)] md:text-white/85 max-w-md mx-auto md:mx-0">
           {included.map((item, i) => (
             <li class="flex gap-4 items-start">
-              <span aria-hidden="true" class="text-[var(--color-ink)] mt-1">✦</span>
+              <span aria-hidden="true" class="text-[var(--color-ink)] md:text-white mt-1">✦</span>
               <span data-i18n={`investment.included.item.${i}`}>{item}</span>
             </li>
           ))}
