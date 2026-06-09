@@ -277,7 +277,7 @@ const faqs = [
             <div class="p-7 md:p-14 lg:p-16 text-white flex flex-col justify-center order-2 lg:order-2">
               <h3 class="font-display leading-[1.1] tracking-wide text-[26px] md:text-[40px] lg:text-[48px]">
                 <span data-i18n={`investment.tier.${i}.title`}>{tier.title}</span>
-                {tier.italic && <> <span class="font-italic-serif italic font-light" data-i18n={`investment.tier.${i}.italic`}>{tier.italic.split("&").map((part, idx, arr) => (<>{part}{idx < arr.length - 1 && <span class="amp">&amp;</span>}</>))}</span></>}
+                {tier.italic && <> <span class="font-italic-serif italic font-light text-[18px] md:text-[40px] lg:text-[48px]" data-i18n={`investment.tier.${i}.italic`}>{tier.italic.split("&").map((part, idx, arr) => (<>{part}{idx < arr.length - 1 && <span class="amp">&amp;</span>}</>))}</span></>}
               </h3>
               <p class="mt-6 md:mt-8 text-[14px] md:text-[16px] leading-[1.8] text-white/90 max-w-md" data-i18n={`investment.tier.${i}.desc`} set:html={tier.desc} />
               <p class="mt-7 md:mt-10 text-[12px] md:text-[15px] tracking-[0.22em] uppercase lining-nums tabular-nums text-white/95" data-i18n={`investment.tier.${i}.price`}>{tier.price}</p>
