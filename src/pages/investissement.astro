@@ -183,7 +183,7 @@ const modalites = [
                     alt={`${tier.title} — page ${idx + 1}`}
                     loading={idx < 2 ? "eager" : "lazy"}
                     data-page={idx}
-                    class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-out"
+                    class="absolute inset-4 md:inset-6 object-contain transition-opacity duration-500 ease-out"
                     style={`opacity: ${idx === 0 ? 1 : 0}; z-index: ${idx === 0 ? 2 : 1}; pointer-events: ${idx === 0 ? "auto" : "none"};`}
                   />
                 ))}
