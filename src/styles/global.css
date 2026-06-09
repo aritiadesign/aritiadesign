@@ -121,13 +121,6 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "Eurotypo BKL";
-  src: url("/fonts/EurotypoBKL-Italic.otf") format("opentype");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
   font-family: "PT Serif";
   src: url("/fonts/PTSerif-Italic.woff2") format("woff2");
   font-weight: 400;
@@ -199,7 +192,6 @@ body {
   .font-dm-serif,
   .font-cardo,
   .font-baskerville,
-  .font-eurotypo,
   .font-pt-serif,
   .font-georgia { letter-spacing: normal; }
 }
@@ -221,7 +213,6 @@ body {
 .font-dm-serif { font-family: "DM Serif Display", Georgia, serif; font-style: italic; }
 .font-cardo { font-family: "Cardo", Georgia, serif; font-style: italic; }
 .font-baskerville { font-family: "Serif Beta", "Libre Baskerville", Georgia, serif; font-style: italic; }
-.font-eurotypo { font-family: "Eurotypo BKL", Georgia, serif; font-style: italic; }
 .font-pt-serif { font-family: "PT Serif", Georgia, serif; font-style: italic; }
 .font-georgia { font-family: Georgia, "Times New Roman", serif; }
 
