@@ -324,7 +324,7 @@ const faqs = [
                 <span aria-hidden="true" class="text-[20px] md:text-[26px] leading-none font-light text-[var(--color-ink)] transition-transform duration-300 group-open:rotate-45 shrink-0">+</span>
                 <span class="font-display text-[18px] md:text-[22px] text-[var(--color-ink)]" data-i18n={`investment.alacarte.${i}.title`}>{item.title.split("&").map((part, idx, arr) => (<>{part}{idx < arr.length - 1 && <span class="amp">&amp;</span>}</>))}</span>
               </div>
-              <span class="tracking-[0.5px] text-[18px] md:text-[24px] text-[var(--color-ink-soft)] whitespace-nowrap" style="font-family: 'Noto Serif', Georgia, serif; font-style: italic;" data-i18n={`investment.alacarte.${i}.price`}>{item.price}</span>
+              <span class="md:w-[170px] md:text-center tracking-[0.5px] text-[18px] md:text-[24px] text-[var(--color-ink-soft)] whitespace-nowrap shrink-0" style="font-family: 'Noto Serif', Georgia, serif; font-style: italic;" data-i18n={`investment.alacarte.${i}.price`}>{item.price}</span>
             </summary>
             {item.scope && (
               <p class="mt-2 ml-9 md:ml-11 text-[14px] md:text-[16px] leading-[1.55] font-baskerville tracking-[0.5px] text-[var(--color-muted)]" data-i18n={`investment.alacarte.${i}.scope`}>{item.scope}</p>
@@ -338,13 +338,15 @@ const faqs = [
                   </li>
                 ))}
               </ul>
-              <a
-                href="/contact"
-                class="mt-6 md:mt-0 self-start md:self-center inline-block px-6 py-3 border border-[var(--color-ink)] text-[10px] md:text-[11px] tracking-[0.32em] uppercase text-[var(--color-ink)] hover:bg-[var(--color-ink)] hover:text-white transition whitespace-nowrap"
-                data-i18n={`investment.alacarte.${i}.cta`}
-              >
-                Réserver
-              </a>
+              <div class="mt-6 md:mt-0 md:w-[170px] flex md:justify-center">
+                <a
+                  href="/contact"
+                  class="inline-block px-6 py-3 border border-[var(--color-ink)] text-[10px] md:text-[11px] tracking-[0.32em] uppercase text-[var(--color-ink)] hover:bg-[var(--color-ink)] hover:text-white transition whitespace-nowrap"
+                  data-i18n={`investment.alacarte.${i}.cta`}
+                >
+                  Réserver
+                </a>
+              </div>
             </div>
           </details>
         ))}
