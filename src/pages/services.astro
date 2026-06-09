@@ -186,14 +186,23 @@ const faqs = [
   </section>
 
   {/* ───────────────────────── 4. TIERS — CARTES PACKS ───────────────────────── */}
-  <section class="bg-white px-6 pb-24 md:pb-36">
-    <div class="mx-auto max-w-[1300px] flex md:block overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none gap-5 md:gap-0 md:space-y-20 lg:space-y-28 -mx-6 px-6 md:mx-0 md:px-0 pb-6 md:pb-0 items-stretch [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+  <section class="bg-white pb-24 md:pb-36 md:px-6">
+    <style is:global>
+      .tiers-carousel::-webkit-scrollbar { display: none; }
+      .tiers-carousel { scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+      @media (max-width: 767px) {
+        .tier-card { transition: opacity 0.35s ease, transform 0.35s ease; opacity: 0.55; transform: scale(0.94); transform-origin: center; }
+        .tier-card[data-active="true"] { opacity: 1; transform: scale(1); }
+      }
+    </style>
+    <div class="tiers-carousel mx-auto max-w-[1300px] flex md:block overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none gap-4 md:gap-0 md:space-y-20 lg:space-y-28 px-[10vw] md:px-0 pb-2 md:pb-0">
       {tiers.map((tier, i) => {
         const cardBg = tier.accent === "burgundy" ? "#640613" : "#1A1A1A";
         return (
           <article
-            class="shrink-0 w-[88%] md:w-auto snap-center grid lg:grid-cols-2 gap-0 overflow-hidden"
+            class="tier-card snap-center shrink-0 w-[80vw] md:w-auto grid lg:grid-cols-2 gap-0 overflow-hidden"
             style={`background-color: ${cardBg};`}
+            data-active={i === 0 ? "true" : "false"}
           >
             {/* Image — static or flipbook */}
             {tier.flipbook ? (
@@ -518,4 +527,26 @@ const faqs = [
       if (e.key === "ArrowRight") { e.preventDefault(); show(current + 1); }
     });
   });
+
+  // Mobile carousel: mark the tier card whose center is closest to the viewport center as active.
+  const tiersCarousel = document.querySelector<HTMLElement>(".tiers-carousel");
+  if (tiersCarousel) {
+    const cards = Array.from(tiersCarousel.querySelectorAll<HTMLElement>(".tier-card"));
+    const update = () => {
+      const carouselRect = tiersCarousel.getBoundingClientRect();
+      const centerX = carouselRect.left + carouselRect.width / 2;
+      let bestIdx = 0;
+      let bestDelta = Infinity;
+      cards.forEach((card, i) => {
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.left + rect.width / 2;
+        const delta = Math.abs(cardCenter - centerX);
+        if (delta < bestDelta) { bestDelta = delta; bestIdx = i; }
+      });
+      cards.forEach((c, i) => c.setAttribute("data-active", i === bestIdx ? "true" : "false"));
+    };
+    tiersCarousel.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  }
 </script>
