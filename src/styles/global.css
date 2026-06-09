@@ -114,7 +114,7 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "Serif Beta";
+  font-family: "Serif12 Beta";
   src: url("/fonts/Serif12Beta-Italic.woff2") format("woff2"),
        url("/fonts/Serif12Beta-Italic.otf") format("opentype");
   font-weight: 400;
@@ -213,7 +213,7 @@ body {
 .font-crimson { font-family: "Crimson Pro", Georgia, serif; font-style: italic; }
 .font-dm-serif { font-family: "DM Serif Display", Georgia, serif; font-style: italic; }
 .font-cardo { font-family: "Cardo", Georgia, serif; font-style: italic; }
-.font-baskerville { font-family: "Serif Beta", "Libre Baskerville", Georgia, serif; font-style: italic; }
+.font-baskerville { font-family: "Serif12 Beta", "Libre Baskerville", Georgia, serif; font-style: italic; }
 .font-pt-serif { font-family: "PT Serif", Georgia, serif; font-style: italic; }
 .font-georgia { font-family: Georgia, "Times New Roman", serif; }
 
