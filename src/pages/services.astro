@@ -385,9 +385,13 @@ const faqs = [
     </div>
   </section>
 
-  {/* ───────────────────────── 7. MODALITÉS DE PAIEMENT ───────────────────────── */}
-  <section class="bg-[#1A1A1A] text-white px-6 py-24 md:py-32 text-center">
-    <div class="mx-auto max-w-[1100px]">
+  {/* ───────────────────────── 7. MODALITÉS DE PAIEMENT (parallax) ───────────────────────── */}
+  <section
+    class="relative text-white px-6 py-24 md:py-32 text-center bg-cover bg-center md:bg-fixed"
+    style="background-image: url('/images/collage-lieu.jpg');"
+  >
+    <div class="absolute inset-0 bg-black/65"></div>
+    <div class="relative mx-auto max-w-[1100px]">
       <h2 class="font-display text-[36px] md:text-[44px] lg:text-[52px] leading-[1.15] tracking-wide" data-i18n="investment.modalites.h2">
         MODALITÉS<br />
         <span class="font-italic-serif italic font-light">de paiement</span>
