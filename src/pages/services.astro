@@ -276,7 +276,7 @@ const faqs = [
 
             {/* Texte */}
             <div class="p-7 md:p-14 lg:p-16 text-white flex flex-col justify-center order-2 lg:order-2">
-              <h3 class="font-display leading-[1.1] tracking-wide text-[26px] md:text-[40px] lg:text-[48px] text-center md:text-left">
+              <h3 class="font-display leading-[1.1] tracking-wide text-[30px] md:text-[40px] lg:text-[48px] text-center md:text-left">
                 <span data-i18n={`investment.tier.${i}.title`}>{tier.title}</span>
                 {tier.italic && <> <span class:list={["font-italic-serif italic font-light", i < 2 ? "block md:inline" : ""]} data-i18n={`investment.tier.${i}.italic`}>{tier.italic.split("&").map((part, idx, arr) => (<>{part}{idx < arr.length - 1 && <span class="amp">&amp;</span>}</>))}</span></>}
               </h3>
