@@ -285,7 +285,7 @@ const modalites = [
                 <span aria-hidden="true" class="text-[20px] md:text-[26px] leading-none font-light text-[var(--color-ink)] transition-transform duration-300 group-open:rotate-45 shrink-0">+</span>
                 <span class="font-display text-[18px] md:text-[22px] text-[var(--color-ink)]" data-i18n={`investment.alacarte.${i}.title`}>{item.title.split("&").map((part, idx, arr) => (<>{part}{idx < arr.length - 1 && <span class="amp">&amp;</span>}</>))}</span>
               </div>
-              <span class="font-italic-serif italic tracking-[0.5px] text-[18px] md:text-[24px] text-[var(--color-ink-soft)] whitespace-nowrap" data-i18n={`investment.alacarte.${i}.price`}>{item.price}</span>
+              <span class="font-baskerville tracking-[0.5px] text-[18px] md:text-[24px] text-[var(--color-ink-soft)] whitespace-nowrap" data-i18n={`investment.alacarte.${i}.price`}>{item.price}</span>
             </summary>
             {item.scope && (
               <p class="mt-2 ml-9 md:ml-11 text-[14px] md:text-[16px] leading-[1.55] font-baskerville tracking-[0.5px] text-[var(--color-muted)]" data-i18n={`investment.alacarte.${i}.scope`}>{item.scope}</p>
