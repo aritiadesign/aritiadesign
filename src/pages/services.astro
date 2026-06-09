@@ -277,7 +277,12 @@ const faqs = [
                 </ul>
                 <a
                   href="/contact"
-                  class="inline-block mt-12 px-10 py-3 border border-white/60 text-[11px] tracking-[0.32em] uppercase text-white/95 hover:bg-white hover:text-[var(--color-ink)] transition"
+                  class:list={[
+                    "inline-block mt-12 px-10 py-3 border border-white/60 text-[11px] tracking-[0.32em] uppercase text-white/95 transition",
+                    tier.accent === "burgundy"
+                      ? "hover:bg-[#1A1A1A] hover:text-white"
+                      : "hover:bg-white hover:text-[var(--color-ink)]",
+                  ]}
                   data-i18n="investment.tier.cta"
                 >
                   Demander un devis
