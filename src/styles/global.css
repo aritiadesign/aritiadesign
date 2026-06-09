@@ -39,20 +39,6 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "Brandon Grotesque";
-  src: url("/fonts/BrandonGrotesque-Regular.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Brandon Grotesque";
-  src: url("/fonts/BrandonGrotesque-Medium.otf") format("opentype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
   font-family: "Cormorant Garamond";
   src: url("/fonts/CormorantGaramond-Italic.ttf") format("truetype");
   font-weight: 400;
@@ -136,7 +122,7 @@
   --font-sans: "Raleway", ui-sans-serif, system-ui, sans-serif;
   --font-script: "Haute Couture", "Parisienne", cursive;
   --font-italic: "Playfair Display", Georgia, serif;
-  --font-brandon: "Brandon Grotesque", "Raleway", ui-sans-serif, sans-serif;
+  --font-brandon: "Raleway", ui-sans-serif, sans-serif;
 
   --color-ink: #1c1c1c;
   --color-ink-soft: #2a2a2a;
