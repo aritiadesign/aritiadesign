@@ -52,9 +52,9 @@ const tiers = [
       "Dossier complet remis en PDF",
     ],
     desc: "Vous repartez avec notre vision et l'orchestrez avec vos propres prestataires. Une option idéale pour celles et ceux qui souhaitent une signature artistique forte sans formule complète.",
-    image: "/images/flipbook/01.jpg",
-    flipbook: Array.from({ length: 24 }, (_, i) =>
-      `/images/flipbook/${String(i + 1).padStart(2, "0")}.jpg`
+    image: "/images/flipbook-investissement/01.jpg",
+    flipbook: Array.from({ length: 23 }, (_, i) =>
+      `/images/flipbook-investissement/${String(i + 1).padStart(2, "0")}.jpg`
     ),
     accent: "ink",
   },
@@ -173,7 +173,7 @@ const modalites = [
             {tier.flipbook ? (
               <div class="order-1 lg:order-1 flex items-center justify-center lg:py-8 lg:pl-8">
               <div
-                class="flipbook aspect-[1414/1000] relative bg-[#1A1A1A] p-4 md:p-6 w-full overflow-hidden select-none group"
+                class="flipbook aspect-[1587/1300] relative bg-[#1A1A1A] p-4 md:p-6 w-full overflow-hidden select-none group"
                 data-flipbook
                 tabindex="0"
                 aria-label={`Flipbook ${tier.title} — utilisez les flèches gauche / droite pour naviguer`}
