@@ -149,6 +149,26 @@ const { project: p } = Astro.props;
     </section>
   )}
 
+  {/* ───────────────────────── 3.5 MOMENT D'EXCEPTION (highlight video) ───────────────────────── */}
+  {p.momentVideo && (
+    <section class="bg-white px-6 py-20 md:py-28 text-center">
+      <h2 class="font-display text-[36px] md:text-[44px] lg:text-[52px] leading-[1.2]" data-i18n="project.moment.h2">
+        UN MOMENT D'EXCEPTION&nbsp;!<br />
+        <span class="font-italic-serif italic text-[0.7em]">décor, mise en ambiance, papeterie, floral</span>
+      </h2>
+      <div class="mt-12 md:mt-16 mx-auto max-w-[1100px]">
+        <video
+          class="block w-full aspect-video bg-black"
+          src={p.momentVideo}
+          controls
+          playsinline
+          preload="metadata"
+          poster={p.hero}
+        ></video>
+      </div>
+    </section>
+  )}
+
   {/* ───────────────────────── 4. BACK CTA ───────────────────────── */}
   <section class="bg-white px-6 py-16 text-center">
     <a

@@ -13,6 +13,8 @@ export interface Project {
   parallax?: string;
   /** Optional video shown at the end of the project page */
   outroVideo?: string;
+  /** Optional "moment d'exception" highlight video shown above the back CTA */
+  momentVideo?: string;
 }
 
 // Hashes ordered by their first appearance in the original Wix HTML
@@ -58,6 +60,7 @@ export const projects: Project[] = [
     hero: "/images/projects/mt/752875c8.jpg",
     parallax: "/images/projects/mt/parallax-manor.jpg",
     outroVideo: "/videos/feux-artifices.mp4",
+    momentVideo: "/videos/clip-intro.mp4",
     gallery: mtImages,
     sections: [
       {
