@@ -200,6 +200,23 @@ const faqs = [
       .alacarte-tab { transition: color 0.2s ease, border-color 0.2s ease; }
       .alacarte-tab[data-active="true"] { color: var(--color-ink); border-bottom-color: var(--color-ink); }
     </style>
+
+    {/* Tier hierarchy legend */}
+    <div class="text-center px-6 mb-10 md:mb-14">
+      <p class="text-[10px] md:text-[11px] tracking-[0.32em] uppercase text-[var(--color-muted)] mb-3 md:mb-4">
+        Nos niveaux d'engagement
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 md:gap-x-5 text-[10px] md:text-[12px] tracking-[0.22em] md:tracking-[0.24em] uppercase text-[var(--color-ink)] font-medium">
+        <span>Essentiel</span>
+        <span class="text-[var(--color-muted)] tracking-normal">✦</span>
+        <span>Cœur</span>
+        <span class="text-[var(--color-muted)] tracking-normal">✦</span>
+        <span>Signature</span>
+        <span class="text-[var(--color-muted)] tracking-normal">✦</span>
+        <span>Haute Couture</span>
+      </div>
+    </div>
+
     <div class="tiers-carousel mx-auto max-w-[1300px] flex md:block items-start overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none gap-4 md:gap-0 md:space-y-20 lg:space-y-28 px-[10vw] md:px-0 pb-2 md:pb-0">
       {tiers.map((tier, i) => {
         const cardBg = tier.accent === "burgundy" ? "#640613" : "#1A1A1A";
