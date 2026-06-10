@@ -144,7 +144,7 @@ const testimonials = [
         const track = marquee.querySelector(".marquee-track");
         if (!track) return;
 
-        const SPEED = 1; // px per frame (~60 px/s at 60fps)
+        const SPEED = matchMedia("(max-width: 767px)").matches ? 1.8 : 1; // px per frame (mobile faster)
         let paused = false;
         let resumeTimer;
 
