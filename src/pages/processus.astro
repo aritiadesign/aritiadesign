@@ -126,14 +126,27 @@ const steps = [
                 >
                   {/* Pages stack */}
                   {step.flipbook.map((src, idx) => (
-                    <img
-                      src={src}
-                      alt={`${step.alt} — page ${idx + 1}`}
-                      loading={idx < 2 ? "eager" : "lazy"}
+                    <div
                       data-page={idx}
-                      class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-out"
+                      class="absolute inset-0 transition-opacity duration-500 ease-out"
                       style={`opacity: ${idx === 0 ? 1 : 0}; z-index: ${idx === 0 ? 2 : 1}; pointer-events: ${idx === 0 ? "auto" : "none"};`}
-                    />
+                    >
+                      <img
+                        src={src}
+                        alt={`${step.alt} — page ${idx + 1}`}
+                        loading={idx < 2 ? "eager" : "lazy"}
+                        class="absolute inset-0 w-full h-full object-cover"
+                      />
+                      {idx > 0 && (
+                        <img
+                          src="/images/watermark-ad.svg"
+                          alt=""
+                          aria-hidden="true"
+                          class="md:hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 max-w-[280px] pointer-events-none select-none"
+                          style="opacity: 0.10; filter: invert(1);"
+                        />
+                      )}
+                    </div>
                   ))}
 
                   {/* Prev / Next click zones */}
@@ -249,7 +262,7 @@ const steps = [
                 reversed ? "lg:order-1 lg:pr-8" : "lg:order-2 lg:pl-8",
                 step.textOffset ?? "",
               ]}>
-                <h3 class="processus-step-title font-display font-light text-[clamp(0.95rem,2.6vw,1.35rem)] leading-[1.25] text-[var(--color-ink)] text-balance flex flex-wrap items-baseline gap-x-1.5 sm:gap-x-2 !tracking-[0.1em]">
+                <h3 class="processus-step-title font-display font-light text-[clamp(1.2rem,2.6vw,1.35rem)] leading-[1.25] text-[var(--color-ink)] text-balance flex flex-wrap items-baseline gap-x-1.5 sm:gap-x-2 !tracking-[0.1em]">
                   <span class="font-gilda tracking-normal">{step.n}</span>
                   <span class="font-gilda tracking-normal" aria-hidden="true">/</span>
                   <span data-i18n={`process.step.${i + 1}.title`}>
