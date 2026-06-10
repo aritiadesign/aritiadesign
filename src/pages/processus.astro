@@ -5,15 +5,15 @@ import SparkLink from "../components/SparkLink.astro";
 const steps = [
   {
     n: "01",
-    title: "PREMIER ÉCHANGE",
-    body: "Tout commence par un échange. Nous apprenons à vous connaître, à comprendre votre histoire, vos envies, vos inspirations. Nous définissons ensemble les contours de votre univers, les priorités, les émotions à transmettre. À l'issue de cet échange, un devis personnalisé vous est remis pour validation.",
+    title: "PREMIÈRE RENCONTRE",
+    body: "Tout commence par une rencontre. Nous prenons le temps de faire connaissance, d'écouter votre histoire et de comprendre vos envies. Ensemble, nous esquissons les contours de votre univers, ses priorités, les émotions à transmettre. À l'issue de ce rendez-vous, un devis personnalisé vous est remis pour validation.",
     image: "/images/panneau-bienvenue.png",
     alt: "Panneau de bienvenue",
     gridGap: "gap-14",
   },
   {
     n: "02",
-    title: "SIGNATURE DU DEVIS & CONTRAT",
+    title: "DEVIS & SIGNATURE",
     body: "La collaboration débute officiellement avec la signature du contrat, qui formalise les engagements mutuels et le cadre de notre travail.",
     stack: [
       "/images/contract/page-02.jpg",
@@ -25,8 +25,8 @@ const steps = [
   },
   {
     n: "03",
-    title: "INTENTIONS & DIRECTION ARTISTIQUE",
-    body: "Création d'un moodboard et d'une ligne esthétique : ambiance, matières, couleurs, fleurs, typographies, style graphique… Un fil rouge visuel et émotionnel se dessine.",
+    title: "INSPIRATIONS & UNIVERS",
+    body: "Pour chaque temps fort de la célébration (cérémonie, cocktail, dîner, papeterie), nous composons une planche d'intentions : ambiances, matières, palette, fleurs, typographies. Un fil rouge visuel et émotionnel se dessine, fidèle à votre histoire.",
     image: "/images/step-03-moodboard.jpg",
     alt: "Moodboard — direction artistique",
     gridGap: "gap-14",
@@ -34,8 +34,8 @@ const steps = [
   },
   {
     n: "04",
-    title: "CONCEPTION",
-    body: "Nous traduisons cette vision en un projet complet, harmonisant les éléments visuels et scénographiques : compositions florales, papeterie, signalétique, agencement des espaces. Chaque élément trouve sa place avec justesse et cohérence.",
+    title: "PRÉSENTATION DU PROJET",
+    body: "Nous traduisons cette vision en un projet complet, harmonisant compositions florales, papeterie, signalétique et agencement des espaces. C'est le moment de la révélation : vous découvrez, à travers un carnet d'atmosphère détaillé, votre univers prendre forme.",
     flipbook: Array.from({ length: 24 }, (_, i) =>
       `/images/flipbook/${String(i + 1).padStart(2, "0")}.jpg`
     ),
@@ -44,21 +44,21 @@ const steps = [
   },
   {
     n: "05",
-    title: "ORCHESTRATION & FINALISATION",
-    body: "Nous pilotons la réalisation de chaque élément : sourcing, production, ajustements, échanges avec vous ou votre wedding planner. Vous êtes accompagnés en toute sérénité.",
+    title: "DANS LES COULISSES",
+    body: "Le dossier validé, nous passons commande auprès de nos partenaires et coordonnons l'ensemble : sourcing, production sur mesure, ajustements, dialogue avec vous ou votre wedding planner. Vous restez maître de la vision ; nous orchestrons en coulisses.",
     stack: [
       "/images/tableaux/elements.jpg",
       "/images/tableaux/calcul-fleurs.jpg",
     ],
     alt: "Tableaux d'orchestration",
     landscape: true,
-    gridGap: "gap-0",
+    gridGap: "max-md:gap-12 gap-0",
     marginTop: "max-md:mt-0 mt-28 md:mt-40",
   },
   {
     n: "06",
-    title: "INSTALLATION & MISE EN SCÈNE",
-    body: "Le jour J, l'univers prend vie. Nous mettons en place chaque élément du décor, composons les fleurs in situ, ajustons les volumes et sublimons les espaces pour offrir une expérience à la hauteur de votre histoire. Un décor vivant, élégant et fluide, à votre image.",
+    title: "LE JOUR J",
+    body: "Le jour J, nous nous occupons de tout. Installation, mise en place, compositions florales in situ, ajustements de dernière minute. Vous n'avez plus qu'à vivre votre journée ; nous veillons à ce que chaque détail soit fidèle à votre vision.",
     image: "/images/tonga-soa.png",
     alt: "Bannière Tonga Soa",
     gridGap: "gap-14",
@@ -93,8 +93,8 @@ const steps = [
       </h2>
       <p class="mt-6 md:mt-10 text-[0.62rem] sm:text-[0.78rem] tracking-[0.18em] sm:tracking-[0.22em] uppercase leading-[1.95] text-[var(--color-ink-soft)]" data-i18n="process.intro.p">
         De la première rencontre au jour J,<br />
-        vivez la création de votre univers<br />
-        en toute sérénité.
+        six temps pour donner forme à votre univers,<br />
+        dans la fluidité et la confiance.
       </p>
     </div>
   </section>
@@ -171,7 +171,7 @@ const steps = [
                 >
                   <div class:list={[
                     "relative",
-                    step.landscape ? "w-[88%] aspect-[1.414/1]" : "w-[62%] aspect-[1/1.414]",
+                    step.landscape ? "w-[95%] md:w-[88%] aspect-[1.414/1]" : "w-[62%] aspect-[1/1.414]",
                   ]}>
                     {/* Fan-shaped stack — rotations pivot around bottom-center
                         so the back pages swing up-right while the front leans left,
@@ -329,7 +329,7 @@ const steps = [
         <div class="col-span-12 md:col-span-8 md:pl-6 mt-8 md:mt-0">
           <div class="w-fit max-w-full">
             <p class="font-italic-serif italic text-[1.4rem] sm:text-[1.7rem] md:text-[40px] leading-[1.4] md:leading-[1.3] text-white text-pretty" data-i18n="process.closing">
-              Mon processus créatif allie écoute,<br class="hidden md:inline" />
+              Notre processus créatif allie écoute,<br class="hidden md:inline" />
               intuition et exigence esthétique, pour<br class="hidden md:inline" />
               concevoir une expérience sur mesure et<br class="hidden md:inline" />
               propre à votre histoire.

@@ -358,46 +358,46 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "A JOURNEY <span>IN 6 STEPS</span>"
   },
   "process.intro.p": {
-    fr: "De la première rencontre au jour J,<br />vivez la création de votre univers<br />en toute sérénité.",
-    en: "From the first meeting to the day itself,<br />experience the creation of your world<br />with complete peace of mind."
+    fr: "De la première rencontre au jour J,<br />six temps pour donner forme à votre univers,<br />dans la fluidité et la confiance.",
+    en: "From the first meeting to the day itself,<br />six steps to bring your world to life,<br />in fluidity and trust."
   },
 
-  "process.step.1.title": { fr: "PREMIER ÉCHANGE", en: "FIRST CONVERSATION" },
+  "process.step.1.title": { fr: "PREMIÈRE RENCONTRE", en: "FIRST MEETING" },
   "process.step.1.body": {
-    fr: "Tout commence par un échange. Nous apprenons à vous connaître, à comprendre votre histoire, vos envies, vos inspirations. Nous définissons ensemble les contours de votre univers, les priorités, les émotions à transmettre. À l'issue de cet échange, un devis personnalisé vous est remis pour validation.",
-    en: "It all begins with a conversation. We get to know you, your story, your wishes, your inspirations. Together we define the contours of your world, the priorities, the emotions to convey. At the end of this exchange, a personalised quote is sent for your approval."
+    fr: "Tout commence par une rencontre. Nous prenons le temps de faire connaissance, d'écouter votre histoire et de comprendre vos envies. Ensemble, nous esquissons les contours de votre univers, ses priorités, les émotions à transmettre. À l'issue de ce rendez-vous, un devis personnalisé vous est remis pour validation.",
+    en: "It all begins with a meeting. We take the time to get to know you, to listen to your story and understand your wishes. Together, we sketch the contours of your world, its priorities, the emotions to convey. At the end of this meeting, a personalised quote is sent for your approval."
   },
-  "process.step.2.title": { fr: "SIGNATURE DU DEVIS <span class=\"amp\">&amp;</span> CONTRAT", en: "QUOTE <span class=\"amp\">&amp;</span> CONTRACT SIGNING" },
+  "process.step.2.title": { fr: "DEVIS <span class=\"amp\">&amp;</span> SIGNATURE", en: "QUOTE <span class=\"amp\">&amp;</span> SIGNATURE" },
   "process.step.2.body": {
     fr: "La collaboration débute officiellement avec la signature du contrat, qui formalise les engagements mutuels et le cadre de notre travail.",
     en: "Our collaboration officially begins with the signing of the contract, which formalises mutual commitments and the framework of our work together."
   },
-  "process.step.3.title": { fr: "INTENTIONS <span class=\"amp\">&amp;</span> DIRECTION ARTISTIQUE", en: "INTENTIONS <span class=\"amp\">&amp;</span> CREATIVE DIRECTION" },
+  "process.step.3.title": { fr: "INSPIRATIONS <span class=\"amp\">&amp;</span> UNIVERS", en: "INSPIRATIONS <span class=\"amp\">&amp;</span> ATMOSPHERES" },
   "process.step.3.body": {
-    fr: "Création d'un moodboard et d'une ligne esthétique : ambiance, matières, couleurs, fleurs, typographies, style graphique… Un fil rouge visuel et émotionnel se dessine.",
-    en: "Creation of a moodboard and an aesthetic line: atmosphere, materials, colours, flowers, typography, graphic style… A visual and emotional thread takes shape."
+    fr: "Pour chaque temps fort de la célébration (cérémonie, cocktail, dîner, papeterie), nous composons une planche d'intentions : ambiances, matières, palette, fleurs, typographies. Un fil rouge visuel et émotionnel se dessine, fidèle à votre histoire.",
+    en: "For each key moment of the celebration (ceremony, cocktail, dinner, stationery), we compose a board of intentions: atmospheres, materials, palette, flowers, typography. A visual and emotional thread takes shape, faithful to your story."
   },
-  "process.step.4.title": { fr: "CONCEPTION", en: "DESIGN" },
+  "process.step.4.title": { fr: "PRÉSENTATION DU PROJET", en: "PROJECT REVEAL" },
   "process.step.4.body": {
-    fr: "Nous traduisons cette vision en un projet complet, harmonisant les éléments visuels et scénographiques : compositions florales, papeterie, signalétique, agencement des espaces. Chaque élément trouve sa place avec justesse et cohérence.",
-    en: "We translate this vision into a complete project, harmonising visual and scenographic elements: floral compositions, stationery, signage, spatial layout. Every element finds its place with precision and coherence."
+    fr: "Nous traduisons cette vision en un projet complet, harmonisant compositions florales, papeterie, signalétique et agencement des espaces. C'est le moment de la révélation : vous découvrez, à travers un carnet d'atmosphère détaillé, votre univers prendre forme.",
+    en: "We translate this vision into a complete project, harmonising floral compositions, stationery, signage and spatial layout. This is the moment of reveal: through a detailed atmosphere book, you discover your world taking shape."
   },
-  "process.step.5.title": { fr: "ORCHESTRATION <span class=\"amp\">&amp;</span> FINALISATION", en: "ORCHESTRATION <span class=\"amp\">&amp;</span> FINALISATION" },
+  "process.step.5.title": { fr: "DANS LES COULISSES", en: "BEHIND THE SCENES" },
   "process.step.5.body": {
-    fr: "Nous pilotons la réalisation de chaque élément : sourcing, production, ajustements, échanges avec vous ou votre wedding planner. Vous êtes accompagnés en toute sérénité.",
-    en: "We lead the production of every element: sourcing, production, adjustments, exchanges with you or your wedding planner. You are supported with complete serenity."
+    fr: "Le dossier validé, nous passons commande auprès de nos partenaires et coordonnons l'ensemble : sourcing, production sur mesure, ajustements, dialogue avec vous ou votre wedding planner. Vous restez maître de la vision ; nous orchestrons en coulisses.",
+    en: "Once the project is approved, we place orders with our partners and coordinate everything: sourcing, bespoke production, adjustments, dialogue with you or your wedding planner. You remain the keeper of the vision; we orchestrate behind the scenes."
   },
-  "process.step.6.title": { fr: "INSTALLATION <span class=\"amp\">&amp;</span> MISE EN SCÈNE", en: "INSTALLATION <span class=\"amp\">&amp;</span> STAGING" },
+  "process.step.6.title": { fr: "LE JOUR J", en: "THE BIG DAY" },
   "process.step.6.body": {
-    fr: "Le jour J, l'univers prend vie. Nous mettons en place chaque élément du décor, composons les fleurs in situ, ajustons les volumes et sublimons les espaces pour offrir une expérience à la hauteur de votre histoire. Un décor vivant, élégant et fluide, à votre image.",
-    en: "On the day itself, the world comes alive. We install every decor element, compose the flowers on site, adjust the volumes and elevate the spaces to deliver an experience worthy of your story. A decor that is alive, elegant and seamless, in your image."
+    fr: "Le jour J, nous nous occupons de tout. Installation, mise en place, compositions florales in situ, ajustements de dernière minute. Vous n'avez plus qu'à vivre votre journée ; nous veillons à ce que chaque détail soit fidèle à votre vision.",
+    en: "On the day itself, we take care of everything. Installation, set-up, floral compositions on site, last-minute adjustments. All you have to do is live your day; we make sure every detail stays true to your vision."
   },
   "process.flipbook.prev": { fr: "Page précédente", en: "Previous page" },
   "process.flipbook.next": { fr: "Page suivante", en: "Next page" },
 
   "process.closing": {
-    fr: "Mon processus créatif allie écoute,<br class=\"hidden md:inline\" /> intuition et exigence esthétique, pour<br class=\"hidden md:inline\" /> concevoir une expérience sur mesure et<br class=\"hidden md:inline\" /> propre à votre histoire.",
-    en: "My creative process combines listening,<br class=\"hidden md:inline\" /> intuition and aesthetic rigour, to<br class=\"hidden md:inline\" /> design a bespoke experience<br class=\"hidden md:inline\" /> true to your story."
+    fr: "Notre processus créatif allie écoute,<br class=\"hidden md:inline\" /> intuition et exigence esthétique, pour<br class=\"hidden md:inline\" /> concevoir une expérience sur mesure et<br class=\"hidden md:inline\" /> propre à votre histoire.",
+    en: "Our creative process combines listening,<br class=\"hidden md:inline\" /> intuition and aesthetic rigour, to<br class=\"hidden md:inline\" /> design a bespoke experience<br class=\"hidden md:inline\" /> true to your story."
   },
   "process.closing.cta": { fr: "Contactez-nous", en: "Contact us" },
 
