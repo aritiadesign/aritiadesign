@@ -80,7 +80,7 @@ const leftProject = {
 
   {/* ───────────────────────── 3. STRIP — horizontal infinite marquee ───────────────────────── */}
   <section class="bg-white pb-16 overflow-hidden">
-    <div class="marquee relative w-full" data-marquee>
+    <div class="marquee relative w-full" data-marquee style="overflow: hidden; touch-action: auto;">
       <div class="marquee-track gap-3 md:gap-4 items-center">
         {[...strip, ...strip].map((img, i) => (
           <button
@@ -109,16 +109,22 @@ const leftProject = {
         const track = marquee.querySelector(".marquee-track");
         if (!track) return;
 
-        const SPEED = 0.8;
+        // Transform-based marquee — bypasses iOS Safari's scrollLeft quirks with
+        // accelerated overflow scrolling. The track is translated continuously
+        // and wraps at half its width (content is duplicated).
+        const SPEED = 1;
         let paused = false;
         let resumeTimer;
+        let offset = 0;
+        let inSmoothTransition = false;
 
         function tick() {
-          if (!paused) {
+          if (!paused && !inSmoothTransition) {
             const half = track.scrollWidth / 2;
             if (half > 0) {
-              marquee.scrollLeft += SPEED;
-              if (marquee.scrollLeft >= half) marquee.scrollLeft -= half;
+              offset += SPEED;
+              if (offset >= half) offset -= half;
+              track.style.transform = "translate3d(" + (-offset) + "px, 0, 0)";
             }
           }
           requestAnimationFrame(tick);
@@ -143,19 +149,27 @@ const leftProject = {
           });
         }
 
-        marquee.addEventListener("wheel", () => {
-          pause();
-          scheduleResume(1500);
-        }, { passive: true });
-
-        // Click an image → smooth-scroll to centre it.
+        // Click an image → smooth-translate to centre it.
         marquee.querySelectorAll("button").forEach((b) => {
           b.addEventListener("click", () => {
             pause();
             const rect = b.getBoundingClientRect();
             const mqRect = marquee.getBoundingClientRect();
-            const target = marquee.scrollLeft + (rect.left - mqRect.left) - (mqRect.width - rect.width) / 2;
-            marquee.scrollTo({ left: target, behavior: "smooth" });
+            const delta = (rect.left + rect.width / 2) - (mqRect.left + mqRect.width / 2);
+            const target = offset + delta;
+            inSmoothTransition = true;
+            track.style.transition = "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
+            track.style.transform = "translate3d(" + (-target) + "px, 0, 0)";
+            setTimeout(() => {
+              track.style.transition = "";
+              // Normalise the offset back into [0, half) for the continuous loop.
+              const half = track.scrollWidth / 2;
+              let next = target;
+              if (half > 0) next = ((next % half) + half) % half;
+              offset = next;
+              track.style.transform = "translate3d(" + (-offset) + "px, 0, 0)";
+              inSmoothTransition = false;
+            }, 650);
             scheduleResume(2500);
           });
         });
