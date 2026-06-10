@@ -148,10 +148,6 @@ const leftProject = {
           scheduleResume(1500);
         }, { passive: true });
 
-        marquee.addEventListener("touchstart",  pause,                       { passive: true });
-        marquee.addEventListener("touchend",    () => scheduleResume(2000),  { passive: true });
-        marquee.addEventListener("touchcancel", () => scheduleResume(2000),  { passive: true });
-
         // Click an image → smooth-scroll to centre it.
         marquee.querySelectorAll("button").forEach((b) => {
           b.addEventListener("click", () => {
