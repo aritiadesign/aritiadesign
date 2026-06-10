@@ -41,12 +41,12 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "home.hero.subtitle": {
     fr: "Créatrice d'univers pour mariages<br />&amp; évènements d'exception",
-    en: "Universe Designer for Bespoke<br />Weddings &amp; Celebrations"
+    en: "Crafting Atmospheres for Bespoke<br />Weddings &amp; Celebrations"
   },
 
   // ─────────────────────────── Home — Intro ───────────────────────────
   "home.intro.h2": {
-    fr: "CRÉATRICE D'UNIVERS ÉVÈNEMENTIELS<br />HAUT DE GAMME",
+    fr: "CRÉATRICE D’UNIVERS ÉVÈNEMENTIELS<br />HAUT DE GAMME",
     en: "CURATOR OF HIGH-END<br />CELEBRATIONS"
   },
   "home.intro.p": {
@@ -60,8 +60,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
 
   // ─────────────────────────── Home — Méthode ───────────────────────────
   "home.method.script": {
-    fr: "Transformez chaque<br />occasion en<br />moment d'exception",
-    en: "Turn every<br class=\"md:hidden\" /> occasion<br class=\"hidden md:inline\" /> into an<br class=\"md:hidden\" /> exceptional moment"
+    fr: "Transformez chaque<br />occasion en<br />moment d’exception",
+    en: "Transform every<br class=\"md:hidden\" /> occasion<br class=\"hidden md:inline\" /> into an<br class=\"md:hidden\" /> exceptional moment"
   },
   "home.method.h2": {
     fr: "MÉTHODE<br /><span class=\"font-italic-serif italic\">de</span> TRAVAIL",
@@ -69,7 +69,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "home.method.p": {
     fr: "De la première inspiration au jour J, nous vous accompagnons avec sensibilité et exigence dans la création d'un univers qui vous ressemble&nbsp;– une approche sur-mesure, pensée pour faire naître la beauté et l'émotion.",
-    en: "From the first spark of inspiration to the day itself, we guide you with sensibility and rigour in creating a world that reflects you&nbsp;– a bespoke approach, designed to give rise to beauty and emotion."
+    en: "From the first spark of inspiration to the day itself, we guide you with sensibility and rigour in creating a vision that reflects you&nbsp;– a bespoke approach, designed to give rise to beauty and emotion."
   },
   "home.method.cta": { fr: "Découvrir", en: "Discover" },
 
@@ -80,7 +80,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "home.mariage.p": {
     fr: "À travers une approche transversale mêlant design floral, scénographie immersive, papeterie personnalisée et identité visuelle, nous concevons à vos côtés un univers esthétique global, où chaque choix incarne avec exigence l'essence de votre histoire.",
-    en: "Through a cross-disciplinary approach blending floral design, immersive set design, bespoke stationery and visual identity, we craft an overarching aesthetic world by your side, where every choice rigorously embodies the essence of your story."
+    en: "Through a cross-disciplinary approach blending floral design, immersive set design, bespoke stationery and visual identity, we craft a unified aesthetic by your side, where every choice thoughtfully embodies the essence of your story."
   },
   "home.mariage.cta": { fr: "Explorer", en: "Explore" },
 
@@ -92,7 +92,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "home.testimonial.1.author": { fr: "Mélodie & Thibault", en: "Mélodie & Thibault" },
   "home.testimonial.2.quote": {
-    fr: "Merci beaucoup pour l'organisation de notre mariage&nbsp;! Ton souci du détail, ton dévouement ont rendu notre journée parfaite voir plus que parfaite. Nous te sommes reconnaissants pour les magnifiques souvenirs que tu as contribuée à créer et te souhaitons beaucoup de succès dans l'organisation de tes prochains évènements.<br /><br />Nous recommandons Aritia sans aucune hésitation.",
+    fr: "Merci beaucoup pour l'organisation de notre mariage&nbsp;! Ton souci du détail, ton dévouement ont rendu notre journée parfaite voire plus que parfaite. Nous te sommes reconnaissants pour les magnifiques souvenirs que tu as contribué à créer et te souhaitons beaucoup de succès dans l'organisation de tes prochains évènements.<br /><br />Nous recommandons Aritia sans aucune hésitation.",
     en: "Thank you so much for organising our wedding! Your eye for detail and your dedication made our day perfect, even more than perfect. We are grateful for the beautiful memories you helped create and wish you every success with the events ahead.<br /><br />We recommend Aritia without hesitation."
   },
   "home.testimonial.2.author": { fr: "ELITAH & FYDERANA", en: "ELITAH & FYDERANA" },
@@ -101,7 +101,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
 
   // ─────────────────────────── Home — À propos teaser ───────────────────────────
   "home.about.script": {
-    fr: "Allier le beau<br /><span class=\"ml-10 md:ml-16\">à l'essentiel</span>",
+    fr: "Allier le beau<br /><span class=\"ml-10 md:ml-16\">à l’essentiel</span>",
     en: "Pairing beauty<br /><span class=\"ml-10 md:ml-16\">with what matters</span>"
   },
   "home.about.h2": { fr: "À&nbsp;PROPOS", en: "ABOUT" },
@@ -111,7 +111,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "home.about.p2": {
     fr: "Formée au design et passionnée par l'art de sublimer l'instant, je développe un savoir-faire complet alliant minutie, création et mise en scène.",
-    en: "Trained in design and passionate about the art of elevating the moment, I cultivate a complete craft uniting precision, creation and staging."
+    en: "Trained in design and passionate about the art of elevating the moment, I cultivate a comprehensive craft uniting precision, creation and staging."
   },
   "home.about.cta": { fr: "En savoir plus", en: "Learn more" },
   "home.aritia.portrait.alt": { fr: "Aritia, fondatrice d'Aritia Design", en: "Aritia, founder of Aritia Design" },
@@ -132,15 +132,15 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "about.founder.h2": { fr: "FONDATRICE<br />DESIGNER", en: "FOUNDER<br />DESIGNER" },
   "about.founder.kicker": {
     fr: "Une designer passionnée par les volumes,<br class=\"hidden sm:inline\" /> la matière et l'amour des autres",
-    en: "A designer passionate about volume,<br class=\"hidden sm:inline\" /> material and the love we share"
+    en: "A designer passionate about volume,<br class=\"hidden sm:inline\" /> materials and a love for others"
   },
   "about.founder.p1": {
     fr: "Depuis l'enfance, l'harmonie des formes, des textures et des couleurs me fascine. C'est dès l'adolescence que j'ai fait mes premiers pas sur le terrain, en contribuant à la conception d'une dizaine de mariages. J'y ai exploré toutes les facettes de l'évènementiel&nbsp;: design floral, structures, décors, papeterie et direction artistique. Chaque projet a été un espace d'apprentissage et un défi pour me dépasser.",
-    en: "Ever since childhood, the harmony of shapes, textures and colours has fascinated me. It was in my teenage years that I took my first steps on the ground, contributing to the design of around a dozen weddings. I explored every facet of the field: floral design, structures, decor, stationery and creative direction. Every project has been a space for learning and a challenge to surpass myself."
+    en: "Ever since childhood, the harmony of shapes, textures and colours has fascinated me. It was in my teenage years that I gained my first hands-on experience, contributing to the design of around a dozen weddings. I explored every facet of the field: floral design, structures, decor, stationery and creative direction. Every project has been a chance to learn and a challenge to push myself further."
   },
   "about.founder.p3": {
     fr: "Mon parcours en design produit est venu structurer cette pratique en m'apportant une approche exigeante et sensible&nbsp;: l'œil pour les textures, la maîtrise des volumes, la juste gestion de la lumière et des couleurs, un sens aigu du détail, ainsi que le savoir-faire technique nécessaire à la conception d'objets et de structures sur-mesure.",
-    en: "My background in product design has shaped this practice, bringing a demanding yet sensitive approach: an eye for texture, command of volume, the right handling of light and colour, a sharp sense of detail, along with the technical know-how needed to design bespoke objects and structures."
+    en: "My background in product design has shaped this practice, bringing a demanding yet sensitive approach: an eye for texture, command of volume, a considered handling of light and colour, a sharp sense of detail, along with the technical know-how needed to design bespoke objects and structures."
   },
   "about.founder.p4": {
     fr: "Ma démarche repose sur l'alliance entre sensibilité et rigueur, avec la volonté profonde de transmettre une émotion à travers chaque projet et d'offrir aux autres ces moments suspendus, gravés dans les mémoires.",
@@ -148,7 +148,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "about.founder.p5": {
     fr: "C'est de cette ambition qu'est née Aritia Design&nbsp;: une agence pensée pour celles et ceux qui attendent d'un évènement plus qu'une simple décoration. Une vision, une intention, une signature.",
-    en: "It is from this ambition that Aritia Design was born: a studio designed for those who expect more from an event than mere decoration. A vision, an intention, a signature."
+    en: "Aritia Design was born of this ambition: a studio designed for those who expect more from an event than mere decoration. A vision, an intention, a signature."
   },
   "about.ambition.h2": {
     fr: "MON AMBITION EST DE<br />CONCRÉTISER VOTRE<br />VISION",
@@ -164,7 +164,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "services.hero.title": { fr: "Services<br />&amp; Packages", en: "Services<br />&amp; Packages" },
   "services.hero.subtitle": {
     fr: "De l'inspiration à la réalisation, chaque étape est pensée <br />pour refléter votre&nbsp;univers",
-    en: "From inspiration to realisation, every step is designed <br />to reflect your&nbsp;world"
+    en: "From inspiration to realisation, every step is designed <br />to reflect your&nbsp;vision"
   },
   "services.intro.h2": {
     fr: "UNE DIRECTION ARTISTIQUE<br />POUR DONNER VIE À VOS ÉMOTIONS",
@@ -190,22 +190,22 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "services.0.title.mobile":  { fr: 'DIRECTION <span class="font-italic-serif italic font-light">Artistique</span>', en: 'ART <span class="font-italic-serif italic font-light">Direction</span>' },
   "services.0.body": {
     fr: "<p>En direction artistique globale, nous signons votre univers de manière absolue : identité graphique, art de la table, design floral, structures sur‑mesure et mise en scène. Une seule vision sur l'ensemble pour que chaque détail réponde à la même intention, sans aucun intermédiaire. Ce contrôle absolu de la chaîne de création supprime toute rupture de ton et livre l'expression exacte de votre projet. Découvrez cette approche à travers notre collection signature : <a href=\"#pack-0\" class=\"underline underline-offset-4 decoration-from-font hover:opacity-70 transition\">L'EXCEPTION</a>.</p>",
-    en: "<p>In holistic art direction, we sign your world absolutely: graphic identity, tablescaping, floral design, bespoke structures and spatial scenography. A single vision over the whole, so every detail answers the same intention, with no intermediary. This absolute control over the creative chain removes any break in tone and delivers the exact expression of your project. Discover this approach through our signature collection: <a href=\"#pack-0\" class=\"underline underline-offset-4 decoration-from-font hover:opacity-70 transition\">L'EXCEPTION</a>.</p>"
+    en: "<p>In holistic art direction, we author your vision in its entirety: graphic identity, tablescaping, floral design, bespoke structures and spatial scenography. A single vision over the whole, so every detail answers the same intention, with no intermediary. This absolute control over the creative chain removes any break in tone and delivers the exact expression of your project. Discover this approach through our signature collection: <a href=\"#pack-0\" class=\"underline underline-offset-4 decoration-from-font hover:opacity-70 transition\">L'EXCEPTION</a>.</p>"
   },
   "services.1.title": { fr: 'DECOR <span class="font-italic-serif italic font-light">Scénographie</span>', en: 'DECOR <span class="font-italic-serif italic font-light">Set Design</span>' },
   "services.1.body": {
-    fr: "<p>La maîtrise globale de votre décor. Nous concevons et coordonnons l'ensemble des éléments visuels de votre événement : mobilier, éclairage, matières et accessoires. Notre rôle est de garantir l'harmonie absolue de l'espace, où chaque détail visible répond à la même intention, afin que la scénographie finale soit la traduction exacte du projet initial.</p>",
+    fr: "<p>La maîtrise globale de votre décor. Nous concevons et coordonnons l'ensemble des éléments visuels de votre évènement : mobilier, éclairage, matières et accessoires. Notre rôle est de garantir l'harmonie absolue de l'espace, où chaque détail visible répond à la même intention, afin que la scénographie finale soit la traduction exacte du projet initial.</p>",
     en: "<p>Full mastery of your decor. We design and coordinate every visual element of your event: furniture, lighting, materials and accessories. Our role is to guarantee absolute harmony of the space, where every visible detail answers the same intention, so the final scenography is the exact translation of the initial project.</p>"
   },
   "services.2.title": { fr: 'FLORAL <span class="font-italic-serif italic font-light">Design</span>', en: 'FLORAL <span class="font-italic-serif italic font-light">Design</span>' },
   "services.2.body": {
     fr: "<p>Du détail intime aux installations d'ampleur, nous concevons chaque pièce végétale en résonance avec votre univers visuel. Sélection rigoureuse des variétés, maîtrise des textures, des palettes et des volumes : les fleurs s'inscrivent comme une composante essentielle de la scénographie, loin du simple accessoire.</p>",
-    en: "<p>From intimate details to large-scale installations, we design each botanical piece in resonance with your visual world. A rigorous selection of varieties and a mastery of textures, palettes and volumes: flowers become an essential element of the scenography, far from a mere accessory.</p>"
+    en: "<p>From intimate details to large-scale installations, we design each botanical piece in resonance with your aesthetic. A rigorous selection of varieties and a mastery of textures, palettes and volumes: flowers become an essential element of the scenography, far from a mere accessory.</p>"
   },
   "services.3.title": { fr: 'IDENTITÉ <span class="font-italic-serif italic font-light">Graphique</span>', en: 'GRAPHIC <span class="font-italic-serif italic font-light">Identity</span>' },
   "services.3.body": {
-    fr: "<p>L'identité graphique est le premier point de contact de votre événement. Du monogramme à la signalétique du jour J, nous dessinons un univers visuel unique : choix des typographies, illustrations exclusives, textures des papiers et finitions artisanales. Chaque pièce est pensée comme un objet d'art imprimé, pour prolonger l'esthétique de votre célébration.</p>",
-    en: "<p>Graphic identity is the first point of contact with your event. From monogram to day-of signage, we design a singular visual world: chosen typography, exclusive illustrations, paper textures and artisan finishes. Every piece is conceived as a printed art object, extending the aesthetic of your celebration.</p>"
+    fr: "<p>L'identité graphique est le premier point de contact de votre évènement. Du monogramme à la signalétique du jour J, nous dessinons un univers visuel unique : choix des typographies, illustrations exclusives, textures des papiers et finitions artisanales. Chaque pièce est pensée comme un objet d'art imprimé, pour prolonger l'esthétique de votre célébration.</p>",
+    en: "<p>Graphic identity is the first point of contact with your event. From monogram to day-of signage, we design a singular visual signature: chosen typography, exclusive illustrations, paper textures and artisan finishes. Every piece is conceived as a printed art object, extending the aesthetic of your celebration.</p>"
   },
   "services.cta.tab": { fr: "Prendre rendez-vous", en: "Book a consultation" },
   "services.cta.mobile": { fr: "Prendre rendez-vous", en: "Book a consultation" },
@@ -226,13 +226,13 @@ export const i18n: Record<string, { fr: string; en: string }> = {
 
   // Pack 0 (L'EXCEPTION)
   "services.pack.0.title":  { fr: "L'EXCEPTION", en: "THE EXCEPTION" },
-  "services.pack.0.italic": { fr: "Design Intégral", en: "Full Design" },
+  "services.pack.0.italic": { fr: "Design Intégral", en: "Integrated Design" },
   "services.pack.0.label":  { fr: "COLLECTION SIGNATURE | SUR DEVIS", en: "SIGNATURE COLLECTION | ON REQUEST" },
   "services.pack.0.desc": {
     fr: "L'expérience la plus aboutie : vous nous confiez l'univers entier de votre célébration. Votre rôle se limite à l'approbation des concepts ; nous maîtrisons toute la chaîne de création pour vous livrer, le jour J, un décor unique et impeccable. L'assurance d'une exécution fidèle à l'intention.",
-    en: "Our most accomplished experience: you entrust us with the entire world of your celebration. Your role is limited to approving the concepts; we master the full creative chain to deliver, on the day, a singular, impeccable decor. The assurance of execution faithful to the intention."
+    en: "Our most accomplished experience: you entrust us with the entire vision of your celebration. Your role is limited to approving the concepts; we master the full creative chain to deliver, on the day, a singular, impeccable decor. The assurance of execution faithful to the intention."
   },
-  "services.pack.0.b0": { fr: "Création de votre univers et identité graphique", en: "Creation of your world and graphic identity" },
+  "services.pack.0.b0": { fr: "Création de votre univers et identité graphique", en: "Creation of your aesthetic and graphic identity" },
   "services.pack.0.b1": { fr: "Confection et agencement de votre décor", en: "Making and arrangement of your decor" },
   "services.pack.0.b2": { fr: "Conceptions florales signature", en: "Signature floral designs" },
   "services.pack.0.b3": { fr: "Mise en place et accompagnement complet", en: "Installation and full support" },
@@ -243,7 +243,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "services.pack.1.label":  { fr: "SCÉNOGRAPHIE & IDENTITÉ GRAPHIQUE<br />| SUR DEVIS", en: "SET DESIGN & GRAPHIC IDENTITY<br />| ON REQUEST" },
   "services.pack.1.desc": {
     fr: "Décor et identité graphique pensés comme un ensemble : la même charte visuelle traverse l'espace et le papier, du faire‑part à la mise en scène finale. Une cohérence totale entre ce que vos invités voient, touchent et lisent le jour J. Hors production florale et structures sur‑mesure, nous orchestrons tout votre univers visuel.",
-    en: "Decor and graphic identity conceived as one whole: the same visual charter runs through the space and the paper, from save-the-date to the final staging. Full coherence between what your guests see, touch and read on the day. Excluding floral production and bespoke structures, we orchestrate your entire visual world."
+    en: "Decor and graphic identity conceived as one whole: the same visual charter runs through the space and the paper, from save-the-date to the final staging. Full coherence between what your guests see, touch and read on the day. Excluding floral production and bespoke structures, we orchestrate your entire aesthetic."
   },
   "services.pack.1.b0": { fr: "Définition de votre style et harmonie colorée", en: "Definition of your style and colour palette" },
   "services.pack.1.b1": { fr: "Aménagement et mise en scène des espaces clés", en: "Layout and staging of key spaces" },
@@ -268,10 +268,10 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "services.pack.3.italic": { fr: "", en: "" },
   "services.pack.3.label":  { fr: "DESIGN FLORAL | SUR DEVIS", en: "FLORAL DESIGN | ON REQUEST" },
   "services.pack.3.desc": {
-    fr: "Bouquets, compositions, structures suspendues ou monumentales : nous prenons en charge toute la création florale de votre événement, de l'étude à la mise en place le jour J. Hors scénographie d'espace et identité graphique, le végétal est notre unique focus.",
+    fr: "Bouquets, compositions, structures suspendues ou monumentales : nous prenons en charge toute la création florale de votre évènement, de l'étude à la mise en place le jour J. Hors scénographie d'espace et identité graphique, le végétal est notre unique focus.",
     en: "Bouquets, compositions, suspended or monumental structures: we take charge of all the floral creation for your event, from the study to the installation on the day. Excluding spatial scenography and graphic identity, the botanical is our sole focus."
   },
-  "services.pack.3.b0": { fr: "Étude de votre univers floral personnalisé", en: "Study of your personalised floral world" },
+  "services.pack.3.b0": { fr: "Étude de votre univers floral personnalisé", en: "Study of your bespoke floral aesthetic" },
   "services.pack.3.b1": { fr: "Création de vos bouquets et accessoires", en: "Creation of your bouquets and accessories" },
   "services.pack.3.b2": { fr: "Réalisation de décors monumentaux", en: "Execution of large-scale floral installations" },
   "services.pack.3.b3": { fr: "Installation et mise en fleurs le jour J", en: "On-the-day installation and floral set-up" },
@@ -281,7 +281,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "services.pack.4.italic": { fr: "", en: "" },
   "services.pack.4.label":  { fr: "PAPETERIE FINE | SUR DEVIS", en: "FINE STATIONERY | ON REQUEST" },
   "services.pack.4.desc": {
-    fr: "Logos, Invitations, pièces de table, signalétique et papeterie d’art : nous prenons en charge toute l’identité graphique de votre événement, de l’étude à la livraison finale. Hors scénographie d’espace et design floral, notre intervention se consacre exclusivement au support visuel.",
+    fr: "Logos, invitations, pièces de table, signalétique et papeterie d'art : nous prenons en charge toute l'identité graphique de votre évènement, de l'étude à la livraison finale. Hors scénographie d'espace et design floral, notre intervention se consacre exclusivement au support visuel.",
     en: "Logo, monogram, invitations, table pieces, signage and fine stationery: we take charge of the full graphic identity of your event, from conception to final delivery. Excluding spatial scenography and floral design, paper is our sole focus."
   },
   "services.pack.4.b0": { fr: "Conception de votre logo et monogramme", en: "Design of your logo and monogram" },
@@ -299,58 +299,57 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   // Final CTA
   "services.final.h2": {
     fr: "VOTRE UNIVERS, VOTRE HISTOIRE,<br /><span class=\"font-italic-serif italic\">une création unique</span>",
-    en: "YOUR WORLD, YOUR STORY,<br /><span class=\"font-italic-serif italic\">a unique creation</span>"
+    en: "YOUR VISION, YOUR STORY,<br /><span class=\"font-italic-serif italic\">a unique creation</span>"
   },
   "services.final.sub": { fr: "Ensemble, donnons-lui vie", en: "Together, let's bring it to life" },
   "services.final.cta": { fr: "Me contacter", en: "Get in touch" },
 
-  // FAQ
-  "services.faq.h2": { fr: "Questions Fréquentes", en: "Frequently Asked Questions" },
+  // FAQ (services.astro)
+  "services.faq.h2": {
+    fr: "QUESTIONS<br /><span class=\"font-italic-serif italic font-light\">Fréquentes</span>",
+    en: "FREQUENTLY<br /><span class=\"font-italic-serif italic font-light\">Asked</span>"
+  },
+  "services.faq.script": {
+    fr: "Chaque question<br />mérite attention",
+    en: "Every question<br />deserves care"
+  },
   "services.faq.0.q": {
-    fr: "COMMENT SE DÉROULE L'ACCOMPAGNEMENT DU DÉBUT À LA FIN DE NOTRE MARIAGE OU ÉVÈNEMENT ?",
-    en: "HOW DOES THE FULL JOURNEY FROM START TO FINISH OF OUR WEDDING OR EVENT UNFOLD?"
+    fr: "ÊTES-VOUS PRÉSENTS LE<br class=\"md:hidden\" /> JOUR J ?",
+    en: "ARE YOU PRESENT ON<br class=\"md:hidden\" /> THE BIG DAY?"
   },
   "services.faq.0.a": {
-    fr: "Chaque projet commence par une rencontre afin de découvrir votre histoire, vos envies et l'univers que vous souhaitez donner à votre mariage. Je conçois ensuite une direction artistique complète : moodboards, palettes de couleurs, choix des matières, scénographie et identité graphique. À chaque étape, vous êtes guidés avec des propositions visuelles et concrètes. Le jour J, tout est pensé en amont pour que la mise en scène se déploie harmonieusement, vous permettant de profiter pleinement de chaque instant.",
-    en: "Every project begins with a meeting to discover your story, your wishes and the world you want to give your wedding. I then craft a complete creative direction: moodboards, colour palettes, material choices, set design and graphic identity. At each step, you're guided with concrete visual proposals. On the day itself, everything is planned in advance so the staging unfolds seamlessly, letting you fully enjoy every moment."
+    fr: "Oui, pour toutes nos formules avec exécution (l'Exception et Pack Atmosphère). Nous sommes présents de l'installation au démontage J+1 : nous orchestrons l'arrivée des prestataires, supervisons la mise en place et veillons à ce que chaque détail reflète fidèlement la direction artistique imaginée ensemble. Vous vivez votre célébration sereinement, sans avoir à gérer la logistique. Pour la Direction Artistique seule, vous repartez avec notre vision et l'orchestrez avec vos propres prestataires.",
+    en: "Yes, for all our packages with execution (The Exception and the Atmosphere Package). We are present from set-up to dismantling on D+1: we coordinate the arrival of suppliers, oversee the installation and ensure every detail faithfully reflects the creative direction imagined together. You experience your celebration with peace of mind, with no logistics to manage. For Art Direction only, you leave with our vision and orchestrate it with your own suppliers."
   },
   "services.faq.1.q": {
-    fr: "QUELLE EST LA DIFFÉRENCE ENTRE VOS PRESTATIONS ET CELLES D'UN WEDDING PLANNER ?",
-    en: "WHAT IS THE DIFFERENCE BETWEEN YOUR SERVICES AND THOSE OF A WEDDING PLANNER?"
+    fr: "QUELLE DIFFÉRENCE AVEC UN WEDDING PLANNER ?",
+    en: "WHAT IS THE DIFFERENCE WITH A WEDDING PLANNER?"
   },
   "services.faq.1.a": {
-    fr: "Mon rôle se concentre sur la création artistique et esthétique de votre mariage : univers visuel, ambiance, scénographie, créations florales et papeterie. J'imagine et façonne une identité cohérente qui se décline dans chaque détail. Le wedding planner, quant à lui, coordonne l'organisation logistique (planning, budget, gestion des prestataires). Ces deux métiers sont complémentaires : l'un assure la fluidité organisationnelle, l'autre sublime l'expérience visuelle et sensorielle.",
-    en: "My role focuses on the artistic and aesthetic creation of your wedding: visual world, atmosphere, set design, floral creations and stationery. I imagine and shape a coherent identity that runs through every detail. The wedding planner, on the other hand, coordinates the logistical side (scheduling, budget, supplier management). The two professions are complementary: one ensures organisational fluency, the other elevates the visual and sensory experience."
+    fr: "Notre rôle couvre la création artistique de votre mariage (univers visuel, scénographie, design floral, papeterie) et la coordination des prestataires qui exécutent cette vision (mobilier, éclairage, vaisselle, location décor...), tandis que le wedding planner orchestre l'organisation globale (planning, budget, traiteur, photographe, musique, lieu...). Les deux métiers sont complémentaires : l'un assure la fluidité organisationnelle, l'autre sublime l'expérience visuelle.",
+    en: "Our role covers the artistic creation of your wedding (visual direction, set design, floral design, stationery) and the coordination of the suppliers who execute this vision (furniture, lighting, tableware, decor rental...), whereas the wedding planner orchestrates the overall organisation (scheduling, budget, caterer, photographer, music, venue...). The two professions are complementary: one ensures organisational fluency, the other elevates the visual experience."
   },
   "services.faq.2.q": {
-    fr: "QUELS SONT VOS TARIFS ET COMMENT FONCTIONNENT VOS PACKAGES ET FORMULES ?",
-    en: "WHAT ARE YOUR RATES AND HOW DO YOUR PACKAGES AND OFFERINGS WORK?"
+    fr: "OÙ OPÉREZ-VOUS ?",
+    en: "WHERE DO YOU OPERATE?"
   },
   "services.faq.2.a": {
-    fr: "Chaque évènement fait l'objet d'une étude personnalisée. Pour offrir un cadre clair à votre projet, nous avons structuré nos interventions autour de deux niveaux de conception globale et de deux formules spécialisées&nbsp;:<br /><br />— Design intégral — L'Exception&nbsp;: La prise en charge absolue de votre évènement, de la direction artistique à la création de structures et décors sur-mesure, incluant fleurs et papeterie fine. Cet accompagnement intègre le stylisme des tables pour garantir une esthétique cohérente et une exécution maîtrisée.<br /><br />— Décor &amp; Identité visuelle&nbsp;: La création de l'ambiance esthétique générale et l'harmonisation visuelle de vos espaces.<br /><br />— L'Art floral&nbsp;: La conception artistique et la réalisation de vos décors et structures florales.<br /><br />— Papeterie fine&nbsp;: La création graphique et l'impression de votre papeterie et signalétique sur-mesure.<br /><br />Ces bases sont entièrement modulables et peuvent être enrichies d'options selon vos besoins. Les tarifs dépendent exclusivement de l'ampleur technique et logistique de votre projet. Un devis transparent et détaillé vous est présenté après notre premier échange, sur la base de votre cahier des charges.",
-    en: "Every event is the subject of a personalised study. To give your project a clear framework, we have structured our work around two levels of overall design and two specialised offerings:<br /><br />— Full Design — The Exception: complete handling of your event, from creative direction to the design of bespoke structures and decor, including flowers and fine stationery. This service includes table styling to ensure a coherent aesthetic and a mastered execution.<br /><br />— Decor &amp; Visual Identity: the creation of the overall aesthetic atmosphere and the visual harmonisation of your spaces.<br /><br />— Floral Art: the artistic conception and execution of your floral decor and structures.<br /><br />— Fine Stationery: the graphic design and printing of your bespoke stationery and signage.<br /><br />These foundations are fully modular and can be enriched with options to suit your needs. Rates depend solely on the technical and logistical scale of your project. A transparent, detailed quote is provided after our first conversation, based on your brief."
+    fr: "Notre agence est basée à Toulouse et intervient principalement en Haute-Garonne. Au-delà, nous nous déplaçons dans toute la France et à l'étranger selon les projets, avec des frais de déplacement intégrés au devis pour une totale transparence.",
+    en: "Our studio is based in Toulouse and works primarily in Haute-Garonne. Beyond that, we travel throughout France and abroad depending on the project, with travel costs included in the quote for full transparency."
   },
   "services.faq.3.q": {
-    fr: "TRAVAILLEZ-VOUS UNIQUEMENT EN HAUTE-GARONNE OU VOUS DÉPLACEZ-VOUS AILLEURS ?",
-    en: "DO YOU ONLY WORK IN HAUTE-GARONNE OR DO YOU TRAVEL ELSEWHERE?"
+    fr: "QUEL EST LE BON MOMENT POUR VOUS CONTACTER ?",
+    en: "WHEN IS THE RIGHT TIME TO CONTACT YOU?"
   },
   "services.faq.3.a": {
-    fr: "Basée en Haute-Garonne, notre agence intervient principalement autour de Toulouse et ses environs. Nous pouvons également nous déplacer dans d'autres régions, voire à l'étranger, selon les projets.",
-    en: "Based in Haute-Garonne, our agency works mainly around Toulouse and the surrounding area. We can also travel to other regions, or even abroad, depending on the project."
-  },
-  "services.faq.4.q": {
-    fr: "À PARTIR DE QUAND FAUT-IL VOUS CONTACTER POUR PRÉPARER UN MARIAGE ?",
-    en: "HOW FAR IN ADVANCE SHOULD I CONTACT YOU TO PREPARE A WEDDING?"
-  },
-  "services.faq.4.a": {
-    fr: "Idéalement, entre 8 et 12 mois avant la date du mariage afin d'avoir le temps de définir le concept, de sélectionner les prestataires et d'organiser chaque détail. Néanmoins, selon nos disponibilités, nous pouvons nous adapter à des délais plus courts.",
-    en: "Ideally, between 8 and 12 months before the wedding date, so there is time to define the concept, select suppliers and organise every detail. That said, depending on my availability, I can adapt to shorter timelines."
+    fr: "Les délais idéaux varient selon la formule choisie et l'ampleur du projet :<br /><br />— Pack L'Exception : 10 à 12 mois en amont (univers complet, sourcing des prestataires, coordination de la production).<br /><br />— Pack Atmosphère : 6 à 8 mois sont généralement suffisants.<br /><br />— Direction Artistique seule : à partir de 4 mois.<br /><br />Pour les évènements d'envergure (scénographie complexe, grande capacité), nous recommandons d'anticiper davantage. Nous restons toutefois flexibles sur des délais plus courts selon nos disponibilités du moment.",
+    en: "Ideal timeframes vary depending on the chosen package and the scale of the project:<br /><br />— The Exception Package: 10 to 12 months in advance (full creative direction, supplier sourcing, production coordination).<br /><br />— Atmosphere Package: 6 to 8 months is generally sufficient.<br /><br />— Art Direction only: from 4 months.<br /><br />For larger-scale events (complex set design, high guest count), we recommend planning further ahead. We remain flexible on shorter timelines depending on our current availability."
   },
 
   // ─────────────────────────── Processus page ───────────────────────────
   "process.kicker": { fr: "Processus créatif", en: "Creative process" },
   "process.hero.quote": {
-    fr: "«&nbsp;La création, c'est l'équilibre entre<br />maîtrise et lâcher-prise.&nbsp;»",
+    fr: "«&nbsp;La création, c’est l’équilibre entre<br />maîtrise et lâcher-prise.&nbsp;»",
     en: "“Creation is the balance between<br />mastery and letting go.”"
   },
   "process.intro.h2": {
@@ -359,13 +358,13 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "process.intro.p": {
     fr: "De la première rencontre au jour J,<br />vivez la création de votre univers<br />en toute sérénité.",
-    en: "From the first meeting to the day itself,<br />experience the creation of your world<br />with complete peace of mind."
+    en: "From the first meeting to the day itself,<br />experience the creation of your vision<br />with complete peace of mind."
   },
 
   "process.step.1.title": { fr: "PREMIÈRE RENCONTRE", en: "FIRST MEETING" },
   "process.step.1.body": {
     fr: "Tout commence par une rencontre. Nous prenons le temps de faire connaissance, d'écouter votre histoire et de comprendre vos envies. Ensemble, nous esquissons les contours de votre univers, ses priorités, les émotions à transmettre. À l'issue de ce rendez-vous, un devis personnalisé vous est remis pour validation.",
-    en: "It all begins with a meeting. We take the time to get to know you, to listen to your story and understand your wishes. Together, we sketch the contours of your world, its priorities, the emotions to convey. At the end of this meeting, a personalised quote is sent for your approval."
+    en: "It all begins with a meeting. We take the time to get to know you, to listen to your story and understand your wishes. Together, we sketch the contours of your vision, its priorities, the emotions to convey. At the end of this meeting, a personalised quote is sent for your approval."
   },
   "process.step.2.title": { fr: "DEVIS <span class=\"amp\">&amp;</span> SIGNATURE", en: "QUOTE <span class=\"amp\">&amp;</span> SIGNATURE" },
   "process.step.2.body": {
@@ -380,12 +379,12 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "process.step.4.title": { fr: "PRÉSENTATION DU PROJET", en: "PROJECT REVEAL" },
   "process.step.4.body": {
     fr: "Nous traduisons cette vision en un projet complet, harmonisant compositions florales, papeterie, signalétique et agencement des espaces. C'est le moment de la révélation : vous découvrez, à travers un carnet d'atmosphère détaillé, votre univers prendre forme.",
-    en: "We translate this vision into a complete project, harmonising floral compositions, stationery, signage and spatial layout. This is the moment of reveal: through a detailed atmosphere book, you discover your world taking shape."
+    en: "We translate this vision into a complete project, harmonising floral compositions, stationery, signage and spatial layout. This is the moment of reveal: through a detailed atmosphere book, you discover your universe taking shape."
   },
   "process.step.5.title": { fr: "DANS LES COULISSES", en: "BEHIND THE SCENES" },
   "process.step.5.body": {
     fr: "Le dossier validé, nous passons commande auprès de nos partenaires et coordonnons l'ensemble : sourcing, production sur mesure, ajustements, dialogue avec vous ou votre wedding planner. Vous restez maître de la vision ; nous orchestrons en coulisses.",
-    en: "Once the project is approved, we place orders with our partners and coordinate everything: sourcing, bespoke production, adjustments, dialogue with you or your wedding planner. You remain the keeper of the vision; we orchestrate behind the scenes."
+    en: "Once the project is approved, we place orders with our partners and coordinate everything: sourcing, bespoke production, adjustments, dialogue with you or your wedding planner. You remain in charge of the vision; we orchestrate behind the scenes."
   },
   "process.step.6.title": { fr: "LE JOUR J", en: "THE BIG DAY" },
   "process.step.6.body": {
@@ -404,8 +403,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   // ─────────────────────────── Portfolio page ───────────────────────────
   "portfolio.hero.title": { fr: "Portfolio", en: "Portfolio" },
   "portfolio.hero.subtitle": {
-    fr: "Des univers sur-mesure, raffiné<br class='show-mobile' />&amp; porteurs d'émotions",
-    en: "Bespoke worlds, refined<br class='show-mobile' />&amp; charged with emotion"
+    fr: "Des univers sur-mesure, raffinés<br class='show-mobile' />&amp; porteurs d'émotions",
+    en: "Bespoke universes, refined<br class='show-mobile' />&amp; charged with emotion"
   },
   "portfolio.label": { fr: "✦ Temps forts ✦", en: "✦ Highlights ✦" },
   "portfolio.savoir.h2": {
@@ -427,12 +426,12 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     fr: "NON, <span class=\"font-italic-serif italic font-light\">VOS RÊVES</span><br />NE SONT PAS TROP GRAND",
     en: "NO, <span class=\"font-italic-serif italic font-light\">YOUR DREAMS</span><br />ARE NOT TOO BIG"
   },
-  "portfolio.cta.btn": { fr: "Créer mon univers", en: "Create my world" },
+  "portfolio.cta.btn": { fr: "Créer mon univers", en: "Create my vision" },
 
   // ─────────────────────────── Contact page ───────────────────────────
   "contact.hero.title": { fr: "Contact", en: "Contact" },
   "contact.hero.subtitle": {
-    fr: "Vous rêver d'un mariage ou d'un évènement <br />qui vous ressemble&nbsp;?",
+    fr: "Vous rêvez d'un mariage ou d'un évènement <br />qui vous ressemble&nbsp;?",
     en: "Dreaming of a wedding or event <br />that truly reflects you?"
   },
   "contact.notes.label": { fr: "Notes", en: "Notes" },
@@ -444,7 +443,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "contact.h2": { fr: "FAISONS<br />CONNAISSANCE", en: "LET'S MEET" },
   "contact.p": {
     fr: "Votre histoire mérite une attention toute particulière, un regard sensible, et une mise en scène à la hauteur de vos émotions. Je serais honorée de vous accompagner dans la création d'un univers qui vous ressemble.",
-    en: "Your story deserves particular attention, a sensitive eye and staging worthy of your emotions. I would be honoured to guide you in creating a world that reflects you."
+    en: "Your story deserves particular attention, a sensitive eye and staging worthy of your emotions. I would be honoured to guide you in creating a vision that reflects you."
   },
   "contact.thanks.h": { fr: "Merci&nbsp;!", en: "Thank you!" },
   "contact.thanks.p": {
@@ -468,7 +467,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "contact.ph.budget": { fr: "BUDGET ENVISAGÉ POUR VOTRE PROJET *", en: "ESTIMATED BUDGET FOR YOUR PROJECT *" },
   "contact.ph.desc":   { fr: "DESCRIPTION *",                   en: "DESCRIPTION *" },
   "contact.opt.service.placeholder": { fr: "PRESTATION SOUHAITÉE *", en: "DESIRED SERVICE *" },
-  "contact.opt.service.0": { fr: "L'Exception — Design Intégral",  en: "The Exception — Full Design" },
+  "contact.opt.service.0": { fr: "L'Exception — Design Intégral",  en: "The Exception — Integrated Design" },
   "contact.opt.service.1": { fr: "Décor & Identité Visuelle",       en: "Decor & Visual Identity" },
   "contact.opt.service.2": { fr: "Décor & Mise en Ambiance",        en: "Decor & Atmosphere" },
   "contact.opt.service.3": { fr: "L'Art Floral",                    en: "Floral Art" },
@@ -638,6 +637,171 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     fr: "Aritia Design met en œuvre les mesures techniques et organisationnelles appropriées pour garantir la sécurité de vos données personnelles, notamment via une connexion HTTPS chiffrée et un accès restreint aux seules personnes habilitées.",
     en: "Aritia Design implements appropriate technical and organisational measures to ensure the security of your personal data, in particular through an encrypted HTTPS connection and access restricted to authorised personnel only."
   },
+
+  // ─────────────────────────── Services page (investment.* keys, used by services.astro) ───────────────────────────
+  "investment.hero.title": { fr: "Services", en: "Services" },
+  "investment.hero.subtitle": {
+    fr: "De l'inspiration au jour J,<br class=\"show-mobile\" />votre univers prend vie.",
+    en: "From inspiration to the big day,<br class=\"show-mobile\" />your vision comes to life."
+  },
+  "investment.intro.h2": {
+    fr: "UN ENGAGEMENT<br class=\"md:hidden\" /> À LA HAUTEUR<br class=\"hidden md:inline\" /> DE<br class=\"md:hidden\" /> VOTRE ÉVÈNEMENT",
+    en: "A COMMITMENT<br class=\"md:hidden\" /> WORTHY<br class=\"hidden md:inline\" /> OF<br class=\"md:hidden\" /> YOUR EVENT"
+  },
+  "investment.value.h3": {
+    fr: "NOTRE<br /><span class=\"font-italic-serif italic\">Engagement</span>",
+    en: "OUR<br /><span class=\"font-italic-serif italic\">Commitment</span>"
+  },
+  "investment.value.p": {
+    fr: "Choisir Aritia Design, c'est confier votre célébration à un savoir-faire engagé et à une vraie culture du détail. Nous traduisons vos attentes de manière juste pour créer un évènement unique, qui vous ressemble, et offrir à vos invités un moment mémorable.",
+    en: "Choosing Aritia Design means entrusting your celebration to dedicated craftsmanship and a true culture of detail. We translate your expectations with precision to create a singular event that reflects you, and offer your guests a memorable moment."
+  },
+  "investment.disclaimer": {
+    fr: "Les tarifs présentés correspondent au niveau <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">ESSENTIEL</span>, pour des célébrations intimistes<span class=\"hidden md:inline\"> (≤ 50 invités)</span>. Chaque projet fait l'objet d'un <span class=\"font-medium not-italic text-[var(--color-ink)]\">devis personnalisé</span><span class=\"hidden md:inline\"> selon votre nombre d'invités, votre lieu et l'ampleur de votre projet</span>. Les <span class=\"font-medium not-italic text-[var(--color-ink)]\">échelons supérieurs</span><span class=\"hidden md:inline\">, <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">CŒUR</span> et <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">SIGNATURE</span>,</span> sont disponibles sur demande.",
+    en: "The rates shown correspond to our <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">ESSENTIEL</span> tier, for intimate celebrations<span class=\"hidden md:inline\"> (≤ 50 guests)</span>. Each project receives a <span class=\"font-medium not-italic text-[var(--color-ink)]\">personalised quote</span><span class=\"hidden md:inline\"> based on your guest count, your venue and the scale of your project</span>. The <span class=\"font-medium not-italic text-[var(--color-ink)]\">higher tiers</span><span class=\"hidden md:inline\">, <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">CŒUR</span> and <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">SIGNATURE</span>,</span> are available on request."
+  },
+
+  // Tiers (cards)
+  "investment.tier.0.title": { fr: "L’EXCEPTION", en: "THE EXCEPTION" },
+  "investment.tier.0.italic": { fr: "design intégral", en: "integrated design" },
+  "investment.tier.0.price": { fr: "À partir de 6 000 €", en: "From €6,000" },
+  "investment.tier.0.scope": {
+    fr: "≤50 invités, un espace principal, fleurs de saison, décor sourcé. <br />DA globale incluse (valeur 1 500 €).",
+    en: "≤50 guests, one main space, seasonal flowers, sourced decor. <br />Full creative direction included (worth €1,500)."
+  },
+  "investment.tier.0.desc": {
+    fr: "L'expérience la plus aboutie : Aritia Design, votre interlocuteur unique pour orchestrer l'intégralité de votre célébration. <span class=\"hidden md:inline\">De la première inspiration à la dernière fleur posée, nous prenons en charge chaque dimension esthétique de votre journée. </span>Vous validez les concepts, nous réalisons le reste. — Structures et décor sur-mesure proposés en option selon vos envies.",
+    en: "Our most accomplished experience: Aritia Design, your single point of contact to orchestrate the entirety of your celebration. <span class=\"hidden md:inline\">From the first spark of inspiration to the last flower placed, we take charge of every aesthetic dimension of your day. </span>You approve the concepts, we deliver the rest. — Bespoke structures and decor available as options to suit your wishes."
+  },
+  "investment.tier.0.b0": { fr: "Moodboard complet, palette de couleurs et charte typographique", en: "Complete moodboard, colour palette and typography guidelines" },
+  "investment.tier.0.b1": { fr: "Papeterie essentielle : faire-part, menus et plan de table", en: "Essential stationery: invitations, menus and seating chart" },
+  "investment.tier.0.b2": { fr: "Floral intimiste : bouquet de la mariée, 5 centres de table et arche cérémonie", en: "Intimate florals: bridal bouquet, 5 table centrepieces and ceremony arch" },
+  "investment.tier.0.b3": { fr: "Décor & scénographie : sélection et mise en place du mobilier, vaisselle et objets décoratifs sourcés", en: "Decor & set design: selection and installation of furniture, tableware and sourced decorative objects" },
+  "investment.tier.0.b4": { fr: "3 réunions de travail et 1 visite du lieu de réception", en: "3 working meetings and 1 venue visit" },
+  "investment.tier.0.b5": { fr: "Présence le jour J (10 heures) avec installation et démontage J+1", en: "On-site presence on the day (10 hours) with set-up and dismantling on D+1" },
+
+  "investment.tier.1.title": { fr: "PACK ATMOSPHÈRE", en: "ATMOSPHERE PACKAGE" },
+  "investment.tier.1.italic": { fr: "décor <span class=\"amp\">&amp;</span> papeterie", en: "decor <span class=\"amp\">&amp;</span> stationery" },
+  "investment.tier.1.price": { fr: "À partir de 3 600 €", en: "From €3,600" },
+  "investment.tier.1.scope": {
+    fr: "≤50 invités, un espace principal, décor sourcé. <br />Économie de 400 € vs prestations séparées.",
+    en: "≤50 guests, one main space, sourced decor. <br />€400 saving vs separate services."
+  },
+  "investment.tier.1.desc": {
+    fr: "Pensé pour une identité visuelle parfaitement alignée. Votre papeterie, votre signalétique et votre décor s'articulent comme un ensemble unique. — Structures sur-mesure proposées en option selon vos envies.",
+    en: "Designed for a perfectly aligned visual identity. Your stationery, signage and decor come together as a single ensemble. — Bespoke structures available as options to suit your wishes."
+  },
+  "investment.tier.1.b0": { fr: "Direction artistique commune : palette de couleurs et charte typographique partagées entre papier et décor", en: "Shared creative direction: colour palette and typography guidelines unified across paper and decor" },
+  "investment.tier.1.b1": { fr: "Papeterie essentielle : faire-part, menus et plan de table", en: "Essential stationery: invitations, menus and seating chart" },
+  "investment.tier.1.b2": { fr: "Décor & scénographie : sélection et mise en place du mobilier, vaisselle et objets décoratifs sourcés", en: "Decor & set design: selection and installation of furniture, tableware and sourced decorative objects" },
+  "investment.tier.1.b3": { fr: "2 réunions de travail et 1 visite du lieu de réception", en: "2 working meetings and 1 venue visit" },
+  "investment.tier.1.b4": { fr: "Installation le jour J et démontage J+1", en: "Set-up on the day and dismantling on D+1" },
+
+  "investment.tier.2.title": { fr: "DIRECTION ARTISTIQUE", en: "ART DIRECTION" },
+  "investment.tier.2.italic": { fr: "seule", en: "only" },
+  "investment.tier.2.price": { fr: "À partir de 1 500 €", en: "From €1,500" },
+  "investment.tier.2.scope": {
+    fr: "Déductible à 100 % en cas de signature d'un pack sous 60 jours",
+    en: "100% deductible if a package is signed within 60 days"
+  },
+  "investment.tier.2.desc": {
+    fr: "Vous repartez avec notre vision et l'orchestrez avec vos propres prestataires. Une option idéale pour celles et ceux qui souhaitent une signature artistique forte sans formule complète.",
+    en: "You leave with our vision and orchestrate it with your own suppliers. An ideal option for those wanting a strong artistic signature without a full package."
+  },
+  "investment.tier.2.b0": { fr: "Moodboard complet de votre univers de mariage", en: "Complete moodboard of your wedding aesthetic" },
+  "investment.tier.2.b1": { fr: "Palette de couleurs, choix des matières et textures", en: "Colour palette, choice of materials and textures" },
+  "investment.tier.2.b2": { fr: "Planches d'inspiration scénographique", en: "Set design inspiration boards" },
+  "investment.tier.2.b3": { fr: "Charte typographique et recommandations graphiques", en: "Typography guidelines and graphic recommendations" },
+  "investment.tier.2.b4": { fr: "Liste de prestataires recommandés", en: "List of recommended suppliers" },
+  "investment.tier.2.b5": { fr: "2 réunions de travail", en: "2 working meetings" },
+  "investment.tier.2.b6": { fr: "Dossier complet remis en PDF", en: "Full file delivered as a PDF" },
+
+  "investment.included.summary": { fr: "✦ Compris dans l'expérience", en: "✦ Included in the experience" },
+  "investment.tier.cta": { fr: "Demander un devis", en: "Request a quote" },
+
+  // À la carte
+  "investment.alacarte.label": { fr: "✦ À la carte ✦", en: "✦ À la carte ✦" },
+  "investment.alacarte.h2": {
+    fr: "<span class=\"tracking-normal\">Une</span> <span class=\"font-italic-serif italic font-light\">prestation</span>,<br /><span class=\"tracking-normal\">un</span> <span class=\"font-italic-serif italic font-light\">univers</span>",
+    en: "<span class=\"tracking-normal\">One</span> <span class=\"font-italic-serif italic font-light\">service</span>,<br /><span class=\"tracking-normal\">one</span> <span class=\"font-italic-serif italic font-light\">signature</span>"
+  },
+  "investment.alacarte.intro": {
+    fr: "Pour celles et ceux qui souhaitent confier une partie précise de leur évènement. Chaque prestation inclut son concept artistique et son exécution complète.",
+    en: "For those wishing to entrust a specific part of their event. Each service includes its artistic concept and full execution."
+  },
+
+  "investment.alacarte.0.title": { fr: "Papeterie fine", en: "Fine stationery" },
+  "investment.alacarte.0.price": { fr: "à partir de 800 €", en: "from €800" },
+  "investment.alacarte.0.scope": { fr: "≤50 invités, faire-part et menus", en: "≤50 guests, invitations and menus" },
+  "investment.alacarte.0.b0": { fr: "Concept graphique et palette typographique", en: "Graphic concept and typeface" },
+  "investment.alacarte.0.b1": { fr: "2 maquettes et bon à tirer (BAT) final", en: "2 mock-ups and final print proof" },
+  "investment.alacarte.0.b2": { fr: "Faire-part recto-verso", en: "Double-sided invitations" },
+  "investment.alacarte.0.b3": { fr: "Menus de table individuels", en: "Individual table menus" },
+  "investment.alacarte.0.b4": { fr: "Plan de table imprimé", en: "Printed seating chart" },
+  "investment.alacarte.0.b5": { fr: "Impression, façonnage et livraison", en: "Printing, finishing and delivery" },
+  "investment.alacarte.0.cta": { fr: "Réserver", en: "Book" },
+
+  "investment.alacarte.1.title": { fr: "Conception florale", en: "Floral design" },
+  "investment.alacarte.1.price": { fr: "à partir de 2 700 €", en: "from €2,700" },
+  "investment.alacarte.1.scope": { fr: "≤50 invités, fleurs de saison, un espace", en: "≤50 guests, seasonal flowers, one space" },
+  "investment.alacarte.1.b0": { fr: "Moodboard floral et palette de variétés", en: "Floral moodboard and palette of varieties" },
+  "investment.alacarte.1.b1": { fr: "Sourcing fleurs (grossiste / producteur local)", en: "Flower sourcing (wholesaler / local grower)" },
+  "investment.alacarte.1.b2": { fr: "Bouquet de la mariée", en: "Bridal bouquet" },
+  "investment.alacarte.1.b3": { fr: "5 centres de table simples", en: "5 simple table centrepieces" },
+  "investment.alacarte.1.b4": { fr: "Arche cérémonie minimaliste", en: "Minimalist ceremony arch" },
+  "investment.alacarte.1.b5": { fr: "Composition en atelier et installation jour J", en: "Studio composition and on-the-day installation" },
+  "investment.alacarte.1.cta": { fr: "Réserver", en: "Book" },
+
+  "investment.alacarte.2.title": { fr: "Décor <span class=\"amp\">&amp;</span> scénographie", en: "Decor <span class=\"amp\">&amp;</span> set design" },
+  "investment.alacarte.2.price": { fr: "à partir de 3 200 €", en: "from €3,200" },
+  "investment.alacarte.2.scope": { fr: "≤50 invités, un espace principal", en: "≤50 guests, one main space" },
+  "investment.alacarte.2.b0": { fr: "Concept décoratif et plan de scénographie", en: "Decorative concept and set design plan" },
+  "investment.alacarte.2.b1": { fr: "Sélection et location du mobilier", en: "Furniture selection and rental" },
+  "investment.alacarte.2.b2": { fr: "Vaisselle, verrerie et objets décoratifs sourcés", en: "Tableware, glassware and sourced decorative objects" },
+  "investment.alacarte.2.b3": { fr: "Mise en scène le jour J", en: "Staging on the day" },
+  "investment.alacarte.2.b4": { fr: "Démontage et reprise J+1", en: "Dismantling and collection on D+1" },
+  "investment.alacarte.2.cta": { fr: "Réserver", en: "Book" },
+
+  // Each collaboration includes
+  "investment.included.h2": {
+    fr: "CHAQUE COLLABORATION<br /><span class=\"font-italic-serif italic font-light\">comprend</span>",
+    en: "EVERY COLLABORATION<br /><span class=\"font-italic-serif italic font-light\">includes</span>"
+  },
+  "investment.included.item.0": { fr: "Premier échange et entretien découverte", en: "First exchange and discovery meeting" },
+  "investment.included.item.1": { fr: "Conception artistique adaptée à votre univers", en: "Artistic design tailored to your vision" },
+  "investment.included.item.2": { fr: "Devis détaillé, transparent et personnalisé", en: "Detailed, transparent and personalised quote" },
+  "investment.included.item.3": { fr: "Coordination de votre projet jusqu'au jour J", en: "Project coordination through to the big day" },
+  "investment.included.item.4": { fr: "Suivi attentif à chaque étape", en: "Attentive follow-up at every step" },
+
+  // Payment terms
+  "investment.modalites.h2": {
+    fr: "MODALITÉS<br /><span class=\"font-italic-serif italic font-light\">de paiement</span>",
+    en: "PAYMENT<br /><span class=\"font-italic-serif italic font-light\">terms</span>"
+  },
+  "investment.modalites.0.step": { fr: "30 %", en: "30%" },
+  "investment.modalites.0.label": { fr: "À la signature", en: "On signature" },
+  "investment.modalites.0.desc": { fr: "Acompte non remboursable réservant votre date", en: "Non-refundable deposit securing your date" },
+  "investment.modalites.1.step": { fr: "40 %", en: "40%" },
+  "investment.modalites.1.label": { fr: "À J–90", en: "At D–90" },
+  "investment.modalites.1.desc": { fr: "Lancement de la production et des commandes", en: "Production and orders launched" },
+  "investment.modalites.2.step": { fr: "30 %", en: "30%" },
+  "investment.modalites.2.label": { fr: "À J–15", en: "At D–15" },
+  "investment.modalites.2.desc": { fr: "Solde avant l'installation finale", en: "Balance due before final installation" },
+  "investment.modalites.note": {
+    fr: "— TVA non applicable, art. 293 B du CGI —",
+    en: "— VAT not applicable, art. 293 B of the French Tax Code —"
+  },
+
+  // Final CTA
+  "investment.cta.h2": {
+    fr: "Construisons ensemble<br /><span class=\"font-italic-serif italic font-light\">votre univers</span>",
+    en: "Let's build<br /><span class=\"font-italic-serif italic font-light\">your vision</span> together"
+  },
+  "investment.cta.p": {
+    fr: "Un devis personnalisé vous est remis après notre premier échange, sur la base de vos envies et de votre cahier des charges.",
+    en: "A personalised quote is sent after our first exchange, based on your wishes and your brief."
+  },
+  "investment.cta.btn": { fr: "Demander un devis", en: "Request a quote" },
 
   // ─────────────────────────── Project detail (back link) ───────────────────────────
   "project.back": { fr: "← Tous les projets", en: "← All projects" },
