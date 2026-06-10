@@ -358,8 +358,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "A JOURNEY <span>IN 6 STEPS</span>"
   },
   "process.intro.p": {
-    fr: "De la première rencontre au jour J,<br />six temps pour donner forme à votre univers,<br />dans la fluidité et la confiance.",
-    en: "From the first meeting to the day itself,<br />six steps to bring your world to life,<br />in fluidity and trust."
+    fr: "De la première rencontre au jour J,<br />vivez la création de votre univers<br />en toute sérénité.",
+    en: "From the first meeting to the day itself,<br />experience the creation of your world<br />with complete peace of mind."
   },
 
   "process.step.1.title": { fr: "PREMIÈRE RENCONTRE", en: "FIRST MEETING" },
