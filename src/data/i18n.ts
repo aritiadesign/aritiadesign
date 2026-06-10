@@ -330,20 +330,20 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "Our role covers the artistic creation of your wedding (visual direction, set design, floral design, stationery) and the coordination of the suppliers who execute this vision (furniture, lighting, tableware, decor rental...), whereas the wedding planner orchestrates the overall organisation (scheduling, budget, caterer, photographer, music, venue...). The two professions are complementary: one ensures organisational fluency, the other elevates the visual experience."
   },
   "services.faq.2.q": {
-    fr: "OÙ OPÉREZ-VOUS ?",
-    en: "WHERE DO YOU OPERATE?"
-  },
-  "services.faq.2.a": {
-    fr: "Notre agence est basée à Toulouse et intervient principalement en Haute-Garonne. Au-delà, nous nous déplaçons dans toute la France et à l'étranger selon les projets, avec des frais de déplacement intégrés au devis pour une totale transparence.",
-    en: "Our studio is based in Toulouse and works primarily in Haute-Garonne. Beyond that, we travel throughout France and abroad depending on the project, with travel costs included in the quote for full transparency."
-  },
-  "services.faq.3.q": {
     fr: "QUEL EST LE BON MOMENT POUR VOUS CONTACTER ?",
     en: "WHEN IS THE RIGHT TIME TO CONTACT YOU?"
   },
-  "services.faq.3.a": {
+  "services.faq.2.a": {
     fr: "Les délais idéaux varient selon la formule choisie et l'ampleur du projet :<br /><br />— Pack L'Exception : 10 à 12 mois en amont (univers complet, sourcing des prestataires, coordination de la production).<br /><br />— Pack Atmosphère : 6 à 8 mois sont généralement suffisants.<br /><br />— Direction Artistique seule : à partir de 4 mois.<br /><br />Pour les évènements d'envergure (scénographie complexe, grande capacité), nous recommandons d'anticiper davantage. Nous restons toutefois flexibles sur des délais plus courts selon nos disponibilités du moment.",
     en: "Ideal timeframes vary depending on the chosen package and the scale of the project:<br /><br />— The Exception Package: 10 to 12 months in advance (full creative direction, supplier sourcing, production coordination).<br /><br />— Atmosphere Package: 6 to 8 months is generally sufficient.<br /><br />— Art Direction only: from 4 months.<br /><br />For larger-scale events (complex set design, high guest count), we recommend planning further ahead. We remain flexible on shorter timelines depending on our current availability."
+  },
+  "services.faq.3.q": {
+    fr: "ACCOMPAGNEZ-VOUS<br class=\"md:hidden\" /> D'AUTRES ÉVÈNEMENTS ?",
+    en: "DO YOU WORK ON<br class=\"md:hidden\" /> OTHER EVENTS?"
+  },
+  "services.faq.3.a": {
+    fr: "Oui. Si le mariage reste notre terrain de prédilection, notre direction artistique s'applique à toutes les célébrations qui marquent une vie : évènements saisonniers, anniversaires, baby showers, évènements privés ou corporate. La même rigueur esthétique, adaptée à votre occasion.<br /><br /><a href=\"/contact\" class=\"underline underline-offset-4 hover:opacity-70 transition\">Demandez un devis personnalisé →</a>",
+    en: "Yes. While weddings remain our primary field, our creative direction extends to all the celebrations that mark a life: seasonal events, birthdays, baby showers, private gatherings and corporate occasions. The same aesthetic rigour, tailored to your moment.<br /><br /><a href=\"/contact\" class=\"underline underline-offset-4 hover:opacity-70 transition\">Request a personalised quote →</a>"
   },
 
   // ─────────────────────────── Processus page ───────────────────────────

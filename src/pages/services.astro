@@ -134,13 +134,13 @@ const faqs = [
   },
   {
     n: "03.",
-    q: "OÙ OPÉREZ-VOUS ?",
-    a: "Notre agence est basée à Toulouse et intervient principalement en Haute-Garonne. Au-delà, nous nous déplaçons dans toute la France et à l'étranger selon les projets, avec des frais de déplacement intégrés au devis pour une totale transparence.",
+    q: "QUEL EST LE BON MOMENT POUR VOUS CONTACTER ?",
+    a: "Les délais idéaux varient selon la formule choisie et l'ampleur du projet :<br /><br />— Pack L'Exception : 10 à 12 mois en amont (univers complet, sourcing des prestataires, coordination de la production).<br /><br />— Pack Atmosphère : 6 à 8 mois sont généralement suffisants.<br /><br />— Direction Artistique seule : à partir de 4 mois.<br /><br />Pour les évènements d'envergure (scénographie complexe, grande capacité), nous recommandons d'anticiper davantage. Nous restons toutefois flexibles sur des délais plus courts selon nos disponibilités du moment.",
   },
   {
     n: "04.",
-    q: "QUEL EST LE BON MOMENT POUR VOUS CONTACTER ?",
-    a: "Les délais idéaux varient selon la formule choisie et l'ampleur du projet :<br /><br />— Pack L'Exception : 10 à 12 mois en amont (univers complet, sourcing des prestataires, coordination de la production).<br /><br />— Pack Atmosphère : 6 à 8 mois sont généralement suffisants.<br /><br />— Direction Artistique seule : à partir de 4 mois.<br /><br />Pour les évènements d'envergure (scénographie complexe, grande capacité), nous recommandons d'anticiper davantage. Nous restons toutefois flexibles sur des délais plus courts selon nos disponibilités du moment.",
+    q: "ACCOMPAGNEZ-VOUS<br class=\"md:hidden\" /> D'AUTRES ÉVÈNEMENTS ?",
+    a: "Oui. Si le mariage reste notre terrain de prédilection, notre direction artistique s'applique à toutes les célébrations qui marquent une vie : évènements saisonniers, anniversaires, baby showers, évènements privés ou corporate. La même rigueur esthétique, adaptée à votre occasion.<br /><br /><a href=\"/contact\" class=\"underline underline-offset-4 hover:opacity-70 transition\">Demandez un devis personnalisé →</a>",
   },
 ];
 ---
@@ -574,10 +574,10 @@ const faqs = [
         <div class="divide-y divide-black/10">
           {faqs.map((f, i) => (
             <details class="group py-6">
-              <summary class="cursor-pointer list-none flex items-start gap-6">
+              <summary class="cursor-pointer list-none flex items-start md:items-center gap-6">
                 <span class="font-display text-[20px] md:text-[26px] text-[var(--color-ink-soft)] shrink-0">{f.n}</span>
                 <span class="flex-1 text-[12px] md:text-[14px] tracking-[0.22em] uppercase leading-[1.6] text-[var(--color-ink)]" data-i18n={`services.faq.${i}.q`} set:html={f.q} />
-                <span class="shrink-0 mt-1 transition-transform group-open:rotate-45 text-[24px] text-[var(--color-ink-soft)] leading-none">+</span>
+                <span class="shrink-0 mt-1 md:mt-0 transition-transform group-open:rotate-45 text-[24px] text-[var(--color-ink-soft)] leading-none">+</span>
               </summary>
               <p class="mt-4 pl-[3.5rem] text-[14px] leading-[1.9] text-[var(--color-ink-soft)]" data-i18n={`services.faq.${i}.a`} set:html={f.a} />
             </details>
