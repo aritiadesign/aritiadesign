@@ -81,7 +81,7 @@ const leftProject = {
   {/* ───────────────────────── 3. STRIP — horizontal infinite marquee ───────────────────────── */}
   <section class="bg-white pb-16 overflow-hidden">
     <div class="marquee relative w-full" data-marquee style="overflow: hidden; touch-action: pan-y;">
-      <div class="marquee-track gap-3 md:gap-4 items-center">
+      <div class="marquee-track gap-3 md:gap-4 items-center" style="will-change: transform; transform: translate3d(0,0,0); backface-visibility: hidden;">
         {[...strip, ...strip].map((img, i) => (
           <button
             type="button"
@@ -121,18 +121,29 @@ const leftProject = {
         let inSmoothTransition = false;
         let lastTime = 0;
 
+        // Cache the half-track width — reading scrollWidth every frame forces a
+        // layout reflow and is the main source of jank. We re-measure only on
+        // resize, on image load, and via a ResizeObserver.
+        let cachedHalf = 0;
+        const measure = () => { cachedHalf = track.scrollWidth / 2; };
+        measure();
+        if (typeof ResizeObserver !== "undefined") {
+          new ResizeObserver(measure).observe(track);
+        }
+        window.addEventListener("resize", measure);
+        track.querySelectorAll("img").forEach((img) => {
+          if (!img.complete) img.addEventListener("load", measure, { once: true });
+        });
+
         function tick(now) {
           if (lastTime === 0) lastTime = now;
           // Clamp dt so a backgrounded tab doesn't produce a huge jump on resume.
           const dt = Math.min((now - lastTime) / 1000, 0.05);
           lastTime = now;
-          if (!paused && !inSmoothTransition) {
-            const half = track.scrollWidth / 2;
-            if (half > 0) {
-              offset += SPEED_PX_PER_SEC * dt;
-              if (offset >= half) offset -= half;
-              track.style.transform = "translate3d(" + (-offset) + "px, 0, 0)";
-            }
+          if (!paused && !inSmoothTransition && cachedHalf > 0) {
+            offset += SPEED_PX_PER_SEC * dt;
+            if (offset >= cachedHalf) offset -= cachedHalf;
+            track.style.transform = "translate3d(" + (-offset) + "px, 0, 0)";
           }
           requestAnimationFrame(tick);
         }
@@ -191,8 +202,7 @@ const leftProject = {
             }
           }
           let next = dragStartOffset - dx;
-          const half = track.scrollWidth / 2;
-          if (half > 0) next = ((next % half) + half) % half;
+          if (cachedHalf > 0) next = ((next % cachedHalf) + cachedHalf) % cachedHalf;
           offset = next;
           track.style.transform = "translate3d(" + (-offset) + "px, 0, 0)";
         }, { passive: true });
@@ -222,9 +232,8 @@ const leftProject = {
             track.style.transform = "translate3d(" + (-target) + "px, 0, 0)";
             smoothTimeout = setTimeout(() => {
               track.style.transition = "";
-              const half = track.scrollWidth / 2;
               let next = target;
-              if (half > 0) next = ((next % half) + half) % half;
+              if (cachedHalf > 0) next = ((next % cachedHalf) + cachedHalf) % cachedHalf;
               offset = next;
               track.style.transform = "translate3d(" + (-offset) + "px, 0, 0)";
               inSmoothTransition = false;
