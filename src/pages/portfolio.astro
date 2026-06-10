@@ -109,7 +109,7 @@ const leftProject = {
         const track = marquee.querySelector(".marquee-track");
         if (!track) return;
 
-        const SPEED = 0.8;
+        const SPEED = 1;
         let paused = false;
         let resumeTimer;
 
@@ -133,15 +133,12 @@ const leftProject = {
           resumeTimer = setTimeout(() => { paused = false; }, delay);
         };
 
-        // Hover pause/resume — only on devices with a real cursor (avoids iOS
-        // synthetic mouseenter trapping auto-scroll in paused state).
-        if (matchMedia("(hover: hover)").matches) {
-          marquee.addEventListener("mouseenter", pause);
-          marquee.addEventListener("mouseleave", () => {
-            clearTimeout(resumeTimer);
-            paused = false;
-          });
-        }
+        // Desktop: pause on cursor enter, resume immediately on cursor leave.
+        marquee.addEventListener("mouseenter", pause);
+        marquee.addEventListener("mouseleave", () => {
+          clearTimeout(resumeTimer);
+          paused = false;
+        });
 
         marquee.addEventListener("wheel", () => {
           pause();
