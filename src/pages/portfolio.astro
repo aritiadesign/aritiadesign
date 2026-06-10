@@ -80,8 +80,8 @@ const leftProject = {
 
   {/* ───────────────────────── 3. STRIP — horizontal infinite marquee ───────────────────────── */}
   <section class="bg-white pb-16 overflow-hidden">
-    <div class="marquee relative w-full" data-marquee style="overflow: hidden; touch-action: pan-y;">
-      <div class="marquee-track gap-3 md:gap-4 items-center" style="will-change: transform; transform: translate3d(0,0,0); backface-visibility: hidden;">
+    <div class="marquee relative w-full" data-marquee>
+      <div class="marquee-track gap-3 md:gap-4 items-center">
         {[...strip, ...strip].map((img, i) => (
           <button
             type="button"
@@ -109,41 +109,19 @@ const leftProject = {
         const track = marquee.querySelector(".marquee-track");
         if (!track) return;
 
-        // Transform-based marquee — bypasses iOS Safari's scrollLeft quirks with
-        // accelerated overflow scrolling. The track is translated continuously
-        // and wraps at half its width (content is duplicated).
-        // Speed is expressed in px/second so it stays identical on 60Hz and
-        // 120Hz (ProMotion iPhones) displays.
-        const SPEED_PX_PER_SEC = matchMedia("(max-width: 767px)").matches ? 90 : 60;
+        const SPEED = 1; // px per frame (~60 px/s at 60fps)
         let paused = false;
         let resumeTimer;
-        let offset = 0;
-        let inSmoothTransition = false;
-        let lastTime = 0;
 
-        // Cache the half-track width — reading scrollWidth every frame forces a
-        // layout reflow and is the main source of jank. We re-measure only on
-        // resize, on image load, and via a ResizeObserver.
-        let cachedHalf = 0;
-        const measure = () => { cachedHalf = track.scrollWidth / 2; };
-        measure();
-        if (typeof ResizeObserver !== "undefined") {
-          new ResizeObserver(measure).observe(track);
-        }
-        window.addEventListener("resize", measure);
-        track.querySelectorAll("img").forEach((img) => {
-          if (!img.complete) img.addEventListener("load", measure, { once: true });
-        });
-
-        function tick(now) {
-          if (lastTime === 0) lastTime = now;
-          // Clamp dt so a backgrounded tab doesn't produce a huge jump on resume.
-          const dt = Math.min((now - lastTime) / 1000, 0.05);
-          lastTime = now;
-          if (!paused && !inSmoothTransition && cachedHalf > 0) {
-            offset += SPEED_PX_PER_SEC * dt;
-            if (offset >= cachedHalf) offset -= cachedHalf;
-            track.style.transform = "translate3d(" + (-offset) + "px, 0, 0)";
+        // Auto-advance scroll. Loop seamlessly: items are duplicated, so wrapping
+        // back at half the track width is invisible to the eye.
+        function tick() {
+          if (!paused) {
+            const half = track.scrollWidth / 2;
+            if (half > 0) {
+              marquee.scrollLeft += SPEED;
+              if (marquee.scrollLeft >= half) marquee.scrollLeft -= half;
+            }
           }
           requestAnimationFrame(tick);
         }
@@ -157,87 +135,33 @@ const leftProject = {
           resumeTimer = setTimeout(() => { paused = false; }, delay);
         };
 
-        // Hover pause/resume — only on devices with a real cursor (avoids iOS
-        // synthetic mouseenter trapping auto-scroll in paused state).
-        if (matchMedia("(hover: hover)").matches) {
-          marquee.addEventListener("mouseenter", pause);
-          marquee.addEventListener("mouseleave", () => {
-            clearTimeout(resumeTimer);
-            paused = false;
-          });
-        }
-
-        // Touch drag — swipe horizontally to scroll the marquee with the finger.
-        // Vertical movement is left to the browser (touch-action: pan-y on wrapper)
-        // so the page can scroll normally through this strip.
-        let isDragging = false;
-        let dragStartX = 0;
-        let dragStartY = 0;
-        let dragStartOffset = 0;
-        const DRAG_THRESHOLD = 8; // px before we treat a touch as a horizontal drag
-
-        marquee.addEventListener("touchstart", (e) => {
-          if (e.touches.length !== 1) return;
-          dragStartX = e.touches[0].clientX;
-          dragStartY = e.touches[0].clientY;
-          dragStartOffset = offset;
-          isDragging = false;
-        }, { passive: true });
-
-        marquee.addEventListener("touchmove", (e) => {
-          if (e.touches.length !== 1) return;
-          const x = e.touches[0].clientX;
-          const y = e.touches[0].clientY;
-          const dx = x - dragStartX;
-          const dy = y - dragStartY;
-          if (!isDragging) {
-            // Only switch to drag mode if movement is clearly horizontal.
-            if (Math.abs(dx) > DRAG_THRESHOLD && Math.abs(dx) > Math.abs(dy)) {
-              isDragging = true;
-              pause();
-              inSmoothTransition = false;
-              track.style.transition = "";
-            } else {
-              return;
-            }
-          }
-          let next = dragStartOffset - dx;
-          if (cachedHalf > 0) next = ((next % cachedHalf) + cachedHalf) % cachedHalf;
-          offset = next;
-          track.style.transform = "translate3d(" + (-offset) + "px, 0, 0)";
-        }, { passive: true });
-
-        const endDrag = () => {
-          if (!isDragging) return;
-          isDragging = false;
+        // Desktop: pause on cursor enter, resume immediately on cursor leave.
+        marquee.addEventListener("mouseenter", pause);
+        marquee.addEventListener("mouseleave", () => {
           clearTimeout(resumeTimer);
           paused = false;
-        };
-        marquee.addEventListener("touchend", endDrag, { passive: true });
-        marquee.addEventListener("touchcancel", endDrag, { passive: true });
+        });
 
-        // Click an image → smooth-translate to centre it, then the auto-scroll
-        // resumes naturally as soon as the smooth transition finishes (no extra
-        // pause delay — inSmoothTransition is the only flag blocking tick).
-        let smoothTimeout;
+        // Mouse wheel / trackpad horizontal scroll → pause briefly while user drives.
+        marquee.addEventListener("wheel", () => {
+          pause();
+          scheduleResume(1500);
+        }, { passive: true });
+
+        // Touch: pause while finger is down, resume 2s after release.
+        marquee.addEventListener("touchstart",  pause,                       { passive: true });
+        marquee.addEventListener("touchend",    () => scheduleResume(2000),  { passive: true });
+        marquee.addEventListener("touchcancel", () => scheduleResume(2000),  { passive: true });
+
+        // Click an image → smooth-scroll to centre it.
         marquee.querySelectorAll("button").forEach((b) => {
           b.addEventListener("click", () => {
-            clearTimeout(smoothTimeout);
+            pause();
             const rect = b.getBoundingClientRect();
             const mqRect = marquee.getBoundingClientRect();
-            const delta = (rect.left + rect.width / 2) - (mqRect.left + mqRect.width / 2);
-            const target = offset + delta;
-            inSmoothTransition = true;
-            track.style.transition = "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
-            track.style.transform = "translate3d(" + (-target) + "px, 0, 0)";
-            smoothTimeout = setTimeout(() => {
-              track.style.transition = "";
-              let next = target;
-              if (cachedHalf > 0) next = ((next % cachedHalf) + cachedHalf) % cachedHalf;
-              offset = next;
-              track.style.transform = "translate3d(" + (-offset) + "px, 0, 0)";
-              inSmoothTransition = false;
-            }, 650);
+            const target = marquee.scrollLeft + (rect.left - mqRect.left) - (mqRect.width - rect.width) / 2;
+            marquee.scrollTo({ left: target, behavior: "smooth" });
+            scheduleResume(2500);
           });
         });
       })();
