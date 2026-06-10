@@ -7,7 +7,7 @@ const strip = [
   { src: "/images/portfolio-strip/01_3e933860.jpg", alt: "Salle de réception décorée" },
   { src: "/images/portfolio-strip/02_74179fa8.jpg", alt: "Domaine et voiture vintage" },
   { src: "/images/portfolio-strip/03_e633e2c6.jpg", alt: "Détail floral" },
-  { src: "/images/portfolio-strip/04_6297cc8a.png", alt: "Composition graphique" },
+  { src: "/images/portfolio-strip/04_6297cc8a.jpg", alt: "Composition graphique" },
   { src: "/images/portfolio-strip/05_41e5ab48.jpg", alt: "Mise en place" },
   { src: "/images/portfolio-strip/06_95d16cce.jpg", alt: "Cérémonie en extérieur" },
   { src: "/images/portfolio-strip/07_dce575f9.jpg", alt: "Détail scénographique" },
@@ -93,7 +93,8 @@ const leftProject = {
             <img
               src={img.src}
               alt={img.alt}
-              loading="lazy"
+              loading="eager"
+              decoding="async"
               draggable="false"
               class="w-full h-full object-cover pointer-events-none select-none"
             />
