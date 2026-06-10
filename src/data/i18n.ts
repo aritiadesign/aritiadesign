@@ -673,10 +673,10 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     fr: "L'expérience la plus aboutie : Aritia Design, votre interlocuteur unique pour orchestrer l'intégralité de votre célébration. <span class=\"hidden md:inline\">De la première inspiration à la dernière fleur posée, nous prenons en charge chaque dimension esthétique de votre journée. </span>Vous validez les concepts, nous réalisons le reste. — Structures et décor sur-mesure proposés en option selon vos envies.",
     en: "Our most accomplished experience: Aritia Design, your single point of contact to orchestrate the entirety of your celebration. <span class=\"hidden md:inline\">From the first spark of inspiration to the last flower placed, we take charge of every aesthetic dimension of your day. </span>You approve the concepts, we deliver the rest. — Bespoke structures and decor available as options to suit your wishes."
   },
-  "investment.tier.0.b0": { fr: "Moodboard complet, palette de couleurs et charte typographique", en: "Complete moodboard, colour palette and typography guidelines" },
+  "investment.tier.0.b0": { fr: "Direction artistique globale : planches d'inspiration, palette de couleurs, charte typographique et palette florale, harmonisant papeterie, décor et floral", en: "Holistic creative direction: inspiration boards, colour palette, typography guidelines and floral palette, harmonising stationery, decor and floral" },
   "investment.tier.0.b1": { fr: "Papeterie essentielle : faire-part, menus et plan de table", en: "Essential stationery: invitations, menus and seating chart" },
-  "investment.tier.0.b2": { fr: "Floral intimiste : bouquet de la mariée, 5 centres de table et arche cérémonie", en: "Intimate florals: bridal bouquet, 5 table centrepieces and ceremony arch" },
-  "investment.tier.0.b3": { fr: "Décor & scénographie : sélection et mise en place du mobilier, vaisselle et objets décoratifs sourcés", en: "Decor & set design: selection and installation of furniture, tableware and sourced decorative objects" },
+  "investment.tier.0.b2": { fr: "Décor & scénographie : sélection et mise en place du mobilier, vaisselle et objets décoratifs sourcés", en: "Decor & set design: selection and installation of furniture, tableware and sourced decorative objects" },
+  "investment.tier.0.b3": { fr: "Floral intimiste : bouquet de la mariée, 5 centres de table et arche cérémonie", en: "Intimate florals: bridal bouquet, 5 table centrepieces and ceremony arch" },
   "investment.tier.0.b4": { fr: "3 réunions de travail et 1 visite du lieu de réception", en: "3 working meetings and 1 venue visit" },
   "investment.tier.0.b5": { fr: "Présence le jour J (10 heures) avec installation et démontage J+1", en: "On-site presence on the day (10 hours) with set-up and dismantling on D+1" },
 
@@ -691,7 +691,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     fr: "Pensé pour une identité visuelle parfaitement alignée. Votre papeterie, votre signalétique et votre décor s'articulent comme un ensemble unique. — Structures sur-mesure proposées en option selon vos envies.",
     en: "Designed for a perfectly aligned visual identity. Your stationery, signage and decor come together as a single ensemble. — Bespoke structures available as options to suit your wishes."
   },
-  "investment.tier.1.b0": { fr: "Direction artistique commune : palette de couleurs et charte typographique partagées entre papier et décor", en: "Shared creative direction: colour palette and typography guidelines unified across paper and decor" },
+  "investment.tier.1.b0": { fr: "Direction artistique commune : planches d'inspiration, palette de couleurs et charte typographique, harmonisant papeterie et décor", en: "Shared creative direction: inspiration boards, colour palette and typography guidelines, harmonising stationery and decor" },
   "investment.tier.1.b1": { fr: "Papeterie essentielle : faire-part, menus et plan de table", en: "Essential stationery: invitations, menus and seating chart" },
   "investment.tier.1.b2": { fr: "Décor & scénographie : sélection et mise en place du mobilier, vaisselle et objets décoratifs sourcés", en: "Decor & set design: selection and installation of furniture, tableware and sourced decorative objects" },
   "investment.tier.1.b3": { fr: "2 réunions de travail et 1 visite du lieu de réception", en: "2 working meetings and 1 venue visit" },
