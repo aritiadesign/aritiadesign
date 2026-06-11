@@ -11,6 +11,8 @@ interface Props {
   keywords?: string;
   /** When true, the header sits over the hero with white text. */
   transparentHeader?: boolean;
+  /** When true, the solid header renders dark (#1a1a1a bg + white text). Ignored if transparentHeader is true. */
+  darkHeader?: boolean;
   /** When false, render the footer in light theme (white bg). */
   darkFooter?: boolean;
 }
@@ -20,6 +22,7 @@ const {
   description = "Basée à Toulouse, l'agence Aritia Design conçoit vos mariages et évènements d'exception partout en France. Direction artistique, scénographie immersive, design floral et papeterie sur-mesure.",
   keywords = "Aritia Design, Aritia, agence Aritia, wedding designer France, wedding designer Toulouse, event designer France, mariage haut de gamme, mariage de luxe, mariage d'exception, scénographie mariage, décoration mariage France, design floral mariage, papeterie mariage sur-mesure, wedding planner Toulouse, agence évènementielle luxe, créatrice de mariages, direction artistique mariage, mariage Occitanie, mariage Sud de la France",
   transparentHeader = true,
+  darkHeader = false,
   darkFooter = true,
 } = Astro.props;
 
@@ -159,7 +162,7 @@ const jsonLd = {
     <title>{title}</title>
   </head>
   <body class="bg-white text-[var(--color-ink)] antialiased">
-    <Header transparent={transparentHeader} />
+    <Header transparent={transparentHeader} dark={darkHeader} />
     <main class="flex-1">
       <slot />
     </main>

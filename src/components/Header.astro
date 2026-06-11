@@ -4,8 +4,9 @@ import LangToggle from "./LangToggle.astro";
 
 interface Props {
   transparent?: boolean;
+  dark?: boolean;
 }
-const { transparent = true } = Astro.props;
+const { transparent = true, dark = false } = Astro.props;
 
 import { navLinks as links } from "../data/nav";
 
@@ -17,7 +18,11 @@ const isActive = (href: string) =>
 <header
   class:list={[
     "absolute top-0 inset-x-0 z-50",
-    transparent ? "bg-transparent text-white" : "bg-white text-[var(--color-ink)]",
+    transparent
+      ? "bg-transparent text-white"
+      : dark
+        ? "bg-[#1a1a1a] text-white"
+        : "bg-white text-[var(--color-ink)]",
   ]}
   data-site-header
 >

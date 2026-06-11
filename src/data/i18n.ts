@@ -363,13 +363,13 @@ export const i18n: Record<string, { fr: string; en: string }> = {
 
   "process.step.1.title": { fr: "PREMIÈRE RENCONTRE", en: "FIRST MEETING" },
   "process.step.1.body": {
-    fr: "Tout commence par une rencontre. Nous prenons le temps de faire connaissance, d'écouter votre histoire et de comprendre vos envies. Ensemble, nous esquissons les contours de votre univers, ses priorités, les émotions à transmettre. À l'issue de ce rendez-vous, un devis personnalisé vous est remis pour validation.",
-    en: "It all begins with a meeting. We take the time to get to know you, to listen to your story and understand your wishes. Together, we sketch the contours of your vision, its priorities, the emotions to convey. At the end of this meeting, a personalised quote is sent for your approval."
+    fr: "Tout commence par une rencontre. Nous prenons le temps de faire connaissance, d'écouter votre histoire et de comprendre ce qui rend votre projet unique. Ensemble, nous parlons des fleurs que vous aimez, des couleurs qui vous ressemblent, du mobilier que vous imaginez, du lieu que vous avez choisi. Ces informations nous permettront de vous fournir un devis personnalisé, remis sous 7 à 10 jours ouvrés selon l'ampleur de votre projet.",
+    en: "It all begins with a meeting. We take the time to get to know you, to listen to your story and to understand what makes your project unique. Together, we talk about the flowers you love, the colours that resonate with you, the furniture you envision, the venue you have chosen. These details will allow us to prepare a personalised quote, sent within 7 to 10 working days depending on the scope of your project."
   },
   "process.step.2.title": { fr: "DEVIS <span class=\"amp\">&amp;</span> SIGNATURE", en: "QUOTE <span class=\"amp\">&amp;</span> SIGNATURE" },
   "process.step.2.body": {
-    fr: "La collaboration débute officiellement avec la signature du contrat, qui formalise les engagements mutuels et le cadre de notre travail.",
-    en: "Our collaboration officially begins with the signing of the contract, which formalises mutual commitments and the framework of our work together."
+    fr: "Votre signature ouvre officiellement notre collaboration. Plus qu'un cadre administratif, elle scelle un engagement mutuel : vous nous confiez votre vision, nous nous engageons à la traduire avec exigence et passion.",
+    en: "Your signature officially opens our collaboration. More than a formal framework, it seals a mutual commitment: you entrust us with your vision, we commit to translating it with rigour and passion."
   },
   "process.step.3.title": { fr: "INSPIRATIONS <span class=\"amp\">&amp;</span> UNIVERS", en: "INSPIRATIONS <span class=\"amp\">&amp;</span> ATMOSPHERES" },
   "process.step.3.body": {
