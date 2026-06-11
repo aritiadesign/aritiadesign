@@ -349,12 +349,12 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   // ─────────────────────────── Processus page ───────────────────────────
   "process.kicker": { fr: "Processus créatif", en: "Creative process" },
   "process.pagehero.title": {
-    fr: "Processus<br />créatif",
-    en: "Creative<br />process"
+    fr: "Processus",
+    en: "Process"
   },
   "process.pagehero.subtitle": {
-    fr: "Une méthode façonnée autour de votre vision,<br class=\"show-mobile\" />étape après étape.",
-    en: "A method shaped around your vision,<br class=\"show-mobile\" />step by step."
+    fr: "Une méthode pensée, façonnée<br class=\"show-mobile\" />autour de votre vision.",
+    en: "A method designed and shaped<br class=\"show-mobile\" />around your vision."
   },
   "process.hero.quote": {
     fr: "«&nbsp;La création, c’est<br class=\"md:hidden\" /> l’équilibre entre<br class=\"hidden md:inline\" /> maîtrise<br class=\"md:hidden\" /> et lâcher-prise.&nbsp;»",
