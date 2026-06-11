@@ -8,8 +8,9 @@ const steps = [
     n: "01",
     title: "PREMIÈRE RENCONTRE",
     body: "Tout commence par une rencontre. Nous prenons le temps de faire connaissance, d'écouter votre histoire et de comprendre ce qui rend votre projet unique. Ensemble, nous parlons des fleurs que vous aimez, des couleurs qui vous ressemblent, du mobilier que vous imaginez, du lieu que vous avez choisi. Ces informations nous permettront de vous fournir un devis personnalisé, remis sous 7 à 10 jours ouvrés selon l'ampleur de votre projet.",
-    image: "/images/panneau-bienvenue.png",
-    alt: "Panneau de bienvenue",
+    image: "/images/step-01-roses.jpg",
+    alt: "Roses blanches",
+    contained: true,
     gridGap: "gap-14",
   },
   {
@@ -95,7 +96,7 @@ const steps = [
   </section>
 
   {/* ───────────────────────── HERO QUOTE ───────────────────────── */}
-  <section class="bg-[#1a1a1a] text-white pt-6 md:pt-10 pb-28 md:pb-40 px-6">
+  <section class="bg-[#1a1a1a] text-white pt-6 md:pt-10 pb-10 md:pb-40 px-6">
     <div class="mx-auto max-w-[1100px] text-center">
       <h1 class="inline-block font-script font-normal text-[1.4rem] sm:text-[1.9rem] md:text-[2.8rem] lg:text-[3.2rem] leading-[1.4] text-white" data-i18n="process.hero.quote">
         «&nbsp;La création, c’est<br class="md:hidden" /> l’équilibre entre<br class="hidden md:inline" /> maîtrise<br class="md:hidden" /> et lâcher-prise.&nbsp;»
@@ -103,8 +104,19 @@ const steps = [
     </div>
   </section>
 
+  {/* ───────────────────────── SEPARATOR — citation → étape 01 (mobile/tablet only) ───────────────────────── */}
+  <div class="lg:hidden bg-[#1a1a1a] px-6 py-10" aria-hidden="true">
+    <div class="mx-auto max-w-[200px] flex items-center justify-center gap-4 md:gap-5">
+      <span class="flex-1 h-px bg-white/20"></span>
+      <span class="flex items-center gap-2 md:gap-2.5 text-[9px] md:text-[10px] text-white/70 tracking-normal">
+        <span>✦</span><span>✦</span><span>✦</span>
+      </span>
+      <span class="flex-1 h-px bg-white/20"></span>
+    </div>
+  </div>
+
   {/* ───────────────────────── 4. SIX STEPS ───────────────────────── */}
-  <section class="bg-[#1a1a1a] text-white pt-20 md:pt-32 pb-24 md:pb-36 px-6">
+  <section class="bg-[#1a1a1a] text-white pt-10 md:pt-32 pb-24 md:pb-36 px-6">
     <div class="mx-auto max-w-[1200px]">
       {steps.map((step, i) => {
         const reversed = i % 2 === 1;
@@ -304,12 +316,12 @@ const steps = [
 
             {/* Mobile/tablet only: ✦✦✦ divider between this step and the next */}
             {i < steps.length - 1 && (
-              <div class="lg:hidden my-20 mx-auto max-w-[360px] flex items-center justify-center gap-4 md:gap-5" aria-hidden="true">
-                <span class="flex-1 h-px bg-[var(--color-ink)]/20"></span>
+              <div class="lg:hidden my-20 mx-auto w-fit flex items-center justify-center gap-4 md:gap-5" aria-hidden="true">
+                <span class="w-4 h-px bg-white/20"></span>
                 <span class="flex items-center gap-2 md:gap-2.5 text-[9px] md:text-[10px] text-white/70 tracking-normal">
                   <span>✦</span><span>✦</span><span>✦</span>
                 </span>
-                <span class="flex-1 h-px bg-[var(--color-ink)]/20"></span>
+                <span class="w-4 h-px bg-white/20"></span>
               </div>
             )}
           </div>
