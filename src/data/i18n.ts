@@ -381,8 +381,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "process.step.3.title": { fr: "INSPIRATIONS <span class=\"amp\">&amp;</span> UNIVERS", en: "INSPIRATIONS <span class=\"amp\">&amp;</span> ATMOSPHERES" },
   "process.step.3.body": {
-    fr: "Pour chaque temps fort de la célébration (cérémonie, cocktail, dîner, papeterie), nous composons une planche d'intentions : ambiances, matières, palette, fleurs, typographies. Un fil rouge visuel et émotionnel se dessine, fidèle à votre histoire.",
-    en: "For each key moment of the celebration (ceremony, cocktail, dinner, stationery), we compose a board of intentions: atmospheres, materials, palette, flowers, typography. A visual and emotional thread takes shape, faithful to your story."
+    fr: "Pour chaque temps fort de la célébration (cérémonie, cocktail, dîner), nous composons une planche d'intentions : ambiances, matières, palette, fleurs, typographies. Un fil rouge visuel et émotionnel se dessine, fidèle à votre histoire.",
+    en: "For each key moment of the celebration (ceremony, cocktail, dinner), we compose a board of intentions: atmospheres, materials, palette, flowers, typography. A visual and emotional thread takes shape, faithful to your story."
   },
   "process.step.4.title": { fr: "PRÉSENTATION DU PROJET", en: "PROJECT REVEAL" },
   "process.step.4.body": {

@@ -28,7 +28,7 @@ const steps = [
   {
     n: "03",
     title: "INSPIRATIONS & UNIVERS",
-    body: "Pour chaque temps fort de la célébration (cérémonie, cocktail, dîner, papeterie), nous composons une planche d'intentions : ambiances, matières, palette, fleurs, typographies. Un fil rouge visuel et émotionnel se dessine, fidèle à votre histoire.",
+    body: "Pour chaque temps fort de la célébration (cérémonie, cocktail, dîner), nous composons une planche d'intentions : ambiances, matières, palette, fleurs, typographies. Un fil rouge visuel et émotionnel se dessine, fidèle à votre histoire.",
     image: "/images/step-03-moodboard.jpg",
     alt: "Moodboard — direction artistique",
     contained: true,
@@ -44,6 +44,8 @@ const steps = [
     ),
     alt: "Présentation — Carnet d'atmosphère",
     gridGap: "max-md:gap-20 md:gap-14",
+    // Per-page watermark opacity (index 0 = cover, already branded → hide).
+    watermarkOpacities: { 0: 0 } as Record<number, number>,
   },
   {
     n: "05",
@@ -142,29 +144,32 @@ const steps = [
                   aria-label={`Flipbook ${step.alt} — utilisez les flèches gauche / droite pour naviguer`}
                 >
                   {/* Pages stack */}
-                  {step.flipbook.map((src, idx) => (
-                    <div
-                      data-page={idx}
-                      class="absolute inset-0 transition-opacity duration-500 ease-out"
-                      style={`opacity: ${idx === 0 ? 1 : 0}; z-index: ${idx === 0 ? 2 : 1}; pointer-events: ${idx === 0 ? "auto" : "none"};`}
-                    >
-                      <img
-                        src={src}
-                        alt={`${step.alt} — page ${idx + 1}`}
-                        loading={idx < 2 ? "eager" : "lazy"}
-                        class="absolute inset-0 w-full h-full object-cover"
-                      />
-                      {idx > 0 && (
+                  {step.flipbook.map((src, idx) => {
+                    const watermarkOpacity = step.watermarkOpacities?.[idx] ?? 0.06;
+                    return (
+                      <div
+                        data-page={idx}
+                        class="absolute inset-0 transition-opacity duration-500 ease-out"
+                        style={`opacity: ${idx === 0 ? 1 : 0}; z-index: ${idx === 0 ? 2 : 1}; pointer-events: ${idx === 0 ? "auto" : "none"};`}
+                      >
                         <img
-                          src="/images/watermark-ad.svg"
-                          alt=""
-                          aria-hidden="true"
-                          class="md:hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 max-w-[280px] pointer-events-none select-none"
-                          style="opacity: 0.10; filter: invert(1);"
+                          src={src}
+                          alt={`${step.alt} — page ${idx + 1}`}
+                          loading={idx < 2 ? "eager" : "lazy"}
+                          class="absolute inset-0 w-full h-full object-cover"
                         />
-                      )}
-                    </div>
-                  ))}
+                        {watermarkOpacity > 0 && (
+                          <img
+                            src="/images/watermark-ad.svg"
+                            alt=""
+                            aria-hidden="true"
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 max-w-[320px] pointer-events-none select-none"
+                            style={`opacity: ${watermarkOpacity}; filter: invert(1);`}
+                          />
+                        )}
+                      </div>
+                    );
+                  })}
 
                   {/* Prev / Next click zones */}
                   <button
@@ -252,7 +257,6 @@ const steps = [
                     alt={step.alt}
                     loading="lazy"
                     class="max-w-full max-h-full object-contain"
-                    style="filter: drop-shadow(0 18px 28px rgba(0,0,0,0.18)) drop-shadow(0 6px 10px rgba(0,0,0,0.10));"
                   />
                 </div>
               ) : (
