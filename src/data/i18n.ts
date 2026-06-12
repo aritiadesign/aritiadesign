@@ -650,8 +650,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   // ─────────────────────────── Services page (investment.* keys, used by services.astro) ───────────────────────────
   "investment.hero.title": { fr: "Services", en: "Services" },
   "investment.hero.subtitle": {
-    fr: "De l'inspiration au jour J,<br class=\"show-mobile\" />votre univers prend vie.",
-    en: "From inspiration to the big day,<br class=\"show-mobile\" />your vision comes to life."
+    fr: "Sublimer chaque moment<br class=\"show-mobile\" />de votre célébration.",
+    en: "Elevating every moment<br class=\"show-mobile\" />of your celebration."
   },
   "investment.intro.h2": {
     fr: "UN ENGAGEMENT<br class=\"md:hidden\" /> À LA HAUTEUR<br class=\"hidden md:inline\" /> DE<br class=\"md:hidden\" /> VOTRE ÉVÈNEMENT",
