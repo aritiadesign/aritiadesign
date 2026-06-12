@@ -376,18 +376,18 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "process.step.2.title": { fr: "DEVIS <span class=\"amp\">&amp;</span> SIGNATURE", en: "QUOTE <span class=\"amp\">&amp;</span> SIGNATURE" },
   "process.step.2.body": {
-    fr: "Votre signature ouvre officiellement notre collaboration. Plus qu'un cadre administratif, elle scelle un engagement mutuel : vous nous confiez votre vision, nous nous engageons à la traduire avec exigence et passion.",
-    en: "Your signature officially opens our collaboration. More than a formal framework, it seals a mutual commitment: you entrust us with your vision, we commit to translating it with rigour and passion."
+    fr: "Votre signature ouvre officiellement notre collaboration. Plus qu'un cadre administratif, elle scelle un engagement mutuel. À travers elle, vous nous confiez votre vision et nous nous engageons à la traduire avec exigence et passion.",
+    en: "Your signature officially opens our collaboration. More than a formal framework, it seals a mutual commitment. Through it, you entrust us with your vision and we commit to translating it with rigour and passion."
   },
   "process.step.3.title": { fr: "INSPIRATIONS <span class=\"amp\">&amp;</span> UNIVERS", en: "INSPIRATIONS <span class=\"amp\">&amp;</span> ATMOSPHERES" },
   "process.step.3.body": {
-    fr: "Pour chaque temps fort de la célébration (cérémonie, cocktail, dîner), nous composons une planche d'intentions : ambiances, matières, palette, fleurs, typographies. Un fil rouge visuel et émotionnel se dessine, fidèle à votre histoire.",
-    en: "For each key moment of the celebration (ceremony, cocktail, dinner), we compose a board of intentions: atmospheres, materials, palette, flowers, typography. A visual and emotional thread takes shape, faithful to your story."
+    fr: "Pour chaque temps fort de la célébration (cérémonie, cocktail, dîner), nous composons des planches d'intentions : ambiances, matières, palette, fleurs, ou typographies. Un fil rouge visuel et émotionnel se dessine, fidèle à votre histoire.",
+    en: "For each key moment of the celebration (ceremony, cocktail, dinner), we compose boards of intentions: atmospheres, materials, palette, flowers, or typography. A visual and emotional thread takes shape, faithful to your story."
   },
   "process.step.4.title": { fr: "PRÉSENTATION DU PROJET", en: "PROJECT REVEAL" },
   "process.step.4.body": {
-    fr: "Nous traduisons cette vision en un projet complet, harmonisant compositions florales, papeterie, signalétique et agencement des espaces. C'est le moment de la révélation : vous découvrez, à travers un carnet d'atmosphère détaillé, votre univers prendre forme.",
-    en: "We translate this vision into a complete project, harmonising floral compositions, stationery, signage and spatial layout. This is the moment of reveal: through a detailed atmosphere book, you discover your universe taking shape."
+    fr: "Nous traduisons cette vision en un projet complet, harmonisant compositions florales, papeterie, signalétique et agencement des espaces. C'est le moment de la révélation. Votre carnet d'atmosphère détaillé rassemble photos des pièces sélectionnées, croquis de projection et planches d'inspiration. Votre univers prend enfin forme sous vos yeux. Une fois le carnet entre vos mains, vous pouvez encore valider, échanger ou affiner certains détails selon vos envies.",
+    en: "We translate this vision into a complete project, harmonising floral compositions, stationery, signage and spatial layout. This is the moment of revelation. Your detailed atmosphere booklet brings together photos of selected items, projection sketches and inspiration boards. Your universe finally takes shape before your eyes. Once the booklet is in your hands, you can still validate, exchange or refine certain details according to your wishes."
   },
   "process.step.5.title": { fr: "DANS LES COULISSES", en: "BEHIND THE SCENES" },
   "process.step.5.body": {

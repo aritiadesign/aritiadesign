@@ -16,7 +16,7 @@ const steps = [
   {
     n: "02",
     title: "DEVIS & SIGNATURE",
-    body: "Votre signature ouvre officiellement notre collaboration. Plus qu'un cadre administratif, elle scelle un engagement mutuel : vous nous confiez votre vision, nous nous engageons à la traduire avec exigence et passion.",
+    body: "Votre signature ouvre officiellement notre collaboration. Plus qu'un cadre administratif, elle scelle un engagement mutuel. À travers elle, vous nous confiez votre vision et nous nous engageons à la traduire avec exigence et passion.",
     stack: [
       "/images/contract/page-02.jpg",
       "/images/contract/page-01.jpg",
@@ -28,7 +28,7 @@ const steps = [
   {
     n: "03",
     title: "INSPIRATIONS & UNIVERS",
-    body: "Pour chaque temps fort de la célébration (cérémonie, cocktail, dîner), nous composons une planche d'intentions : ambiances, matières, palette, fleurs, typographies. Un fil rouge visuel et émotionnel se dessine, fidèle à votre histoire.",
+    body: "Pour chaque temps fort de la célébration (cérémonie, cocktail, dîner), nous composons des planches d'intentions : ambiances, matières, palette, fleurs, ou typographies. Un fil rouge visuel et émotionnel se dessine, fidèle à votre histoire.",
     image: "/images/step-03-moodboard.jpg",
     alt: "Moodboard — direction artistique",
     contained: true,
@@ -38,8 +38,8 @@ const steps = [
   {
     n: "04",
     title: "PRÉSENTATION DU PROJET",
-    body: "Nous traduisons cette vision en un projet complet, harmonisant compositions florales, papeterie, signalétique et agencement des espaces. C'est le moment de la révélation : vous découvrez, à travers un carnet d'atmosphère détaillé, votre univers prendre forme.",
-    flipbook: Array.from({ length: 24 }, (_, i) =>
+    body: "Nous traduisons cette vision en un projet complet, harmonisant compositions florales, papeterie, signalétique et agencement des espaces. C'est le moment de la révélation. Votre carnet d'atmosphère détaillé rassemble photos des pièces sélectionnées, croquis de projection et planches d'inspiration. Votre univers prend enfin forme sous vos yeux. Une fois le carnet entre vos mains, vous pouvez encore valider, échanger ou affiner certains détails selon vos envies.",
+    flipbook: Array.from({ length: 23 }, (_, i) =>
       `/images/flipbook/${String(i + 1).padStart(2, "0")}.jpg`
     ),
     alt: "Présentation — Carnet d'atmosphère",
@@ -135,7 +135,7 @@ const steps = [
               {step.flipbook ? (
                 <div
                   class:list={[
-                    "flipbook relative aspect-[3/2] w-full overflow-hidden bg-[var(--color-cream)] shadow-[0_24px_60px_-24px_rgba(0,0,0,0.25)] select-none group",
+                    "flipbook relative aspect-[2000/1414] w-full overflow-hidden bg-[var(--color-cream)] shadow-[0_24px_60px_-24px_rgba(0,0,0,0.25)] select-none group",
                     "order-2",
                     reversed ? "lg:order-2" : "lg:order-1",
                   ]}
@@ -247,7 +247,7 @@ const steps = [
               ) : step.contained ? (
                 <div
                   class:list={[
-                    "aspect-[5/7] md:aspect-[1/1] flex items-center justify-center bg-[#1a1a1a] px-2 md:px-10 py-3 md:py-10",
+                    "relative aspect-[5/7] md:aspect-[1/1] flex items-center justify-center bg-[#1a1a1a] px-2 md:px-10 py-3 md:py-10",
                     "order-2",
                     reversed ? "lg:order-2" : "lg:order-1",
                   ]}
@@ -258,6 +258,15 @@ const steps = [
                     loading="lazy"
                     class="max-w-full max-h-full object-contain"
                   />
+                  {step.watermarkBottomLeft && (
+                    <img
+                      src="/images/watermark-ad-dark.svg"
+                      alt=""
+                      aria-hidden="true"
+                      class="hidden md:block absolute md:-left-[400px] md:-bottom-32 md:w-[400px] pointer-events-none select-none"
+                      style="opacity: 0.1;"
+                    />
+                  )}
                 </div>
               ) : (
                 <div
