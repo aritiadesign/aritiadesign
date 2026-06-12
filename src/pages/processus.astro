@@ -16,7 +16,7 @@ const steps = [
   {
     n: "02",
     title: "DEVIS & SIGNATURE",
-    body: "Votre signature ouvre officiellement notre collaboration. Plus qu'un cadre administratif, elle scelle un engagement mutuel. À travers elle, vous nous confiez votre vision et nous nous engageons à la traduire avec exigence et passion.",
+    body: "Votre signature ouvre officiellement notre collaboration. Au-delà du cadre formel, elle scelle un engagement mutuel au sein duquel vous nous confiez votre vision et nous nous engageons à la traduire avec exigence et passion.",
     stack: [
       "/images/contract/page-02.jpg",
       "/images/contract/page-01.jpg",
@@ -28,7 +28,7 @@ const steps = [
   {
     n: "03",
     title: "INSPIRATIONS & UNIVERS",
-    body: "Pour chaque temps fort de la célébration (cérémonie, cocktail, dîner), nous composons des planches d'intentions : ambiances, matières, palette, fleurs, ou typographies. Un fil rouge visuel et émotionnel se dessine, fidèle à votre histoire.",
+    body: "Pour chaque temps fort de la célébration (cérémonie, cocktail, dîner), selon vos envies, nous composons des planches d'intentions autour des ambiances, matières, palette, fleurs et typographies. Un fil rouge visuel et émotionnel se dessine. Au gré d'échanges réguliers avec vous ou votre wedding planner, il se précise, s'ajuste, s'enrichit, jusqu'à devenir le reflet le plus juste de votre histoire.",
     image: "/images/step-03-moodboard.jpg",
     alt: "Moodboard — direction artistique",
     contained: true,
@@ -50,7 +50,7 @@ const steps = [
   {
     n: "05",
     title: "DANS LES COULISSES",
-    body: "Le dossier validé, nous passons commande auprès de nos partenaires et coordonnons l'ensemble : sourcing, production sur mesure, ajustements, dialogue avec vous ou votre wedding planner. Vous restez maître de la vision ; nous orchestrons en coulisses.",
+    body: "Le dossier validé, nous passons commande auprès de nos partenaires et coordonnons l'ensemble. Sourcing, production sur mesure, ajustements, échanges réguliers avec vous ou votre wedding planner, tout est pris en main. Vous restez maître de la vision ; nous orchestrons en coulisses.",
     stack: [
       "/images/tableaux/elements.jpg",
       "/images/tableaux/calcul-fleurs.jpg",
@@ -63,10 +63,11 @@ const steps = [
   {
     n: "06",
     title: "LE JOUR J",
-    body: "Le jour J, nous nous occupons de tout. Installation, mise en place, compositions florales in situ, ajustements de dernière minute. Vous n'avez plus qu'à vivre votre journée ; nous veillons à ce que chaque détail soit fidèle à votre vision.",
+    body: "Le jour J, nous nous occupons de tout. Installation, mise en place, compositions florales in situ, ajustements de dernière minute. Vivez votre journée en toute sérénité ; votre vision se déploie telle que vous l'aviez rêvée.",
     image: "/images/step-06-colonnes.jpg",
     alt: "Colonnes plan de table avec roses blanches",
     contained: true,
+    script: "Place à l'émotion.",
     gridGap: "gap-14",
     marginTop: "max-md:mt-0 mt-28 md:mt-40",
   },
@@ -288,7 +289,7 @@ const steps = [
 
               {/* Text */}
               <div class:list={[
-                "order-1",
+                "order-1 relative",
                 reversed ? "lg:order-1 lg:pr-8" : "lg:order-2 lg:pl-8",
                 step.textOffset ?? "",
               ]}>
@@ -325,8 +326,23 @@ const steps = [
                 <p class="mt-6 lg:mt-6 text-[0.95rem] leading-[1.95] text-white/85 max-w-md" data-i18n={`process.step.${i + 1}.body`}>
                   {step.body}
                 </p>
+                {step.script && (
+                  <p
+                    class="hidden lg:block absolute right-0 top-full mt-6 md:mt-10 translate-x-6 md:translate-x-12 w-fit font-script text-[28px] sm:text-[34px] md:text-[40px] lg:text-[48px] leading-[1.1] text-white text-center rotate-[-10deg] origin-left pointer-events-none select-none whitespace-nowrap"
+                    data-i18n={`process.step.${i + 1}.script`}
+                    set:html={`<span class="block">faites place</span>à votre instant<br />d'émotion.`}
+                  />
+                )}
               </div>
             </div>
+
+            {step.script && (
+              <p
+                class="lg:hidden relative z-10 -mt-6 sm:-mt-8 mx-auto w-fit font-script text-[32px] sm:text-[42px] leading-[1.1] text-white text-center rotate-[-10deg] origin-center pointer-events-none select-none whitespace-nowrap"
+                data-i18n={`process.step.${i + 1}.script`}
+                set:html={`<span class="block">faites place</span>à votre instant<br />d'émotion.`}
+              />
+            )}
 
             {/* Mobile/tablet only: ✦✦✦ divider between this step and the next */}
             {i < steps.length - 1 && (
@@ -345,7 +361,7 @@ const steps = [
   </section>
 
   {/* ───────────────────────── 5. CLOSING MANIFESTO + CTA ───────────────────────── */}
-  <section class="bg-[#1A1A1A] text-white py-20 md:py-28 px-6">
+  <section class="bg-[#1A1A1A] text-white pt-8 pb-20 md:py-28 px-6">
     <div class="mx-auto max-w-[1320px]">
       <div class="grid grid-cols-12 gap-6 md:gap-10 items-center">
         {/* Left composite: tall portrait + small square offset bottom-right */}
@@ -369,7 +385,7 @@ const steps = [
         </div>
 
         {/* Right: italic manifesto + CTA */}
-        <div class="col-span-12 md:col-span-8 md:pl-6 mt-8 md:mt-0">
+        <div class="col-span-12 md:col-span-8 md:pl-6 mt-1 md:mt-0">
           <div class="w-fit max-w-full">
             <p class="font-italic-serif italic text-[1.4rem] sm:text-[1.7rem] md:text-[40px] leading-[1.4] md:leading-[1.3] text-white text-pretty" data-i18n="process.closing">
               Notre processus créatif allie écoute,<br class="hidden md:inline" />

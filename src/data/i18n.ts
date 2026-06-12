@@ -376,13 +376,13 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "process.step.2.title": { fr: "DEVIS <span class=\"amp\">&amp;</span> SIGNATURE", en: "QUOTE <span class=\"amp\">&amp;</span> SIGNATURE" },
   "process.step.2.body": {
-    fr: "Votre signature ouvre officiellement notre collaboration. Plus qu'un cadre administratif, elle scelle un engagement mutuel. À travers elle, vous nous confiez votre vision et nous nous engageons à la traduire avec exigence et passion.",
-    en: "Your signature officially opens our collaboration. More than a formal framework, it seals a mutual commitment. Through it, you entrust us with your vision and we commit to translating it with rigour and passion."
+    fr: "Votre signature ouvre officiellement notre collaboration. Au-delà du cadre formel, elle scelle un engagement mutuel au sein duquel vous nous confiez votre vision et nous nous engageons à la traduire avec exigence et passion.",
+    en: "Your signature officially opens our collaboration. Beyond the formal framework, it seals a mutual commitment through which you entrust us with your vision and we commit to translating it with rigour and passion."
   },
   "process.step.3.title": { fr: "INSPIRATIONS <span class=\"amp\">&amp;</span> UNIVERS", en: "INSPIRATIONS <span class=\"amp\">&amp;</span> ATMOSPHERES" },
   "process.step.3.body": {
-    fr: "Pour chaque temps fort de la célébration (cérémonie, cocktail, dîner), nous composons des planches d'intentions : ambiances, matières, palette, fleurs, ou typographies. Un fil rouge visuel et émotionnel se dessine, fidèle à votre histoire.",
-    en: "For each key moment of the celebration (ceremony, cocktail, dinner), we compose boards of intentions: atmospheres, materials, palette, flowers, or typography. A visual and emotional thread takes shape, faithful to your story."
+    fr: "Pour chaque temps fort de la célébration (cérémonie, cocktail, dîner), selon vos envies, nous composons des planches d'intentions autour des ambiances, matières, palette, fleurs et typographies. Un fil rouge visuel et émotionnel se dessine. Au gré d'échanges réguliers avec vous ou votre wedding planner, il se précise, s'ajuste, s'enrichit, jusqu'à devenir le reflet le plus juste de votre histoire.",
+    en: "For each key moment of the celebration (ceremony, cocktail, dinner), tailored to your wishes, we compose boards of intentions around atmospheres, materials, palette, flowers and typography. A visual and emotional thread takes shape. Through regular exchanges with you or your wedding planner, it sharpens, adjusts and grows richer, until it becomes the truest reflection of your story."
   },
   "process.step.4.title": { fr: "PRÉSENTATION DU PROJET", en: "PROJECT REVEAL" },
   "process.step.4.body": {
@@ -391,14 +391,15 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "process.step.5.title": { fr: "DANS LES COULISSES", en: "BEHIND THE SCENES" },
   "process.step.5.body": {
-    fr: "Le dossier validé, nous passons commande auprès de nos partenaires et coordonnons l'ensemble : sourcing, production sur mesure, ajustements, dialogue avec vous ou votre wedding planner. Vous restez maître de la vision ; nous orchestrons en coulisses.",
-    en: "Once the project is approved, we place orders with our partners and coordinate everything: sourcing, bespoke production, adjustments, dialogue with you or your wedding planner. You remain in charge of the vision; we orchestrate behind the scenes."
+    fr: "Le dossier validé, nous passons commande auprès de nos partenaires et coordonnons l'ensemble. Sourcing, production sur mesure, ajustements, échanges réguliers avec vous ou votre wedding planner, tout est pris en main. Vous restez maître de la vision ; nous orchestrons en coulisses.",
+    en: "Once the project is approved, we place orders with our partners and coordinate everything. Sourcing, bespoke production, adjustments, regular exchanges with you or your wedding planner, everything is taken in hand. You remain in charge of the vision; we orchestrate behind the scenes."
   },
   "process.step.6.title": { fr: "LE JOUR J", en: "THE BIG DAY" },
   "process.step.6.body": {
-    fr: "Le jour J, nous nous occupons de tout. Installation, mise en place, compositions florales in situ, ajustements de dernière minute. Vous n'avez plus qu'à vivre votre journée ; nous veillons à ce que chaque détail soit fidèle à votre vision.",
-    en: "On the day itself, we take care of everything. Installation, set-up, floral compositions on site, last-minute adjustments. All you have to do is live your day; we make sure every detail stays true to your vision."
+    fr: "Le jour J, nous nous occupons de tout. Installation, mise en place, compositions florales in situ, ajustements de dernière minute. Vivez votre journée en toute sérénité ; votre vision se déploie telle que vous l'aviez rêvée.",
+    en: "On the day itself, we take care of everything. Installation, set-up, floral compositions on site, last-minute adjustments. Live your day in complete serenity; your vision unfolds just as you had dreamed it."
   },
+  "process.step.6.script": { fr: `<span class="block">faites place</span>à votre instant<br />d'émotion.`, en: `<span class="block">make room</span>for your moment<br />of emotion.` },
   "process.flipbook.prev": { fr: "Page précédente", en: "Previous page" },
   "process.flipbook.next": { fr: "Page suivante", en: "Next page" },
 
