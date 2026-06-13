@@ -1,3 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://aritiadesign.com/sitemap.xml
+Disallow: /api/
+Crawl-delay: 1
+
+Sitemap: https://aritiadesign.com/sitemap-index.xml
