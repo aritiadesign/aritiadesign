@@ -57,8 +57,8 @@ const leftProject = {
 ---
 
 <Layout
-  title="Portfolio — Mariages & évènements raffinés | Aritia Design Toulouse"
-  description="Portfolio de mariages haut de gamme et évènements d'exception conçus par Aritia Design à Toulouse, en Haute-Garonne et alentours. Décor, scénographie, design floral et papeterie."
+  title="Portfolio | Mariages raffinés | Aritia Design"
+  description="Portfolio de mariages haut de gamme et événements d'exception conçus par Aritia Design à Toulouse, en Haute-Garonne et alentours. Décor, scénographie, design floral et papeterie."
   transparentHeader={true}
   darkFooter={false}
 >
@@ -110,7 +110,9 @@ const leftProject = {
         const track = marquee.querySelector(".marquee-track");
         if (!track) return;
 
-        const SPEED = matchMedia("(max-width: 767px)").matches ? 1.8 : 1; // px per frame (mobile faster)
+        // Match the CSS marquees of the rest of the site: 30s for a full half-track loop.
+        // Speed is recomputed each frame so it adapts to track width / image load state.
+        const LOOP_SECONDS = 30;
         let paused = false;
         let resumeTimer;
 
@@ -120,7 +122,7 @@ const leftProject = {
           if (!paused) {
             const half = track.scrollWidth / 2;
             if (half > 0) {
-              marquee.scrollLeft += SPEED;
+              marquee.scrollLeft += half / (LOOP_SECONDS * 60);
               if (marquee.scrollLeft >= half) marquee.scrollLeft -= half;
             }
           }
@@ -182,7 +184,7 @@ const leftProject = {
           SUR-MESURE
         </h2>
         <p class="mt-6 md:mt-10 text-[14px] md:text-[16px] leading-[1.85] md:leading-[1.9] text-[var(--color-ink-soft)] max-w-md mx-auto" data-i18n="portfolio.savoir.p">
-          Découvrez une sélection de mariages et d'évènements
+          Découvrez une sélection de mariages et d'événements
           soigneusement mis en lumière. Cliquez sur chaque titre pour
           explorer la galerie complète.
         </p>

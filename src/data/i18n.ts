@@ -22,8 +22,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "header.logo.aria":    { fr: "Aritia Design — Accueil", en: "Aritia Design — Home" },
 
   // ─────────────────────────── Footer ───────────────────────────
-  "footer.tagline":   { fr: "Créatrice d'univers évènementiels<br class=\"hidden md:inline lg:hidden\" /> haut de gamme, sur-mesure<br />basée à Toulouse, disponible partout en France",
-                        en: "Bespoke, high-end event designer.<br />Based in Toulouse, available throughout France." },
+  "footer.tagline":   { fr: "<span class=\"hidden md:inline\">Créatrice de décoration de mariages et d'événements haut de gamme</span><span class=\"md:hidden\">Créatrice de décoration de mariage haut de gamme</span><br /><span class=\"hidden md:inline\">basée à Toulouse, œuvrant en Haute-Garonne</span><span class=\"md:hidden\">Toulouse, Haute-Garonne</span>",
+                        en: "<span class=\"hidden md:inline\">Creator of high-end wedding &amp; event decoration</span><span class=\"md:hidden\">High-end wedding decoration</span><br /><span class=\"hidden md:inline\">based in Toulouse, crafting across Haute-Garonne</span><span class=\"md:hidden\">Toulouse, Haute-Garonne</span>" },
   "footer.follow":    { fr: "Suivez-nous", en: "Follow us" },
   "footer.credits":   { fr: "Images &amp; vidéos crédits&nbsp;: RNT Motion, Stephen Meslin",
                         en: "Images &amp; video credits: RNT Motion, Stephen Meslin" },
@@ -40,18 +40,18 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: 'CREATIVE DIRECTION<br>FLORAL ART <span class="inline-block mx-2 md:mx-3 align-middle text-white text-[14px] sm:text-[16px] md:text-[20px] relative top-[-3px] sm:top-[-4px] md:top-[-5px]">✦</span> SCENOGRAPHY<br><span class="font-italic-serif italic font-normal">fine</span> STATIONERY'
   },
   "home.hero.subtitle": {
-    fr: "Créatrice d'univers pour mariages<br />&amp; évènements d'exception",
+    fr: "Créatrice d'univers pour mariages<br />&amp; événements d'exception",
     en: "Crafting Atmospheres for Bespoke<br />Weddings &amp; Celebrations"
   },
 
   // ─────────────────────────── Home — Intro ───────────────────────────
   "home.intro.h2": {
-    fr: "CRÉATRICE D’UNIVERS ÉVÈNEMENTIELS<br />HAUT DE GAMME",
+    fr: "CRÉATRICE D’UNIVERS ÉVÉNEMENTIELS<br />HAUT DE GAMME",
     en: "CURATOR OF HIGH-END<br />CELEBRATIONS"
   },
   "home.intro.p": {
-    fr: "Aritia Design vous accompagne dans la conception de mariages<br class=\"hidden md:inline\" /> et évènements sur-mesure, raffinés et authentiques.<br class=\"hidden md:inline\" /> À Toulouse, comme partout en France.",
-    en: "Aritia Design guides you through the design of bespoke,<br class=\"hidden md:inline\" /> refined and authentic weddings and events.<br class=\"hidden md:inline\" /> In Toulouse and throughout France."
+    fr: "Aritia Design vous accompagne dans la conception et la décoration<br class=\"hidden md:inline\" /> de mariages et événements sur-mesure, raffinés et authentiques.<br class=\"hidden md:inline\" /> À Toulouse, en Haute-Garonne et ses environs.",
+    en: "Aritia Design guides you through the design and decoration of bespoke,<br class=\"hidden md:inline\" /> refined and authentic weddings and events.<br class=\"hidden md:inline\" /> In Toulouse, Haute-Garonne and surrounding areas."
   },
 
   // ─────────────────────────── Home — Portfolio strip ───────────────────────────
@@ -92,7 +92,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "home.testimonial.1.author": { fr: "Mélodie & Thibault", en: "Mélodie & Thibault" },
   "home.testimonial.2.quote": {
-    fr: "Merci beaucoup pour l'organisation de notre mariage&nbsp;! Ton souci du détail, ton dévouement ont rendu notre journée parfaite voire plus que parfaite. Nous te sommes reconnaissants pour les magnifiques souvenirs que tu as contribué à créer et te souhaitons beaucoup de succès dans l'organisation de tes prochains évènements.<br /><br />Nous recommandons Aritia sans aucune hésitation.",
+    fr: "Merci beaucoup pour l'organisation de notre mariage&nbsp;! Ton souci du détail, ton dévouement ont rendu notre journée parfaite voire plus que parfaite. Nous te sommes reconnaissants pour les magnifiques souvenirs que tu as contribué à créer et te souhaitons beaucoup de succès dans l'organisation de tes prochains événements.<br /><br />Nous recommandons Aritia sans aucune hésitation.",
     en: "Thank you so much for organising our wedding! Your eye for detail and your dedication made our day perfect, even more than perfect. We are grateful for the beautiful memories you helped create and wish you every success with the events ahead.<br /><br />We recommend Aritia without hesitation."
   },
   "home.testimonial.2.author": { fr: "ELITAH & FYDERANA", en: "ELITAH & FYDERANA" },
@@ -135,7 +135,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "A designer passionate about volume,<br class=\"hidden sm:inline\" /> materials and a love for others"
   },
   "about.founder.p1": {
-    fr: "Depuis l'enfance, l'harmonie des formes, des textures et des couleurs me fascine. C'est dès l'adolescence que j'ai fait mes premiers pas sur le terrain, en contribuant à la conception d'une dizaine de mariages. J'y ai exploré toutes les facettes de l'évènementiel&nbsp;: design floral, structures, décors, papeterie et direction artistique. Chaque projet a été un espace d'apprentissage et un défi pour me dépasser.",
+    fr: "Depuis l'enfance, l'harmonie des formes, des textures et des couleurs me fascine. C'est dès l'adolescence que j'ai fait mes premiers pas sur le terrain, en contribuant à la conception d'une dizaine de mariages. J'y ai exploré toutes les facettes de l'événementiel&nbsp;: design floral, structures, décors, papeterie et direction artistique. Chaque projet a été un espace d'apprentissage et un défi pour me dépasser.",
     en: "Ever since childhood, the harmony of shapes, textures and colours has fascinated me. It was in my teenage years that I gained my first hands-on experience, contributing to the design of around a dozen weddings. I explored every facet of the field: floral design, structures, decor, stationery and creative direction. Every project has been a chance to learn and a challenge to push myself further."
   },
   "about.founder.p3": {
@@ -147,7 +147,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "My approach rests on the alliance of sensibility and rigour, with the deep desire to convey emotion through every project and to offer others those suspended moments, etched in memory."
   },
   "about.founder.p5": {
-    fr: "C'est de cette ambition qu'est née Aritia Design&nbsp;: une agence pensée pour celles et ceux qui attendent d'un évènement plus qu'une simple décoration. Une vision, une intention, une signature.",
+    fr: "C'est de cette ambition qu'est née Aritia Design&nbsp;: une agence pensée pour celles et ceux qui attendent d'un événement plus qu'une simple décoration. Une vision, une intention, une signature.",
     en: "Aritia Design was born of this ambition: a studio designed for those who expect more from an event than mere decoration. A vision, an intention, a signature."
   },
   "about.ambition.h2": {
@@ -175,7 +175,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "OUR<br /><span class=\"font-italic-serif italic\">Approach</span>"
   },
   "services.approach.p": {
-    fr: "Aritia Design pense l'évènement comme une pièce de design unique. Identité graphique, art de la table, design floral et scénographie d'espace s'orchestrent pour donner vie à une émotion.",
+    fr: "Aritia Design pense l'événement comme une pièce de design unique. Identité graphique, art de la table, design floral et scénographie d'espace s'orchestrent pour donner vie à une émotion.",
     en: "Aritia Design approaches every event as a unique piece of design. Graphic identity, tablescaping, floral design and spatial scenography work in concert to bring an emotion to life."
   },
 
@@ -194,7 +194,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "services.1.title": { fr: 'DECOR <span class="font-italic-serif italic font-light">Scénographie</span>', en: 'DECOR <span class="font-italic-serif italic font-light">Set Design</span>' },
   "services.1.body": {
-    fr: "<p>La maîtrise globale de votre décor. Nous concevons et coordonnons l'ensemble des éléments visuels de votre évènement : mobilier, éclairage, matières et accessoires. Notre rôle est de garantir l'harmonie absolue de l'espace, où chaque détail visible répond à la même intention, afin que la scénographie finale soit la traduction exacte du projet initial.</p>",
+    fr: "<p>La maîtrise globale de votre décor. Nous concevons et coordonnons l'ensemble des éléments visuels de votre événement : mobilier, éclairage, matières et accessoires. Notre rôle est de garantir l'harmonie absolue de l'espace, où chaque détail visible répond à la même intention, afin que la scénographie finale soit la traduction exacte du projet initial.</p>",
     en: "<p>Full mastery of your decor. We design and coordinate every visual element of your event: furniture, lighting, materials and accessories. Our role is to guarantee absolute harmony of the space, where every visible detail answers the same intention, so the final scenography is the exact translation of the initial project.</p>"
   },
   "services.2.title": { fr: 'FLORAL <span class="font-italic-serif italic font-light">Design</span>', en: 'FLORAL <span class="font-italic-serif italic font-light">Design</span>' },
@@ -204,7 +204,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "services.3.title": { fr: 'IDENTITÉ <span class="font-italic-serif italic font-light">Graphique</span>', en: 'GRAPHIC <span class="font-italic-serif italic font-light">Identity</span>' },
   "services.3.body": {
-    fr: "<p>L'identité graphique est le premier point de contact de votre évènement. Du monogramme à la signalétique du jour J, nous dessinons un univers visuel unique : choix des typographies, illustrations exclusives, textures des papiers et finitions artisanales. Chaque pièce est pensée comme un objet d'art imprimé, pour prolonger l'esthétique de votre célébration.</p>",
+    fr: "<p>L'identité graphique est le premier point de contact de votre événement. Du monogramme à la signalétique du jour J, nous dessinons un univers visuel unique : choix des typographies, illustrations exclusives, textures des papiers et finitions artisanales. Chaque pièce est pensée comme un objet d'art imprimé, pour prolonger l'esthétique de votre célébration.</p>",
     en: "<p>Graphic identity is the first point of contact with your event. From monogram to day-of signage, we design a singular visual signature: chosen typography, exclusive illustrations, paper textures and artisan finishes. Every piece is conceived as a printed art object, extending the aesthetic of your celebration.</p>"
   },
   "services.cta.tab": { fr: "Prendre rendez-vous", en: "Book a consultation" },
@@ -268,7 +268,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "services.pack.3.italic": { fr: "", en: "" },
   "services.pack.3.label":  { fr: "DESIGN FLORAL, SUR DEVIS", en: "FLORAL DESIGN, ON REQUEST" },
   "services.pack.3.desc": {
-    fr: "Bouquets, compositions, structures suspendues ou monumentales : nous prenons en charge toute la création florale de votre évènement, de l'étude à la mise en place le jour J. Hors scénographie d'espace et identité graphique, le végétal est notre unique focus.",
+    fr: "Bouquets, compositions, structures suspendues ou monumentales : nous prenons en charge toute la création florale de votre événement, de l'étude à la mise en place le jour J. Hors scénographie d'espace et identité graphique, le végétal est notre unique focus.",
     en: "Bouquets, compositions, suspended or monumental structures: we take charge of all the floral creation for your event, from the study to the installation on the day. Excluding spatial scenography and graphic identity, the botanical is our sole focus."
   },
   "services.pack.3.b0": { fr: "Étude de votre univers floral personnalisé", en: "Study of your bespoke floral aesthetic" },
@@ -281,7 +281,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "services.pack.4.italic": { fr: "", en: "" },
   "services.pack.4.label":  { fr: "PAPETERIE FINE, SUR DEVIS", en: "FINE STATIONERY, ON REQUEST" },
   "services.pack.4.desc": {
-    fr: "Logos, invitations, pièces de table, signalétique et papeterie d'art : nous prenons en charge toute l'identité graphique de votre évènement, de l'étude à la livraison finale. Hors scénographie d'espace et design floral, notre intervention se consacre exclusivement au support visuel.",
+    fr: "Logos, invitations, pièces de table, signalétique et papeterie d'art : nous prenons en charge toute l'identité graphique de votre événement, de l'étude à la livraison finale. Hors scénographie d'espace et design floral, notre intervention se consacre exclusivement au support visuel.",
     en: "Logo, monogram, invitations, table pieces, signage and fine stationery: we take charge of the full graphic identity of your event, from conception to final delivery. Excluding spatial scenography and floral design, paper is our sole focus."
   },
   "services.pack.4.b0": { fr: "Conception de votre logo et monogramme", en: "Design of your logo and monogram" },
@@ -334,15 +334,15 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "WHEN IS THE RIGHT TIME TO CONTACT YOU?"
   },
   "services.faq.2.a": {
-    fr: "Les délais idéaux varient selon la formule choisie et l'ampleur du projet :<br /><br />— Pack L'Exception : 10 à 12 mois en amont (univers complet, sourcing des prestataires, coordination de la production).<br /><br />— Pack Atmosphère : 6 à 8 mois sont généralement suffisants.<br /><br />— Direction Artistique seule : à partir de 4 mois.<br /><br />Pour les évènements d'envergure (scénographie complexe, grande capacité), nous recommandons d'anticiper davantage. Nous restons toutefois flexibles sur des délais plus courts selon nos disponibilités du moment.",
+    fr: "Les délais idéaux varient selon la formule choisie et l'ampleur du projet :<br /><br />— Pack L'Exception : 10 à 12 mois en amont (univers complet, sourcing des prestataires, coordination de la production).<br /><br />— Pack Atmosphère : 6 à 8 mois sont généralement suffisants.<br /><br />— Direction Artistique seule : à partir de 4 mois.<br /><br />Pour les événements d'envergure (scénographie complexe, grande capacité), nous recommandons d'anticiper davantage. Nous restons toutefois flexibles sur des délais plus courts selon nos disponibilités du moment.",
     en: "Ideal timeframes vary depending on the chosen package and the scale of the project:<br /><br />— The Exception Package: 10 to 12 months in advance (full creative direction, supplier sourcing, production coordination).<br /><br />— Atmosphere Package: 6 to 8 months is generally sufficient.<br /><br />— Art Direction only: from 4 months.<br /><br />For larger-scale events (complex set design, high guest count), we recommend planning further ahead. We remain flexible on shorter timelines depending on our current availability."
   },
   "services.faq.3.q": {
-    fr: "ACCOMPAGNEZ-VOUS<br class=\"md:hidden\" /> D'AUTRES ÉVÈNEMENTS ?",
+    fr: "ACCOMPAGNEZ-VOUS<br class=\"md:hidden\" /> D'AUTRES ÉVÉNEMENTS ?",
     en: "DO YOU WORK ON<br class=\"md:hidden\" /> OTHER EVENTS?"
   },
   "services.faq.3.a": {
-    fr: "Oui. Si le mariage reste notre terrain de prédilection, notre direction artistique s'applique à toutes les célébrations qui marquent une vie : évènements saisonniers, anniversaires, baby showers, évènements privés ou corporate. La même rigueur esthétique, adaptée à votre occasion.<br /><br /><a href=\"/contact\" class=\"underline underline-offset-4 hover:opacity-70 transition\">Demandez un devis personnalisé →</a>",
+    fr: "Oui. Si le mariage reste notre terrain de prédilection, notre direction artistique s'applique à toutes les célébrations qui marquent une vie : événements saisonniers, anniversaires, baby showers, événements privés ou corporate. La même rigueur esthétique, adaptée à votre occasion.<br /><br /><a href=\"/contact\" class=\"underline underline-offset-4 hover:opacity-70 transition\">Demandez un devis personnalisé →</a>",
     en: "Yes. While weddings remain our primary field, our creative direction extends to all the celebrations that mark a life: seasonal events, birthdays, baby showers, private gatherings and corporate occasions. The same aesthetic rigour, tailored to your moment.<br /><br /><a href=\"/contact\" class=\"underline underline-offset-4 hover:opacity-70 transition\">Request a personalised quote →</a>"
   },
 
@@ -421,7 +421,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "CRAFTSMANSHIP<br /><span class=\"font-italic-serif italic font-light\">Elegance</span><br />HARMONY<br /><span class=\"font-italic-serif italic font-light\">Atmosphere</span><br />BESPOKE"
   },
   "portfolio.savoir.p": {
-    fr: "Découvrez une sélection de mariages et d'évènements soigneusement mis en lumière. Cliquez sur chaque titre pour explorer la galerie complète.",
+    fr: "Découvrez une sélection de mariages et d'événements soigneusement mis en lumière. Cliquez sur chaque titre pour explorer la galerie complète.",
     en: "Discover a selection of weddings and events carefully highlighted. Click each title to explore the full gallery."
   },
   "portfolio.project.ef.title": { fr: "E+F, MARIAGE MINIMALISTE", en: "E+F, MINIMALIST WEDDING" },
@@ -440,7 +440,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   // ─────────────────────────── Contact page ───────────────────────────
   "contact.hero.title": { fr: "Contact", en: "Contact" },
   "contact.hero.subtitle": {
-    fr: "Vous rêvez d'un mariage ou d'un évènement <br />qui vous ressemble&nbsp;?",
+    fr: "Vous rêvez d'un mariage ou d'un événement <br />qui vous ressemble&nbsp;?",
     en: "Dreaming of a wedding or event <br />that truly reflects you?"
   },
   "contact.notes.label": { fr: "Notes", en: "Notes" },
@@ -465,14 +465,14 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "contact.label.date":    { fr: "Date",                    en: "Date" },
   "contact.label.location":{ fr: "Lieu",                    en: "Location" },
   "contact.label.service": { fr: "Prestation",              en: "Service" },
-  "contact.label.type":    { fr: "Type d'évènement",        en: "Event type" },
+  "contact.label.type":    { fr: "Type d'événement",        en: "Event type" },
   "contact.label.budget":  { fr: "Budget",                  en: "Budget" },
   "contact.label.desc":    { fr: "Description",             en: "Description" },
   "contact.ph.name":   { fr: "NOM & PRÉNOM *",                  en: "NAME & SURNAME *" },
   "contact.ph.email":  { fr: "E-MAIL *",                        en: "E-MAIL *" },
   "contact.ph.phone":  { fr: "🇫🇷 TÉLÉPHONE",                     en: "🇫🇷 PHONE" },
-  "contact.ph.date":   { fr: "DATE DE L'ÉVÈNEMENT *",           en: "EVENT DATE *" },
-  "contact.ph.loc":    { fr: "LIEU DE L'ÉVÈNEMENT *",           en: "EVENT LOCATION *" },
+  "contact.ph.date":   { fr: "DATE DE L'ÉVÉNEMENT *",           en: "EVENT DATE *" },
+  "contact.ph.loc":    { fr: "LIEU DE L'ÉVÉNEMENT *",           en: "EVENT LOCATION *" },
   "contact.ph.budget": { fr: "BUDGET ENVISAGÉ POUR VOTRE PROJET *", en: "ESTIMATED BUDGET FOR YOUR PROJECT *" },
   "contact.ph.desc":   { fr: "DESCRIPTION *",                   en: "DESCRIPTION *" },
   "contact.opt.service.placeholder": { fr: "PRESTATION SOUHAITÉE *", en: "DESIRED SERVICE *" },
@@ -482,12 +482,12 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "contact.opt.service.3": { fr: "L'Art Floral",                    en: "Floral Art" },
   "contact.opt.service.4": { fr: "Papeterie Fine",                  en: "Fine Stationery" },
   "contact.opt.service.5": { fr: "Sur-mesure",                      en: "Custom" },
-  "contact.opt.type.placeholder": { fr: "TYPE D'ÉVÈNEMENT *",     en: "EVENT TYPE *" },
+  "contact.opt.type.placeholder": { fr: "TYPE D'ÉVÉNEMENT *",     en: "EVENT TYPE *" },
   "contact.opt.type.0": { fr: "Mariage",               en: "Wedding" },
-  "contact.opt.type.1": { fr: "Évènement saisonnier",  en: "Seasonal event" },
+  "contact.opt.type.1": { fr: "Événement saisonnier",  en: "Seasonal event" },
   "contact.opt.type.2": { fr: "Anniversaire",          en: "Birthday / Anniversary" },
   "contact.opt.type.3": { fr: "Baby Shower",           en: "Baby shower" },
-  "contact.opt.type.4": { fr: "Évènement Corporate",   en: "Corporate event" },
+  "contact.opt.type.4": { fr: "Événement Corporate",   en: "Corporate event" },
   "contact.opt.type.5": { fr: "Autre",                 en: "Other" },
   "contact.submit": { fr: "Envoyer", en: "Send" },
 
@@ -581,8 +581,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "privacy.collected.li1": { fr: "Nom et prénom", en: "First and last name" },
   "privacy.collected.li2": { fr: "Adresse email", en: "Email address" },
   "privacy.collected.li3": { fr: "Numéro de téléphone (facultatif)", en: "Phone number (optional)" },
-  "privacy.collected.li4": { fr: "Date et lieu de l'évènement", en: "Date and location of the event" },
-  "privacy.collected.li5": { fr: "Type d'évènement et prestation souhaitée", en: "Event type and desired service" },
+  "privacy.collected.li4": { fr: "Date et lieu de l'événement", en: "Date and location of the event" },
+  "privacy.collected.li5": { fr: "Type d'événement et prestation souhaitée", en: "Event type and desired service" },
   "privacy.collected.li6": { fr: "Budget envisagé", en: "Estimated budget" },
   "privacy.collected.li7": { fr: "Description libre du projet", en: "Free-form project description" },
   "privacy.collected.p2": {
@@ -591,7 +591,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "privacy.purpose.h2": { fr: "Finalité et base légale", en: "Purpose and legal basis" },
   "privacy.purpose.p1": {
-    fr: "Vos données sont collectées et traitées dans le but unique de répondre à votre demande de contact et d'établir, le cas échéant, une relation commerciale relative à la conception d'un évènement.",
+    fr: "Vos données sont collectées et traitées dans le but unique de répondre à votre demande de contact et d'établir, le cas échéant, une relation commerciale relative à la conception d'un événement.",
     en: "Your data is collected and processed for the sole purpose of responding to your enquiry and, if applicable, establishing a business relationship around the design of an event."
   },
   "privacy.purpose.p2": {
@@ -654,7 +654,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "Elevating every moment<br class=\"show-mobile\" />of your celebration."
   },
   "investment.intro.h2": {
-    fr: "UN ENGAGEMENT<br class=\"md:hidden\" /> À LA HAUTEUR<br class=\"hidden md:inline\" /> DE<br class=\"md:hidden\" /> VOTRE ÉVÈNEMENT",
+    fr: "UN ENGAGEMENT<br class=\"md:hidden\" /> À LA HAUTEUR<br class=\"hidden md:inline\" /> DE<br class=\"md:hidden\" /> VOTRE ÉVÉNEMENT",
     en: "A COMMITMENT<br class=\"md:hidden\" /> WORTHY<br class=\"hidden md:inline\" /> OF<br class=\"md:hidden\" /> YOUR EVENT"
   },
   "investment.value.h3": {
@@ -662,7 +662,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "OUR<br /><span class=\"font-italic-serif italic\">Commitment</span>"
   },
   "investment.value.p": {
-    fr: "Choisir Aritia Design, c'est confier votre célébration à un savoir-faire engagé et à une vraie culture du détail. Nous traduisons vos attentes de manière juste pour créer un évènement unique, qui vous ressemble, et offrir à vos invités un moment mémorable.",
+    fr: "Choisir Aritia Design, c'est confier votre célébration à un savoir-faire engagé et à une vraie culture du détail. Nous traduisons vos attentes de manière juste pour créer un événement unique, qui vous ressemble, et offrir à vos invités un moment mémorable.",
     en: "Choosing Aritia Design means entrusting your celebration to dedicated craftsmanship and a true culture of detail. We translate your expectations with precision to create a singular event that reflects you, and offer your guests a memorable moment."
   },
   "investment.disclaimer": {
@@ -741,7 +741,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "<span class=\"tracking-normal\">One</span> <span class=\"font-italic-serif italic font-light\">service</span>,<br /><span class=\"tracking-normal\">one</span> <span class=\"font-italic-serif italic font-light\">signature</span>"
   },
   "investment.alacarte.intro": {
-    fr: "Pour celles et ceux qui souhaitent confier une partie précise de leur évènement. Chaque prestation inclut son concept artistique et son exécution complète.",
+    fr: "Pour celles et ceux qui souhaitent confier une partie précise de leur événement. Chaque prestation inclut son concept artistique et son exécution complète.",
     en: "For those wishing to entrust a specific part of their event. Each service includes its artistic concept and full execution."
   },
 

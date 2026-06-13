@@ -10,8 +10,8 @@ const sent = Astro.url.searchParams.get("sent") === "1";
 ---
 
 <Layout
-  title="Contact — Aritia Design | Wedding Designer Toulouse"
-  description="Contactez Aritia pour concevoir votre mariage ou évènement sur-mesure à Toulouse, en Haute-Garonne. Réservez un premier échange pour partager votre vision."
+  title="Contact | Décoration mariage Toulouse | Aritia Design"
+  description="Contactez Aritia pour concevoir votre mariage ou événement sur-mesure à Toulouse, en Haute-Garonne. Réservez un premier échange pour partager votre vision."
   transparentHeader={true}
 >
   <PageHero
@@ -20,7 +20,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
     imageAlt="Plafond aux poutres"
     title="Contact"
     titleKey="contact.hero.title"
-    subtitleHtml="Vous rêvez d'un mariage ou d'un évènement <br />qui vous ressemble&nbsp;?"
+    subtitleHtml="Vous rêvez d'un mariage ou d'un événement <br />qui vous ressemble&nbsp;?"
     subtitleKey="contact.hero.subtitle"
   />
 
@@ -127,7 +127,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               type="date"
               name="Date"
               required
-              placeholder="DATE DE L'ÉVÈNEMENT *"
+              placeholder="DATE DE L'ÉVÉNEMENT *"
               data-i18n-attr="placeholder:contact.ph.date"
               class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] text-[var(--color-muted)] focus:outline-none py-3"
             />
@@ -139,7 +139,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               type="text"
               name="Lieu"
               required
-              placeholder="LIEU DE L'ÉVÈNEMENT *"
+              placeholder="LIEU DE L'ÉVÉNEMENT *"
               data-i18n-attr="placeholder:contact.ph.loc"
               class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3"
             />
@@ -162,19 +162,19 @@ const sent = Astro.url.searchParams.get("sent") === "1";
             </select>
           </div>
           <div class="border-b border-black/15 pb-1">
-            <label class="sr-only" for="f-type" data-i18n="contact.label.type">Type d'évènement</label>
+            <label class="sr-only" for="f-type" data-i18n="contact.label.type">Type d'événement</label>
             <select
               id="f-type"
               name="Type"
               required
               class="w-full bg-transparent text-[11px] md:text-[12px] tracking-[0.2em] md:tracking-[0.22em] uppercase text-[var(--color-muted)] focus:outline-none py-3 appearance-none"
             >
-              <option value="" disabled selected data-i18n="contact.opt.type.placeholder">TYPE D'ÉVÈNEMENT *</option>
+              <option value="" disabled selected data-i18n="contact.opt.type.placeholder">TYPE D'ÉVÉNEMENT *</option>
               <option data-i18n="contact.opt.type.0">Mariage</option>
-              <option data-i18n="contact.opt.type.1">Évènement saisonnier</option>
+              <option data-i18n="contact.opt.type.1">Événement saisonnier</option>
               <option data-i18n="contact.opt.type.2">Anniversaire</option>
               <option data-i18n="contact.opt.type.3">Baby Shower</option>
-              <option data-i18n="contact.opt.type.4">Évènement Corporate</option>
+              <option data-i18n="contact.opt.type.4">Événement Corporate</option>
               <option data-i18n="contact.opt.type.5">Autre</option>
             </select>
           </div>
