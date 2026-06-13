@@ -126,8 +126,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   // ─────────────────────────── À propos page ───────────────────────────
   "about.hero.title": { fr: "À Propos", en: "About" },
   "about.hero.subtitle": {
-    fr: "Une signature où design, scénographie &amp; <br />art floral se&nbsp;rencontrent",
-    en: "A signature where design, set design &amp; <br />floral art meet"
+    fr: "Signature alliant design, graphisme, <br />scénographie &amp; art floral",
+    en: "Signature blending design, graphic design, <br />set design &amp; floral art"
   },
   "about.founder.h2": { fr: "FONDATRICE<br />DESIGNER", en: "FOUNDER<br />DESIGNER" },
   "about.founder.kicker": {

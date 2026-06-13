@@ -31,9 +31,38 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url).toStri
 const ogImageURL = new URL("/og-image.jpg", Astro.site ?? Astro.url).toString();
 const logoURL = new URL("/favicon.svg", Astro.site ?? Astro.url).toString();
 
+// BreadcrumbList — auto-generated from the URL path.
+const breadcrumbLabels: Record<string, string> = {
+  "a-propos": "À propos",
+  "services": "Services & tarifs",
+  "processus": "Processus créatif",
+  "contact": "Contact",
+  "portfolio": "Portfolio",
+  "mentions-legales": "Mentions légales",
+  "politique-confidentialite": "Politique de confidentialité",
+};
+const pathSegments = Astro.url.pathname.split("/").filter(Boolean);
+const breadcrumbItems = [
+  { name: "Accueil", url: siteOrigin },
+  ...pathSegments.map((seg, i) => ({
+    name: breadcrumbLabels[seg] ?? seg.replace(/-/g, " "),
+    url: `${siteOrigin}${pathSegments.slice(0, i + 1).join("/")}/`,
+  })),
+];
+const breadcrumbSchema = breadcrumbItems.length > 1 ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems.map((item, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": item.name,
+    "item": item.url,
+  })),
+} : null;
+
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["ProfessionalService", "LocalBusiness"],
   "@id": `${siteOrigin}#organization`,
   "name": "Aritia Design",
   "alternateName": ["Aritia", "Agence Aritia", "Aritia Wedding Design", "Aritia Wedding & Event Design"],
@@ -67,6 +96,11 @@ const jsonLd = {
     "addressRegion": "Haute-Garonne",
     "addressCountry": "FR"
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.604652,
+    "longitude": 1.444209
+  },
   "sameAs": [
     "https://www.instagram.com/aritia_design/",
     "https://www.pinterest.com/aritiadesign/"
@@ -81,7 +115,121 @@ const jsonLd = {
     "Mariage haut de gamme",
     "Événement de luxe"
   ],
-  "priceRange": "€€€"
+  "priceRange": "€€€",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Packs de décoration de mariage Aritia Design",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "L'Exception · Design intégral",
+        "description": "Direction artistique globale, papeterie essentielle, décor & scénographie, design floral intimiste, coordination des prestataires et présence le jour J. Pour ≤50 invités, un espace principal.",
+        "price": "6000",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "6000",
+          "priceCurrency": "EUR",
+          "valueAddedTaxIncluded": false
+        },
+        "category": "Décoration de mariage",
+        "url": `${siteOrigin}services/`,
+        "availability": "https://schema.org/InStock",
+        "areaServed": [
+          { "@type": "City", "name": "Toulouse" },
+          { "@type": "AdministrativeArea", "name": "Haute-Garonne" }
+        ]
+      },
+      {
+        "@type": "Offer",
+        "name": "Pack Atmosphère · Décor & papeterie",
+        "description": "Direction artistique commune, papeterie essentielle, décor & scénographie, coordination des prestataires et installation le jour J. Pour ≤50 invités. Économie de 400 € vs prestations séparées.",
+        "price": "3600",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "3600",
+          "priceCurrency": "EUR",
+          "valueAddedTaxIncluded": false
+        },
+        "category": "Décoration de mariage",
+        "url": `${siteOrigin}services/`,
+        "availability": "https://schema.org/InStock",
+        "areaServed": [
+          { "@type": "City", "name": "Toulouse" },
+          { "@type": "AdministrativeArea", "name": "Haute-Garonne" }
+        ]
+      },
+      {
+        "@type": "Offer",
+        "name": "Direction Artistique seule",
+        "description": "Concept décoratif, graphique et floral, palette de couleurs et matières, croquis ou plan 2D de l'espace, liste de prestataires recommandés. Déductible à 100% si pack signé sous 60 jours.",
+        "price": "1500",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "1500",
+          "priceCurrency": "EUR",
+          "valueAddedTaxIncluded": false
+        },
+        "category": "Direction artistique de mariage",
+        "url": `${siteOrigin}services/`,
+        "availability": "https://schema.org/InStock",
+        "areaServed": [
+          { "@type": "City", "name": "Toulouse" },
+          { "@type": "AdministrativeArea", "name": "Haute-Garonne" }
+        ]
+      },
+      {
+        "@type": "Offer",
+        "name": "Papeterie fine (à la carte)",
+        "description": "Concept graphique, charte typographique, faire-part recto-verso, menus de table, plan de table imprimé, impression et livraison. Pour ≤50 invités.",
+        "price": "800",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "800",
+          "priceCurrency": "EUR",
+          "valueAddedTaxIncluded": false
+        },
+        "category": "Papeterie de mariage sur-mesure",
+        "url": `${siteOrigin}services/`,
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "name": "Conception florale (à la carte)",
+        "description": "Concept floral, sourcing de fleurs de saison, bouquet de la mariée, boutonnières, 5 centres de table, arche de cérémonie minimaliste, installation le jour J. Pour ≤50 invités.",
+        "price": "2700",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "2700",
+          "priceCurrency": "EUR",
+          "valueAddedTaxIncluded": false
+        },
+        "category": "Design floral de mariage",
+        "url": `${siteOrigin}services/`,
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "name": "Décor & scénographie (à la carte)",
+        "description": "Concept décoratif, palette de couleurs et matières, croquis ou plan 2D, sélection du mobilier et objets, coordination, installation le jour J et démontage J+1. Pour ≤50 invités.",
+        "price": "3200",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "3200",
+          "priceCurrency": "EUR",
+          "valueAddedTaxIncluded": false
+        },
+        "category": "Scénographie de mariage",
+        "url": `${siteOrigin}services/`,
+        "availability": "https://schema.org/InStock"
+      }
+    ]
+  }
 };
 ---
 
@@ -149,6 +297,7 @@ const jsonLd = {
     <link rel="preload" href="/fonts/GildaDisplay-Regular.ttf" as="font" type="font/ttf" crossorigin />
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
 
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VWMI5YY7SS"></script>
