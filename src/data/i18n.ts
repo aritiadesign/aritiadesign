@@ -60,7 +60,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
 
   // ─────────────────────────── Home — Méthode ───────────────────────────
   "home.method.script": {
-    fr: "Transformez chaque<br />occasion en<br />moment d’exception",
+    fr: "Transformez chaque<br /><span class=\"ml-10 md:ml-16\">occasion en moment</span><br /><span class=\"ml-20 md:ml-32\">d’exception</span>",
     en: "Transform every<br class=\"md:hidden\" /> occasion<br class=\"hidden md:inline\" /> into an<br class=\"md:hidden\" /> exceptional moment"
   },
   "home.method.h2": {
