@@ -144,9 +144,10 @@ const testimonials = [
         const track = marquee.querySelector(".marquee-track");
         if (!track) return;
 
-        // Match the portfolio marquee: 30s for a full half-track loop.
-        // Speed is recomputed each frame so it adapts to track width / image load state.
-        const LOOP_SECONDS = 90;
+        // Match the portfolio marquee. The half-track is ~3x shorter on mobile
+        // than desktop, so we shorten the loop on small viewports to keep a
+        // comparable pixel/second feel across devices.
+        const LOOP_SECONDS = matchMedia("(max-width: 768px)").matches ? 50 : 90;
         let paused = false;
         let resumeTimer;
         // Sub-pixel accumulator: iOS Safari rounds scrollLeft to integer, so
