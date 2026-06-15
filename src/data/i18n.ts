@@ -50,8 +50,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "CURATOR OF HIGH-END<br />CELEBRATIONS"
   },
   "home.intro.p": {
-    fr: "Aritia Design vous accompagne dans la conception et la décoration<br class=\"hidden md:inline\" /> de mariages et événements sur-mesure, raffinés et authentiques.<br class=\"hidden md:inline\" /> À Toulouse, en Haute-Garonne et ses environs.",
-    en: "Aritia Design guides you through the design and decoration of bespoke,<br class=\"hidden md:inline\" /> refined and authentic weddings and events.<br class=\"hidden md:inline\" /> In Toulouse, Haute-Garonne and surrounding areas."
+    fr: "Aritia Design vous accompagne dans la conception<br class=\"hidden md:inline\" /> de mariages et événements sur-mesure, raffinés et authentiques.<br class=\"hidden md:inline\" /> À Toulouse, en Haute-Garonne et ses environs.",
+    en: "Aritia Design guides you through the design of bespoke,<br class=\"hidden md:inline\" /> refined and authentic weddings and events.<br class=\"hidden md:inline\" /> In Toulouse, Haute-Garonne and surrounding areas."
   },
 
   // ─────────────────────────── Home — Portfolio strip ───────────────────────────
