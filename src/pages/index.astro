@@ -149,6 +149,11 @@ const testimonials = [
         const LOOP_SECONDS = 90;
         let paused = false;
         let resumeTimer;
+        // Sub-pixel accumulator: iOS Safari rounds scrollLeft to integer, so
+        // adding fractional values (~0.28px/frame at 90s loop) silently rounds
+        // to 0 and the marquee freezes. We accumulate sub-pixel here and only
+        // push whole integers to scrollLeft.
+        let scrollAcc = 0;
 
         // Auto-advance scroll. Loop seamlessly: items are duplicated, so wrapping
         // back at half the track width is invisible to the eye.
@@ -156,7 +161,12 @@ const testimonials = [
           if (!paused) {
             const half = track.scrollWidth / 2;
             if (half > 0) {
-              marquee.scrollLeft += half / (LOOP_SECONDS * 60);
+              scrollAcc += half / (LOOP_SECONDS * 60);
+              if (scrollAcc >= 1) {
+                const delta = Math.floor(scrollAcc);
+                marquee.scrollLeft += delta;
+                scrollAcc -= delta;
+              }
               if (marquee.scrollLeft >= half) marquee.scrollLeft -= half;
             }
           }
