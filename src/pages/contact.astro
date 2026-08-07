@@ -109,27 +109,54 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3"
             />
           </div>
-          <div class="border-b border-black/15 pb-1">
+          <div class="border-b border-black/15 pb-1 flex items-center">
             <label class="sr-only" for="f-phone" data-i18n="contact.label.phone">Téléphone</label>
+            <span
+              id="f-phone-prefix"
+              class="flex items-center gap-2 max-w-0 opacity-0 overflow-hidden transition-all duration-200 pointer-events-none"
+            >
+              <select
+                id="f-phone-country"
+                aria-label="Indicatif pays"
+                tabindex="-1"
+                class="bg-transparent text-[10px] md:text-[11px] tracking-[0.15em] uppercase text-[var(--color-muted)] focus:outline-none py-3 pr-1 appearance-none cursor-pointer shrink-0"
+              >
+                <option value="+33" selected>FR</option>
+                <option value="+32">BE</option>
+                <option value="+41">CH</option>
+                <option value="+352">LU</option>
+                <option value="+377">MC</option>
+                <option value="+44">UK</option>
+                <option value="+1">US</option>
+                <option value="+34">ES</option>
+                <option value="+39">IT</option>
+                <option value="+49">DE</option>
+                <option value="+351">PT</option>
+                <option value="+31">NL</option>
+              </select>
+              <span aria-hidden="true" class="text-[var(--color-muted)] text-[13px] md:text-[14px] shrink-0 select-none">|</span>
+            </span>
             <input
               id="f-phone"
               type="tel"
               name="Téléphone"
-              placeholder="🇫🇷 TÉLÉPHONE"
+              placeholder="TÉLÉPHONE"
               data-i18n-attr="placeholder:contact.ph.phone"
-              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3"
+              class="flex-1 bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3 pl-0 focus:pl-2 transition-[padding] duration-200"
             />
           </div>
           <div class="border-b border-black/15 pb-1">
             <label class="sr-only" for="f-date" data-i18n="contact.label.date">Date</label>
             <input
               id="f-date"
-              type="date"
+              type="text"
               name="Date"
               required
               placeholder="DATE DE L'ÉVÉNEMENT *"
               data-i18n-attr="placeholder:contact.ph.date"
-              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] text-[var(--color-muted)] focus:outline-none py-3"
+              onfocus="(this.type='date');this.showPicker&&this.showPicker()"
+              onblur="if(!this.value)this.type='text'"
+              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3"
             />
           </div>
           <div class="border-b border-black/15 pb-1">
@@ -153,12 +180,12 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               class="w-full bg-transparent text-[11px] md:text-[12px] tracking-[0.2em] md:tracking-[0.22em] uppercase text-[var(--color-muted)] focus:outline-none py-3 appearance-none"
             >
               <option value="" disabled selected data-i18n="contact.opt.service.placeholder">PRESTATION SOUHAITÉE *</option>
-              <option data-i18n="contact.opt.service.0">L'Exception — Design Intégral</option>
-              <option data-i18n="contact.opt.service.1">Décor &amp; Identité Visuelle</option>
-              <option data-i18n="contact.opt.service.2">Décor &amp; Mise en Ambiance</option>
-              <option data-i18n="contact.opt.service.3">L'Art Floral</option>
-              <option data-i18n="contact.opt.service.4">Papeterie Fine</option>
-              <option data-i18n="contact.opt.service.5">Sur-mesure</option>
+              <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.0">L'Exception — Design intégral</option>
+              <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.1">Pack Atmosphère — Identité visuelle</option>
+              <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.2">Direction Artistique Seule</option>
+              <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.3">Papeterie Fine</option>
+              <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.4">Conception Florale</option>
+              <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.5">Décor &amp; Scénographie</option>
             </select>
           </div>
           <div class="border-b border-black/15 pb-1">
@@ -170,12 +197,12 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               class="w-full bg-transparent text-[11px] md:text-[12px] tracking-[0.2em] md:tracking-[0.22em] uppercase text-[var(--color-muted)] focus:outline-none py-3 appearance-none"
             >
               <option value="" disabled selected data-i18n="contact.opt.type.placeholder">TYPE D'ÉVÉNEMENT *</option>
-              <option data-i18n="contact.opt.type.0">Mariage</option>
-              <option data-i18n="contact.opt.type.1">Événement saisonnier</option>
-              <option data-i18n="contact.opt.type.2">Anniversaire</option>
-              <option data-i18n="contact.opt.type.3">Baby Shower</option>
-              <option data-i18n="contact.opt.type.4">Événement Corporate</option>
-              <option data-i18n="contact.opt.type.5">Autre</option>
+              <option style="letter-spacing:0.15em" data-i18n="contact.opt.type.0">Mariage</option>
+              <option style="letter-spacing:0.15em" data-i18n="contact.opt.type.1">Événement saisonnier</option>
+              <option style="letter-spacing:0.15em" data-i18n="contact.opt.type.2">Anniversaire</option>
+              <option style="letter-spacing:0.15em" data-i18n="contact.opt.type.3">Baby Shower</option>
+              <option style="letter-spacing:0.15em" data-i18n="contact.opt.type.4">Événement Corporate</option>
+              <option style="letter-spacing:0.15em" data-i18n="contact.opt.type.5">Autre</option>
             </select>
           </div>
           <div class="border-b border-black/15 pb-1">
@@ -216,4 +243,52 @@ const sent = Astro.url.searchParams.get("sent") === "1";
       </div>
     </div>
   </section>
+
+  <script is:inline>
+    /* Phone field — country selector prefills / rewrites the dial code prefix.
+       The FR selector + "|" separator stay hidden until the input is focused
+       or already has a value; on focus, if empty, prepend the selected dial
+       code (e.g. "+33 "). On country change, swap the existing prefix for the
+       new one, preserving the rest of the number the user typed. */
+    (function () {
+      var sel = document.getElementById("f-phone-country");
+      var inp = document.getElementById("f-phone");
+      var prefix = document.getElementById("f-phone-prefix");
+      if (!sel || !inp || !prefix) return;
+
+      function dial() { return sel.value; }
+      function stripDial(v) {
+        var m = v.match(/^\+\d+\s*(.*)$/);
+        return m ? m[1] : v;
+      }
+      function showPrefix() {
+        prefix.style.maxWidth = "120px";
+        prefix.style.opacity = "1";
+        prefix.style.pointerEvents = "auto";
+      }
+      function hidePrefix() {
+        prefix.style.maxWidth = "0";
+        prefix.style.opacity = "0";
+        prefix.style.pointerEvents = "none";
+      }
+
+      inp.addEventListener("focus", function () {
+        showPrefix();
+        if (!this.value.trim()) this.value = dial() + " ";
+      });
+
+      inp.addEventListener("blur", function () {
+        if (this.value.trim() === dial() || !this.value.trim()) {
+          this.value = "";
+          hidePrefix();
+        }
+      });
+
+      sel.addEventListener("change", function () {
+        var rest = stripDial(inp.value.trim());
+        inp.value = (dial() + " " + rest).trim();
+        inp.focus();
+      });
+    })();
+  </script>
 </Layout>
