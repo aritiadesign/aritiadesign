@@ -257,18 +257,36 @@ html {
 }
 
 /* Strip browser-default look on form controls (already applied per-element
-   with Tailwind appearance-none, this catches anything missed). */
-select, input, textarea, button {
+   with Tailwind appearance-none, this catches anything missed).
+   font: inherit is applied only to input/select/textarea — NOT button, so
+   Tailwind font-* utilities keep working on custom-styled buttons like
+   the script-font "Envoyer" on the contact form. */
+input, select, textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   font: inherit;
   color: inherit;
 }
-button { background: none; border: none; padding: 0; cursor: pointer; }
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+}
 
 /* Consistent placeholder color (Firefox uses 0.54 opacity by default) */
-::placeholder { color: var(--color-muted); opacity: 1; }
+::placeholder { color: var(--color-muted); opacity: 1; transition: color 0.25s ease; }
+/* On focus, placeholder fades to a very light gray — signals interactivity
+   without harshly disappearing before the user starts typing. */
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: rgba(28, 28, 28, 0.18);
+}
 
 /* Chrome autofill would tint inputs yellow — force transparent bg */
 input:-webkit-autofill,
@@ -310,6 +328,25 @@ textarea:-webkit-autofill {
     font-size: 12px;
     letter-spacing: 0.22em;
   }
+}
+
+/* Required-field marker — larger, coloured asterisk anchored top-right of the
+   field wrapper. Used on contact form to indicate required inputs visibly
+   without cramming a tiny * into every placeholder. */
+.required-field { position: relative; }
+.required-field::after {
+  content: "*";
+  position: absolute;
+  right: 0;
+  top: 10px;
+  color: #630713;
+  font-size: 20px;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  .required-field::after { font-size: 22px; top: 12px; }
 }
 
 /* Uniform scrollbar across browsers — thin, discreet, matches the ink palette.
