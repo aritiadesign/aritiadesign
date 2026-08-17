@@ -229,15 +229,17 @@ const sent = Astro.url.searchParams.get("sent") === "1";
             </select>
           </div>
           <div class="required-field md:col-span-2 border-b border-black/15 pb-1">
-            <label class="sr-only" for="f-budget" data-i18n="contact.label.budget">Budget</label>
+            <label class="sr-only" for="f-guests" data-i18n="contact.label.guests">Nombre d'invités</label>
             <span class="fake-placeholder" aria-hidden="true">
-              <span data-i18n="contact.ph.budget">BUDGET ENVISAGÉ POUR VOTRE PROJET</span><span class="req-marker">*</span>
+              <span data-i18n="contact.ph.guests">NOMBRE D'INVITÉS</span><span class="req-marker">*</span>
             </span>
             <input
-              id="f-budget"
-              type="text"
-              name="Budget"
+              id="f-guests"
+              type="number"
+              name="Nombre d'invités"
               required
+              min="1"
+              inputmode="numeric"
               class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] text-[var(--color-ink)] focus:outline-none py-3"
             />
           </div>
