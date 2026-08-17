@@ -507,6 +507,23 @@ const faqSchema = {
           </details>
         ))}
       </div>
+
+      {/* Brochure CTA — end of the à la carte section, invites full-brochure exploration */}
+      <div class="mt-20 md:mt-24 pt-12 md:pt-14 border-t border-[var(--color-ink)]/15 max-w-xl mx-auto text-center">
+        <a
+          href="/brochure/"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-3 px-10 py-4 bg-white border border-[var(--color-ink)] text-[var(--color-ink)] text-[12px] tracking-[0.32em] uppercase hover:bg-[var(--color-ink)] hover:text-white transition"
+          data-i18n="investment.brochure.btn"
+        >
+          Consulter la brochure 2026 complète
+          <span aria-hidden="true">→</span>
+        </a>
+        <p class="mt-6 text-[13px] md:text-[14px] leading-[1.7] text-[var(--color-ink-soft)] italic" data-i18n="investment.brochure.desc">
+          Découvrir en détail les formules Essentiel, Signature, Prestige, les prestations à la carte et notre processus créatif.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -671,23 +688,6 @@ const faqSchema = {
     >
       Demander un devis
     </a>
-
-    {/* Brochure CTA — secondary button below the primary "Demander un devis" */}
-    <div class="mt-16 md:mt-20 pt-12 md:pt-14 border-t border-[var(--color-ink)]/10 max-w-xl mx-auto">
-      <a
-        href="/brochure/"
-        target="_blank"
-        rel="noopener"
-        class="inline-flex items-center gap-3 px-10 py-4 bg-[var(--color-ink)] text-white text-[12px] tracking-[0.32em] uppercase hover:bg-[var(--color-burgundy)] transition"
-        data-i18n="investment.brochure.btn"
-      >
-        Consulter la brochure 2026 complète
-        <span aria-hidden="true">→</span>
-      </a>
-      <p class="mt-6 text-[13px] md:text-[14px] leading-[1.7] text-[var(--color-ink-soft)] italic" data-i18n="investment.brochure.desc">
-        Découvrir en détail les formules Essentiel, Signature, Prestige, les prestations à la carte et notre processus créatif.
-      </p>
-    </div>
   </section>
 </Layout>
 
