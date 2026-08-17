@@ -450,8 +450,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "contact.notes.p2": { fr: "Vous pouvez aussi nous écrire directement à l'adresse suivante&nbsp;:", en: "You can also write to us directly at:" },
   "contact.notes.brochure": {
-    fr: '<span class="italic">En attendant, explorez notre</span> <a href="/brochure/" target="_blank" rel="noopener" class="underline underline-offset-4 hover:opacity-70 transition">guide de services</a>.',
-    en: '<span class="italic">In the meantime, explore our</span> <a href="/brochure/" target="_blank" rel="noopener" class="underline underline-offset-4 hover:opacity-70 transition">services guide</a>.'
+    fr: '<span class="italic">En attendant, explorez notre</span> <a href="/brochure/" target="_blank" rel="noopener" class="underline underline-offset-4 hover:opacity-70 transition">guide de services <span style="font-family: var(--font-brandon)">2026</span></a>.',
+    en: '<span class="italic">In the meantime, explore our</span> <a href="/brochure/" target="_blank" rel="noopener" class="underline underline-offset-4 hover:opacity-70 transition"><span style="font-family: var(--font-brandon)">2026</span> services guide</a>.'
   },
   "contact.h2": { fr: "FAISONS<br />CONNAISSANCE", en: "LET'S MEET" },
   "contact.p": {
@@ -827,8 +827,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "investment.cta.btn": { fr: "Demander un devis", en: "Request a quote" },
   "investment.cta.brochure": {
-    fr: '<span class="italic">ou</span> <a href="/brochure/" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-[var(--color-ink)] transition">consulter le guide de services</a>',
-    en: '<span class="italic">or</span> <a href="/brochure/" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-[var(--color-ink)] transition">browse our services guide</a>'
+    fr: '<span class="italic">ou</span> <a href="/brochure/" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-[var(--color-ink)] transition">consulter le guide de services <span style="font-family: var(--font-brandon)">2026</span></a>',
+    en: '<span class="italic">or</span> <a href="/brochure/" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-[var(--color-ink)] transition">browse our <span style="font-family: var(--font-brandon)">2026</span> services guide</a>'
   },
 
   // ─────────────────────────── Project detail (back link) ───────────────────────────
