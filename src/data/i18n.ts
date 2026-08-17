@@ -489,6 +489,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "contact.opt.service.3": { fr: "Papeterie Fine",                       en: "Fine Stationery" },
   "contact.opt.service.4": { fr: "Conception Florale",                   en: "Floral Design" },
   "contact.opt.service.5": { fr: "Décor & Scénographie",                 en: "Decor & Set Design" },
+  "contact.opt.service.6": { fr: "Sur-mesure",                           en: "Bespoke" },
   "contact.opt.type.placeholder": { fr: "TYPE D'ÉVÉNEMENT",       en: "EVENT TYPE" },
   "contact.opt.type.0": { fr: "Mariage",               en: "Wedding" },
   "contact.opt.type.1": { fr: "Événement saisonnier",  en: "Seasonal event" },
