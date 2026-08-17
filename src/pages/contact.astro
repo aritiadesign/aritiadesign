@@ -540,13 +540,13 @@ const sent = Astro.url.searchParams.get("sent") === "1";
         // p.context ex: "31, Haute-Garonne, Occitanie"
         var label = p.label || p.name || "";
         var ctx = p.context || "";
-        // Keep only the region (last part of context after last comma) to keep it short
-        var region = "";
+        // Keep only the departement name (middle part after the code)
+        var dept = "";
         if (ctx) {
           var parts = ctx.split(",");
-          region = parts[parts.length - 1].trim();
+          dept = (parts.length >= 2 ? parts[1] : parts[0]).trim();
         }
-        return region ? (label + ", " + region) : label;
+        return dept ? (label + ", " + dept) : label;
       }
 
       function render(features) {
