@@ -317,36 +317,96 @@ textarea:-webkit-autofill {
 @media (min-width: 768px) {
   .form-select { font-size: 14px; }
 }
-.form-select:required:invalid {
+/* Select shows the placeholder look whenever its currently-selected option
+   is the disabled one (works for both required AND optional selects, unlike
+   :required:invalid which only matches required fields). */
+.form-select:has(option[disabled]:checked) {
   color: var(--color-muted);
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 @media (min-width: 768px) {
-  .form-select:required:invalid {
+  .form-select:has(option[disabled]:checked) {
     font-size: 12px;
     letter-spacing: 0.22em;
   }
 }
 
-/* Required-field marker — larger, coloured asterisk anchored top-right of the
-   field wrapper. Used on contact form to indicate required inputs visibly
-   without cramming a tiny * into every placeholder. */
+/* Required-field label overlay — a fake placeholder positioned like the native
+   one, but split into two spans so the '*' can be coloured/larger separately
+   while staying tight to the label text. Hidden as soon as the input has a
+   value (JS toggles .has-value on the wrapper). */
 .required-field { position: relative; }
-.required-field::after {
-  content: "*";
+.fake-placeholder {
   position: absolute;
-  right: 0;
-  top: 10px;
-  color: #630713;
-  font-size: 20px;
-  line-height: 1;
+  left: 0;
+  top: 12px;
   pointer-events: none;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  color: var(--color-muted);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  line-height: 1;
+  transition: color 0.25s ease, opacity 0.15s ease;
   z-index: 1;
 }
 @media (min-width: 768px) {
-  .required-field::after { font-size: 22px; top: 12px; }
+  .fake-placeholder { font-size: 12px; letter-spacing: 0.22em; top: 14px; }
+}
+.req-marker {
+  color: #630713;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 0;
+  position: relative;
+  top: 2px;
+}
+@media (min-width: 768px) {
+  .req-marker { font-size: 18px; }
+}
+/* Focus but no value : label fades to a very light gray */
+.required-field:focus-within .fake-placeholder {
+  color: rgba(28, 28, 28, 0.22);
+}
+/* Value present : hide the overlay */
+.required-field.has-value .fake-placeholder {
+  opacity: 0;
+}
+
+/* Custom location dropdown (Nominatim suggestions) — replaces <datalist>
+   which had refresh bugs when its options were updated asynchronously. */
+.location-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid rgba(28, 28, 28, 0.12);
+  z-index: 20;
+  max-height: 260px;
+  overflow-y: auto;
+  display: none;
+  margin-top: 2px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+.location-dropdown[data-open="true"] { display: block; }
+.location-dropdown li {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--color-ink);
+  list-style: none;
+  border-bottom: 1px solid rgba(28, 28, 28, 0.06);
+}
+.location-dropdown li:last-child { border-bottom: none; }
+.location-dropdown li:hover,
+.location-dropdown li[data-active="true"] {
+  background: rgba(99, 7, 19, 0.06);
 }
 
 /* Uniform scrollbar across browsers — thin, discreet, matches the ink palette.

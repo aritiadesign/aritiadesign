@@ -98,28 +98,30 @@ const sent = Astro.url.searchParams.get("sent") === "1";
           <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
           <div class="required-field border-b border-black/15 pb-1">
             <label class="sr-only" for="f-name" data-i18n="contact.label.name">Nom &amp; Prénom</label>
+            <span class="fake-placeholder" aria-hidden="true">
+              <span data-i18n="contact.ph.name">NOM &amp; PRÉNOM</span><span class="req-marker">*</span>
+            </span>
             <input
               id="f-name"
               type="text"
               name="Nom & Prénom"
               required
               autocomplete="name"
-              placeholder="NOM & PRÉNOM"
-              data-i18n-attr="placeholder:contact.ph.name"
-              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3 pr-6"
+              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] text-[var(--color-ink)] focus:outline-none py-3"
             />
           </div>
           <div class="required-field border-b border-black/15 pb-1">
             <label class="sr-only" for="f-email" data-i18n="contact.label.email">Email</label>
+            <span class="fake-placeholder" aria-hidden="true">
+              <span data-i18n="contact.ph.email">E-MAIL</span><span class="req-marker">*</span>
+            </span>
             <input
               id="f-email"
               type="email"
               name="Email"
               required
               autocomplete="email"
-              placeholder="E-MAIL"
-              data-i18n-attr="placeholder:contact.ph.email"
-              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3 pr-6"
+              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] text-[var(--color-ink)] focus:outline-none py-3"
             />
           </div>
           <div class="border-b border-black/15 pb-1 flex items-center">
@@ -160,42 +162,47 @@ const sent = Astro.url.searchParams.get("sent") === "1";
           </div>
           <div class="required-field border-b border-black/15 pb-1">
             <label class="sr-only" for="f-date" data-i18n="contact.label.date">Date</label>
+            <span class="fake-placeholder" aria-hidden="true">
+              <span data-i18n="contact.ph.date">DATE DE L'ÉVÉNEMENT</span><span class="req-marker">*</span>
+            </span>
             <input
               id="f-date"
               type="text"
               name="Date"
               required
-              placeholder="DATE DE L'ÉVÉNEMENT"
-              data-i18n-attr="placeholder:contact.ph.date"
-              onfocus="if(this.type==='text')this.type='date'"
+              autocomplete="off"
+              onclick="if(this.type==='text'){this.type='date';this.value=''}"
               onblur="if(!this.value)this.type='text'"
-              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3 pr-6"
+              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] text-[var(--color-ink)] focus:outline-none py-3"
             />
           </div>
           <div class="required-field border-b border-black/15 pb-1">
             <label class="sr-only" for="f-location" data-i18n="contact.label.location">Lieu</label>
+            <span class="fake-placeholder" aria-hidden="true">
+              <span data-i18n="contact.ph.loc">LIEU DE L'ÉVÉNEMENT</span><span class="req-marker">*</span>
+            </span>
             <input
               id="f-location"
               type="text"
               name="Lieu"
               required
               autocomplete="off"
-              list="f-location-suggestions"
-              placeholder="LIEU DE L'ÉVÉNEMENT"
-              data-i18n-attr="placeholder:contact.ph.loc"
-              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3 pr-6"
+              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] text-[var(--color-ink)] focus:outline-none py-3"
             />
-            <datalist id="f-location-suggestions"></datalist>
+            <ul id="f-location-dropdown" class="location-dropdown" role="listbox" aria-label="Suggestions d'adresses"></ul>
           </div>
           <div class="required-field border-b border-black/15 pb-1">
             <label class="sr-only" for="f-type" data-i18n="contact.label.type">Type d'événement</label>
+            <span class="fake-placeholder" aria-hidden="true">
+              <span data-i18n="contact.opt.type.placeholder">TYPE D'ÉVÉNEMENT</span><span class="req-marker">*</span>
+            </span>
             <select
               id="f-type"
               name="Type"
               required
-              class="form-select w-full bg-transparent focus:outline-none py-3 pr-6 appearance-none"
+              class="form-select w-full bg-transparent focus:outline-none py-3 appearance-none"
             >
-              <option value="" disabled selected data-i18n="contact.opt.type.placeholder">TYPE D'ÉVÉNEMENT</option>
+              <option value="" disabled selected></option>
               <option style="letter-spacing:0.15em" data-i18n="contact.opt.type.0">Mariage</option>
               <option style="letter-spacing:0.15em" data-i18n="contact.opt.type.1">Événement saisonnier</option>
               <option style="letter-spacing:0.15em" data-i18n="contact.opt.type.2">Anniversaire</option>
@@ -204,14 +211,17 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               <option style="letter-spacing:0.15em" data-i18n="contact.opt.type.5">Autre</option>
             </select>
           </div>
-          <div class="border-b border-black/15 pb-1">
+          <div class="required-field border-b border-black/15 pb-1">
             <label class="sr-only" for="f-prestation" data-i18n="contact.label.service">Prestation</label>
+            <span class="fake-placeholder fake-placeholder-optional" aria-hidden="true">
+              <span data-i18n="contact.opt.service.placeholder">PRESTATION SOUHAITÉE</span>
+            </span>
             <select
               id="f-prestation"
               name="Prestation"
               class="form-select w-full bg-transparent focus:outline-none py-3 appearance-none"
             >
-              <option value="" disabled selected data-i18n="contact.opt.service.placeholder">PRESTATION SOUHAITÉE</option>
+              <option value="" disabled selected></option>
               <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.0">L'Exception — Design intégral</option>
               <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.1">Pack Atmosphère — Identité visuelle</option>
               <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.2">Direction Artistique Seule</option>
@@ -222,26 +232,28 @@ const sent = Astro.url.searchParams.get("sent") === "1";
           </div>
           <div class="required-field border-b border-black/15 pb-1">
             <label class="sr-only" for="f-budget" data-i18n="contact.label.budget">Budget</label>
+            <span class="fake-placeholder" aria-hidden="true">
+              <span data-i18n="contact.ph.budget">BUDGET ENVISAGÉ POUR VOTRE PROJET</span><span class="req-marker">*</span>
+            </span>
             <input
               id="f-budget"
               type="text"
               name="Budget"
               required
-              placeholder="BUDGET ENVISAGÉ POUR VOTRE PROJET"
-              data-i18n-attr="placeholder:contact.ph.budget"
-              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3 pr-6"
+              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] text-[var(--color-ink)] focus:outline-none py-3"
             />
           </div>
           <div class="required-field border-b border-black/15 pb-1">
             <label class="sr-only" for="f-desc" data-i18n="contact.label.desc">Description</label>
+            <span class="fake-placeholder" aria-hidden="true">
+              <span data-i18n="contact.ph.desc">DESCRIPTION</span><span class="req-marker">*</span>
+            </span>
             <textarea
               id="f-desc"
               name="Description"
               required
               rows="4"
-              placeholder="DESCRIPTION"
-              data-i18n-attr="placeholder:contact.ph.desc"
-              class="w-full bg-transparent text-[14px] tracking-[0.02em] placeholder:text-[12px] placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3 pr-6 resize-none"
+              class="w-full bg-transparent text-[14px] tracking-[0.02em] text-[var(--color-ink)] focus:outline-none py-3 resize-none"
             ></textarea>
           </div>
 
@@ -308,37 +320,127 @@ const sent = Astro.url.searchParams.get("sent") === "1";
   </script>
 
   <script is:inline>
-    /* Location field — address suggestions via OpenStreetMap Nominatim
-       (public geocoding API, no key required, ~1 req/sec fair-use).
-       Populates a <datalist> so the browser renders a native suggestion
-       dropdown while the visitor types. Debounced 400ms, min 3 chars. */
+    /* Required-field fake-placeholder — toggle .has-value on wrappers so the
+       overlay label + coloured * hide as soon as the user types / selects. */
+    (function () {
+      document.querySelectorAll(".required-field").forEach(function (field) {
+        var el = field.querySelector("input, textarea, select");
+        if (!el) return;
+        function update() {
+          var v = (el.value || "").trim();
+          field.classList.toggle("has-value", v.length > 0);
+        }
+        el.addEventListener("input", update);
+        el.addEventListener("change", update);
+        el.addEventListener("blur", update);
+        update();
+      });
+    })();
+  </script>
+
+  <script is:inline>
+    /* Location field — custom suggestions dropdown backed by OpenStreetMap
+       Nominatim (public geocoding API, no key required, ~1 req/sec fair-use).
+       Replaces <datalist> which had refresh bugs when its options were
+       populated asynchronously (Chrome would only show suggestions after
+       the user deleted characters). */
     (function () {
       var input = document.getElementById("f-location");
-      var list = document.getElementById("f-location-suggestions");
-      if (!input || !list) return;
+      var dropdown = document.getElementById("f-location-dropdown");
+      if (!input || !dropdown) return;
 
       var timer;
       var lastQuery = "";
+      var activeIndex = -1;
+      var items = [];
+
+      function open() { dropdown.setAttribute("data-open", "true"); }
+      function close() {
+        dropdown.setAttribute("data-open", "false");
+        activeIndex = -1;
+      }
+
+      function render(rows) {
+        items = rows;
+        activeIndex = -1;
+        if (!rows.length) { close(); return; }
+        var html = "";
+        for (var i = 0; i < rows.length; i++) {
+          var label = String(rows[i].display_name || "");
+          if (label) {
+            html += '<li role="option" data-idx="' + i + '">' +
+                    label.replace(/</g, "&lt;") +
+                    '</li>';
+          }
+        }
+        dropdown.innerHTML = html;
+        open();
+      }
+
+      function fetchSuggestions(q) {
+        var url = "https://nominatim.openstreetmap.org/search" +
+                  "?format=json&limit=6&addressdetails=1&accept-language=fr" +
+                  "&q=" + encodeURIComponent(q);
+        fetch(url, { headers: { "Accept": "application/json" } })
+          .then(function (r) { return r.ok ? r.json() : []; })
+          .then(function (rows) {
+            if (input.value.trim() === q) render(rows);
+          })
+          .catch(function () {});
+      }
 
       input.addEventListener("input", function () {
         var q = input.value.trim();
         clearTimeout(timer);
-        if (q.length < 3 || q === lastQuery) return;
+        if (q.length < 3) { close(); return; }
+        if (q === lastQuery) return;
         timer = setTimeout(function () {
           lastQuery = q;
-          var url = "https://nominatim.openstreetmap.org/search?format=json&limit=6&addressdetails=1&accept-language=fr&q=" + encodeURIComponent(q);
-          fetch(url, { headers: { "Accept": "application/json" } })
-            .then(function (r) { return r.ok ? r.json() : []; })
-            .then(function (rows) {
-              var html = "";
-              for (var i = 0; i < rows.length; i++) {
-                var label = String(rows[i].display_name || "").replace(/"/g, "&quot;");
-                if (label) html += '<option value="' + label + '"></option>';
-              }
-              list.innerHTML = html;
-            })
-            .catch(function () { /* silently ignore network errors */ });
-        }, 400);
+          fetchSuggestions(q);
+        }, 300);
+      });
+
+      dropdown.addEventListener("mousedown", function (e) {
+        var li = e.target.closest("li");
+        if (!li) return;
+        e.preventDefault();
+        var idx = parseInt(li.dataset.idx, 10);
+        if (isNaN(idx) || !items[idx]) return;
+        input.value = items[idx].display_name;
+        input.dispatchEvent(new Event("input", { bubbles: true }));
+        close();
+      });
+
+      input.addEventListener("keydown", function (e) {
+        if (dropdown.getAttribute("data-open") !== "true") return;
+        var lis = dropdown.querySelectorAll("li");
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          activeIndex = Math.min(activeIndex + 1, lis.length - 1);
+        } else if (e.key === "ArrowUp") {
+          e.preventDefault();
+          activeIndex = Math.max(activeIndex - 1, 0);
+        } else if (e.key === "Enter" && activeIndex >= 0) {
+          e.preventDefault();
+          lis[activeIndex].dispatchEvent(new MouseEvent("mousedown", { bubbles: true }));
+          return;
+        } else if (e.key === "Escape") {
+          close();
+          return;
+        } else {
+          return;
+        }
+        lis.forEach(function (li, i) {
+          li.setAttribute("data-active", i === activeIndex ? "true" : "false");
+        });
+      });
+
+      document.addEventListener("click", function (e) {
+        if (!input.contains(e.target) && !dropdown.contains(e.target)) close();
+      });
+
+      input.addEventListener("blur", function () {
+        setTimeout(close, 150);
       });
     })();
   </script>
