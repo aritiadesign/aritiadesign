@@ -163,7 +163,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               required
               placeholder="DATE DE L'ÉVÉNEMENT *"
               data-i18n-attr="placeholder:contact.ph.date"
-              onfocus="(this.type='date');this.showPicker&&this.showPicker()"
+              onfocus="this.type='date';if(this.showPicker){try{this.showPicker()}catch(e){}}else{this.click()}"
               onblur="if(!this.value)this.type='text'"
               class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3"
             />
