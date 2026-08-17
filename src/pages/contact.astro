@@ -174,19 +174,32 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               class="flex-1 bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3 pl-0 focus:pl-2 transition-[padding] duration-200"
             />
           </div>
-          <div class="required-field date-field border-b border-black/15 pb-1">
+          <div class="required-field date-field border-b border-black/15 pb-1 relative">
             <label class="sr-only" for="f-date" data-i18n="contact.label.date">Date</label>
             <span class="fake-placeholder" aria-hidden="true">
               <span data-i18n="contact.ph.date">DATE DE L'ÉVÉNEMENT</span><span class="req-marker">*</span>
             </span>
             <input
               id="f-date"
-              type="date"
+              type="text"
               name="Date"
               required
+              readonly
               autocomplete="off"
-              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] text-[var(--color-ink)] focus:outline-none py-3"
+              inputmode="none"
+              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] text-[var(--color-ink)] focus:outline-none py-3 cursor-pointer"
             />
+            <div id="f-date-picker" class="date-picker" hidden>
+              <div class="dp-header">
+                <button type="button" class="dp-nav" data-nav="prev" aria-label="Mois précédent">‹</button>
+                <span class="dp-title"><span data-dp-month></span> <span data-dp-year></span></span>
+                <button type="button" class="dp-nav" data-nav="next" aria-label="Mois suivant">›</button>
+              </div>
+              <div class="dp-weekdays">
+                <span>Lun</span><span>Mar</span><span>Mer</span><span>Jeu</span><span>Ven</span><span>Sam</span><span>Dim</span>
+              </div>
+              <div class="dp-days"></div>
+            </div>
           </div>
           <div class="required-field border-b border-black/15 pb-1">
             <label class="sr-only" for="f-guests" data-i18n="contact.label.guests">Nombre d'invités</label>
@@ -329,6 +342,123 @@ const sent = Astro.url.searchParams.get("sent") === "1";
         var rest = stripDial(inp.value.trim());
         inp.value = (dial() + " " + rest).trim();
         inp.focus();
+      });
+    })();
+  </script>
+
+  <script is:inline>
+    /* Custom date picker — replaces the native input[type=date] to avoid any
+       auto-fill of today's date. Text input is readonly; clicking opens a
+       lightweight calendar overlay. User picks a date -> we set the input
+       value in dd/mm/yyyy format. */
+    (function () {
+      var input = document.getElementById("f-date");
+      var picker = document.getElementById("f-date-picker");
+      if (!input || !picker) return;
+
+      var monthEl = picker.querySelector("[data-dp-month]");
+      var yearEl = picker.querySelector("[data-dp-year]");
+      var daysEl = picker.querySelector(".dp-days");
+      var prevBtn = picker.querySelector('[data-nav="prev"]');
+      var nextBtn = picker.querySelector('[data-nav="next"]');
+
+      var monthNames = ["Janvier","Février","Mars","Avril","Mai","Juin",
+                        "Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
+
+      var today = new Date();
+      today.setHours(0, 0, 0, 0);
+      var viewMonth = today.getMonth();
+      var viewYear = today.getFullYear();
+      var selected = null;
+
+      function pad2(n) { return n < 10 ? "0" + n : "" + n; }
+      function isoDate(y, m, d) { return y + "-" + pad2(m + 1) + "-" + pad2(d); }
+      function frDate(y, m, d) { return pad2(d) + "/" + pad2(m + 1) + "/" + y; }
+      function isoOf(dateObj) { return isoDate(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate()); }
+
+      function render() {
+        monthEl.textContent = monthNames[viewMonth];
+        yearEl.textContent = String(viewYear);
+
+        // Monday-first week: shift Sunday(0) to end
+        var firstOfMonth = new Date(viewYear, viewMonth, 1);
+        var startWeekday = (firstOfMonth.getDay() + 6) % 7; // 0 = Monday
+        var daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
+        var daysInPrev = new Date(viewYear, viewMonth, 0).getDate();
+        var todayIso = isoOf(today);
+
+        var html = "";
+        // Previous month tail
+        for (var i = startWeekday - 1; i >= 0; i--) {
+          html += '<button type="button" class="dp-day dp-other-month" disabled tabindex="-1">' +
+                  (daysInPrev - i) + '</button>';
+        }
+        // Current month
+        for (var d = 1; d <= daysInMonth; d++) {
+          var iso = isoDate(viewYear, viewMonth, d);
+          var classes = "dp-day";
+          if (iso === todayIso) classes += " dp-today";
+          if (iso === selected) classes += " dp-selected";
+          html += '<button type="button" class="' + classes + '" data-date="' + iso + '">' + d + '</button>';
+        }
+        // Next month head to fill the last row
+        var totalCells = startWeekday + daysInMonth;
+        var trailing = (7 - (totalCells % 7)) % 7;
+        for (var n = 1; n <= trailing; n++) {
+          html += '<button type="button" class="dp-day dp-other-month" disabled tabindex="-1">' + n + '</button>';
+        }
+        daysEl.innerHTML = html;
+      }
+
+      function open() {
+        if (selected) {
+          var parts = selected.split("-");
+          viewYear = parseInt(parts[0], 10);
+          viewMonth = parseInt(parts[1], 10) - 1;
+        } else {
+          viewMonth = today.getMonth();
+          viewYear = today.getFullYear();
+        }
+        picker.hidden = false;
+        render();
+      }
+      function close() { picker.hidden = true; }
+
+      input.addEventListener("click", function (e) {
+        e.preventDefault();
+        picker.hidden ? open() : close();
+      });
+      input.addEventListener("focus", function () {
+        if (picker.hidden) open();
+      });
+
+      prevBtn.addEventListener("click", function () {
+        viewMonth--;
+        if (viewMonth < 0) { viewMonth = 11; viewYear--; }
+        render();
+      });
+      nextBtn.addEventListener("click", function () {
+        viewMonth++;
+        if (viewMonth > 11) { viewMonth = 0; viewYear++; }
+        render();
+      });
+
+      daysEl.addEventListener("click", function (e) {
+        var btn = e.target.closest(".dp-day[data-date]");
+        if (!btn) return;
+        selected = btn.dataset.date;
+        var parts = selected.split("-");
+        input.value = frDate(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+        input.dispatchEvent(new Event("input", { bubbles: true }));
+        input.dispatchEvent(new Event("change", { bubbles: true }));
+        close();
+      });
+
+      document.addEventListener("click", function (e) {
+        if (!input.contains(e.target) && !picker.contains(e.target)) close();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && !picker.hidden) close();
       });
     })();
   </script>

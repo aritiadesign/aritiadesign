@@ -379,19 +379,104 @@ textarea:-webkit-autofill {
   opacity: 0;
 }
 
-/* Date field — hide the native "jj/mm/aaaa" text so only the fake-placeholder
-   overlay is visible until the user picks a date via the calendar picker.
-   The calendar icon (::-webkit-calendar-picker-indicator) stays visible. */
-.date-field:not(.has-value) input[type="date"] {
-  color: transparent;
+/* Custom date picker — text input is readonly and opens a bespoke calendar
+   overlay when clicked. No native date picker involved, so no browser can
+   auto-fill today's date. Visual style mimics a clean editorial calendar. */
+.date-picker {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 300px;
+  max-width: 100%;
+  background: #fff;
+  border: 1px solid rgba(28, 28, 28, 0.15);
+  padding: 16px 18px 20px;
+  z-index: 30;
+  margin-top: 4px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  font-family: var(--font-sans);
 }
-.date-field:not(.has-value) input[type="date"]::-webkit-datetime-edit {
-  color: transparent;
+.date-picker[hidden] { display: none; }
+
+.dp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
 }
-.date-field.has-value input[type="date"],
-.date-field.has-value input[type="date"]::-webkit-datetime-edit {
+.dp-nav {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
   color: var(--color-ink);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  border-radius: 50%;
 }
+.dp-nav:hover { background: rgba(28, 28, 28, 0.06); }
+.dp-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-ink);
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+}
+
+.dp-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: 6px;
+}
+.dp-weekdays span {
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  padding: 4px 0;
+}
+
+.dp-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+.dp-day {
+  aspect-ratio: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--color-ink);
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+.dp-day:hover:not(:disabled) {
+  background: rgba(99, 7, 19, 0.08);
+}
+.dp-day.dp-other-month {
+  color: rgba(28, 28, 28, 0.25);
+  cursor: default;
+}
+.dp-day.dp-today {
+  border-color: var(--color-ink);
+}
+.dp-day.dp-selected {
+  background: #630713;
+  color: #fff;
+  border-color: #630713;
+}
+.dp-day:disabled { cursor: default; }
 
 /* Custom location dropdown (Nominatim suggestions) — replaces <datalist>
    which had refresh bugs when its options were updated asynchronously. */
