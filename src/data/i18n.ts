@@ -832,8 +832,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "Browse our full brochure"
   },
   "investment.brochure.desc": {
-    fr: "Découvrir en détail les formules Essentiel, Signature, Prestige, les prestations à la carte et notre processus créatif.",
-    en: "Discover in detail the Essentiel, Signature and Prestige tiers, the à la carte services and our creative process."
+    fr: "Découvrez en détail nos formules, les prestations à la carte et nos autres prestations pour les événements privés et saisonniers.",
+    en: "Discover in detail our tiers, our à la carte services and our other prestations for private and seasonal events."
   },
 
   // ─────────────────────────── Project detail (back link) ───────────────────────────
