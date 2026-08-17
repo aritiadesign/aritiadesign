@@ -192,7 +192,10 @@ const sent = Astro.url.searchParams.get("sent") === "1";
             <div id="f-date-picker" class="date-picker" hidden>
               <div class="dp-header">
                 <button type="button" class="dp-nav" data-nav="prev" aria-label="Mois précédent">‹</button>
-                <span class="dp-title"><span data-dp-month></span> <span data-dp-year></span></span>
+                <span class="dp-title">
+                  <select class="dp-select dp-month-select" data-dp-month aria-label="Mois"></select>
+                  <select class="dp-select dp-year-select" data-dp-year aria-label="Année"></select>
+                </span>
                 <button type="button" class="dp-nav" data-nav="next" aria-label="Mois suivant">›</button>
               </div>
               <div class="dp-weekdays">
@@ -371,14 +374,34 @@ const sent = Astro.url.searchParams.get("sent") === "1";
       var viewYear = today.getFullYear();
       var selected = null;
 
+      // Populate month + year selects once
+      var monthsHtml = "";
+      for (var mi = 0; mi < 12; mi++) monthsHtml += '<option value="' + mi + '">' + monthNames[mi] + '</option>';
+      monthEl.innerHTML = monthsHtml;
+
+      var yearMin = today.getFullYear();
+      var yearMax = today.getFullYear() + 5;
+      var yearsHtml = "";
+      for (var yi = yearMin; yi <= yearMax; yi++) yearsHtml += '<option value="' + yi + '">' + yi + '</option>';
+      yearEl.innerHTML = yearsHtml;
+
+      monthEl.addEventListener("change", function () {
+        viewMonth = parseInt(this.value, 10);
+        render();
+      });
+      yearEl.addEventListener("change", function () {
+        viewYear = parseInt(this.value, 10);
+        render();
+      });
+
       function pad2(n) { return n < 10 ? "0" + n : "" + n; }
       function isoDate(y, m, d) { return y + "-" + pad2(m + 1) + "-" + pad2(d); }
       function frDate(y, m, d) { return pad2(d) + "/" + pad2(m + 1) + "/" + y; }
       function isoOf(dateObj) { return isoDate(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate()); }
 
       function render() {
-        monthEl.textContent = monthNames[viewMonth];
-        yearEl.textContent = String(viewYear);
+        monthEl.value = String(viewMonth);
+        yearEl.value = String(viewYear);
 
         // Monday-first week: shift Sunday(0) to end
         var firstOfMonth = new Date(viewYear, viewMonth, 1);

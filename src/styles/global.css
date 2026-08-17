@@ -421,11 +421,39 @@ textarea:-webkit-autofill {
 }
 .dp-nav:hover { background: rgba(28, 28, 28, 0.06); }
 .dp-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 14px;
   font-weight: 500;
   color: var(--color-ink);
   letter-spacing: 0.02em;
   text-transform: capitalize;
+}
+.dp-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  border: none;
+  padding: 4px 20px 4px 8px;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.15s;
+  /* Small chevron */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='%231c1c1c' d='M1 3l4 4 4-4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  background-size: 8px;
+}
+.dp-select:hover { background-color: rgba(28, 28, 28, 0.06); }
+.dp-select:focus { outline: none; background-color: rgba(28, 28, 28, 0.06); }
+.dp-select option {
+  font-family: inherit;
+  color: var(--color-ink);
+  background: #fff;
 }
 
 .dp-weekdays {
