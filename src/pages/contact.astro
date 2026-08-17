@@ -52,15 +52,6 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               class="block mt-2 underline underline-offset-4 hover:opacity-70 transition"
             >contact@aritiadesign.com</a>
           </p>
-          <p class="mt-6 pt-6 border-t border-white/15 text-[13px] leading-[1.8] text-white/75" data-i18n="contact.notes.brochure">
-            <span class="italic">En attendant, explorez notre</span>
-            <a
-              href="/brochure/"
-              target="_blank"
-              rel="noopener"
-              class="underline underline-offset-4 hover:opacity-70 transition"
-            >guide de services</a>.
-          </p>
         </div>
       </div>
 
@@ -74,6 +65,17 @@ const sent = Astro.url.searchParams.get("sent") === "1";
           regard sensible, et une mise en scène à la hauteur de vos
           émotions. Je serais honorée de vous accompagner dans la
           création d'un univers qui vous ressemble.
+        </p>
+
+        {/* Brochure lead-in — offered just above the form for hesitant visitors */}
+        <p class="mt-6 md:mt-8 text-[13px] md:text-[14px] leading-[1.85] italic text-[var(--color-ink-soft)] max-w-md" data-i18n="contact.brochure.lead">
+          Vous préférez d'abord explorer nos univers ?
+          <a
+            href="/brochure/"
+            target="_blank"
+            rel="noopener"
+            class="not-italic underline underline-offset-4 hover:text-[var(--color-ink)] transition"
+          >Consultez la brochure des services 2026</a>.
         </p>
 
         {sent && (

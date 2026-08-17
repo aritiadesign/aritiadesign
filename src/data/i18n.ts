@@ -27,6 +27,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "footer.follow":    { fr: "Suivez-nous", en: "Follow us" },
   "footer.credits":   { fr: "Images &amp; vidéos crédits&nbsp;: RNT Motion, Stephen Meslin",
                         en: "Images &amp; video credits: RNT Motion, Stephen Meslin" },
+  "footer.brochure":  { fr: "Brochure des services", en: "Services brochure" },
   "footer.legal":     { fr: "Mentions légales", en: "Legal notice" },
   "footer.privacy":   { fr: "Politique de confidentialité", en: "Privacy policy" },
   "footer.toTop":     { fr: "Retour en haut", en: "Back to top" },
@@ -449,9 +450,9 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "Please fill in this form with care. I'll get back to you within 48 working hours to schedule a first appointment, by phone, video or in person."
   },
   "contact.notes.p2": { fr: "Vous pouvez aussi nous écrire directement à l'adresse suivante&nbsp;:", en: "You can also write to us directly at:" },
-  "contact.notes.brochure": {
-    fr: '<span class="italic">En attendant, explorez notre</span> <a href="/brochure/" target="_blank" rel="noopener" class="underline underline-offset-4 hover:opacity-70 transition">guide de services</a>.',
-    en: '<span class="italic">In the meantime, explore our</span> <a href="/brochure/" target="_blank" rel="noopener" class="underline underline-offset-4 hover:opacity-70 transition">services guide</a>.'
+  "contact.brochure.lead": {
+    fr: 'Vous préférez d\'abord explorer nos univers ? <a href="/brochure/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[var(--color-ink)] transition">Consultez la brochure des services 2026</a>.',
+    en: 'Prefer to explore our aesthetic first? <a href="/brochure/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[var(--color-ink)] transition">Browse our 2026 services brochure</a>.'
   },
   "contact.h2": { fr: "FAISONS<br />CONNAISSANCE", en: "LET'S MEET" },
   "contact.p": {
@@ -826,9 +827,13 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "A personalised quote is sent after our first exchange, based on your wishes and your brief."
   },
   "investment.cta.btn": { fr: "Demander un devis", en: "Request a quote" },
-  "investment.cta.brochure": {
-    fr: '<span class="italic">ou</span> <a href="/brochure/" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-[var(--color-ink)] transition">consulter le guide de services</a>',
-    en: '<span class="italic">or</span> <a href="/brochure/" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-[var(--color-ink)] transition">browse our services guide</a>'
+  "investment.brochure.btn": {
+    fr: 'Consulter la brochure 2026 complète <span aria-hidden="true">→</span>',
+    en: 'Browse the full 2026 brochure <span aria-hidden="true">→</span>'
+  },
+  "investment.brochure.desc": {
+    fr: "Découvrir en détail les formules Essentiel, Signature, Prestige, les prestations à la carte et notre processus créatif.",
+    en: "Discover in detail the Essentiel, Signature and Prestige tiers, the à la carte services and our creative process."
   },
 
   // ─────────────────────────── Project detail (back link) ───────────────────────────

@@ -671,15 +671,23 @@ const faqSchema = {
     >
       Demander un devis
     </a>
-    <p class="mt-8 text-[12px] md:text-[13px] leading-[1.7] text-[var(--color-muted)]" data-i18n="investment.cta.brochure">
-      <span class="italic">ou</span>
+
+    {/* Brochure CTA — secondary button below the primary "Demander un devis" */}
+    <div class="mt-16 md:mt-20 pt-12 md:pt-14 border-t border-[var(--color-ink)]/10 max-w-xl mx-auto">
       <a
         href="/brochure/"
         target="_blank"
         rel="noopener"
-        class="underline underline-offset-4 hover:text-[var(--color-ink)] transition"
-      >consulter le guide de services</a>
-    </p>
+        class="inline-flex items-center gap-3 px-10 py-4 bg-[var(--color-ink)] text-white text-[12px] tracking-[0.32em] uppercase hover:bg-[var(--color-burgundy)] transition"
+        data-i18n="investment.brochure.btn"
+      >
+        Consulter la brochure 2026 complète
+        <span aria-hidden="true">→</span>
+      </a>
+      <p class="mt-6 text-[13px] md:text-[14px] leading-[1.7] text-[var(--color-ink-soft)] italic" data-i18n="investment.brochure.desc">
+        Découvrir en détail les formules Essentiel, Signature, Prestige, les prestations à la carte et notre processus créatif.
+      </p>
+    </div>
   </section>
 </Layout>
 
