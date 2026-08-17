@@ -333,6 +333,15 @@ textarea:-webkit-autofill {
   }
 }
 
+/* Dropdown option list — always in mixed case (as authored), never uppercased
+   or shrunk by the parent select's placeholder-look styling above. */
+.form-select option {
+  text-transform: none !important;
+  font-size: 14px !important;
+  letter-spacing: 0.02em !important;
+  color: var(--color-ink) !important;
+}
+
 /* Required-field label overlay — a fake placeholder positioned like the native
    one, but split into two spans so the '*' can be coloured/larger separately
    while staying tight to the label text. Hidden as soon as the input has a
