@@ -451,8 +451,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "contact.notes.p2": { fr: "Vous pouvez aussi nous écrire directement à l'adresse suivante&nbsp;:", en: "You can also write to us directly at:" },
   "contact.brochure.lead": {
-    fr: 'Vous préférez d\'abord explorer nos univers ? <a href="/brochure/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[var(--color-ink)] transition">Consultez la brochure des services 2026</a>.',
-    en: 'Prefer to explore our aesthetic first? <a href="/brochure/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[var(--color-ink)] transition">Browse our 2026 services brochure</a>.'
+    fr: 'Vous préférez d\'abord explorer nos univers ? <a href="https://www.aritiadesign.com/brochure/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">Consultez notre brochure complète</a>.',
+    en: 'Prefer to explore our aesthetic first? <a href="https://www.aritiadesign.com/brochure/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">Browse our full brochure</a>.'
   },
   "contact.h2": { fr: "FAISONS<br />CONNAISSANCE", en: "LET'S MEET" },
   "contact.p": {
