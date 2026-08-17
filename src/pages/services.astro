@@ -524,16 +524,13 @@ const faqSchema = {
     </div>
 
     <div class="max-w-xl mx-auto text-center">
-      <a
+      <SparkLink
         href="/brochure/"
-        target="_blank"
-        rel="noopener"
-        class="inline-flex items-center gap-3 px-10 py-4 bg-[var(--color-burgundy)] text-white text-[12px] tracking-[0.32em] uppercase hover:bg-[var(--color-burgundy-dark)] transition"
-        data-i18n="investment.brochure.btn"
-      >
-        Consulter la brochure 2026 complète
-        <span aria-hidden="true">→</span>
-      </a>
+        label="Consulter notre brochure complète"
+        i18nKey="investment.brochure.btn"
+        arrowClass="h-[22px] w-[22px] md:h-[32px] md:w-[32px]"
+        class="!text-[0.75rem] md:!text-[15px] !tracking-[0.16em] md:!tracking-[0.2em] !gap-2 md:!gap-3"
+      />
       <p class="mt-6 text-[13px] md:text-[14px] leading-[1.7] text-[var(--color-ink-soft)] italic" data-i18n="investment.brochure.desc">
         Découvrir en détail les formules Essentiel, Signature, Prestige, les prestations à la carte et notre processus créatif.
       </p>
