@@ -514,12 +514,21 @@ const faqSchema = {
        Standalone section between À la carte and Chaque collaboration,
        so the decorative side photos above stay at their original bottom-relative position. */}
   <section class="bg-white px-6 pb-16 md:pb-20">
-    <div class="max-w-xl mx-auto text-center pt-2 md:pt-4 border-t border-[var(--color-ink)]/15">
+    {/* Sparkle divider — same pattern as the 'Notre engagement' section above */}
+    <div class="mx-auto max-w-[360px] flex items-center justify-center gap-4 md:gap-5 mb-10 md:mb-12">
+      <span class="flex-1 h-px bg-[var(--color-ink)]/20"></span>
+      <span class="flex items-center gap-2 md:gap-2.5 text-[9px] md:text-[10px] text-[var(--color-ink)]/70 tracking-normal">
+        <span>✦</span><span>✦</span><span>✦</span>
+      </span>
+      <span class="flex-1 h-px bg-[var(--color-ink)]/20"></span>
+    </div>
+
+    <div class="max-w-xl mx-auto text-center">
       <a
         href="/brochure/"
         target="_blank"
         rel="noopener"
-        class="inline-flex items-center gap-3 mt-10 md:mt-12 px-10 py-4 bg-white border border-[var(--color-ink)] text-[var(--color-ink)] text-[12px] tracking-[0.32em] uppercase hover:bg-[var(--color-ink)] hover:text-white transition"
+        class="inline-flex items-center gap-3 px-10 py-4 bg-white border border-[var(--color-ink)] text-[var(--color-ink)] text-[12px] tracking-[0.32em] uppercase hover:bg-[var(--color-ink)] hover:text-white transition"
         data-i18n="investment.brochure.btn"
       >
         Consulter la brochure 2026 complète
