@@ -449,6 +449,10 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "Please fill in this form with care. I'll get back to you within 48 working hours to schedule a first appointment, by phone, video or in person."
   },
   "contact.notes.p2": { fr: "Vous pouvez aussi nous écrire directement à l'adresse suivante&nbsp;:", en: "You can also write to us directly at:" },
+  "contact.notes.brochure": {
+    fr: '<span class="italic">En attendant, explorez notre</span> <a href="/brochure/" target="_blank" rel="noopener" class="underline underline-offset-4 hover:opacity-70 transition">brochure des services 2026</a>.',
+    en: '<span class="italic">In the meantime, explore our</span> <a href="/brochure/" target="_blank" rel="noopener" class="underline underline-offset-4 hover:opacity-70 transition">services brochure 2026</a>.'
+  },
   "contact.h2": { fr: "FAISONS<br />CONNAISSANCE", en: "LET'S MEET" },
   "contact.p": {
     fr: "Votre histoire mérite une attention toute particulière, un regard sensible, et une mise en scène à la hauteur de vos émotions. Je serais honorée de vous accompagner dans la création d'un univers qui vous ressemble.",
@@ -822,6 +826,10 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "A personalised quote is sent after our first exchange, based on your wishes and your brief."
   },
   "investment.cta.btn": { fr: "Demander un devis", en: "Request a quote" },
+  "investment.cta.brochure": {
+    fr: '<span class="italic">ou</span> <a href="/brochure/" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-[var(--color-ink)] transition">consulter la brochure des services 2026</a>',
+    en: '<span class="italic">or</span> <a href="/brochure/" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-[var(--color-ink)] transition">browse our services brochure 2026</a>'
+  },
 
   // ─────────────────────────── Project detail (back link) ───────────────────────────
   "project.back": { fr: "← Tous les projets", en: "← All projects" },
