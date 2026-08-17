@@ -493,9 +493,9 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "contact.opt.type.placeholder": { fr: "TYPE D'ÉVÉNEMENT",       en: "EVENT TYPE" },
   "contact.opt.type.0": { fr: "Mariage",               en: "Wedding" },
   "contact.opt.type.1": { fr: "Événement saisonnier",  en: "Seasonal event" },
-  "contact.opt.type.2": { fr: "Anniversaire",          en: "Birthday / Anniversary" },
-  "contact.opt.type.3": { fr: "Baby Shower",           en: "Baby shower" },
-  "contact.opt.type.4": { fr: "Événement Corporate",   en: "Corporate event" },
+  "contact.opt.type.2": { fr: "Événements privés",     en: "Private events" },
+  "contact.opt.type.3": { fr: "Anniversaire",          en: "Birthday / Anniversary" },
+  "contact.opt.type.4": { fr: "Baby Shower",           en: "Baby shower" },
   "contact.opt.type.5": { fr: "Autre",                 en: "Other" },
   "contact.submit": { fr: "Envoyer", en: "Send" },
 
