@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aritia Design — Services & Prestations 2026</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Guide des services Aritia Design 2026. Wedding & event designer basée à Toulouse. Formules L'Exception, Pack Atmosphère et Direction Artistique." />
+  <meta name="theme-color" content="#1c1c1c" />
+  <link rel="preload" as="image" href="aritia-tarifs-2026-assets/page-01.svg"/>
+  <style>
+    /* Local fonts — Raleway for text, Brandon Grotesque for numerals */
+    @font-face {
+      font-family: "Raleway";
+      src: url("aritia-tarifs-2026-assets/Raleway.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Brandon Grotesque";
+      src: url("aritia-tarifs-2026-assets/Brandon_reg.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background: #2b2a2c;
+      color: #f2ede6;
+      font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Numerals use Brandon Grotesque */
+    .num {
+      font-family: "Brandon Grotesque", "Raleway", sans-serif;
+      font-weight: 400;
+    }
+
+    /* Decorative sparkle — sized smaller than surrounding text */
+    .sparkle {
+      font-size: 0.8em;
+      display: inline-block;
+      vertical-align: 0.1em;
+      opacity: 0.8;
+      margin: 0 0.2em;
+    }
+
+    body { min-height: 100vh; }
+
+    /* Reader — vertical flow of pages / spreads.
+       .reader-mobile is shown < 900px, .reader-desktop is shown ≥ 900px. */
+    .reader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+      padding: 28px 16px 48px;
+    }
+
+    .reader-desktop { display: none; }
+
+    /* Single A5 page — dictates the aspect-ratio, clips its image. */
+    .page {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+      aspect-ratio: 148 / 210;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    /* Landscape frame — a spread rendered as a single wide SVG (2:√2 ratio),
+       used on the desktop version for pre-combined double-pages. */
+    .page.landscape {
+      max-width: 1040px;
+      aspect-ratio: 1190.25 / 842.25;
+    }
+
+    /* Image slightly larger than .page + negative margin — hides any subpixel
+       gap at the edges that would otherwise show a thin line. */
+    .page img {
+      display: block;
+      width: 101%;
+      height: 101%;
+      margin: -0.5%;
+      object-fit: cover;
+      -webkit-user-drag: none;
+      user-select: none;
+    }
+
+    /* Spread wrapper — stacked on mobile, side by side on desktop */
+    .spread {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      width: 100%;
+      align-items: center;
+    }
+
+    .spread .page { max-width: 720px; }
+
+    /* Header — subtle brand line above the reader */
+    .reader-header {
+      text-align: center;
+      padding: 40px 16px 12px;
+      color: rgba(242, 237, 230, 0.65);
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+    }
+    .reader-header a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(242, 237, 230, 0.2);
+      padding-bottom: 2px;
+    }
+
+    .reader-footer {
+      text-align: center;
+      padding: 20px 16px 40px;
+      color: rgba(242, 237, 230, 0.55);
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+    .reader-footer a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .reader-footer a:hover {
+      color: rgba(242, 237, 230, 0.85);
+    }
+
+    /* ─────────────────────────────────────────
+       TABLET & DESKTOP (≥ 900px) — double spreads
+       Cover + back cover: single centered pages.
+       Pages 2–19: shown as double spreads (two A5 pages side by side).
+       ───────────────────────────────────────── */
+    @media (min-width: 900px) {
+      /* Swap mobile flow for desktop flow */
+      .reader-mobile { display: none; }
+      .reader-desktop { display: flex; }
+
+      .reader { gap: 44px; padding: 44px 24px 64px; }
+
+      /* Cover + back cover — same width as one page of a spread */
+      .page.standalone { max-width: 520px; }
+
+      /* Landscape spread — full width of a two-page book */
+      .page.landscape { max-width: 1040px; }
+
+      .spread {
+        flex-direction: row;
+        gap: 0;
+        max-width: 1040px;
+        align-items: flex-start; /* top-align so no vertical offset between pages */
+      }
+
+      /* Each page in a spread takes exactly half the container — identical width,
+         identical aspect-ratio → identical computed height, perfect alignment */
+      .spread .page {
+        max-width: 520px;
+        flex: 0 0 50%;
+      }
+    }
+
+    /* Larger desktop — cap the spread width so pages don't get oversized */
+    @media (min-width: 1400px) {
+      .spread { max-width: 1120px; }
+      .spread .page { max-width: 560px; }
+      .page.standalone { max-width: 560px; }
+      .page.landscape { max-width: 1120px; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .reader { gap: 0; padding: 0; }
+      .page, .spread { box-shadow: none; page-break-after: always; }
+      .reader-header, .reader-footer { display: none; }
+    }
+
+    a:focus-visible {
+      outline: 2px solid #1c1c1c;
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="reader-header">
+    <a href="https://aritiadesign.com/services" rel="noopener">Aritia Design <span class="sparkle">✦</span> Services <span class="num">2026</span></a>
+  </header>
+
+  <main role="document">
+
+    <!-- ═══════════════════════════════════════════════════
+         MOBILE — 20 pages portrait A5 empilées verticalement
+         ═══════════════════════════════════════════════════ -->
+    <section class="reader reader-mobile" aria-label="Brochure Aritia Design 2026, version mobile">
+
+      <div class="page standalone">
+        <img src="aritia-tarifs-2026-assets/page-01.svg" alt="Couverture Services Aritia Design 2026" fetchpriority="high" />
+      </div>
+
+      <div class="spread">
+        <div class="page"><img src="aritia-tarifs-2026-assets/page-02.svg" alt="Notre approche" loading="lazy" /></div>
+        <div class="page"><img src="aritia-tarifs-2026-assets/page-03.svg" alt="Un processus créatif structuré" loading="lazy" /></div>
+      </div>
+
+      <div class="spread">
+        <div class="page"><img src="aritia-tarifs-2026-assets/page-04.svg" alt="L'Exception — Gamme Essentiel" loading="lazy" /></div>
+        <div class="page"><img src="aritia-tarifs-2026-assets/page-05.svg" alt="L'Exception — Gammes Signature et Prestige" loading="lazy" /></div>
+      </div>
+
+      <div class="spread">
+        <div class="page"><img src="aritia-tarifs-2026-assets/page-06.svg" alt="Pack Atmosphère — Gamme Essentiel" loading="lazy" /></div>
+        <div class="page"><img src="aritia-tarifs-2026-assets/page-07.svg" alt="Pack Atmosphère — Gammes Signature et Prestige" loading="lazy" /></div>
+      </div>
+
+      <div class="spread">
+        <div class="page"><img src="aritia-tarifs-2026-assets/page-08.svg" alt="Direction Artistique Seule" loading="lazy" /></div>
+        <div class="page"><img src="aritia-tarifs-2026-assets/page-09.svg" alt="Prestations à la carte" loading="lazy" /></div>
+      </div>
+
+      <div class="spread">
+        <div class="page"><img src="aritia-tarifs-2026-assets/page-10.svg" alt="Cérémonie avec arche cuivre" loading="lazy" /></div>
+        <div class="page"><img src="aritia-tarifs-2026-assets/page-11.svg" alt="Réalisation — Mariage minimaliste" loading="lazy" /></div>
+      </div>
+
+      <div class="spread">
+        <div class="page"><img src="aritia-tarifs-2026-assets/page-12.svg" alt="Voiture des mariés Fiat 500 fleurie" loading="lazy" /></div>
+        <div class="page"><img src="aritia-tarifs-2026-assets/page-13.svg" alt="Réalisation — Mariage élégant" loading="lazy" /></div>
+      </div>
+
+      <div class="spread">
+        <div class="page"><img src="aritia-tarifs-2026-assets/page-14.svg" alt="Extensions de services pour votre univers" loading="lazy" /></div>
+        <div class="page"><img src="aritia-tarifs-2026-assets/page-15.svg" alt="Pour tous vos moments uniques" loading="lazy" /></div>
+      </div>
+
+      <div class="spread">
+        <div class="page"><img src="aritia-tarifs-2026-assets/page-16.svg" alt="L'expérience inclut" loading="lazy" /></div>
+        <div class="page"><img src="aritia-tarifs-2026-assets/page-17.svg" alt="Questions fréquemment posées" loading="lazy" /></div>
+      </div>
+
+      <div class="spread">
+        <div class="page"><img src="aritia-tarifs-2026-assets/page-18.svg" alt="Vivez la même expérience — témoignages" loading="lazy" /></div>
+        <div class="page"><img src="aritia-tarifs-2026-assets/page-19.svg" alt="Parlez-nous de votre projet — contact" loading="lazy" /></div>
+      </div>
+
+      <div class="page standalone">
+        <img src="aritia-tarifs-2026-assets/page-20.svg" alt="Aritia Design — Wedding & Event Designer" loading="lazy" />
+      </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         DESKTOP / TABLET — 17 slides (cover + landscape spreads + portrait pairs)
+         Landscape spreads (02, 15, 16) sont fusionnées en une seule image large.
+         ═══════════════════════════════════════════════════ -->
+    <section class="reader reader-desktop" aria-label="Brochure Aritia Design 2026, version desktop">
+
+      <div class="page standalone">
+        <img src="aritia-tarifs-2026-assets/desktop/page-01.svg" alt="Couverture Services Aritia Design 2026" loading="lazy" />
+      </div>
+
+      <div class="page landscape">
+        <img src="aritia-tarifs-2026-assets/desktop/page-02.svg" alt="Notre approche · Processus créatif" loading="lazy" />
+      </div>
+
+      <div class="spread">
+        <div class="page"><img src="aritia-tarifs-2026-assets/desktop/page-03.svg" alt="L'Exception — Gamme Essentiel" loading="lazy" /></div>
+        <div class="page"><img src="aritia-tarifs-2026-assets/desktop/page-04.svg" alt="L'Exception — Gammes Signature et Prestige" loading="lazy" /></div>
+      </div>
+
+      <div class="spread">
+        <div class="page"><img src="aritia-tarifs-2026-assets/desktop/page-05.svg" alt="Pack Atmosphère — Gamme Essentiel" loading="lazy" /></div>
+        <div class="page"><img src="aritia-tarifs-2026-assets/desktop/page-06.svg" alt="Pack Atmosphère — Gammes Signature et Prestige" loading="lazy" /></div>
+      </div>
+
+      <div class="spread">
+        <div class="page"><img src="aritia-tarifs-2026-assets/desktop/page-07.svg" alt="Direction Artistique Seule" loading="lazy" /></div>
+        <div class="page"><img src="aritia-tarifs-2026-assets/desktop/page-08.svg" alt="Prestations à la carte" loading="lazy" /></div>
+      </div>
+
+      <div class="spread">
+        <div class="page"><img src="aritia-tarifs-2026-assets/desktop/page-09.svg" alt="Cérémonie avec arche cuivre" loading="lazy" /></div>
+        <div class="page"><img src="aritia-tarifs-2026-assets/desktop/page-10.svg" alt="Réalisation — Mariage minimaliste" loading="lazy" /></div>
+      </div>
+
+      <div class="spread">
+        <div class="page"><img src="aritia-tarifs-2026-assets/desktop/page-11.svg" alt="Voiture des mariés Fiat 500 fleurie" loading="lazy" /></div>
+        <div class="page"><img src="aritia-tarifs-2026-assets/desktop/page-12.svg" alt="Réalisation — Mariage élégant" loading="lazy" /></div>
+      </div>
+
+      <div class="spread">
+        <div class="page"><img src="aritia-tarifs-2026-assets/desktop/page-13.svg" alt="Extensions de services pour votre univers" loading="lazy" /></div>
+        <div class="page"><img src="aritia-tarifs-2026-assets/desktop/page-14.svg" alt="Pour tous vos moments uniques" loading="lazy" /></div>
+      </div>
+
+      <div class="page landscape">
+        <img src="aritia-tarifs-2026-assets/desktop/page-15.svg" alt="L'expérience inclut · Questions fréquemment posées" loading="lazy" />
+      </div>
+
+      <div class="page landscape">
+        <img src="aritia-tarifs-2026-assets/desktop/page-16.svg" alt="Vivez la même expérience · Parlez-nous de votre projet" loading="lazy" />
+      </div>
+
+      <div class="page standalone">
+        <img src="aritia-tarifs-2026-assets/desktop/page-17.svg" alt="Aritia Design — Wedding & Event Designer" loading="lazy" />
+      </div>
+
+    </section>
+
+  </main>
+
+  <script>
+    /* Keyboard navigation — scroll to next/previous slide with arrow keys,
+       PageUp/PageDown or Space. Scroll and touch still work as usual. */
+    (function () {
+      function activeReader() {
+        return window.matchMedia("(min-width: 900px)").matches
+          ? document.querySelector(".reader-desktop")
+          : document.querySelector(".reader-mobile");
+      }
+
+      function slides() {
+        var r = activeReader();
+        return r ? Array.from(r.children) : [];
+      }
+
+      function currentIndex(list) {
+        // Slide currently occupying the upper third of the viewport
+        var threshold = window.scrollY + window.innerHeight * 0.33;
+        for (var i = list.length - 1; i >= 0; i--) {
+          var top = list[i].getBoundingClientRect().top + window.scrollY;
+          if (top <= threshold) return i;
+        }
+        return 0;
+      }
+
+      function goTo(el) {
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      document.addEventListener("keydown", function (e) {
+        // Don't hijack keys when the user is typing in a form field
+        var t = e.target;
+        if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable)) return;
+
+        var forward = e.key === "ArrowRight" || e.key === "ArrowDown" || e.key === "PageDown" || (e.key === " " && !e.shiftKey);
+        var backward = e.key === "ArrowLeft" || e.key === "ArrowUp" || e.key === "PageUp" || (e.key === " " && e.shiftKey);
+        if (!forward && !backward) return;
+
+        var list = slides();
+        if (!list.length) return;
+
+        e.preventDefault();
+        var i = currentIndex(list);
+        var next = forward ? Math.min(i + 1, list.length - 1) : Math.max(i - 1, 0);
+        goTo(list[next]);
+      });
+    })();
+  </script>
+
+  <footer class="reader-footer">
+    <a href="https://aritiadesign.com" rel="noopener">© <span class="num">2026</span> Aritia Design | aritiadesign.com</a>
+  </footer>
+</body>
+</html>
