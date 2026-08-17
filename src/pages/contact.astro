@@ -424,11 +424,15 @@ const sent = Astro.url.searchParams.get("sent") === "1";
       }
       function close() { picker.hidden = true; }
 
-      input.addEventListener("click", function (e) {
-        e.preventDefault();
-        picker.hidden ? open() : close();
-      });
+      /* Open on either focus or click. NEVER toggle-close here — otherwise
+         the sequence 'focus opens -> click sees it open -> click closes'
+         made the picker flash away on the first tap. Close is handled by
+         picking a date, Escape, or clicking outside. */
       input.addEventListener("focus", function () {
+        if (picker.hidden) open();
+      });
+      input.addEventListener("mousedown", function (e) {
+        e.preventDefault(); // keep focus behavior deterministic
         if (picker.hidden) open();
       });
 
