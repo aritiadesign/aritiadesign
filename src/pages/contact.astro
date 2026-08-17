@@ -524,6 +524,8 @@ const sent = Astro.url.searchParams.get("sent") === "1";
       var lastQuery = "";
       var activeIndex = -1;
       var items = [];
+      var isSelecting = false;
+      var currentReqId = 0;
 
       function open() { dropdown.setAttribute("data-open", "true"); }
       function close() {
@@ -549,6 +551,8 @@ const sent = Astro.url.searchParams.get("sent") === "1";
       }
 
       function fetchSuggestions(q) {
+        currentReqId++;
+        var reqId = currentReqId;
         var url = "https://nominatim.openstreetmap.org/search" +
                   "?format=json&limit=6&addressdetails=1&accept-language=fr" +
                   "&countrycodes=fr" +
@@ -556,20 +560,26 @@ const sent = Astro.url.searchParams.get("sent") === "1";
         fetch(url, { headers: { "Accept": "application/json" } })
           .then(function (r) { return r.ok ? r.json() : []; })
           .then(function (rows) {
-            if (input.value.trim() === q) render(rows);
+            // Ignore stale responses (user has typed more since we sent this)
+            if (reqId !== currentReqId) return;
+            if (input.value.trim() !== q) return;
+            render(rows);
           })
           .catch(function () {});
       }
 
       input.addEventListener("input", function () {
+        if (isSelecting) return;
         var q = input.value.trim();
         clearTimeout(timer);
-        if (q.length < 3) { close(); return; }
+        if (q.length < 2) { close(); return; }
         if (q === lastQuery) return;
+        // Debounce short — feels near-instant while staying under Nominatim's
+        // 1 req/sec fair-use policy for realistic typing speeds
         timer = setTimeout(function () {
           lastQuery = q;
           fetchSuggestions(q);
-        }, 300);
+        }, 200);
       });
 
       dropdown.addEventListener("mousedown", function (e) {
@@ -578,8 +588,13 @@ const sent = Astro.url.searchParams.get("sent") === "1";
         e.preventDefault();
         var idx = parseInt(li.dataset.idx, 10);
         if (isNaN(idx) || !items[idx]) return;
+        // Flag prevents the dispatched input event from re-triggering a fetch
+        isSelecting = true;
         input.value = items[idx].display_name;
+        lastQuery = input.value.trim();
         input.dispatchEvent(new Event("input", { bubbles: true }));
+        input.dispatchEvent(new Event("change", { bubbles: true }));
+        isSelecting = false;
         close();
       });
 
