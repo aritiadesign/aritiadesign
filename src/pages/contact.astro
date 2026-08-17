@@ -380,7 +380,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
       monthEl.innerHTML = monthsHtml;
 
       var yearMin = today.getFullYear();
-      var yearMax = today.getFullYear() + 5;
+      var yearMax = today.getFullYear() + 2;
       var yearsHtml = "";
       for (var yi = yearMin; yi <= yearMax; yi++) yearsHtml += '<option value="' + yi + '">' + yi + '</option>';
       yearEl.innerHTML = yearsHtml;
