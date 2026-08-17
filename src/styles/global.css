@@ -377,6 +377,20 @@ textarea:-webkit-autofill {
   opacity: 0;
 }
 
+/* Date field — hide the native "jj/mm/aaaa" text so only the fake-placeholder
+   overlay is visible until the user picks a date via the calendar picker.
+   The calendar icon (::-webkit-calendar-picker-indicator) stays visible. */
+.date-field:not(.has-value) input[type="date"] {
+  color: transparent;
+}
+.date-field:not(.has-value) input[type="date"]::-webkit-datetime-edit {
+  color: transparent;
+}
+.date-field.has-value input[type="date"],
+.date-field.has-value input[type="date"]::-webkit-datetime-edit {
+  color: var(--color-ink);
+}
+
 /* Custom location dropdown (Nominatim suggestions) — replaces <datalist>
    which had refresh bugs when its options were updated asynchronously. */
 .location-dropdown {
