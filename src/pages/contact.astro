@@ -510,11 +510,12 @@ const sent = Astro.url.searchParams.get("sent") === "1";
   </script>
 
   <script is:inline>
-    /* Location field — custom suggestions dropdown backed by OpenStreetMap
-       Nominatim (public geocoding API, no key required, ~1 req/sec fair-use).
-       Replaces <datalist> which had refresh bugs when its options were
-       populated asynchronously (Chrome would only show suggestions after
-       the user deleted characters). */
+    /* Location field — French address autocomplete backed by BAN
+       (Base Adresse Nationale, https://api-adresse.data.gouv.fr). Free,
+       no key, purpose-built for type-ahead on French addresses. Returns
+       a pre-formatted 'label' like "10 Rue du Capitole 31000 Toulouse"
+       plus a 'context' with department + region — we compose them so the
+       suggestion reads as a continuation of what the visitor typed. */
     (function () {
       var input = document.getElementById("f-location");
       var dropdown = document.getElementById("f-location-dropdown");
@@ -533,13 +534,28 @@ const sent = Astro.url.searchParams.get("sent") === "1";
         activeIndex = -1;
       }
 
-      function render(rows) {
-        items = rows;
+      function labelOf(feature) {
+        var p = feature.properties || {};
+        // p.label ex: "10 Rue du Capitole 31000 Toulouse"
+        // p.context ex: "31, Haute-Garonne, Occitanie"
+        var label = p.label || p.name || "";
+        var ctx = p.context || "";
+        // Keep only the region (last part of context after last comma) to keep it short
+        var region = "";
+        if (ctx) {
+          var parts = ctx.split(",");
+          region = parts[parts.length - 1].trim();
+        }
+        return region ? (label + ", " + region) : label;
+      }
+
+      function render(features) {
+        items = features;
         activeIndex = -1;
-        if (!rows.length) { close(); return; }
+        if (!features.length) { close(); return; }
         var html = "";
-        for (var i = 0; i < rows.length; i++) {
-          var label = String(rows[i].display_name || "");
+        for (var i = 0; i < features.length; i++) {
+          var label = labelOf(features[i]);
           if (label) {
             html += '<li role="option" data-idx="' + i + '">' +
                     label.replace(/</g, "&lt;") +
@@ -553,17 +569,16 @@ const sent = Astro.url.searchParams.get("sent") === "1";
       function fetchSuggestions(q) {
         currentReqId++;
         var reqId = currentReqId;
-        var url = "https://nominatim.openstreetmap.org/search" +
-                  "?format=json&limit=6&addressdetails=1&accept-language=fr" +
-                  "&countrycodes=fr" +
+        var url = "https://api-adresse.data.gouv.fr/search/" +
+                  "?limit=6&autocomplete=1" +
                   "&q=" + encodeURIComponent(q);
         fetch(url, { headers: { "Accept": "application/json" } })
-          .then(function (r) { return r.ok ? r.json() : []; })
-          .then(function (rows) {
+          .then(function (r) { return r.ok ? r.json() : { features: [] }; })
+          .then(function (data) {
             // Ignore stale responses (user has typed more since we sent this)
             if (reqId !== currentReqId) return;
             if (input.value.trim() !== q) return;
-            render(rows);
+            render((data && data.features) || []);
           })
           .catch(function () {});
       }
@@ -590,7 +605,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
         if (isNaN(idx) || !items[idx]) return;
         // Flag prevents the dispatched input event from re-triggering a fetch
         isSelecting = true;
-        input.value = items[idx].display_name;
+        input.value = labelOf(items[idx]);
         lastQuery = input.value.trim();
         input.dispatchEvent(new Event("input", { bubbles: true }));
         input.dispatchEvent(new Event("change", { bubbles: true }));
