@@ -271,7 +271,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.3">Papeterie Fine</option>
               <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.4">Conception Florale</option>
               <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.5">Décor &amp; Scénographie</option>
-              <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.6">Sur-mesure</option>
+              <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.6">Sur devis</option>
             </select>
           </div>
           <div class="required-field md:col-span-2 border-b border-black/15 pb-1">
@@ -492,23 +492,21 @@ const sent = Astro.url.searchParams.get("sent") === "1";
   </script>
 
   <script is:inline>
-    /* Prestation options depend on Type d'evenement — the three wedding
-       formulas (L'Exception, Pack Atmosphere, Direction Artistique Seule)
-       are only available when Type is 'Mariage' or an unrelated category.
-       When Type is 'Evenement saisonnier' or 'Evenements prives', those
-       three formulas are disabled since they're wedding-specific. */
+    /* Prestation options depend on Type d'evenement — all fixed formulas
+       and single-service packs (indexes 0-5) are wedding-only. For any
+       non-wedding type (Saisonnier, Prives, Anniversaire, Baby Shower,
+       Autre) only the 'Sur devis' option (index 6) remains available.
+       For Mariage or empty selection, all 7 options are enabled. */
     (function () {
       var typeSel = document.getElementById("f-type");
       var prestSel = document.getElementById("f-prestation");
       if (!typeSel || !prestSel) return;
 
-      // Indexes of the wedding-only formulas (options 1, 2, 3 in the DOM after the empty placeholder)
-      var weddingOnly = [0, 1, 2]; // service.0, .1, .2 → L'Exception, Pack Atmo, DA Seule
-      // Type values that should hide wedding-only formulas
-      var nonWeddingTypes = ["Événement saisonnier", "Événements privés"];
+      // Indexes of the wedding-only options — all except 'Sur devis' (6)
+      var weddingOnly = [0, 1, 2, 3, 4, 5];
 
       function syncPrestation() {
-        var isNonWedding = nonWeddingTypes.indexOf(typeSel.value) !== -1;
+        var isNonWedding = typeSel.value !== "" && typeSel.value !== "Mariage";
         var options = prestSel.querySelectorAll("option[data-i18n]");
         options.forEach(function (opt) {
           var key = opt.getAttribute("data-i18n") || "";
