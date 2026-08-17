@@ -828,8 +828,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "investment.cta.btn": { fr: "Demander un devis", en: "Request a quote" },
   "investment.brochure.btn": {
-    fr: 'Consulter notre brochure complète <span aria-hidden="true">→</span>',
-    en: 'Browse our full brochure <span aria-hidden="true">→</span>'
+    fr: "Consulter notre brochure complète",
+    en: "Browse our full brochure"
   },
   "investment.brochure.desc": {
     fr: "Découvrir en détail les formules Essentiel, Signature, Prestige, les prestations à la carte et notre processus créatif.",
