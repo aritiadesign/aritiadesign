@@ -832,8 +832,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "Browse our full brochure"
   },
   "investment.brochure.desc": {
-    fr: "Découvrez en détail nos formules, nos prestations à la carte et nos autres prestations pour les événements privés et saisonniers.",
-    en: "Discover in detail our tiers, our à la carte services and our other prestations for private and seasonal events."
+    fr: "Découvrez en détail nos formules, nos prestations à la carte et notre accompagnement dédié aux événements privés et saisonniers.",
+    en: "Discover in detail our tiers, our à la carte services and our dedicated support for private and seasonal events."
   },
 
   // ─────────────────────────── Project detail (back link) ───────────────────────────
