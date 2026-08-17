@@ -88,7 +88,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
         <form
           action="https://api.web3forms.com/submit"
           method="POST"
-          class="mt-10 space-y-7"
+          class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6"
         >
           <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
           <input type="hidden" name="subject" value="Nouveau message — Aritia Design" />
@@ -174,7 +174,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] text-[var(--color-ink)] focus:outline-none py-3"
             />
           </div>
-          <div class="required-field border-b border-black/15 pb-1">
+          <div class="required-field md:col-span-2 border-b border-black/15 pb-1">
             <label class="sr-only" for="f-location" data-i18n="contact.label.location">Lieu</label>
             <span class="fake-placeholder" aria-hidden="true">
               <span data-i18n="contact.ph.loc">LIEU DE L'ÉVÉNEMENT</span><span class="req-marker">*</span>
@@ -228,7 +228,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.5">Décor &amp; Scénographie</option>
             </select>
           </div>
-          <div class="required-field border-b border-black/15 pb-1">
+          <div class="required-field md:col-span-2 border-b border-black/15 pb-1">
             <label class="sr-only" for="f-budget" data-i18n="contact.label.budget">Budget</label>
             <span class="fake-placeholder" aria-hidden="true">
               <span data-i18n="contact.ph.budget">BUDGET ENVISAGÉ POUR VOTRE PROJET</span><span class="req-marker">*</span>
@@ -241,7 +241,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] text-[var(--color-ink)] focus:outline-none py-3"
             />
           </div>
-          <div class="required-field border-b border-black/15 pb-1">
+          <div class="required-field md:col-span-2 border-b border-black/15 pb-1">
             <label class="sr-only" for="f-desc" data-i18n="contact.label.desc">Description</label>
             <span class="fake-placeholder" aria-hidden="true">
               <span data-i18n="contact.ph.desc">DESCRIPTION</span><span class="req-marker">*</span>
@@ -255,7 +255,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
             ></textarea>
           </div>
 
-          <div class="pt-4 text-center">
+          <div class="md:col-span-2 pt-4 text-center">
             <button
               type="submit"
               class="font-script text-[34px] md:text-[42px] text-[var(--color-ink)] hover:opacity-70 transition leading-none"
