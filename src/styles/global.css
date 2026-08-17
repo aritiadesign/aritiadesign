@@ -238,7 +238,52 @@ body {
 .font-pt-serif { font-family: "PT Serif", Georgia, serif; font-style: italic; }
 .font-georgia { font-family: Georgia, "Times New Roman", serif; }
 
-/* Hide the native disclosure triangle on all <details><summary> — Tailwind's
+/* ─────────────────────────────────────────────────────────
+   CROSS-BROWSER NORMALIZATION
+   Ensure the design renders identically on Chrome, Safari,
+   Firefox and Edge (native form controls, focus rings, tap
+   highlights, autofill, placeholders, disclosure markers).
+   ───────────────────────────────────────────────────────── */
+
+/* Prevent iOS Safari from auto-scaling text on orientation change */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Kill the blue tap-highlight flash on iOS Safari & Android Chrome */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Strip browser-default look on form controls (already applied per-element
+   with Tailwind appearance-none, this catches anything missed). */
+select, input, textarea, button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font: inherit;
+  color: inherit;
+}
+button { background: none; border: none; padding: 0; cursor: pointer; }
+
+/* Consistent placeholder color (Firefox uses 0.54 opacity by default) */
+::placeholder { color: var(--color-muted); opacity: 1; }
+
+/* Chrome autofill would tint inputs yellow — force transparent bg */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill {
+  -webkit-text-fill-color: inherit;
+  transition: background-color 5000s ease-in-out 0s;
+  box-shadow: 0 0 0 30px transparent inset !important;
+}
+
+/* Uniform focus ring across browsers */
+:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+
+/* Hide the native disclosure triangle on all <details><summary> —
    list-none handles Chromium/Firefox, but Safari needs the -webkit- pseudo. */
 summary { list-style: none; }
 summary::-webkit-details-marker { display: none; }
