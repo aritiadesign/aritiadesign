@@ -61,21 +61,27 @@ const sent = Astro.url.searchParams.get("sent") === "1";
           FAISONS<br />CONNAISSANCE
         </h2>
         <p class="mt-6 md:mt-8 text-[13px] md:text-[14px] leading-[1.85] md:leading-[1.9] text-[var(--color-ink-soft)] max-w-md" data-i18n="contact.p">
-          Votre histoire mérite une attention toute particulière, un
+          Votre projet mérite une attention toute particulière, un
           regard sensible, et une mise en scène à la hauteur de vos
           émotions. Je serais honorée de vous accompagner dans la
           création d'un univers qui vous ressemble.
         </p>
 
+        {/* Form CTA — invites the visitor to fill in the form below */}
+        <p class="mt-4 md:mt-5 text-[13px] md:text-[14px] leading-[1.85] text-[var(--color-ink-soft)] max-w-md" data-i18n="contact.p.form">
+          Partagez-nous votre vision via le formulaire ci-dessous, chaque demande est étudiée avec soin.
+        </p>
+
         {/* Brochure lead-in — offered just above the form for hesitant visitors */}
-        <p class="mt-6 md:mt-8 text-[13px] md:text-[14px] leading-[1.85] italic text-[var(--color-ink-soft)] max-w-md" data-i18n="contact.brochure.lead">
-          Vous préférez d'abord explorer nos univers ?
+        <p class="mt-4 md:mt-5 text-[13px] md:text-[14px] leading-[1.85] italic text-[var(--color-ink-soft)] max-w-md" data-i18n="contact.brochure.lead">
+          Une hésitation ? Prenez le temps de parcourir
           <a
             href="https://www.aritiadesign.com/brochure/"
             target="_blank"
             rel="noopener"
             class="not-italic underline underline-offset-4 hover:text-[#630713] transition"
-          >Consultez notre brochure complète</a>.
+          >notre brochure complète</a>
+          avant de remplir notre formulaire.
         </p>
 
         {sent && (

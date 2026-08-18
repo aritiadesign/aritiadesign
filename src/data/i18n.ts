@@ -451,13 +451,17 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "contact.notes.p2": { fr: "Vous pouvez aussi nous écrire directement à l'adresse suivante&nbsp;:", en: "You can also write to us directly at:" },
   "contact.brochure.lead": {
-    fr: 'Vous préférez d\'abord explorer nos univers ? <a href="https://www.aritiadesign.com/brochure/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">Consultez notre brochure complète</a>.',
-    en: 'Prefer to explore our aesthetic first? <a href="https://www.aritiadesign.com/brochure/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">Browse our full brochure</a>.'
+    fr: 'Une hésitation ? Prenez le temps de parcourir <a href="https://www.aritiadesign.com/brochure/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">notre brochure complète</a> avant de remplir notre formulaire.',
+    en: 'Still hesitating? Take a moment to browse <a href="https://www.aritiadesign.com/brochure/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">our full brochure</a> before filling out the form.'
   },
   "contact.h2": { fr: "FAISONS<br />CONNAISSANCE", en: "LET'S MEET" },
   "contact.p": {
-    fr: "Votre histoire mérite une attention toute particulière, un regard sensible, et une mise en scène à la hauteur de vos émotions. Je serais honorée de vous accompagner dans la création d'un univers qui vous ressemble.",
-    en: "Your story deserves particular attention, a sensitive eye and staging worthy of your emotions. I would be honoured to guide you in creating a vision that reflects you."
+    fr: "Votre projet mérite une attention toute particulière, un regard sensible, et une mise en scène à la hauteur de vos émotions. Je serais honorée de vous accompagner dans la création d'un univers qui vous ressemble.",
+    en: "Your project deserves particular attention, a sensitive eye and staging worthy of your emotions. I would be honoured to guide you in creating a vision that reflects you."
+  },
+  "contact.p.form": {
+    fr: "Partagez-nous votre vision via le formulaire ci-dessous, chaque demande est étudiée avec soin.",
+    en: "Share your vision with us via the form below — every request is reviewed with care."
   },
   "contact.thanks.h": { fr: "Merci&nbsp;!", en: "Thank you!" },
   "contact.thanks.p": {
