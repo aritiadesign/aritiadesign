@@ -823,7 +823,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "investment.modalites.0.label": { fr: "À la signature", en: "On signature" },
   "investment.modalites.0.desc": { fr: "Acompte non remboursable réservant votre date", en: "Non-refundable deposit securing your date" },
   "investment.modalites.1.step": { fr: "40 %", en: "40%" },
-  "investment.modalites.1.label": { fr: "À J–90", en: "At D–90" },
+  "investment.modalites.1.label": { fr: "À M–3", en: "At M–3" },
   "investment.modalites.1.desc": { fr: "Lancement de la production et des commandes", en: "Production and orders launched" },
   "investment.modalites.2.step": { fr: "30 %", en: "30%" },
   "investment.modalites.2.label": { fr: "À J–15", en: "At D–15" },
