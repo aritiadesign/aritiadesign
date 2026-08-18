@@ -24,5 +24,5 @@ pnpm-debug.log*
 # Claude Code local-only settings
 .claude/settings.local.json
 
-# Backups locaux (SVG avant conversion WebP)
-*.svg-backup/
+# Backups locaux (SVG originaux desktop + mobile)
+*svg-backup/
