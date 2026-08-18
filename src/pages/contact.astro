@@ -39,7 +39,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
         <div class="bg-[#1a1a1a] text-white p-8 md:p-10">
           <p class="font-display tracking-[0.28em] uppercase text-[20px] md:text-[22px] text-white/65" data-i18n="contact.notes.label">Notes</p>
           <p class="mt-5 text-[14px] leading-[1.9] text-white/85" data-i18n="contact.notes.p1">
-            Merci de remplir ce formulaire avec soin. Je reviendrai
+            Merci de compléter ce formulaire avec soin. Nous reviendrons
             vers vous dans les 48 heures ouvrées afin de planifier un
             premier rendez-vous téléphonique, en visio ou en
             présentiel.
@@ -63,31 +63,26 @@ const sent = Astro.url.searchParams.get("sent") === "1";
         <p class="mt-6 md:mt-8 text-[13px] md:text-[14px] leading-[1.85] md:leading-[1.9] text-[var(--color-ink-soft)] max-w-md" data-i18n="contact.p">
           Votre projet mérite une attention toute particulière, un
           regard sensible, et une mise en scène à la hauteur de vos
-          émotions. Je serais honorée de vous accompagner dans la
-          création d'un univers qui vous ressemble.
-        </p>
-
-        {/* Form CTA — invites the visitor to fill in the form below */}
-        <p class="mt-4 md:mt-5 text-[13px] md:text-[14px] leading-[1.85] text-[var(--color-ink-soft)] max-w-md" data-i18n="contact.p.form">
-          Partagez-nous votre vision via le formulaire ci-dessous, chaque demande est étudiée avec soin.
+          émotions. Nous avons hâte de découvrir votre histoire et
+          votre vision. Complétez le formulaire ci-dessous pour
+          planifier notre premier échange.
         </p>
 
         {/* Brochure lead-in — offered just above the form for hesitant visitors */}
         <p class="mt-4 md:mt-5 text-[13px] md:text-[14px] leading-[1.85] italic text-[var(--color-ink-soft)] max-w-md" data-i18n="contact.brochure.lead">
-          Une hésitation ? Prenez le temps de parcourir
+          Vous souhaitez revoir nos prestations et nos tarifs au préalable ? Le Guide des Services 2026 est disponible
           <a
             href="https://www.aritiadesign.com/brochure/"
             target="_blank"
             rel="noopener"
             class="not-italic underline underline-offset-4 hover:text-[#630713] transition"
-          >notre brochure complète</a>
-          avant de remplir notre formulaire.
+          >ici</a>.
         </p>
 
         {sent && (
           <div class="mt-10 p-6 bg-[#f7f5f1] border border-[var(--color-ink)]/10 text-[14px] leading-[1.9] text-[var(--color-ink-soft)]">
             <p class="font-display text-[20px] text-[var(--color-ink)] mb-2" data-i18n="contact.thanks.h">Merci&nbsp;!</p>
-            <p data-i18n="contact.thanks.p">Votre demande a bien été envoyée. Je reviens vers vous sous 48&nbsp;h ouvrées.</p>
+            <p data-i18n="contact.thanks.p">Votre demande a bien été envoyée. Nous revenons vers vous sous 48&nbsp;h ouvrées.</p>
           </div>
         )}
 

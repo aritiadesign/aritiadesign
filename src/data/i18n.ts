@@ -27,7 +27,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "footer.follow":    { fr: "Suivez-nous", en: "Follow us" },
   "footer.credits":   { fr: "Images &amp; vidéos crédits&nbsp;: RNT Motion, Stephen Meslin",
                         en: "Images &amp; video credits: RNT Motion, Stephen Meslin" },
-  "footer.brochure":  { fr: "Brochure des services", en: "Services brochure" },
+  "footer.brochure":  { fr: "Guide des Services 2026", en: "2026 Services Guide" },
   "footer.legal":     { fr: "Mentions légales", en: "Legal notice" },
   "footer.privacy":   { fr: "Politique de confidentialité", en: "Privacy policy" },
   "footer.toTop":     { fr: "Retour en haut", en: "Back to top" },
@@ -446,27 +446,23 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "contact.notes.label": { fr: "Notes", en: "Notes" },
   "contact.notes.p1": {
-    fr: "Merci de remplir ce formulaire avec soin. Je reviendrai vers vous dans les 48 heures ouvrées afin de planifier un premier rendez-vous téléphonique, en visio ou en présentiel.",
-    en: "Please fill in this form with care. I'll get back to you within 48 working hours to schedule a first appointment, by phone, video or in person."
+    fr: "Merci de compléter ce formulaire avec soin. Nous reviendrons vers vous dans les 48 heures ouvrées afin de planifier un premier rendez-vous téléphonique, en visio ou en présentiel.",
+    en: "Please fill in this form with care. We'll get back to you within 48 working hours to schedule a first appointment, by phone, video or in person."
   },
   "contact.notes.p2": { fr: "Vous pouvez aussi nous écrire directement à l'adresse suivante&nbsp;:", en: "You can also write to us directly at:" },
   "contact.brochure.lead": {
-    fr: 'Une hésitation ? Prenez le temps de parcourir <a href="https://www.aritiadesign.com/brochure/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">notre brochure complète</a> avant de remplir notre formulaire.',
-    en: 'Still hesitating? Take a moment to browse <a href="https://www.aritiadesign.com/brochure/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">our full brochure</a> before filling out the form.'
+    fr: 'Vous souhaitez revoir nos prestations et nos tarifs au préalable ? Le Guide des Services 2026 est disponible <a href="https://www.aritiadesign.com/brochure/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">ici</a>.',
+    en: 'Would you like to review our services and rates first? The 2026 Services Guide is available <a href="https://www.aritiadesign.com/brochure/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">here</a>.'
   },
   "contact.h2": { fr: "FAISONS<br />CONNAISSANCE", en: "LET'S MEET" },
   "contact.p": {
-    fr: "Votre projet mérite une attention toute particulière, un regard sensible, et une mise en scène à la hauteur de vos émotions. Je serais honorée de vous accompagner dans la création d'un univers qui vous ressemble.",
-    en: "Your project deserves particular attention, a sensitive eye and staging worthy of your emotions. I would be honoured to guide you in creating a vision that reflects you."
-  },
-  "contact.p.form": {
-    fr: "Partagez-nous votre vision via le formulaire ci-dessous, chaque demande est étudiée avec soin.",
-    en: "Share your vision with us via the form below — every request is reviewed with care."
+    fr: "Votre projet mérite une attention toute particulière, un regard sensible, et une mise en scène à la hauteur de vos émotions. Nous avons hâte de découvrir votre histoire et votre vision. Complétez le formulaire ci-dessous pour planifier notre premier échange.",
+    en: "Your project deserves particular attention, a sensitive eye and staging worthy of your emotions. We can't wait to discover your story and your vision. Fill in the form below to plan our first conversation."
   },
   "contact.thanks.h": { fr: "Merci&nbsp;!", en: "Thank you!" },
   "contact.thanks.p": {
-    fr: "Votre demande a bien été envoyée. Je reviens vers vous sous 48&nbsp;h ouvrées.",
-    en: "Your request has been received. I will get back to you within 48 working hours."
+    fr: "Votre demande a bien été envoyée. Nous revenons vers vous sous 48&nbsp;h ouvrées.",
+    en: "Your request has been received. We will get back to you within 48 working hours."
   },
   "contact.label.lastname":  { fr: "Nom",                    en: "Last name" },
   "contact.label.firstname": { fr: "Prénom",                 en: "First name" },
@@ -835,8 +831,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "investment.cta.btn": { fr: "Demander un devis", en: "Request a quote" },
   "investment.brochure.btn": {
-    fr: "Consulter notre brochure complète",
-    en: "Browse our full brochure"
+    fr: "Consulter le Guide des Services 2026",
+    en: "Browse the 2026 Services Guide"
   },
   "investment.brochure.desc": {
     fr: "Découvrez en détail nos formules, nos prestations à la carte et notre accompagnement dédié aux événements privés et saisonniers.",
