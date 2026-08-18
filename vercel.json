@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/brochure", "destination": "/guide/", "permanent": true },
+    { "source": "/brochure/:path*", "destination": "/guide/:path*", "permanent": true }
+  ]
+}
