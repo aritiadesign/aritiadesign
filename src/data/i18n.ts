@@ -119,8 +119,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
 
   // ─────────────────────────── Home — CTA bas ───────────────────────────
   "home.cta.h2": {
-    fr: "ENSEMBLE, CRÉONS<br />UNE ATMOSPHÈRE<br />QUI VOUS RESSEMBLE",
-    en: "TOGETHER, LET'S CREATE<br />AN ATMOSPHERE<br />THAT REFLECTS YOU"
+    fr: 'ENSEMBLE, CRÉONS<br />UNE <span class="font-italic-serif italic text-[1.15em] leading-none">atmosphère</span><br />QUI VOUS RESSEMBLE',
+    en: 'TOGETHER, LET\'S CREATE<br />AN <span class="font-italic-serif italic text-[1.15em] leading-none">atmosphere</span><br />THAT REFLECTS YOU'
   },
   "home.cta.btn": { fr: "Laissez un message", en: "Leave a message" },
 
