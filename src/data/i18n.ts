@@ -451,8 +451,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "contact.notes.p2": { fr: "Vous pouvez aussi nous écrire directement à l'adresse suivante&nbsp;:", en: "You can also write to us directly at:" },
   "contact.brochure.lead": {
-    fr: 'Vous souhaitez revoir nos prestations et nos tarifs au préalable ? Notre Guide des Services <span class="lining-nums text-[0.87em] font-[350] tracking-[0.015em]" style="font-family:Figtree,sans-serif;font-style:italic">2026</span> est disponible <a href="https://www.aritiadesign.com/guide/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">ici</a>.',
-    en: 'Would you like to review our services and rates first? Our <span class="lining-nums text-[0.87em] font-[350] tracking-[0.015em]" style="font-family:Figtree,sans-serif;font-style:italic">2026</span> Services Guide is available <a href="https://www.aritiadesign.com/guide/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">here</a>.'
+    fr: 'Vous souhaitez revoir nos prestations et nos tarifs au préalable ? Notre Guide des Services <span class="italic-num">2026</span> est disponible <a href="https://www.aritiadesign.com/guide/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">ici</a>.',
+    en: 'Would you like to review our services and rates first? Our <span class="italic-num">2026</span> Services Guide is available <a href="https://www.aritiadesign.com/guide/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">here</a>.'
   },
   "contact.h2": { fr: "FAISONS<br />CONNAISSANCE", en: "LET'S MEET" },
   "contact.p": {
@@ -687,8 +687,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "Choosing Aritia Design means entrusting your celebration to dedicated craftsmanship and a true culture of detail. We translate your expectations with precision to create a singular event that reflects you, and offer your guests a memorable moment."
   },
   "investment.disclaimer": {
-    fr: "Les tarifs présentés correspondent au niveau <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">ESSENTIEL</span>, pour des célébrations intimistes<span class=\"hidden md:inline\"> (≤ 50 invités)</span>. Chaque projet fait l'objet d'un <span class=\"font-medium not-italic text-[var(--color-ink)]\">devis personnalisé</span><span class=\"hidden md:inline\"> selon votre nombre d'invités, votre lieu et l'ampleur de votre projet</span>. Les <span class=\"font-medium not-italic text-[var(--color-ink)]\">échelons supérieurs</span><span class=\"hidden md:inline\">, <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">SIGNATURE</span> et <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">PRESTIGE</span>,</span> sont disponibles sur demande.",
-    en: "The rates shown correspond to our <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">ESSENTIEL</span> tier, for intimate celebrations<span class=\"hidden md:inline\"> (≤ 50 guests)</span>. Each project receives a <span class=\"font-medium not-italic text-[var(--color-ink)]\">personalised quote</span><span class=\"hidden md:inline\"> based on your guest count, your venue and the scale of your project</span>. The <span class=\"font-medium not-italic text-[var(--color-ink)]\">higher tiers</span><span class=\"hidden md:inline\">, <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">SIGNATURE</span> and <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">PRESTIGE</span>,</span> are available on request."
+    fr: "Les tarifs présentés correspondent au niveau <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">ESSENTIEL</span>, pour des célébrations intimistes<span class=\"hidden md:inline\"> (≤ <span class=\"italic-num\">50</span> invités)</span>. Chaque projet fait l'objet d'un <span class=\"font-medium not-italic text-[var(--color-ink)]\">devis personnalisé</span><span class=\"hidden md:inline\"> selon votre nombre d'invités, votre lieu et l'ampleur de votre projet</span>. Les <span class=\"font-medium not-italic text-[var(--color-ink)]\">échelons supérieurs</span><span class=\"hidden md:inline\">, <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">SIGNATURE</span> et <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">PRESTIGE</span>,</span> sont disponibles sur demande.",
+    en: "The rates shown correspond to our <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">ESSENTIEL</span> tier, for intimate celebrations<span class=\"hidden md:inline\"> (≤ <span class=\"italic-num\">50</span> guests)</span>. Each project receives a <span class=\"font-medium not-italic text-[var(--color-ink)]\">personalised quote</span><span class=\"hidden md:inline\"> based on your guest count, your venue and the scale of your project</span>. The <span class=\"font-medium not-italic text-[var(--color-ink)]\">higher tiers</span><span class=\"hidden md:inline\">, <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">SIGNATURE</span> and <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">PRESTIGE</span>,</span> are available on request."
   },
 
   // Tiers (cards)
@@ -696,8 +696,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "investment.tier.0.italic": { fr: "design intégral", en: "integrated design" },
   "investment.tier.0.price": { fr: "À partir de 6 000 €", en: "From €6,000" },
   "investment.tier.0.scope": {
-    fr: "≤50 invités, un espace principal, fleurs de saison, décor sourcé. <br />DA globale incluse (valeur 1 500 €).",
-    en: "≤50 guests, one main space, seasonal flowers, sourced decor. <br />Full creative direction included (worth €1,500)."
+    fr: "≤<span class=\"italic-num\">50</span> invités, un espace principal, fleurs de saison, décor sourcé. <br />DA globale incluse (valeur <span class=\"italic-num\">1 500</span> €).",
+    en: "≤<span class=\"italic-num\">50</span> guests, one main space, seasonal flowers, sourced decor. <br />Full creative direction included (worth €<span class=\"italic-num\">1,500</span>)."
   },
   "investment.tier.0.desc": {
     fr: "L'expérience la plus aboutie : Aritia Design, votre interlocuteur unique pour orchestrer l'intégralité de votre célébration. <span class=\"hidden md:inline\">De la première inspiration à la dernière fleur posée, nous prenons en charge chaque dimension esthétique de votre journée. </span>Vous validez les concepts, nous réalisons le reste. — Structures et décor sur-mesure proposés en option selon vos envies.",
@@ -716,8 +716,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "investment.tier.1.italic": { fr: "décor <span class=\"amp\">&amp;</span> papeterie", en: "decor <span class=\"amp\">&amp;</span> stationery" },
   "investment.tier.1.price": { fr: "À partir de 3 600 €", en: "From €3,600" },
   "investment.tier.1.scope": {
-    fr: "≤50 invités, un espace principal, décor sourcé. <br />Économie de 400 € vs prestations séparées.",
-    en: "≤50 guests, one main space, sourced decor. <br />€400 saving vs separate services."
+    fr: "≤<span class=\"italic-num\">50</span> invités, un espace principal, décor sourcé. <br />Économie de <span class=\"italic-num\">400</span> € vs prestations séparées.",
+    en: "≤<span class=\"italic-num\">50</span> guests, one main space, sourced decor. <br />€<span class=\"italic-num\">400</span> saving vs separate services."
   },
   "investment.tier.1.desc": {
     fr: "Pensé pour une identité visuelle parfaitement alignée. Votre papeterie, votre signalétique et votre décor s'articulent comme un ensemble unique. — Structures sur-mesure proposées en option selon vos envies.",
@@ -735,8 +735,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "investment.tier.2.italic": { fr: "seule", en: "only" },
   "investment.tier.2.price": { fr: "À partir de 1 500 €", en: "From €1,500" },
   "investment.tier.2.scope": {
-    fr: "Déductible à 100 % en cas de signature d'un pack sous 60 jours",
-    en: "100% deductible if a package is signed within 60 days"
+    fr: "Déductible à <span class=\"italic-num\">100</span> % en cas de signature d'un pack sous <span class=\"italic-num\">60</span> jours",
+    en: "<span class=\"italic-num\">100</span>% deductible if a package is signed within <span class=\"italic-num\">60</span> days"
   },
   "investment.tier.2.desc": {
     fr: "Vous repartez avec notre vision et l'orchestrez avec vos propres prestataires. Une option idéale pour celles et ceux qui souhaitent une signature artistique forte sans formule complète.",
