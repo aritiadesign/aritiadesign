@@ -451,8 +451,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "contact.notes.p2": { fr: "Vous pouvez aussi nous écrire directement à l'adresse suivante&nbsp;:", en: "You can also write to us directly at:" },
   "contact.brochure.lead": {
-    fr: 'Vous souhaitez revoir nos prestations et nos tarifs au préalable ? Le Guide des Services <span class="lining-nums text-[0.87em] font-[350] tracking-[0.015em]" style="font-family:Figtree,sans-serif;font-style:italic">2026</span> est disponible <a href="https://www.aritiadesign.com/guide/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">ici</a>.',
-    en: 'Would you like to review our services and rates first? The <span class="lining-nums text-[0.87em] font-[350] tracking-[0.015em]" style="font-family:Figtree,sans-serif;font-style:italic">2026</span> Services Guide is available <a href="https://www.aritiadesign.com/guide/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">here</a>.'
+    fr: 'Vous souhaitez revoir nos prestations et nos tarifs au préalable ? Notre Guide des Services <span class="lining-nums text-[0.87em] font-[350] tracking-[0.015em]" style="font-family:Figtree,sans-serif;font-style:italic">2026</span> est disponible <a href="https://www.aritiadesign.com/guide/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">ici</a>.',
+    en: 'Would you like to review our services and rates first? Our <span class="lining-nums text-[0.87em] font-[350] tracking-[0.015em]" style="font-family:Figtree,sans-serif;font-style:italic">2026</span> Services Guide is available <a href="https://www.aritiadesign.com/guide/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">here</a>.'
   },
   "contact.h2": { fr: "FAISONS<br />CONNAISSANCE", en: "LET'S MEET" },
   "contact.p": {
