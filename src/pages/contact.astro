@@ -70,7 +70,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
 
         {/* Brochure lead-in — offered just above the form for hesitant visitors */}
         <p class="mt-4 md:mt-5 text-[13px] md:text-[14px] leading-[1.85] italic text-[var(--color-ink-soft)]" data-i18n="contact.brochure.lead">
-          Vous souhaitez revoir nos prestations et nos tarifs au préalable ? Le Guide des Services 2026 est disponible
+          Vous souhaitez revoir nos prestations et nos tarifs au préalable ? Le Guide des Services <span class="lining-nums text-[0.87em] font-[350] tracking-[0.015em]" style="font-family:Figtree,sans-serif;font-style:italic">2026</span> est disponible
           <a
             href="https://www.aritiadesign.com/guide/"
             target="_blank"
@@ -210,7 +210,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
           <div class="required-field border-b border-black/15 pb-1">
             <label class="sr-only" for="f-guests" data-i18n="contact.label.guests">Nombre d'invités</label>
             <span class="fake-placeholder" aria-hidden="true">
-              <span data-i18n="contact.ph.guests">NOMBRE D'INVITÉS</span>
+              <span data-i18n="contact.ph.guests">NOMBRE ESTIMÉ D'INVITÉS</span>
             </span>
             <input
               id="f-guests"
@@ -291,14 +291,13 @@ const sent = Astro.url.searchParams.get("sent") === "1";
             <ul id="f-prestation-dropdown" class="options-dropdown" role="listbox" aria-label="Prestation souhaitée" hidden></ul>
           </div>
           <div class="required-field md:col-span-2 border-b border-black/15 pb-1">
-            <label class="sr-only" for="f-desc" data-i18n="contact.label.desc">Description</label>
+            <label class="sr-only" for="f-desc" data-i18n="contact.label.desc">Détails complémentaires</label>
             <span class="fake-placeholder" aria-hidden="true">
-              <span data-i18n="contact.ph.desc">DESCRIPTION</span>
+              <span data-i18n="contact.ph.desc">DÉTAILS COMPLÉMENTAIRES</span>
             </span>
             <textarea
               id="f-desc"
-              name="Description"
-              required
+              name="Détails complémentaires"
               rows="4"
               class="w-full bg-transparent text-[14px] tracking-[0.06em] text-[var(--color-ink)] focus:outline-none py-3 resize-none"
             ></textarea>

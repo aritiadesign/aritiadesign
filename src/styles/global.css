@@ -144,6 +144,13 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Figtree";
+  src: url("/fonts/Figtree-Italic.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
 
 @theme {
   --font-display: "Playfair Display", Georgia, serif;

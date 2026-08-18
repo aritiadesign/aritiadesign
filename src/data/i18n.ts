@@ -451,8 +451,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "contact.notes.p2": { fr: "Vous pouvez aussi nous écrire directement à l'adresse suivante&nbsp;:", en: "You can also write to us directly at:" },
   "contact.brochure.lead": {
-    fr: 'Vous souhaitez revoir nos prestations et nos tarifs au préalable ? Le Guide des Services 2026 est disponible <a href="https://www.aritiadesign.com/guide/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">ici</a>.',
-    en: 'Would you like to review our services and rates first? The 2026 Services Guide is available <a href="https://www.aritiadesign.com/guide/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">here</a>.'
+    fr: 'Vous souhaitez revoir nos prestations et nos tarifs au préalable ? Le Guide des Services <span class="lining-nums text-[0.87em] font-[350] tracking-[0.015em]" style="font-family:Figtree,sans-serif;font-style:italic">2026</span> est disponible <a href="https://www.aritiadesign.com/guide/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">ici</a>.',
+    en: 'Would you like to review our services and rates first? The <span class="lining-nums text-[0.87em] font-[350] tracking-[0.015em]" style="font-family:Figtree,sans-serif;font-style:italic">2026</span> Services Guide is available <a href="https://www.aritiadesign.com/guide/" target="_blank" rel="noopener" class="not-italic underline underline-offset-4 hover:text-[#630713] transition">here</a>.'
   },
   "contact.h2": { fr: "FAISONS<br />CONNAISSANCE", en: "LET'S MEET" },
   "contact.p": {
@@ -472,16 +472,16 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "contact.label.location":{ fr: "Lieu",                    en: "Location" },
   "contact.label.service": { fr: "Prestation",              en: "Service" },
   "contact.label.type":    { fr: "Type d'événement",        en: "Event type" },
-  "contact.label.guests":  { fr: "Nombre d'invités",        en: "Number of guests" },
-  "contact.label.desc":    { fr: "Description",             en: "Description" },
+  "contact.label.guests":  { fr: "Nombre estimé d'invités", en: "Estimated number of guests" },
+  "contact.label.desc":    { fr: "Détails complémentaires", en: "Additional details" },
   "contact.ph.lastname":  { fr: "NOM",                             en: "LAST NAME" },
   "contact.ph.firstname": { fr: "PRÉNOM",                          en: "FIRST NAME" },
   "contact.ph.email":  { fr: "E-MAIL",                          en: "E-MAIL" },
   "contact.ph.phone":  { fr: "TÉLÉPHONE",                       en: "PHONE" },
   "contact.ph.date":   { fr: "DATE DE L'ÉVÉNEMENT",             en: "EVENT DATE" },
   "contact.ph.loc":    { fr: "LIEU DE L'ÉVÉNEMENT",             en: "EVENT LOCATION" },
-  "contact.ph.guests": { fr: "NOMBRE D'INVITÉS",                 en: "NUMBER OF GUESTS" },
-  "contact.ph.desc":   { fr: "DESCRIPTION",                     en: "DESCRIPTION" },
+  "contact.ph.guests": { fr: "NOMBRE ESTIMÉ D'INVITÉS", en: "ESTIMATED NUMBER OF GUESTS" },
+  "contact.ph.desc":   { fr: "DÉTAILS COMPLÉMENTAIRES", en: "ADDITIONAL DETAILS" },
   "contact.opt.service.placeholder": { fr: "PRESTATION SOUHAITÉE", en: "DESIRED SERVICE" },
   "contact.opt.service.0": { fr: "L'Exception — Design intégral",       en: "The Exception — Full Design" },
   "contact.opt.service.1": { fr: "Pack Atmosphère — Identité visuelle",  en: "Atmosphere Pack — Visual Identity" },
@@ -758,8 +758,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   // À la carte
   "investment.alacarte.label": { fr: "✦ À la carte ✦", en: "✦ À la carte ✦" },
   "investment.alacarte.h2": {
-    fr: "<span class=\"tracking-normal\">Une</span> <span class=\"font-italic-serif italic font-light\">prestation</span>,<br /><span class=\"tracking-normal\">un</span> <span class=\"font-italic-serif italic font-light\">univers</span>",
-    en: "<span class=\"tracking-normal\">One</span> <span class=\"font-italic-serif italic font-light\">service</span>,<br /><span class=\"tracking-normal\">one</span> <span class=\"font-italic-serif italic font-light\">signature</span>"
+    fr: "<span class=\"tracking-[0.015em]\">Une</span> <span class=\"font-italic-serif italic font-light\">prestation</span>,<br /><span class=\"tracking-[0.015em]\">un</span> <span class=\"font-italic-serif italic font-light\">univers</span>",
+    en: "<span class=\"tracking-[0.015em]\">One</span> <span class=\"font-italic-serif italic font-light\">service</span>,<br /><span class=\"tracking-[0.015em]\">one</span> <span class=\"font-italic-serif italic font-light\">signature</span>"
   },
   "investment.alacarte.intro": {
     fr: "Pour celles et ceux qui souhaitent confier une partie précise de leur événement. Chaque prestation inclut son concept artistique et son exécution complète.",
