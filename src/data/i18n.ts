@@ -498,6 +498,19 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "contact.opt.type.4": { fr: "Baby Shower",           en: "Baby shower" },
   "contact.opt.type.5": { fr: "Autre",                 en: "Other" },
   "contact.submit": { fr: "Envoyer", en: "Send" },
+  "contact.submit.sent": { fr: "Merci", en: "Thank you" },
+  "contact.error": {
+    fr: "L'envoi n'a pas abouti. Vérifiez votre connexion et réessayez, ou écrivez-nous directement à contact@aritiadesign.com.",
+    en: "Sending failed. Please check your connection and try again, or email us directly at contact@aritiadesign.com."
+  },
+  "contact.error.required": {
+    fr: "Veuillez renseigner tous les champs obligatoires avant d'envoyer.",
+    en: "Please fill in all required fields before sending."
+  },
+  "contact.error.email": {
+    fr: "L'adresse e-mail n'est pas valide.",
+    en: "The email address is invalid."
+  },
 
   // ─────────────────────────── Mentions légales ───────────────────────────
   "legal.h1": {

@@ -87,8 +87,10 @@ const sent = Astro.url.searchParams.get("sent") === "1";
         )}
 
         <form
+          id="f-contact"
           action="https://api.web3forms.com/submit"
           method="POST"
+          novalidate
           class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6"
         >
           <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
@@ -100,7 +102,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
           <div class="required-field border-b border-black/15 pb-1">
             <label class="sr-only" for="f-lastname" data-i18n="contact.label.lastname">Nom</label>
             <span class="fake-placeholder" aria-hidden="true">
-              <span data-i18n="contact.ph.lastname">NOM</span><span class="req-marker">*</span>
+              <span data-i18n="contact.ph.lastname">NOM</span>
             </span>
             <input
               id="f-lastname"
@@ -108,13 +110,13 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               name="Nom"
               required
               autocomplete="family-name"
-              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] text-[var(--color-ink)] focus:outline-none py-3"
+              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.06em] text-[var(--color-ink)] focus:outline-none py-3"
             />
           </div>
           <div class="required-field border-b border-black/15 pb-1">
             <label class="sr-only" for="f-firstname" data-i18n="contact.label.firstname">Prénom</label>
             <span class="fake-placeholder" aria-hidden="true">
-              <span data-i18n="contact.ph.firstname">PRÉNOM</span><span class="req-marker">*</span>
+              <span data-i18n="contact.ph.firstname">PRÉNOM</span>
             </span>
             <input
               id="f-firstname"
@@ -122,13 +124,13 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               name="Prénom"
               required
               autocomplete="given-name"
-              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] text-[var(--color-ink)] focus:outline-none py-3"
+              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.06em] text-[var(--color-ink)] focus:outline-none py-3"
             />
           </div>
           <div class="required-field border-b border-black/15 pb-1">
             <label class="sr-only" for="f-email" data-i18n="contact.label.email">Email</label>
             <span class="fake-placeholder" aria-hidden="true">
-              <span data-i18n="contact.ph.email">E-MAIL</span><span class="req-marker">*</span>
+              <span data-i18n="contact.ph.email">E-MAIL</span>
             </span>
             <input
               id="f-email"
@@ -136,7 +138,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               name="Email"
               required
               autocomplete="email"
-              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] text-[var(--color-ink)] focus:outline-none py-3"
+              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.06em] text-[var(--color-ink)] focus:outline-none py-3"
             />
           </div>
           <div class="border-b border-black/15 pb-1 flex items-center">
@@ -172,13 +174,13 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               name="Téléphone"
               placeholder="TÉLÉPHONE"
               data-i18n-attr="placeholder:contact.ph.phone"
-              class="flex-1 bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3 pl-0 focus:pl-2 transition-[padding] duration-200"
+              class="flex-1 bg-transparent text-[13px] md:text-[14px] tracking-[0.06em] placeholder:text-[11px] md:placeholder:text-[12px] placeholder:tracking-[0.2em] md:placeholder:tracking-[0.22em] placeholder:uppercase placeholder-[var(--color-muted)] focus:outline-none py-3 pl-0 focus:pl-2 transition-[padding] duration-200"
             />
           </div>
           <div class="required-field date-field border-b border-black/15 pb-1 relative">
             <label class="sr-only" for="f-date" data-i18n="contact.label.date">Date</label>
             <span class="fake-placeholder" aria-hidden="true">
-              <span data-i18n="contact.ph.date">DATE DE L'ÉVÉNEMENT</span><span class="req-marker">*</span>
+              <span data-i18n="contact.ph.date">DATE DE L'ÉVÉNEMENT</span>
             </span>
             <input
               id="f-date"
@@ -188,7 +190,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               readonly
               autocomplete="off"
               inputmode="none"
-              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] text-[var(--color-ink)] focus:outline-none py-3 cursor-pointer"
+              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.06em] text-[var(--color-ink)] focus:outline-none py-3 cursor-pointer"
             />
             <div id="f-date-picker" class="date-picker" hidden>
               <div class="dp-header">
@@ -208,7 +210,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
           <div class="required-field border-b border-black/15 pb-1">
             <label class="sr-only" for="f-guests" data-i18n="contact.label.guests">Nombre d'invités</label>
             <span class="fake-placeholder" aria-hidden="true">
-              <span data-i18n="contact.ph.guests">NOMBRE D'INVITÉS</span><span class="req-marker">*</span>
+              <span data-i18n="contact.ph.guests">NOMBRE D'INVITÉS</span>
             </span>
             <input
               id="f-guests"
@@ -217,13 +219,13 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               required
               min="1"
               inputmode="numeric"
-              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] text-[var(--color-ink)] focus:outline-none py-3"
+              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.06em] text-[var(--color-ink)] focus:outline-none py-3"
             />
           </div>
           <div class="required-field md:col-span-2 border-b border-black/15 pb-1">
             <label class="sr-only" for="f-location" data-i18n="contact.label.location">Lieu</label>
             <span class="fake-placeholder" aria-hidden="true">
-              <span data-i18n="contact.ph.loc">LIEU DE L'ÉVÉNEMENT</span><span class="req-marker">*</span>
+              <span data-i18n="contact.ph.loc">LIEU DE L'ÉVÉNEMENT</span>
             </span>
             <input
               id="f-location"
@@ -231,71 +233,91 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               name="Lieu"
               required
               autocomplete="off"
-              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.02em] text-[var(--color-ink)] focus:outline-none py-3"
+              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.06em] text-[var(--color-ink)] focus:outline-none py-3"
             />
             <ul id="f-location-dropdown" class="location-dropdown" role="listbox" aria-label="Suggestions d'adresses"></ul>
           </div>
-          <div class="required-field border-b border-black/15 pb-1">
-            <label class="sr-only" for="f-type" data-i18n="contact.label.type">Type d'événement</label>
+          <div class="required-field border-b border-black/15 pb-1 relative">
+            <label class="sr-only" for="f-type-display" data-i18n="contact.label.type">Type d'événement</label>
             <span class="fake-placeholder" aria-hidden="true">
-              <span data-i18n="contact.opt.type.placeholder">TYPE D'ÉVÉNEMENT</span><span class="req-marker">*</span>
+              <span data-i18n="contact.opt.type.placeholder">TYPE D'ÉVÉNEMENT</span>
             </span>
-            <select
-              id="f-type"
-              name="Type"
-              required
-              class="form-select w-full bg-transparent focus:outline-none py-3 appearance-none"
-            >
+            <input
+              id="f-type-display"
+              type="text"
+              readonly
+              autocomplete="off"
+              inputmode="none"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.06em] text-[var(--color-ink)] focus:outline-none py-3 cursor-pointer"
+            />
+            <select id="f-type" name="Type" required class="sr-only" tabindex="-1" aria-hidden="true">
               <option value="" disabled selected></option>
-              <option style="letter-spacing:0.15em" data-i18n="contact.opt.type.0">Mariage</option>
-              <option style="letter-spacing:0.15em" data-i18n="contact.opt.type.1">Événement saisonnier</option>
-              <option style="letter-spacing:0.15em" data-i18n="contact.opt.type.2">Événements privés</option>
-              <option style="letter-spacing:0.15em" data-i18n="contact.opt.type.3">Anniversaire</option>
-              <option style="letter-spacing:0.15em" data-i18n="contact.opt.type.4">Baby Shower</option>
-              <option style="letter-spacing:0.15em" data-i18n="contact.opt.type.5">Autre</option>
+              <option value="Mariage" data-i18n="contact.opt.type.0">Mariage</option>
+              <option value="Événement saisonnier" data-i18n="contact.opt.type.1">Événement saisonnier</option>
+              <option value="Événements privés" data-i18n="contact.opt.type.2">Événements privés</option>
+              <option value="Anniversaire" data-i18n="contact.opt.type.3">Anniversaire</option>
+              <option value="Baby Shower" data-i18n="contact.opt.type.4">Baby Shower</option>
+              <option value="Autre" data-i18n="contact.opt.type.5">Autre</option>
             </select>
+            <ul id="f-type-dropdown" class="options-dropdown" role="listbox" aria-label="Type d'événement" hidden></ul>
           </div>
-          <div class="required-field border-b border-black/15 pb-1">
-            <label class="sr-only" for="f-prestation" data-i18n="contact.label.service">Prestation</label>
-            <span class="fake-placeholder fake-placeholder-optional" aria-hidden="true">
+          <div class="required-field border-b border-black/15 pb-1 relative">
+            <label class="sr-only" for="f-prestation-display" data-i18n="contact.label.service">Prestation</label>
+            <span class="fake-placeholder" aria-hidden="true">
               <span data-i18n="contact.opt.service.placeholder">PRESTATION SOUHAITÉE</span>
             </span>
-            <select
-              id="f-prestation"
-              name="Prestation"
-              class="form-select w-full bg-transparent focus:outline-none py-3 appearance-none"
-            >
+            <input
+              id="f-prestation-display"
+              type="text"
+              readonly
+              autocomplete="off"
+              inputmode="none"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              class="w-full bg-transparent text-[13px] md:text-[14px] tracking-[0.06em] text-[var(--color-ink)] focus:outline-none py-3 cursor-pointer"
+            />
+            <select id="f-prestation" name="Prestation" required class="sr-only" tabindex="-1" aria-hidden="true">
               <option value="" disabled selected></option>
-              <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.0">L'Exception — Design intégral</option>
-              <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.1">Pack Atmosphère — Identité visuelle</option>
-              <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.2">Direction Artistique Seule</option>
-              <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.3">Papeterie Fine</option>
-              <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.4">Conception Florale</option>
-              <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.5">Décor &amp; Scénographie</option>
-              <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.6">Sur-mesure</option>
+              <option value="L'Exception — Design intégral" data-i18n="contact.opt.service.0">L'Exception — Design intégral</option>
+              <option value="Pack Atmosphère — Identité visuelle" data-i18n="contact.opt.service.1">Pack Atmosphère — Identité visuelle</option>
+              <option value="Direction Artistique Seule" data-i18n="contact.opt.service.2">Direction Artistique Seule</option>
+              <option value="Papeterie Fine" data-i18n="contact.opt.service.3">Papeterie Fine</option>
+              <option value="Conception Florale" data-i18n="contact.opt.service.4">Conception Florale</option>
+              <option value="Décor &amp; Scénographie" data-i18n="contact.opt.service.5">Décor &amp; Scénographie</option>
+              <option value="Sur-mesure" data-i18n="contact.opt.service.6">Sur-mesure</option>
             </select>
+            <ul id="f-prestation-dropdown" class="options-dropdown" role="listbox" aria-label="Prestation souhaitée" hidden></ul>
           </div>
           <div class="required-field md:col-span-2 border-b border-black/15 pb-1">
             <label class="sr-only" for="f-desc" data-i18n="contact.label.desc">Description</label>
             <span class="fake-placeholder" aria-hidden="true">
-              <span data-i18n="contact.ph.desc">DESCRIPTION</span><span class="req-marker">*</span>
+              <span data-i18n="contact.ph.desc">DESCRIPTION</span>
             </span>
             <textarea
               id="f-desc"
               name="Description"
               required
               rows="4"
-              class="w-full bg-transparent text-[14px] tracking-[0.02em] text-[var(--color-ink)] focus:outline-none py-3 resize-none"
+              class="w-full bg-transparent text-[14px] tracking-[0.06em] text-[var(--color-ink)] focus:outline-none py-3 resize-none"
             ></textarea>
           </div>
 
-          <div class="md:col-span-2 pt-4 text-center">
+          <div class="submit-btn-wrap md:col-span-2 pt-4 text-center">
             <button
               type="submit"
-              class="font-script text-[34px] md:text-[42px] text-[var(--color-ink)] hover:opacity-70 transition leading-none"
-              data-i18n="contact.submit"
+              disabled={sent}
+              class="submit-btn font-script text-[34px] md:text-[42px] text-[var(--color-ink)] hover:text-[var(--color-muted)] transition disabled:hover:text-[var(--color-ink)] disabled:cursor-default"
             >
-              Envoyer
+              {sent ? (
+                <span class="inline-block text-left leading-[0.95] rotate-[-11deg] origin-center">
+                  <span class="block">Bien reçu,</span>
+                  <span class="block pl-[0.9em]">à très vite&nbsp;!</span>
+                </span>
+              ) : (
+                "Envoyer"
+              )}
             </button>
           </div>
         </form>
@@ -688,6 +710,225 @@ const sent = Astro.url.searchParams.get("sent") === "1";
 
       input.addEventListener("blur", function () {
         setTimeout(close, 150);
+      });
+    })();
+  </script>
+
+  <script is:inline>
+    /* Custom dropdowns for Type + Prestation — the native <select> stays in
+       the DOM (visually hidden via .sr-only) so the form still submits and
+       the existing type/prestation sync logic keeps working. A readonly
+       input + <ul> mirror its state and provide the styled panel matching
+       the date-picker aesthetic. */
+    (function () {
+      function initDropdown(displayId, selectId, dropdownId) {
+        var displayInput = document.getElementById(displayId);
+        var selectEl = document.getElementById(selectId);
+        var dropdown = document.getElementById(dropdownId);
+        if (!displayInput || !selectEl || !dropdown) return;
+
+        var activeIndex = -1;
+
+        function open() {
+          render();
+          dropdown.hidden = false;
+          dropdown.setAttribute("data-open", "true");
+          displayInput.setAttribute("aria-expanded", "true");
+        }
+        function close() {
+          dropdown.setAttribute("data-open", "false");
+          dropdown.hidden = true;
+          displayInput.setAttribute("aria-expanded", "false");
+          activeIndex = -1;
+        }
+
+        function render() {
+          var options = selectEl.querySelectorAll("option");
+          var html = "";
+          options.forEach(function (opt) {
+            if (!opt.value) return; // skip disabled placeholder
+            var i18n = opt.getAttribute("data-i18n") || "";
+            var isDisabled = opt.disabled ? "true" : "false";
+            var isSelected = opt.value === selectEl.value;
+            var safeVal = opt.value.replace(/"/g, "&quot;");
+            html +=
+              '<li role="option" data-value="' + safeVal + '"' +
+              ' data-disabled="' + isDisabled + '"' +
+              (isSelected ? ' data-active="true"' : '') +
+              (i18n ? ' data-i18n="' + i18n + '"' : '') +
+              '>' + opt.textContent + '</li>';
+          });
+          dropdown.innerHTML = html;
+        }
+
+        function selectByValue(value) {
+          var newOpt = selectEl.querySelector('option[value="' + value.replace(/"/g, '\\"') + '"]');
+          if (!newOpt || newOpt.disabled) return;
+          selectEl.value = value;
+          displayInput.value = newOpt.textContent;
+          selectEl.dispatchEvent(new Event("change", { bubbles: true }));
+          // Update wrapper .has-value state for the fake-placeholder overlay
+          var wrapper = displayInput.closest(".required-field");
+          if (wrapper) wrapper.classList.toggle("has-value", displayInput.value.length > 0);
+          close();
+        }
+
+        function updateDisplay() {
+          var selectedOpt = selectEl.options[selectEl.selectedIndex];
+          displayInput.value = selectedOpt && selectedOpt.value ? selectedOpt.textContent : "";
+          var wrapper = displayInput.closest(".required-field");
+          if (wrapper) wrapper.classList.toggle("has-value", displayInput.value.length > 0);
+        }
+
+        displayInput.addEventListener("mousedown", function (e) {
+          e.preventDefault();
+          if (dropdown.hidden) { open(); } else { close(); }
+        });
+
+        dropdown.addEventListener("mousedown", function (e) {
+          e.preventDefault();
+          var li = e.target.closest("li");
+          if (!li) return;
+          if (li.getAttribute("data-disabled") === "true") return;
+          selectByValue(li.getAttribute("data-value"));
+        });
+
+        displayInput.addEventListener("keydown", function (e) {
+          if (dropdown.hidden && ["ArrowDown","ArrowUp","Enter"," "].indexOf(e.key) !== -1) {
+            e.preventDefault();
+            open();
+            return;
+          }
+          if (dropdown.hidden) return;
+          var lis = Array.from(dropdown.querySelectorAll('li:not([data-disabled="true"])'));
+          if (e.key === "ArrowDown") {
+            e.preventDefault();
+            activeIndex = Math.min(activeIndex + 1, lis.length - 1);
+          } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            activeIndex = Math.max(activeIndex - 1, 0);
+          } else if (e.key === "Enter" && activeIndex >= 0) {
+            e.preventDefault();
+            selectByValue(lis[activeIndex].getAttribute("data-value"));
+            return;
+          } else if (e.key === "Escape") {
+            close();
+            return;
+          } else {
+            return;
+          }
+          lis.forEach(function (li, i) {
+            li.setAttribute("data-active", i === activeIndex ? "true" : "false");
+          });
+        });
+
+        document.addEventListener("click", function (e) {
+          if (!displayInput.contains(e.target) && !dropdown.contains(e.target)) close();
+        });
+
+        // Reflect programmatic changes (e.g. auto-select "Sur-mesure")
+        selectEl.addEventListener("change", updateDisplay);
+        updateDisplay();
+      }
+
+      initDropdown("f-type-display", "f-type", "f-type-dropdown");
+      initDropdown("f-prestation-display", "f-prestation", "f-prestation-dropdown");
+    })();
+  </script>
+
+  <script is:inline>
+    /* Intercept form submission so we can surface a short error message
+       under the Envoyer button if Web3Forms fails (network down, API
+       error, etc.). On success we mirror the native redirect behaviour
+       and navigate to /contact?sent=1 to show the "Merci" state. */
+    (function () {
+      var form = document.getElementById("f-contact");
+      var submitBtn = form && form.querySelector('button[type="submit"]');
+      if (!form || !submitBtn) return;
+
+      function wrapperOf(el) {
+        // For the custom dropdowns, the hidden <select> lives inside the same
+        // .required-field as its display input — same wrapper either way.
+        return el.closest(".required-field");
+      }
+
+      // Clear the star as soon as the user gives the field content
+      function bindClearOnEdit(wrapper) {
+        if (!wrapper || wrapper.__errBound) return;
+        wrapper.__errBound = true;
+        var fields = wrapper.querySelectorAll("input, select, textarea");
+        fields.forEach(function (f) {
+          ["input", "change", "blur"].forEach(function (ev) {
+            f.addEventListener(ev, function () {
+              if ((f.value || "").trim()) wrapper.classList.remove("has-error");
+            });
+          });
+        });
+      }
+
+      // Custom validation — marks every invalid required field with .has-error
+      // so the bordeaux 4-branch star appears next to its placeholder text.
+      // Returns true when the whole form is valid.
+      function validate() {
+        var fields = form.querySelectorAll("input[required], select[required], textarea[required]");
+        var firstInvalid = null;
+        fields.forEach(function (f) {
+          var value = (f.value || "").trim();
+          var wrap = wrapperOf(f);
+          var isInvalid = !value ||
+            (f.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value));
+          if (wrap) {
+            wrap.classList.toggle("has-error", isInvalid);
+            bindClearOnEdit(wrap);
+          }
+          if (isInvalid && !firstInvalid) firstInvalid = f;
+        });
+        if (firstInvalid) {
+          focusField(firstInvalid);
+          return false;
+        }
+        return true;
+      }
+
+      function focusField(el) {
+        if (el.id === "f-type") { var d = document.getElementById("f-type-display"); if (d) el = d; }
+        if (el.id === "f-prestation") { var d2 = document.getElementById("f-prestation-display"); if (d2) el = d2; }
+        try { el.focus(); } catch (_) {}
+        try { el.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (_) {}
+      }
+
+      function showSuccess() {
+        submitBtn.innerHTML =
+          '<span class="inline-block text-left leading-[0.95] rotate-[-11deg] origin-center">' +
+            '<span class="block">Bien reçu,</span>' +
+            '<span class="block pl-[0.9em]">à très vite&nbsp;!</span>' +
+          '</span>';
+        submitBtn.disabled = true;
+        // Prevent re-submission by disabling all fields (visual state stays)
+        form.querySelectorAll("input, select, textarea").forEach(function (el) {
+          el.setAttribute("disabled", "");
+        });
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!validate()) return;
+
+        submitBtn.disabled = true;
+        var data = new FormData(form);
+        fetch(form.action, { method: "POST", body: data })
+          .then(function (res) { return res.json().catch(function () { return { success: res.ok }; }); })
+          .then(function (json) {
+            if (json && json.success) {
+              showSuccess();
+            } else {
+              throw new Error((json && json.message) || "Send failed");
+            }
+          })
+          .catch(function () {
+            // Network / API failure — re-enable so the user can retry.
+            submitBtn.disabled = false;
+          });
       });
     })();
   </script>

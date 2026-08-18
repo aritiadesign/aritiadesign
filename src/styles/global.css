@@ -311,7 +311,7 @@ textarea:-webkit-autofill {
 .form-select {
   color: var(--color-ink);
   font-size: 13px;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.06em;
   text-transform: none;
 }
 @media (min-width: 768px) {
@@ -331,7 +331,7 @@ textarea:-webkit-autofill {
 .form-select option {
   text-transform: none !important;
   font-size: 14px !important;
-  letter-spacing: 0.02em !important;
+  letter-spacing: 0.06em !important;
   color: var(--color-ink) !important;
 }
 
@@ -377,6 +377,16 @@ textarea:-webkit-autofill {
 /* Value present : hide the overlay */
 .required-field.has-value .fake-placeholder {
   opacity: 0;
+}
+
+/* Validation error : a subtle bordeaux tint on the field itself — matches
+   the calendar's burgundy hover language, so the concerned field visually
+   stands out. Fades away automatically when the field gets a value
+   (JS toggles .has-error). */
+.required-field.has-error {
+  background-color: rgba(99, 7, 19, 0.05);
+  border-bottom-color: rgba(99, 7, 19, 0.4);
+  transition: background-color 0.25s ease, border-bottom-color 0.25s ease;
 }
 
 /* Custom date picker — text input is readonly and opens a bespoke calendar
@@ -536,6 +546,64 @@ textarea:-webkit-autofill {
 .location-dropdown li:hover,
 .location-dropdown li[data-active="true"] {
   background: rgba(99, 7, 19, 0.06);
+}
+
+/* "Envoyer" submit button — Haute Couture script font whose capital E has
+   a decorative swash extending well outside the glyph bounding box.
+   Safari clips glyphs at the text bounding box, so we reserve generous
+   padding (2em left for the E's bottom-left flourish, 1em bottom for its
+   under-baseline curl) and force overflow: visible on the button + its
+   direct wrapper so the swash paints even if it slightly escapes.
+   Applies at all states — normal, hover, focus. */
+.submit-btn {
+  display: inline-block;
+  padding: 0.5em 0.6em 1em 2em;
+  line-height: 1.5;
+  overflow: visible;
+}
+/* Parent wrapper must also not clip the swash */
+.submit-btn-wrap { overflow: visible; }
+
+/* Custom dropdown for Type / Prestation — matches the date-picker aesthetic
+   (white panel below the field, subtle border + soft shadow) and the input's
+   letter-spacing so the whole form reads consistently. Disabled options are
+   dimmed, hover uses the burgundy tint like the calendar days. */
+.options-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid rgba(28, 28, 28, 0.12);
+  z-index: 20;
+  max-height: 300px;
+  overflow-y: auto;
+  display: none;
+  margin-top: 4px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+.options-dropdown[data-open="true"] { display: block; }
+.options-dropdown li {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  color: var(--color-ink);
+  list-style: none;
+  border-bottom: 1px solid rgba(28, 28, 28, 0.06);
+}
+@media (min-width: 768px) {
+  .options-dropdown li { font-size: 14px; }
+}
+.options-dropdown li:last-child { border-bottom: none; }
+.options-dropdown li[data-disabled="true"] {
+  color: rgba(28, 28, 28, 0.3);
+  cursor: not-allowed;
+}
+.options-dropdown li:not([data-disabled="true"]):hover,
+.options-dropdown li[data-active="true"]:not([data-disabled="true"]) {
+  background: rgba(99, 7, 19, 0.08);
 }
 
 /* Uniform scrollbar across browsers — thin, discreet, matches the ink palette.
