@@ -271,7 +271,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
               <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.3">Papeterie Fine</option>
               <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.4">Conception Florale</option>
               <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.5">Décor &amp; Scénographie</option>
-              <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.6">Sur devis</option>
+              <option style="letter-spacing:0.15em" data-i18n="contact.opt.service.6">Sur-mesure</option>
             </select>
           </div>
           <div class="required-field md:col-span-2 border-b border-black/15 pb-1">
@@ -495,15 +495,18 @@ const sent = Astro.url.searchParams.get("sent") === "1";
     /* Prestation options depend on Type d'evenement — all fixed formulas
        and single-service packs (indexes 0-5) are wedding-only. For any
        non-wedding type (Saisonnier, Prives, Anniversaire, Baby Shower,
-       Autre) only the 'Sur devis' option (index 6) remains available.
-       For Mariage or empty selection, all 7 options are enabled. */
+       Autre), those 6 options are disabled and 'Sur-mesure' (index 6)
+       is auto-selected — whether the Prestation was empty or previously
+       held a wedding formula. For Mariage or empty Type, all 7 options
+       are enabled and the previous selection is preserved. */
     (function () {
       var typeSel = document.getElementById("f-type");
       var prestSel = document.getElementById("f-prestation");
       if (!typeSel || !prestSel) return;
 
-      // Indexes of the wedding-only options — all except 'Sur devis' (6)
+      // Indexes of the wedding-only options — all except 'Sur-mesure' (6)
       var weddingOnly = [0, 1, 2, 3, 4, 5];
+      var surMesureOpt = prestSel.querySelector('option[data-i18n="contact.opt.service.6"]');
 
       function syncPrestation() {
         var isNonWedding = typeSel.value !== "" && typeSel.value !== "Mariage";
@@ -518,10 +521,10 @@ const sent = Astro.url.searchParams.get("sent") === "1";
             opt.style.color = isNonWedding ? "rgba(28,28,28,0.3)" : "";
           }
         });
-        // If current selection is now disabled, reset it
-        var current = prestSel.selectedOptions[0];
-        if (current && current.disabled) {
-          prestSel.value = "";
+        // Auto-select Sur-mesure for any non-wedding type — whether the
+        // field was empty or held a formula that just got disabled.
+        if (isNonWedding && surMesureOpt && prestSel.value !== surMesureOpt.value) {
+          surMesureOpt.selected = true;
           prestSel.dispatchEvent(new Event("change", { bubbles: true }));
         }
       }
