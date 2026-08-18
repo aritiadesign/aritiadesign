@@ -456,8 +456,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "contact.h2": { fr: "FAISONS<br />CONNAISSANCE", en: "LET'S MEET" },
   "contact.p": {
-    fr: "Votre projet mérite une attention toute particulière, un regard sensible, et une mise en scène à la hauteur de vos émotions. Nous avons hâte de découvrir votre histoire et concevoir un univers qui vous ressemble. Complétez le formulaire ci-dessous pour planifier notre premier échange.",
-    en: "Your project deserves particular attention, a sensitive eye and staging worthy of your emotions. We can't wait to discover your story and design a universe that reflects you. Fill in the form below to plan our first conversation."
+    fr: "Votre projet mérite une attention toute particulière, un regard sensible, et une mise en scène à la hauteur de vos émotions. Nous avons hâte de découvrir votre histoire et façonner un univers qui vous ressemble. Complétez le formulaire ci-dessous pour planifier notre premier échange.",
+    en: "Your project deserves particular attention, a sensitive eye and staging worthy of your emotions. We can't wait to discover your story and shape a universe that reflects you. Fill in the form below to plan our first conversation."
   },
   "contact.thanks.h": { fr: "Merci&nbsp;!", en: "Thank you!" },
   "contact.thanks.p": {
