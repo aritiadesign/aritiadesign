@@ -823,11 +823,11 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "investment.modalites.0.label": { fr: "À la signature", en: "On signature" },
   "investment.modalites.0.desc": { fr: "Acompte non remboursable réservant votre date", en: "Non-refundable deposit securing your date" },
   "investment.modalites.1.step": { fr: "40 %", en: "40%" },
-  "investment.modalites.1.label": { fr: "À M–3", en: "At M–3" },
+  "investment.modalites.1.label": { fr: "Au plus tard à M–3", en: "By M–3 at the latest" },
   "investment.modalites.1.desc": { fr: "Lancement de la production et des commandes", en: "Production and orders launched" },
   "investment.modalites.2.step": { fr: "30 %", en: "30%" },
   "investment.modalites.2.label": { fr: "À J–15", en: "At D–15" },
-  "investment.modalites.2.desc": { fr: "Solde avant l'installation finale", en: "Balance due before final installation" },
+  "investment.modalites.2.desc": { fr: "Solde final avant l'installation ou la livraison des éléments.", en: "Final balance due before installation or delivery of items." },
   "investment.modalites.note": {
     fr: "— TVA non applicable, art. 293 B du CGI —",
     en: "— VAT not applicable, art. 293 B of the French Tax Code —"
