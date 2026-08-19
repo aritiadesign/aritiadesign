@@ -514,20 +514,21 @@ const sent = Astro.url.searchParams.get("sent") === "1";
   </script>
 
   <script is:inline>
-    /* Prestation options depend on Type d'evenement — all fixed formulas
-       and single-service packs (indexes 0-5) are wedding-only. For any
-       non-wedding type (Saisonnier, Prives, Anniversaire, Baby Shower,
-       Autre), those 6 options are disabled and 'Sur-mesure' (index 6)
-       is auto-selected — whether the Prestation was empty or previously
-       held a wedding formula. For Mariage or empty Type, all 7 options
-       are enabled and the previous selection is preserved. */
+    /* Prestation options depend on Type d'evenement — only the two full
+       packages (L'Exception, index 0 and Pack Atmosphère, index 1) are
+       wedding-only. For any non-wedding type (Saisonnier, Prives,
+       Anniversaire, Baby Shower, Autre) those 2 options are disabled;
+       the other 5 (Direction Artistique Seule, Papeterie Fine,
+       Conception Florale, Décor & Scénographie, Sur-mesure) stay
+       selectable. If the current selection becomes disabled, we auto-
+       switch it to Sur-mesure to keep the form valid. */
     (function () {
       var typeSel = document.getElementById("f-type");
       var prestSel = document.getElementById("f-prestation");
       if (!typeSel || !prestSel) return;
 
-      // Indexes of the wedding-only options — all except 'Sur-mesure' (6)
-      var weddingOnly = [0, 1, 2, 3, 4, 5];
+      // Full packages — disabled for non-wedding events
+      var weddingOnly = [0, 1];
       var surMesureOpt = prestSel.querySelector('option[data-i18n="contact.opt.service.6"]');
 
       function syncPrestation() {
@@ -543,9 +544,10 @@ const sent = Astro.url.searchParams.get("sent") === "1";
             opt.style.color = isNonWedding ? "rgba(28,28,28,0.3)" : "";
           }
         });
-        // Auto-select Sur-mesure for any non-wedding type — whether the
-        // field was empty or held a formula that just got disabled.
-        if (isNonWedding && surMesureOpt && prestSel.value !== surMesureOpt.value) {
+        // If the current selection just became disabled, swap to Sur-mesure
+        // so the form stays valid.
+        var currentOpt = prestSel.options[prestSel.selectedIndex];
+        if (isNonWedding && currentOpt && currentOpt.disabled && surMesureOpt) {
           surMesureOpt.selected = true;
           prestSel.dispatchEvent(new Event("change", { bubbles: true }));
         }
