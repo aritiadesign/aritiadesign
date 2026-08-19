@@ -27,7 +27,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "footer.follow":    { fr: "Suivez-nous", en: "Follow us" },
   "footer.credits":   { fr: "Images &amp; vidéos crédits&nbsp;: RNT Motion, Stephen Meslin",
                         en: "Images &amp; video credits: RNT Motion, Stephen Meslin" },
-  "footer.brochure":  { fr: "Guide des Services 2026", en: "2026 Services Guide" },
+  "footer.brochure":  { fr: "Guide des Services", en: "Services Guide" },
   "footer.legal":     { fr: "Mentions légales", en: "Legal notice" },
   "footer.privacy":   { fr: "Politique de confidentialité", en: "Privacy policy" },
   "footer.toTop":     { fr: "Retour en haut", en: "Back to top" },
@@ -687,8 +687,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "Choosing Aritia Design means entrusting your celebration to dedicated craftsmanship and a true culture of detail. We translate your expectations with precision to create a singular event that reflects you, and offer your guests a memorable moment."
   },
   "investment.disclaimer": {
-    fr: "Les tarifs affichés marquent le point de départ de notre <span class=\"md:font-medium md:not-italic md:text-[var(--color-ink)]\">gamme</span> <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">ESSENTIEL</span>. Les <span class=\"md:font-medium md:not-italic md:text-[var(--color-ink)]\">gammes supérieures</span> <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">SIGNATURE</span> et <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">PRESTIGE</span> sont quant à elles détaillées dans notre <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">Guide des Services 2026</span>. Chaque projet étant unique, un <span class=\"font-medium not-italic text-[var(--color-ink)]\">devis personnalisé</span> vous sera proposé en fonction de l'ampleur de votre événement,<span class=\"hidden md:inline\"><br /></span> du nombre d'invités et de la complexité logistique.",
-    en: "The rates shown mark the starting point of our <span class=\"md:font-medium md:not-italic md:text-[var(--color-ink)]\">ESSENTIEL range</span>. The <span class=\"md:font-medium md:not-italic md:text-[var(--color-ink)]\">higher ranges</span> <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">SIGNATURE</span> and <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">PRESTIGE</span> are detailed in our <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">2026 Services Guide</span>. As every project is unique, a <span class=\"font-medium not-italic text-[var(--color-ink)]\">personalised quote</span> will be provided based on the scale of your event,<span class=\"hidden md:inline\"><br /></span> the number of guests and the logistical complexity."
+    fr: "Les tarifs affichés correspondent à notre gamme d'entrée : <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">ESSENTIEL</span>. Les gammes supérieures <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">SIGNATURE</span> et <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">PRESTIGE</span>, comme le reste de nos offres, sont détaillées dans notre <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">Guide des Services</span>. <span class=\"font-medium not-italic text-[var(--color-ink)]\">Votre devis</span> varie selon l'ampleur du projet, sa complexité logistique et votre nombre d'invités.",
+    en: "The rates shown correspond to our entry range: <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">ESSENTIEL</span>. The higher ranges <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">SIGNATURE</span> and <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">PRESTIGE</span>, as well as the rest of our offers, are detailed in our <span class=\"font-medium not-italic tracking-[0.04em] text-[var(--color-ink)]\">Services Guide</span>. <span class=\"font-medium not-italic text-[var(--color-ink)]\">Your quote</span> varies according to the scale of the project, its logistical complexity and your guest count."
   },
 
   // Tiers (cards)
@@ -844,8 +844,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "investment.cta.btn": { fr: "Demander un devis", en: "Request a quote" },
   "investment.brochure.btn": {
-    fr: "Consulter le Guide des Services 2026",
-    en: "Browse the 2026 Services Guide"
+    fr: "Consulter le Guide des Services",
+    en: "Browse the Services Guide"
   },
   "investment.brochure.desc": {
     fr: "Découvrez en détail nos formules, nos prestations à la carte et notre accompagnement dédié aux événements privés et saisonniers.",
