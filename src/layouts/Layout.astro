@@ -278,11 +278,18 @@ const jsonLd = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL} />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=3" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=3" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3" />
+    {/* Favicon — SVG has an embedded prefers-color-scheme rule that swaps
+        black to white in dark mode automatically. The PNGs are static, so we
+        provide two sets (light + dark) linked via media queries. */}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=4" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32-dark.png?v=4" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=4" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192-dark.png?v=4" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png?v=4" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512-dark.png?v=4" media="(prefers-color-scheme: dark)" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4" media="(prefers-color-scheme: light)" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-dark.png?v=4" media="(prefers-color-scheme: dark)" />
     <link rel="preload" href="/fonts/PlayfairDisplay.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/fonts/TaiHeritagePro-Regular.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/fonts/Raleway.ttf" as="font" type="font/ttf" crossorigin />
