@@ -303,6 +303,25 @@ const sent = Astro.url.searchParams.get("sent") === "1";
             ></textarea>
           </div>
 
+          <!-- Consentement RGPD : obligatoire pour conformite legale -->
+          <div class="consent-field md:col-span-2 pt-2 flex items-start gap-3">
+            <input
+              id="f-consent"
+              type="checkbox"
+              name="Consentement RGPD"
+              value="Oui"
+              required
+              class="mt-[3px] w-[14px] h-[14px] accent-[var(--color-ink)] flex-shrink-0 cursor-pointer"
+            />
+            <label
+              for="f-consent"
+              data-i18n="contact.consent.label"
+              class="text-[11px] md:text-[11.5px] leading-[1.5] text-[var(--color-muted)] tracking-[0.02em] cursor-pointer"
+            >
+              J'accepte que mes données personnelles soient traitées par Aritia Design dans le cadre du suivi de ma demande, conformément à la <a href="/politique-confidentialite" class="underline underline-offset-4 hover:opacity-70">politique de confidentialité</a>.
+            </label>
+          </div>
+
           <div class="submit-btn-wrap md:col-span-2 pt-4 text-center">
             <button
               type="submit"
@@ -850,7 +869,8 @@ const sent = Astro.url.searchParams.get("sent") === "1";
       function wrapperOf(el) {
         // For the custom dropdowns, the hidden <select> lives inside the same
         // .required-field as its display input — same wrapper either way.
-        return el.closest(".required-field");
+        // Checkbox consent RGPD lives in .consent-field.
+        return el.closest(".required-field") || el.closest(".consent-field");
       }
 
       // Clear the star as soon as the user gives the field content
@@ -861,7 +881,8 @@ const sent = Astro.url.searchParams.get("sent") === "1";
         fields.forEach(function (f) {
           ["input", "change", "blur"].forEach(function (ev) {
             f.addEventListener(ev, function () {
-              if ((f.value || "").trim()) wrapper.classList.remove("has-error");
+              var ok = f.type === "checkbox" ? f.checked : !!(f.value || "").trim();
+              if (ok) wrapper.classList.remove("has-error");
             });
           });
         });
@@ -876,8 +897,13 @@ const sent = Astro.url.searchParams.get("sent") === "1";
         fields.forEach(function (f) {
           var value = (f.value || "").trim();
           var wrap = wrapperOf(f);
-          var isInvalid = !value ||
-            (f.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value));
+          var isInvalid;
+          if (f.type === "checkbox") {
+            isInvalid = !f.checked;
+          } else {
+            isInvalid = !value ||
+              (f.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value));
+          }
           if (wrap) {
             wrap.classList.toggle("has-error", isInvalid);
             bindClearOnEdit(wrap);

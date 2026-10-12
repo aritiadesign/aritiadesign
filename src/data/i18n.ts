@@ -497,6 +497,10 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "contact.opt.type.3": { fr: "Anniversaire",          en: "Birthday / Anniversary" },
   "contact.opt.type.4": { fr: "Baby Shower",           en: "Baby shower" },
   "contact.opt.type.5": { fr: "Autre",                 en: "Other" },
+  "contact.consent.label": {
+    fr: "J'accepte que mes données personnelles soient traitées par Aritia Design dans le cadre du suivi de ma demande, conformément à la <a href=\"/politique-confidentialite\" class=\"underline underline-offset-4 hover:opacity-70\">politique de confidentialité</a>.",
+    en: "I agree that my personal data may be processed by Aritia Design to handle my request, in accordance with the <a href=\"/politique-confidentialite\" class=\"underline underline-offset-4 hover:opacity-70\">privacy policy</a>."
+  },
   "contact.submit": { fr: "Envoyer", en: "Send" },
   "contact.submit.sent": { fr: "Merci", en: "Thank you" },
   "contact.error": {
@@ -517,7 +521,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     fr: "MENTIONS <span class=\"font-italic-serif italic font-light\">légales</span>",
     en: "LEGAL <span class=\"font-italic-serif italic font-light\">notice</span>"
   },
-  "legal.updated": { fr: "Dernière mise à jour&nbsp;<span class=\"text-black/25\">✦</span> mai 2026", en: "Last updated <span class=\"text-black/25\">✦</span> May 2026" },
+  "legal.updated": { fr: "Dernière mise à jour&nbsp;<span class=\"text-black/25\">✦</span> octobre 2026", en: "Last updated <span class=\"text-black/25\">✦</span> October 2026" },
   "legal.editor.h2": { fr: "Éditeur du site", en: "Site editor" },
   "legal.editor.p":  {
     fr: 'Le présent site internet <a href="https://aritiadesign.com" class="underline underline-offset-4 hover:opacity-70">aritiadesign.com</a> est édité par&nbsp;:',
@@ -583,7 +587,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     fr: "POLITIQUE<br /><span class=\"font-italic-serif italic font-light\">de Confidentialité</span>",
     en: "PRIVACY<br /><span class=\"font-italic-serif italic font-light\">Policy</span>"
   },
-  "privacy.updated": { fr: "Dernière mise à jour&nbsp;<span class=\"text-black/25\">✦</span> mai 2026", en: "Last updated <span class=\"text-black/25\">✦</span> May 2026" },
+  "privacy.updated": { fr: "Dernière mise à jour&nbsp;<span class=\"text-black/25\">✦</span> octobre 2026", en: "Last updated <span class=\"text-black/25\">✦</span> October 2026" },
   "privacy.intro": {
     fr: "Aritia Design accorde une importance particulière à la protection de vos données personnelles. La présente politique décrit la manière dont vos informations sont collectées, utilisées et protégées lorsque vous naviguez sur <a href=\"https://aritiadesign.com\" class=\"underline underline-offset-4 hover:opacity-70\">aritiadesign.com</a> ou interagissez avec ses services, conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi française «&nbsp;Informatique et Libertés&nbsp;».",
     en: "Aritia Design pays particular attention to the protection of your personal data. This policy describes how your information is collected, used and protected when you browse <a href=\"https://aritiadesign.com\" class=\"underline underline-offset-4 hover:opacity-70\">aritiadesign.com</a> or interact with its services, in accordance with the General Data Protection Regulation (GDPR) and the French \"Informatique et Libertés\" law."
@@ -626,8 +630,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   },
   "privacy.sub.h2": { fr: "Sous-traitants et destinataires", en: "Processors and recipients" },
   "privacy.sub.p":  {
-    fr: "Vos données sont accessibles uniquement à Aritia Design. Pour assurer le fonctionnement du site et du formulaire, nous utilisons les services suivants&nbsp;:",
-    en: "Your data is accessible only to Aritia Design. To run the site and the form, we use the following services:"
+    fr: "Vos données sont accessibles uniquement à Aritia Design. Pour assurer le fonctionnement du site, du formulaire et du suivi commercial de votre demande, nous faisons appel aux sous-traitants suivants&nbsp;:",
+    en: "Your data is accessible only to Aritia Design. To run the site, the form and the commercial follow-up of your request, we rely on the following processors:"
   },
   "privacy.sub.li1": {
     fr: "<strong>Vercel Inc.</strong> — hébergement du site (États-Unis, transfert encadré par les Clauses Contractuelles Types de la Commission européenne).",
@@ -636,6 +640,10 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "privacy.sub.li2": {
     fr: "<strong>Web3Forms</strong> — traitement des soumissions du formulaire de contact, avec acheminement des données vers notre adresse email.",
     en: "<strong>Web3Forms</strong> — processing of contact form submissions, with data routed to our email address."
+  },
+  "privacy.sub.li3": {
+    fr: "<strong>Supabase Inc.</strong> — base de données managée utilisée par notre outil interne de suivi commercial pour conserver les demandes reçues et piloter la relation prospect (hébergement région Union européenne).",
+    en: "<strong>Supabase Inc.</strong> — managed database used by our internal commercial follow-up tool to store received requests and manage the prospect relationship (European Union hosting region)."
   },
   "privacy.cookies.h2": { fr: "Cookies", en: "Cookies" },
   "privacy.cookies.p": {
