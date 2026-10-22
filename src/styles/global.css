@@ -411,17 +411,25 @@ textarea:-webkit-autofill {
 }
 
 /* Fleche a cote du bouton Envoyer : rotation 90deg pour pointer vers la droite.
-   Taille proportionnelle au texte via 1em (~34-42px selon breakpoint). */
+   On reserve l'espace horizontal apres rotation en utilisant une width > height
+   (le navigateur applique la rotation sur l'element rendu, pas sur sa box). */
 .submit-arrow {
   display: inline-block;
-  width: 0.5em;
+  width: 0.55em;
   height: 0.9em;
+  color: currentColor;
+  fill: currentColor;
+  flex-shrink: 0;
   transform: rotate(90deg);
   transform-origin: center;
-  flex-shrink: 0;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s ease;
+  margin-left: 0.35em;
+  margin-right: 0.1em;
+  vertical-align: baseline;
+  overflow: visible;
 }
-.submit-btn:hover .submit-arrow { transform: rotate(90deg) translateY(-4px); }
+.submit-arrow path { fill: currentColor; }
+.submit-btn:hover .submit-arrow { transform: rotate(90deg) translateY(-5px); }
 
 /* Consentement RGPD : rend la checkbox bien visible (fond blanc + bordure sombre).
    Sans ce style, la checkbox native est quasi invisible sur fond blanc. */
