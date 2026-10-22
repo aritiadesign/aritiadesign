@@ -410,6 +410,45 @@ textarea:-webkit-autofill {
   transition: background-color 0.25s ease, border-bottom-color 0.25s ease;
 }
 
+/* Consentement RGPD : rend la checkbox bien visible (fond blanc + bordure sombre).
+   Sans ce style, la checkbox native est quasi invisible sur fond blanc. */
+.consent-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  background: #ffffff;
+  border: 1.5px solid rgba(28, 28, 28, 0.4);
+  border-radius: 2px;
+  position: relative;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+.consent-checkbox:hover { border-color: var(--color-ink); }
+.consent-checkbox:checked {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+}
+.consent-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid #ffffff;
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+}
+.consent-field.has-error .consent-checkbox {
+  border-color: rgba(99, 7, 19, 0.7);
+  background-color: rgba(99, 7, 19, 0.08);
+  animation: consent-shake 0.4s ease;
+}
+.consent-field.has-error label { color: rgba(99, 7, 19, 0.85); }
+@keyframes consent-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+}
+
 /* Custom date picker — text input is readonly and opens a bespoke calendar
    overlay when clicked. No native date picker involved, so no browser can
    auto-fill today's date. Visual style mimics a clean editorial calendar. */
