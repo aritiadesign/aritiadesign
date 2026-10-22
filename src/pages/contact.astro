@@ -937,6 +937,37 @@ const sent = Astro.url.searchParams.get("sent") === "1";
         });
       }
 
+      /* Fire-and-forget : POST vers le webhook Aritia Atelier pour creer automatiquement
+         un prospect dans le CRM prive. Non bloquant pour l'experience utilisateur. */
+      function pushToAtelier(data) {
+        try {
+          var ATELIER_URL = "https://aritia-atelier.vercel.app/api/prospect-webhook";
+          var ATELIER_SECRET = "ar1t1a-s1te-pr0d-2026";
+          var nom = (data.get("Nom") || "").trim();
+          var prenom = (data.get("Prénom") || "").trim();
+          var coupleName = prenom && nom ? (prenom + " " + nom) : (prenom || nom);
+          var invitesRaw = (data.get("Nombre d'invités") || "").toString().trim();
+          var invites = invitesRaw ? parseInt(invitesRaw.replace(/[^0-9]/g, ""), 10) || null : null;
+          var payload = {
+            couple: coupleName,
+            email: (data.get("Email") || "").trim(),
+            phone: (data.get("Téléphone") || "").trim() || null,
+            type: (data.get("Type") || "Mariage").trim(),
+            invites: invites,
+            venue: (data.get("Lieu") || "").trim() || null,
+            event_date: (data.get("Date") || "").trim() || null,
+            brief: (data.get("Détails complémentaires") || "").trim() || null,
+            source: "site-contact-form",
+          };
+          fetch(ATELIER_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "X-Aritia-Webhook-Secret": ATELIER_SECRET },
+            body: JSON.stringify(payload),
+            keepalive: true,
+          }).catch(function () { /* silencieux */ });
+        } catch (_) { /* silencieux */ }
+      }
+
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         if (!validate()) return;
@@ -947,6 +978,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
           .then(function (res) { return res.json().catch(function () { return { success: res.ok }; }); })
           .then(function (json) {
             if (json && json.success) {
+              pushToAtelier(data);
               showSuccess();
             } else {
               throw new Error((json && json.message) || "Send failed");
