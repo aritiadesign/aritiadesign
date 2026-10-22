@@ -326,7 +326,7 @@ const sent = Astro.url.searchParams.get("sent") === "1";
             <button
               type="submit"
               disabled={sent}
-              class="submit-btn font-script text-[34px] md:text-[42px] text-[var(--color-ink)] hover:text-[var(--color-muted)] transition disabled:hover:text-[var(--color-ink)] disabled:cursor-default"
+              class="submit-btn font-script text-[34px] md:text-[42px] text-[var(--color-ink)] hover:text-[var(--color-muted)] transition disabled:hover:text-[var(--color-ink)] disabled:cursor-default inline-flex items-center justify-center gap-3"
             >
               {sent ? (
                 <span class="inline-block text-left leading-[0.95] rotate-[-11deg] origin-center">
@@ -334,7 +334,17 @@ const sent = Astro.url.searchParams.get("sent") === "1";
                   <span class="block pl-[0.9em]">à très vite&nbsp;!</span>
                 </span>
               ) : (
-                "Envoyer"
+                <>
+                  <span>Envoyer</span>
+                  <svg
+                    class="submit-arrow"
+                    viewBox="0 0 442 793"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M442,240c-48.43-2.43-97.83-17.78-138.52-43.98-16.1-10.37-31.48-28.88-52.4-16.44-5,2.97-13.08,13.31-13.08,18.92v594.5h-34c-.27-.73,1-1.2,1-1.5V204.5c0-11.84-9.42-24.9-20.96-28.04-18.54-5.05-31.93,10.88-46.13,19.96C97.23,222.43,48.38,237.78,0,240v-32.5c.63-.99,1.38-1.29,2.5-1.5,4.69-.86,12.31-.38,17.86-1.14,50.4-6.91,110.18-33.41,142.61-73.39C193.06,94.4,203.87,47.09,205,0h31.5c3.05,5.87,1.01,14.58,1.51,21.49,7.59,105.17,82.63,169.13,183.62,183.38,5.44.77,13.07.26,17.87,1.13,1.12.2,1.87.51,2.5,1.5v32.5Z"/>
+                  </svg>
+                </>
               )}
             </button>
           </div>
