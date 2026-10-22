@@ -420,7 +420,7 @@ textarea:-webkit-autofill {
   color: currentColor;
   fill: currentColor;
   flex-shrink: 0;
-  transform: rotate(90deg);
+  transform: translateY(-0.22em) rotate(90deg);
   transform-origin: center;
   transition: transform 0.25s ease;
   margin-left: 0.35em;
@@ -429,7 +429,7 @@ textarea:-webkit-autofill {
   overflow: visible;
 }
 .submit-arrow path { fill: currentColor; }
-.submit-btn:hover .submit-arrow { transform: rotate(90deg) translateY(-5px); }
+.submit-btn:hover .submit-arrow { transform: translateY(-0.22em) rotate(90deg) translateY(-5px); }
 
 /* Consentement RGPD : rend la checkbox bien visible (fond blanc + bordure sombre).
    Sans ce style, la checkbox native est quasi invisible sur fond blanc. */
