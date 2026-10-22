@@ -410,22 +410,29 @@ textarea:-webkit-autofill {
   transition: background-color 0.25s ease, border-bottom-color 0.25s ease;
 }
 
-/* Bouton Envoyer : SVG calligraphie integrale (texte 'Envoyer' + fleche). */
+/* Bouton Envoyer : SVG calligraphie integrale (texte 'Envoyer' + fleche).
+   Taille calee pour matcher la hauteur du mot 'Envoyer' en Playfair script 34/42px. */
 .submit-btn-svg {
   display: block;
-  width: 240px;
+  width: 130px;
   height: auto;
   color: currentColor;
   fill: currentColor;
   transition: transform 0.3s ease;
 }
 .submit-btn-svg path { fill: currentColor; }
-.submit-btn:hover .submit-btn-svg { transform: translateX(6px); }
+/* Fleche seule : couleur attenuee (muted) + opacite reduite pour effet subtil */
+.submit-btn-svg .arrow-glyph {
+  fill: var(--color-muted);
+  opacity: 0.55;
+}
+.submit-btn:hover .submit-btn-svg { transform: translateX(4px); }
+.submit-btn:hover .submit-btn-svg .arrow-glyph { opacity: 0.75; }
 @media (min-width: 768px) {
-  .submit-btn-svg { width: 300px; }
+  .submit-btn-svg { width: 160px; }
 }
 @media (min-width: 1024px) {
-  .submit-btn-svg { width: 340px; }
+  .submit-btn-svg { width: 170px; }
 }
 
 /* Consentement RGPD : rend la checkbox bien visible (fond blanc + bordure sombre).
