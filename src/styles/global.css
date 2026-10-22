@@ -421,13 +421,18 @@ textarea:-webkit-autofill {
   transition: transform 0.3s ease;
 }
 .submit-btn-svg path { fill: currentColor; }
-/* Fleche seule : couleur attenuee (muted) + opacite 30% pour effet discret */
+/* Fleche seule : couleur attenuee (muted) + opacite 10% pour effet tres discret.
+   Au hover, 'Envoyer' et la fleche prennent la MEME opacite / couleur (ink). */
 .submit-btn-svg .arrow-glyph {
   fill: var(--color-muted);
-  opacity: 0.30;
+  opacity: 0.10;
+  transition: opacity 0.3s ease, fill 0.3s ease;
 }
 .submit-btn:hover .submit-btn-svg { transform: translateX(4px); }
-.submit-btn:hover .submit-btn-svg .arrow-glyph { opacity: 0.50; }
+.submit-btn:hover .submit-btn-svg .arrow-glyph {
+  opacity: 1;
+  fill: currentColor;
+}
 @media (min-width: 768px) {
   .submit-btn-svg { width: 210px; }
 }
