@@ -410,26 +410,23 @@ textarea:-webkit-autofill {
   transition: background-color 0.25s ease, border-bottom-color 0.25s ease;
 }
 
-/* Fleche a cote du bouton Envoyer : rotation 90deg pour pointer vers la droite.
-   On reserve l'espace horizontal apres rotation en utilisant une width > height
-   (le navigateur applique la rotation sur l'element rendu, pas sur sa box). */
-.submit-arrow {
-  display: inline-block;
-  width: 0.55em;
-  height: 0.9em;
+/* Bouton Envoyer : SVG calligraphie integrale (texte 'Envoyer' + fleche). */
+.submit-btn-svg {
+  display: block;
+  width: 240px;
+  height: auto;
   color: currentColor;
   fill: currentColor;
-  flex-shrink: 0;
-  transform: translateY(-0.22em) rotate(90deg);
-  transform-origin: center;
-  transition: transform 0.25s ease;
-  margin-left: 0.35em;
-  margin-right: 0.1em;
-  vertical-align: baseline;
-  overflow: visible;
+  transition: transform 0.3s ease;
 }
-.submit-arrow path { fill: currentColor; }
-.submit-btn:hover .submit-arrow { transform: translateY(-0.22em) rotate(90deg) translateY(-5px); }
+.submit-btn-svg path { fill: currentColor; }
+.submit-btn:hover .submit-btn-svg { transform: translateX(6px); }
+@media (min-width: 768px) {
+  .submit-btn-svg { width: 300px; }
+}
+@media (min-width: 1024px) {
+  .submit-btn-svg { width: 340px; }
+}
 
 /* Consentement RGPD : rend la checkbox bien visible (fond blanc + bordure sombre).
    Sans ce style, la checkbox native est quasi invisible sur fond blanc. */
