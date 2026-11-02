@@ -1,18 +1,35 @@
-<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;background:#1a1a1a;font-family:'Raleway',Arial,Helvetica,sans-serif;color:#ffffff;width:620px;">
+<style>
+  @media only screen and (max-width: 500px) {
+    .sig-table { width: 100% !important; max-width: 100% !important; }
+    .sig-cell-wrap { padding: 24px 20px 20px 20px !important; }
+    .sig-logo-cell {
+      display: block !important;
+      width: 100% !important;
+      padding: 0 0 20px 0 !important;
+      border-right: 0 !important;
+      border-bottom: 1px solid rgba(255,255,255,0.14) !important;
+      text-align: center !important;
+    }
+    .sig-logo-cell img { width: 140px !important; height: auto !important; margin: 0 auto !important; }
+    .sig-text-cell { display: block !important; width: 100% !important; padding: 20px 0 0 0 !important; }
+    .sig-footer-cell { padding: 10px 20px 12px 20px !important; }
+  }
+</style>
+<table class="sig-table" cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;background:#1a1a1a;max-width:620px;font-family:'Raleway',Arial,Helvetica,sans-serif;color:#ffffff;width:620px;">
 
     <!-- BLOC PRINCIPAL : logo + identité -->
     <tr>
-      <td style="padding:36px 36px 28px 36px;">
+      <td class="sig-cell-wrap" style="padding:36px 36px 28px 36px;">
         <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;width:100%;">
-          <tr>
+          <tr class="sig-row">
 
             <!-- Colonne logo (monogram + ARITIA DESIGN stacked, blanc) -->
-            <td valign="middle" align="center" style="padding:0 32px 0 0;border-right:1px solid rgba(255,255,255,0.14);width:200px;">
+            <td class="sig-logo-cell" valign="middle" align="center" style="padding:0 32px 0 0;border-right:1px solid rgba(255,255,255,0.14);width:200px;">
               <img src="https://www.aritiadesign.com/images/signature-logo-white.png" alt="Aritia Design" width="180" style="display:block;margin:0 auto;width:180px;height:auto;" />
             </td>
 
             <!-- Colonne texte -->
-            <td valign="middle" style="padding:0 0 0 36px;">
+            <td class="sig-text-cell" valign="middle" style="padding:0 0 0 36px;">
               <!-- Marque (Cormorant Garamond, uppercase, letter-spacing éditorial) -->
               <div style="font-family:'Cormorant Garamond','EB Garamond',Garamond,Georgia,serif;font-size:26px;font-weight:500;color:#ffffff;letter-spacing:0.18em;line-height:1.1;text-transform:uppercase;">
                 Aritia Design
@@ -41,3 +58,31 @@
                   <td style="color:rgba(255,255,255,0.65);">Toulouse &middot; Haute-Garonne</td>
                 </tr>
               </table>
+
+              <!-- Tagline (Raleway italique, écho du footer site) -->
+              <div style="font-family:'Raleway',Arial,Helvetica,sans-serif;font-style:italic;font-size:13px;font-weight:400;color:rgba(255,255,255,0.85);margin-top:20px;letter-spacing:0.015em;line-height:1.55;">
+                Créatrice d'univers événementiels<br/>haut de gamme
+              </div>
+
+              <!-- Instagram (reprend l'icône du footer, blanc) -->
+              <div style="margin-top:20px;">
+                <span style="display:block;font-family:'Raleway',Arial,Helvetica,sans-serif;font-size:8.5px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-bottom:6px;">Suivez-nous</span>
+                <a href="https://www.instagram.com/aritia_design/" target="_blank" rel="noopener noreferrer" style="color:#ffffff;text-decoration:none;display:inline-block;">
+                  <img src="https://www.aritiadesign.com/images/signature-instagram-white.png" alt="Instagram" width="22" height="22" style="display:block;width:22px;height:22px;border:0;" />
+                </a>
+              </div>
+
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- BLOC BAS : copyright, séparé par border-top (comme le footer site) -->
+    <tr>
+      <td class="sig-footer-cell" style="padding:12px 36px 14px 36px;border-top:1px solid rgba(255,255,255,0.10);font-family:'Raleway',Arial,Helvetica,sans-serif;font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5);">
+        © Aritia Design 2026
+      </td>
+    </tr>
+
+  </table>

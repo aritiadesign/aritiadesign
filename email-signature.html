@@ -6,6 +6,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Open+Sans:wght@400;500;600&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    @media only screen and (max-width: 500px) {
+      .sig-table { width: 100% !important; max-width: 100% !important; }
+      .sig-cell-wrap { padding: 24px 20px 20px 20px !important; }
+      .sig-row { display: block !important; width: 100% !important; }
+      .sig-logo-cell {
+        display: block !important;
+        width: 100% !important;
+        padding: 0 0 20px 0 !important;
+        border-right: 0 !important;
+        border-bottom: 1px solid rgba(255,255,255,0.14) !important;
+        text-align: center !important;
+      }
+      .sig-logo-cell img { width: 140px !important; height: auto !important; margin: 0 auto !important; }
+      .sig-text-cell { display: block !important; width: 100% !important; padding: 20px 0 0 0 !important; }
+      .sig-footer-cell { padding: 10px 20px 12px 20px !important; }
+    }
+  </style>
 </head>
 <body style="margin:0;padding:32px;background:#f7f5f1;font-family:'Raleway',Arial,Helvetica,sans-serif;">
 
@@ -21,21 +39,21 @@
     Le rendu est testé sur Gmail, Apple Mail, Outlook.
   -->
 
-  <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;background:#1a1a1a;font-family:'Raleway',Arial,Helvetica,sans-serif;color:#ffffff;width:620px;">
+  <table class="sig-table" cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;background:#1a1a1a;max-width:620px;font-family:'Raleway',Arial,Helvetica,sans-serif;color:#ffffff;width:620px;">
 
     <!-- BLOC PRINCIPAL : logo + identité -->
     <tr>
-      <td style="padding:36px 36px 28px 36px;">
+      <td class="sig-cell-wrap" style="padding:36px 36px 28px 36px;">
         <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;width:100%;">
-          <tr>
+          <tr class="sig-row">
 
             <!-- Colonne logo (monogram + ARITIA DESIGN stacked, blanc) -->
-            <td valign="middle" align="center" style="padding:0 32px 0 0;border-right:1px solid rgba(255,255,255,0.14);width:200px;">
+            <td class="sig-logo-cell" valign="middle" align="center" style="padding:0 32px 0 0;border-right:1px solid rgba(255,255,255,0.14);width:200px;">
               <img src="https://www.aritiadesign.com/images/signature-logo-white.png" alt="Aritia Design" width="180" style="display:block;margin:0 auto;width:180px;height:auto;" />
             </td>
 
             <!-- Colonne texte -->
-            <td valign="middle" style="padding:0 0 0 36px;">
+            <td class="sig-text-cell" valign="middle" style="padding:0 0 0 36px;">
               <!-- Marque (Cormorant Garamond, uppercase, letter-spacing éditorial) -->
               <div style="font-family:'Cormorant Garamond','EB Garamond',Garamond,Georgia,serif;font-size:26px;font-weight:500;color:#ffffff;letter-spacing:0.18em;line-height:1.1;text-transform:uppercase;">
                 Aritia Design
@@ -74,11 +92,7 @@
               <div style="margin-top:20px;">
                 <span style="display:block;font-family:'Raleway',Arial,Helvetica,sans-serif;font-size:8.5px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-bottom:6px;">Suivez-nous</span>
                 <a href="https://www.instagram.com/aritia_design/" target="_blank" rel="noopener noreferrer" style="color:#ffffff;text-decoration:none;display:inline-block;">
-                  <svg width="22" height="22" viewBox="33 33 133.333 133.325" preserveAspectRatio="xMidYMid meet" fill="#ffffff" aria-hidden="true" style="display:block;">
-                    <g>
-                      <path fill-rule="evenodd" d="M135.258 56.075c4.409 0 8 3.583 8 8s-3.591 8-8 8c-4.416 0-8.008-3.583-8.008-8s3.592-8 8.008-8ZM99.667 77.442c-12.275 0-22.217 9.95-22.217 22.216 0 12.275 9.942 22.225 22.217 22.225 12.275 0 22.225-9.95 22.225-22.225 0-12.266-9.95-22.216-22.225-22.216Zm0-12.009c18.908 0 34.233 15.317 34.233 34.225 0 18.917-15.325 34.242-34.233 34.242-18.909 0-34.234-15.325-34.234-34.242 0-18.908 15.325-34.225 34.234-34.225Zm5.975-20.425h-11.95c-7.692.017-11.542.05-14.817.142l-1.475.05c-1.467.05-2.917.117-4.675.2-6.492.292-10.025 1.375-12.375 2.292-3.108 1.208-5.333 2.658-7.667 4.983-2.333 2.342-3.775 4.558-4.991 7.667-.909 2.35-1.992 5.883-2.292 12.383-.083 1.75-.142 3.208-.2 4.675l-.05 1.475c-.083 3.275-.125 7.117-.133 14.808v11.959c.008 7.691.05 11.541.133 14.808l.05 1.483c.058 1.459.117 2.909.2 4.667.3 6.5 1.383 10.033 2.292 12.383 1.216 3.109 2.666 5.334 4.991 7.667 2.334 2.325 4.559 3.775 7.667 4.983 2.35.917 5.883 2 12.375 2.3 1.467.059 2.717.117 3.942.167l1.475.05c3.441.108 7.266.15 15.55.167h11.95c7.7-.009 11.541-.05 14.816-.15l1.475-.042c1.467-.05 2.917-.117 4.675-.192 6.5-.3 10.025-1.383 12.375-2.3 3.109-1.208 5.334-2.658 7.667-4.983 2.333-2.333 3.775-4.558 4.992-7.667.908-2.35 1.991-5.883 2.291-12.383.084-1.758.15-3.208.2-4.667l.05-1.483c.084-3.267.125-7.117.134-14.808V93.683c-.009-7.691-.05-11.533-.134-14.808l-.05-1.475a332.99 332.99 0 0 0-.2-4.675c-.3-6.5-1.383-10.033-2.291-12.383-1.217-3.109-2.659-5.325-4.992-7.667-2.333-2.325-4.558-3.775-7.667-4.983-2.35-.917-5.875-2-12.375-2.292-1.758-.083-3.208-.15-4.675-.2l-1.475-.05c-3.275-.092-7.116-.125-14.816-.142ZM107.5 33c7.258.017 10.883.067 14.15.167l2.258.091c1.009.042 2.067.084 3.242.142 7.1.317 11.95 1.45 16.192 3.092 4.375 1.708 8.091 3.983 11.808 7.691 3.7 3.709 5.975 7.425 7.692 11.809 1.641 4.241 2.775 9.091 3.091 16.183.067 1.483.125 2.75.167 4l.058 1.5c.109 3.275.159 6.9.175 14.158v15.659c-.016 7.258-.066 10.883-.175 14.158l-.058 1.5c-.042 1.25-.1 2.517-.167 4-.316 7.092-1.45 11.942-3.091 16.183-1.717 4.384-3.992 8.1-7.692 11.809-3.717 3.708-7.433 5.983-11.808 7.691-4.242 1.642-9.092 2.775-16.192 3.1-1.475.059-2.75.117-3.992.167l-1.508.05c-3.267.108-6.892.158-14.15.175H91.842c-7.259-.017-10.892-.067-14.159-.175l-1.5-.05c-1.25-.05-2.525-.108-4-.167-7.1-.325-11.941-1.458-16.191-3.1-4.375-1.708-8.092-3.983-11.809-7.691-3.7-3.709-5.975-7.425-7.683-11.809-1.65-4.241-2.775-9.091-3.1-16.183-.05-1.183-.1-2.233-.142-3.25l-.083-2.25c-.108-3.275-.158-6.9-.175-14.158V91.833c.017-7.258.067-10.883.175-14.158l.083-2.25c.042-1.017.092-2.067.142-3.25.325-7.092 1.45-11.942 3.1-16.183 1.708-4.384 3.983-8.1 7.683-11.809 3.717-3.708 7.434-5.983 11.809-7.691 4.25-1.642 9.091-2.775 16.191-3.092 1.184-.058 2.234-.1 3.242-.142l2.258-.091c3.267-.1 6.9-.15 14.159-.167H107.5Z" />
-                    </g>
-                  </svg>
+                  <img src="https://www.aritiadesign.com/images/signature-instagram-white.png" alt="Instagram" width="22" height="22" style="display:block;width:22px;height:22px;border:0;" />
                 </a>
               </div>
 
@@ -90,7 +104,7 @@
 
     <!-- BLOC BAS : copyright, séparé par border-top (comme le footer site) -->
     <tr>
-      <td style="padding:12px 36px 14px 36px;border-top:1px solid rgba(255,255,255,0.10);font-family:'Raleway',Arial,Helvetica,sans-serif;font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5);">
+      <td class="sig-footer-cell" style="padding:12px 36px 14px 36px;border-top:1px solid rgba(255,255,255,0.10);font-family:'Raleway',Arial,Helvetica,sans-serif;font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5);">
         © Aritia Design 2026
       </td>
     </tr>
