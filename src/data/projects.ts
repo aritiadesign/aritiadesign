@@ -84,7 +84,7 @@ export const projects: Project[] = [
     titleItalic: "bohème-tropicale",
     subtitle: "DOMAINE DES OISEAUX HEUREUX, REVEL",
     intro:
-      "À la croisée du bohème et de l'exotisme, un mariage minimaliste empreint de la culture malgache. Entre épure et raffinement, le voyage s'articule autour d'un fil conducteur vibrant : la terre rouge de l'île, qui colore chaque instant de la célébration, sublimée par la pampa sous toutes ses formes. Des menus en tissu aux matières organiques, chaque détail rend un hommage contemporain à l'héritage malgache.",
+      "Entre esprit bohème et influences exotiques, ce mariage minimaliste célèbre l'âme de Madagascar. Tout en épure et en raffinement, l'événement s'articule autour d'un fil conducteur : la terre rouge de l'île, magnifiée par la pampa sous toutes ses formes. Des menus en tissu aux matières organiques, chaque détail est une ode contemporaine à l'héritage malgache.",
     credits: [
       { label: "Lieu / Domaine", value: "Domaine des Oiseaux Heureux" },
       { label: "Formule", value: "L'Exception • Gamme Signature <em>– ajustée</em>" },
