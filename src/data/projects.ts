@@ -81,7 +81,7 @@ export const projects: Project[] = [
   {
     slug: "ef",
     title: "MARIAGE MINIMALISTE",
-    titleItalic: "aux teintes malgaches",
+    titleItalic: "bohème-tropicale",
     subtitle: "DOMAINE DES OISEAUX HEUREUX, REVEL",
     intro:
       "À la croisée du bohème et de l'exotisme, un mariage minimaliste empreint de la culture malgache. Entre épure et raffinement, le voyage s'articule autour d'un fil conducteur vibrant : la terre rouge de l'île, qui colore chaque instant de la célébration, sublimée par la pampa sous toutes ses formes. Des menus en tissu aux matières organiques, chaque détail rend un hommage contemporain à l'héritage malgache.",

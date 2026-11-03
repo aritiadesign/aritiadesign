@@ -426,7 +426,7 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "Discover a selection of weddings and events carefully highlighted. Click each title to explore the full gallery."
   },
   "portfolio.project.ef.title": { fr: "E+F, MARIAGE MINIMALISTE", en: "E+F, MINIMALIST WEDDING" },
-  "portfolio.project.ef.italic": { fr: "aux teintes de Madagascar", en: "in Madagascar tones" },
+  "portfolio.project.ef.italic": { fr: "bohème-tropicale", en: "bohemian-tropical" },
   "portfolio.project.mt.title": { fr: "M+T, MARIAGE ÉLÉGANT", en: "M+T, ELEGANT WEDDING" },
   "portfolio.project.mt.italic": { fr: "à la Française", en: "in the French style" },
   "portfolio.project.hj.title": { fr: "H+J, ROMANTISME MODERNE", en: "H+J, MODERN ROMANTICISM" },
