@@ -48,8 +48,8 @@ const { project: p } = Astro.props;
       <dl class="mt-12 space-y-1 text-[16px] leading-[1.7] text-[var(--color-ink-soft)] text-center">
         {p.credits.map((c) => (
           <div>
-            <dt class="inline font-medium">{c.label}&nbsp;:</dt>{" "}
-            <dd class="inline">{c.value}</dd>
+            {c.label && <><dt class="inline font-medium">{c.label}&nbsp;:</dt>{" "}</>}
+            <dd class="inline" set:html={c.value} />
           </div>
         ))}
       </dl>
