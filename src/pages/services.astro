@@ -8,7 +8,7 @@ const tiers = [
     title: "L’EXCEPTION",
     italic: "design intégral",
     price: "À partir de 6 000 €",
-    scope: "≤<span class=\"italic-num\">50</span> invités, un espace principal, fleurs de saison, décor sourcé. <br />DA globale incluse (valeur <span class=\"italic-num\">1 500</span> €).",
+    scope: "Pour <span class=\"italic-num\">50</span> invités · un lieu principal.<br />Direction artistique incluse (valeur <span class=\"italic-num\">1 700</span> €).<br />Budget total projet attendu · <span class=\"italic-num\">10 000</span> à <span class=\"italic-num\">12 000</span> € (hors lieu, traiteur, photographe).",
     bullets: [
       "Direction artistique globale : concepts et planches d'inspiration graphiques, décoratifs et floraux, palette de couleurs, palette de matières, charte typographique",
       "Papeterie essentielle : faire-part, menus, plan de table, monogramme classique",
@@ -19,15 +19,16 @@ const tiers = [
       "Présence le jour J (10h) avec installation et démontage J+1",
       "Livrable : <span class=\"hidden md:inline\">carnet d'atmosphère</span><span class=\"md:hidden\">PDF</span>, croquis / plans 2D, BAT, fichiers d'impression",
     ],
-    desc: "L'expérience la plus aboutie : Aritia Design, votre interlocuteur unique pour orchestrer l'intégralité de votre célébration. <span class=\"hidden md:inline\">De la première inspiration à la dernière fleur posée, nous prenons en charge chaque dimension esthétique de votre journée. </span>Vous validez les concepts, nous réalisons le reste. — Structures et décor sur-mesure proposés en option selon vos envies.",
+    desc: "De la première inspiration à la dernière fleur posée, un seul interlocuteur orchestre chaque dimension esthétique de votre célébration sur 10 à 12 mois : direction artistique globale, papeterie, floral intimiste, décor sourcé, coordination des prestataires, installation jour J et démontage J+1 • Idéal pour un mariage clé en main, vécu en toute sérénité.",
     image: "/images/services-design-global.jpg",
     accent: "burgundy",
+    simplified: true,
   },
   {
     title: "PACK ATMOSPHÈRE",
     italic: "décor & papeterie",
     price: "À partir de 3 600 €",
-    scope: "≤<span class=\"italic-num\">50</span> invités, un espace principal, décor sourcé. <br />Économie de <span class=\"italic-num\">400</span> € vs prestations séparées.",
+    scope: "Pour <span class=\"italic-num\">50</span> invités · un lieu principal.<br />Économie de <span class=\"italic-num\">400</span> € vs prestations séparées.<br />Budget total projet attendu · <span class=\"italic-num\">5 500</span> à <span class=\"italic-num\">7 000</span> € (hors floral, lieu, traiteur, photographe).",
     bullets: [
       "Direction artistique commune : concepts et planches d'inspiration graphiques et décoratifs, charte typographique, palette de couleurs, palette de matières",
       "Papeterie essentielle : faire-part, menus, plan de table, monogramme classique",
@@ -37,15 +38,16 @@ const tiers = [
       "Installation le jour J et démontage J+1",
       "Livrable : <span class=\"hidden md:inline\">livret de création</span><span class=\"md:hidden\">PDF</span>, croquis / plans 2D, BAT, fichiers d'impression",
     ],
-    desc: "Pensé pour une identité visuelle parfaitement alignée. Votre papeterie, votre signalétique et votre décor s'articulent comme un ensemble unique. — Structures sur-mesure proposées en option selon vos envies.",
+    desc: "Votre papeterie, votre signalétique et votre décor pensés comme un seul et même univers visuel, portés sur 7 à 9 mois d'accompagnement : direction artistique globale, papeterie essentielle, sélection du décor, coordination des prestataires décoratifs, installation jour J et démontage J+1 • Idéal pour une signature visuelle unifiée, du faire-part à la mise en scène finale.",
     image: "/images/services-decor.jpg",
     accent: "ink",
+    simplified: true,
   },
   {
     title: "DIRECTION ARTISTIQUE",
     italic: "seule",
-    price: "À partir de 1 500 €",
-    scope: "Déductible à <span class=\"italic-num\">100</span> % en cas de signature d'un pack sous <span class=\"italic-num\">60</span> jours",
+    price: "À partir de 1 700 €",
+    scope: "Déductible à <span class=\"italic-num\">100</span> % en cas de signature d'un pack sous <span class=\"italic-num\">30</span> jours.",
     bullets: [
       "Concept décoratif et planches d'inspiration",
       "Concept graphique et charte typographique",
@@ -57,15 +59,16 @@ const tiers = [
       "2 réunions de travail",
       "Livrable : <span class=\"hidden md:inline\">carnet d'atmosphère</span><span class=\"md:hidden\">PDF</span>, liste de prestataires",
     ],
-    desc: "Vous repartez avec notre vision et l'orchestrez avec vos propres prestataires. Une option idéale pour celles et ceux qui souhaitent une signature artistique forte sans formule complète.",
+    desc: "En 4 mois de création partagée, nous façonnons votre carnet d'atmosphère (voir extrait). Muni de ce guide et de notre sélection de prestataires, vous pilotez votre célébration en toute autonomie. Idéal pour une signature artistique forte, sans formule complète.",
     image: "/images/flipbook-investissement/01.jpg",
-    flipbook: Array.from({ length: 23 }, (_, i) =>
+    flipbook: Array.from({ length: 24 }, (_, i) =>
       `/images/flipbook-investissement/${String(i + 1).padStart(2, "0")}.jpg`
     ),
     // Per-page watermark opacity (index 0 = cover, already branded → hide).
     // Tweak any index to override the 0.06 default for that page.
     watermarkOpacities: { 0: 0 } as Record<number, number>,
     accent: "ink",
+    simplified: true,
   },
 ];
 
@@ -87,7 +90,7 @@ const aLaCarte = [
   },
   {
     title: "Conception florale",
-    price: "à partir de 2 700 €",
+    price: "à partir de 2 200 €",
     scope: "≤50 invités, fleurs de saison, un espace",
     image: "/images/services-floral.jpg",
     bullets: [
@@ -352,11 +355,18 @@ const faqSchema = {
 
             {/* Texte */}
             <div class="p-7 md:p-14 lg:p-16 text-white flex flex-col justify-center order-2 lg:order-2">
+              {tier.badge && (
+                <div class="mb-5 md:mb-6 text-center md:text-left">
+                  <span class="inline-block text-[9px] md:text-[10px] tracking-[0.28em] uppercase text-white/85 border border-white/30 px-3 py-1.5">
+                    ✦ {tier.badge} ✦
+                  </span>
+                </div>
+              )}
               <h3 class="font-display leading-[1.1] tracking-wide text-[30px] md:text-[40px] lg:text-[48px] text-center md:text-left">
                 <span data-i18n={`investment.tier.${i}.title`}>{tier.title}</span>
                 {tier.italic && <> <span class:list={["font-italic-serif italic font-light", i < 2 ? "block md:inline" : ""]} data-i18n={`investment.tier.${i}.italic`}>{tier.italic.split("&").map((part, idx, arr) => (<>{part}{idx < arr.length - 1 && <span class="amp">&amp;</span>}</>))}</span></>}
               </h3>
-              <p class="mt-6 md:mt-8 text-[14px] md:text-[16px] leading-[1.8] text-white/90 max-w-md" data-i18n={`investment.tier.${i}.desc`} set:html={tier.desc} />
+              <p class="mt-6 md:mt-8 text-[14px] md:text-[16px] leading-[1.8] text-white/90 max-w-md md:max-w-[520px]" data-i18n={`investment.tier.${i}.desc`} set:html={tier.desc} />
               <p class="mt-7 md:mt-10 text-[12px] md:text-[15px] tracking-[0.22em] uppercase lining-nums tabular-nums text-white/95" data-i18n={`investment.tier.${i}.price`}>{tier.price}</p>
               {tier.scope && (
                 <p
@@ -367,32 +377,67 @@ const faqSchema = {
                 ></p>
               )}
 
-              <details class="group mt-7 md:mt-10 border-t border-white/15 pt-4">
-                <summary class="cursor-pointer list-none flex items-center justify-between gap-3 text-[12px] md:text-[15px] tracking-[0.2em] md:tracking-[0.22em] uppercase text-white/90">
-                  <span class="whitespace-nowrap" data-i18n="investment.included.summary">✦ Compris dans l'expérience</span>
-                  <span class="text-[18px] leading-none transition-transform group-open:rotate-45 shrink-0">+</span>
-                </summary>
-                <ul class="mt-5 space-y-2 text-[14px] md:text-[16px] leading-[1.65] text-white/85">
-                  {tier.bullets.map((b, idx) => (
-                    <li class="flex gap-2.5 items-start">
-                      <span aria-hidden="true" class="inline-block w-[3px] h-[3px] rounded-full bg-current mt-[9px] shrink-0"></span>
-                      <span data-i18n={`investment.tier.${i}.b${idx}`} set:html={b} />
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href="/contact"
-                  class:list={[
-                    "block w-fit mx-auto md:inline-block md:mx-0 mt-8 md:mt-12 px-6 md:px-10 py-2.5 md:py-3 border border-white/60 text-[10px] md:text-[11px] tracking-[0.22em] md:tracking-[0.32em] uppercase text-white/95 transition",
-                    tier.accent === "burgundy"
-                      ? "hover:bg-[#1A1A1A] hover:text-white hover:border-[#1A1A1A]"
-                      : "hover:bg-white hover:text-[var(--color-ink)]",
-                  ]}
-                  data-i18n="investment.tier.cta"
-                >
-                  Demander un devis
-                </a>
-              </details>
+              {!tier.simplified && (
+                <details class="group mt-7 md:mt-10 border-t border-white/15 pt-4">
+                  <summary class="cursor-pointer list-none flex items-center justify-between gap-3 text-[12px] md:text-[15px] tracking-[0.2em] md:tracking-[0.22em] uppercase text-white/90">
+                    <span class="whitespace-nowrap" data-i18n="investment.included.summary">✦ Compris dans l'expérience</span>
+                    <span class="text-[18px] leading-none transition-transform group-open:rotate-45 shrink-0">+</span>
+                  </summary>
+                  <ul class="mt-5 space-y-2 text-[14px] md:text-[16px] leading-[1.65] text-white/85">
+                    {tier.bullets.map((b, idx) => (
+                      <li class="flex gap-2.5 items-start">
+                        <span aria-hidden="true" class="inline-block w-[3px] h-[3px] rounded-full bg-current mt-[9px] shrink-0"></span>
+                        <span data-i18n={`investment.tier.${i}.b${idx}`} set:html={b} />
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href="/contact"
+                    class:list={[
+                      "block w-fit mx-auto md:inline-block md:mx-0 mt-8 md:mt-12 px-6 md:px-10 py-2.5 md:py-3 border border-white/60 text-[10px] md:text-[11px] tracking-[0.22em] md:tracking-[0.32em] uppercase text-white/95 transition",
+                      tier.accent === "burgundy"
+                        ? "hover:bg-[#1A1A1A] hover:text-white hover:border-[#1A1A1A]"
+                        : "hover:bg-white hover:text-[var(--color-ink)]",
+                    ]}
+                    data-i18n="investment.tier.cta"
+                  >
+                    Demander un devis
+                  </a>
+                </details>
+              )}
+              {tier.simplified && (
+                <div class="mt-7 md:mt-10 border-t border-white/15 pt-5">
+                  <p class="text-[11px] md:text-[13px] tracking-[0.18em] uppercase text-white/75 mb-5 text-center md:text-left">
+                    ✦ Détail complet dans le Guide des Services
+                  </p>
+                  <div class="flex flex-col md:flex-row gap-3 md:gap-4 items-stretch md:items-start">
+                    <a
+                      href="https://www.aritiadesign.com/guide/"
+                      target="_blank"
+                      rel="noopener"
+                      class:list={[
+                        "inline-flex items-center justify-center px-6 md:px-8 py-3 bg-white text-[var(--color-ink)] border border-white text-[10px] md:text-[11px] tracking-[0.22em] md:tracking-[0.32em] uppercase transition",
+                        tier.accent === "burgundy"
+                          ? "hover:bg-transparent hover:text-white"
+                          : "hover:bg-transparent hover:text-white",
+                      ]}
+                    >
+                      Consulter le Guide
+                    </a>
+                    <a
+                      href="/contact"
+                      class:list={[
+                        "inline-flex items-center justify-center px-6 md:px-8 py-3 border border-white/60 text-[10px] md:text-[11px] tracking-[0.22em] md:tracking-[0.32em] uppercase text-white/95 transition",
+                        tier.accent === "burgundy"
+                          ? "hover:bg-[#1A1A1A] hover:text-white hover:border-[#1A1A1A]"
+                          : "hover:bg-white hover:text-[var(--color-ink)]",
+                      ]}
+                    >
+                      Demander un devis
+                    </a>
+                  </div>
+                </div>
+              )}
             </div>
           </article>
         );
