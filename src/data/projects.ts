@@ -49,7 +49,7 @@ export const projects: Project[] = [
       "Plongez dans l'élégance intemporelle de ce mariage à la française au Château de Perron, une demeure historique nichée au cœur de la Normandie. Inspiré par l'art de vivre français et la noblesse du lieu, ce projet incarne la rencontre subtile entre tradition et raffinement, sublimée par une dimension musicale rythmant chaque instant de la célébration.",
     credits: [
       { label: "Lieu / Domaine", value: "Château de Perron" },
-      { label: "Formule", value: "L'Exception • Gamme Signature + Finition couture" },
+      { label: "Formule", value: "L'Exception • Gamme Prestige" },
       { label: "Avec", value: "Direction artistique, graphisme, scénographie, floral, papeterie" },
       { label: "Création", value: "Porte alliance en piano, cadeaux des invités" },
       { label: "Collaboration florale", value: "Alexandre Firuu Wong-Sing" },
