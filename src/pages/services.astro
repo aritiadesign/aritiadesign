@@ -23,6 +23,7 @@ const tiers = [
     image: "/images/services-design-global.jpg",
     accent: "burgundy",
     simplified: true,
+    descMobile: "Une expérience clé en main sur 10 à 12 mois, avec une seule interlocutrice dédiée pour vivre votre célébration en toute sérénité.",
   },
   {
     title: "PACK ATMOSPHÈRE",
@@ -42,6 +43,7 @@ const tiers = [
     image: "/images/services-decor.jpg",
     accent: "ink",
     simplified: true,
+    descMobile: "Sur 7 à 9 mois, votre papeterie, votre signalétique et votre décor s'articulent comme un ensemble unique, en parfaite harmonie.",
   },
   {
     title: "DIRECTION ARTISTIQUE",
@@ -59,7 +61,7 @@ const tiers = [
       "2 réunions de travail",
       "Livrable : <span class=\"hidden md:inline\">carnet d'atmosphère</span><span class=\"md:hidden\">PDF</span>, liste de prestataires",
     ],
-    desc: "En 4 mois de création partagée, nous façonnons votre carnet d'atmosphère (voir extrait). Muni de ce guide et de notre sélection de prestataires, vous pilotez votre célébration en toute autonomie. Idéal pour une signature artistique forte, sans formule complète.",
+    desc: "En 2 à 3 mois de création partagée, nous façonnons votre carnet d'atmosphère (voir extrait). Muni de ce guide et de notre sélection de prestataires, vous pilotez votre célébration en toute autonomie. Idéal pour une signature artistique forte, sans formule complète.",
     image: "/images/flipbook-investissement/01.jpg",
     flipbook: Array.from({ length: 24 }, (_, i) =>
       `/images/flipbook-investissement/${String(i + 1).padStart(2, "0")}.jpg`
@@ -69,6 +71,7 @@ const tiers = [
     watermarkOpacities: { 0: 0 } as Record<number, number>,
     accent: "ink",
     simplified: true,
+    descMobile: "Une signature artistique en 2 à 3 mois, livrée dans un carnet d'atmosphère pour piloter votre célébration en toute autonomie.",
   },
 ];
 
@@ -364,7 +367,10 @@ const faqSchema = {
                 <span data-i18n={`investment.tier.${i}.title`}>{tier.title}</span>
                 {tier.italic && <> <span class:list={["font-italic-serif italic font-light", i < 2 ? "block md:inline" : ""]} data-i18n={`investment.tier.${i}.italic`}>{tier.italic.split("&").map((part, idx, arr) => (<>{part}{idx < arr.length - 1 && <span class="amp">&amp;</span>}</>))}</span></>}
               </h3>
-              <p class="mt-6 md:mt-8 text-[14px] md:text-[16px] leading-[1.8] text-white/90 max-w-md md:max-w-[520px]" data-i18n={`investment.tier.${i}.desc`} set:html={tier.desc} />
+              {tier.descMobile && (
+                <p class="md:hidden mt-6 text-[14px] leading-[1.8] text-white/90 max-w-md" set:html={tier.descMobile} />
+              )}
+              <p class:list={["mt-6 md:mt-8 text-[14px] md:text-[16px] leading-[1.8] text-white/90 max-w-md md:max-w-[520px]", tier.descMobile ? "hidden md:block" : ""]} data-i18n={`investment.tier.${i}.desc`} set:html={tier.desc} />
               <p class="mt-7 md:mt-10 text-[12px] md:text-[15px] tracking-[0.22em] uppercase lining-nums tabular-nums text-white/95" data-i18n={`investment.tier.${i}.price`}>{tier.price}</p>
               {tier.scope && (
                 <p
