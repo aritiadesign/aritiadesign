@@ -248,8 +248,8 @@ const faqSchema = {
         .tier-card[data-active="true"] { opacity: 1; transform: scale(1); }
         .tier-scope br { display: none; }
       }
-      .alacarte-tab { transition: border-color 0.2s ease, color 0.2s ease; }
-      .alacarte-tab[data-active="true"] { border-bottom: 2px solid #1c1c1c !important; color: #1c1c1c !important; }
+      .alacarte-tab { transition: border-color 0.2s ease, color 0.2s ease; box-sizing: border-box; }
+      .alacarte-tab[data-active="true"] { border-bottom-color: #1c1c1c !important; color: #1c1c1c !important; }
     </style>
 
     {/* Tier hierarchy disclaimer — unified note for tier cards + à la carte */}
@@ -463,7 +463,7 @@ const faqSchema = {
               <button
                 type="button"
                 role="tab"
-                class="alacarte-tab flex-1 py-5 text-[11px] tracking-[0.18em] uppercase text-[var(--color-ink-soft)] border-b-2 border-transparent transition"
+                class="alacarte-tab flex-1 py-6 text-[11px] tracking-[0.18em] uppercase text-[var(--color-ink-soft)] border-b-2 border-transparent transition box-border"
                 data-tab={i}
                 data-active={i === 0 ? "true" : "false"}
               >
