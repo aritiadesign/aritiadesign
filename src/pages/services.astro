@@ -490,10 +490,10 @@ const faqSchema = {
                   {Object.entries(item.grid).map(([section, items]) => {
                     const [prefix, name] = section.split(" | ");
                     return (
-                      <div class="grid grid-cols-[110px_1fr] gap-3 items-start">
+                      <div class="grid grid-cols-[110px_1fr] gap-3 items-baseline">
                         <h4 class="text-right leading-[1.4]">
-                          <span class="block text-[12px] tracking-[0.18em] uppercase text-[var(--color-ink-soft)] font-bold">{prefix}</span>
-                          <span class="block text-[12px] tracking-[0.18em] uppercase text-[var(--color-ink)] font-bold">{name}</span>
+                          <span class="block text-[12px] tracking-[0.18em] uppercase text-[var(--color-ink-soft)] font-light">{prefix}</span>
+                          <span class="block text-[12px] tracking-[0.18em] uppercase text-[var(--color-ink)] font-semibold">{name}</span>
                         </h4>
                         <p class="text-[10px] leading-[1.4] text-[var(--color-ink-soft)] italic">
                           {items.join(", ")}
@@ -504,16 +504,12 @@ const faqSchema = {
                 </div>
               )}
               {item.narrative && (
-                <div class="mt-8 mb-5 flex items-center justify-center gap-3">
-                  <span class="w-8 h-px bg-[var(--color-ink)]/20"></span>
-                  <span class="flex items-center gap-2 text-[10px] text-[var(--color-ink)]/70 tracking-normal">
-                    <span>✦</span><span>✦</span><span>✦</span>
-                  </span>
-                  <span class="w-8 h-px bg-[var(--color-ink)]/20"></span>
+                <div class="mt-8 mb-5 flex justify-center">
+                  <img src="/images/separator-stars.svg" alt="" aria-hidden="true" class="h-4 opacity-40" />
                 </div>
               )}
               {item.narrative && (
-                <p class="text-center text-[12px] tracking-[0.26em] uppercase font-medium text-[var(--color-ink)]">Ce qui est inclus :</p>
+                <p class="text-[12px] tracking-[0.26em] uppercase font-medium text-[var(--color-ink)]">Ce qui est inclus :</p>
               )}
               <ul class={`${item.narrative ? "mt-4" : "mt-6"} space-y-2 text-[13px] leading-[1.65] text-[var(--color-ink-soft)]`}>
                 {item.bullets.map((b, idx) => (
