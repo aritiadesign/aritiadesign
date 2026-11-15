@@ -248,8 +248,9 @@ const faqSchema = {
         .tier-card[data-active="true"] { opacity: 1; transform: scale(1); }
         .tier-scope br { display: none; }
       }
-      .alacarte-tab { transition: border-color 0.2s ease, color 0.2s ease; }
-      .alacarte-tab[data-active="true"] { border-bottom: 2px solid #1c1c1c !important; color: #1c1c1c !important; }
+      .alacarte-tab { transition: color 0.2s ease; }
+      .alacarte-tab[data-active="true"] { color: #1c1c1c !important; }
+      .alacarte-tab[data-active="true"] .alacarte-tab-label { border-bottom-color: #1c1c1c !important; }
     </style>
 
     {/* Tier hierarchy disclaimer — unified note for tier cards + à la carte */}
@@ -463,11 +464,13 @@ const faqSchema = {
               <button
                 type="button"
                 role="tab"
-                class="alacarte-tab flex-1 py-3 text-[11px] tracking-[0.18em] uppercase text-[var(--color-ink-soft)] border-b-2 border-transparent transition"
+                class="alacarte-tab flex-1 py-3 text-[11px] tracking-[0.18em] uppercase text-[var(--color-ink-soft)] transition"
                 data-tab={i}
                 data-active={i === 0 ? "true" : "false"}
               >
-                {tabLabels[i]}
+                <span class="alacarte-tab-label inline-block px-[1px] pb-[6px] border-b-2 border-transparent transition-colors">
+                  {tabLabels[i]}
+                </span>
               </button>
             );
           })}
@@ -505,7 +508,7 @@ const faqSchema = {
               )}
               {item.narrative && (
                 <div class="mt-8 mb-5 flex justify-end -mr-12">
-                  <img src="/images/separator-stars.svg" alt="" aria-hidden="true" class="h-4 opacity-100" />
+                  <img src="/images/separator-stars.svg" alt="" aria-hidden="true" class="h-4 opacity-40" />
                 </div>
               )}
               {item.narrative && (
