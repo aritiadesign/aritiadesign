@@ -8,7 +8,7 @@ const tiers = [
     title: "L’EXCEPTION",
     italic: "design intégral",
     price: "À partir de 6 000 €",
-    scope: "• Honoraires de création et d'accompagnement<br />• Tarif indicatif pour <span class=\"italic-num\">50</span> invités sur un lieu principal<br />• Direction artistique incluse (valeur <span class=\"italic-num\">1 700</span> €)<br />• Budget total projet attendu : <span class=\"italic-num\">10 000</span> à <span class=\"italic-num\">12 000</span> € (hors lieu, traiteur, photographe).",
+    scope: "<span class=\"scope-bullet\">• Honoraires de création et d'accompagnement</span><span class=\"scope-bullet\">• Tarif indicatif pour <span class=\"italic-num\">50</span> invités sur un lieu principal</span><span class=\"scope-bullet\">• Direction artistique incluse (valeur <span class=\"italic-num\">1 700</span> €)</span><span class=\"scope-bullet\">• Budget total projet attendu : <span class=\"italic-num\">10 000</span> à <span class=\"italic-num\">12 000</span> € (hors lieu, traiteur, photographe).</span>",
     desc: "De la première inspiration à la dernière fleur posée, un seul interlocuteur orchestre chaque dimension esthétique de votre célébration sur 10 à 12 mois : direction artistique globale, papeterie, floral intimiste, décor sourcé, coordination des prestataires, installation jour J et démontage J+1 • Idéal pour un mariage clé en main, vécu en toute sérénité.",
     image: "/images/services-design-global.jpg",
     accent: "burgundy",
@@ -19,7 +19,7 @@ const tiers = [
     title: "PACK ATMOSPHÈRE",
     italic: "décor & floral",
     price: "À partir de 4 000 €",
-    scope: "• Honoraires de création et d'accompagnement<br />• Tarif indicatif pour <span class=\"italic-num\">50</span> invités sur un lieu principal<br />• Économie de <span class=\"italic-num\">800</span> € vs prestations séparées<br />• Budget total projet attendu : à partir de <span class=\"italic-num\">7 000</span> € (hors papeterie, lieu, traiteur, photographe).",
+    scope: "<span class=\"scope-bullet\">• Honoraires de création et d'accompagnement</span><span class=\"scope-bullet\">• Tarif indicatif pour <span class=\"italic-num\">50</span> invités sur un lieu principal</span><span class=\"scope-bullet\">• Économie de <span class=\"italic-num\">800</span> € vs prestations séparées</span><span class=\"scope-bullet\">• Budget total projet attendu : à partir de <span class=\"italic-num\">7 000</span> € (hors papeterie, lieu, traiteur, photographe).</span>",
     desc: "Votre décor et votre conception florale pensés comme un seul et même univers esthétique, portés sur 10 à 12 mois d'accompagnement : direction artistique globale, scénographie du lieu, création florale complète, coordination des prestataires décoratifs, installation jour J et démontage J+1 • Idéal pour une harmonie visuelle parfaite entre décor et fleurs.",
     image: "/images/services-decor.jpg",
     accent: "ink",
@@ -30,7 +30,7 @@ const tiers = [
     title: "DIRECTION ARTISTIQUE",
     italic: "seule",
     price: "À partir de 1 700 €",
-    scope: "• Honoraires de création<br />• Déductible à <span class=\"italic-num\">100</span> % en cas de signature d'un pack sous <span class=\"italic-num\">30</span> jours.",
+    scope: "<span class=\"scope-bullet\">• Honoraires de création</span><span class=\"scope-bullet\">• Déductible à <span class=\"italic-num\">100</span> % en cas de signature d'un pack sous <span class=\"italic-num\">30</span> jours.</span>",
     desc: "En 2 à 3 mois de création partagée, nous façonnons votre carnet d'atmosphère (voir extrait). Muni de ce guide et de notre sélection de prestataires, vous pilotez votre célébration en toute autonomie. Idéal pour une signature artistique forte, sans formule complète.",
     image: "/images/flipbook-investissement/01.jpg",
     flipbook: Array.from({ length: 24 }, (_, i) =>
@@ -243,11 +243,12 @@ const faqSchema = {
     <style is:global>
       .tiers-carousel::-webkit-scrollbar { display: none; }
       .tiers-carousel { scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+      .scope-bullet { display: block; }
       @media (max-width: 767px) {
         .tier-card { transition: opacity 0.35s ease, transform 0.35s ease; opacity: 0.55; transform: scale(0.94); transform-origin: center; }
         .tier-card[data-active="true"] { opacity: 1; transform: scale(1); }
-        .tier-scope br { display: inline; }
-        .tier-scope br::before { content: " "; white-space: pre; }
+        .scope-bullet { display: inline; }
+        .scope-bullet + .scope-bullet { margin-left: 4px; }
       }
       .alacarte-tab { transition: border-color 0.2s ease, color 0.2s ease; box-sizing: border-box; }
       .alacarte-tab[data-active="true"] { border-bottom: 2px solid #1c1c1c !important; color: #1c1c1c !important; }
@@ -358,7 +359,7 @@ const faqSchema = {
               <p class="mt-7 md:mt-10 text-[12px] md:text-[15px] tracking-[0.22em] uppercase lining-nums tabular-nums text-white/95" data-i18n={`investment.tier.${i}.price`}>{tier.price}</p>
               {tier.scope && (
                 <p
-                  class="tier-scope mt-3 text-[8px] md:text-[16px] leading-[1.4] italic tracking-[0] md:tracking-[0.5px] text-white/75"
+                  class="tier-scope mt-3 text-[9px] md:text-[16px] leading-[1.6] italic tracking-[0] md:tracking-[0.5px] text-white/75"
                   style="font-variant-numeric: lining-nums tabular-nums; font-feature-settings: 'lnum' 1, 'tnum' 1;"
                   data-i18n={`investment.tier.${i}.scope`}
                   set:html={tier.scope}
