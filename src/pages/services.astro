@@ -248,8 +248,8 @@ const faqSchema = {
         .tier-card[data-active="true"] { opacity: 1; transform: scale(1); }
         .tier-scope br { display: none; }
       }
-      .alacarte-tab { transition: border-color 0.2s ease; }
-      .alacarte-tabs .alacarte-tab[data-active="true"] { border-bottom-color: var(--color-ink) !important; }
+      .alacarte-tab { transition: border-color 0.2s ease, color 0.2s ease; }
+      .alacarte-tab[data-active="true"] { border-bottom: 2px solid #1c1c1c !important; color: #1c1c1c !important; }
     </style>
 
     {/* Tier hierarchy disclaimer — unified note for tier cards + à la carte */}
@@ -505,7 +505,7 @@ const faqSchema = {
               )}
               {item.narrative && (
                 <div class="mt-8 mb-5 flex justify-end -mr-12">
-                  <img src="/images/separator-stars.svg" alt="" aria-hidden="true" class="h-4 opacity-50" />
+                  <img src="/images/separator-stars.svg" alt="" aria-hidden="true" class="h-4 opacity-100" />
                 </div>
               )}
               {item.narrative && (
