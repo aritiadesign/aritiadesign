@@ -246,10 +246,11 @@ const faqSchema = {
       @media (max-width: 767px) {
         .tier-card { transition: opacity 0.35s ease, transform 0.35s ease; opacity: 0.55; transform: scale(0.94); transform-origin: center; }
         .tier-card[data-active="true"] { opacity: 1; transform: scale(1); }
-        .tier-scope br { display: none; }
+        .tier-scope br { display: inline; }
+        .tier-scope br::before { content: " "; white-space: pre; }
       }
       .alacarte-tab { transition: border-color 0.2s ease, color 0.2s ease; box-sizing: border-box; }
-      .alacarte-tab[data-active="true"] { border-bottom-color: #1c1c1c !important; color: #1c1c1c !important; }
+      .alacarte-tab[data-active="true"] { border-bottom: 2px solid #1c1c1c !important; color: #1c1c1c !important; }
     </style>
 
     {/* Tier hierarchy disclaimer — unified note for tier cards + à la carte */}
