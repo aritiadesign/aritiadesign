@@ -30,6 +30,27 @@ const mtImages = [
   "5f01928d",
 ].map((h) => `/images/projects/mt/${h}.${["ca8f3f8e","f8a3ca10","c0370563","4be8135e"].includes(h) ? "png" : "jpg"}`);
 
+// H+J : narrative ordering — welcome signs, ceremony, reception
+// Each hash maps to a specific element (see /public/images/projects/hj/)
+//   7e8cc277 — bannière Tonga Soa (accueil)
+//   5a11c9e8 — panneau bienvenue église (Hanta & John-Loïs)
+//   da6fa0f3 — miroir de bienvenue arche
+//   5ee052fd — bouquet en situation (mariée dos + demoiselles)
+//   a22acc9c — boutonnière
+//   bb2b34df — enfants d'honneur
+//   fa3c7203 — allée de cérémonie 1
+//   715891c3 — allée de cérémonie 2
+//   d128eb5c — table rectangulaire réception
+//   b122e591 — papeterie table
+//   7e3f01e0 — numéro de table
+//   8756d32e — IMG_4108 (à repositionner selon contenu final)
+const hjImages = [
+  "7e8cc277", "5a11c9e8", "da6fa0f3",
+  "5ee052fd", "a22acc9c", "bb2b34df",
+  "fa3c7203", "715891c3",
+  "d128eb5c", "b122e591", "7e3f01e0", "8756d32e",
+].map((h) => `/images/projects/hj/${h}.jpg`);
+
 const efImages = [
   "b88c2457", "9c79f36a", "54587184", "492d6662", "133cc816", "baf0c9fb",
   "b0229e32", "6ab4c2f8", "e78293a1", "b45a2731", "d6f942d3", "a907026c",
@@ -113,33 +134,31 @@ export const projects: Project[] = [
     titleItalic: "avec un accent culturel",
     subtitle: "DOMAINE DE SAINT-MARTIN-DE-RONSAC, SAINTE-FOY-D'AIGREFEUILLE",
     intro:
-      "Une union contemporaine mariant romantisme et héritage culturel malgache au Domaine de Saint-Martin de Ronsac. L'harmonie visuelle s'articule autour d'une palette douce, dynamisée par les nuances naturelles du vert genévrier. Le design intègre avec précision le graphisme du aloalo, symbole ethnique fort, apportant une sophistication unique et sur-mesure à chaque détail du décor.",
+      "Une union contemporaine mariant romantisme et héritage culturel malgache au Domaine de Saint-Martin-de-Ronsac. L'harmonie visuelle s'articule autour d'une palette douce, dynamisée par les nuances naturelles du vert genévrier. Le design intègre avec précision le graphisme du aloalo, symbole ethnique fort, apportant une sophistication unique et sur-mesure à chaque détail du décor.",
     credits: [
-      { label: "Direction Artistique", value: "Aritia Design" },
-      { label: "Lieu / Domaine", value: "Domaine de Saint-Martin-de-Ronsac" },
-      { label: "Photographe", value: "—" },
-      { label: "Création Florale", value: "Aritia Design" },
-      { label: "Papeterie & Design Graphique", value: "Aritia Design" },
-      { label: "Décor & Scénographie", value: "Aritia Design" },
-      { label: "Cadeaux des invités", value: "Aritia Design" },
-      { label: "Réalisations Aritia Design", value: "Porte-Alliances, Urne, Structure avec Lettres 3D, Panneau de Bienvenue + support, Bannière + support & Colonnes du Plan de table" },
+      { label: "Lieu / Domaine", value: "Domaine de Saint-Martin-de-Ronsac, Sainte-Foy-d'Aigrefeuille" },
+      { label: "Formule", value: "L'Exception • Gamme Signature" },
+      { label: "Avec", value: "Direction artistique, graphisme, scénographie, floral, papeterie" },
+      {
+        label: "Création",
+        value:
+          "<ul class=\"mt-2 space-y-1 text-left inline-block\">" +
+          "<li>• Plan de table</li>" +
+          "<li>• Bannière avec support</li>" +
+          "<li>• Lettres « H,J-L »</li>" +
+          "<li>• Porte-alliances</li>" +
+          "<li>• Urne</li>" +
+          "<li>• Signalétiques Église & Domaine</li>" +
+          "</ul>",
+      },
+      { label: "Photographe", value: "Mathieu Bernard Photographie" },
     ],
-    hero: "/images/projects/hj/hero-1.jpg",
-    parallax: "/images/projects/ef/parallax.jpg",
-    gallery: [
-      "/images/projects/hj/hero-1.jpg",
-      "/images/projects/hj/hero-2.png",
-      "/images/projects/hj/hero-3.png",
-      ...efImages.slice(3),
-    ],
+    hero: hjImages[2],
+    gallery: hjImages,
     sections: [
-      { label: "Préparations", images: [
-        efImages[4], efImages[5],
-        efImages[6], efImages[8],
-        efImages[7],
-      ] },
-      { label: "Cérémonie", images: efImages.slice(9, 23), bg: "dark" },
-      { label: "Cocktail & Réception", images: efImages.slice(23, -4) },
+      { label: "Préparations", images: [hjImages[3], hjImages[4], hjImages[5]] },
+      { label: "Cérémonie", images: [hjImages[1], hjImages[6], hjImages[7]], bg: "dark" },
+      { label: "Réception", images: [hjImages[0], hjImages[8], hjImages[9], hjImages[10], hjImages[11]] },
     ],
   },
 ];
