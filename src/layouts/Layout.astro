@@ -15,6 +15,8 @@ interface Props {
   darkHeader?: boolean;
   /** When false, render the footer in light theme (white bg). */
   darkFooter?: boolean;
+  /** Optional override for the 4th image in the footer gallery (per-project customization). */
+  footerImage4?: { src: string; alt: string };
 }
 
 const {
@@ -24,6 +26,7 @@ const {
   transparentHeader = true,
   darkHeader = false,
   darkFooter = true,
+  footerImage4,
 } = Astro.props;
 
 const siteOrigin = Astro.site?.toString() ?? "https://aritiadesign.com";
@@ -316,7 +319,7 @@ const jsonLd = {
     <main class="flex-1">
       <slot />
     </main>
-    <Footer dark={darkFooter} />
+    <Footer dark={darkFooter} image4={footerImage4} />
 
     <script type="application/json" id="i18n-data" set:html={JSON.stringify(i18n)}></script>
 

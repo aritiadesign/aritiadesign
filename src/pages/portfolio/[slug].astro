@@ -8,12 +8,18 @@ export function getStaticPaths() {
 
 interface Props { project: Project }
 const { project: p } = Astro.props;
+
+// Per-project override of the 4th footer image
+const footerImage4 = p.slug === "hj"
+  ? { src: "/images/footer-hj-4.jpg", alt: "Bouquet de callas blancs — H+J" }
+  : undefined;
 ---
 
 <Layout
   title={`${p.title} ${p.titleItalic} | ${p.subtitle} | Aritia Design`}
   description={`Décoration de mariage haut de gamme par Aritia Design. ${p.intro.slice(0, 100)}...`}
   transparentHeader={false}
+  footerImage4={footerImage4}
 >
   {/* ───────────────────────── 1. HERO — 3-PHOTO ROW ───────────────────────── */}
   <section class="bg-white px-2 md:px-14 pt-32 md:pt-40 pb-12">
