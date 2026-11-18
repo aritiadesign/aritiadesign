@@ -30,7 +30,7 @@ const mtImages = [
   "5f01928d",
 ].map((h) => `/images/projects/mt/${h}.${["ca8f3f8e","f8a3ca10","c0370563","4be8135e"].includes(h) ? "png" : "jpg"}`);
 
-// H+J : 33 photos from Mathieu Bernard Photographie (watch photo removed)
+// H+J : 32 photos from Mathieu Bernard Photographie + logo monogram PNG
 // Hero slice(0,3) : table rectangulaire (gauche) · domaine (centre) · bouquet mariée 1 (droite)
 // Named refs so we can reuse and re-order per section narrative
 const hjPhoto = {
@@ -39,12 +39,13 @@ const hjPhoto = {
   tableRectReception: "/images/projects/hj/2afc7804.jpg",
   bouquetMariee1: "/images/projects/hj/5af8f235.jpg",
   // Préparatifs
+  logo: "/images/projects/hj/logo.png",
   robeMariee: "/images/projects/hj/b46d5dca.jpg",
   detailMariee: "/images/projects/hj/0d5fb2cc.jpg",
   detailMarie: "/images/projects/hj/70e39f0b.jpg",
   boutonniere: "/images/projects/hj/9b02520d.jpg",
   bouquetMariee2: "/images/projects/hj/8189450b.jpg",
-  // Cérémonie
+  // Cérémonie (porte-alliance fermé retiré, on garde uniquement la boîte ouverte)
   bouquetEnSituation: "/images/projects/hj/e2f22604.jpg",
   panneauBienvenueEglise: "/images/projects/hj/cf4f4132.jpg",
   allee2Hjl: "/images/projects/hj/92444954.jpg",
@@ -52,8 +53,7 @@ const hjPhoto = {
   ceremonie2: "/images/projects/hj/c5a60bf5.jpg",
   enfantsHonneur: "/images/projects/hj/14c7c23d.jpg",
   echangeAlliances: "/images/projects/hj/48ea3bc9.jpg",
-  porteAlliance: "/images/projects/hj/d82d1253.jpg",
-  porteAlliance2: "/images/projects/hj/95d04245.jpg",
+  porteAllianceOuvert: "/images/projects/hj/95d04245.jpg",
   sortieMaries: "/images/projects/hj/4d2b8e48.jpg",
   // Cocktail
   tongaSoa: "/images/projects/hj/03cfe656.jpg",
@@ -184,33 +184,35 @@ export const projects: Project[] = [
       hjPhoto.tableRectReception, hjPhoto.domaine, hjPhoto.bouquetMariee1,
     ],
     sections: [
-      // PRÉPARATIFS — motif aloalo en tête + 5 photos (watch retirée, bouquet en situation déplacé vers cérémonie)
+      // PRÉPARATIFS — logo monogramme HJ en L2 (comme EF) + 5 photos alternées mariée/marié
+      // pour que les 2 détails « nœud » (bow tie + boutonnière) soient aux coins opposés
       {
         label: "Préparatifs",
-        motif: "/images/projects/hj/aloalo.svg",
         images: [
-          hjPhoto.robeMariee,       // L1
-          hjPhoto.detailMariee,     // R1
-          hjPhoto.detailMarie,      // L2
-          hjPhoto.boutonniere,      // R2
-          hjPhoto.bouquetMariee2,   // L3
+          hjPhoto.robeMariee,       // L1 — bride
+          hjPhoto.detailMarie,      // R1 — groom (bow tie)
+          hjPhoto.logo,             // L2 — monogramme (comme EF)
+          hjPhoto.bouquetMariee2,   // R2 — bride
+          hjPhoto.boutonniere,      // L3 — groom (far from bow tie)
+          hjPhoto.detailMariee,     // R3 — bride
         ],
       },
-      // CÉRÉMONIE — panneau (R1) et allée HJL (L3) séparés par enfants + cérémonie 1
+      // CÉRÉMONIE — déroulé logique de la journée, échange alliances vers la fin,
+      // sortie (lancé de pétales) à la toute fin. Panneau (R1) et allée HJL (L3)
+      // séparés diagonalement par enfants + cérémonie 1
       {
         label: "Cérémonie",
         bg: "dark",
         images: [
-          hjPhoto.bouquetEnSituation,  // L1 — transition depuis préparatifs
+          hjPhoto.bouquetEnSituation,     // L1 — transition depuis préparatifs
           hjPhoto.panneauBienvenueEglise, // R1 — arrivée à l'église
-          hjPhoto.enfantsHonneur,      // L2
-          hjPhoto.ceremonie1,          // R2 — entrée mariée
-          hjPhoto.allee2Hjl,           // L3 — allée + HJL bien visible (séparé du panneau)
-          hjPhoto.echangeAlliances,    // R3
-          hjPhoto.porteAlliance,       // L4
-          hjPhoto.ceremonie2,          // R4
-          hjPhoto.porteAlliance2,      // L5
-          hjPhoto.sortieMaries,        // R5 — sortie
+          hjPhoto.enfantsHonneur,         // L2 — cortège
+          hjPhoto.ceremonie1,             // R2 — entrée de la mariée
+          hjPhoto.allee2Hjl,              // L3 — allée + HJL (séparé du panneau)
+          hjPhoto.porteAllianceOuvert,    // R3 — boîte à alliances ouverte
+          hjPhoto.ceremonie2,             // L4 — moment intime du couple
+          hjPhoto.echangeAlliances,       // R4 — échange des alliances (avant la fin)
+          hjPhoto.sortieMaries,           // L5 — sortie, lancé de pétales (FIN)
         ],
       },
       // COCKTAIL — Tonga Soa d'accueil puis plans de table et cocktail
