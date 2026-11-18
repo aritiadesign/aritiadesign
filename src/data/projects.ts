@@ -56,6 +56,7 @@ const hjPhoto = {
   porteAllianceOuvert: "/images/projects/hj/95d04245.jpg",
   sortieMaries: "/images/projects/hj/4d2b8e48.jpg",
   // Cocktail
+  entreeCocktail: "/images/projects/hj/531c7f6e.jpg",
   tongaSoa: "/images/projects/hj/03cfe656.jpg",
   cocktail1: "/images/projects/hj/c30a6e69.jpg",
   miroirBienvenue: "/images/projects/hj/40627cb4.jpg",
@@ -218,17 +219,22 @@ export const projects: Project[] = [
           hjPhoto.sortieMaries,           // L5 — sortie, lancé de pétales (FIN)
         ],
       },
-      // COCKTAIL — Tonga Soa d'accueil puis plans de table et cocktail
+      // COCKTAIL — Entrée du couple en L1, puis signalétiques dans l'ordre demandé
+      // (miroir avant tongasoa). TEMPORAIRE : 8 items (4L+4R, colonnes égales) en
+      // attendant les photos supplémentaires à ajouter pour disperser les
+      // signalétiques (tongasoa, miroir, plan de table). Une fois ajoutées,
+      // on reviendra à 9 items (5L+4R, colonne gauche plus longue).
       {
         label: "Cocktail",
         images: [
-          hjPhoto.tongaSoa,            // L1 — accueil
-          hjPhoto.miroirBienvenue,     // R1
-          hjPhoto.ecritureMiroir,      // L2
-          hjPhoto.cocktail1,           // R2
-          hjPhoto.planDeTable1,        // L3
-          hjPhoto.planDeTable2,        // R3
-          hjPhoto.lanceBouquet,        // L4
+          hjPhoto.entreeCocktail,      // L1 — entrée du couple au cocktail
+          hjPhoto.miroirBienvenue,     // R1 — 1ère signalétique : miroir
+          hjPhoto.tongaSoa,            // L2 — 2e signalétique : tongasoa
+          hjPhoto.ecritureMiroir,      // R2 — détail écriture miroir
+          hjPhoto.cocktail1,           // L3 — cocktail (ambiance)
+          hjPhoto.planDeTable1,        // R3 — plan de table 1
+          hjPhoto.planDeTable2,        // L4 — plan de table 2
+          hjPhoto.lanceBouquet,        // R4 — lancé de bouquet (fin cocktail)
         ],
       },
       // RÉCEPTION — tables + papeterie + numéros + gâteau
