@@ -89,6 +89,19 @@ const { project: p } = Astro.props;
           ]}>
             ✦ {s.label} ✦
           </div>
+          {s.motif && (
+            <div class="mt-8 md:mt-10 flex justify-center">
+              <img
+                src={s.motif}
+                alt=""
+                aria-hidden="true"
+                class:list={[
+                  "h-[140px] md:h-[200px] w-auto opacity-70",
+                  isDark ? "invert" : "",
+                ]}
+              />
+            </div>
+          )}
         </div>
         {s.text && (
           <div class="px-6 pb-12 md:pb-16 text-center">

@@ -8,7 +8,7 @@ export interface Project {
   hero: string;
   gallery: string[];
   /** Optional sections — text between groups of images */
-  sections?: { label: string; text?: string; images: string[]; bg?: "light" | "dark" }[];
+  sections?: { label: string; text?: string; images: string[]; bg?: "light" | "dark"; motif?: string }[];
   /** Optional full-width parallax image shown between credits and first section */
   parallax?: string;
   /** Optional video shown at the end of the project page */
@@ -30,26 +30,50 @@ const mtImages = [
   "5f01928d",
 ].map((h) => `/images/projects/mt/${h}.${["ca8f3f8e","f8a3ca10","c0370563","4be8135e"].includes(h) ? "png" : "jpg"}`);
 
-// H+J : narrative ordering — welcome signs, ceremony, reception
-// Each hash maps to a specific element (see /public/images/projects/hj/)
-//   7e8cc277 — bannière Tonga Soa (accueil)
-//   5a11c9e8 — panneau bienvenue église (Hanta & John-Loïs)
-//   da6fa0f3 — miroir de bienvenue arche
-//   5ee052fd — bouquet en situation (mariée dos + demoiselles)
-//   a22acc9c — boutonnière
-//   bb2b34df — enfants d'honneur
-//   fa3c7203 — allée de cérémonie 1
-//   715891c3 — allée de cérémonie 2
-//   d128eb5c — table rectangulaire réception
-//   b122e591 — papeterie table
-//   7e3f01e0 — numéro de table
-//   8756d32e — IMG_4108 (à repositionner selon contenu final)
-const hjImages = [
-  "7e8cc277", "5a11c9e8", "da6fa0f3",
-  "5ee052fd", "a22acc9c", "bb2b34df",
-  "fa3c7203", "715891c3",
-  "d128eb5c", "b122e591", "7e3f01e0", "8756d32e",
-].map((h) => `/images/projects/hj/${h}.jpg`);
+// H+J : 33 photos from Mathieu Bernard Photographie (watch photo removed)
+// Hero slice(0,3) : table rectangulaire (gauche) · domaine (centre) · bouquet mariée 1 (droite)
+// Named refs so we can reuse and re-order per section narrative
+const hjPhoto = {
+  // Hero
+  domaine: "/images/projects/hj/8f83eb72.jpg",
+  tableRectReception: "/images/projects/hj/2afc7804.jpg",
+  bouquetMariee1: "/images/projects/hj/5af8f235.jpg",
+  // Préparatifs
+  robeMariee: "/images/projects/hj/b46d5dca.jpg",
+  detailMariee: "/images/projects/hj/0d5fb2cc.jpg",
+  detailMarie: "/images/projects/hj/70e39f0b.jpg",
+  boutonniere: "/images/projects/hj/9b02520d.jpg",
+  bouquetMariee2: "/images/projects/hj/8189450b.jpg",
+  // Cérémonie
+  bouquetEnSituation: "/images/projects/hj/e2f22604.jpg",
+  panneauBienvenueEglise: "/images/projects/hj/cf4f4132.jpg",
+  allee2Hjl: "/images/projects/hj/92444954.jpg",
+  ceremonie1: "/images/projects/hj/c75ed223.jpg",
+  ceremonie2: "/images/projects/hj/c5a60bf5.jpg",
+  enfantsHonneur: "/images/projects/hj/14c7c23d.jpg",
+  echangeAlliances: "/images/projects/hj/48ea3bc9.jpg",
+  porteAlliance: "/images/projects/hj/d82d1253.jpg",
+  porteAlliance2: "/images/projects/hj/95d04245.jpg",
+  sortieMaries: "/images/projects/hj/4d2b8e48.jpg",
+  // Cocktail
+  tongaSoa: "/images/projects/hj/03cfe656.jpg",
+  cocktail1: "/images/projects/hj/c30a6e69.jpg",
+  miroirBienvenue: "/images/projects/hj/40627cb4.jpg",
+  ecritureMiroir: "/images/projects/hj/535476ab.jpg",
+  planDeTable1: "/images/projects/hj/361a575e.jpg",
+  planDeTable2: "/images/projects/hj/c819c291.jpg",
+  lanceBouquet: "/images/projects/hj/8a8bae28.jpg",
+  // Réception
+  tableRectReception2: "/images/projects/hj/92cd3dde.jpg",
+  tableMaries: "/images/projects/hj/d6291217.jpg",
+  tableMaries2: "/images/projects/hj/0b7eb9c6.jpg",
+  papeterieTable: "/images/projects/hj/a53c7583.jpg",
+  papeterieTable2: "/images/projects/hj/9b85cc99.jpg",
+  numeroDeTable: "/images/projects/hj/abab819d.jpg",
+  couperGateau: "/images/projects/hj/44ee1e0c.jpg",
+  // Portrait
+  portrait1: "/images/projects/hj/d9a3dc74.jpg",
+};
 
 const efImages = [
   "b88c2457", "9c79f36a", "54587184", "492d6662", "133cc816", "baf0c9fb",
@@ -153,12 +177,74 @@ export const projects: Project[] = [
       },
       { label: "Photographe", value: "Mathieu Bernard Photographie" },
     ],
-    hero: hjImages[2],
-    gallery: hjImages,
+    hero: hjPhoto.domaine,
+    parallax: "/images/projects/hj/parallax.jpg",
+    gallery: [
+      // Hero (slice 0..3) : gauche · centre · droite
+      hjPhoto.tableRectReception, hjPhoto.domaine, hjPhoto.bouquetMariee1,
+    ],
     sections: [
-      { label: "Préparations", images: [hjImages[3], hjImages[4], hjImages[5]] },
-      { label: "Cérémonie", images: [hjImages[1], hjImages[6], hjImages[7]], bg: "dark" },
-      { label: "Réception", images: [hjImages[0], hjImages[8], hjImages[9], hjImages[10], hjImages[11]] },
+      // PRÉPARATIFS — motif aloalo en tête + 5 photos (watch retirée, bouquet en situation déplacé vers cérémonie)
+      {
+        label: "Préparatifs",
+        motif: "/images/projects/hj/aloalo.svg",
+        images: [
+          hjPhoto.robeMariee,       // L1
+          hjPhoto.detailMariee,     // R1
+          hjPhoto.detailMarie,      // L2
+          hjPhoto.boutonniere,      // R2
+          hjPhoto.bouquetMariee2,   // L3
+        ],
+      },
+      // CÉRÉMONIE — panneau (R1) et allée HJL (L3) séparés par enfants + cérémonie 1
+      {
+        label: "Cérémonie",
+        bg: "dark",
+        images: [
+          hjPhoto.bouquetEnSituation,  // L1 — transition depuis préparatifs
+          hjPhoto.panneauBienvenueEglise, // R1 — arrivée à l'église
+          hjPhoto.enfantsHonneur,      // L2
+          hjPhoto.ceremonie1,          // R2 — entrée mariée
+          hjPhoto.allee2Hjl,           // L3 — allée + HJL bien visible (séparé du panneau)
+          hjPhoto.echangeAlliances,    // R3
+          hjPhoto.porteAlliance,       // L4
+          hjPhoto.ceremonie2,          // R4
+          hjPhoto.porteAlliance2,      // L5
+          hjPhoto.sortieMaries,        // R5 — sortie
+        ],
+      },
+      // COCKTAIL — Tonga Soa d'accueil puis plans de table et cocktail
+      {
+        label: "Cocktail",
+        images: [
+          hjPhoto.tongaSoa,            // L1 — accueil
+          hjPhoto.miroirBienvenue,     // R1
+          hjPhoto.ecritureMiroir,      // L2
+          hjPhoto.cocktail1,           // R2
+          hjPhoto.planDeTable1,        // L3
+          hjPhoto.planDeTable2,        // R3
+          hjPhoto.lanceBouquet,        // L4
+        ],
+      },
+      // RÉCEPTION — tables + papeterie + numéros + gâteau
+      {
+        label: "Réception",
+        bg: "dark",
+        images: [
+          hjPhoto.tableRectReception2, // L1
+          hjPhoto.tableMaries,         // R1
+          hjPhoto.papeterieTable,      // L2
+          hjPhoto.tableMaries2,        // R2
+          hjPhoto.numeroDeTable,       // L3
+          hjPhoto.papeterieTable2,     // R3
+          hjPhoto.couperGateau,        // L4
+        ],
+      },
+      // PORTRAIT final
+      {
+        label: "Portrait",
+        images: [hjPhoto.portrait1],
+      },
     ],
   },
 ];
