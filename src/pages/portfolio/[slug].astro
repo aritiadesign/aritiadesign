@@ -61,34 +61,77 @@ const { project: p } = Astro.props;
     <section
       class="project-parallax"
       aria-label={`${p.title} — vue d'ensemble`}
-      style={`background-image: url('${p.parallax}');`}
-    ></section>
+    >
+      <div
+        class="project-parallax-bg"
+        style={`background-image: url('${p.parallax}');`}
+      ></div>
+    </section>
   )}
 
   <style>
+    /* Parallax fluide : wrapper clip overflow + enfant translaté via JS.
+       Transform GPU = pas de saccade. L'image est plus haute que le wrapper
+       pour avoir de la marge de déplacement. */
     .project-parallax {
+      position: relative;
       height: 400px;
+      overflow: hidden;
+    }
+    .project-parallax-bg {
+      position: absolute;
+      top: -30%;
+      left: 0;
+      width: 100%;
+      height: 160%;
       background-size: cover;
       background-position: center;
-      background-attachment: fixed;
-      /* GPU acceleration pour un scroll fluide sans glitch
-         background-attachment: fixed est connu pour saccader sur Safari macOS
-         sans forcer de compositing layer dédié */
       will-change: transform;
-      transform: translate3d(0, 0, 0);
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
     }
     @media (max-width: 767px) {
-      .project-parallax {
-        height: 220px;
-        background-attachment: scroll;
-        /* Mobile : pas besoin de GPU hints, scroll classique */
+      .project-parallax { height: 220px; }
+      .project-parallax-bg {
+        /* Pas de parallax sur mobile : image fixe dans son wrapper */
+        top: 0;
+        height: 100%;
         will-change: auto;
-        transform: none;
       }
     }
   </style>
+
+  <script is:inline>
+    /* Parallax JS fluide : translation GPU en fonction du scroll.
+       requestAnimationFrame pour synchroniser avec le refresh rate. */
+    (function () {
+      if (window.matchMedia("(max-width: 767px)").matches) return;
+      const el = document.querySelector(".project-parallax");
+      if (!el) return;
+      const bg = el.querySelector(".project-parallax-bg");
+      if (!bg) return;
+
+      let ticking = false;
+      function update() {
+        const rect = el.getBoundingClientRect();
+        const vh = window.innerHeight;
+        // Progression: 0 quand la section commence à sortir par le haut,
+        // 1 quand elle commence à entrer par le bas
+        const progress = (vh - rect.top) / (vh + rect.height);
+        // Marge de 30% haut/bas sur l'image : on peut déplacer de -30% à +30%
+        const translatePct = (progress - 0.5) * 60;
+        bg.style.transform = `translate3d(0, ${translatePct}%, 0)`;
+        ticking = false;
+      }
+      function onScroll() {
+        if (!ticking) {
+          requestAnimationFrame(update);
+          ticking = true;
+        }
+      }
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll, { passive: true });
+      update();
+    })();
+  </script>
 
   {/* ───────────────────────── 3. SECTIONS (chapters + photo grids) ───────────────────────── */}
   {p.sections?.map((s) => {
