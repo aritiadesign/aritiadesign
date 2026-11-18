@@ -226,19 +226,21 @@ export const projects: Project[] = [
           hjPhoto.portrait1,           // R5 — portrait couple (FIN ✓)
         ],
       },
-      // RÉCEPTION — 7 items (4L+3R, colonne gauche plus longue ✓). Mise en page
-      // rééquilibrée pour éliminer le vide important en bas de colonne droite :
-      // row 1 pair wide-shot + roses detail (même sujet), row 2 pair numéro
-      // + papeterie (2 details), row 3 pair JOUR + NUIT (même couple jour/nuit),
-      // row 4 gâteau final.
+      // RÉCEPTION — 7 items (4L+3R) optimisées pour MINIMISER le gap entre colonnes
+      // (comme EF/MT). Gap V11: 1.06 → V12: 0.52 (halvé). Pour atteindre le gap
+      // minimum avec les 7 photos disponibles, numéroDeTable va en R1 au lieu de L2
+      // (2e position en reading-order, hero+numéro en pair haut comme sur EF).
+      // Row 1 : wide + numéro (gros plans d'ouverture). Row 2 : papeterie + rect2
+      // roses (2 détails). Row 3 : mariés JOUR + NUIT (pair jour/nuit). L4 : gâteau.
+      // Hauteurs L=4.07, R=3.55 (gap 0.52 unités ~ 310px au lieu de 636px).
       {
         label: "Réception",
         bg: "dark",
         images: [
           hjPhoto.tableRectReception,   // L1 — hero #1 réutilisé (table rect vue large) ✓
-          hjPhoto.tableRectReception2,  // R1 — table rect 2 (détail roses) — pair wide/detail
-          hjPhoto.numeroDeTable,        // L2 — numéro de table (2e position L) ✓
-          hjPhoto.papeterieTable,       // R2 — papeterie table (3 fleurs) — pair détails
+          hjPhoto.numeroDeTable,        // R1 — numéro de table (2e en reading-order)
+          hjPhoto.papeterieTable,       // L2 — papeterie table (3 fleurs couleur)
+          hjPhoto.tableRectReception2,  // R2 — table rect 2 (détail roses)
           hjPhoto.tableMaries,          // L3 — table des mariés JOUR
           hjPhoto.tableMaries2,         // R3 — table des mariés NUIT (pair jour/nuit)
           hjPhoto.couperGateau,         // L4 — couper le gâteau (FIN ✓)
