@@ -168,7 +168,7 @@ export const projects: Project[] = [
     titleItalic: "avec un accent culturel",
     subtitle: "DOMAINE DE SAINT-MARTIN-DE-RONSAC, SAINTE-FOY-D'AIGREFEUILLE",
     intro:
-      "Une union contemporaine mariant romantisme et héritage culturel malgache au Domaine de Saint-Martin-de-Ronsac. L'harmonie visuelle s'articule autour d'une palette douce, dynamisée par les nuances naturelles du vert genévrier. Le design intègre avec précision l'aloalo, symbole ethnique fort, apportant une sophistication unique et sur-mesure à chaque détail du décor.",
+      "Une union contemporaine mariant romantisme et héritage culturel malgache au Domaine de Saint-Martin-de-Ronsac. L'harmonie visuelle s'articule autour d'une palette douce, dynamisée par les nuances naturelles du vert genévrier. Le design intègre avec précision le graphisme du aloalo, symbole ethnique fort, apportant une sophistication unique et sur-mesure à chaque détail du décor.",
     credits: [
       { label: "Lieu / Domaine", value: "Domaine de Saint-Martin-de-Ronsac, Sainte-Foy-d'Aigrefeuille" },
       { label: "Formule", value: "L'Exception • Gamme Signature" },
