@@ -163,18 +163,7 @@ export const projects: Project[] = [
       { label: "Lieu / Domaine", value: "Domaine de Saint-Martin-de-Ronsac, Sainte-Foy-d'Aigrefeuille" },
       { label: "Formule", value: "L'Exception • Gamme Signature" },
       { label: "Avec", value: "Direction artistique, graphisme, scénographie, floral, papeterie" },
-      {
-        label: "Création",
-        value:
-          "<ul class=\"mt-2 space-y-1 text-left inline-block\">" +
-          "<li>• Plan de table</li>" +
-          "<li>• Bannière avec support</li>" +
-          "<li>• Lettres « H,J-L »</li>" +
-          "<li>• Porte-alliances</li>" +
-          "<li>• Urne</li>" +
-          "<li>• Signalétiques Église & Domaine</li>" +
-          "</ul>",
-      },
+      { label: "Création", value: "Plan de table, bannière avec support, lettres « H,J-L », porte-alliances, urne, signalétiques Église &amp; Domaine" },
       { label: "Photographe", value: "Mathieu Bernard Photographie" },
     ],
     hero: hjPhoto.domaine,
@@ -237,21 +226,21 @@ export const projects: Project[] = [
           hjPhoto.portrait1,           // R5 — portrait couple (FIN ✓)
         ],
       },
-      // RÉCEPTION — 7 items (4L+3R, colonne gauche plus longue ✓). Déroulé
-      // chronologique : ouverture (L1) → dîner JOUR (R1) → détails (L2-R2-L3) →
-      // NUIT (R3) → couper gâteau FIN (L4).
-      // Table rectangulaire 1 (hero #1) en L1. Numéro de table L2.
-      // Papeterie B&W retirée (outlier tonal).
+      // RÉCEPTION — 7 items (4L+3R, colonne gauche plus longue ✓). Mise en page
+      // rééquilibrée pour éliminer le vide important en bas de colonne droite :
+      // row 1 pair wide-shot + roses detail (même sujet), row 2 pair numéro
+      // + papeterie (2 details), row 3 pair JOUR + NUIT (même couple jour/nuit),
+      // row 4 gâteau final.
       {
         label: "Réception",
         bg: "dark",
         images: [
           hjPhoto.tableRectReception,   // L1 — hero #1 réutilisé (table rect vue large) ✓
-          hjPhoto.tableMaries,          // R1 — table des mariés JOUR
+          hjPhoto.tableRectReception2,  // R1 — table rect 2 (détail roses) — pair wide/detail
           hjPhoto.numeroDeTable,        // L2 — numéro de table (2e position L) ✓
-          hjPhoto.papeterieTable,       // R2 — papeterie table (3 fleurs couleur)
-          hjPhoto.tableRectReception2,  // L3 — table rect 2 (détail roses)
-          hjPhoto.tableMaries2,         // R3 — table des mariés NUIT
+          hjPhoto.papeterieTable,       // R2 — papeterie table (3 fleurs) — pair détails
+          hjPhoto.tableMaries,          // L3 — table des mariés JOUR
+          hjPhoto.tableMaries2,         // R3 — table des mariés NUIT (pair jour/nuit)
           hjPhoto.couperGateau,         // L4 — couper le gâteau (FIN ✓)
         ],
       },
