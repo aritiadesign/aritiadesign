@@ -226,24 +226,22 @@ export const projects: Project[] = [
           hjPhoto.portrait1,           // R5 — portrait couple (FIN ✓)
         ],
       },
-      // RÉCEPTION — 7 items (4L+3R) optimisées pour MINIMISER le gap entre colonnes
-      // (comme EF/MT). Gap V11: 1.06 → V12: 0.52 (halvé). Pour atteindre le gap
-      // minimum avec les 7 photos disponibles, numéroDeTable va en R1 au lieu de L2
-      // (2e position en reading-order, hero+numéro en pair haut comme sur EF).
-      // Row 1 : wide + numéro (gros plans d'ouverture). Row 2 : papeterie + rect2
-      // roses (2 détails). Row 3 : mariés JOUR + NUIT (pair jour/nuit). L4 : gâteau.
-      // Hauteurs L=4.07, R=3.55 (gap 0.52 unités ~ 310px au lieu de 636px).
+      // RÉCEPTION — 7 items (4L+3R, mosaïque masonry). Colonne droite : R1 top =
+      // tableMariés JOUR, R2 numéro de table (détail), R3 bottom = tableMariés NUIT.
+      // Autres réception (NUIT en R3 et couper gâteau en L4) en bas, alternant
+      // entre colonne droite et gauche. Colonne gauche : hero L1, puis papeterie
+      // et rect2 détails, gâteau en bas.
       {
         label: "Réception",
         bg: "dark",
         images: [
-          hjPhoto.tableRectReception,   // L1 — hero #1 réutilisé (table rect vue large) ✓
-          hjPhoto.numeroDeTable,        // R1 — numéro de table (2e en reading-order)
+          hjPhoto.tableRectReception,   // L1 — hero #1 réutilisé (table rect vue large)
+          hjPhoto.tableMaries,          // R1 — table des mariés JOUR (top de R ✓)
           hjPhoto.papeterieTable,       // L2 — papeterie table (3 fleurs couleur)
-          hjPhoto.tableRectReception2,  // R2 — table rect 2 (détail roses)
-          hjPhoto.tableMaries,          // L3 — table des mariés JOUR
-          hjPhoto.tableMaries2,         // R3 — table des mariés NUIT (pair jour/nuit)
-          hjPhoto.couperGateau,         // L4 — couper le gâteau (FIN ✓)
+          hjPhoto.numeroDeTable,        // R2 — numéro de table
+          hjPhoto.tableRectReception2,  // L3 — table rect 2 (détail roses)
+          hjPhoto.tableMaries2,         // R3 — table des mariés NUIT (bas de R)
+          hjPhoto.couperGateau,         // L4 — couper le gâteau (bas de L, alterne avec NUIT)
         ],
       },
     ],
