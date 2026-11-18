@@ -186,17 +186,18 @@ export const projects: Project[] = [
     sections: [
       // PRÉPARATIFS — 5 items : L1-R1-L2(LOGO)-R2-L3 → colonne gauche (3) plus longue
       // que la droite (2), comme EF et MT. Logo monogramme en L2.
-      // Bouquet mariée 2 retiré (déjà représenté par bouquet mariée 1 en hero et
-      // bouquet en situation en début de cérémonie). Bow tie (R1) et boutonnière
-      // (L3) aux coins opposés, logo entre les deux.
+      // L1 = horizontale (détail mariée ring retouchée). Alternance bride/groom
+      // parfaite : row 1 (bride|groom), row 2 (LOGO|bride), row 3 (groom|—).
+      // Bow tie (R1) et boutonnière (L3) aux coins opposés. Bouquet mariée 2 gardé
+      // en R2. Robe mariée retirée (outlier tonal B&W).
       {
         label: "Préparatifs",
         images: [
-          hjPhoto.robeMariee,       // L1 — bride
-          hjPhoto.detailMarie,      // R1 — groom (bow tie)
-          hjPhoto.logo,             // L2 — monogramme (comme EF)
-          hjPhoto.detailMariee,     // R2 — bride (ring)
-          hjPhoto.boutonniere,      // L3 — groom (far from bow tie)
+          hjPhoto.detailMariee,     // L1 — bride (horizontale, ring close-up)
+          hjPhoto.detailMarie,      // R1 — groom (bow tie, horizontale)
+          hjPhoto.logo,             // L2 — monogramme HJ (comme EF)
+          hjPhoto.bouquetMariee2,   // R2 — bride avec bouquet (portrait, gardée)
+          hjPhoto.boutonniere,      // L3 — groom (horizontale, opposé du bow tie)
         ],
       },
       // CÉRÉMONIE — déroulé logique de la journée, échange alliances vers la fin,
