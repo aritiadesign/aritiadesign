@@ -71,9 +71,22 @@ const { project: p } = Astro.props;
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
+      /* GPU acceleration pour un scroll fluide sans glitch
+         background-attachment: fixed est connu pour saccader sur Safari macOS
+         sans forcer de compositing layer dédié */
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
     }
     @media (max-width: 767px) {
-      .project-parallax { height: 220px; background-attachment: scroll; }
+      .project-parallax {
+        height: 220px;
+        background-attachment: scroll;
+        /* Mobile : pas besoin de GPU hints, scroll classique */
+        will-change: auto;
+        transform: none;
+      }
     }
   </style>
 
