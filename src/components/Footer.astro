@@ -4,10 +4,12 @@ import { navLinks as links } from "../data/nav";
 interface Props {
   /** When false, render footer in light theme (white bg, dark text). */
   dark?: boolean;
+  /** Optional override for the 3rd gallery image (useful for project pages). */
+  image3?: { src: string; alt: string };
   /** Optional override for the 4th gallery image (useful for project pages). */
   image4?: { src: string; alt: string };
 }
-const { dark = true, image4 } = Astro.props;
+const { dark = true, image3, image4 } = Astro.props;
 
 const galleryStripDark = [
   { src: "/images/footer-1.jpg", alt: "Salle de réception décorée" },
@@ -22,7 +24,13 @@ const galleryStripLight = [
   { src: "/images/footer-light-4.jpg", alt: "Salle de réception" },
 ];
 const baseStrip = dark ? galleryStripDark : galleryStripLight;
-const galleryStrip = image4 ? [...baseStrip.slice(0, 3), image4] : baseStrip;
+// Apply optional per-project overrides at positions 3 and 4 (indexes 2 and 3)
+const galleryStrip = [
+  baseStrip[0],
+  baseStrip[1],
+  image3 ?? baseStrip[2],
+  image4 ?? baseStrip[3],
+];
 ---
 
 <footer class:list={[dark ? "bg-[#1a1a1a] text-white" : "bg-white text-[var(--color-ink)]"]} data-footer-theme={dark ? "dark" : "light"} style="padding-bottom: env(safe-area-inset-bottom);">
