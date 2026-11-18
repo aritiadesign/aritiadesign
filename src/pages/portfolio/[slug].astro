@@ -80,6 +80,9 @@ const { project: p } = Astro.props;
   {/* ───────────────────────── 3. SECTIONS (chapters + photo grids) ───────────────────────── */}
   {p.sections?.map((s) => {
     const isDark = s.bg === "dark";
+    // Soit left/right explicites, soit split auto depuis images (even=L, odd=R)
+    const leftImages = s.left ?? s.images?.filter((_, i) => i % 2 === 0) ?? [];
+    const rightImages = s.right ?? s.images?.filter((_, i) => i % 2 === 1) ?? [];
     return (
       <section class:list={[isDark ? "bg-[#1a1a1a] text-white" : "bg-white text-[var(--color-ink-soft)]"]}>
         <div class="px-6 pt-20 md:pt-28 pb-10 md:pb-14 text-center">
@@ -120,11 +123,11 @@ const { project: p } = Astro.props;
               Les photos gardent leurs hauteurs naturelles, effet tuile. */}
           <div class="mx-auto max-w-[1100px] grid grid-cols-2 gap-2 md:gap-10 items-start">
             <div class="flex flex-col gap-2 md:gap-10">
-              {s.images.filter((_, i) => i % 2 === 0).map((src, i) => (
+              {leftImages.map((src, i) => (
                 <div class="block overflow-hidden bg-neutral-200">
                   <img
                     src={src}
-                    alt={`${p.title} — ${s.label} #${i * 2 + 1}`}
+                    alt={`${p.title} — ${s.label} #L${i + 1}`}
                     loading="lazy"
                     class="block w-full h-auto"
                   />
@@ -132,11 +135,11 @@ const { project: p } = Astro.props;
               ))}
             </div>
             <div class="flex flex-col gap-2 md:gap-10">
-              {s.images.filter((_, i) => i % 2 === 1).map((src, i) => (
+              {rightImages.map((src, i) => (
                 <div class="block overflow-hidden bg-neutral-200">
                   <img
                     src={src}
-                    alt={`${p.title} — ${s.label} #${i * 2 + 2}`}
+                    alt={`${p.title} — ${s.label} #R${i + 1}`}
                     loading="lazy"
                     class="block w-full h-auto"
                   />

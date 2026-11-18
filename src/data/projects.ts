@@ -7,8 +7,18 @@ export interface Project {
   credits: { label: string; value: string }[];
   hero: string;
   gallery: string[];
-  /** Optional sections — text between groups of images */
-  sections?: { label: string; text?: string; images: string[]; bg?: "light" | "dark"; motif?: string }[];
+  /** Optional sections — text between groups of images.
+   *  Use `images` for auto-split (even indices → left, odd → right),
+   *  OR `left` + `right` for explicit column assignments. */
+  sections?: {
+    label: string;
+    text?: string;
+    images?: string[];
+    left?: string[];
+    right?: string[];
+    bg?: "light" | "dark";
+    motif?: string;
+  }[];
   /** Optional full-width parallax image shown between credits and first section */
   parallax?: string;
   /** Optional video shown at the end of the project page */
@@ -226,22 +236,23 @@ export const projects: Project[] = [
           hjPhoto.portrait1,           // R5 — portrait couple (FIN ✓)
         ],
       },
-      // RÉCEPTION — 7 items (4L+3R, mosaïque masonry). Colonne droite : R1 top =
-      // tableMariés JOUR, R2 numéro de table (détail), R3 bottom = tableMariés NUIT.
-      // Autres réception (NUIT en R3 et couper gâteau en L4) en bas, alternant
-      // entre colonne droite et gauche. Colonne gauche : hero L1, puis papeterie
-      // et rect2 détails, gâteau en bas.
+      // RÉCEPTION — 7 items, répartition explicite : L=3 items, R=4 items.
+      // Colonne gauche (3) : hero #1 top, numéro de table, rect2 (détails roses).
+      // Colonne droite (4) : tableMariés JOUR (top) → papeterieTable 3 fleurs →
+      // tableMariés NUIT → couper gâteau (fin).
       {
         label: "Réception",
         bg: "dark",
-        images: [
+        left: [
           hjPhoto.tableRectReception,   // L1 — hero #1 réutilisé (table rect vue large)
-          hjPhoto.tableMaries,          // R1 — table des mariés JOUR (top de R ✓)
-          hjPhoto.papeterieTable,       // L2 — papeterie table (3 fleurs couleur)
-          hjPhoto.numeroDeTable,        // R2 — numéro de table
+          hjPhoto.numeroDeTable,        // L2 — numéro de table
           hjPhoto.tableRectReception2,  // L3 — table rect 2 (détail roses)
-          hjPhoto.tableMaries2,         // R3 — table des mariés NUIT (bas de R)
-          hjPhoto.couperGateau,         // L4 — couper le gâteau (bas de L, alterne avec NUIT)
+        ],
+        right: [
+          hjPhoto.tableMaries,          // R1 — table des mariés JOUR ✓
+          hjPhoto.papeterieTable,       // R2 — papeterie table (3 fleurs couleur) ✓
+          hjPhoto.tableMaries2,         // R3 — table des mariés NUIT ✓
+          hjPhoto.couperGateau,         // R4 — couper le gâteau ✓
         ],
       },
     ],
