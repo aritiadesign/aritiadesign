@@ -69,7 +69,6 @@ const hjPhoto = {
   tableMaries: "/images/projects/hj/d6291217.jpg",
   tableMaries2: "/images/projects/hj/0b7eb9c6.jpg",
   papeterieTable: "/images/projects/hj/a53c7583.jpg",
-  papeterieTable2: "/images/projects/hj/9b85cc99.jpg",
   numeroDeTable: "/images/projects/hj/abab819d.jpg",
   couperGateau: "/images/projects/hj/44ee1e0c.jpg",
   // Portrait
@@ -238,11 +237,11 @@ export const projects: Project[] = [
           hjPhoto.portrait1,           // R5 — portrait couple (FIN ✓)
         ],
       },
-      // RÉCEPTION — 8 items (4L+4R temporaire). Déroulé chronologique :
-      // ouverture (L1) → dîner JOUR (R1) → détails (L2-R2-L3) → NUIT (R3) →
-      // papeterie 2 (L4) → couper gâteau FIN (R4).
-      // Table rectangulaire 1 (hero #1) en L1. Numéro de table L2. Papeteries
-      // R2 et L4 séparées diagonalement.
+      // RÉCEPTION — 7 items (4L+3R, colonne gauche plus longue ✓). Déroulé
+      // chronologique : ouverture (L1) → dîner JOUR (R1) → détails (L2-R2-L3) →
+      // NUIT (R3) → couper gâteau FIN (L4).
+      // Table rectangulaire 1 (hero #1) en L1. Numéro de table L2.
+      // Papeterie B&W retirée (outlier tonal).
       {
         label: "Réception",
         bg: "dark",
@@ -253,8 +252,7 @@ export const projects: Project[] = [
           hjPhoto.papeterieTable,       // R2 — papeterie table (3 fleurs couleur)
           hjPhoto.tableRectReception2,  // L3 — table rect 2 (détail roses)
           hjPhoto.tableMaries2,         // R3 — table des mariés NUIT
-          hjPhoto.papeterieTable2,      // L4 — papeterie table 2 (menu B&W)
-          hjPhoto.couperGateau,         // R4 — couper le gâteau (FIN ✓)
+          hjPhoto.couperGateau,         // L4 — couper le gâteau (FIN ✓)
         ],
       },
     ],
