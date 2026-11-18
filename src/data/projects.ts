@@ -57,6 +57,7 @@ const hjPhoto = {
   sortieMaries: "/images/projects/hj/4d2b8e48.jpg",
   // Cocktail
   entreeCocktail: "/images/projects/hj/531c7f6e.jpg",
+  cocktailTraiteur: "/images/projects/hj/8975d6a9.jpg",
   tongaSoa: "/images/projects/hj/03cfe656.jpg",
   cocktail1: "/images/projects/hj/c30a6e69.jpg",
   miroirBienvenue: "/images/projects/hj/40627cb4.jpg",
@@ -219,42 +220,44 @@ export const projects: Project[] = [
           hjPhoto.sortieMaries,           // L5 — sortie, lancé de pétales (FIN)
         ],
       },
-      // COCKTAIL — Entrée du couple en L1, puis signalétiques dans l'ordre demandé
-      // (miroir avant tongasoa). TEMPORAIRE : 8 items (4L+4R, colonnes égales) en
-      // attendant les photos supplémentaires à ajouter pour disperser les
-      // signalétiques (tongasoa, miroir, plan de table). Une fois ajoutées,
-      // on reviendra à 9 items (5L+4R, colonne gauche plus longue).
+      // COCKTAIL — 11 items (6L+5R, colonne gauche plus longue) avec signalétiques
+      // dispersées et portrait vers la fin. Domaine reutilisé en L1 pour ouvrir.
+      // Miroir (R1) et tongasoa (L3) séparés de 2 rangs. Plan de table 1 (R3)
+      // et plan de table 2 (R5) séparés de 2 rangs.
       {
         label: "Cocktail",
         images: [
-          hjPhoto.entreeCocktail,      // L1 — entrée du couple au cocktail
+          hjPhoto.domaine,             // L1 — domaine (réutilisé du hero) : ouverture
           hjPhoto.miroirBienvenue,     // R1 — 1ère signalétique : miroir
-          hjPhoto.tongaSoa,            // L2 — 2e signalétique : tongasoa
-          hjPhoto.ecritureMiroir,      // R2 — détail écriture miroir
-          hjPhoto.cocktail1,           // L3 — cocktail (ambiance)
+          hjPhoto.entreeCocktail,      // L2 — entrée du couple
+          hjPhoto.cocktail1,           // R2 — ambiance cocktail
+          hjPhoto.tongaSoa,            // L3 — 2e signalétique (séparée du miroir)
           hjPhoto.planDeTable1,        // R3 — plan de table 1
-          hjPhoto.planDeTable2,        // L4 — plan de table 2
-          hjPhoto.lanceBouquet,        // R4 — lancé de bouquet (fin cocktail)
+          hjPhoto.cocktailTraiteur,    // L4 — cocktail traiteur (nouveau)
+          hjPhoto.portrait1,           // R4 — portrait couple (vers la fin)
+          hjPhoto.ecritureMiroir,      // L5 — détail écriture miroir
+          hjPhoto.planDeTable2,        // R5 — plan de table 2 (séparée de plan 1)
+          hjPhoto.lanceBouquet,        // L6 — lancé de bouquet (final)
         ],
       },
-      // RÉCEPTION — tables + papeterie + numéros + gâteau
+      // RÉCEPTION — 8 items (4L+4R temporaire, en attente d'une photo supplémentaire
+      // pour revenir à 9 items 5L+4R). Table mariés jour en L1 (début), table mariés
+      // nuit en R4 (fin). Numéro de table en L2 (2e position colonne gauche).
+      // Papeterie table (R2) et papeterie table 2 (L4) séparées de 2 rangs diagonalement.
+      // Hero #1 (tableRectReception) réutilisé en R1.
       {
         label: "Réception",
         bg: "dark",
         images: [
-          hjPhoto.tableRectReception2, // L1
-          hjPhoto.tableMaries,         // R1
-          hjPhoto.papeterieTable,      // L2
-          hjPhoto.tableMaries2,        // R2
-          hjPhoto.numeroDeTable,       // L3
-          hjPhoto.papeterieTable2,     // R3
-          hjPhoto.couperGateau,        // L4
+          hjPhoto.tableMaries,          // L1 — table des mariés JOUR (début)
+          hjPhoto.tableRectReception,   // R1 — hero #1 réutilisé (table rect vue large)
+          hjPhoto.numeroDeTable,        // L2 — numéro de table (2e position L)
+          hjPhoto.papeterieTable,       // R2 — papeterie table 1
+          hjPhoto.tableRectReception2,  // L3 — table rect 2 (détail roses)
+          hjPhoto.couperGateau,         // R3 — couper le gâteau
+          hjPhoto.papeterieTable2,      // L4 — papeterie table 2 (séparée de papeterie 1)
+          hjPhoto.tableMaries2,         // R4 — table des mariés NUIT (fin)
         ],
-      },
-      // PORTRAIT final
-      {
-        label: "Portrait",
-        images: [hjPhoto.portrait1],
       },
     ],
   },
