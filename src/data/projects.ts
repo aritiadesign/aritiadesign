@@ -39,7 +39,7 @@ const hjPhoto = {
   tableRectReception: "/images/projects/hj/2afc7804.jpg",
   bouquetMariee1: "/images/projects/hj/5af8f235.jpg",
   // Préparatifs
-  logo: "/images/projects/hj/logo.png",
+  logo: "/images/projects/hj/logo.jpg",
   robeMariee: "/images/projects/hj/b46d5dca.jpg",
   detailMariee: "/images/projects/hj/0d5fb2cc.jpg",
   detailMarie: "/images/projects/hj/70e39f0b.jpg",
@@ -184,17 +184,19 @@ export const projects: Project[] = [
       hjPhoto.tableRectReception, hjPhoto.domaine, hjPhoto.bouquetMariee1,
     ],
     sections: [
-      // PRÉPARATIFS — logo monogramme HJ en L2 (comme EF) + 5 photos alternées mariée/marié
-      // pour que les 2 détails « nœud » (bow tie + boutonnière) soient aux coins opposés
+      // PRÉPARATIFS — 5 items : L1-R1-L2(LOGO)-R2-L3 → colonne gauche (3) plus longue
+      // que la droite (2), comme EF et MT. Logo monogramme en L2.
+      // Bouquet mariée 2 retiré (déjà représenté par bouquet mariée 1 en hero et
+      // bouquet en situation en début de cérémonie). Bow tie (R1) et boutonnière
+      // (L3) aux coins opposés, logo entre les deux.
       {
         label: "Préparatifs",
         images: [
           hjPhoto.robeMariee,       // L1 — bride
           hjPhoto.detailMarie,      // R1 — groom (bow tie)
           hjPhoto.logo,             // L2 — monogramme (comme EF)
-          hjPhoto.bouquetMariee2,   // R2 — bride
+          hjPhoto.detailMariee,     // R2 — bride (ring)
           hjPhoto.boutonniere,      // L3 — groom (far from bow tie)
-          hjPhoto.detailMariee,     // R3 — bride
         ],
       },
       // CÉRÉMONIE — déroulé logique de la journée, échange alliances vers la fin,
