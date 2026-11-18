@@ -114,31 +114,21 @@ const { project: p } = Astro.props;
           </div>
         )}
         <div class="px-2 md:px-14 pb-20 md:pb-28">
+          {/* Row-based grid : chaque rangée aligne L et R au top (y identique).
+              Gaps horizontal et vertical identiques (gap-2 mobile / gap-10 desktop).
+              Les photos de la même rangée partagent la même hauteur que la plus
+              grande, les plus courtes laissent de l'espace en bas de leur cellule. */}
           <div class="mx-auto max-w-[1100px] grid grid-cols-2 gap-2 md:gap-10 items-start">
-            <div class="flex flex-col gap-2 md:gap-10">
-              {s.images.filter((_, i) => i % 2 === 0).map((src, i) => (
-                <div class="block overflow-hidden bg-neutral-200">
-                  <img
-                    src={src}
-                    alt={`${p.title} — ${s.label} #${i * 2 + 1}`}
-                    loading="lazy"
-                    class="block w-full h-auto"
-                  />
-                </div>
-              ))}
-            </div>
-            <div class="flex flex-col gap-2 md:gap-10">
-              {s.images.filter((_, i) => i % 2 === 1).map((src, i) => (
-                <div class="block overflow-hidden bg-neutral-200">
-                  <img
-                    src={src}
-                    alt={`${p.title} — ${s.label} #${i * 2 + 2}`}
-                    loading="lazy"
-                    class="block w-full h-auto"
-                  />
-                </div>
-              ))}
-            </div>
+            {s.images.map((src, i) => (
+              <div class="block overflow-hidden bg-neutral-200">
+                <img
+                  src={src}
+                  alt={`${p.title} — ${s.label} #${i + 1}`}
+                  loading="lazy"
+                  class="block w-full h-auto"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
