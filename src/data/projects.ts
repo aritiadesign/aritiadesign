@@ -238,10 +238,11 @@ export const projects: Project[] = [
           hjPhoto.portrait1,           // R5 — portrait couple (FIN ✓)
         ],
       },
-      // RÉCEPTION — 8 items (4L+4R temporaire). Table rectangulaire 1 (hero #1)
-      // en L1 comme demandé. Alternance mosaïque : wide shot | moment | détail | ...
-      // Table mariés JOUR tôt (R1), NUIT à la fin (R4). Numéro de table en L2.
-      // Papeterie table (R2) et papeterie table 2 (L4) séparées diagonalement.
+      // RÉCEPTION — 8 items (4L+4R temporaire). Déroulé chronologique :
+      // ouverture (L1) → dîner JOUR (R1) → détails (L2-R2-L3) → NUIT (R3) →
+      // papeterie 2 (L4) → couper gâteau FIN (R4).
+      // Table rectangulaire 1 (hero #1) en L1. Numéro de table L2. Papeteries
+      // R2 et L4 séparées diagonalement.
       {
         label: "Réception",
         bg: "dark",
@@ -249,11 +250,11 @@ export const projects: Project[] = [
           hjPhoto.tableRectReception,   // L1 — hero #1 réutilisé (table rect vue large) ✓
           hjPhoto.tableMaries,          // R1 — table des mariés JOUR
           hjPhoto.numeroDeTable,        // L2 — numéro de table (2e position L) ✓
-          hjPhoto.papeterieTable,       // R2 — papeterie table 1
+          hjPhoto.papeterieTable,       // R2 — papeterie table (3 fleurs couleur)
           hjPhoto.tableRectReception2,  // L3 — table rect 2 (détail roses)
-          hjPhoto.couperGateau,         // R3 — couper le gâteau
-          hjPhoto.papeterieTable2,      // L4 — papeterie table 2 (séparée de papeterie 1)
-          hjPhoto.tableMaries2,         // R4 — table des mariés NUIT (fin)
+          hjPhoto.tableMaries2,         // R3 — table des mariés NUIT
+          hjPhoto.papeterieTable2,      // L4 — papeterie table 2 (menu B&W)
+          hjPhoto.couperGateau,         // R4 — couper le gâteau (FIN ✓)
         ],
       },
     ],
