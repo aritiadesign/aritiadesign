@@ -144,7 +144,8 @@ const testimonials = [
               src={img.src}
               alt={img.alt}
               loading="lazy"
-              class="h-full w-auto transition-transform duration-700 group-hover:scale-105"
+              draggable="false"
+              class="h-full w-auto transition-transform duration-700 group-hover:scale-105 select-none pointer-events-none"
             />
           </a>
         ))}
@@ -198,12 +199,58 @@ const testimonials = [
         };
 
         // Desktop : pause sur hover, reprise immediate sur mouseleave.
+        // Desktop : pause sur hover, drag libre a la souris (mousedown + move).
+        // Si l'utilisateur quitte le marquee pendant un drag, on continue a
+        // suivre le mouvement via window (sinon le drag se fige des que la
+        // souris sort du container).
+        let mouseDown = false;
+        let mouseStartX = 0;
+        let mouseDragStart = 0;
+        let mouseDragged = false;
+
         marquee.addEventListener("mouseenter", pause);
         marquee.addEventListener("mouseleave", () => {
+          if (mouseDown) return; // garde pause si drag en cours
           clearTimeout(resumeTimer);
           lastTime = performance.now();
           paused = false;
         });
+
+        marquee.addEventListener("mousedown", (e) => {
+          pause();
+          mouseDown = true;
+          mouseStartX = e.clientX;
+          mouseDragStart = position;
+          mouseDragged = false;
+        });
+
+        window.addEventListener("mousemove", (e) => {
+          if (!mouseDown) return;
+          const delta = e.clientX - mouseStartX;
+          if (Math.abs(delta) > 5) mouseDragged = true;
+          if (mouseDragged) {
+            const half = track.scrollWidth / 2;
+            position = mouseDragStart + delta;
+            while (position <= -half) position += half;
+            while (position > 0) position -= half;
+            track.style.transform = `translate3d(${position}px, 0, 0)`;
+          }
+        });
+
+        window.addEventListener("mouseup", () => {
+          if (!mouseDown) return;
+          mouseDown = false;
+          scheduleResume(2000);
+        });
+
+        // Bloque la navigation /portfolio si c'etait un drag (pas un click).
+        marquee.addEventListener("click", (e) => {
+          if (mouseDragged) {
+            e.preventDefault();
+            e.stopPropagation();
+            mouseDragged = false;
+          }
+        }, true);
 
         // Touch mobile : pause + drag libre horizontal avec wrap seamless.
         let touchStartX = 0;

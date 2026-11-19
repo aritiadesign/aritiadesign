@@ -764,10 +764,14 @@ img {
   will-change: transform;
 }
 
-/* JS-driven marquees (home page) — transform3d autoplay, pas de scroll natif */
+/* JS-driven marquees (home + portfolio) — transform3d autoplay, pas de scroll natif */
 .marquee[data-marquee] {
   overflow: hidden;
   touch-action: pan-y;
+  cursor: grab;
+}
+.marquee[data-marquee]:active {
+  cursor: grabbing;
 }
 
 /* CSS-driven marquees (portfolio etc.) — auto-scroll via keyframes, pause on hover */

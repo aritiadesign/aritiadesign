@@ -154,11 +154,45 @@ const leftProject = {
           }, delay);
         };
 
+        // Desktop : pause sur hover, drag libre a la souris.
+        let mouseDown = false;
+        let mouseStartX = 0;
+        let mouseDragStart = 0;
+        let mouseDragged = false;
+
         marquee.addEventListener("mouseenter", pause);
         marquee.addEventListener("mouseleave", () => {
+          if (mouseDown) return;
           clearTimeout(resumeTimer);
           lastTime = performance.now();
           paused = false;
+        });
+
+        marquee.addEventListener("mousedown", (e) => {
+          pause();
+          mouseDown = true;
+          mouseStartX = e.clientX;
+          mouseDragStart = position;
+          mouseDragged = false;
+        });
+
+        window.addEventListener("mousemove", (e) => {
+          if (!mouseDown) return;
+          const delta = e.clientX - mouseStartX;
+          if (Math.abs(delta) > 5) mouseDragged = true;
+          if (mouseDragged) {
+            const half = track.scrollWidth / 2;
+            position = mouseDragStart + delta;
+            while (position <= -half) position += half;
+            while (position > 0) position -= half;
+            track.style.transform = `translate3d(${position}px, 0, 0)`;
+          }
+        });
+
+        window.addEventListener("mouseup", () => {
+          if (!mouseDown) return;
+          mouseDown = false;
+          scheduleResume(2000);
         });
 
         // Touch mobile : pause + drag libre horizontal avec wrap seamless.
