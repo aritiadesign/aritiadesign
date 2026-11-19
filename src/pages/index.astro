@@ -203,10 +203,35 @@ const testimonials = [
           paused = false;
         });
 
-        // Touch mobile : pause tant que le doigt est pose, reprend 2s apres relache.
-        marquee.addEventListener("touchstart",  pause,                       { passive: true });
-        marquee.addEventListener("touchend",    () => scheduleResume(2000),  { passive: true });
-        marquee.addEventListener("touchcancel", () => scheduleResume(2000),  { passive: true });
+        // Touch mobile : pause + drag libre horizontal avec wrap seamless.
+        let touchStartX = 0;
+        let dragStartPos = 0;
+        let isDragging = false;
+
+        marquee.addEventListener("touchstart", (e) => {
+          pause();
+          isDragging = true;
+          touchStartX = e.touches[0].clientX;
+          dragStartPos = position;
+        }, { passive: true });
+
+        marquee.addEventListener("touchmove", (e) => {
+          if (!isDragging) return;
+          const delta = e.touches[0].clientX - touchStartX;
+          const half = track.scrollWidth / 2;
+          position = dragStartPos + delta;
+          // Wrap dans [-half, 0] pour boucle seamless meme en drag
+          while (position <= -half) position += half;
+          while (position > 0) position -= half;
+          track.style.transform = `translate3d(${position}px, 0, 0)`;
+        }, { passive: true });
+
+        const endDrag = () => {
+          isDragging = false;
+          scheduleResume(2000);
+        };
+        marquee.addEventListener("touchend",    endDrag, { passive: true });
+        marquee.addEventListener("touchcancel", endDrag, { passive: true });
       })();
     </script>
 
