@@ -122,7 +122,7 @@ const leftProject = {
         // mobile contre 200px home, donc a LOOP_SECONDS identique le marquee
         // portfolio avance plus vite en px/sec. On fixe la vitesse en px/sec
         // directement, ce qui aligne la perception des 2 marquees.
-        const PX_PER_SEC = matchMedia("(max-width: 768px)").matches ? 70 : 95;
+        const PX_PER_SEC = matchMedia("(max-width: 768px)").matches ? 100 : 130;
         let paused = false;
         let resumeTimer;
         let position = 0;

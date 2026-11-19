@@ -162,7 +162,10 @@ const testimonials = [
         // container : scrollLeft iOS Safari jitter + arrondi integer + momentum
         // scrolling => animation saccadee sur mobile. Transform est composite,
         // zero layout, zero paint, lisse en 60 fps.
-        const LOOP_SECONDS = matchMedia("(max-width: 768px)").matches ? 50 : 90;
+        // Vitesse en px/sec directement (pas en LOOP_SECONDS) pour que home et
+        // portfolio aient la meme cadence visuelle quelle que soit la taille
+        // des thumbnails. Preset equilibre : ~5-6s par image a l'ecran.
+        const PX_PER_SEC = matchMedia("(max-width: 768px)").matches ? 100 : 130;
         let paused = false;
         let resumeTimer;
         let position = 0;             // current translate x (negatif ou 0)
@@ -174,8 +177,7 @@ const testimonials = [
           if (!paused) {
             const half = track.scrollWidth / 2;
             if (half > 0) {
-              const speed = half / LOOP_SECONDS; // px/sec
-              position -= speed * (dt / 1000);
+              position -= PX_PER_SEC * (dt / 1000);
               if (position <= -half) position += half;
               track.style.transform = `translate3d(${position}px, 0, 0)`;
             }
