@@ -761,20 +761,14 @@ img {
 .marquee-track {
   display: flex;
   width: max-content;
-  will-change: scroll-position;
+  will-change: transform;
 }
 
-/* JS-driven marquees (home page) — scrollable, draggable */
+/* JS-driven marquees (home page) — transform3d autoplay, pas de scroll natif */
 .marquee[data-marquee] {
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  touch-action: pan-x;
-  cursor: grab;
+  overflow: hidden;
+  touch-action: pan-y;
 }
-.marquee[data-marquee]::-webkit-scrollbar { display: none; }
-.marquee[data-marquee]:active { cursor: grabbing; }
 
 /* CSS-driven marquees (portfolio etc.) — auto-scroll via keyframes, pause on hover */
 .marquee:not([data-marquee]) {

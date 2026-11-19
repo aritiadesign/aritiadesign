@@ -158,75 +158,55 @@ const testimonials = [
         const track = marquee.querySelector(".marquee-track");
         if (!track) return;
 
-        // Match the portfolio marquee. The half-track is ~3x shorter on mobile
-        // than desktop, so we shorten the loop on small viewports to keep a
-        // comparable pixel/second feel across devices.
+        // Translate3d sur le track (GPU accelere) au lieu de scrollLeft sur le
+        // container : scrollLeft iOS Safari jitter + arrondi integer + momentum
+        // scrolling => animation saccadee sur mobile. Transform est composite,
+        // zero layout, zero paint, lisse en 60 fps.
         const LOOP_SECONDS = matchMedia("(max-width: 768px)").matches ? 50 : 90;
         let paused = false;
         let resumeTimer;
-        // Sub-pixel accumulator: iOS Safari rounds scrollLeft to integer, so
-        // adding fractional values (~0.28px/frame at 90s loop) silently rounds
-        // to 0 and the marquee freezes. We accumulate sub-pixel here and only
-        // push whole integers to scrollLeft.
-        let scrollAcc = 0;
+        let position = 0;             // current translate x (negatif ou 0)
+        let lastTime = performance.now();
 
-        // Auto-advance scroll. Loop seamlessly: items are duplicated, so wrapping
-        // back at half the track width is invisible to the eye.
-        function tick() {
+        function tick(now) {
+          const dt = Math.min(now - lastTime, 100); // cap pour evite jump si tab cachee
+          lastTime = now;
           if (!paused) {
             const half = track.scrollWidth / 2;
             if (half > 0) {
-              scrollAcc += half / (LOOP_SECONDS * 60);
-              if (scrollAcc >= 1) {
-                const delta = Math.floor(scrollAcc);
-                marquee.scrollLeft += delta;
-                scrollAcc -= delta;
-              }
-              if (marquee.scrollLeft >= half) marquee.scrollLeft -= half;
+              const speed = half / LOOP_SECONDS; // px/sec
+              position -= speed * (dt / 1000);
+              if (position <= -half) position += half;
+              track.style.transform = `translate3d(${position}px, 0, 0)`;
             }
           }
           requestAnimationFrame(tick);
         }
         if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
-          requestAnimationFrame(tick);
+          requestAnimationFrame((t) => { lastTime = t; tick(t); });
         }
 
         const pause = () => { paused = true; clearTimeout(resumeTimer); };
         const scheduleResume = (delay) => {
           clearTimeout(resumeTimer);
-          resumeTimer = setTimeout(() => { paused = false; }, delay);
+          resumeTimer = setTimeout(() => {
+            lastTime = performance.now(); // reset dt pour ne pas jump a la reprise
+            paused = false;
+          }, delay);
         };
 
-        // Desktop: pause on cursor enter, resume immediately on cursor leave.
+        // Desktop : pause sur hover, reprise immediate sur mouseleave.
         marquee.addEventListener("mouseenter", pause);
         marquee.addEventListener("mouseleave", () => {
           clearTimeout(resumeTimer);
+          lastTime = performance.now();
           paused = false;
         });
 
-        // Mouse wheel / trackpad horizontal scroll → pause briefly while user drives.
-        marquee.addEventListener("wheel", () => {
-          pause();
-          scheduleResume(1500);
-        }, { passive: true });
-
-        // Touch: pause while finger is down, resume 2s after release.
+        // Touch mobile : pause tant que le doigt est pose, reprend 2s apres relache.
         marquee.addEventListener("touchstart",  pause,                       { passive: true });
         marquee.addEventListener("touchend",    () => scheduleResume(2000),  { passive: true });
         marquee.addEventListener("touchcancel", () => scheduleResume(2000),  { passive: true });
-
-        // Click an image → smooth-scroll to centre it.
-        marquee.querySelectorAll("a").forEach((a) => {
-          a.addEventListener("click", (e) => {
-            e.preventDefault();
-            pause();
-            const rect = a.getBoundingClientRect();
-            const mqRect = marquee.getBoundingClientRect();
-            const target = marquee.scrollLeft + (rect.left - mqRect.left) - (mqRect.width - rect.width) / 2;
-            marquee.scrollTo({ left: target, behavior: "smooth" });
-            scheduleResume(2500);
-          });
-        });
       })();
     </script>
 
