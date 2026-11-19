@@ -150,6 +150,28 @@ const testimonials = [
           </a>
         ))}
       </div>
+
+      {/* Chevrons discrets sur les bords : hint que le marquee est navigable */}
+      <button
+        type="button"
+        class="marquee-chevron marquee-chevron--left"
+        aria-label="Photo précédente"
+        data-marquee-prev
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="15 6 9 12 15 18" />
+        </svg>
+      </button>
+      <button
+        type="button"
+        class="marquee-chevron marquee-chevron--right"
+        aria-label="Photo suivante"
+        data-marquee-next
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 6 15 12 9 18" />
+        </svg>
+      </button>
     </div>
 
     <script is:inline>
@@ -281,6 +303,28 @@ const testimonials = [
         };
         marquee.addEventListener("touchend",    endDrag, { passive: true });
         marquee.addEventListener("touchcancel", endDrag, { passive: true });
+
+        // Chevrons bords : shift d'une thumbnail (~ 1 photo) a chaque click.
+        const STEP_MOBILE = 160;
+        const STEP_DESKTOP = 380;
+        const shiftBy = (dir) => {
+          pause();
+          const step = matchMedia("(max-width: 768px)").matches ? STEP_MOBILE : STEP_DESKTOP;
+          const half = track.scrollWidth / 2;
+          position += dir * step;
+          while (position <= -half) position += half;
+          while (position > 0) position -= half;
+          track.style.transition = "transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1)";
+          track.style.transform = `translate3d(${position}px, 0, 0)`;
+          setTimeout(() => {
+            track.style.transition = "";
+          }, 500);
+          scheduleResume(2500);
+        };
+        const prev = marquee.querySelector("[data-marquee-prev]");
+        const next = marquee.querySelector("[data-marquee-next]");
+        if (prev) prev.addEventListener("click", () => shiftBy(1));   // prev = recule = translate vers la droite
+        if (next) next.addEventListener("click", () => shiftBy(-1));  // next = avance = translate vers la gauche
       })();
     </script>
 

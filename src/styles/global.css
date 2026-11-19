@@ -774,6 +774,40 @@ img {
   cursor: grabbing;
 }
 
+/* Chevrons discrets sur les bords du marquee home : hint navigation.
+   Trait fin + opacite basse + pas de fond, pour ne pas eclipser les photos. */
+.marquee-chevron {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  padding: 0.75rem;
+  color: white;
+  opacity: 0.35;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+.marquee-chevron:hover {
+  opacity: 0.85;
+}
+.marquee-chevron--left { left: 0.5rem; }
+.marquee-chevron--right { right: 0.5rem; }
+.marquee-chevron--left:hover { transform: translateY(-50%) translateX(-2px); }
+.marquee-chevron--right:hover { transform: translateY(-50%) translateX(2px); }
+.marquee-chevron svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+@media (min-width: 768px) {
+  .marquee-chevron { padding: 1rem; }
+  .marquee-chevron--left { left: 1.25rem; }
+  .marquee-chevron--right { right: 1.25rem; }
+  .marquee-chevron svg { width: 36px; height: 36px; }
+}
+
 /* CSS-driven marquees (portfolio etc.) — auto-scroll via keyframes, pause on hover */
 .marquee:not([data-marquee]) {
   overflow: hidden;
