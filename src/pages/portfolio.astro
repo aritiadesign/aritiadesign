@@ -117,8 +117,12 @@ const leftProject = {
 
         // Meme logique que le marquee home : translate3d GPU (fluidite mobile),
         // dt-based motion, wrap seamless entre [-half, 0], touch drag libre.
-        // Vitesse alignee sur home : 50s mobile, 90s desktop.
-        const LOOP_SECONDS = matchMedia("(max-width: 768px)").matches ? 50 : 90;
+        // Vitesse calibree en px/sec (pas en LOOP_SECONDS) pour matcher
+        // visuellement le marquee home : les thumbnails portfolio font 280px
+        // mobile contre 200px home, donc a LOOP_SECONDS identique le marquee
+        // portfolio avance plus vite en px/sec. On fixe la vitesse en px/sec
+        // directement, ce qui aligne la perception des 2 marquees.
+        const PX_PER_SEC = matchMedia("(max-width: 768px)").matches ? 70 : 95;
         let paused = false;
         let resumeTimer;
         let position = 0;
@@ -130,8 +134,7 @@ const leftProject = {
           if (!paused) {
             const half = track.scrollWidth / 2;
             if (half > 0) {
-              const speed = half / LOOP_SECONDS;
-              position -= speed * (dt / 1000);
+              position -= PX_PER_SEC * (dt / 1000);
               if (position <= -half) position += half;
               track.style.transform = `translate3d(${position}px, 0, 0)`;
             }
