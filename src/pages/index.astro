@@ -7,28 +7,32 @@ import SparkLink from "../components/SparkLink.astro";
 // 3 photos gardent leur largeur elargie : Fiat jaune (MT), parallax HJ, arche pampa EF.
 const portfolioImages = [
   // MT — Mariage élégant à la française, Château de Perron (8)
+  // Ouverture sur l'orangerie avec fontaine (format landscape wide) pour poser
+  // le domaine + casser la monotonie des portraits sur le reste du marquee.
+  { src: "/images/projects/mt/parallax-manor.jpg", alt: "M+T — Orangerie avec fontaine devant",  w: 540 },
   { src: "/images/portfolio-strip/01_3e933860.jpg", alt: "M+T — Salle de réception, lustres",   w: 300 },
-  { src: "/images/portfolio-strip/02_74179fa8.jpg", alt: "M+T — Château avec fontaine",         w: 300 },
   { src: "/images/portfolio-strip/03_e633e2c6.jpg", alt: "M+T — Couple en costume sombre",       w: 300 },
   { src: "/images/portfolio-strip/05_41e5ab48.jpg", alt: "M+T — Mariée dans voiture vintage",    w: 360 },
   { src: "/images/portfolio-strip/07_dce575f9.jpg", alt: "M+T — Table dressée, roses blanches", w: 300 },
-  { src: "/images/portfolio-strip/08_abe01ccb.jpg", alt: "M+T — Composition florale, église",   w: 300 },
+  { src: "/images/closing-bouquet-zoom.jpg",        alt: "M+T — Bouquet blanc zoome, format paysage",          w: 450 },
   { src: "/images/portfolio-strip/09_06a401f7.jpg", alt: "M+T — Invitée au chapeau blanc",       w: 300 },
   { src: "/images/portfolio-strip/10_990a1165.jpg", alt: "M+T — Église, allée centrale",         w: 300 },
-  // HJ — Romantisme moderne, Domaine de Saint-Martin-de-Ronsac (6)
-  { src: "/images/projects/hj/2afc7804.jpg",    alt: "H+J — Table rectangulaire avec roses blanches",        w: 300 },
+  // HJ — Romantisme moderne, Domaine de Saint-Martin-de-Ronsac (5)
+  // Table rect reception replacee entre allee de ceremonie et plan de table.
+  // Numero de table retire.
   { src: "/images/projects/hj/8f83eb72.jpg",    alt: "H+J — Façade du Domaine de Saint-Martin-de-Ronsac",    w: 300 },
   { src: "/images/projects/hj/parallax.jpg",    alt: "H+J — Bouquet et accessoires de la mariée",            w: 580 },
   { src: "/images/projects/hj/92444954.jpg",    alt: "H+J — Allée de cérémonie avec lettres H,J-L",          w: 300 },
-  { src: "/images/projects/hj/abab819d.jpg",    alt: "H+J — Numéro de table sur-mesure",                     w: 300 },
+  { src: "/images/projects/hj/2afc7804.jpg",    alt: "H+J — Table rectangulaire avec roses blanches",        w: 300 },
   { src: "/images/projects/hj/361a575e.jpg",    alt: "H+J — Plan de table signalétique",                     w: 300 },
-  // EF — Mariage minimaliste bohème-tropical, Domaine des Oiseaux Heureux (6)
+  // EF — Mariage minimaliste bohème-tropical, Domaine des Oiseaux Heureux (5)
+  // Photo du Domaine des Oiseaux Heureux avec fontaine retiree : trop similaire
+  // de l'Orangerie MT (pavillon + fontaine + palmiers) qui ouvre le marquee.
   { src: "/images/projects/ef/parallax.jpg",        alt: "E+F — Cérémonie extérieure avec arche et pampas",  w: 720 },
   { src: "/images/portfolio-strip/13_f97907ca.jpg", alt: "E+F — Mariée avec bouquet",                        w: 300 },
   { src: "/images/portfolio-strip/14_b88c2457.jpg", alt: "E+F — Composition pampa sur socle",                w: 300 },
-  { src: "/images/projects/ef/1bed96b4.jpg",        alt: "E+F — Salle de réception avec lustre frange",      w: 300 },
+  { src: "/images/projects/ef/salle-reception.jpg", alt: "E+F — Salle de réception vue en enfilade",         w: 450 },
   { src: "/images/portfolio-strip/17_f9bdf9b5.jpg", alt: "E+F — Dressage avec menu et carte merci",          w: 300 },
-  { src: "/images/projects/ef/f70dbd2e.jpg",        alt: "E+F — Domaine des Oiseaux Heureux avec fontaine",  w: 300 },
 ];
 
 // Témoignages clients — la flèche du carrousel cycle à travers cette liste.

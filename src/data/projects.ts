@@ -38,7 +38,13 @@ const mtImages = [
   "3b2be2cb", "67bf8433", "4cf292b1", "3e933860", "ebc3c17e", "863ec4f5",
   "dd63d6be", "1f3b1927", "36724e7e", "18e4f701", "249fcaca", "2c5bdbcb",
   "5f01928d",
-].map((h) => `/images/projects/mt/${h}.${["ca8f3f8e","f8a3ca10","c0370563","4be8135e"].includes(h) ? "png" : "jpg"}`);
+].map((h) => {
+  // Hero photo 1 : version pre-croppee en 3:4 pour laisser plus de verdure
+  // visible au-dessus du bouquet (le master 0.5 portrait tall etait centre
+  // par object-cover et coupait la greenery en haut).
+  if (h === "752875c8") return "/images/projects/mt/752875c8-hero.jpg";
+  return `/images/projects/mt/${h}.${["ca8f3f8e","f8a3ca10","c0370563","4be8135e"].includes(h) ? "png" : "jpg"}`;
+});
 
 // H+J : 32 photos from Mathieu Bernard Photographie + logo monogram PNG
 // Hero slice(0,3) : table rectangulaire (gauche) · domaine (centre) · bouquet mariée 1 (droite)
@@ -92,7 +98,12 @@ const efImages = [
   "7980e30a", "778049ad", "01ad1414", "aec44e67", "e08ae102", "e5464f94",
   "635e1163", "09496efd", "4a03ec84", "3a4b9bca", "08b45754", "f9bdf9b5",
   "1bed96b4", "3e933860", "2c5bdbcb", "5f01928d", "f70dbd2e",
-].map((h) => `/images/projects/ef/${h}.${["b0229e32","6ab4c2f8","4bcef621","33680dad","09496efd","08b45754"].includes(h) ? "png" : "jpg"}`);
+].map((h) => {
+  // 3a4b9bca (ancienne vue large de la salle de reception) remplacee par
+  // salle-reception.jpg : meme angle mais photo definitive mieux cadree
+  if (h === "3a4b9bca") return "/images/projects/ef/salle-reception.jpg";
+  return `/images/projects/ef/${h}.${["b0229e32","6ab4c2f8","4bcef621","33680dad","09496efd","08b45754"].includes(h) ? "png" : "jpg"}`;
+});
 
 export const projects: Project[] = [
   {
