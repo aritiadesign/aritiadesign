@@ -43,13 +43,6 @@ const portfolioImages = [
 // Chaque avis a sa propre photo affichée à gauche.
 const testimonials = [
   {
-    quote: "Nous n'avions pas d'idées précises, et Aritia a su nous accompagner dans nos choix jusqu'aux moindres détails&nbsp;: personnalisation de l'univers, identité visuelle, ambiance. Créative, disponible et très humaine, elle a contribué à la belle réussite de notre mariage. Je recommande fortement&nbsp;!",
-    author: "HANTA & JOHN-LOÏS",
-    image: "/images/projects/hj/d9a3dc74.jpg",
-    imageAlt: "Portrait du couple H+J, Aritia Design",
-    keyPrefix: "home.testimonial.3",
-  },
-  {
     quote: "Merci encore pour ce mariage qui était tout simplement magique&nbsp;! Tu as fait un travail remarquable en moins de 6 mois&nbsp;! Je recommande à 100&nbsp;%&nbsp;!",
     author: "Mélodie & Thibault",
     image: "/images/testimonial.jpg",
@@ -63,6 +56,13 @@ const testimonials = [
     imageAlt: "Sortie des mariés sous une pluie de pétales",
     long: true,
     keyPrefix: "home.testimonial.2",
+  },
+  {
+    quote: "Nous n'avions pas d'idées précises, et Aritia a su nous accompagner dans nos choix jusqu'aux moindres détails&nbsp;: personnalisation de l'univers, identité visuelle, ambiance. Créative, disponible et très humaine, elle a contribué à la belle réussite de notre mariage. Je recommande fortement&nbsp;!",
+    author: "HANTA & JOHN-LOÏS",
+    image: "/images/projects/hj/d9a3dc74.jpg",
+    imageAlt: "Portrait du couple H+J, Aritia Design",
+    keyPrefix: "home.testimonial.3",
   },
 ];
 ---
@@ -425,11 +425,11 @@ const testimonials = [
   {/* ───────────────────────── 6. MOSAÏQUE PHOTOS (desktop only) ───────────────────────── */}
   <section class="hidden md:block bg-white py-28 md:py-36 px-6">
     <div class="mx-auto max-w-[1100px] relative h-[600px] md:h-[720px]">
-      {/* Gauche — petit format, positionne pour recouvrir le visage de la dame au chapeau */}
+      {/* Gauche — petit format, positionné pour recouvrir le visage de l'homme dans la photo centrale */}
       <div class="absolute left-[5.5%] top-[4%] w-[28%] aspect-square overflow-hidden shadow-sm z-10">
         <img
-          src="/images/projects/hj/8f83eb72.jpg"
-          alt="Façade du Domaine de Saint-Martin-de-Ronsac, Aritia Design"
+          src="/images/collage-salon.jpg"
+          alt="Salon de mariage classique avec lustre, Aritia Design"
           class="w-full h-full object-cover"
           onerror="this.style.background='linear-gradient(135deg,#d8c9b3,#a8896a)';this.removeAttribute('src');"
         />
