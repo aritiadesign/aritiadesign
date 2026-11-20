@@ -9,28 +9,28 @@ const tiers = [
     italic: "design intégral",
     price: "À partir de 6 000 €",
     scope: "<span class=\"scope-bullet\">• Honoraires de création et d'accompagnement</span><span class=\"scope-bullet\">• Tarif indicatif pour <span class=\"italic-num\">50</span> invités sur un lieu principal</span><span class=\"scope-bullet\">• Direction artistique incluse (valeur <span class=\"italic-num\">1 700</span> €)</span><span class=\"scope-bullet\">• Enveloppe dédiée : commence à <span class=\"italic-num\">9 500</span> € (hors lieu, traiteur, photographe).</span>",
-    desc: "De la première inspiration à la dernière fleur posée, un seul interlocuteur orchestre chaque dimension esthétique de votre célébration sur 10 à 12 mois : direction artistique globale, papeterie, floral intimiste, décor sourcé, coordination des prestataires, installation jour J et démontage J+1 • Idéal pour un mariage clé en main, vécu en toute sérénité.",
+    desc: "De la première inspiration à la dernière fleur posée, un seul interlocuteur orchestre chaque dimension esthétique de votre célébration sur 12 à 18 mois : direction artistique intégrale, papeterie, floral intimiste, décor sourcé, art de la table, coordination des prestataires, installation jour J et démontage J+1 • Idéal pour un mariage clé en main, vécu en toute sérénité.",
     image: "/images/services-design-global.jpg",
     accent: "burgundy",
     simplified: true,
-    descMobile: "Une expérience clé en main sur 10 à 12 mois, avec une seule interlocutrice dédiée pour vivre votre célébration en toute sérénité.",
+    descMobile: "Une expérience clé en main sur 12 à 18 mois, avec une seule interlocutrice dédiée pour vivre votre célébration en toute sérénité.",
   },
   {
     title: "PACK ATMOSPHÈRE",
     italic: "décor & floral",
     price: "À partir de 4 000 €",
     scope: "<span class=\"scope-bullet\">• Honoraires de création et d'accompagnement</span><span class=\"scope-bullet\">• Tarif indicatif pour <span class=\"italic-num\">50</span> invités sur un lieu principal</span><span class=\"scope-bullet\">• Économie de <span class=\"italic-num\">800</span> € vs prestations séparées</span><span class=\"scope-bullet\">• Enveloppe dédiée : commence à <span class=\"italic-num\">7 500</span> € (hors papeterie, lieu, traiteur, photographe).</span>",
-    desc: "Votre décor et votre conception florale pensés comme un seul et même univers esthétique, portés sur 10 à 12 mois d'accompagnement : direction artistique globale, scénographie du lieu, création florale complète, coordination des prestataires décoratifs, installation jour J et démontage J+1 • Idéal pour une harmonie visuelle parfaite entre décor et fleurs.",
+    desc: "Votre décor et votre conception florale pensés comme un seul et même univers esthétique, portés sur 6 à 12 mois d'accompagnement : direction artistique globale, scénographie du lieu, art de la table, création florale complète, coordination des prestataires décoratifs, installation jour J et démontage J+1 • Idéal pour une harmonie visuelle parfaite entre décor et fleurs.",
     image: "/images/services-decor.jpg",
     accent: "ink",
     simplified: true,
-    descMobile: "Une formule esthétique complète sur 10 à 12 mois, reliant votre décor et vos fleurs pour offrir une harmonie visuelle parfaite à votre univers.",
+    descMobile: "Une formule esthétique complète sur 6 à 12 mois, reliant votre décor et vos fleurs pour offrir une harmonie visuelle parfaite à votre univers.",
   },
   {
     title: "DIRECTION ARTISTIQUE",
     italic: "seule",
     price: "À partir de 1 700 €",
-    scope: "<span class=\"scope-bullet\">• Honoraires de création</span><span class=\"scope-bullet\">• Déductible à <span class=\"italic-num\">100</span> % en cas de signature d'un pack sous <span class=\"italic-num\">30</span> jours.</span>",
+    scope: "<span class=\"scope-bullet\">• Honoraires de création</span><span class=\"scope-bullet\">• Déductible à <span class=\"italic-num\">100</span> % en cas de signature d'une formule complète sous <span class=\"italic-num\">30</span> jours.</span>",
     desc: "En 2 à 3 mois de création partagée, nous façonnons votre carnet d'atmosphère (voir extrait). Muni de ce guide et de notre sélection de prestataires, vous pilotez votre célébration en toute autonomie. Idéal pour une signature artistique forte, sans formule complète.",
     image: "/images/flipbook-investissement/01.jpg",
     flipbook: Array.from({ length: 24 }, (_, i) =>
@@ -133,7 +133,7 @@ const faqs = [
   {
     n: "03.",
     q: "QUEL EST LE BON MOMENT POUR VOUS CONTACTER ?",
-    a: "Afin d'accorder à chaque réalisation le niveau d'attention qu'elle exige, nous recommandons une réservation au moins 3 mois à l'avance pour vos événements privés. Pour un mariage, prévoyez idéalement de 6 à 12 mois d'anticipation, voire 12 à 18 mois pour les projets d'envergure sollicitant nos formules, afin de garantir votre date et développer votre univers en toute sérénité.",
+    a: "Afin d'accorder à chaque réalisation le niveau d'attention qu'elle exige, nous recommandons une réservation au moins 3 mois à l'avance pour vos événements privés. Pour un mariage : idéalement 12 à 18 mois pour L'Exception, 6 à 12 mois pour le Pack Atmosphère, 2 à 3 mois pour la Direction Artistique seule, et 4 à 6 mois pour les prestations à la carte. L'agence reste flexible selon ses disponibilités.",
   },
   {
     n: "04.",
@@ -168,7 +168,7 @@ const faqSchema = {
       "name": "Quel est le bon moment pour vous contacter ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Afin d'accorder à chaque réalisation le niveau d'attention qu'elle exige, nous recommandons une réservation au moins 3 mois à l'avance pour vos événements privés. Pour un mariage, prévoyez idéalement de 6 à 12 mois d'anticipation, voire 12 à 18 mois pour les projets d'envergure sollicitant nos formules, afin de garantir votre date et développer votre univers en toute sérénité."
+        "text": "Afin d'accorder à chaque réalisation le niveau d'attention qu'elle exige, nous recommandons une réservation au moins 3 mois à l'avance pour vos événements privés. Pour un mariage : idéalement 12 à 18 mois pour L'Exception, 6 à 12 mois pour le Pack Atmosphère, 2 à 3 mois pour la Direction Artistique seule, et 4 à 6 mois pour les prestations à la carte. L'agence reste flexible selon ses disponibilités."
       }
     },
     {

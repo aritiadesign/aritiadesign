@@ -335,8 +335,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
     en: "WHEN IS THE RIGHT TIME TO CONTACT YOU?"
   },
   "services.faq.2.a": {
-    fr: "Les délais idéaux varient selon la formule choisie et l'ampleur du projet :<br /><br />— Pack L'Exception : 10 à 12 mois en amont (univers complet, sourcing des prestataires, coordination de la production).<br /><br />— Pack Atmosphère : 7 à 9 mois sont généralement suffisants.<br /><br />— Direction Artistique seule : à partir de 4 mois.<br /><br />— Design Floral : à partir de 4 mois.<br /><br />— Scénographie & Décors : 6 à 7 mois (conception sur-mesure, sourcing et fabrication).<br /><br />Pour les événements d'envergure (scénographie complexe, grande capacité), nous recommandons d'anticiper davantage. Nous restons toutefois flexibles sur des délais plus courts selon nos disponibilités du moment.",
-    en: "Ideal timeframes vary depending on the chosen package and the scale of the project:<br /><br />— The Exception Package: 10 to 12 months in advance (full creative direction, supplier sourcing, production coordination).<br /><br />— Atmosphere Package: 7 to 9 months is generally sufficient.<br /><br />— Art Direction only: from 4 months.<br /><br />— Floral Design: from 4 months.<br /><br />— Set Design & Decor: 6 to 7 months (bespoke design, sourcing and fabrication).<br /><br />For larger-scale events (complex set design, high guest count), we recommend planning further ahead. We remain flexible on shorter timelines depending on our current availability."
+    fr: "Afin d'accorder à chaque réalisation le niveau d'attention qu'elle exige, nous recommandons une réservation au moins 3 mois à l'avance pour vos événements privés. Pour un mariage : idéalement 12 à 18 mois pour L'Exception, 6 à 12 mois pour le Pack Atmosphère, 2 à 3 mois pour la Direction Artistique seule, et 4 à 6 mois pour les prestations à la carte. L'agence reste flexible selon ses disponibilités.",
+    en: "To give each project the attention it deserves, we recommend booking at least 3 months in advance for private events. For a wedding: ideally 12 to 18 months for The Exception, 6 to 12 months for the Atmosphere Package, 2 to 3 months for Art Direction only, and 4 to 6 months for à la carte services. The agency remains flexible depending on availability."
   },
   "services.faq.3.q": {
     fr: "ACCOMPAGNEZ-VOUS<br class=\"md:hidden\" /> D'AUTRES ÉVÉNEMENTS ?",
@@ -741,10 +741,10 @@ export const i18n: Record<string, { fr: string; en: string }> = {
 
   "investment.tier.2.title": { fr: "DIRECTION ARTISTIQUE", en: "ART DIRECTION" },
   "investment.tier.2.italic": { fr: "seule", en: "only" },
-  "investment.tier.2.price": { fr: "À partir de 1 500 €", en: "From €1,500" },
+  "investment.tier.2.price": { fr: "À partir de 1 700 €", en: "From €1,700" },
   "investment.tier.2.scope": {
-    fr: "Déductible à <span class=\"italic-num\">100</span> % en cas de signature d'un pack sous <span class=\"italic-num\">60</span> jours",
-    en: "<span class=\"italic-num\">100</span>% deductible if a package is signed within <span class=\"italic-num\">60</span> days"
+    fr: "Déductible à <span class=\"italic-num\">100</span> % en cas de signature d'une formule complète sous <span class=\"italic-num\">30</span> jours",
+    en: "<span class=\"italic-num\">100</span>% deductible if a full offer is signed within <span class=\"italic-num\">30</span> days"
   },
   "investment.tier.2.desc": {
     fr: "Vous repartez avec notre vision et l'orchestrez avec vos propres prestataires. Une option idéale pour celles et ceux qui souhaitent une signature artistique forte sans formule complète.",
