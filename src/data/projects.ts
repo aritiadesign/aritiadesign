@@ -183,7 +183,7 @@ export const projects: Project[] = [
       { label: "Cocktail & Réception", images: efImages.slice(23, -4) },
     ],
     testimonial: {
-      quote: "Nous avons fait appel à Aritia pour la décoration de notre mariage, et le résultat a largement dépassé nos attentes&nbsp;! [...] Ce qui nous a le plus touchés, c'est la façon dont Aritia a su concrétiser nos idées, même celles qui étaient un peu floues. [...] Elle a réussi à créer une ambiance raffinée et authentique, avec une attention particulière aux détails. [...] Nous recommandons les yeux fermés&nbsp;!",
+      quote: "Nous avons fait appel à Aritia pour la décoration de notre mariage, et le résultat a largement dépassé nos attentes&nbsp;! De la papeterie aux compositions florales, en passant par la décoration extérieure pour la cérémonie et la salle de réception, tout était magnifique. Ce qui nous a le plus touchés, c'est la façon dont Aritia a su concrétiser nos idées, même celles qui étaient un peu floues. Notre mariage se voulait minimaliste, et elle a réussi à créer une ambiance raffinée et authentique, avec une attention particulière aux détails. Un grand merci pour avoir rendu ce jour encore plus spécial&nbsp;!<br /><br />Nous recommandons les yeux fermés&nbsp;!",
       author: "ELITAH & FYDERANA",
     },
   },
@@ -282,7 +282,7 @@ export const projects: Project[] = [
       },
     ],
     testimonial: {
-      quote: "Nous n'avions pas d'idées précises sur la décoration que nous souhaitions avoir, et Aritia a su nous accompagner dans nos choix jusqu'aux moindres détails, la personnalisation de l'univers, l'identité visuelle ainsi que l'ambiance.<br /><br />Créative, disponible et très humaine, elle a sans aucun doute contribué à la belle réussite de notre mariage. Un grand merci. Je recommande fortement&nbsp;!",
+      quote: "Marié en mai 2026, Aritia nous a accompagné pendant plusieurs mois jusqu'au jour J dans la décoration et l'ambiance du mariage. Nous n'avions pas d'idées précises sur la décoration que nous souhaitions avoir, et Aritia a su nous accompagner dans nos choix jusqu'aux moindres détails, la personnalisation de l'univers, l'identité visuelle ainsi que l'ambiance.<br /><br />Créative, disponible et très humaine, elle a sans aucun doute contribué à la belle réussite de notre mariage. Un grand merci. Je recommande fortement&nbsp;!",
       author: "HANTA & JOHN-LOÏS",
     },
   },
