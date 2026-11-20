@@ -22,8 +22,8 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   "header.logo.aria":    { fr: "Aritia Design — Accueil", en: "Aritia Design — Home" },
 
   // ─────────────────────────── Footer ───────────────────────────
-  "footer.tagline":   { fr: "<span class=\"hidden md:inline\">Créatrice d'univers de mariage et événements haut de gamme</span><span class=\"md:hidden\">Créatrice d'univers de mariage haut de gamme</span><br /><span class=\"hidden md:inline\">basée à Toulouse, œuvrant en Haute-Garonne</span><span class=\"md:hidden\">Toulouse, Haute-Garonne</span>",
-                        en: "<span class=\"hidden md:inline\">Creator of high-end wedding &amp; event aesthetics</span><span class=\"md:hidden\">High-end wedding aesthetics</span><br /><span class=\"hidden md:inline\">based in Toulouse, crafting across Haute-Garonne</span><span class=\"md:hidden\">Toulouse, Haute-Garonne</span>" },
+  "footer.tagline":   { fr: "Créatrice d'univers de mariage et événements haut de gamme<br />basée à Toulouse, œuvrant en Haute-Garonne",
+                        en: "Creator of high-end wedding &amp; event aesthetics<br />based in Toulouse, crafting across Haute-Garonne" },
   "footer.follow":    { fr: "Suivez-nous", en: "Follow us" },
   "footer.credits":   { fr: "Images &amp; vidéos crédits&nbsp;: RNT Motion, Stephen Meslin, Mathieu Bernard",
                         en: "Images &amp; video credits: RNT Motion, Stephen Meslin, Mathieu Bernard" },
