@@ -255,10 +255,10 @@ export const projects: Project[] = [
           hjPhoto.cocktail1,            // L3 — ambiance cocktail
           hjPhoto.cocktailTraiteur,     // L4 — cocktail traiteur
           hjPhoto.planDeTable2,         // L5 — signalétique plan de table 2
-          // Reception
-          hjPhoto.tableRectReception,   // L6 — hero #1 réutilisé (table rect vue large)
+          // Reception — alternance plus marquee signalétique/mariés
+          hjPhoto.tableMaries,          // L6 — table des mariés JOUR (swap avec R6)
           hjPhoto.numeroDeTable,        // L7 — numéro de table
-          hjPhoto.tableRectReception2,  // L8 — table rect 2 (détail roses)
+          hjPhoto.tableMaries2,         // L8 — table des mariés NUIT (swap avec R8)
         ],
         right: [
           // Cocktail
@@ -267,11 +267,11 @@ export const projects: Project[] = [
           hjPhoto.planDeTable1,         // R3 — signalétique plan de table 1
           hjPhoto.lanceBouquet,         // R4 — lancé de bouquet
           hjPhoto.portrait1,            // R5 — portrait couple
-          // Reception
-          hjPhoto.tableMaries,          // R6 — table des mariés JOUR ✓
+          // Reception — alternance scéno/papeterie
+          hjPhoto.tableRectReception,   // R6 — hero #1 réutilisé table rect (swap avec L6)
           hjPhoto.papeterieTable,       // R7 — papeterie table (3 fleurs couleur) ✓
-          hjPhoto.tableMaries2,         // R8 — table des mariés NUIT ✓
-          hjPhoto.couperGateau,         // R9 — couper le gâteau ✓
+          hjPhoto.tableRectReception2,  // R8 — table rect 2 détail roses (swap avec L8)
+          hjPhoto.couperGateau,         // R9 — couper le gâteau (finale) ✓
         ],
       },
     ],
