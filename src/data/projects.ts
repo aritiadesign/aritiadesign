@@ -180,7 +180,7 @@ export const projects: Project[] = [
       ] },
       { label: "Cérémonie", images: efImages.slice(9, 23), bg: "dark" },
       // skip last 4 — used as footer photos
-      { label: "Cocktail & Réception", images: efImages.slice(23, -4) },
+      { label: "Réception", images: efImages.slice(23, -4) },
     ],
     testimonial: {
       quote: "Nous avons fait appel à Aritia pour la décoration de notre mariage, et le résultat a largement dépassé nos attentes&nbsp;! De la papeterie aux compositions florales, en passant par la décoration extérieure pour la cérémonie et la salle de réception, tout était magnifique. Ce qui nous a le plus touchés, c'est la façon dont Aritia a su concrétiser nos idées, même celles qui étaient un peu floues. Notre mariage se voulait minimaliste, et elle a réussi à créer une ambiance raffinée et authentique, avec une attention particulière aux détails. Un grand merci pour avoir rendu ce jour encore plus spécial&nbsp;!<br /><br />Nous recommandons les yeux fermés&nbsp;!",
