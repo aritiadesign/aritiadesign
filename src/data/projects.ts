@@ -242,42 +242,36 @@ export const projects: Project[] = [
           hjPhoto.sortieMaries,           // L5 — sortie, lancé de pétales (FIN)
         ],
       },
-      // COCKTAIL — 10 items (5L+5R temporaire, en attente de +1 photo pour 11 items
-      // 6L+5R). Signalétiques dispersées : AUCUNE face-à-face ni col-adjacente :
-      // miroir R1, tongasoa L2, plan 1 R3, plan 2 L5 (diagonales uniquement).
-      // Domaine réutilisé en L1 (ouverture), portrait en R5 (fin).
+      // COCKTAIL & RÉCEPTION fusionnes (comme MT) : 17 photos en une seule section
+      // fond clair. Colonne gauche (8) : cocktail L (5) puis reception L (3).
+      // Colonne droite (9) : cocktail R (5) puis reception R (4). Narrative conservee :
+      // cocktail d'abord (debut de soiree), reception ensuite (dressage + maries + gateau).
       {
-        label: "Cocktail",
-        images: [
-          hjPhoto.domaine,             // L1 — domaine (reuse hero #2) : ouverture
-          hjPhoto.miroirBienvenue,     // R1 — signalétique miroir
-          hjPhoto.tongaSoa,            // L2 — signalétique tongasoa
-          hjPhoto.entreeCocktail,      // R2 — entrée du couple
-          hjPhoto.cocktail1,           // L3 — ambiance cocktail
-          hjPhoto.planDeTable1,        // R3 — signalétique plan de table 1
-          hjPhoto.cocktailTraiteur,    // L4 — cocktail traiteur
-          hjPhoto.lanceBouquet,        // R4 — lancé de bouquet
-          hjPhoto.planDeTable2,        // L5 — signalétique plan de table 2
-          hjPhoto.portrait1,           // R5 — portrait couple (FIN ✓)
-        ],
-      },
-      // RÉCEPTION — 7 items, répartition explicite : L=3 items, R=4 items.
-      // Colonne gauche (3) : hero #1 top, numéro de table, rect2 (détails roses).
-      // Colonne droite (4) : tableMariés JOUR (top) → papeterieTable 3 fleurs →
-      // tableMariés NUIT → couper gâteau (fin).
-      {
-        label: "Réception",
-        bg: "dark",
+        label: "Cocktail & Réception",
         left: [
-          hjPhoto.tableRectReception,   // L1 — hero #1 réutilisé (table rect vue large)
-          hjPhoto.numeroDeTable,        // L2 — numéro de table
-          hjPhoto.tableRectReception2,  // L3 — table rect 2 (détail roses)
+          // Cocktail
+          hjPhoto.domaine,              // L1 — domaine (reuse hero #2) : ouverture
+          hjPhoto.tongaSoa,             // L2 — signalétique tongasoa
+          hjPhoto.cocktail1,            // L3 — ambiance cocktail
+          hjPhoto.cocktailTraiteur,     // L4 — cocktail traiteur
+          hjPhoto.planDeTable2,         // L5 — signalétique plan de table 2
+          // Reception
+          hjPhoto.tableRectReception,   // L6 — hero #1 réutilisé (table rect vue large)
+          hjPhoto.numeroDeTable,        // L7 — numéro de table
+          hjPhoto.tableRectReception2,  // L8 — table rect 2 (détail roses)
         ],
         right: [
-          hjPhoto.tableMaries,          // R1 — table des mariés JOUR ✓
-          hjPhoto.papeterieTable,       // R2 — papeterie table (3 fleurs couleur) ✓
-          hjPhoto.tableMaries2,         // R3 — table des mariés NUIT ✓
-          hjPhoto.couperGateau,         // R4 — couper le gâteau ✓
+          // Cocktail
+          hjPhoto.miroirBienvenue,      // R1 — signalétique miroir
+          hjPhoto.entreeCocktail,       // R2 — entrée du couple
+          hjPhoto.planDeTable1,         // R3 — signalétique plan de table 1
+          hjPhoto.lanceBouquet,         // R4 — lancé de bouquet
+          hjPhoto.portrait1,            // R5 — portrait couple
+          // Reception
+          hjPhoto.tableMaries,          // R6 — table des mariés JOUR ✓
+          hjPhoto.papeterieTable,       // R7 — papeterie table (3 fleurs couleur) ✓
+          hjPhoto.tableMaries2,         // R8 — table des mariés NUIT ✓
+          hjPhoto.couperGateau,         // R9 — couper le gâteau ✓
         ],
       },
     ],
