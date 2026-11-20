@@ -40,28 +40,32 @@ const portfolioImages = [
 ];
 
 // Témoignages clients — la flèche du carrousel cycle à travers cette liste.
-// Chaque avis a sa propre photo affichée à gauche.
+// Chaque avis a sa propre photo affichée à gauche, cliquable vers la page projet.
+// Les quotes sont des extraits legaux (avec "(...)") des avis complets, disponibles
+// sur mariages.net et sur la page projet correspondante.
 const testimonials = [
   {
     quote: "Merci encore pour ce mariage qui était tout simplement magique&nbsp;! Tu as fait un travail remarquable en moins de 6 mois&nbsp;! Je recommande à 100&nbsp;%&nbsp;!",
     author: "Mélodie & Thibault",
     image: "/images/testimonial.jpg",
     imageAlt: "Mariée vue d'en haut dans l'escalier",
+    href: "/portfolio/mt",
     keyPrefix: "home.testimonial.1",
   },
   {
-    quote: "Marié en mai 2026, Aritia nous a accompagné pendant plusieurs mois jusqu'au jour J dans la décoration et l'ambiance du mariage. Nous n'avions pas d'idées précises sur la décoration que nous souhaitions avoir, et Aritia a su nous accompagner dans nos choix jusqu'aux moindres détails, la personnalisation de l'univers, l'identité visuelle ainsi que l'ambiance.<br /><br />Créative, disponible et très humaine, elle a sans aucun doute contribué à la belle réussite de notre mariage. Un grand merci. Je recommande fortement&nbsp;!",
+    quote: "Le résultat a largement dépassé nos attentes&nbsp;! [...] Aritia a su concrétiser nos idées, même celles qui étaient un peu floues. [...] Nous recommandons les yeux fermés&nbsp;!",
     author: "ELITAH & FYDERANA",
     image: "/images/projects/ef/01ad1414.jpg",
     imageAlt: "Sortie des mariés sous une pluie de pétales",
-    long: true,
+    href: "/portfolio/ef",
     keyPrefix: "home.testimonial.2",
   },
   {
-    quote: "Nous n'avions pas d'idées précises, et Aritia a su nous accompagner dans nos choix jusqu'aux moindres détails&nbsp;: personnalisation de l'univers, identité visuelle, ambiance. Créative, disponible et très humaine, elle a contribué à la belle réussite de notre mariage. Je recommande fortement&nbsp;!",
+    quote: "Aritia a su nous accompagner dans nos choix jusqu'aux moindres détails [...] Créative, disponible et très humaine, elle a sans aucun doute contribué à la belle réussite de notre mariage. [...] Je recommande fortement&nbsp;!",
     author: "HANTA & JOHN-LOÏS",
     image: "/images/projects/hj/d9a3dc74.jpg",
     imageAlt: "Portrait du couple H+J, Aritia Design",
+    href: "/portfolio/hj",
     keyPrefix: "home.testimonial.3",
   },
 ];
@@ -458,19 +462,27 @@ const testimonials = [
   {/* ───────────────────────── 7. TÉMOIGNAGE ───────────────────────── */}
   <section class="bg-white pt-16 md:pt-0 pb-[100px] md:pb-36 px-6">
     <div class="mx-auto max-w-[1100px] grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-      <div class="aspect-[3/4] overflow-hidden relative" data-testimonial-images>
-        {testimonials.map((t, i) => (
-          <img
-            src={t.image}
-            alt={t.imageAlt}
-            data-i18n-attr={`alt:${t.keyPrefix}.imgalt`}
-            class="testimonial-image absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out"
-            data-index={i}
-            style={i === 0 ? "opacity:1;" : "opacity:0;"}
-            onerror="this.style.background='linear-gradient(135deg,#cfc1ad,#7a6a5a)';this.removeAttribute('src');"
-          />
-        ))}
-      </div>
+      <a
+        href={testimonials[0].href}
+        data-testimonial-link
+        class="block aspect-[3/4] overflow-hidden relative group"
+        aria-label="Voir le projet complet"
+      >
+        <div data-testimonial-images class="absolute inset-0">
+          {testimonials.map((t, i) => (
+            <img
+              src={t.image}
+              alt={t.imageAlt}
+              data-i18n-attr={`alt:${t.keyPrefix}.imgalt`}
+              class="testimonial-image absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+              data-index={i}
+              data-href={t.href}
+              style={i === 0 ? "opacity:1;" : "opacity:0;"}
+              onerror="this.style.background='linear-gradient(135deg,#cfc1ad,#7a6a5a)';this.removeAttribute('src');"
+            />
+          ))}
+        </div>
+      </a>
       <figure class="md:pl-8 relative" data-testimonial-carousel>
         <div class="relative">
           {testimonials.map((t, i) => (
@@ -604,6 +616,7 @@ const testimonials = [
 <script>
   const carousel = document.querySelector<HTMLElement>("[data-testimonial-carousel]");
   const imageStack = document.querySelector<HTMLElement>("[data-testimonial-images]");
+  const testimonialLink = document.querySelector<HTMLAnchorElement>("[data-testimonial-link]");
   if (carousel) {
     const slides = Array.from(carousel.querySelectorAll<HTMLElement>(".testimonial-slide"));
     const images = imageStack
@@ -627,6 +640,11 @@ const testimonials = [
       images.forEach((img, idx) => {
         img.style.opacity = idx === i ? "1" : "0";
       });
+      // Update the link target to match the active testimonial
+      if (testimonialLink && images[i]) {
+        const href = images[i].dataset.href;
+        if (href) testimonialLink.href = href;
+      }
     };
     nextBtns.forEach((btn) =>
       btn.addEventListener("click", () => {

@@ -25,6 +25,12 @@ export interface Project {
   outroVideo?: string;
   /** Optional "moment d'exception" highlight video shown above the back CTA */
   momentVideo?: string;
+  /** Optional client testimonial — extrait legal avec (...) du commentaire complet
+   *  publie sur mariages.net ou autre plateforme publique */
+  testimonial?: {
+    quote: string;
+    author: string;
+  };
 }
 
 // Hashes ordered by their first appearance in the original Wix HTML
@@ -143,6 +149,10 @@ export const projects: Project[] = [
         images: mtImages.slice(25, -2),
       },
     ],
+    testimonial: {
+      quote: "Merci encore pour ce mariage qui était tout simplement magique&nbsp;! Tu as fait un travail remarquable en moins de 6 mois&nbsp;! Je recommande à 100&nbsp;%&nbsp;!",
+      author: "Mélodie & Thibault",
+    },
   },
   {
     slug: "ef",
@@ -172,6 +182,10 @@ export const projects: Project[] = [
       // skip last 4 — used as footer photos
       { label: "Cocktail & Réception", images: efImages.slice(23, -4) },
     ],
+    testimonial: {
+      quote: "Nous avons fait appel à Aritia pour la décoration de notre mariage, et le résultat a largement dépassé nos attentes&nbsp;! [...] Ce qui nous a le plus touchés, c'est la façon dont Aritia a su concrétiser nos idées, même celles qui étaient un peu floues. [...] Elle a réussi à créer une ambiance raffinée et authentique, avec une attention particulière aux détails. [...] Nous recommandons les yeux fermés&nbsp;!",
+      author: "ELITAH & FYDERANA",
+    },
   },
   {
     slug: "hj",
@@ -267,6 +281,10 @@ export const projects: Project[] = [
         ],
       },
     ],
+    testimonial: {
+      quote: "Nous n'avions pas d'idées précises sur la décoration que nous souhaitions avoir, et Aritia a su nous accompagner dans nos choix jusqu'aux moindres détails, la personnalisation de l'univers, l'identité visuelle ainsi que l'ambiance.<br /><br />Créative, disponible et très humaine, elle a sans aucun doute contribué à la belle réussite de notre mariage. Un grand merci. Je recommande fortement&nbsp;!",
+      author: "HANTA & JOHN-LOÏS",
+    },
   },
 ];
 
