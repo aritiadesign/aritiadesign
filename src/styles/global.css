@@ -721,7 +721,7 @@ summary::marker { content: ""; }
 .amp {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-style: italic;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1em;
   line-height: inherit;
   letter-spacing: normal;
