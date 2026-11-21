@@ -722,9 +722,7 @@ summary::marker { content: ""; }
   font-family: "Cormorant Garamond", Georgia, serif;
   font-style: italic;
   font-weight: 500;
-  /* Font-size ajuste pour que la hauteur totale du & corresponde a celle
-     d'un e avec accent aigu (x-height + diacritique) et non a la cap-height. */
-  font-size: 0.95em;
+  font-size: 1.1em;
   line-height: inherit;
   letter-spacing: normal;
   vertical-align: baseline;
