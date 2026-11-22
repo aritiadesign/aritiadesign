@@ -252,6 +252,18 @@ const faqSchema = {
       }
       .alacarte-tab { transition: border-color 0.2s ease, color 0.2s ease; box-sizing: border-box; }
       .alacarte-tab[data-active="true"] { border-bottom: 2px solid #1c1c1c !important; color: #1c1c1c !important; }
+      .alacarte-overlay-left,
+      .alacarte-overlay-right {
+        transition: height 0.35s ease, top 0.35s ease, bottom 0.35s ease;
+      }
+      section:has(details[open]) .alacarte-overlay-left {
+        height: auto !important;
+        bottom: 6%;
+      }
+      section:has(details[open]) .alacarte-overlay-right {
+        height: auto !important;
+        top: 6%;
+      }
     </style>
 
     {/* Tier hierarchy disclaimer — unified note for tier cards + à la carte */}
@@ -439,10 +451,10 @@ const faqSchema = {
   <section class="bg-white px-6 pt-[20px] pb-24 md:py-32 relative overflow-hidden">
     {/* Decorative side photos — desktop only */}
     <div class="hidden lg:block pointer-events-none select-none">
-      <div class="absolute top-[6%] bottom-[6%] left-10 w-[285px] xl:w-[345px] overflow-hidden">
+      <div class="alacarte-overlay-left absolute top-[6%] left-10 w-[285px] xl:w-[345px] h-[380px] xl:h-[460px] overflow-hidden">
         <img src="/images/alacarte-left.jpg" alt="" aria-hidden="true" class="w-full h-full object-cover" />
       </div>
-      <div class="absolute top-[6%] bottom-[8%] right-0 w-[285px] xl:w-[345px] overflow-hidden">
+      <div class="alacarte-overlay-right absolute bottom-[8%] right-0 w-[285px] xl:w-[345px] h-[380px] xl:h-[460px] overflow-hidden">
         <img src="/images/gallery/02.jpg" alt="" aria-hidden="true" class="w-full h-full object-cover" />
       </div>
     </div>
