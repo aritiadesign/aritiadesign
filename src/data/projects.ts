@@ -158,7 +158,7 @@ export const projects: Project[] = [
       },
     ],
     testimonial: {
-      quote: "Merci encore pour ce mariage qui était tout simplement magique&nbsp;! Tu as fait un travail remarquable en moins de 6 mois&nbsp;! Je recommande à 100&nbsp;%&nbsp;!",
+      quote: "Aritia Design nous a accompagnés pour préparer la décoration de notre mariage. Faire parts, décoration sur place (fleurs, aménagements, tables...).<br /><br />Elle a parfaitement pris en compte nos souhaits, nos gouts et notre budget. Sa proposition alliait élégance et originalité. C'était parfait.<br /><br />Merci",
       author: "Mélodie & Thibault",
     },
   },
