@@ -261,12 +261,13 @@ export const projects: Project[] = [
           hjPhoto.tongaSoa,             // L2 — signalétique tongasoa
           hjPhoto.cocktail1,            // L3 — ambiance cocktail
           hjPhoto.planTableSituation,   // L4 — mariée consultant le plan de table
+          hjPhoto.lanceBouquet,         // L5 — lancé de bouquet (face à bouquetALancer sur R)
           // Reception
-          hjPhoto.tableRectReception,   // L5 — hero #1 réutilisé (table rect vue large)
-          hjPhoto.salleReception1,      // L6 — salle de réception vue large
-          hjPhoto.numeroDeTable,        // L7 — numéro de table
-          hjPhoto.centreTableRect,      // L8 — centre de table rectangulaire détail
-          hjPhoto.tableRectReception2,  // L9 — table rect 2 (détail roses)
+          hjPhoto.tableRectReception,   // L6 — hero #1 réutilisé (table rect vue large)
+          hjPhoto.salleReception1,      // L7 — salle de réception vue large
+          hjPhoto.numeroDeTable,        // L8 — numéro de table
+          hjPhoto.centreTableRect,      // L9 — centre de table rectangulaire détail
+          hjPhoto.tableRectReception2,  // L10 — table rect 2 (détail roses)
         ],
         right: [
           hjPhoto.domaineDrone,         // R1 — vue aérienne drone du domaine : ouverture
@@ -275,14 +276,13 @@ export const projects: Project[] = [
           hjPhoto.entreeCocktail,       // R3 — entrée du couple
           hjPhoto.planDeTable1,         // R4 — signalétique plan de table 1
           hjPhoto.bouquetALancer,       // R5 — mariée avec bouquet (avant lancé)
-          hjPhoto.lanceBouquet,         // R6 — lancé de bouquet
-          hjPhoto.portrait1,            // R7 — portrait couple
+          hjPhoto.portrait1,            // R6 — portrait couple
           // Reception
-          hjPhoto.tableMaries,          // R8 — table des mariés JOUR
-          hjPhoto.menuTable,            // R9 — menu de table détail
-          hjPhoto.papeterieTable,       // R10 — papeterie table (3 fleurs couleur)
-          hjPhoto.tableMaries2,         // R11 — table des mariés NUIT
-          hjPhoto.couperGateau,         // R12 — couper le gâteau
+          hjPhoto.tableMaries,          // R7 — table des mariés JOUR
+          hjPhoto.menuTable,            // R8 — menu de table détail
+          hjPhoto.papeterieTable,       // R9 — papeterie table (3 fleurs couleur)
+          hjPhoto.tableMaries2,         // R10 — table des mariés NUIT
+          hjPhoto.couperGateau,         // R11 — couper le gâteau
         ],
       },
     ],
