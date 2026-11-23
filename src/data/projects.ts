@@ -102,6 +102,7 @@ const hjPhoto = {
   menuTable: "/images/projects/hj/menu-table.jpg",
   planTableSituation: "/images/projects/hj/plan-table-situation.jpg",
   salleReception1: "/images/projects/hj/salle-reception-1.jpg",
+  salleReception2: "/images/projects/hj/salle-reception-2.jpg",
 };
 
 const efImages = [
@@ -279,10 +280,11 @@ export const projects: Project[] = [
           hjPhoto.portrait1,            // R5 — portrait couple
           // Reception
           hjPhoto.tableMaries,          // R6 — table des mariés JOUR
-          hjPhoto.menuTable,            // R7 — menu de table détail
-          hjPhoto.papeterieTable,       // R8 — papeterie table (3 fleurs couleur)
-          hjPhoto.tableMaries2,         // R9 — table des mariés NUIT
-          hjPhoto.couperGateau,         // R10 — couper le gâteau
+          hjPhoto.salleReception2,      // R7 — salle de réception vue table centerpiece (face à salleReception1 sur L7)
+          hjPhoto.menuTable,            // R8 — menu de table détail
+          hjPhoto.papeterieTable,       // R9 — papeterie table (3 fleurs couleur)
+          hjPhoto.tableMaries2,         // R10 — table des mariés NUIT
+          hjPhoto.couperGateau,         // R11 — couper le gâteau
         ],
       },
     ],
