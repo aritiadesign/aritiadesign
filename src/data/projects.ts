@@ -267,8 +267,8 @@ export const projects: Project[] = [
           // Reception (chronologique par luminosité extérieure : brillant -> doux -> crépuscule)
           hjPhoto.salleReception1,      // L6 — salle de réception vue large (ext. plein jour, grandes baies)
           hjPhoto.tableRectReception,   // L7 — table rect vue large (plein jour)
-          hjPhoto.tableRectReception2,  // L8 — table rect 2 (roses, ext. lumineux)
-          hjPhoto.salleReception2,      // L9 — salle vue centerpiece
+          hjPhoto.salleReception2,      // L8 — salle vue centerpiece
+          hjPhoto.tableRectReception2,  // L9 — table rect 2 (roses, ext. lumineux)
           hjPhoto.tableMaries,          // L10 — table des mariés JOUR (crépuscule, chaud)
         ],
         right: [
