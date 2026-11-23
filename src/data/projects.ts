@@ -102,7 +102,6 @@ const hjPhoto = {
   menuTable: "/images/projects/hj/menu-table.jpg",
   planTableSituation: "/images/projects/hj/plan-table-situation.jpg",
   salleReception1: "/images/projects/hj/salle-reception-1.jpg",
-  bouquetALancer: "/images/projects/hj/bouquet-a-lancer.jpg",
 };
 
 const efImages = [
@@ -263,7 +262,7 @@ export const projects: Project[] = [
           hjPhoto.tongaSoa,             // L2 — signalétique tongasoa
           hjPhoto.cocktail1,            // L3 — ambiance cocktail
           hjPhoto.planTableSituation,   // L4 — mariée consultant le plan de table
-          hjPhoto.lanceBouquet,         // L5 — lancé de bouquet (face à bouquetALancer sur R)
+          hjPhoto.lanceBouquet,         // L5 — lancé de bouquet
           // Reception
           hjPhoto.tableRectReception,   // L6 — hero #1 réutilisé (table rect vue large)
           hjPhoto.salleReception1,      // L7 — salle de réception vue large
@@ -277,14 +276,13 @@ export const projects: Project[] = [
           hjPhoto.miroirBienvenue,      // R2 — signalétique miroir
           hjPhoto.entreeCocktail,       // R3 — entrée du couple
           hjPhoto.planDeTable1,         // R4 — signalétique plan de table 1
-          hjPhoto.bouquetALancer,       // R5 — mariée avec bouquet (avant lancé)
-          hjPhoto.portrait1,            // R6 — portrait couple
+          hjPhoto.portrait1,            // R5 — portrait couple
           // Reception
-          hjPhoto.tableMaries,          // R7 — table des mariés JOUR
-          hjPhoto.menuTable,            // R8 — menu de table détail
-          hjPhoto.papeterieTable,       // R9 — papeterie table (3 fleurs couleur)
-          hjPhoto.tableMaries2,         // R10 — table des mariés NUIT
-          hjPhoto.couperGateau,         // R11 — couper le gâteau
+          hjPhoto.tableMaries,          // R6 — table des mariés JOUR
+          hjPhoto.menuTable,            // R7 — menu de table détail
+          hjPhoto.papeterieTable,       // R8 — papeterie table (3 fleurs couleur)
+          hjPhoto.tableMaries2,         // R9 — table des mariés NUIT
+          hjPhoto.couperGateau,         // R10 — couper le gâteau
         ],
       },
     ],
