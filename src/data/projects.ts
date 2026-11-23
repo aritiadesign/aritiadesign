@@ -268,7 +268,7 @@ export const projects: Project[] = [
           hjPhoto.salleReception1,      // L6 — salle de réception vue large (ext. plein jour, grandes baies)
           hjPhoto.tableRectReception,   // L7 — table rect vue large (plein jour)
           hjPhoto.tableRectReception2,  // L8 — table rect 2 (roses, ext. lumineux)
-          hjPhoto.centreTableRect,      // L9 — centre de table (golden hour, fin d'aprem)
+          hjPhoto.salleReception2,      // L9 — salle vue centerpiece
           hjPhoto.tableMaries,          // L10 — table des mariés JOUR (crépuscule, chaud)
         ],
         right: [
@@ -279,7 +279,7 @@ export const projects: Project[] = [
           hjPhoto.planDeTable1,         // R4 — signalétique plan de table 1
           hjPhoto.portrait1,            // R5 — portrait couple
           // Reception (chronologique luminosité : afternoon -> détails -> nuit)
-          hjPhoto.salleReception2,      // R6 — salle vue centerpiece (face à salleReception1 sur L)
+          hjPhoto.centreTableRect,      // R6 — centre de table (golden hour, fin d'aprem)
           hjPhoto.papeterieTable,       // R7 — papeterie table (ext. clair encore)
           hjPhoto.numeroDeTable,        // R8 — numéro de table (ambient blanc)
           hjPhoto.menuTable,            // R9 — menu de table détail
