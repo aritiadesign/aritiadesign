@@ -73,6 +73,7 @@ const hjPhoto = {
   allee2Hjl: "/images/projects/hj/92444954.jpg",
   ceremonie1: "/images/projects/hj/c75ed223.jpg",
   ceremonie2: "/images/projects/hj/c5a60bf5.jpg",
+  ceremonie3: "/images/projects/hj/ceremonie-3.jpg",
   enfantsHonneur: "/images/projects/hj/14c7c23d.jpg",
   echangeAlliances: "/images/projects/hj/48ea3bc9.jpg",
   porteAllianceOuvert: "/images/projects/hj/95d04245.jpg",
@@ -245,8 +246,9 @@ export const projects: Project[] = [
           hjPhoto.allee2Hjl,              // L3 — allée + HJL (séparé du panneau)
           hjPhoto.porteAllianceOuvert,    // R3 — boîte à alliances ouverte
           hjPhoto.ceremonie2,             // L4 — moment intime du couple
-          hjPhoto.echangeAlliances,       // R4 — échange des alliances (avant la fin)
-          hjPhoto.sortieMaries,           // L5 — sortie, lancé de pétales (FIN)
+          hjPhoto.ceremonie3,             // R4 — couple côte à côte avec bouquet
+          hjPhoto.echangeAlliances,       // L5 — échange des alliances (avant la fin)
+          hjPhoto.sortieMaries,           // R5 — sortie, lancé de pétales (FIN)
         ],
       },
       // COCKTAIL & RÉCEPTION fusionnes (comme MT) : 17 photos en une seule section
