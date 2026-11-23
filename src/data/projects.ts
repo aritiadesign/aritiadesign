@@ -260,28 +260,26 @@ export const projects: Project[] = [
           hjPhoto.domaine,              // L1 — domaine (reuse hero #2) : ouverture
           hjPhoto.tongaSoa,             // L2 — signalétique tongasoa
           hjPhoto.cocktail1,            // L3 — ambiance cocktail
-          hjPhoto.cocktailTraiteur,     // L4 — cocktail traiteur
-          hjPhoto.planDeTable2,         // L5 — signalétique plan de table 2
-          hjPhoto.planTableSituation,   // L6 — mariée consultant le plan de table (NEW)
+          hjPhoto.planTableSituation,   // L4 — mariée consultant le plan de table
           // Reception
-          hjPhoto.tableRectReception,   // L7 — hero #1 réutilisé (table rect vue large)
-          hjPhoto.salleReception1,      // L8 — salle de réception vue large (NEW)
-          hjPhoto.numeroDeTable,        // L9 — numéro de table
-          hjPhoto.centreTableRect,      // L10 — centre de table rectangulaire détail (NEW)
-          hjPhoto.tableRectReception2,  // L11 — table rect 2 (détail roses)
+          hjPhoto.tableRectReception,   // L5 — hero #1 réutilisé (table rect vue large)
+          hjPhoto.salleReception1,      // L6 — salle de réception vue large
+          hjPhoto.numeroDeTable,        // L7 — numéro de table
+          hjPhoto.centreTableRect,      // L8 — centre de table rectangulaire détail
+          hjPhoto.tableRectReception2,  // L9 — table rect 2 (détail roses)
         ],
         right: [
+          hjPhoto.domaineDrone,         // R1 — vue aérienne drone du domaine : ouverture
           // Cocktail
-          hjPhoto.miroirBienvenue,      // R1 — signalétique miroir
-          hjPhoto.entreeCocktail,       // R2 — entrée du couple
-          hjPhoto.planDeTable1,         // R3 — signalétique plan de table 1
-          hjPhoto.bouquetALancer,       // R4 — mariée avec bouquet (avant lancé) (NEW)
-          hjPhoto.lanceBouquet,         // R5 — lancé de bouquet
-          hjPhoto.portrait1,            // R6 — portrait couple
-          hjPhoto.domaineDrone,         // R7 — vue aérienne drone du domaine (NEW)
+          hjPhoto.miroirBienvenue,      // R2 — signalétique miroir
+          hjPhoto.entreeCocktail,       // R3 — entrée du couple
+          hjPhoto.planDeTable1,         // R4 — signalétique plan de table 1
+          hjPhoto.bouquetALancer,       // R5 — mariée avec bouquet (avant lancé)
+          hjPhoto.lanceBouquet,         // R6 — lancé de bouquet
+          hjPhoto.portrait1,            // R7 — portrait couple
           // Reception
           hjPhoto.tableMaries,          // R8 — table des mariés JOUR
-          hjPhoto.menuTable,            // R9 — menu de table détail (NEW)
+          hjPhoto.menuTable,            // R9 — menu de table détail
           hjPhoto.papeterieTable,       // R10 — papeterie table (3 fleurs couleur)
           hjPhoto.tableMaries2,         // R11 — table des mariés NUIT
           hjPhoto.couperGateau,         // R12 — couper le gâteau
