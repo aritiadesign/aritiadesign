@@ -95,6 +95,13 @@ const hjPhoto = {
   couperGateau: "/images/projects/hj/44ee1e0c.jpg",
   // Portrait
   portrait1: "/images/projects/hj/d9a3dc74.jpg",
+  // Nouveaux moments ajoutés 2026-11-23
+  domaineDrone: "/images/projects/hj/domaine-drone.jpg",
+  centreTableRect: "/images/projects/hj/centre-table-rect.jpg",
+  menuTable: "/images/projects/hj/menu-table.jpg",
+  planTableSituation: "/images/projects/hj/plan-table-situation.jpg",
+  salleReception1: "/images/projects/hj/salle-reception-1.jpg",
+  bouquetALancer: "/images/projects/hj/bouquet-a-lancer.jpg",
 };
 
 const efImages = [
@@ -255,23 +262,29 @@ export const projects: Project[] = [
           hjPhoto.cocktail1,            // L3 — ambiance cocktail
           hjPhoto.cocktailTraiteur,     // L4 — cocktail traiteur
           hjPhoto.planDeTable2,         // L5 — signalétique plan de table 2
+          hjPhoto.planTableSituation,   // L6 — mariée consultant le plan de table (NEW)
           // Reception
-          hjPhoto.tableRectReception,   // L6 — hero #1 réutilisé (table rect vue large)
-          hjPhoto.numeroDeTable,        // L7 — numéro de table
-          hjPhoto.tableRectReception2,  // L8 — table rect 2 (détail roses)
+          hjPhoto.tableRectReception,   // L7 — hero #1 réutilisé (table rect vue large)
+          hjPhoto.salleReception1,      // L8 — salle de réception vue large (NEW)
+          hjPhoto.numeroDeTable,        // L9 — numéro de table
+          hjPhoto.centreTableRect,      // L10 — centre de table rectangulaire détail (NEW)
+          hjPhoto.tableRectReception2,  // L11 — table rect 2 (détail roses)
         ],
         right: [
           // Cocktail
           hjPhoto.miroirBienvenue,      // R1 — signalétique miroir
           hjPhoto.entreeCocktail,       // R2 — entrée du couple
           hjPhoto.planDeTable1,         // R3 — signalétique plan de table 1
-          hjPhoto.lanceBouquet,         // R4 — lancé de bouquet
-          hjPhoto.portrait1,            // R5 — portrait couple
+          hjPhoto.bouquetALancer,       // R4 — mariée avec bouquet (avant lancé) (NEW)
+          hjPhoto.lanceBouquet,         // R5 — lancé de bouquet
+          hjPhoto.portrait1,            // R6 — portrait couple
+          hjPhoto.domaineDrone,         // R7 — vue aérienne drone du domaine (NEW)
           // Reception
-          hjPhoto.tableMaries,          // R6 — table des mariés JOUR ✓
-          hjPhoto.papeterieTable,       // R7 — papeterie table (3 fleurs couleur) ✓
-          hjPhoto.tableMaries2,         // R8 — table des mariés NUIT ✓
-          hjPhoto.couperGateau,         // R9 — couper le gâteau ✓
+          hjPhoto.tableMaries,          // R8 — table des mariés JOUR
+          hjPhoto.menuTable,            // R9 — menu de table détail (NEW)
+          hjPhoto.papeterieTable,       // R10 — papeterie table (3 fleurs couleur)
+          hjPhoto.tableMaries2,         // R11 — table des mariés NUIT
+          hjPhoto.couperGateau,         // R12 — couper le gâteau
         ],
       },
     ],
