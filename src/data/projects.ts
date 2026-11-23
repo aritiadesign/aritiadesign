@@ -267,10 +267,9 @@ export const projects: Project[] = [
           // Reception (chronologique par luminosité extérieure : brillant -> doux -> crépuscule)
           hjPhoto.salleReception1,      // L6 — salle de réception vue large (ext. plein jour, grandes baies)
           hjPhoto.tableRectReception,   // L7 — table rect vue large (plein jour)
-          hjPhoto.numeroDeTable,        // L8 — numéro de table (ambient blanc)
-          hjPhoto.tableRectReception2,  // L9 — table rect 2 (roses, ext. lumineux)
-          hjPhoto.centreTableRect,      // L10 — centre de table (golden hour, fin d'aprem)
-          hjPhoto.tableMaries,          // L11 — table des mariés JOUR (crépuscule, chaud)
+          hjPhoto.tableRectReception2,  // L8 — table rect 2 (roses, ext. lumineux)
+          hjPhoto.centreTableRect,      // L9 — centre de table (golden hour, fin d'aprem)
+          hjPhoto.tableMaries,          // L10 — table des mariés JOUR (crépuscule, chaud)
         ],
         right: [
           hjPhoto.domaineDrone,         // R1 — vue aérienne drone du domaine : ouverture
@@ -282,9 +281,10 @@ export const projects: Project[] = [
           // Reception (chronologique luminosité : afternoon -> détails -> nuit)
           hjPhoto.salleReception2,      // R6 — salle vue centerpiece (face à salleReception1 sur L)
           hjPhoto.papeterieTable,       // R7 — papeterie table (ext. clair encore)
-          hjPhoto.menuTable,            // R8 — menu de table détail
-          hjPhoto.tableMaries2,         // R9 — table des mariés NUIT (ext. noir)
-          hjPhoto.couperGateau,         // R10 — couper le gâteau NUIT
+          hjPhoto.numeroDeTable,        // R8 — numéro de table (ambient blanc)
+          hjPhoto.menuTable,            // R9 — menu de table détail
+          hjPhoto.tableMaries2,         // R10 — table des mariés NUIT (ext. noir)
+          hjPhoto.couperGateau,         // R11 — couper le gâteau NUIT
         ],
       },
     ],
