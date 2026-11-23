@@ -258,18 +258,19 @@ export const projects: Project[] = [
       {
         label: "Cocktail & Réception",
         left: [
-          // Cocktail
+          // Cocktail (plein jour, outdoor)
           hjPhoto.domaine,              // L1 — domaine (reuse hero #2) : ouverture
           hjPhoto.tongaSoa,             // L2 — signalétique tongasoa
           hjPhoto.cocktail1,            // L3 — ambiance cocktail
           hjPhoto.planTableSituation,   // L4 — mariée consultant le plan de table
           hjPhoto.lanceBouquet,         // L5 — lancé de bouquet
-          // Reception
-          hjPhoto.tableRectReception,   // L6 — hero #1 réutilisé (table rect vue large)
-          hjPhoto.salleReception1,      // L7 — salle de réception vue large
-          hjPhoto.numeroDeTable,        // L8 — numéro de table
-          hjPhoto.centreTableRect,      // L9 — centre de table rectangulaire détail
-          hjPhoto.tableRectReception2,  // L10 — table rect 2 (détail roses)
+          // Reception (chronologique par luminosité extérieure : brillant -> doux -> crépuscule)
+          hjPhoto.salleReception1,      // L6 — salle de réception vue large (ext. plein jour, grandes baies)
+          hjPhoto.tableRectReception,   // L7 — table rect vue large (plein jour)
+          hjPhoto.numeroDeTable,        // L8 — numéro de table (ambient blanc)
+          hjPhoto.tableRectReception2,  // L9 — table rect 2 (roses, ext. lumineux)
+          hjPhoto.centreTableRect,      // L10 — centre de table (golden hour, fin d'aprem)
+          hjPhoto.tableMaries,          // L11 — table des mariés JOUR (crépuscule, chaud)
         ],
         right: [
           hjPhoto.domaineDrone,         // R1 — vue aérienne drone du domaine : ouverture
@@ -278,13 +279,12 @@ export const projects: Project[] = [
           hjPhoto.entreeCocktail,       // R3 — entrée du couple
           hjPhoto.planDeTable1,         // R4 — signalétique plan de table 1
           hjPhoto.portrait1,            // R5 — portrait couple
-          // Reception
-          hjPhoto.tableMaries,          // R6 — table des mariés JOUR
-          hjPhoto.salleReception2,      // R7 — salle de réception vue table centerpiece (face à salleReception1 sur L7)
+          // Reception (chronologique luminosité : afternoon -> détails -> nuit)
+          hjPhoto.salleReception2,      // R6 — salle vue centerpiece (face à salleReception1 sur L)
+          hjPhoto.papeterieTable,       // R7 — papeterie table (ext. clair encore)
           hjPhoto.menuTable,            // R8 — menu de table détail
-          hjPhoto.papeterieTable,       // R9 — papeterie table (3 fleurs couleur)
-          hjPhoto.tableMaries2,         // R10 — table des mariés NUIT
-          hjPhoto.couperGateau,         // R11 — couper le gâteau
+          hjPhoto.tableMaries2,         // R9 — table des mariés NUIT (ext. noir)
+          hjPhoto.couperGateau,         // R10 — couper le gâteau NUIT
         ],
       },
     ],
