@@ -11,6 +11,10 @@ interface Props {
 }
 const { dark = true, image3, image4 } = Astro.props;
 
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === "/" ? currentPath === "/" : currentPath.startsWith(href);
+
 const galleryStripDark = [
   { src: "/images/footer-1.jpg", alt: "Salle de réception décorée" },
   { src: "/images/footer-2.jpg", alt: "Composition florale rouge, mariage EF — Aritia Design" },
@@ -150,14 +154,14 @@ const galleryStrip = [
 
     <nav aria-label="Pied de page" class="mt-8 md:mt-10 lg:col-span-3 flex justify-center">
       <ul class="flex flex-wrap md:flex-nowrap items-center justify-center gap-x-5 gap-y-3 md:gap-x-9 text-[0.65rem] sm:text-[0.7rem] tracking-[0.2em] md:tracking-[0.28em] uppercase text-white/85 md:whitespace-nowrap">
-        {links.map((l, i) => (
+        {links.map((l) => (
           <li>
             <a
               href={l.href}
               data-i18n={l.key}
               class:list={[
                 "hover:text-white transition",
-                i === 0 ? "underline underline-offset-[8px] decoration-white/60" : "",
+                isActive(l.href) ? "underline underline-offset-[8px] decoration-white/60" : "",
               ]}
             >
               {l.label}
