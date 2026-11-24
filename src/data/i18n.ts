@@ -88,13 +88,13 @@ export const i18n: Record<string, { fr: string; en: string }> = {
   // ─────────────────────────── Home — Testimonials ───────────────────────────
   "home.testimonial.next": { fr: "Témoignage suivant", en: "Next testimonial" },
   "home.testimonial.1.quote": {
-    fr: "Aritia Design nous a accompagnés pour préparer la décoration de notre mariage. Faire parts, décoration sur place (fleurs, aménagements, tables...).<br /><br />Elle a parfaitement pris en compte nos souhaits, nos gouts et notre budget. Sa proposition alliait élégance et originalité. C'était parfait.",
-    en: "Aritia Design supported us in preparing the decoration for our wedding. Invitations, on-site decor (flowers, settings, tables...).<br /><br />She perfectly took into account our wishes, tastes and budget. Her proposal combined elegance and originality. It was perfect."
+    fr: "Aritia Design nous a accompagnés pour préparer la décoration de notre mariage. Faire parts, décoration sur place (fleurs, aménagements, tables...). <br /><br />Elle a parfaitement pris en compte nos souhaits, nos gouts et notre budget. Sa proposition alliait élégance et originalité. C'était parfait.",
+    en: "Aritia Design supported us in preparing the decoration for our wedding. Invitations, on-site decor (flowers, settings, tables...). <br /><br />She perfectly took into account our wishes, tastes and budget. Her proposal combined elegance and originality. It was perfect."
   },
   "home.testimonial.1.author": { fr: "Mélodie & Thibault", en: "Mélodie & Thibault" },
   "home.testimonial.2.quote": {
-    fr: "Merci beaucoup pour l'organisation de notre mariage&nbsp;! Ton souci du détail, ton dévouement ont rendu notre journée parfaite voire plus que parfaite. Nous te sommes reconnaissants pour les magnifiques souvenirs que tu as contribué à créer et te souhaitons beaucoup de succès dans l'organisation de tes prochains événements.<br /><br />Nous recommandons Aritia sans aucune hésitation.",
-    en: "Thank you so much for organising our wedding! Your eye for detail and your dedication made our day perfect, even more than perfect. We are grateful for the beautiful memories you helped create and wish you every success with the events ahead.<br /><br />We recommend Aritia without hesitation."
+    fr: "Merci beaucoup pour l'organisation de notre mariage&nbsp;! Ton souci du détail, ton dévouement ont rendu notre journée parfaite voire plus que parfaite. Nous te sommes reconnaissants pour les magnifiques souvenirs que tu as contribué à créer et te souhaitons beaucoup de succès dans l'organisation de tes prochains événements. <br /><br />Nous recommandons Aritia sans aucune hésitation.",
+    en: "Thank you so much for organising our wedding! Your eye for detail and your dedication made our day perfect, even more than perfect. We are grateful for the beautiful memories you helped create and wish you every success with the events ahead. <br /><br />We recommend Aritia without hesitation."
   },
   "home.testimonial.2.author": { fr: "ELITAH & FYDERANA", en: "ELITAH & FYDERANA" },
   "home.testimonial.1.imgalt": { fr: "Mariée vue d'en haut dans l'escalier", en: "Bride seen from above on the staircase" },

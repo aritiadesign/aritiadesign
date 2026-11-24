@@ -46,7 +46,7 @@ const portfolioImages = [
 // sur mariages.net et sur la page projet correspondante.
 const testimonials = [
   {
-    quote: "Aritia nous a accompagné pendant plusieurs mois jusqu'au jour J, dans nos choix jusqu'aux moindres détails.<br /><br />Créative, disponible et très humaine, elle a contribué à la belle réussite de notre mariage&nbsp;!",
+    quote: "Aritia nous a accompagné pendant plusieurs mois jusqu'au jour J, dans nos choix jusqu'aux moindres détails. <br /><br />Créative, disponible et très humaine, elle a contribué à la belle réussite de notre mariage&nbsp;!",
     author: "HANTA & JOHN-LOÏS",
     image: "/images/projects/hj/d9a3dc74.jpg",
     imageAlt: "Portrait du couple H+J, Aritia Design",
@@ -54,7 +54,7 @@ const testimonials = [
     keyPrefix: "home.testimonial.3",
   },
   {
-    quote: "Aritia Design nous a accompagnés pour préparer la décoration de notre mariage. Faire parts, décoration sur place (fleurs, aménagements, tables...).<br /><br />Elle a parfaitement pris en compte nos souhaits, nos gouts et notre budget. Sa proposition alliait élégance et originalité. C'était parfait.",
+    quote: "Aritia Design nous a accompagnés pour préparer la décoration de notre mariage. Faire parts, décoration sur place (fleurs, aménagements, tables...). <br /><br />Elle a parfaitement pris en compte nos souhaits, nos gouts et notre budget. Sa proposition alliait élégance et originalité. C'était parfait.",
     author: "Mélodie & Thibault",
     image: "/images/testimonial.jpg",
     imageAlt: "Mariée vue d'en haut dans l'escalier",
@@ -62,7 +62,7 @@ const testimonials = [
     keyPrefix: "home.testimonial.1",
   },
   {
-    quote: "Le résultat a largement dépassé nos attentes&nbsp;! De la papeterie aux compositions florales, en passant par la décoration de la cérémonie à la salle de réception, tout était magnifique.<br /><br />Nous recommandons les yeux fermés&nbsp;!",
+    quote: "Le résultat a largement dépassé nos attentes&nbsp;! De la papeterie aux compositions florales, en passant par la décoration de la cérémonie à la salle de réception, tout était magnifique. <br /><br />Nous recommandons les yeux fermés&nbsp;!",
     author: "ELITAH & FYDERANA",
     image: "/images/projects/ef/01ad1414.jpg",
     imageAlt: "Sortie des mariés sous une pluie de pétales",
@@ -510,6 +510,7 @@ const testimonials = [
                   class:list={[
                     "text-[var(--color-ink)] relative",
                     "font-baskerville",
+                    "[&_br]:hidden md:[&_br]:inline",
                     t.long
                       ? "text-[0.95rem] md:text-[1.35rem] leading-[2] md:leading-[1.9] tracking-[0.01em]"
                       : "text-[1.2rem] md:text-[1.9rem] leading-[1.6] md:leading-[1.55]",
